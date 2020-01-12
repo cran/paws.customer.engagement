@@ -1,6 +1,6 @@
 Package: paws.customer.engagement
 Title: Amazon Web Services Customer Engagement APIs
-Version: 0.1.5
+Version: 0.1.6
 Authors@R: 
     c(person(given = "David",
              family = "Kretch",
@@ -16,11 +16,11 @@ Description: Interface to Amazon Web Services customer engagement APIs,
     including 'Simple Email Service', 'Connect' contact center service,
     and more <https://aws.amazon.com/>.
 License: Apache License (>= 2.0)
-Imports: paws.common (>= 0.2.4)
+Imports: paws.common (>= 0.2.5)
 Suggests: testthat
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Collate: 'connect_service.R' 'connect_interfaces.R'
         'connect_operations.R' 'pinpoint_service.R'
         'pinpoint_interfaces.R' 'pinpoint_operations.R'
@@ -29,10 +29,10 @@ Collate: 'connect_service.R' 'connect_interfaces.R'
         'pinpointsmsvoice_interfaces.R' 'pinpointsmsvoice_operations.R'
         'ses_service.R' 'ses_interfaces.R' 'ses_operations.R'
 NeedsCompilation: no
-Packaged: 2019-10-19 21:17:44 UTC; david.kretch
+Packaged: 2020-01-12 15:55:23 UTC; david.kretch
 Author: David Kretch [aut, cre],
   Adam Banker [aut],
   Amazon.com, Inc. [cph]
 Maintainer: David Kretch <david.kretch@gmail.com>
 Repository: CRAN
-Date/Publication: 2019-10-19 21:40:02 UTC
+Date/Publication: 2020-01-12 16:40:02 UTC
