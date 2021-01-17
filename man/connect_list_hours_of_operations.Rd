@@ -19,6 +19,9 @@ results.}
 \description{
 Provides information about the hours of operation for the specified
 Amazon Connect instance.
+
+For more information about hours of operation, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html}{Set the Hours of Operation for a Queue}
+in the \emph{Amazon Connect Administrator Guide}.
 }
 \section{Request syntax}{
 \preformatted{svc$list_hours_of_operations(

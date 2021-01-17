@@ -9,9 +9,9 @@ verification status}
 ses_list_identities(IdentityType, NextToken, MaxItems)
 }
 \arguments{
-\item{IdentityType}{The type of the identities to list. Possible values are \"EmailAddress\"
-and \"Domain\". If this parameter is omitted, then all identities will
-be listed.}
+\item{IdentityType}{The type of the identities to list. Possible values are "EmailAddress"
+and "Domain". If this parameter is omitted, then all identities will be
+listed.}
 
 \item{NextToken}{The token to use for pagination.}
 
@@ -22,8 +22,7 @@ inclusive.}
 Returns a list containing all of the identities (email addresses and
 domains) for your AWS account in the current AWS Region, regardless of
 verification status.
-}
-\details{
+
 You can execute this operation no more than once per second.
 }
 \section{Request syntax}{

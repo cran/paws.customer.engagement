@@ -5,6 +5,7 @@ NULL
 
 #' Creates a receipt rule set by cloning an existing one
 #'
+#' @description
 #' Creates a receipt rule set by cloning an existing one. All receipt rules
 #' and configurations are copied to the new receipt rule set and are
 #' completely independent of the source rule set.
@@ -68,6 +69,7 @@ ses_clone_receipt_rule_set <- function(RuleSetName, OriginalRuleSetName) {
 
 #' Creates a configuration set
 #'
+#' @description
 #' Creates a configuration set.
 #' 
 #' Configuration sets enable you to publish email sending events. For
@@ -113,6 +115,7 @@ ses_create_configuration_set <- function(ConfigurationSet) {
 
 #' Creates a configuration set event destination
 #'
+#' @description
 #' Creates a configuration set event destination.
 #' 
 #' When you create or update an event destination, you must provide one,
@@ -189,6 +192,7 @@ ses_create_configuration_set_event_destination <- function(ConfigurationSetName,
 #' Creates an association between a configuration set and a custom domain
 #' for open and click event tracking
 #'
+#' @description
 #' Creates an association between a configuration set and a custom domain
 #' for open and click event tracking.
 #' 
@@ -238,11 +242,12 @@ ses_create_configuration_set_tracking_options <- function(ConfigurationSetName, 
 
 #' Creates a new custom verification email template
 #'
+#' @description
 #' Creates a new custom verification email template.
 #' 
 #' For more information about custom verification email templates, see
 #' [Using Custom Verification Email
-#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html)
+#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html)
 #' in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
@@ -259,7 +264,7 @@ ses_create_configuration_set_tracking_options <- function(ConfigurationSetName, 
 #' email must be less than 10 MB. The message body may contain HTML, with
 #' some limitations. For more information, see [Custom Verification Email
 #' Frequently Asked
-#' Questions](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq)
+#' Questions](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq)
 #' in the *Amazon SES Developer Guide*.
 #' @param SuccessRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his
 #' or her address is successfully verified.
@@ -300,6 +305,7 @@ ses_create_custom_verification_email_template <- function(TemplateName, FromEmai
 
 #' Creates a new IP address filter
 #'
+#' @description
 #' Creates a new IP address filter.
 #' 
 #' For information about setting up IP address filters, see the [Amazon SES
@@ -364,6 +370,7 @@ ses_create_receipt_filter <- function(Filter) {
 
 #' Creates a receipt rule
 #'
+#' @description
 #' Creates a receipt rule.
 #' 
 #' For information about setting up receipt rules, see the [Amazon SES
@@ -379,7 +386,7 @@ ses_create_receipt_filter <- function(Filter) {
 #' @param After The name of an existing rule after which the new rule will be placed. If
 #' this parameter is null, the new rule will be inserted at the beginning
 #' of the rule list.
-#' @param Rule &#91;required&#93; A data structure that contains the specified rule\'s name, actions,
+#' @param Rule &#91;required&#93; A data structure that contains the specified rule's name, actions,
 #' recipients, domains, enabled status, scan status, and TLS policy.
 #'
 #' @section Request syntax:
@@ -482,6 +489,7 @@ ses_create_receipt_rule <- function(RuleSetName, After = NULL, Rule) {
 
 #' Creates an empty receipt rule set
 #'
+#' @description
 #' Creates an empty receipt rule set.
 #' 
 #' For information about setting up receipt rule sets, see the [Amazon SES
@@ -539,6 +547,7 @@ ses_create_receipt_rule_set <- function(RuleSetName) {
 
 #' Creates an email template
 #'
+#' @description
 #' Creates an email template. Email templates enable you to send
 #' personalized email to one or more destinations in a single API
 #' operation. For more information, see the [Amazon SES Developer
@@ -586,6 +595,7 @@ ses_create_template <- function(Template) {
 
 #' Deletes a configuration set
 #'
+#' @description
 #' Deletes a configuration set. Configuration sets enable you to publish
 #' email sending events. For information about using configuration sets,
 #' see the [Amazon SES Developer
@@ -627,6 +637,7 @@ ses_delete_configuration_set <- function(ConfigurationSetName) {
 
 #' Deletes a configuration set event destination
 #'
+#' @description
 #' Deletes a configuration set event destination. Configuration set event
 #' destinations are associated with configuration sets, which enable you to
 #' publish email sending events. For information about using configuration
@@ -674,6 +685,7 @@ ses_delete_configuration_set_event_destination <- function(ConfigurationSetName,
 #' Deletes an association between a configuration set and a custom domain
 #' for open and click event tracking
 #'
+#' @description
 #' Deletes an association between a configuration set and a custom domain
 #' for open and click event tracking.
 #' 
@@ -722,11 +734,12 @@ ses_delete_configuration_set_tracking_options <- function(ConfigurationSetName) 
 
 #' Deletes an existing custom verification email template
 #'
+#' @description
 #' Deletes an existing custom verification email template.
 #' 
 #' For more information about custom verification email templates, see
 #' [Using Custom Verification Email
-#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html)
+#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html)
 #' in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
@@ -767,6 +780,7 @@ ses_delete_custom_verification_email_template <- function(TemplateName) {
 #' Deletes the specified identity (an email address or a domain) from the
 #' list of verified identities
 #'
+#' @description
 #' Deletes the specified identity (an email address or a domain) from the
 #' list of verified identities.
 #' 
@@ -817,6 +831,7 @@ ses_delete_identity <- function(Identity) {
 #' Deletes the specified sending authorization policy for the given
 #' identity (an email address or a domain)
 #'
+#' @description
 #' Deletes the specified sending authorization policy for the given
 #' identity (an email address or a domain). This API returns successfully
 #' even if a policy with the specified name does not exist.
@@ -882,6 +897,7 @@ ses_delete_identity_policy <- function(Identity, PolicyName) {
 
 #' Deletes the specified IP address filter
 #'
+#' @description
 #' Deletes the specified IP address filter.
 #' 
 #' For information about managing IP address filters, see the [Amazon SES
@@ -932,6 +948,7 @@ ses_delete_receipt_filter <- function(FilterName) {
 
 #' Deletes the specified receipt rule
 #'
+#' @description
 #' Deletes the specified receipt rule.
 #' 
 #' For information about managing receipt rules, see the [Amazon SES
@@ -987,6 +1004,7 @@ ses_delete_receipt_rule <- function(RuleSetName, RuleName) {
 #' Deletes the specified receipt rule set and all of the receipt rules it
 #' contains
 #'
+#' @description
 #' Deletes the specified receipt rule set and all of the receipt rules it
 #' contains.
 #' 
@@ -1040,6 +1058,7 @@ ses_delete_receipt_rule_set <- function(RuleSetName) {
 
 #' Deletes an email template
 #'
+#' @description
 #' Deletes an email template.
 #' 
 #' You can execute this operation no more than once per second.
@@ -1078,6 +1097,7 @@ ses_delete_template <- function(TemplateName) {
 
 #' Deprecated
 #'
+#' @description
 #' Deprecated. Use the `DeleteIdentity` operation to delete email addresses
 #' and domains.
 #'
@@ -1125,6 +1145,7 @@ ses_delete_verified_email_address <- function(EmailAddress) {
 #' Returns the metadata and receipt rules for the receipt rule set that is
 #' currently active
 #'
+#' @description
 #' Returns the metadata and receipt rules for the receipt rule set that is
 #' currently active.
 #' 
@@ -1171,6 +1192,7 @@ ses_describe_active_receipt_rule_set <- function() {
 
 #' Returns the details of the specified configuration set
 #'
+#' @description
 #' Returns the details of the specified configuration set. For information
 #' about using configuration sets, see the [Amazon SES Developer
 #' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html).
@@ -1216,6 +1238,7 @@ ses_describe_configuration_set <- function(ConfigurationSetName, ConfigurationSe
 
 #' Returns the details of the specified receipt rule
 #'
+#' @description
 #' Returns the details of the specified receipt rule.
 #' 
 #' For information about setting up receipt rules, see the [Amazon SES
@@ -1269,6 +1292,7 @@ ses_describe_receipt_rule <- function(RuleSetName, RuleName) {
 
 #' Returns the details of the specified receipt rule set
 #'
+#' @description
 #' Returns the details of the specified receipt rule set.
 #' 
 #' For information about managing receipt rule sets, see the [Amazon SES
@@ -1321,6 +1345,7 @@ ses_describe_receipt_rule_set <- function(RuleSetName) {
 #' Returns the email sending status of the Amazon SES account for the
 #' current region
 #'
+#' @description
 #' Returns the email sending status of the Amazon SES account for the
 #' current region.
 #' 
@@ -1363,12 +1388,13 @@ ses_get_account_sending_enabled <- function() {
 #' Returns the custom email verification template for the template name you
 #' specify
 #'
+#' @description
 #' Returns the custom email verification template for the template name you
 #' specify.
 #' 
 #' For more information about custom verification email templates, see
 #' [Using Custom Verification Email
-#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html)
+#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html)
 #' in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
@@ -1408,6 +1434,7 @@ ses_get_custom_verification_email_template <- function(TemplateName) {
 
 #' Returns the current status of Easy DKIM signing for an entity
 #'
+#' @description
 #' Returns the current status of Easy DKIM signing for an entity. For
 #' domain name identities, this operation also returns the DKIM tokens that
 #' are required for Easy DKIM signing, and whether Amazon SES has
@@ -1422,15 +1449,15 @@ ses_get_custom_verification_email_template <- function(TemplateName) {
 #'     an email address, the tokens represent the domain of that address.
 #' 
 #' -   Whether Amazon SES has successfully verified the DKIM tokens
-#'     published in the domain\'s DNS. This information is only returned
-#'     for domain name identities, not for email addresses.
+#'     published in the domain's DNS. This information is only returned for
+#'     domain name identities, not for email addresses.
 #' 
 #' This operation is throttled at one request per second and can only get
 #' DKIM attributes for up to 100 identities at a time.
 #' 
 #' For more information about creating DNS records using DKIM tokens, go to
 #' the [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html).
+#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/).
 #'
 #' @usage
 #' ses_get_identity_dkim_attributes(Identities)
@@ -1482,6 +1509,7 @@ ses_get_identity_dkim_attributes <- function(Identities) {
 #' Returns the custom MAIL FROM attributes for a list of identities (email
 #' addresses : domains)
 #'
+#' @description
 #' Returns the custom MAIL FROM attributes for a list of identities (email
 #' addresses : domains).
 #' 
@@ -1536,6 +1564,7 @@ ses_get_identity_mail_from_domain_attributes <- function(Identities) {
 #' Given a list of verified identities (email addresses and/or domains),
 #' returns a structure describing identity notification attributes
 #'
+#' @description
 #' Given a list of verified identities (email addresses and/or domains),
 #' returns a structure describing identity notification attributes.
 #' 
@@ -1544,7 +1573,7 @@ ses_get_identity_mail_from_domain_attributes <- function(Identities) {
 #' 
 #' For more information about using notifications with Amazon SES, see the
 #' [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html).
+#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/).
 #'
 #' @usage
 #' ses_get_identity_notification_attributes(Identities)
@@ -1597,6 +1626,7 @@ ses_get_identity_notification_attributes <- function(Identities) {
 #' Returns the requested sending authorization policies for the given
 #' identity (an email address or a domain)
 #'
+#' @description
 #' Returns the requested sending authorization policies for the given
 #' identity (an email address or a domain). The policies are returned as a
 #' map of policy names to policy contents. You can retrieve a maximum of 20
@@ -1672,25 +1702,26 @@ ses_get_identity_policies <- function(Identity, PolicyNames) {
 #' verification status and (for domain identities) the verification token
 #' for each identity
 #'
+#' @description
 #' Given a list of identities (email addresses and/or domains), returns the
 #' verification status and (for domain identities) the verification token
 #' for each identity.
 #' 
-#' The verification status of an email address is \"Pending\" until the
-#' email address owner clicks the link within the verification email that
-#' Amazon SES sent to that address. If the email address owner clicks the
-#' link within 24 hours, the verification status of the email address
-#' changes to \"Success\". If the link is not clicked within 24 hours, the
-#' verification status changes to \"Failed.\" In that case, if you still
-#' want to verify the email address, you must restart the verification
-#' process from the beginning.
+#' The verification status of an email address is "Pending" until the email
+#' address owner clicks the link within the verification email that Amazon
+#' SES sent to that address. If the email address owner clicks the link
+#' within 24 hours, the verification status of the email address changes to
+#' "Success". If the link is not clicked within 24 hours, the verification
+#' status changes to "Failed." In that case, if you still want to verify
+#' the email address, you must restart the verification process from the
+#' beginning.
 #' 
-#' For domain identities, the domain\'s verification status is \"Pending\"
-#' as Amazon SES searches for the required TXT record in the DNS settings
-#' of the domain. When Amazon SES detects the record, the domain\'s
-#' verification status changes to \"Success\". If Amazon SES is unable to
-#' detect the record within 72 hours, the domain\'s verification status
-#' changes to \"Failed.\" In that case, if you still want to verify the
+#' For domain identities, the domain's verification status is "Pending" as
+#' Amazon SES searches for the required TXT record in the DNS settings of
+#' the domain. When Amazon SES detects the record, the domain's
+#' verification status changes to "Success". If Amazon SES is unable to
+#' detect the record within 72 hours, the domain's verification status
+#' changes to "Failed." In that case, if you still want to verify the
 #' domain, you must restart the verification process from the beginning.
 #' 
 #' This operation is throttled at one request per second and can only get
@@ -1743,6 +1774,7 @@ ses_get_identity_verification_attributes <- function(Identities) {
 
 #' Provides the sending limits for the Amazon SES account
 #'
+#' @description
 #' Provides the sending limits for the Amazon SES account.
 #' 
 #' You can execute this operation no more than once per second.
@@ -1783,6 +1815,7 @@ ses_get_send_quota <- function() {
 
 #' Provides sending statistics for the current AWS Region
 #'
+#' @description
 #' Provides sending statistics for the current AWS Region. The result is a
 #' list of data points, representing the last two weeks of sending
 #' activity. Each data point in the list contains statistics for a
@@ -1826,6 +1859,7 @@ ses_get_send_statistics <- function() {
 #' Displays the template object (which includes the Subject line, HTML part
 #' and text part) for the template you specify
 #'
+#' @description
 #' Displays the template object (which includes the Subject line, HTML part
 #' and text part) for the template you specify.
 #' 
@@ -1866,6 +1900,7 @@ ses_get_template <- function(TemplateName) {
 #' Provides a list of the configuration sets associated with your Amazon
 #' SES account in the current AWS Region
 #'
+#' @description
 #' Provides a list of the configuration sets associated with your Amazon
 #' SES account in the current AWS Region. For information about using
 #' configuration sets, see [Monitoring Your Amazon SES Sending
@@ -1919,12 +1954,13 @@ ses_list_configuration_sets <- function(NextToken = NULL, MaxItems = NULL) {
 #' Lists the existing custom verification email templates for your account
 #' in the current AWS Region
 #'
+#' @description
 #' Lists the existing custom verification email templates for your account
 #' in the current AWS Region.
 #' 
 #' For more information about custom verification email templates, see
 #' [Using Custom Verification Email
-#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html)
+#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html)
 #' in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
@@ -1971,6 +2007,7 @@ ses_list_custom_verification_email_templates <- function(NextToken = NULL, MaxRe
 #' domains) for your AWS account in the current AWS Region, regardless of
 #' verification status
 #'
+#' @description
 #' Returns a list containing all of the identities (email addresses and
 #' domains) for your AWS account in the current AWS Region, regardless of
 #' verification status.
@@ -1980,9 +2017,9 @@ ses_list_custom_verification_email_templates <- function(NextToken = NULL, MaxRe
 #' @usage
 #' ses_list_identities(IdentityType, NextToken, MaxItems)
 #'
-#' @param IdentityType The type of the identities to list. Possible values are \"EmailAddress\"
-#' and \"Domain\". If this parameter is omitted, then all identities will
-#' be listed.
+#' @param IdentityType The type of the identities to list. Possible values are "EmailAddress"
+#' and "Domain". If this parameter is omitted, then all identities will be
+#' listed.
 #' @param NextToken The token to use for pagination.
 #' @param MaxItems The maximum number of identities per page. Possible values are 1-1000
 #' inclusive.
@@ -2030,6 +2067,7 @@ ses_list_identities <- function(IdentityType = NULL, NextToken = NULL, MaxItems 
 #' Returns a list of sending authorization policies that are attached to
 #' the given identity (an email address or a domain)
 #'
+#' @description
 #' Returns a list of sending authorization policies that are attached to
 #' the given identity (an email address or a domain). This API returns only
 #' a list. If you want the actual policy content, you can use
@@ -2095,6 +2133,7 @@ ses_list_identity_policies <- function(Identity) {
 #' Lists the IP address filters associated with your AWS account in the
 #' current AWS Region
 #'
+#' @description
 #' Lists the IP address filters associated with your AWS account in the
 #' current AWS Region.
 #' 
@@ -2142,6 +2181,7 @@ ses_list_receipt_filters <- function() {
 #' Lists the receipt rule sets that exist under your AWS account in the
 #' current AWS Region
 #'
+#' @description
 #' Lists the receipt rule sets that exist under your AWS account in the
 #' current AWS Region. If there are additional receipt rule sets to be
 #' retrieved, you will receive a `NextToken` that you can provide to the
@@ -2198,6 +2238,7 @@ ses_list_receipt_rule_sets <- function(NextToken = NULL) {
 #' Lists the email templates present in your Amazon SES account in the
 #' current AWS Region
 #'
+#' @description
 #' Lists the email templates present in your Amazon SES account in the
 #' current AWS Region.
 #' 
@@ -2243,6 +2284,7 @@ ses_list_templates <- function(NextToken = NULL, MaxItems = NULL) {
 
 #' Deprecated
 #'
+#' @description
 #' Deprecated. Use the `ListIdentities` operation to list the email
 #' addresses and domains associated with your account.
 #'
@@ -2282,6 +2324,7 @@ ses_list_verified_email_addresses <- function() {
 
 #' Adds or updates the delivery options for a configuration set
 #'
+#' @description
 #' Adds or updates the delivery options for a configuration set.
 #'
 #' @usage
@@ -2326,6 +2369,7 @@ ses_put_configuration_set_delivery_options <- function(ConfigurationSetName, Del
 #' Adds or updates a sending authorization policy for the specified
 #' identity (an email address or a domain)
 #'
+#' @description
 #' Adds or updates a sending authorization policy for the specified
 #' identity (an email address or a domain).
 #' 
@@ -2400,10 +2444,11 @@ ses_put_identity_policy <- function(Identity, PolicyName, Policy) {
 
 #' Reorders the receipt rules within a receipt rule set
 #'
+#' @description
 #' Reorders the receipt rules within a receipt rule set.
 #' 
 #' All of the rules in the rule set must be represented in this request.
-#' That is, this API will return an error if the reorder request doesn\'t
+#' That is, this API will return an error if the reorder request doesn't
 #' explicitly position all of the rules.
 #' 
 #' For information about managing receipt rule sets, see the [Amazon SES
@@ -2416,7 +2461,7 @@ ses_put_identity_policy <- function(Identity, PolicyName, Policy) {
 #' ses_reorder_receipt_rule_set(RuleSetName, RuleNames)
 #'
 #' @param RuleSetName &#91;required&#93; The name of the receipt rule set to reorder.
-#' @param RuleNames &#91;required&#93; A list of the specified receipt rule set\'s receipt rules in the order
+#' @param RuleNames &#91;required&#93; A list of the specified receipt rule set's receipt rules in the order
 #' that you want to put them.
 #'
 #' @section Request syntax:
@@ -2465,6 +2510,7 @@ ses_reorder_receipt_rule_set <- function(RuleSetName, RuleNames) {
 #' Generates and sends a bounce message to the sender of an email you
 #' received through Amazon SES
 #'
+#' @description
 #' Generates and sends a bounce message to the sender of an email you
 #' received through Amazon SES. You can only use this API on an email up to
 #' 24 hours after you receive it.
@@ -2483,8 +2529,8 @@ ses_reorder_receipt_rule_set <- function(RuleSetName, RuleNames) {
 #'   MessageDsn, BouncedRecipientInfoList, BounceSenderArn)
 #'
 #' @param OriginalMessageId &#91;required&#93; The message ID of the message to be bounced.
-#' @param BounceSender &#91;required&#93; The address to use in the \"From\" header of the bounce message. This
-#' must be an identity that you have verified with Amazon SES.
+#' @param BounceSender &#91;required&#93; The address to use in the "From" header of the bounce message. This must
+#' be an identity that you have verified with Amazon SES.
 #' @param Explanation Human-readable text for the bounce message to explain the failure. If
 #' not specified, the text will be auto-generated based on the bounced
 #' recipient information.
@@ -2496,9 +2542,9 @@ ses_reorder_receipt_rule_set <- function(RuleSetName, RuleNames) {
 #' list.
 #' @param BounceSenderArn This parameter is used only for sending authorization. It is the ARN of
 #' the identity that is associated with the sending authorization policy
-#' that permits you to use the address in the \"From\" header of the
-#' bounce. For more information about sending authorization, see the
-#' [Amazon SES Developer
+#' that permits you to use the address in the "From" header of the bounce.
+#' For more information about sending authorization, see the [Amazon SES
+#' Developer
 #' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html).
 #'
 #' @section Request syntax:
@@ -2568,6 +2614,7 @@ ses_send_bounce <- function(OriginalMessageId, BounceSender, Explanation = NULL,
 
 #' Composes an email message to multiple destinations
 #'
+#' @description
 #' Composes an email message to multiple destinations. The message body is
 #' created using an email template.
 #' 
@@ -2603,7 +2650,7 @@ ses_send_bounce <- function(OriginalMessageId, BounceSender, Explanation = NULL,
 #'     several times to send the message to each group.
 #' 
 #' -   The number of destinations you can contact in a single call to the
-#'     API may be limited by your account\'s maximum sending rate.
+#'     API may be limited by your account's maximum sending rate.
 #'
 #' @usage
 #' ses_send_bulk_templated_email(Source, SourceArn, ReplyToAddresses,
@@ -2655,7 +2702,7 @@ ses_send_bounce <- function(OriginalMessageId, BounceSender, Explanation = NULL,
 #' @param ReturnPath The email address that bounces and complaints will be forwarded to when
 #' feedback forwarding is enabled. If the message cannot be delivered to
 #' the recipient, then an error message will be returned from the
-#' recipient\'s ISP; this message will then be forwarded to the email
+#' recipient's ISP; this message will then be forwarded to the email
 #' address specified by the `ReturnPath` parameter. The `ReturnPath`
 #' parameter is never overwritten. This email address must be either
 #' individually verified with Amazon SES, or from a domain that has been
@@ -2760,6 +2807,7 @@ ses_send_bulk_templated_email <- function(Source, SourceArn = NULL, ReplyToAddre
 #' Adds an email address to the list of identities for your Amazon SES
 #' account in the current AWS Region and attempts to verify it
 #'
+#' @description
 #' Adds an email address to the list of identities for your Amazon SES
 #' account in the current AWS Region and attempts to verify it. As a result
 #' of executing this operation, a customized verification email is sent to
@@ -2768,7 +2816,7 @@ ses_send_bulk_templated_email <- function(Source, SourceArn = NULL, ReplyToAddre
 #' To use this operation, you must first create a custom verification email
 #' template. For more information about creating and using custom
 #' verification email templates, see [Using Custom Verification Email
-#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html)
+#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html)
 #' in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
@@ -2813,14 +2861,14 @@ ses_send_custom_verification_email <- function(EmailAddress, TemplateName, Confi
 
 #' Composes an email message and immediately queues it for sending
 #'
+#' @description
 #' Composes an email message and immediately queues it for sending. In
 #' order to send email using the `SendEmail` operation, your message must
 #' meet the following requirements:
 #' 
 #' -   The message must be sent from a verified email address or domain. If
 #'     you attempt to send email using a non-verified address or domain,
-#'     the operation will result in an \"Email address not verified\"
-#'     error.
+#'     the operation will result in an "Email address not verified" error.
 #' 
 #' -   If your account is still in the Amazon SES sandbox, you may only
 #'     send to verified addresses or domains, or to email addresses
@@ -2849,7 +2897,7 @@ ses_send_custom_verification_email <- function(EmailAddress, TemplateName, Confi
 #' against the maximum number of emails you can send in a 24-hour period
 #' (your *sending quota*). For more information about sending quotas in
 #' Amazon SES, see [Managing Your Amazon SES Sending
-#' Limits](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html)
+#' Limits](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-quotas.html)
 #' in the *Amazon SES Developer Guide.*
 #'
 #' @usage
@@ -2888,7 +2936,7 @@ ses_send_custom_verification_email <- function(EmailAddress, TemplateName, Confi
 #' @param ReturnPath The email address that bounces and complaints will be forwarded to when
 #' feedback forwarding is enabled. If the message cannot be delivered to
 #' the recipient, then an error message will be returned from the
-#' recipient\'s ISP; this message will then be forwarded to the email
+#' recipient's ISP; this message will then be forwarded to the email
 #' address specified by the `ReturnPath` parameter. The `ReturnPath`
 #' parameter is never overwritten. This email address must be either
 #' individually verified with Amazon SES, or from a domain that has been
@@ -3036,6 +3084,7 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 
 #' Composes an email message and immediately queues it for sending
 #'
+#' @description
 #' Composes an email message and immediately queues it for sending.
 #' 
 #' This operation is more flexible than the `SendEmail` API operation. When
@@ -3049,14 +3098,14 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #' 
 #' -   You can only send email from [verified email addresses or
 #'     domains](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html).
-#'     If you try to send email from an address that isn\'t verified, the
-#'     operation results in an \"Email address not verified\" error.
+#'     If you try to send email from an address that isn't verified, the
+#'     operation results in an "Email address not verified" error.
 #' 
 #' -   If your account is still in the [Amazon SES
 #'     sandbox](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html),
 #'     you can only send email to other verified addresses in your account,
 #'     or to addresses that are associated with the [Amazon SES mailbox
-#'     simulator](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mailbox-simulator.html).
+#'     simulator](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-simulator.html).
 #' 
 #' -   The maximum message size, including attachments, is 10 MB.
 #' 
@@ -3065,8 +3114,8 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #'     lines.
 #' 
 #' -   If you send a single message to more than one recipient address, and
-#'     one of the recipient addresses isn\'t in a valid format (that is,
-#'     it\'s not in the format
+#'     one of the recipient addresses isn't in a valid format (that is,
+#'     it's not in the format
 #'     *UserName@@\[SubDomain.\]Domain.TopLevelDomain*), Amazon SES rejects
 #'     the entire message, even if the other addresses are valid.
 #' 
@@ -3079,9 +3128,9 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #' -   Amazon SES allows you to specify 8-bit Content-Transfer-Encoding for
 #'     MIME message parts. However, if Amazon SES has to modify the
 #'     contents of your message (for example, if you use open and click
-#'     tracking), 8-bit content isn\'t preserved. For this reason, we
-#'     highly recommend that you encode all content that isn\'t 7-bit
-#'     ASCII. For more information, see [MIME
+#'     tracking), 8-bit content isn't preserved. For this reason, we highly
+#'     recommend that you encode all content that isn't 7-bit ASCII. For
+#'     more information, see [MIME
 #'     Encoding](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-mime-encoding)
 #'     in the *Amazon SES Developer Guide*.
 #' 
@@ -3096,8 +3145,8 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #' 
 #' -   If you are using sending authorization to send on behalf of another
 #'     user, `SendRawEmail` enables you to specify the cross-account
-#'     identity for the email\'s Source, From, and Return-Path parameters
-#'     in one of two ways: you can pass optional parameters `SourceArn`,
+#'     identity for the email's Source, From, and Return-Path parameters in
+#'     one of two ways: you can pass optional parameters `SourceArn`,
 #'     `FromArn`, and/or `ReturnPathArn` to the API, or you can include the
 #'     following X-headers in the header of your raw email:
 #' 
@@ -3107,7 +3156,7 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #' 
 #'     -   `X-SES-RETURN-PATH-ARN`
 #' 
-#'     Don\'t include these X-headers in the DKIM signature. Amazon SES
+#'     Don't include these X-headers in the DKIM signature. Amazon SES
 #'     removes these before it sends the email.
 #' 
 #'     If you only specify the `SourceIdentityArn` parameter, Amazon SES
@@ -3124,15 +3173,15 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #'     counted against the maximum number of emails you can send in a
 #'     24-hour period (your *sending quota*). For more information about
 #'     sending quotas in Amazon SES, see [Managing Your Amazon SES Sending
-#'     Limits](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html)
+#'     Limits](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-quotas.html)
 #'     in the *Amazon SES Developer Guide.*
 #'
 #' @usage
 #' ses_send_raw_email(Source, Destinations, RawMessage, FromArn, SourceArn,
 #'   ReturnPathArn, Tags, ConfigurationSetName)
 #'
-#' @param Source The identity\'s email address. If you do not provide a value for this
-#' parameter, you must specify a \"From\" address in the raw text of the
+#' @param Source The identity's email address. If you do not provide a value for this
+#' parameter, you must specify a "From" address in the raw text of the
 #' message. (You can also specify both.)
 #' 
 #' Amazon SES does not support the SMTPUTF8 extension, as described
@@ -3167,7 +3216,7 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #' 
 #' -   Attachments must be of a content type that Amazon SES supports. For
 #'     a list on unsupported content types, see [Unsupported Attachment
-#'     Types](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html)
+#'     Types](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-raw-mime)
 #'     in the *Amazon SES Developer Guide*.
 #' 
 #' -   The entire message must be base64-encoded.
@@ -3180,12 +3229,12 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #' 
 #' -   Per [RFC
 #'     5321](https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6), the
-#'     maximum length of each line of text, including the \\<CRLF\\>, must
-#'     not exceed 1,000 characters.
+#'     maximum length of each line of text, including the &lt;CRLF&gt;,
+#'     must not exceed 1,000 characters.
 #' @param FromArn This parameter is used only for sending authorization. It is the ARN of
 #' the identity that is associated with the sending authorization policy
-#' that permits you to specify a particular \"From\" address in the header
-#' of the raw email.
+#' that permits you to specify a particular "From" address in the header of
+#' the raw email.
 #' 
 #' Instead of using this parameter, you can use the X-header
 #' `X-SES-FROM-ARN` in the raw message of the email. If you use both the
@@ -3303,6 +3352,7 @@ ses_send_raw_email <- function(Source = NULL, Destinations = NULL, RawMessage, F
 #' Composes an email message using an email template and immediately queues
 #' it for sending
 #'
+#' @description
 #' Composes an email message using an email template and immediately queues
 #' it for sending.
 #' 
@@ -3339,9 +3389,9 @@ ses_send_raw_email <- function(Source = NULL, Destinations = NULL, RawMessage, F
 #' 
 #' If your call to the `SendTemplatedEmail` operation includes all of the
 #' required parameters, Amazon SES accepts it and returns a Message ID.
-#' However, if Amazon SES can\'t render the email because the template
-#' contains errors, it doesn\'t send the email. Additionally, because it
-#' already accepted the message, Amazon SES doesn\'t return a message
+#' However, if Amazon SES can't render the email because the template
+#' contains errors, it doesn't send the email. Additionally, because it
+#' already accepted the message, Amazon SES doesn't return a message
 #' stating that it was unable to send the email.
 #' 
 #' For these reasons, we highly recommend that you set up Amazon SES to
@@ -3387,7 +3437,7 @@ ses_send_raw_email <- function(Source = NULL, Destinations = NULL, RawMessage, F
 #' @param ReturnPath The email address that bounces and complaints will be forwarded to when
 #' feedback forwarding is enabled. If the message cannot be delivered to
 #' the recipient, then an error message will be returned from the
-#' recipient\'s ISP; this message will then be forwarded to the email
+#' recipient's ISP; this message will then be forwarded to the email
 #' address specified by the `ReturnPath` parameter. The `ReturnPath`
 #' parameter is never overwritten. This email address must be either
 #' individually verified with Amazon SES, or from a domain that has been
@@ -3490,6 +3540,7 @@ ses_send_templated_email <- function(Source, Destination, ReplyToAddresses = NUL
 
 #' Sets the specified receipt rule set as the active receipt rule set
 #'
+#' @description
 #' Sets the specified receipt rule set as the active receipt rule set.
 #' 
 #' To disable your email-receiving through Amazon SES completely, you can
@@ -3544,6 +3595,7 @@ ses_set_active_receipt_rule_set <- function(RuleSetName = NULL) {
 
 #' Enables or disables Easy DKIM signing of email sent from an identity
 #'
+#' @description
 #' Enables or disables Easy DKIM signing of email sent from an identity. If
 #' Easy DKIM signing is enabled for a domain, then Amazon SES uses DKIM to
 #' sign all email that it sends from addresses on that domain. If Easy DKIM
@@ -3556,13 +3608,13 @@ ses_set_active_receipt_rule_set <- function(RuleSetName = NULL) {
 #' 
 #' You can enable DKIM signing for an identity at any time after you start
 #' the verification process for the identity, even if the verification
-#' process isn\'t complete.
+#' process isn't complete.
 #' 
 #' You can execute this operation no more than once per second.
 #' 
 #' For more information about Easy DKIM signing, go to the [Amazon SES
 #' Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html).
+#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-authentication-dkim-easy.html).
 #'
 #' @usage
 #' ses_set_identity_dkim_enabled(Identity, DkimEnabled)
@@ -3612,6 +3664,7 @@ ses_set_identity_dkim_enabled <- function(Identity, DkimEnabled) {
 #' Given an identity (an email address or a domain), enables or disables
 #' whether Amazon SES forwards bounce and complaint notifications as email
 #'
+#' @description
 #' Given an identity (an email address or a domain), enables or disables
 #' whether Amazon SES forwards bounce and complaint notifications as email.
 #' Feedback forwarding can only be disabled when Amazon Simple Notification
@@ -3625,7 +3678,7 @@ ses_set_identity_dkim_enabled <- function(Identity, DkimEnabled) {
 #' 
 #' For more information about using notifications with Amazon SES, see the
 #' [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html).
+#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/).
 #'
 #' @usage
 #' ses_set_identity_feedback_forwarding_enabled(Identity,
@@ -3683,6 +3736,7 @@ ses_set_identity_feedback_forwarding_enabled <- function(Identity, ForwardingEna
 #' SES includes the original email headers in the Amazon Simple
 #' Notification Service (Amazon SNS) notifications of a specified type
 #'
+#' @description
 #' Given an identity (an email address or a domain), sets whether Amazon
 #' SES includes the original email headers in the Amazon Simple
 #' Notification Service (Amazon SNS) notifications of a specified type.
@@ -3691,7 +3745,7 @@ ses_set_identity_feedback_forwarding_enabled <- function(Identity, ForwardingEna
 #' 
 #' For more information about using notifications with Amazon SES, see the
 #' [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html).
+#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/).
 #'
 #' @usage
 #' ses_set_identity_headers_in_notifications_enabled(Identity,
@@ -3753,15 +3807,16 @@ ses_set_identity_headers_in_notifications_enabled <- function(Identity, Notifica
 #' Enables or disables the custom MAIL FROM domain setup for a verified
 #' identity (an email address or a domain)
 #'
+#' @description
 #' Enables or disables the custom MAIL FROM domain setup for a verified
 #' identity (an email address or a domain).
 #' 
 #' To send emails using the specified MAIL FROM domain, you must add an MX
-#' record to your MAIL FROM domain\'s DNS settings. If you want your emails
+#' record to your MAIL FROM domain's DNS settings. If you want your emails
 #' to pass Sender Policy Framework (SPF) checks, you must also add or
 #' update an SPF record. For more information, see the [Amazon SES
 #' Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from-set.html).
+#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/).
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -3773,7 +3828,7 @@ ses_set_identity_headers_in_notifications_enabled <- function(Identity, Notifica
 #' specified custom MAIL FROM domain.
 #' @param MailFromDomain The custom MAIL FROM domain that you want the verified identity to use.
 #' The MAIL FROM domain must 1) be a subdomain of the verified identity, 2)
-#' not be used in a \"From\" address if the MAIL FROM domain is the
+#' not be used in a "From" address if the MAIL FROM domain is the
 #' destination of email feedback forwarding (for more information, see the
 #' [Amazon SES Developer
 #' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mail-from.html)),
@@ -3832,6 +3887,7 @@ ses_set_identity_mail_from_domain <- function(Identity, MailFromDomain = NULL, B
 #' Sets an Amazon Simple Notification Service (Amazon SNS) topic to use
 #' when delivering notifications
 #'
+#' @description
 #' Sets an Amazon Simple Notification Service (Amazon SNS) topic to use
 #' when delivering notifications. When you use this operation, you specify
 #' a verified identity, such as an email address or domain. When you send
@@ -3844,7 +3900,7 @@ ses_set_identity_mail_from_domain <- function(Identity, MailFromDomain = NULL, B
 #' 
 #' For more information about feedback notification, see the [Amazon SES
 #' Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html).
+#' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/).
 #'
 #' @usage
 #' ses_set_identity_notification_topic(Identity, NotificationType,
@@ -3908,6 +3964,7 @@ ses_set_identity_notification_topic <- function(Identity, NotificationType, SnsT
 
 #' Sets the position of the specified receipt rule in the receipt rule set
 #'
+#' @description
 #' Sets the position of the specified receipt rule in the receipt rule set.
 #' 
 #' For information about managing receipt rules, see the [Amazon SES
@@ -3968,6 +4025,7 @@ ses_set_receipt_rule_position <- function(RuleSetName, RuleName, After = NULL) {
 #' Creates a preview of the MIME content of an email when provided with a
 #' template and a set of replacement data
 #'
+#' @description
 #' Creates a preview of the MIME content of an email when provided with a
 #' template and a set of replacement data.
 #' 
@@ -4012,6 +4070,7 @@ ses_test_render_template <- function(TemplateName, TemplateData) {
 #' Enables or disables email sending across your entire Amazon SES account
 #' in the current AWS Region
 #'
+#' @description
 #' Enables or disables email sending across your entire Amazon SES account
 #' in the current AWS Region. You can use this operation in conjunction
 #' with Amazon CloudWatch alarms to temporarily pause email sending across
@@ -4063,6 +4122,7 @@ ses_update_account_sending_enabled <- function(Enabled = NULL) {
 
 #' Updates the event destination of a configuration set
 #'
+#' @description
 #' Updates the event destination of a configuration set. Event destinations
 #' are associated with configuration sets, which enable you to publish
 #' email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or
@@ -4140,6 +4200,7 @@ ses_update_configuration_set_event_destination <- function(ConfigurationSetName,
 #' Enables or disables the publishing of reputation metrics for emails sent
 #' using a specific configuration set in a given AWS Region
 #'
+#' @description
 #' Enables or disables the publishing of reputation metrics for emails sent
 #' using a specific configuration set in a given AWS Region. Reputation
 #' metrics include bounce and complaint rates. These metrics are published
@@ -4197,6 +4258,7 @@ ses_update_configuration_set_reputation_metrics_enabled <- function(Configuratio
 #' Enables or disables email sending for messages sent using a specific
 #' configuration set in a given AWS Region
 #'
+#' @description
 #' Enables or disables email sending for messages sent using a specific
 #' configuration set in a given AWS Region. You can use this operation in
 #' conjunction with Amazon CloudWatch alarms to temporarily pause email
@@ -4254,6 +4316,7 @@ ses_update_configuration_set_sending_enabled <- function(ConfigurationSetName, E
 #' Modifies an association between a configuration set and a custom domain
 #' for open and click event tracking
 #'
+#' @description
 #' Modifies an association between a configuration set and a custom domain
 #' for open and click event tracking.
 #' 
@@ -4303,11 +4366,12 @@ ses_update_configuration_set_tracking_options <- function(ConfigurationSetName, 
 
 #' Updates an existing custom verification email template
 #'
+#' @description
 #' Updates an existing custom verification email template.
 #' 
 #' For more information about custom verification email templates, see
 #' [Using Custom Verification Email
-#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html)
+#' Templates](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html)
 #' in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
@@ -4325,7 +4389,7 @@ ses_update_configuration_set_tracking_options <- function(ConfigurationSetName, 
 #' email must be less than 10 MB. The message body may contain HTML, with
 #' some limitations. For more information, see [Custom Verification Email
 #' Frequently Asked
-#' Questions](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html#custom-verification-emails-faq)
+#' Questions](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html#custom-verification-emails-faq)
 #' in the *Amazon SES Developer Guide*.
 #' @param SuccessRedirectionURL The URL that the recipient of the verification email is sent to if his
 #' or her address is successfully verified.
@@ -4366,6 +4430,7 @@ ses_update_custom_verification_email_template <- function(TemplateName, FromEmai
 
 #' Updates a receipt rule
 #'
+#' @description
 #' Updates a receipt rule.
 #' 
 #' For information about managing receipt rules, see the [Amazon SES
@@ -4478,6 +4543,7 @@ ses_update_receipt_rule <- function(RuleSetName, Rule) {
 
 #' Updates an email template
 #'
+#' @description
 #' Updates an email template. Email templates enable you to send
 #' personalized email to one or more destinations in a single API
 #' operation. For more information, see the [Amazon SES Developer
@@ -4524,22 +4590,23 @@ ses_update_template <- function(Template) {
 
 #' Returns a set of DKIM tokens for a domain identity
 #'
+#' @description
 #' Returns a set of DKIM tokens for a domain identity.
 #' 
 #' When you execute the `VerifyDomainDkim` operation, the domain that you
 #' specify is added to the list of identities that are associated with your
-#' account. This is true even if you haven\'t already associated the domain
+#' account. This is true even if you haven't already associated the domain
 #' with your account by using the `VerifyDomainIdentity` operation.
-#' However, you can\'t send email from the domain until you either
+#' However, you can't send email from the domain until you either
 #' successfully [verify
 #' it](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html)
 #' or you successfully [set up DKIM for
-#' it](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html).
+#' it](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-authentication-dkim-easy.html).
 #' 
 #' You use the tokens that are generated by this operation to create CNAME
-#' records. When Amazon SES detects that you\'ve added these records to the
+#' records. When Amazon SES detects that you've added these records to the
 #' DNS configuration for a domain, you can start sending email from that
-#' domain. You can start sending email even if you haven\'t added the TXT
+#' domain. You can start sending email even if you haven't added the TXT
 #' record provided by the VerifyDomainIdentity operation to the DNS
 #' configuration for your domain. All email that you send from the domain
 #' is authenticated using DKIM.
@@ -4555,8 +4622,8 @@ ses_update_template <- function(Template) {
 #' 
 #' In the preceding example, replace *token* with one of the tokens that
 #' are generated when you execute this operation. Replace *example.com*
-#' with your domain. Repeat this process for each token that\'s generated
-#' by this operation.
+#' with your domain. Repeat this process for each token that's generated by
+#' this operation.
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -4604,6 +4671,7 @@ ses_verify_domain_dkim <- function(Domain) {
 #' Adds a domain to the list of identities for your Amazon SES account in
 #' the current AWS Region and attempts to verify it
 #'
+#' @description
 #' Adds a domain to the list of identities for your Amazon SES account in
 #' the current AWS Region and attempts to verify it. For more information
 #' about verifying domains, see [Verifying Email Addresses and
@@ -4655,6 +4723,7 @@ ses_verify_domain_identity <- function(Domain) {
 
 #' Deprecated
 #'
+#' @description
 #' Deprecated. Use the `VerifyEmailIdentity` operation to verify a new
 #' email address.
 #'
@@ -4702,6 +4771,7 @@ ses_verify_email_address <- function(EmailAddress) {
 #' Adds an email address to the list of identities for your Amazon SES
 #' account in the current AWS region and attempts to verify it
 #'
+#' @description
 #' Adds an email address to the list of identities for your Amazon SES
 #' account in the current AWS region and attempts to verify it. As a result
 #' of executing this operation, a verification email is sent to the

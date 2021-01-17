@@ -5,6 +5,7 @@ NULL
 
 #' Creates an application
 #'
+#' @description
 #'  <p>Creates an application.</p>
 #'
 #' @usage
@@ -47,6 +48,7 @@ pinpoint_create_app <- function(CreateApplicationRequest) {
 #' Creates a new campaign for an application or updates the settings of an
 #' existing campaign for an application
 #'
+#' @description
 #' Creates a new campaign for an application or updates the settings of an
 #' existing campaign for an application.
 #'
@@ -410,6 +412,7 @@ pinpoint_create_campaign <- function(ApplicationId, WriteCampaignRequest) {
 #' Creates a message template for messages that are sent through the email
 #' channel
 #'
+#' @description
 #' Creates a message template for messages that are sent through the email
 #' channel.
 #'
@@ -462,6 +465,7 @@ pinpoint_create_email_template <- function(EmailTemplateRequest, TemplateName) {
 
 #' Creates an export job for an application
 #'
+#' @description
 #' Creates an export job for an application.
 #'
 #' @usage
@@ -506,6 +510,7 @@ pinpoint_create_export_job <- function(ApplicationId, ExportJobRequest) {
 
 #' Creates an import job for an application
 #'
+#' @description
 #' Creates an import job for an application.
 #'
 #' @usage
@@ -554,6 +559,7 @@ pinpoint_create_import_job <- function(ApplicationId, ImportJobRequest) {
 
 #' Creates a journey for an application
 #'
+#' @description
 #' Creates a journey for an application.
 #'
 #' @usage
@@ -906,6 +912,34 @@ pinpoint_create_import_job <- function(ApplicationId, ImportJobRequest) {
 #'     StartActivity = "string",
 #'     StartCondition = list(
 #'       Description = "string",
+#'       EventStartCondition = list(
+#'         EventFilter = list(
+#'           Dimensions = list(
+#'             Attributes = list(
+#'               list(
+#'                 AttributeType = "INCLUSIVE"|"EXCLUSIVE",
+#'                 Values = list(
+#'                   "string"
+#'                 )
+#'               )
+#'             ),
+#'             EventType = list(
+#'               DimensionType = "INCLUSIVE"|"EXCLUSIVE",
+#'               Values = list(
+#'                 "string"
+#'               )
+#'             ),
+#'             Metrics = list(
+#'               list(
+#'                 ComparisonOperator = "string",
+#'                 Value = 123.0
+#'               )
+#'             )
+#'           ),
+#'           FilterType = "SYSTEM"|"ENDPOINT"
+#'         ),
+#'         SegmentId = "string"
+#'       ),
 #'       SegmentStartCondition = list(
 #'         SegmentId = "string"
 #'       )
@@ -938,6 +972,7 @@ pinpoint_create_journey <- function(ApplicationId, WriteJourneyRequest) {
 #' Creates a message template for messages that are sent through a push
 #' notification channel
 #'
+#' @description
 #' Creates a message template for messages that are sent through a push
 #' notification channel.
 #'
@@ -1037,6 +1072,7 @@ pinpoint_create_push_template <- function(PushNotificationTemplateRequest, Templ
 
 #' Creates an Amazon Pinpoint configuration for a recommender model
 #'
+#' @description
 #' Creates an Amazon Pinpoint configuration for a recommender model.
 #'
 #' @usage
@@ -1088,8 +1124,9 @@ pinpoint_create_recommender_configuration <- function(CreateRecommenderConfigura
 #' dimension, and other settings for an existing segment that's associated
 #' with an application
 #'
+#' @description
 #' Creates a new segment for an application or updates the configuration,
-#' dimension, and other settings for an existing segment that\'s associated
+#' dimension, and other settings for an existing segment that's associated
 #' with an application.
 #'
 #' @usage
@@ -1318,6 +1355,7 @@ pinpoint_create_segment <- function(ApplicationId, WriteSegmentRequest) {
 #' Creates a message template for messages that are sent through the SMS
 #' channel
 #'
+#' @description
 #' Creates a message template for messages that are sent through the SMS
 #' channel.
 #'
@@ -1369,6 +1407,7 @@ pinpoint_create_sms_template <- function(SMSTemplateRequest, TemplateName) {
 #' Creates a message template for messages that are sent through the voice
 #' channel
 #'
+#' @description
 #' Creates a message template for messages that are sent through the voice
 #' channel.
 #'
@@ -1421,6 +1460,7 @@ pinpoint_create_voice_template <- function(TemplateName, VoiceTemplateRequest) {
 #' Disables the ADM channel for an application and deletes any existing
 #' settings for the channel
 #'
+#' @description
 #' Disables the ADM channel for an application and deletes any existing
 #' settings for the channel.
 #'
@@ -1460,6 +1500,7 @@ pinpoint_delete_adm_channel <- function(ApplicationId) {
 #' Disables the APNs channel for an application and deletes any existing
 #' settings for the channel
 #'
+#' @description
 #' Disables the APNs channel for an application and deletes any existing
 #' settings for the channel.
 #'
@@ -1499,6 +1540,7 @@ pinpoint_delete_apns_channel <- function(ApplicationId) {
 #' Disables the APNs sandbox channel for an application and deletes any
 #' existing settings for the channel
 #'
+#' @description
 #' Disables the APNs sandbox channel for an application and deletes any
 #' existing settings for the channel.
 #'
@@ -1538,6 +1580,7 @@ pinpoint_delete_apns_sandbox_channel <- function(ApplicationId) {
 #' Disables the APNs VoIP channel for an application and deletes any
 #' existing settings for the channel
 #'
+#' @description
 #' Disables the APNs VoIP channel for an application and deletes any
 #' existing settings for the channel.
 #'
@@ -1577,6 +1620,7 @@ pinpoint_delete_apns_voip_channel <- function(ApplicationId) {
 #' Disables the APNs VoIP sandbox channel for an application and deletes
 #' any existing settings for the channel
 #'
+#' @description
 #' Disables the APNs VoIP sandbox channel for an application and deletes
 #' any existing settings for the channel.
 #'
@@ -1615,6 +1659,7 @@ pinpoint_delete_apns_voip_sandbox_channel <- function(ApplicationId) {
 
 #' Deletes an application
 #'
+#' @description
 #' Deletes an application.
 #'
 #' @usage
@@ -1653,6 +1698,7 @@ pinpoint_delete_app <- function(ApplicationId) {
 #' Disables the Baidu channel for an application and deletes any existing
 #' settings for the channel
 #'
+#' @description
 #' Disables the Baidu channel for an application and deletes any existing
 #' settings for the channel.
 #'
@@ -1691,6 +1737,7 @@ pinpoint_delete_baidu_channel <- function(ApplicationId) {
 
 #' Deletes a campaign from an application
 #'
+#' @description
 #' Deletes a campaign from an application.
 #'
 #' @usage
@@ -1731,6 +1778,7 @@ pinpoint_delete_campaign <- function(ApplicationId, CampaignId) {
 #' Disables the email channel for an application and deletes any existing
 #' settings for the channel
 #'
+#' @description
 #' Disables the email channel for an application and deletes any existing
 #' settings for the channel.
 #'
@@ -1770,6 +1818,7 @@ pinpoint_delete_email_channel <- function(ApplicationId) {
 #' Deletes a message template for messages that were sent through the email
 #' channel
 #'
+#' @description
 #' Deletes a message template for messages that were sent through the email
 #' channel.
 #'
@@ -1788,9 +1837,9 @@ pinpoint_delete_email_channel <- function(ApplicationId) {
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -1798,7 +1847,7 @@ pinpoint_delete_email_channel <- function(ApplicationId) {
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.
@@ -1833,6 +1882,7 @@ pinpoint_delete_email_template <- function(TemplateName, Version = NULL) {
 
 #' Deletes an endpoint from an application
 #'
+#' @description
 #' Deletes an endpoint from an application.
 #'
 #' @usage
@@ -1872,6 +1922,7 @@ pinpoint_delete_endpoint <- function(ApplicationId, EndpointId) {
 
 #' Deletes the event stream for an application
 #'
+#' @description
 #' Deletes the event stream for an application.
 #'
 #' @usage
@@ -1910,6 +1961,7 @@ pinpoint_delete_event_stream <- function(ApplicationId) {
 #' Disables the GCM channel for an application and deletes any existing
 #' settings for the channel
 #'
+#' @description
 #' Disables the GCM channel for an application and deletes any existing
 #' settings for the channel.
 #'
@@ -1948,6 +2000,7 @@ pinpoint_delete_gcm_channel <- function(ApplicationId) {
 
 #' Deletes a journey from an application
 #'
+#' @description
 #' Deletes a journey from an application.
 #'
 #' @usage
@@ -1988,6 +2041,7 @@ pinpoint_delete_journey <- function(ApplicationId, JourneyId) {
 #' Deletes a message template for messages that were sent through a push
 #' notification channel
 #'
+#' @description
 #' Deletes a message template for messages that were sent through a push
 #' notification channel.
 #'
@@ -2006,9 +2060,9 @@ pinpoint_delete_journey <- function(ApplicationId, JourneyId) {
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -2016,7 +2070,7 @@ pinpoint_delete_journey <- function(ApplicationId, JourneyId) {
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.
@@ -2051,6 +2105,7 @@ pinpoint_delete_push_template <- function(TemplateName, Version = NULL) {
 
 #' Deletes an Amazon Pinpoint configuration for a recommender model
 #'
+#' @description
 #' Deletes an Amazon Pinpoint configuration for a recommender model.
 #'
 #' @usage
@@ -2089,6 +2144,7 @@ pinpoint_delete_recommender_configuration <- function(RecommenderId) {
 
 #' Deletes a segment from an application
 #'
+#' @description
 #' Deletes a segment from an application.
 #'
 #' @usage
@@ -2129,6 +2185,7 @@ pinpoint_delete_segment <- function(ApplicationId, SegmentId) {
 #' Disables the SMS channel for an application and deletes any existing
 #' settings for the channel
 #'
+#' @description
 #' Disables the SMS channel for an application and deletes any existing
 #' settings for the channel.
 #'
@@ -2168,6 +2225,7 @@ pinpoint_delete_sms_channel <- function(ApplicationId) {
 #' Deletes a message template for messages that were sent through the SMS
 #' channel
 #'
+#' @description
 #' Deletes a message template for messages that were sent through the SMS
 #' channel.
 #'
@@ -2186,9 +2244,9 @@ pinpoint_delete_sms_channel <- function(ApplicationId) {
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -2196,7 +2254,7 @@ pinpoint_delete_sms_channel <- function(ApplicationId) {
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.
@@ -2231,6 +2289,7 @@ pinpoint_delete_sms_template <- function(TemplateName, Version = NULL) {
 
 #' Deletes all the endpoints that are associated with a specific user ID
 #'
+#' @description
 #' Deletes all the endpoints that are associated with a specific user ID.
 #'
 #' @usage
@@ -2271,6 +2330,7 @@ pinpoint_delete_user_endpoints <- function(ApplicationId, UserId) {
 #' Disables the voice channel for an application and deletes any existing
 #' settings for the channel
 #'
+#' @description
 #' Disables the voice channel for an application and deletes any existing
 #' settings for the channel.
 #'
@@ -2310,6 +2370,7 @@ pinpoint_delete_voice_channel <- function(ApplicationId) {
 #' Deletes a message template for messages that were sent through the voice
 #' channel
 #'
+#' @description
 #' Deletes a message template for messages that were sent through the voice
 #' channel.
 #'
@@ -2328,9 +2389,9 @@ pinpoint_delete_voice_channel <- function(ApplicationId) {
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -2338,7 +2399,7 @@ pinpoint_delete_voice_channel <- function(ApplicationId) {
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.
@@ -2374,6 +2435,7 @@ pinpoint_delete_voice_template <- function(TemplateName, Version = NULL) {
 #' Retrieves information about the status and settings of the ADM channel
 #' for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of the ADM channel
 #' for an application.
 #'
@@ -2413,6 +2475,7 @@ pinpoint_get_adm_channel <- function(ApplicationId) {
 #' Retrieves information about the status and settings of the APNs channel
 #' for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of the APNs channel
 #' for an application.
 #'
@@ -2452,6 +2515,7 @@ pinpoint_get_apns_channel <- function(ApplicationId) {
 #' Retrieves information about the status and settings of the APNs sandbox
 #' channel for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of the APNs sandbox
 #' channel for an application.
 #'
@@ -2491,6 +2555,7 @@ pinpoint_get_apns_sandbox_channel <- function(ApplicationId) {
 #' Retrieves information about the status and settings of the APNs VoIP
 #' channel for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of the APNs VoIP
 #' channel for an application.
 #'
@@ -2530,6 +2595,7 @@ pinpoint_get_apns_voip_channel <- function(ApplicationId) {
 #' Retrieves information about the status and settings of the APNs VoIP
 #' sandbox channel for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of the APNs VoIP
 #' sandbox channel for an application.
 #'
@@ -2568,6 +2634,7 @@ pinpoint_get_apns_voip_sandbox_channel <- function(ApplicationId) {
 
 #' Retrieves information about an application
 #'
+#' @description
 #' Retrieves information about an application.
 #'
 #' @usage
@@ -2606,6 +2673,7 @@ pinpoint_get_app <- function(ApplicationId) {
 #' Retrieves (queries) pre-aggregated data for a standard metric that
 #' applies to an application
 #'
+#' @description
 #' Retrieves (queries) pre-aggregated data for a standard metric that
 #' applies to an application.
 #'
@@ -2676,6 +2744,7 @@ pinpoint_get_application_date_range_kpi <- function(ApplicationId, EndTime = NUL
 
 #' Retrieves information about the settings for an application
 #'
+#' @description
 #' Retrieves information about the settings for an application.
 #'
 #' @usage
@@ -2714,6 +2783,7 @@ pinpoint_get_application_settings <- function(ApplicationId) {
 #' Retrieves information about all the applications that are associated
 #' with your Amazon Pinpoint account
 #'
+#' @description
 #' Retrieves information about all the applications that are associated
 #' with your Amazon Pinpoint account.
 #'
@@ -2757,6 +2827,7 @@ pinpoint_get_apps <- function(PageSize = NULL, Token = NULL) {
 #' Retrieves information about the status and settings of the Baidu channel
 #' for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of the Baidu channel
 #' for an application.
 #'
@@ -2796,6 +2867,7 @@ pinpoint_get_baidu_channel <- function(ApplicationId) {
 #' Retrieves information about the status, configuration, and other
 #' settings for a campaign
 #'
+#' @description
 #' Retrieves information about the status, configuration, and other
 #' settings for a campaign.
 #'
@@ -2836,6 +2908,7 @@ pinpoint_get_campaign <- function(ApplicationId, CampaignId) {
 
 #' Retrieves information about all the activities for a campaign
 #'
+#' @description
 #' Retrieves information about all the activities for a campaign.
 #'
 #' @usage
@@ -2884,6 +2957,7 @@ pinpoint_get_campaign_activities <- function(ApplicationId, CampaignId, PageSize
 #' Retrieves (queries) pre-aggregated data for a standard metric that
 #' applies to a campaign
 #'
+#' @description
 #' Retrieves (queries) pre-aggregated data for a standard metric that
 #' applies to a campaign.
 #'
@@ -2957,6 +3031,7 @@ pinpoint_get_campaign_date_range_kpi <- function(ApplicationId, CampaignId, EndT
 #' Retrieves information about the status, configuration, and other
 #' settings for a specific version of a campaign
 #'
+#' @description
 #' Retrieves information about the status, configuration, and other
 #' settings for a specific version of a campaign.
 #'
@@ -3000,6 +3075,7 @@ pinpoint_get_campaign_version <- function(ApplicationId, CampaignId, Version) {
 #' Retrieves information about the status, configuration, and other
 #' settings for all versions of a campaign
 #'
+#' @description
 #' Retrieves information about the status, configuration, and other
 #' settings for all versions of a campaign.
 #'
@@ -3049,6 +3125,7 @@ pinpoint_get_campaign_versions <- function(ApplicationId, CampaignId, PageSize =
 #' Retrieves information about the status, configuration, and other
 #' settings for all the campaigns that are associated with an application
 #'
+#' @description
 #' Retrieves information about the status, configuration, and other
 #' settings for all the campaigns that are associated with an application.
 #'
@@ -3095,6 +3172,7 @@ pinpoint_get_campaigns <- function(ApplicationId, PageSize = NULL, Token = NULL)
 #' Retrieves information about the history and status of each channel for
 #' an application
 #'
+#' @description
 #' Retrieves information about the history and status of each channel for
 #' an application.
 #'
@@ -3134,6 +3212,7 @@ pinpoint_get_channels <- function(ApplicationId) {
 #' Retrieves information about the status and settings of the email channel
 #' for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of the email channel
 #' for an application.
 #'
@@ -3173,6 +3252,7 @@ pinpoint_get_email_channel <- function(ApplicationId) {
 #' Retrieves the content and settings of a message template for messages
 #' that are sent through the email channel
 #'
+#' @description
 #' Retrieves the content and settings of a message template for messages
 #' that are sent through the email channel.
 #'
@@ -3191,9 +3271,9 @@ pinpoint_get_email_channel <- function(ApplicationId) {
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -3201,7 +3281,7 @@ pinpoint_get_email_channel <- function(ApplicationId) {
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.
@@ -3237,6 +3317,7 @@ pinpoint_get_email_template <- function(TemplateName, Version = NULL) {
 #' Retrieves information about the settings and attributes of a specific
 #' endpoint for an application
 #'
+#' @description
 #' Retrieves information about the settings and attributes of a specific
 #' endpoint for an application.
 #'
@@ -3277,6 +3358,7 @@ pinpoint_get_endpoint <- function(ApplicationId, EndpointId) {
 
 #' Retrieves information about the event stream settings for an application
 #'
+#' @description
 #' Retrieves information about the event stream settings for an
 #' application.
 #'
@@ -3316,6 +3398,7 @@ pinpoint_get_event_stream <- function(ApplicationId) {
 #' Retrieves information about the status and settings of a specific export
 #' job for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of a specific export
 #' job for an application.
 #'
@@ -3357,6 +3440,7 @@ pinpoint_get_export_job <- function(ApplicationId, JobId) {
 #' Retrieves information about the status and settings of all the export
 #' jobs for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of all the export
 #' jobs for an application.
 #'
@@ -3403,6 +3487,7 @@ pinpoint_get_export_jobs <- function(ApplicationId, PageSize = NULL, Token = NUL
 #' Retrieves information about the status and settings of the GCM channel
 #' for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of the GCM channel
 #' for an application.
 #'
@@ -3442,6 +3527,7 @@ pinpoint_get_gcm_channel <- function(ApplicationId) {
 #' Retrieves information about the status and settings of a specific import
 #' job for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of a specific import
 #' job for an application.
 #'
@@ -3483,6 +3569,7 @@ pinpoint_get_import_job <- function(ApplicationId, JobId) {
 #' Retrieves information about the status and settings of all the import
 #' jobs for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of all the import
 #' jobs for an application.
 #'
@@ -3529,6 +3616,7 @@ pinpoint_get_import_jobs <- function(ApplicationId, PageSize = NULL, Token = NUL
 #' Retrieves information about the status, configuration, and other
 #' settings for a journey
 #'
+#' @description
 #' Retrieves information about the status, configuration, and other
 #' settings for a journey.
 #'
@@ -3570,6 +3658,7 @@ pinpoint_get_journey <- function(ApplicationId, JourneyId) {
 #' Retrieves (queries) pre-aggregated data for a standard engagement metric
 #' that applies to a journey
 #'
+#' @description
 #' Retrieves (queries) pre-aggregated data for a standard engagement metric
 #' that applies to a journey.
 #'
@@ -3643,6 +3732,7 @@ pinpoint_get_journey_date_range_kpi <- function(ApplicationId, EndTime = NULL, J
 #' Retrieves (queries) pre-aggregated data for a standard execution metric
 #' that applies to a journey activity
 #'
+#' @description
 #' Retrieves (queries) pre-aggregated data for a standard execution metric
 #' that applies to a journey activity.
 #'
@@ -3695,6 +3785,7 @@ pinpoint_get_journey_execution_activity_metrics <- function(ApplicationId, Journ
 #' Retrieves (queries) pre-aggregated data for a standard execution metric
 #' that applies to a journey
 #'
+#' @description
 #' Retrieves (queries) pre-aggregated data for a standard execution metric
 #' that applies to a journey.
 #'
@@ -3745,6 +3836,7 @@ pinpoint_get_journey_execution_metrics <- function(ApplicationId, JourneyId, Nex
 #' Retrieves the content and settings of a message template for messages
 #' that are sent through a push notification channel
 #'
+#' @description
 #' Retrieves the content and settings of a message template for messages
 #' that are sent through a push notification channel.
 #'
@@ -3763,9 +3855,9 @@ pinpoint_get_journey_execution_metrics <- function(ApplicationId, JourneyId, Nex
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -3773,7 +3865,7 @@ pinpoint_get_journey_execution_metrics <- function(ApplicationId, JourneyId, Nex
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.
@@ -3809,6 +3901,7 @@ pinpoint_get_push_template <- function(TemplateName, Version = NULL) {
 #' Retrieves information about an Amazon Pinpoint configuration for a
 #' recommender model
 #'
+#' @description
 #' Retrieves information about an Amazon Pinpoint configuration for a
 #' recommender model.
 #'
@@ -3849,6 +3942,7 @@ pinpoint_get_recommender_configuration <- function(RecommenderId) {
 #' Retrieves information about all the recommender model configurations
 #' that are associated with your Amazon Pinpoint account
 #'
+#' @description
 #' Retrieves information about all the recommender model configurations
 #' that are associated with your Amazon Pinpoint account.
 #'
@@ -3892,8 +3986,9 @@ pinpoint_get_recommender_configurations <- function(PageSize = NULL, Token = NUL
 #' Retrieves information about the configuration, dimension, and other
 #' settings for a specific segment that's associated with an application
 #'
+#' @description
 #' Retrieves information about the configuration, dimension, and other
-#' settings for a specific segment that\'s associated with an application.
+#' settings for a specific segment that's associated with an application.
 #'
 #' @usage
 #' pinpoint_get_segment(ApplicationId, SegmentId)
@@ -3933,6 +4028,7 @@ pinpoint_get_segment <- function(ApplicationId, SegmentId) {
 #' Retrieves information about the status and settings of the export jobs
 #' for a segment
 #'
+#' @description
 #' Retrieves information about the status and settings of the export jobs
 #' for a segment.
 #'
@@ -3982,6 +4078,7 @@ pinpoint_get_segment_export_jobs <- function(ApplicationId, PageSize = NULL, Seg
 #' Retrieves information about the status and settings of the import jobs
 #' for a segment
 #'
+#' @description
 #' Retrieves information about the status and settings of the import jobs
 #' for a segment.
 #'
@@ -4032,8 +4129,9 @@ pinpoint_get_segment_import_jobs <- function(ApplicationId, PageSize = NULL, Seg
 #' settings for a specific version of a segment that's associated with an
 #' application
 #'
+#' @description
 #' Retrieves information about the configuration, dimension, and other
-#' settings for a specific version of a segment that\'s associated with an
+#' settings for a specific version of a segment that's associated with an
 #' application.
 #'
 #' @usage
@@ -4077,8 +4175,9 @@ pinpoint_get_segment_version <- function(ApplicationId, SegmentId, Version) {
 #' settings for all the versions of a specific segment that's associated
 #' with an application
 #'
+#' @description
 #' Retrieves information about the configuration, dimension, and other
-#' settings for all the versions of a specific segment that\'s associated
+#' settings for all the versions of a specific segment that's associated
 #' with an application.
 #'
 #' @usage
@@ -4126,6 +4225,7 @@ pinpoint_get_segment_versions <- function(ApplicationId, PageSize = NULL, Segmen
 #' Retrieves information about the configuration, dimension, and other
 #' settings for all the segments that are associated with an application
 #'
+#' @description
 #' Retrieves information about the configuration, dimension, and other
 #' settings for all the segments that are associated with an application.
 #'
@@ -4172,6 +4272,7 @@ pinpoint_get_segments <- function(ApplicationId, PageSize = NULL, Token = NULL) 
 #' Retrieves information about the status and settings of the SMS channel
 #' for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of the SMS channel
 #' for an application.
 #'
@@ -4211,6 +4312,7 @@ pinpoint_get_sms_channel <- function(ApplicationId) {
 #' Retrieves the content and settings of a message template for messages
 #' that are sent through the SMS channel
 #'
+#' @description
 #' Retrieves the content and settings of a message template for messages
 #' that are sent through the SMS channel.
 #'
@@ -4229,9 +4331,9 @@ pinpoint_get_sms_channel <- function(ApplicationId) {
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -4239,7 +4341,7 @@ pinpoint_get_sms_channel <- function(ApplicationId) {
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.
@@ -4275,6 +4377,7 @@ pinpoint_get_sms_template <- function(TemplateName, Version = NULL) {
 #' Retrieves information about all the endpoints that are associated with a
 #' specific user ID
 #'
+#' @description
 #' Retrieves information about all the endpoints that are associated with a
 #' specific user ID.
 #'
@@ -4316,6 +4419,7 @@ pinpoint_get_user_endpoints <- function(ApplicationId, UserId) {
 #' Retrieves information about the status and settings of the voice channel
 #' for an application
 #'
+#' @description
 #' Retrieves information about the status and settings of the voice channel
 #' for an application.
 #'
@@ -4355,6 +4459,7 @@ pinpoint_get_voice_channel <- function(ApplicationId) {
 #' Retrieves the content and settings of a message template for messages
 #' that are sent through the voice channel
 #'
+#' @description
 #' Retrieves the content and settings of a message template for messages
 #' that are sent through the voice channel.
 #'
@@ -4373,9 +4478,9 @@ pinpoint_get_voice_channel <- function(ApplicationId) {
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -4383,7 +4488,7 @@ pinpoint_get_voice_channel <- function(ApplicationId) {
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.
@@ -4419,6 +4524,7 @@ pinpoint_get_voice_template <- function(TemplateName, Version = NULL) {
 #' Retrieves information about the status, configuration, and other
 #' settings for all the journeys that are associated with an application
 #'
+#' @description
 #' Retrieves information about the status, configuration, and other
 #' settings for all the journeys that are associated with an application.
 #'
@@ -4465,6 +4571,7 @@ pinpoint_list_journeys <- function(ApplicationId, PageSize = NULL, Token = NULL)
 #' Retrieves all the tags (keys and values) that are associated with an
 #' application, campaign, message template, or segment
 #'
+#' @description
 #' Retrieves all the tags (keys and values) that are associated with an
 #' application, campaign, message template, or segment.
 #'
@@ -4503,6 +4610,7 @@ pinpoint_list_tags_for_resource <- function(ResourceArn) {
 #' Retrieves information about all the versions of a specific message
 #' template
 #'
+#' @description
 #' Retrieves information about all the versions of a specific message
 #' template.
 #'
@@ -4556,6 +4664,7 @@ pinpoint_list_template_versions <- function(NextToken = NULL, PageSize = NULL, T
 #' Retrieves information about all the message templates that are
 #' associated with your Amazon Pinpoint account
 #'
+#' @description
 #' Retrieves information about all the message templates that are
 #' associated with your Amazon Pinpoint account.
 #'
@@ -4573,7 +4682,7 @@ pinpoint_list_template_versions <- function(NextToken = NULL, PageSize = NULL, T
 #' those templates whose names begin with the value that you specify.
 #' @param TemplateType The type of message template to include in the results. Valid values
 #' are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in
-#' the results, don\'t include this parameter in your request.
+#' the results, don't include this parameter in your request.
 #'
 #' @section Request syntax:
 #' ```
@@ -4607,6 +4716,7 @@ pinpoint_list_templates <- function(NextToken = NULL, PageSize = NULL, Prefix = 
 
 #' Retrieves information about a phone number
 #'
+#' @description
 #' Retrieves information about a phone number.
 #'
 #' @usage
@@ -4647,6 +4757,7 @@ pinpoint_phone_number_validate <- function(NumberValidateRequest) {
 #' Creates a new event stream for an application or updates the settings of
 #' an existing event stream for an application
 #'
+#' @description
 #' Creates a new event stream for an application or updates the settings of
 #' an existing event stream for an application.
 #'
@@ -4691,6 +4802,7 @@ pinpoint_put_event_stream <- function(ApplicationId, WriteEventStream) {
 #' Creates a new event to record for endpoints, or creates or updates
 #' endpoint data that existing events are associated with
 #'
+#' @description
 #' Creates a new event to record for endpoints, or creates or updates
 #' endpoint data that existing events are associated with.
 #'
@@ -4802,6 +4914,7 @@ pinpoint_put_events <- function(ApplicationId, EventsRequest) {
 #' Removes one or more attributes, of the same attribute type, from all the
 #' endpoints that are associated with an application
 #'
+#' @description
 #' Removes one or more attributes, of the same attribute type, from all the
 #' endpoints that are associated with an application.
 #'
@@ -4849,6 +4962,7 @@ pinpoint_remove_attributes <- function(ApplicationId, AttributeType, UpdateAttri
 
 #' Creates and sends a direct message
 #'
+#' @description
 #' Creates and sends a direct message.
 #'
 #' @usage
@@ -5118,6 +5232,7 @@ pinpoint_send_messages <- function(ApplicationId, MessageRequest) {
 
 #' Creates and sends a message to a list of users
 #'
+#' @description
 #' Creates and sends a message to a list of users.
 #'
 #' @usage
@@ -5372,6 +5487,7 @@ pinpoint_send_users_messages <- function(ApplicationId, SendUsersMessageRequest)
 #' Adds one or more tags (keys and values) to an application, campaign,
 #' message template, or segment
 #'
+#' @description
 #' Adds one or more tags (keys and values) to an application, campaign,
 #' message template, or segment.
 #'
@@ -5416,6 +5532,7 @@ pinpoint_tag_resource <- function(ResourceArn, TagsModel) {
 #' Removes one or more tags (keys and values) from an application,
 #' campaign, message template, or segment
 #'
+#' @description
 #' Removes one or more tags (keys and values) from an application,
 #' campaign, message template, or segment.
 #'
@@ -5460,6 +5577,7 @@ pinpoint_untag_resource <- function(ResourceArn, TagKeys) {
 #' Enables the ADM channel for an application or updates the status and
 #' settings of the ADM channel for an application
 #'
+#' @description
 #' Enables the ADM channel for an application or updates the status and
 #' settings of the ADM channel for an application.
 #'
@@ -5505,6 +5623,7 @@ pinpoint_update_adm_channel <- function(ADMChannelRequest, ApplicationId) {
 #' Enables the APNs channel for an application or updates the status and
 #' settings of the APNs channel for an application
 #'
+#' @description
 #' Enables the APNs channel for an application or updates the status and
 #' settings of the APNs channel for an application.
 #'
@@ -5555,6 +5674,7 @@ pinpoint_update_apns_channel <- function(APNSChannelRequest, ApplicationId) {
 #' Enables the APNs sandbox channel for an application or updates the
 #' status and settings of the APNs sandbox channel for an application
 #'
+#' @description
 #' Enables the APNs sandbox channel for an application or updates the
 #' status and settings of the APNs sandbox channel for an application.
 #'
@@ -5606,6 +5726,7 @@ pinpoint_update_apns_sandbox_channel <- function(APNSSandboxChannelRequest, Appl
 #' Enables the APNs VoIP channel for an application or updates the status
 #' and settings of the APNs VoIP channel for an application
 #'
+#' @description
 #' Enables the APNs VoIP channel for an application or updates the status
 #' and settings of the APNs VoIP channel for an application.
 #'
@@ -5656,6 +5777,7 @@ pinpoint_update_apns_voip_channel <- function(APNSVoipChannelRequest, Applicatio
 #' Enables the APNs VoIP sandbox channel for an application or updates the
 #' status and settings of the APNs VoIP sandbox channel for an application
 #'
+#' @description
 #' Enables the APNs VoIP sandbox channel for an application or updates the
 #' status and settings of the APNs VoIP sandbox channel for an application.
 #'
@@ -5706,6 +5828,7 @@ pinpoint_update_apns_voip_sandbox_channel <- function(APNSVoipSandboxChannelRequ
 
 #' Updates the settings for an application
 #'
+#' @description
 #' Updates the settings for an application.
 #'
 #' @usage
@@ -5727,6 +5850,7 @@ pinpoint_update_apns_voip_sandbox_channel <- function(APNSVoipSandboxChannelRequ
 #'       WebUrl = "string"
 #'     ),
 #'     CloudWatchMetricsEnabled = TRUE|FALSE,
+#'     EventTaggingEnabled = TRUE|FALSE,
 #'     Limits = list(
 #'       Daily = 123,
 #'       MaximumDuration = 123,
@@ -5764,6 +5888,7 @@ pinpoint_update_application_settings <- function(ApplicationId, WriteApplication
 #' Enables the Baidu channel for an application or updates the status and
 #' settings of the Baidu channel for an application
 #'
+#' @description
 #' Enables the Baidu channel for an application or updates the status and
 #' settings of the Baidu channel for an application.
 #'
@@ -5808,6 +5933,7 @@ pinpoint_update_baidu_channel <- function(ApplicationId, BaiduChannelRequest) {
 
 #' Updates the configuration and other settings for a campaign
 #'
+#' @description
 #' Updates the configuration and other settings for a campaign.
 #'
 #' @usage
@@ -6173,6 +6299,7 @@ pinpoint_update_campaign <- function(ApplicationId, CampaignId, WriteCampaignReq
 #' Enables the email channel for an application or updates the status and
 #' settings of the email channel for an application
 #'
+#' @description
 #' Enables the email channel for an application or updates the status and
 #' settings of the email channel for an application.
 #'
@@ -6220,6 +6347,7 @@ pinpoint_update_email_channel <- function(ApplicationId, EmailChannelRequest) {
 #' Updates an existing message template for messages that are sent through
 #' the email channel
 #'
+#' @description
 #' Updates an existing message template for messages that are sent through
 #' the email channel.
 #'
@@ -6232,10 +6360,10 @@ pinpoint_update_email_channel <- function(ApplicationId, EmailChannelRequest) {
 #' and, false, save the updates to (overwrite) the latest existing version
 #' of the template.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint saves
+#' If you don't specify a value for this parameter, Amazon Pinpoint saves
 #' the updates to (overwrites) the latest existing version of the template.
-#' If you specify a value of true for this parameter, don\'t specify a
-#' value for the version parameter. Otherwise, an error will occur.
+#' If you specify a value of true for this parameter, don't specify a value
+#' for the version parameter. Otherwise, an error will occur.
 #' @param EmailTemplateRequest &#91;required&#93; 
 #' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
 #' alphanumeric character and can contain a maximum of 128 characters. The
@@ -6249,9 +6377,9 @@ pinpoint_update_email_channel <- function(ApplicationId, EmailChannelRequest) {
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -6259,7 +6387,7 @@ pinpoint_update_email_channel <- function(ApplicationId, EmailChannelRequest) {
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.
@@ -6307,6 +6435,7 @@ pinpoint_update_email_template <- function(CreateNewVersion = NULL, EmailTemplat
 #' Creates a new endpoint for an application or updates the settings and
 #' attributes of an existing endpoint for an application
 #'
+#' @description
 #' Creates a new endpoint for an application or updates the settings and
 #' attributes of an existing endpoint for an application. You can also use
 #' this operation to define custom attributes for an endpoint. If an update
@@ -6395,6 +6524,7 @@ pinpoint_update_endpoint <- function(ApplicationId, EndpointId, EndpointRequest)
 #' settings and attributes of a batch of existing endpoints for an
 #' application
 #'
+#' @description
 #' Creates a new batch of endpoints for an application or updates the
 #' settings and attributes of a batch of existing endpoints for an
 #' application. You can also use this operation to define custom attributes
@@ -6486,6 +6616,7 @@ pinpoint_update_endpoints_batch <- function(ApplicationId, EndpointBatchRequest)
 #' Enables the GCM channel for an application or updates the status and
 #' settings of the GCM channel for an application
 #'
+#' @description
 #' Enables the GCM channel for an application or updates the status and
 #' settings of the GCM channel for an application.
 #'
@@ -6529,6 +6660,7 @@ pinpoint_update_gcm_channel <- function(ApplicationId, GCMChannelRequest) {
 
 #' Updates the configuration and other settings for a journey
 #'
+#' @description
 #' Updates the configuration and other settings for a journey.
 #'
 #' @usage
@@ -6883,6 +7015,34 @@ pinpoint_update_gcm_channel <- function(ApplicationId, GCMChannelRequest) {
 #'     StartActivity = "string",
 #'     StartCondition = list(
 #'       Description = "string",
+#'       EventStartCondition = list(
+#'         EventFilter = list(
+#'           Dimensions = list(
+#'             Attributes = list(
+#'               list(
+#'                 AttributeType = "INCLUSIVE"|"EXCLUSIVE",
+#'                 Values = list(
+#'                   "string"
+#'                 )
+#'               )
+#'             ),
+#'             EventType = list(
+#'               DimensionType = "INCLUSIVE"|"EXCLUSIVE",
+#'               Values = list(
+#'                 "string"
+#'               )
+#'             ),
+#'             Metrics = list(
+#'               list(
+#'                 ComparisonOperator = "string",
+#'                 Value = 123.0
+#'               )
+#'             )
+#'           ),
+#'           FilterType = "SYSTEM"|"ENDPOINT"
+#'         ),
+#'         SegmentId = "string"
+#'       ),
 #'       SegmentStartCondition = list(
 #'         SegmentId = "string"
 #'       )
@@ -6914,6 +7074,7 @@ pinpoint_update_journey <- function(ApplicationId, JourneyId, WriteJourneyReques
 
 #' Cancels (stops) an active journey
 #'
+#' @description
 #' Cancels (stops) an active journey.
 #'
 #' @usage
@@ -6959,6 +7120,7 @@ pinpoint_update_journey_state <- function(ApplicationId, JourneyId, JourneyState
 #' Updates an existing message template for messages that are sent through
 #' a push notification channel
 #'
+#' @description
 #' Updates an existing message template for messages that are sent through
 #' a push notification channel.
 #'
@@ -6971,10 +7133,10 @@ pinpoint_update_journey_state <- function(ApplicationId, JourneyId, JourneyState
 #' and, false, save the updates to (overwrite) the latest existing version
 #' of the template.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint saves
+#' If you don't specify a value for this parameter, Amazon Pinpoint saves
 #' the updates to (overwrites) the latest existing version of the template.
-#' If you specify a value of true for this parameter, don\'t specify a
-#' value for the version parameter. Otherwise, an error will occur.
+#' If you specify a value of true for this parameter, don't specify a value
+#' for the version parameter. Otherwise, an error will occur.
 #' @param PushNotificationTemplateRequest &#91;required&#93; 
 #' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
 #' alphanumeric character and can contain a maximum of 128 characters. The
@@ -6988,9 +7150,9 @@ pinpoint_update_journey_state <- function(ApplicationId, JourneyId, JourneyState
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -6998,7 +7160,7 @@ pinpoint_update_journey_state <- function(ApplicationId, JourneyId, JourneyState
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.
@@ -7091,6 +7253,7 @@ pinpoint_update_push_template <- function(CreateNewVersion = NULL, PushNotificat
 
 #' Updates an Amazon Pinpoint configuration for a recommender model
 #'
+#' @description
 #' Updates an Amazon Pinpoint configuration for a recommender model.
 #'
 #' @usage
@@ -7146,8 +7309,9 @@ pinpoint_update_recommender_configuration <- function(RecommenderId, UpdateRecom
 #' dimension, and other settings for an existing segment that's associated
 #' with an application
 #'
+#' @description
 #' Creates a new segment for an application or updates the configuration,
-#' dimension, and other settings for an existing segment that\'s associated
+#' dimension, and other settings for an existing segment that's associated
 #' with an application.
 #'
 #' @usage
@@ -7378,6 +7542,7 @@ pinpoint_update_segment <- function(ApplicationId, SegmentId, WriteSegmentReques
 #' Enables the SMS channel for an application or updates the status and
 #' settings of the SMS channel for an application
 #'
+#' @description
 #' Enables the SMS channel for an application or updates the status and
 #' settings of the SMS channel for an application.
 #'
@@ -7423,6 +7588,7 @@ pinpoint_update_sms_channel <- function(ApplicationId, SMSChannelRequest) {
 #' Updates an existing message template for messages that are sent through
 #' the SMS channel
 #'
+#' @description
 #' Updates an existing message template for messages that are sent through
 #' the SMS channel.
 #'
@@ -7435,10 +7601,10 @@ pinpoint_update_sms_channel <- function(ApplicationId, SMSChannelRequest) {
 #' and, false, save the updates to (overwrite) the latest existing version
 #' of the template.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint saves
+#' If you don't specify a value for this parameter, Amazon Pinpoint saves
 #' the updates to (overwrites) the latest existing version of the template.
-#' If you specify a value of true for this parameter, don\'t specify a
-#' value for the version parameter. Otherwise, an error will occur.
+#' If you specify a value of true for this parameter, don't specify a value
+#' for the version parameter. Otherwise, an error will occur.
 #' @param SMSTemplateRequest &#91;required&#93; 
 #' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
 #' alphanumeric character and can contain a maximum of 128 characters. The
@@ -7452,9 +7618,9 @@ pinpoint_update_sms_channel <- function(ApplicationId, SMSChannelRequest) {
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -7462,7 +7628,7 @@ pinpoint_update_sms_channel <- function(ApplicationId, SMSChannelRequest) {
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.
@@ -7505,9 +7671,9 @@ pinpoint_update_sms_template <- function(CreateNewVersion = NULL, SMSTemplateReq
 }
 .pinpoint$operations$update_sms_template <- pinpoint_update_sms_template
 
-#' Changes the status of a specific version of a message template to
-#' _active_
+#' Changes the status of a specific version of a message template to active
 #'
+#' @description
 #' Changes the status of a specific version of a message template to
 #' *active*.
 #'
@@ -7557,6 +7723,7 @@ pinpoint_update_template_active_version <- function(TemplateActiveVersionRequest
 #' Enables the voice channel for an application or updates the status and
 #' settings of the voice channel for an application
 #'
+#' @description
 #' Enables the voice channel for an application or updates the status and
 #' settings of the voice channel for an application.
 #'
@@ -7600,6 +7767,7 @@ pinpoint_update_voice_channel <- function(ApplicationId, VoiceChannelRequest) {
 #' Updates an existing message template for messages that are sent through
 #' the voice channel
 #'
+#' @description
 #' Updates an existing message template for messages that are sent through
 #' the voice channel.
 #'
@@ -7612,10 +7780,10 @@ pinpoint_update_voice_channel <- function(ApplicationId, VoiceChannelRequest) {
 #' and, false, save the updates to (overwrite) the latest existing version
 #' of the template.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint saves
+#' If you don't specify a value for this parameter, Amazon Pinpoint saves
 #' the updates to (overwrites) the latest existing version of the template.
-#' If you specify a value of true for this parameter, don\'t specify a
-#' value for the version parameter. Otherwise, an error will occur.
+#' If you specify a value of true for this parameter, don't specify a value
+#' for the version parameter. Otherwise, an error will occur.
 #' @param TemplateName &#91;required&#93; The name of the message template. A template name must start with an
 #' alphanumeric character and can contain a maximum of 128 characters. The
 #' characters can be alphanumeric characters, underscores (\\_), or hyphens
@@ -7628,9 +7796,9 @@ pinpoint_update_voice_channel <- function(ApplicationId, VoiceChannelRequest) {
 #' If specified, this value must match the identifier for an existing
 #' template version. If specified for an update operation, this value must
 #' match the identifier for the latest existing version of the template.
-#' This restriction helps ensure that race conditions don\'t occur.
+#' This restriction helps ensure that race conditions don't occur.
 #' 
-#' If you don\'t specify a value for this parameter, Amazon Pinpoint does
+#' If you don't specify a value for this parameter, Amazon Pinpoint does
 #' the following:
 #' 
 #' -   For a get operation, retrieves information about the active version
@@ -7638,7 +7806,7 @@ pinpoint_update_voice_channel <- function(ApplicationId, VoiceChannelRequest) {
 #' 
 #' -   For an update operation, saves the updates to (overwrites) the
 #'     latest existing version of the template, if the create-new-version
-#'     parameter isn\'t used or is set to false.
+#'     parameter isn't used or is set to false.
 #' 
 #' -   For a delete operation, deletes the template, including all versions
 #'     of the template.

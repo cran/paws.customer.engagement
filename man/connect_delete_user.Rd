@@ -13,6 +13,10 @@ connect_delete_user(InstanceId, UserId)
 }
 \description{
 Deletes a user account from the specified Amazon Connect instance.
+
+For information about what happens to a user's data when their account
+is deleted, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html}{Delete Users from Your Amazon Connect Instance}
+in the \emph{Amazon Connect Administrator Guide}.
 }
 \section{Request syntax}{
 \preformatted{svc$delete_user(

@@ -41,7 +41,7 @@ to the message, each reply-to address will receive the reply.}
 \item{ReturnPath}{The email address that bounces and complaints will be forwarded to when
 feedback forwarding is enabled. If the message cannot be delivered to
 the recipient, then an error message will be returned from the
-recipient\'s ISP; this message will then be forwarded to the email
+recipient's ISP; this message will then be forwarded to the email
 address specified by the \code{ReturnPath} parameter. The \code{ReturnPath}
 parameter is never overwritten. This email address must be either
 individually verified with Amazon SES, or from a domain that has been
@@ -86,13 +86,10 @@ the email that you define, so that you can publish email sending events.}
 Composes an email message and immediately queues it for sending. In
 order to send email using the \code{SendEmail} operation, your message must
 meet the following requirements:
-}
-\details{
 \itemize{
 \item The message must be sent from a verified email address or domain. If
 you attempt to send email using a non-verified address or domain,
-the operation will result in an \"Email address not verified\"
-error.
+the operation will result in an "Email address not verified" error.
 \item If your account is still in the Amazon SES sandbox, you may only
 send to verified addresses or domains, or to email addresses
 associated with the Amazon SES Mailbox Simulator. For more
@@ -116,7 +113,7 @@ For every message that you send, the total number of recipients
 (including each recipient in the To:, CC: and BCC: fields) is counted
 against the maximum number of emails you can send in a 24-hour period
 (your \emph{sending quota}). For more information about sending quotas in
-Amazon SES, see \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html}{Managing Your Amazon SES Sending Limits}
+Amazon SES, see \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-quotas.html}{Managing Your Amazon SES Sending Limits}
 in the \emph{Amazon SES Developer Guide.}
 }
 \section{Request syntax}{

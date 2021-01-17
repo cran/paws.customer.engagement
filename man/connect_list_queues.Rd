@@ -21,6 +21,9 @@ results.}
 \description{
 Provides information about the queues for the specified Amazon Connect
 instance.
+
+For more information about queues, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html}{Queues: Standard and Agent}
+in the \emph{Amazon Connect Administrator Guide}.
 }
 \section{Request syntax}{
 \preformatted{svc$list_queues(

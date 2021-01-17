@@ -8,8 +8,8 @@ ses_send_raw_email(Source, Destinations, RawMessage, FromArn, SourceArn,
   ReturnPathArn, Tags, ConfigurationSetName)
 }
 \arguments{
-\item{Source}{The identity\'s email address. If you do not provide a value for this
-parameter, you must specify a \"From\" address in the raw text of the
+\item{Source}{The identity's email address. If you do not provide a value for this
+parameter, you must specify a "From" address in the raw text of the
 message. (You can also specify both.)
 
 Amazon SES does not support the SMTPUTF8 extension, as described
@@ -41,7 +41,7 @@ line.
 \item All of the required header fields must be present in the message.
 \item Each part of a multipart MIME message must be formatted properly.
 \item Attachments must be of a content type that Amazon SES supports. For
-a list on unsupported content types, see \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mime-types.html}{Unsupported Attachment Types}
+a list on unsupported content types, see \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-raw-mime}{Unsupported Attachment Types}
 in the \emph{Amazon SES Developer Guide}.
 \item The entire message must be base64-encoded.
 \item If any of the MIME parts in your message contain content that is
@@ -49,14 +49,14 @@ outside of the 7-bit ASCII character range, we highly recommend that
 you encode that content. For more information, see \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html}{Sending Raw Email}
 in the \emph{Amazon SES Developer Guide}.
 \item Per \href{https://tools.ietf.org/html/rfc5321#section-4.5.3.1.6}{RFC 5321}, the
-maximum length of each line of text, including the \\<CRLF\\>, must
-not exceed 1,000 characters.
+maximum length of each line of text, including the <CRLF>,
+must not exceed 1,000 characters.
 }}
 
 \item{FromArn}{This parameter is used only for sending authorization. It is the ARN of
 the identity that is associated with the sending authorization policy
-that permits you to specify a particular \"From\" address in the header
-of the raw email.
+that permits you to specify a particular "From" address in the header of
+the raw email.
 
 Instead of using this parameter, you can use the X-header
 \code{X-SES-FROM-ARN} in the raw message of the email. If you use both the
@@ -116,8 +116,7 @@ events.}
 }
 \description{
 Composes an email message and immediately queues it for sending.
-}
-\details{
+
 This operation is more flexible than the \code{SendEmail} API operation. When
 you use the \code{SendRawEmail} operation, you can specify the headers of the
 message as well as its content. This flexibility is useful, for example,
@@ -128,18 +127,18 @@ operation to send messages that include attachments.
 The \code{SendRawEmail} operation has the following requirements:
 \itemize{
 \item You can only send email from \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html}{verified email addresses or domains}.
-If you try to send email from an address that isn\'t verified, the
-operation results in an \"Email address not verified\" error.
+If you try to send email from an address that isn't verified, the
+operation results in an "Email address not verified" error.
 \item If your account is still in the \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html}{Amazon SES sandbox},
 you can only send email to other verified addresses in your account,
-or to addresses that are associated with the \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/mailbox-simulator.html}{Amazon SES mailbox simulator}.
+or to addresses that are associated with the \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-simulator.html}{Amazon SES mailbox simulator}.
 \item The maximum message size, including attachments, is 10 MB.
 \item Each message has to include at least one recipient address. A
 recipient address includes any address on the To:, CC:, or BCC:
 lines.
 \item If you send a single message to more than one recipient address, and
-one of the recipient addresses isn\'t in a valid format (that is,
-it\'s not in the format
+one of the recipient addresses isn't in a valid format (that is,
+it's not in the format
 \emph{UserName@[SubDomain.]Domain.TopLevelDomain}), Amazon SES rejects
 the entire message, even if the other addresses are valid.
 \item Each message can include up to 50 recipient addresses across the
@@ -150,9 +149,9 @@ messages to each group.
 \item Amazon SES allows you to specify 8-bit Content-Transfer-Encoding for
 MIME message parts. However, if Amazon SES has to modify the
 contents of your message (for example, if you use open and click
-tracking), 8-bit content isn\'t preserved. For this reason, we
-highly recommend that you encode all content that isn\'t 7-bit
-ASCII. For more information, see \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-mime-encoding}{MIME Encoding}
+tracking), 8-bit content isn't preserved. For this reason, we highly
+recommend that you encode all content that isn't 7-bit ASCII. For
+more information, see \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html#send-email-mime-encoding}{MIME Encoding}
 in the \emph{Amazon SES Developer Guide}.
 }
 
@@ -166,8 +165,8 @@ when creating the message, they will be overwritten by the values
 that Amazon SES provides.
 \item If you are using sending authorization to send on behalf of another
 user, \code{SendRawEmail} enables you to specify the cross-account
-identity for the email\'s Source, From, and Return-Path parameters
-in one of two ways: you can pass optional parameters \code{SourceArn},
+identity for the email's Source, From, and Return-Path parameters in
+one of two ways: you can pass optional parameters \code{SourceArn},
 \code{FromArn}, and/or \code{ReturnPathArn} to the API, or you can include the
 following X-headers in the header of your raw email:
 \itemize{
@@ -176,7 +175,7 @@ following X-headers in the header of your raw email:
 \item \code{X-SES-RETURN-PATH-ARN}
 }
 
-Don\'t include these X-headers in the DKIM signature. Amazon SES
+Don't include these X-headers in the DKIM signature. Amazon SES
 removes these before it sends the email.
 
 If you only specify the \code{SourceIdentityArn} parameter, Amazon SES
@@ -189,7 +188,7 @@ in the \emph{Amazon SES Developer Guide.}
 (including each recipient in the To:, CC: and BCC: fields) is
 counted against the maximum number of emails you can send in a
 24-hour period (your \emph{sending quota}). For more information about
-sending quotas in Amazon SES, see \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-limits.html}{Managing Your Amazon SES Sending Limits}
+sending quotas in Amazon SES, see \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/manage-sending-quotas.html}{Managing Your Amazon SES Sending Limits}
 in the \emph{Amazon SES Developer Guide.}
 }
 }

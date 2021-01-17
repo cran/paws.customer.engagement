@@ -34,11 +34,10 @@ an email that uses the chosen identity in the Source field, Amazon SES
 sends notifications to the topic you specified. You can send bounce,
 complaint, or delivery notifications (or any combination of the three)
 to the Amazon SNS topic that you specify.
-}
-\details{
+
 You can execute this operation no more than once per second.
 
-For more information about feedback notification, see the \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html}{Amazon SES Developer Guide}.
+For more information about feedback notification, see the \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/}{Amazon SES Developer Guide}.
 }
 \section{Request syntax}{
 \preformatted{svc$set_identity_notification_topic(
