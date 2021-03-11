@@ -8,13 +8,28 @@ current AWS Region}
 ses_list_templates(NextToken, MaxItems)
 }
 \arguments{
-\item{NextToken}{A token returned from a previous call to \code{ListTemplates} to indicate the
-position in the list of email templates.}
+\item{NextToken}{A token returned from a previous call to
+\code{\link[=ses_list_templates]{list_templates}} to indicate the position in the
+list of email templates.}
 
 \item{MaxItems}{The maximum number of templates to return. This value must be at least 1
 and less than or equal to 10. If you do not specify a value, or if you
 specify a value less than 1 or greater than 10, the operation will
 return up to 10 results.}
+}
+\value{
+A list with the following syntax:\preformatted{list(
+  TemplatesMetadata = list(
+    list(
+      Name = "string",
+      CreatedTimestamp = as.POSIXct(
+        "2015-01-01"
+      )
+    )
+  ),
+  NextToken = "string"
+)
+}
 }
 \description{
 Lists the email templates present in your Amazon SES account in the

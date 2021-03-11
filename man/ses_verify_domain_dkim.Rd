@@ -9,13 +9,22 @@ ses_verify_domain_dkim(Domain)
 \arguments{
 \item{Domain}{[required] The name of the domain to be verified for Easy DKIM signing.}
 }
+\value{
+A list with the following syntax:\preformatted{list(
+  DkimTokens = list(
+    "string"
+  )
+)
+}
+}
 \description{
 Returns a set of DKIM tokens for a domain identity.
 
-When you execute the \code{VerifyDomainDkim} operation, the domain that you
-specify is added to the list of identities that are associated with your
-account. This is true even if you haven't already associated the domain
-with your account by using the \code{VerifyDomainIdentity} operation.
+When you execute the \code{\link[=ses_verify_domain_dkim]{verify_domain_dkim}}
+operation, the domain that you specify is added to the list of
+identities that are associated with your account. This is true even if
+you haven't already associated the domain with your account by using the
+\code{\link[=ses_verify_domain_identity]{verify_domain_identity}} operation.
 However, you can't send email from the domain until you either
 successfully \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html}{verify it}
 or you successfully \href{https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-authentication-dkim-easy.html}{set up DKIM for it}.
@@ -31,7 +40,7 @@ is authenticated using DKIM.
 To create the CNAME records for DKIM authentication, use the following
 values:
 \itemize{
-\item \strong{Name}: \emph{token}.\\_domainkey.\emph{example.com}
+\item \strong{Name}: \emph{token}._domainkey.\emph{example.com}
 \item \strong{Type}: CNAME
 \item \strong{Value}: \emph{token}.dkim.amazonses.com
 }

@@ -8,11 +8,22 @@ SES account in the current AWS Region}
 ses_list_configuration_sets(NextToken, MaxItems)
 }
 \arguments{
-\item{NextToken}{A token returned from a previous call to \code{ListConfigurationSets} to
-indicate the position of the configuration set in the configuration set
-list.}
+\item{NextToken}{A token returned from a previous call to
+\code{\link[=ses_list_configuration_sets]{list_configuration_sets}} to indicate the
+position of the configuration set in the configuration set list.}
 
 \item{MaxItems}{The number of configuration sets to return.}
+}
+\value{
+A list with the following syntax:\preformatted{list(
+  ConfigurationSets = list(
+    list(
+      Name = "string"
+    )
+  ),
+  NextToken = "string"
+)
+}
 }
 \description{
 Provides a list of the configuration sets associated with your Amazon
@@ -24,9 +35,9 @@ You can execute this operation no more than once per second. This
 operation will return up to 1,000 configuration sets each time it is
 run. If your Amazon SES account has more than 1,000 configuration sets,
 this operation will also return a NextToken element. You can then
-execute the \code{ListConfigurationSets} operation again, passing the
-\code{NextToken} parameter and the value of the NextToken element to retrieve
-additional results.
+execute the \code{\link[=ses_list_configuration_sets]{list_configuration_sets}}
+operation again, passing the \code{NextToken} parameter and the value of the
+NextToken element to retrieve additional results.
 }
 \section{Request syntax}{
 \preformatted{svc$list_configuration_sets(

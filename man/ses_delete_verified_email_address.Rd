@@ -9,9 +9,12 @@ ses_delete_verified_email_address(EmailAddress)
 \arguments{
 \item{EmailAddress}{[required] An email address to be removed from the list of verified addresses.}
 }
+\value{
+An empty list.
+}
 \description{
-Deprecated. Use the \code{DeleteIdentity} operation to delete email addresses
-and domains.
+Deprecated. Use the \code{\link[=ses_delete_identity]{delete_identity}} operation
+to delete email addresses and domains.
 }
 \section{Request syntax}{
 \preformatted{svc$delete_verified_email_address(

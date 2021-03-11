@@ -22,12 +22,15 @@ NULL
 #' @param RuleSetName &#91;required&#93; The name of the rule set to create. The name must:
 #' 
 #' -   This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
-#'     underscores (\\_), or dashes (-).
+#'     underscores (_), or dashes (-).
 #' 
 #' -   Start and end with a letter or number.
 #' 
 #' -   Contain less than 64 characters.
 #' @param OriginalRuleSetName &#91;required&#93; The name of the rule set to clone.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -84,6 +87,9 @@ ses_clone_receipt_rule_set <- function(RuleSetName, OriginalRuleSetName) {
 #'
 #' @param ConfigurationSet &#91;required&#93; A data structure that contains the name of the configuration set.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$create_configuration_set(
@@ -138,6 +144,9 @@ ses_create_configuration_set <- function(ConfigurationSet) {
 #' associated with.
 #' @param EventDestination &#91;required&#93; An object that describes the AWS service that email sending event
 #' information will be published to.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -210,6 +219,9 @@ ses_create_configuration_set_event_destination <- function(ConfigurationSetName,
 #' associated with.
 #' @param TrackingOptions &#91;required&#93; 
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$create_configuration_set_tracking_options(
@@ -271,6 +283,9 @@ ses_create_configuration_set_tracking_options <- function(ConfigurationSetName, 
 #' @param FailureRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his
 #' or her address is not successfully verified.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$create_custom_verification_email_template(
@@ -320,6 +335,9 @@ ses_create_custom_verification_email_template <- function(TemplateName, FromEmai
 #' @param Filter &#91;required&#93; A data structure that describes the IP address filter to create, which
 #' consists of a name, an IP address range, and whether to allow or block
 #' mail from it.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -388,6 +406,9 @@ ses_create_receipt_filter <- function(Filter) {
 #' of the rule list.
 #' @param Rule &#91;required&#93; A data structure that contains the specified rule's name, actions,
 #' recipients, domains, enabled status, scan status, and TLS policy.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -504,11 +525,14 @@ ses_create_receipt_rule <- function(RuleSetName, After = NULL, Rule) {
 #' @param RuleSetName &#91;required&#93; The name of the rule set to create. The name must:
 #' 
 #' -   This value can only contain ASCII letters (a-z, A-Z), numbers (0-9),
-#'     underscores (\\_), or dashes (-).
+#'     underscores (_), or dashes (-).
 #' 
 #' -   Start and end with a letter or number.
 #' 
 #' -   Contain less than 64 characters.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -561,6 +585,9 @@ ses_create_receipt_rule_set <- function(RuleSetName) {
 #' @param Template &#91;required&#93; The content of the email, composed of a subject line, an HTML part, and
 #' a text-only part.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$create_template(
@@ -608,6 +635,9 @@ ses_create_template <- function(Template) {
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to delete.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$delete_configuration_set(
@@ -653,6 +683,9 @@ ses_delete_configuration_set <- function(ConfigurationSetName) {
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set from which to delete the event
 #' destination.
 #' @param EventDestinationName &#91;required&#93; The name of the event destination to delete.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -705,6 +738,9 @@ ses_delete_configuration_set_event_destination <- function(ConfigurationSetName,
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set from which you want to delete the
 #' tracking options.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$delete_configuration_set_tracking_options(
@@ -750,6 +786,9 @@ ses_delete_configuration_set_tracking_options <- function(ConfigurationSetName) 
 #' @param TemplateName &#91;required&#93; The name of the custom verification email template that you want to
 #' delete.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$delete_custom_verification_email_template(
@@ -791,6 +830,9 @@ ses_delete_custom_verification_email_template <- function(TemplateName) {
 #'
 #' @param Identity &#91;required&#93; The identity to be removed from the list of identities for the AWS
 #' Account.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -857,6 +899,9 @@ ses_delete_identity <- function(Identity) {
 #' To successfully call this API, you must own the identity.
 #' @param PolicyName &#91;required&#93; The name of the policy to be deleted.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$delete_identity_policy(
@@ -911,6 +956,9 @@ ses_delete_identity_policy <- function(Identity, PolicyName) {
 #'
 #' @param FilterName &#91;required&#93; The name of the IP address filter to delete.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$delete_receipt_filter(
@@ -963,6 +1011,9 @@ ses_delete_receipt_filter <- function(FilterName) {
 #' @param RuleSetName &#91;required&#93; The name of the receipt rule set that contains the receipt rule to
 #' delete.
 #' @param RuleName &#91;required&#93; The name of the receipt rule to delete.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -1021,6 +1072,9 @@ ses_delete_receipt_rule <- function(RuleSetName, RuleName) {
 #'
 #' @param RuleSetName &#91;required&#93; The name of the receipt rule set to delete.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$delete_receipt_rule_set(
@@ -1068,6 +1122,9 @@ ses_delete_receipt_rule_set <- function(RuleSetName) {
 #'
 #' @param TemplateName &#91;required&#93; The name of the template to be deleted.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$delete_template(
@@ -1098,13 +1155,16 @@ ses_delete_template <- function(TemplateName) {
 #' Deprecated
 #'
 #' @description
-#' Deprecated. Use the `DeleteIdentity` operation to delete email addresses
-#' and domains.
+#' Deprecated. Use the [`delete_identity`][ses_delete_identity] operation
+#' to delete email addresses and domains.
 #'
 #' @usage
 #' ses_delete_verified_email_address(EmailAddress)
 #'
 #' @param EmailAddress &#91;required&#93; An email address to be removed from the list of verified addresses.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -1158,6 +1218,68 @@ ses_delete_verified_email_address <- function(EmailAddress) {
 #' @usage
 #' ses_describe_active_receipt_rule_set()
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   Metadata = list(
+#'     Name = "string",
+#'     CreatedTimestamp = as.POSIXct(
+#'       "2015-01-01"
+#'     )
+#'   ),
+#'   Rules = list(
+#'     list(
+#'       Name = "string",
+#'       Enabled = TRUE|FALSE,
+#'       TlsPolicy = "Require"|"Optional",
+#'       Recipients = list(
+#'         "string"
+#'       ),
+#'       Actions = list(
+#'         list(
+#'           S3Action = list(
+#'             TopicArn = "string",
+#'             BucketName = "string",
+#'             ObjectKeyPrefix = "string",
+#'             KmsKeyArn = "string"
+#'           ),
+#'           BounceAction = list(
+#'             TopicArn = "string",
+#'             SmtpReplyCode = "string",
+#'             StatusCode = "string",
+#'             Message = "string",
+#'             Sender = "string"
+#'           ),
+#'           WorkmailAction = list(
+#'             TopicArn = "string",
+#'             OrganizationArn = "string"
+#'           ),
+#'           LambdaAction = list(
+#'             TopicArn = "string",
+#'             FunctionArn = "string",
+#'             InvocationType = "Event"|"RequestResponse"
+#'           ),
+#'           StopAction = list(
+#'             Scope = "RuleSet",
+#'             TopicArn = "string"
+#'           ),
+#'           AddHeaderAction = list(
+#'             HeaderName = "string",
+#'             HeaderValue = "string"
+#'           ),
+#'           SNSAction = list(
+#'             TopicArn = "string",
+#'             Encoding = "UTF-8"|"Base64"
+#'           )
+#'         )
+#'       ),
+#'       ScanEnabled = TRUE|FALSE
+#'     )
+#'   )
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$describe_active_receipt_rule_set()
@@ -1206,6 +1328,54 @@ ses_describe_active_receipt_rule_set <- function() {
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to describe.
 #' @param ConfigurationSetAttributeNames A list of configuration set attributes to return.
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   ConfigurationSet = list(
+#'     Name = "string"
+#'   ),
+#'   EventDestinations = list(
+#'     list(
+#'       Name = "string",
+#'       Enabled = TRUE|FALSE,
+#'       MatchingEventTypes = list(
+#'         "send"|"reject"|"bounce"|"complaint"|"delivery"|"open"|"click"|"renderingFailure"
+#'       ),
+#'       KinesisFirehoseDestination = list(
+#'         IAMRoleARN = "string",
+#'         DeliveryStreamARN = "string"
+#'       ),
+#'       CloudWatchDestination = list(
+#'         DimensionConfigurations = list(
+#'           list(
+#'             DimensionName = "string",
+#'             DimensionValueSource = "messageTag"|"emailHeader"|"linkTag",
+#'             DefaultDimensionValue = "string"
+#'           )
+#'         )
+#'       ),
+#'       SNSDestination = list(
+#'         TopicARN = "string"
+#'       )
+#'     )
+#'   ),
+#'   TrackingOptions = list(
+#'     CustomRedirectDomain = "string"
+#'   ),
+#'   DeliveryOptions = list(
+#'     TlsPolicy = "Require"|"Optional"
+#'   ),
+#'   ReputationOptions = list(
+#'     SendingEnabled = TRUE|FALSE,
+#'     ReputationMetricsEnabled = TRUE|FALSE,
+#'     LastFreshStart = as.POSIXct(
+#'       "2015-01-01"
+#'     )
+#'   )
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$describe_configuration_set(
@@ -1252,6 +1422,60 @@ ses_describe_configuration_set <- function(ConfigurationSetName, ConfigurationSe
 #'
 #' @param RuleSetName &#91;required&#93; The name of the receipt rule set that the receipt rule belongs to.
 #' @param RuleName &#91;required&#93; The name of the receipt rule.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   Rule = list(
+#'     Name = "string",
+#'     Enabled = TRUE|FALSE,
+#'     TlsPolicy = "Require"|"Optional",
+#'     Recipients = list(
+#'       "string"
+#'     ),
+#'     Actions = list(
+#'       list(
+#'         S3Action = list(
+#'           TopicArn = "string",
+#'           BucketName = "string",
+#'           ObjectKeyPrefix = "string",
+#'           KmsKeyArn = "string"
+#'         ),
+#'         BounceAction = list(
+#'           TopicArn = "string",
+#'           SmtpReplyCode = "string",
+#'           StatusCode = "string",
+#'           Message = "string",
+#'           Sender = "string"
+#'         ),
+#'         WorkmailAction = list(
+#'           TopicArn = "string",
+#'           OrganizationArn = "string"
+#'         ),
+#'         LambdaAction = list(
+#'           TopicArn = "string",
+#'           FunctionArn = "string",
+#'           InvocationType = "Event"|"RequestResponse"
+#'         ),
+#'         StopAction = list(
+#'           Scope = "RuleSet",
+#'           TopicArn = "string"
+#'         ),
+#'         AddHeaderAction = list(
+#'           HeaderName = "string",
+#'           HeaderValue = "string"
+#'         ),
+#'         SNSAction = list(
+#'           TopicArn = "string",
+#'           Encoding = "UTF-8"|"Base64"
+#'         )
+#'       )
+#'     ),
+#'     ScanEnabled = TRUE|FALSE
+#'   )
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -1306,6 +1530,68 @@ ses_describe_receipt_rule <- function(RuleSetName, RuleName) {
 #'
 #' @param RuleSetName &#91;required&#93; The name of the receipt rule set to describe.
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   Metadata = list(
+#'     Name = "string",
+#'     CreatedTimestamp = as.POSIXct(
+#'       "2015-01-01"
+#'     )
+#'   ),
+#'   Rules = list(
+#'     list(
+#'       Name = "string",
+#'       Enabled = TRUE|FALSE,
+#'       TlsPolicy = "Require"|"Optional",
+#'       Recipients = list(
+#'         "string"
+#'       ),
+#'       Actions = list(
+#'         list(
+#'           S3Action = list(
+#'             TopicArn = "string",
+#'             BucketName = "string",
+#'             ObjectKeyPrefix = "string",
+#'             KmsKeyArn = "string"
+#'           ),
+#'           BounceAction = list(
+#'             TopicArn = "string",
+#'             SmtpReplyCode = "string",
+#'             StatusCode = "string",
+#'             Message = "string",
+#'             Sender = "string"
+#'           ),
+#'           WorkmailAction = list(
+#'             TopicArn = "string",
+#'             OrganizationArn = "string"
+#'           ),
+#'           LambdaAction = list(
+#'             TopicArn = "string",
+#'             FunctionArn = "string",
+#'             InvocationType = "Event"|"RequestResponse"
+#'           ),
+#'           StopAction = list(
+#'             Scope = "RuleSet",
+#'             TopicArn = "string"
+#'           ),
+#'           AddHeaderAction = list(
+#'             HeaderName = "string",
+#'             HeaderValue = "string"
+#'           ),
+#'           SNSAction = list(
+#'             TopicArn = "string",
+#'             Encoding = "UTF-8"|"Base64"
+#'           )
+#'         )
+#'       ),
+#'       ScanEnabled = TRUE|FALSE
+#'     )
+#'   )
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$describe_receipt_rule_set(
@@ -1356,6 +1642,14 @@ ses_describe_receipt_rule_set <- function(RuleSetName) {
 #'
 
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   Enabled = TRUE|FALSE
+#' )
+#' ```
+#'
 
 #'
 #' @examples
@@ -1404,6 +1698,19 @@ ses_get_account_sending_enabled <- function() {
 #'
 #' @param TemplateName &#91;required&#93; The name of the custom verification email template that you want to
 #' retrieve.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   TemplateName = "string",
+#'   FromEmailAddress = "string",
+#'   TemplateSubject = "string",
+#'   TemplateContent = "string",
+#'   SuccessRedirectionURL = "string",
+#'   FailureRedirectionURL = "string"
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -1465,6 +1772,22 @@ ses_get_custom_verification_email_template <- function(TemplateName) {
 #' @param Identities &#91;required&#93; A list of one or more verified identities - email addresses, domains, or
 #' both.
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   DkimAttributes = list(
+#'     list(
+#'       DkimEnabled = TRUE|FALSE,
+#'       DkimVerificationStatus = "Pending"|"Success"|"Failed"|"TemporaryFailure"|"NotStarted",
+#'       DkimTokens = list(
+#'         "string"
+#'       )
+#'     )
+#'   )
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$get_identity_dkim_attributes(
@@ -1520,6 +1843,20 @@ ses_get_identity_dkim_attributes <- function(Identities) {
 #' ses_get_identity_mail_from_domain_attributes(Identities)
 #'
 #' @param Identities &#91;required&#93; A list of one or more identities.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MailFromDomainAttributes = list(
+#'     list(
+#'       MailFromDomain = "string",
+#'       MailFromDomainStatus = "Pending"|"Success"|"Failed"|"TemporaryFailure",
+#'       BehaviorOnMXFailure = "UseDefaultValue"|"RejectMessage"
+#'     )
+#'   )
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -1582,6 +1919,24 @@ ses_get_identity_mail_from_domain_attributes <- function(Identities) {
 #' its name or by using its Amazon Resource Name (ARN). Examples:
 #' `user@@example.com`, `example.com`,
 #' `arn:aws:ses:us-east-1:123456789012:identity/example.com`.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   NotificationAttributes = list(
+#'     list(
+#'       BounceTopic = "string",
+#'       ComplaintTopic = "string",
+#'       DeliveryTopic = "string",
+#'       ForwardingEnabled = TRUE|FALSE,
+#'       HeadersInBounceNotificationsEnabled = TRUE|FALSE,
+#'       HeadersInComplaintNotificationsEnabled = TRUE|FALSE,
+#'       HeadersInDeliveryNotificationsEnabled = TRUE|FALSE
+#'     )
+#'   )
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -1654,7 +2009,17 @@ ses_get_identity_notification_attributes <- function(Identities) {
 #' @param PolicyNames &#91;required&#93; A list of the names of policies to be retrieved. You can retrieve a
 #' maximum of 20 policies at a time. If you do not know the names of the
 #' policies that are attached to the identity, you can use
-#' `ListIdentityPolicies`.
+#' [`list_identity_policies`][ses_list_identity_policies].
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   Policies = list(
+#'     "string"
+#'   )
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -1732,6 +2097,19 @@ ses_get_identity_policies <- function(Identity, PolicyNames) {
 #'
 #' @param Identities &#91;required&#93; A list of identities.
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   VerificationAttributes = list(
+#'     list(
+#'       VerificationStatus = "Pending"|"Success"|"Failed"|"TemporaryFailure"|"NotStarted",
+#'       VerificationToken = "string"
+#'     )
+#'   )
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$get_identity_verification_attributes(
@@ -1784,6 +2162,16 @@ ses_get_identity_verification_attributes <- function(Identities) {
 #'
 
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   Max24HourSend = 123.0,
+#'   MaxSendRate = 123.0,
+#'   SentLast24Hours = 123.0
+#' )
+#' ```
+#'
 
 #'
 #' @examples
@@ -1828,6 +2216,24 @@ ses_get_send_quota <- function() {
 #'
 
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   SendDataPoints = list(
+#'     list(
+#'       Timestamp = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       DeliveryAttempts = 123,
+#'       Bounces = 123,
+#'       Complaints = 123,
+#'       Rejects = 123
+#'     )
+#'   )
+#' )
+#' ```
+#'
 
 #'
 #' @examples
@@ -1870,6 +2276,19 @@ ses_get_send_statistics <- function() {
 #'
 #' @param TemplateName &#91;required&#93; The name of the template you want to retrieve.
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   Template = list(
+#'     TemplateName = "string",
+#'     SubjectPart = "string",
+#'     TextPart = "string",
+#'     HtmlPart = "string"
+#'   )
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$get_template(
@@ -1911,17 +2330,30 @@ ses_get_template <- function(TemplateName) {
 #' operation will return up to 1,000 configuration sets each time it is
 #' run. If your Amazon SES account has more than 1,000 configuration sets,
 #' this operation will also return a NextToken element. You can then
-#' execute the `ListConfigurationSets` operation again, passing the
-#' `NextToken` parameter and the value of the NextToken element to retrieve
-#' additional results.
+#' execute the [`list_configuration_sets`][ses_list_configuration_sets]
+#' operation again, passing the `NextToken` parameter and the value of the
+#' NextToken element to retrieve additional results.
 #'
 #' @usage
 #' ses_list_configuration_sets(NextToken, MaxItems)
 #'
-#' @param NextToken A token returned from a previous call to `ListConfigurationSets` to
-#' indicate the position of the configuration set in the configuration set
-#' list.
+#' @param NextToken A token returned from a previous call to
+#' [`list_configuration_sets`][ses_list_configuration_sets] to indicate the
+#' position of the configuration set in the configuration set list.
 #' @param MaxItems The number of configuration sets to return.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   ConfigurationSets = list(
+#'     list(
+#'       Name = "string"
+#'     )
+#'   ),
+#'   NextToken = "string"
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -1975,6 +2407,23 @@ ses_list_configuration_sets <- function(NextToken = NULL, MaxItems = NULL) {
 #' not specify a value, or if you specify a value less than 1 or greater
 #' than 50, the operation will return up to 50 results.
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   CustomVerificationEmailTemplates = list(
+#'     list(
+#'       TemplateName = "string",
+#'       FromEmailAddress = "string",
+#'       TemplateSubject = "string",
+#'       SuccessRedirectionURL = "string",
+#'       FailureRedirectionURL = "string"
+#'     )
+#'   ),
+#'   NextToken = "string"
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$list_custom_verification_email_templates(
@@ -2024,6 +2473,17 @@ ses_list_custom_verification_email_templates <- function(NextToken = NULL, MaxRe
 #' @param MaxItems The maximum number of identities per page. Possible values are 1-1000
 #' inclusive.
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   Identities = list(
+#'     "string"
+#'   ),
+#'   NextToken = "string"
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$list_identities(
@@ -2071,7 +2531,7 @@ ses_list_identities <- function(IdentityType = NULL, NextToken = NULL, MaxItems 
 #' Returns a list of sending authorization policies that are attached to
 #' the given identity (an email address or a domain). This API returns only
 #' a list. If you want the actual policy content, you can use
-#' `GetIdentityPolicies`.
+#' [`get_identity_policies`][ses_get_identity_policies].
 #' 
 #' This API is for the identity owner only. If you have not verified the
 #' identity, this API will return an error.
@@ -2093,6 +2553,16 @@ ses_list_identities <- function(IdentityType = NULL, NextToken = NULL, MaxItems 
 #' `arn:aws:ses:us-east-1:123456789012:identity/example.com`.
 #' 
 #' To successfully call this API, you must own the identity.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   PolicyNames = list(
+#'     "string"
+#'   )
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -2146,6 +2616,22 @@ ses_list_identity_policies <- function(Identity) {
 #' @usage
 #' ses_list_receipt_filters()
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   Filters = list(
+#'     list(
+#'       Name = "string",
+#'       IpFilter = list(
+#'         Policy = "Block"|"Allow",
+#'         Cidr = "string"
+#'       )
+#'     )
+#'   )
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$list_receipt_filters()
@@ -2185,7 +2671,8 @@ ses_list_receipt_filters <- function() {
 #' Lists the receipt rule sets that exist under your AWS account in the
 #' current AWS Region. If there are additional receipt rule sets to be
 #' retrieved, you will receive a `NextToken` that you can provide to the
-#' next call to `ListReceiptRuleSets` to retrieve the additional entries.
+#' next call to [`list_receipt_rule_sets`][ses_list_receipt_rule_sets] to
+#' retrieve the additional entries.
 #' 
 #' For information about managing receipt rule sets, see the [Amazon SES
 #' Developer
@@ -2196,8 +2683,25 @@ ses_list_receipt_filters <- function() {
 #' @usage
 #' ses_list_receipt_rule_sets(NextToken)
 #'
-#' @param NextToken A token returned from a previous call to `ListReceiptRuleSets` to
-#' indicate the position in the receipt rule set list.
+#' @param NextToken A token returned from a previous call to
+#' [`list_receipt_rule_sets`][ses_list_receipt_rule_sets] to indicate the
+#' position in the receipt rule set list.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   RuleSets = list(
+#'     list(
+#'       Name = "string",
+#'       CreatedTimestamp = as.POSIXct(
+#'         "2015-01-01"
+#'       )
+#'     )
+#'   ),
+#'   NextToken = "string"
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -2247,12 +2751,29 @@ ses_list_receipt_rule_sets <- function(NextToken = NULL) {
 #' @usage
 #' ses_list_templates(NextToken, MaxItems)
 #'
-#' @param NextToken A token returned from a previous call to `ListTemplates` to indicate the
-#' position in the list of email templates.
+#' @param NextToken A token returned from a previous call to
+#' [`list_templates`][ses_list_templates] to indicate the position in the
+#' list of email templates.
 #' @param MaxItems The maximum number of templates to return. This value must be at least 1
 #' and less than or equal to 10. If you do not specify a value, or if you
 #' specify a value less than 1 or greater than 10, the operation will
 #' return up to 10 results.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   TemplatesMetadata = list(
+#'     list(
+#'       Name = "string",
+#'       CreatedTimestamp = as.POSIXct(
+#'         "2015-01-01"
+#'       )
+#'     )
+#'   ),
+#'   NextToken = "string"
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -2285,13 +2806,23 @@ ses_list_templates <- function(NextToken = NULL, MaxItems = NULL) {
 #' Deprecated
 #'
 #' @description
-#' Deprecated. Use the `ListIdentities` operation to list the email
-#' addresses and domains associated with your account.
+#' Deprecated. Use the [`list_identities`][ses_list_identities] operation
+#' to list the email addresses and domains associated with your account.
 #'
 #' @usage
 #' ses_list_verified_email_addresses()
 #'
 
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   VerifiedEmailAddresses = list(
+#'     "string"
+#'   )
+#' )
+#' ```
 #'
 
 #'
@@ -2335,6 +2866,9 @@ ses_list_verified_email_addresses <- function() {
 #' options for.
 #' @param DeliveryOptions Specifies whether messages that use the configuration set are required
 #' to use Transport Layer Security (TLS).
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -2402,6 +2936,9 @@ ses_put_configuration_set_delivery_options <- function(ConfigurationSetName, Del
 #' the [Amazon SES Developer
 #' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html).
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$put_identity_policy(
@@ -2417,7 +2954,7 @@ ses_put_configuration_set_delivery_options <- function(ConfigurationSetName, Del
 #' # identity:
 #' svc$put_identity_policy(
 #'   Identity = "example.com",
-#'   Policy = "\{\"Version\":\"2008-10-17\",\"Statement\":[\{\"Sid\":\"stmt1469123904194\",...",
+#'   Policy = "\{"Version":"2008-10-17","Statement":[\{"Sid":"stmt1469123904194"...",
 #'   PolicyName = "MyPolicy"
 #' )
 #' }
@@ -2463,6 +3000,9 @@ ses_put_identity_policy <- function(Identity, PolicyName, Policy) {
 #' @param RuleSetName &#91;required&#93; The name of the receipt rule set to reorder.
 #' @param RuleNames &#91;required&#93; A list of the specified receipt rule set's receipt rules in the order
 #' that you want to put them.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -2547,6 +3087,14 @@ ses_reorder_receipt_rule_set <- function(RuleSetName, RuleNames) {
 #' Developer
 #' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html).
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MessageId = "string"
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$send_bounce(
@@ -2618,11 +3166,13 @@ ses_send_bounce <- function(OriginalMessageId, BounceSender, Explanation = NULL,
 #' Composes an email message to multiple destinations. The message body is
 #' created using an email template.
 #' 
-#' In order to send email using the `SendBulkTemplatedEmail` operation,
+#' In order to send email using the
+#' [`send_bulk_templated_email`][ses_send_bulk_templated_email] operation,
 #' your call to the API must meet the following requirements:
 #' 
 #' -   The call must refer to an existing email template. You can create
-#'     email templates using the CreateTemplate operation.
+#'     email templates using the [`create_template`][ses_create_template]
+#'     operation.
 #' 
 #' -   The message must be sent from a verified email address or domain.
 #' 
@@ -2646,8 +3196,9 @@ ses_send_bounce <- function(OriginalMessageId, BounceSender, Explanation = NULL,
 #' -   The message may not include more than 50 recipients, across the To:,
 #'     CC: and BCC: fields. If you need to send an email message to a
 #'     larger audience, you can divide your recipient list into groups of
-#'     50 or fewer, and then call the `SendBulkTemplatedEmail` operation
-#'     several times to send the message to each group.
+#'     50 or fewer, and then call the
+#'     [`send_bulk_templated_email`][ses_send_bulk_templated_email]
+#'     operation several times to send the message to each group.
 #' 
 #' -   The number of destinations you can contact in a single call to the
 #'     API may be limited by your account's maximum sending rate.
@@ -2723,9 +3274,10 @@ ses_send_bounce <- function(OriginalMessageId, BounceSender, Explanation = NULL,
 #' Developer
 #' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html).
 #' @param ConfigurationSetName The name of the configuration set to use when you send an email using
-#' `SendBulkTemplatedEmail`.
+#' [`send_bulk_templated_email`][ses_send_bulk_templated_email].
 #' @param DefaultTags A list of tags, in the form of name/value pairs, to apply to an email
-#' that you send to a destination using `SendBulkTemplatedEmail`.
+#' that you send to a destination using
+#' [`send_bulk_templated_email`][ses_send_bulk_templated_email].
 #' @param Template &#91;required&#93; The template to use when sending this email.
 #' @param TemplateArn The ARN of the template to use when sending this email.
 #' @param DefaultTemplateData A list of replacement values to apply to the template when replacement
@@ -2738,6 +3290,20 @@ ses_send_bounce <- function(OriginalMessageId, BounceSender, Explanation = NULL,
 #' @param Destinations &#91;required&#93; One or more `Destination` objects. All of the recipients in a
 #' `Destination` will receive the same version of the email. You can
 #' specify up to 50 `Destination` objects within a `Destinations` array.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   Status = list(
+#'     list(
+#'       Status = "Success"|"MessageRejected"|"MailFromDomainNotVerified"|"ConfigurationSetDoesNotExist"|"TemplateDoesNotExist"|"AccountSuspended"|"AccountThrottled"|"AccountDailyQuotaExceeded"|"InvalidSendingPoolName"|"AccountSendingPaused"|"ConfigurationSetSendingPaused"|"InvalidParameterValue"|"TransientFailure"|"Failed",
+#'       Error = "string",
+#'       MessageId = "string"
+#'     )
+#'   )
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -2830,6 +3396,14 @@ ses_send_bulk_templated_email <- function(Source, SourceArn = NULL, ReplyToAddre
 #' the verification email.
 #' @param ConfigurationSetName Name of a configuration set to use when sending the verification email.
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MessageId = "string"
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$send_custom_verification_email(
@@ -2863,8 +3437,8 @@ ses_send_custom_verification_email <- function(EmailAddress, TemplateName, Confi
 #'
 #' @description
 #' Composes an email message and immediately queues it for sending. In
-#' order to send email using the `SendEmail` operation, your message must
-#' meet the following requirements:
+#' order to send email using the [`send_email`][ses_send_email] operation,
+#' your message must meet the following requirements:
 #' 
 #' -   The message must be sent from a verified email address or domain. If
 #'     you attempt to send email using a non-verified address or domain,
@@ -2889,8 +3463,8 @@ ses_send_custom_verification_email <- function(EmailAddress, TemplateName, Confi
 #' -   The message may not include more than 50 recipients, across the To:,
 #'     CC: and BCC: fields. If you need to send an email message to a
 #'     larger audience, you can divide your recipient list into groups of
-#'     50 or fewer, and then call the `SendEmail` operation several times
-#'     to send the message to each group.
+#'     50 or fewer, and then call the [`send_email`][ses_send_email]
+#'     operation several times to send the message to each group.
 #' 
 #' For every message that you send, the total number of recipients
 #' (including each recipient in the To:, CC: and BCC: fields) is counted
@@ -2972,10 +3546,19 @@ ses_send_custom_verification_email <- function(EmailAddress, TemplateName, Confi
 #' Developer
 #' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html).
 #' @param Tags A list of tags, in the form of name/value pairs, to apply to an email
-#' that you send using `SendEmail`. Tags correspond to characteristics of
-#' the email that you define, so that you can publish email sending events.
+#' that you send using [`send_email`][ses_send_email]. Tags correspond to
+#' characteristics of the email that you define, so that you can publish
+#' email sending events.
 #' @param ConfigurationSetName The name of the configuration set to use when you send an email using
-#' `SendEmail`.
+#' [`send_email`][ses_send_email].
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MessageId = "string"
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -3042,7 +3625,7 @@ ses_send_custom_verification_email <- function(EmailAddress, TemplateName, Confi
 #'     Body = list(
 #'       Html = list(
 #'         Charset = "UTF-8",
-#'         Data = "This message body contains HTML formatting. It can, for example, contain lin..."
+#'         Data = "This message body contains HTML formatting. It can, for exa..."
 #'       ),
 #'       Text = list(
 #'         Charset = "UTF-8",
@@ -3087,14 +3670,16 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #' @description
 #' Composes an email message and immediately queues it for sending.
 #' 
-#' This operation is more flexible than the `SendEmail` API operation. When
-#' you use the `SendRawEmail` operation, you can specify the headers of the
-#' message as well as its content. This flexibility is useful, for example,
-#' when you want to send a multipart MIME email (such a message that
-#' contains both a text and an HTML version). You can also use this
-#' operation to send messages that include attachments.
+#' This operation is more flexible than the [`send_email`][ses_send_email]
+#' API operation. When you use the [`send_raw_email`][ses_send_raw_email]
+#' operation, you can specify the headers of the message as well as its
+#' content. This flexibility is useful, for example, when you want to send
+#' a multipart MIME email (such a message that contains both a text and an
+#' HTML version). You can also use this operation to send messages that
+#' include attachments.
 #' 
-#' The `SendRawEmail` operation has the following requirements:
+#' The [`send_raw_email`][ses_send_raw_email] operation has the following
+#' requirements:
 #' 
 #' -   You can only send email from [verified email addresses or
 #'     domains](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html).
@@ -3135,20 +3720,21 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #'     in the *Amazon SES Developer Guide*.
 #' 
 #' Additionally, keep the following considerations in mind when using the
-#' `SendRawEmail` operation:
+#' [`send_raw_email`][ses_send_raw_email] operation:
 #' 
 #' -   Although you can customize the message headers when using the
-#'     `SendRawEmail` operation, Amazon SES will automatically apply its
-#'     own `Message-ID` and `Date` headers; if you passed these headers
-#'     when creating the message, they will be overwritten by the values
-#'     that Amazon SES provides.
+#'     [`send_raw_email`][ses_send_raw_email] operation, Amazon SES will
+#'     automatically apply its own `Message-ID` and `Date` headers; if you
+#'     passed these headers when creating the message, they will be
+#'     overwritten by the values that Amazon SES provides.
 #' 
 #' -   If you are using sending authorization to send on behalf of another
-#'     user, `SendRawEmail` enables you to specify the cross-account
-#'     identity for the email's Source, From, and Return-Path parameters in
-#'     one of two ways: you can pass optional parameters `SourceArn`,
-#'     `FromArn`, and/or `ReturnPathArn` to the API, or you can include the
-#'     following X-headers in the header of your raw email:
+#'     user, [`send_raw_email`][ses_send_raw_email] enables you to specify
+#'     the cross-account identity for the email's Source, From, and
+#'     Return-Path parameters in one of two ways: you can pass optional
+#'     parameters `SourceArn`, `FromArn`, and/or `ReturnPathArn` to the
+#'     API, or you can include the following X-headers in the header of
+#'     your raw email:
 #' 
 #'     -   `X-SES-SOURCE-ARN`
 #' 
@@ -3242,7 +3828,8 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #' value of the `FromArn` parameter.
 #' 
 #' For information about when to use this parameter, see the description of
-#' `SendRawEmail` in this guide, or see the [Amazon SES Developer
+#' [`send_raw_email`][ses_send_raw_email] in this guide, or see the [Amazon
+#' SES Developer
 #' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html).
 #' @param SourceArn This parameter is used only for sending authorization. It is the ARN of
 #' the identity that is associated with the sending authorization policy
@@ -3262,7 +3849,8 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #' the value of the `SourceArn` parameter.
 #' 
 #' For information about when to use this parameter, see the description of
-#' `SendRawEmail` in this guide, or see the [Amazon SES Developer
+#' [`send_raw_email`][ses_send_raw_email] in this guide, or see the [Amazon
+#' SES Developer
 #' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html).
 #' @param ReturnPathArn This parameter is used only for sending authorization. It is the ARN of
 #' the identity that is associated with the sending authorization policy
@@ -3282,14 +3870,23 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #' uses the value of the `ReturnPathArn` parameter.
 #' 
 #' For information about when to use this parameter, see the description of
-#' `SendRawEmail` in this guide, or see the [Amazon SES Developer
+#' [`send_raw_email`][ses_send_raw_email] in this guide, or see the [Amazon
+#' SES Developer
 #' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html).
 #' @param Tags A list of tags, in the form of name/value pairs, to apply to an email
-#' that you send using `SendRawEmail`. Tags correspond to characteristics
-#' of the email that you define, so that you can publish email sending
-#' events.
+#' that you send using [`send_raw_email`][ses_send_raw_email]. Tags
+#' correspond to characteristics of the email that you define, so that you
+#' can publish email sending events.
 #' @param ConfigurationSetName The name of the configuration set to use when you send an email using
-#' `SendRawEmail`.
+#' [`send_raw_email`][ses_send_raw_email].
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MessageId = "string"
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -3321,7 +3918,7 @@ ses_send_email <- function(Source, Destination, Message, ReplyToAddresses = NULL
 #'   Destinations = list(),
 #'   FromArn = "",
 #'   RawMessage = list(
-#'     Data = "From: sender@example.com\\nTo: recipient@example.com\\nSubject: Test email (cont..."
+#'     Data = "From: sender@example.com\\nTo: recipient@example.com\\nSubject:..."
 #'   ),
 #'   ReturnPathArn = "",
 #'   Source = "",
@@ -3356,11 +3953,13 @@ ses_send_raw_email <- function(Source = NULL, Destinations = NULL, RawMessage, F
 #' Composes an email message using an email template and immediately queues
 #' it for sending.
 #' 
-#' In order to send email using the `SendTemplatedEmail` operation, your
-#' call to the API must meet the following requirements:
+#' In order to send email using the
+#' [`send_templated_email`][ses_send_templated_email] operation, your call
+#' to the API must meet the following requirements:
 #' 
 #' -   The call must refer to an existing email template. You can create
-#'     email templates using the CreateTemplate operation.
+#'     email templates using the [`create_template`][ses_create_template]
+#'     operation.
 #' 
 #' -   The message must be sent from a verified email address or domain.
 #' 
@@ -3373,11 +3972,11 @@ ses_send_raw_email <- function(Source = NULL, Destinations = NULL, RawMessage, F
 #' 
 #' -   The maximum message size is 10 MB.
 #' 
-#' -   Calls to the `SendTemplatedEmail` operation may only include one
-#'     `Destination` parameter. A destination is a set of recipients who
-#'     will receive the same version of the email. The `Destination`
-#'     parameter can include up to 50 recipients, across the To:, CC: and
-#'     BCC: fields.
+#' -   Calls to the [`send_templated_email`][ses_send_templated_email]
+#'     operation may only include one `Destination` parameter. A
+#'     destination is a set of recipients who will receive the same version
+#'     of the email. The `Destination` parameter can include up to 50
+#'     recipients, across the To:, CC: and BCC: fields.
 #' 
 #' -   The `Destination` parameter must include at least one recipient
 #'     email address. The recipient address can be a To: address, a CC:
@@ -3387,12 +3986,12 @@ ses_send_raw_email <- function(Source = NULL, Destinations = NULL, RawMessage, F
 #'     will be rejected, even if the message contains other recipients that
 #'     are valid.
 #' 
-#' If your call to the `SendTemplatedEmail` operation includes all of the
-#' required parameters, Amazon SES accepts it and returns a Message ID.
-#' However, if Amazon SES can't render the email because the template
-#' contains errors, it doesn't send the email. Additionally, because it
-#' already accepted the message, Amazon SES doesn't return a message
-#' stating that it was unable to send the email.
+#' If your call to the [`send_templated_email`][ses_send_templated_email]
+#' operation includes all of the required parameters, Amazon SES accepts it
+#' and returns a Message ID. However, if Amazon SES can't render the email
+#' because the template contains errors, it doesn't send the email.
+#' Additionally, because it already accepted the message, Amazon SES
+#' doesn't return a message stating that it was unable to send the email.
 #' 
 #' For these reasons, we highly recommend that you set up Amazon SES to
 #' send you notifications when Rendering Failure events occur. For more
@@ -3473,16 +4072,24 @@ ses_send_raw_email <- function(Source = NULL, Destinations = NULL, RawMessage, F
 #' Developer
 #' Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html).
 #' @param Tags A list of tags, in the form of name/value pairs, to apply to an email
-#' that you send using `SendTemplatedEmail`. Tags correspond to
-#' characteristics of the email that you define, so that you can publish
-#' email sending events.
+#' that you send using [`send_templated_email`][ses_send_templated_email].
+#' Tags correspond to characteristics of the email that you define, so that
+#' you can publish email sending events.
 #' @param ConfigurationSetName The name of the configuration set to use when you send an email using
-#' `SendTemplatedEmail`.
+#' [`send_templated_email`][ses_send_templated_email].
 #' @param Template &#91;required&#93; The template to use when sending this email.
 #' @param TemplateArn The ARN of the template to use when sending this email.
 #' @param TemplateData &#91;required&#93; A list of replacement values to apply to the template. This parameter is
 #' a JSON object, typically consisting of key-value pairs in which the keys
 #' correspond to replacement tags in the email template.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   MessageId = "string"
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -3558,6 +4165,9 @@ ses_send_templated_email <- function(Source, Destination, ReplyToAddresses = NUL
 #' @param RuleSetName The name of the receipt rule set to make active. Setting this value to
 #' null disables all email receiving.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$set_active_receipt_rule_set(
@@ -3622,6 +4232,9 @@ ses_set_active_receipt_rule_set <- function(RuleSetName = NULL) {
 #' @param Identity &#91;required&#93; The identity for which DKIM signing should be enabled or disabled.
 #' @param DkimEnabled &#91;required&#93; Sets whether DKIM signing is enabled for an identity. Set to `true` to
 #' enable DKIM signing for this identity; `false` to disable it.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -3694,6 +4307,9 @@ ses_set_identity_dkim_enabled <- function(Identity, DkimEnabled) {
 #' value can only be set to `false` when Amazon SNS topics are set for both
 #' `Bounce` and `Complaint` notification types.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$set_identity_feedback_forwarding_enabled(
@@ -3763,6 +4379,9 @@ ses_set_identity_feedback_forwarding_enabled <- function(Identity, ForwardingEna
 #' 
 #' This value can only be set when `NotificationType` is already set to use
 #' a particular Amazon SNS topic.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -3844,6 +4463,9 @@ ses_set_identity_headers_in_notifications_enabled <- function(Identity, Notifica
 #' MAIL FROM domain setup is in the `Pending`, `Failed`, and
 #' `TemporaryFailure` states.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$set_identity_mail_from_domain(
@@ -3921,6 +4543,9 @@ ses_set_identity_mail_from_domain <- function(Identity, MailFromDomain = NULL, B
 #' is omitted from the request or a null value is passed, `SnsTopic` is
 #' cleared and publishing is disabled.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$set_identity_notification_topic(
@@ -3982,6 +4607,9 @@ ses_set_identity_notification_topic <- function(Identity, NotificationType, SnsT
 #' @param After The name of the receipt rule after which to place the specified receipt
 #' rule.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$set_receipt_rule_position(
@@ -4039,6 +4667,14 @@ ses_set_receipt_rule_position <- function(RuleSetName, RuleName, After = NULL) {
 #' a JSON object, typically consisting of key-value pairs in which the keys
 #' correspond to replacement tags in the email template.
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   RenderedTemplate = "string"
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$test_render_template(
@@ -4084,6 +4720,9 @@ ses_test_render_template <- function(TemplateName, TemplateData) {
 #'
 #' @param Enabled Describes whether email sending is enabled or disabled for your Amazon
 #' SES account in the current AWS Region.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -4146,6 +4785,9 @@ ses_update_account_sending_enabled <- function(Enabled = NULL) {
 #' that you want to update.
 #' @param EventDestination &#91;required&#93; The event destination object that you want to apply to the specified
 #' configuration set.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -4218,6 +4860,9 @@ ses_update_configuration_set_event_destination <- function(ConfigurationSetName,
 #' the configuration set, such as bounce and complaint rates, to Amazon
 #' CloudWatch.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$update_configuration_set_reputation_metrics_enabled(
@@ -4276,6 +4921,9 @@ ses_update_configuration_set_reputation_metrics_enabled <- function(Configuratio
 #' @param Enabled &#91;required&#93; Describes whether email sending is enabled or disabled for the
 #' configuration set.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$update_configuration_set_sending_enabled(
@@ -4333,6 +4981,9 @@ ses_update_configuration_set_sending_enabled <- function(ConfigurationSetName, E
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set for which you want to update the
 #' custom tracking domain.
 #' @param TrackingOptions &#91;required&#93; 
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -4396,6 +5047,9 @@ ses_update_configuration_set_tracking_options <- function(ConfigurationSetName, 
 #' @param FailureRedirectionURL The URL that the recipient of the verification email is sent to if his
 #' or her address is not successfully verified.
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$update_custom_verification_email_template(
@@ -4444,6 +5098,9 @@ ses_update_custom_verification_email_template <- function(TemplateName, FromEmai
 #'
 #' @param RuleSetName &#91;required&#93; The name of the receipt rule set that the receipt rule belongs to.
 #' @param Rule &#91;required&#93; A data structure that contains the updated receipt rule information.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -4556,6 +5213,9 @@ ses_update_receipt_rule <- function(RuleSetName, Rule) {
 #'
 #' @param Template &#91;required&#93; 
 #'
+#' @return
+#' An empty list.
+#'
 #' @section Request syntax:
 #' ```
 #' svc$update_template(
@@ -4593,10 +5253,11 @@ ses_update_template <- function(Template) {
 #' @description
 #' Returns a set of DKIM tokens for a domain identity.
 #' 
-#' When you execute the `VerifyDomainDkim` operation, the domain that you
-#' specify is added to the list of identities that are associated with your
-#' account. This is true even if you haven't already associated the domain
-#' with your account by using the `VerifyDomainIdentity` operation.
+#' When you execute the [`verify_domain_dkim`][ses_verify_domain_dkim]
+#' operation, the domain that you specify is added to the list of
+#' identities that are associated with your account. This is true even if
+#' you haven't already associated the domain with your account by using the
+#' [`verify_domain_identity`][ses_verify_domain_identity] operation.
 #' However, you can't send email from the domain until you either
 #' successfully [verify
 #' it](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domains.html)
@@ -4614,7 +5275,7 @@ ses_update_template <- function(Template) {
 #' To create the CNAME records for DKIM authentication, use the following
 #' values:
 #' 
-#' -   **Name**: *token*.\\_domainkey.*example.com*
+#' -   **Name**: *token*._domainkey.*example.com*
 #' 
 #' -   **Type**: CNAME
 #' 
@@ -4631,6 +5292,16 @@ ses_update_template <- function(Template) {
 #' ses_verify_domain_dkim(Domain)
 #'
 #' @param Domain &#91;required&#93; The name of the domain to be verified for Easy DKIM signing.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   DkimTokens = list(
+#'     "string"
+#'   )
+#' )
+#' ```
 #'
 #' @section Request syntax:
 #' ```
@@ -4685,6 +5356,14 @@ ses_verify_domain_dkim <- function(Domain) {
 #'
 #' @param Domain &#91;required&#93; The domain to be verified.
 #'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   VerificationToken = "string"
+#' )
+#' ```
+#'
 #' @section Request syntax:
 #' ```
 #' svc$verify_domain_identity(
@@ -4724,13 +5403,16 @@ ses_verify_domain_identity <- function(Domain) {
 #' Deprecated
 #'
 #' @description
-#' Deprecated. Use the `VerifyEmailIdentity` operation to verify a new
-#' email address.
+#' Deprecated. Use the [`verify_email_identity`][ses_verify_email_identity]
+#' operation to verify a new email address.
 #'
 #' @usage
 #' ses_verify_email_address(EmailAddress)
 #'
 #' @param EmailAddress &#91;required&#93; The email address to be verified.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```
@@ -4783,6 +5465,9 @@ ses_verify_email_address <- function(EmailAddress) {
 #' ses_verify_email_identity(EmailAddress)
 #'
 #' @param EmailAddress &#91;required&#93; The email address to be verified.
+#'
+#' @return
+#' An empty list.
 #'
 #' @section Request syntax:
 #' ```

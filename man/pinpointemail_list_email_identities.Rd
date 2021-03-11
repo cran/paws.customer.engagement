@@ -8,16 +8,31 @@ your Amazon Pinpoint account}
 pinpointemail_list_email_identities(NextToken, PageSize)
 }
 \arguments{
-\item{NextToken}{A token returned from a previous call to \code{ListEmailIdentities} to
+\item{NextToken}{A token returned from a previous call to
+\code{\link[=pinpointemail_list_email_identities]{list_email_identities}} to
 indicate the position in the list of identities.}
 
-\item{PageSize}{The number of results to show in a single call to \code{ListEmailIdentities}.
-If the number of results is larger than the number you specified in this
+\item{PageSize}{The number of results to show in a single call to
+\code{\link[=pinpointemail_list_email_identities]{list_email_identities}}. If the
+number of results is larger than the number you specified in this
 parameter, then the response includes a \code{NextToken} element, which you
 can use to obtain additional results.
 
 The value you specify has to be at least 0, and can be no more than
 1000.}
+}
+\value{
+A list with the following syntax:\preformatted{list(
+  EmailIdentities = list(
+    list(
+      IdentityType = "EMAIL_ADDRESS"|"DOMAIN"|"MANAGED_DOMAIN",
+      IdentityName = "string",
+      SendingEnabled = TRUE|FALSE
+    )
+  ),
+  NextToken = "string"
+)
+}
 }
 \description{
 Returns a list of all of the email identities that are associated with

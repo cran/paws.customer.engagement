@@ -20,6 +20,13 @@ predictive inbox placement test.}
 \item{Tags}{An array of objects that define the tags (keys and values) that you want
 to associate with the predictive inbox placement test.}
 }
+\value{
+A list with the following syntax:\preformatted{list(
+  ReportId = "string",
+  DeliverabilityTestStatus = "IN_PROGRESS"|"COMPLETED"
+)
+}
+}
 \description{
 Create a new predictive inbox placement test. Predictive inbox placement
 tests can help you predict how your messages will be handled by various
@@ -28,8 +35,9 @@ placement test, you provide a sample message that contains the content
 that you plan to send to your customers. Amazon Pinpoint then sends that
 message to special email addresses spread across several major email
 providers. After about 24 hours, the test is complete, and you can use
-the \code{GetDeliverabilityTestReport} operation to view the results of the
-test.
+the
+\code{\link[=pinpointemail_get_deliverability_test_report]{get_deliverability_test_report}}
+operation to view the results of the test.
 }
 \section{Request syntax}{
 \preformatted{svc$create_deliverability_test_report(
