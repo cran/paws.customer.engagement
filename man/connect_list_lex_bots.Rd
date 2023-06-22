@@ -8,8 +8,8 @@ change}
 connect_list_lex_bots(InstanceId, NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{NextToken}{The token for the next set of results. Use the value returned in the
 previous response in the next request to retrieve the next set of
@@ -21,6 +21,6 @@ specified, the default is 10.}
 \description{
 This API is in preview release for Amazon Connect and is subject to change.
 
-See \url{https://paws-r.github.io/docs/connect/list_lex_bots.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_list_lex_bots/} for full documentation.
 }
 \keyword{internal}

@@ -7,11 +7,13 @@
 connect_list_tags_for_resource(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource. All Amazon Connect
+resources (instances, queues, flows, routing profiles, etc) have an ARN.
+To locate the ARN for an instance, for example, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{Find your Amazon Connect instance ID/ARN}.}
 }
 \description{
 Lists the tags for the specified resource.
 
-See \url{https://paws-r.github.io/docs/connect/list_tags_for_resource.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_list_tags_for_resource/} for full documentation.
 }
 \keyword{internal}

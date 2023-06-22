@@ -18,14 +18,15 @@ characters.}
 \item{ParentGroupId}{The identifier for the parent hierarchy group. The user hierarchy is
 created at level one if the parent group ID is null.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.}
+\item{Tags}{The tags used to organize, track, or control access for this resource.
+For example, \{ "tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
 Creates a new user hierarchy group.
 
-See \url{https://paws-r.github.io/docs/connect/create_user_hierarchy_group.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_create_user_hierarchy_group/} for full documentation.
 }
 \keyword{internal}

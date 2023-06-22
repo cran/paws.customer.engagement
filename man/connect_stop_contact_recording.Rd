@@ -7,8 +7,8 @@
 connect_stop_contact_recording(InstanceId, ContactId, InitialContactId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{ContactId}{[required] The identifier of the contact.}
 
@@ -18,6 +18,6 @@ associated with the first interaction with the contact center.}
 \description{
 Stops recording a call when a contact is being recorded. StopContactRecording is a one-time action. If you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend it for sensitive information (for example, to collect a credit card number), and then restart it, use SuspendContactRecording and ResumeContactRecording.
 
-See \url{https://paws-r.github.io/docs/connect/stop_contact_recording.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_stop_contact_recording/} for full documentation.
 }
 \keyword{internal}

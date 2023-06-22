@@ -17,7 +17,9 @@ connectwisdomservice_create_session(
 URLs cannot contain the ARN.}
 
 \item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+idempotency of the request. If not provided, the Amazon Web Services SDK
+populates this field. For more information about idempotency, see
+\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{description}{The description.}
 
@@ -28,6 +30,6 @@ idempotency of the request.}
 \description{
 Creates a session. A session is a contextual container used for generating recommendations. Amazon Connect creates a new Wisdom session for each contact on which Wisdom is enabled.
 
-See \url{https://paws-r.github.io/docs/connectwisdomservice/create_session.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connectwisdomservice_create_session/} for full documentation.
 }
 \keyword{internal}

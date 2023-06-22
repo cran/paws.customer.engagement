@@ -11,8 +11,8 @@ connect_associate_default_vocabulary(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{LanguageCode}{[required] The language code of the vocabulary entries. For a list of languages and
 their corresponding language codes, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html}{What is Amazon Transcribe?}}
@@ -23,6 +23,6 @@ is set to none.}
 \description{
 Associates an existing vocabulary as the default. Contact Lens for Amazon Connect uses the vocabulary in post-call and real-time analysis sessions for the given language.
 
-See \url{https://paws-r.github.io/docs/connect/associate_default_vocabulary.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_associate_default_vocabulary/} for full documentation.
 }
 \keyword{internal}

@@ -22,13 +22,15 @@ URLs cannot contain the ARN.}
 \item{associationType}{[required] The type of association.}
 
 \item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+idempotency of the request. If not provided, the Amazon Web Services SDK
+populates this field. For more information about idempotency, see
+\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{tags}{The tags used to organize, track, or control access for this resource.}
 }
 \description{
 Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the only supported association is with a knowledge base. An assistant can have only a single association.
 
-See \url{https://paws-r.github.io/docs/connectwisdomservice/create_assistant_association.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connectwisdomservice_create_assistant_association/} for full documentation.
 }
 \keyword{internal}

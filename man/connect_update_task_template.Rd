@@ -20,8 +20,8 @@ connect_update_task_template(
 \arguments{
 \item{TaskTemplateId}{[required] A unique identifier for the task template.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Name}{The name of the task template.}
 
@@ -45,6 +45,6 @@ created.}
 \description{
 Updates details about a specific task template in the specified Amazon Connect instance. This operation does not support partial updates. Instead it does a full update of template content.
 
-See \url{https://paws-r.github.io/docs/connect/update_task_template.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_update_task_template/} for full documentation.
 }
 \keyword{internal}

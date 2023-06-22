@@ -11,12 +11,12 @@ connect_update_user_routing_profile(RoutingProfileId, UserId, InstanceId)
 
 \item{UserId}{[required] The identifier of the user account.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 }
 \description{
 Assigns the specified routing profile to the specified user.
 
-See \url{https://paws-r.github.io/docs/connect/update_user_routing_profile.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_update_user_routing_profile/} for full documentation.
 }
 \keyword{internal}

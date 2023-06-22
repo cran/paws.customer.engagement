@@ -13,8 +13,8 @@ connect_list_integration_associations(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{IntegrationType}{The integration type.}
 
@@ -27,6 +27,6 @@ results.}
 \description{
 Provides summary information about the Amazon Web Services resource associations for the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/list_integration_associations.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_list_integration_associations/} for full documentation.
 }
 \keyword{internal}

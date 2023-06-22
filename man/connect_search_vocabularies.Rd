@@ -15,8 +15,8 @@ connect_search_vocabularies(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
@@ -34,6 +34,6 @@ their corresponding language codes, see \href{https://docs.aws.amazon.com/transc
 \description{
 Searches for vocabularies within a specific Amazon Connect instance using \code{State}, \code{NameStartsWith}, and \code{LanguageCode}.
 
-See \url{https://paws-r.github.io/docs/connect/search_vocabularies.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_search_vocabularies/} for full documentation.
 }
 \keyword{internal}

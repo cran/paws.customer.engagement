@@ -15,13 +15,15 @@ connectparticipant_complete_attachment_upload(
 \item{AttachmentIds}{[required] A list of unique identifiers for the attachments.}
 
 \item{ClientToken}{[required] A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+idempotency of the request. If not provided, the Amazon Web Services SDK
+populates this field. For more information about idempotency, see
+\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{ConnectionToken}{[required] The authentication token associated with the participant's connection.}
 }
 \description{
 Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API.
 
-See \url{https://paws-r.github.io/docs/connectparticipant/complete_attachment_upload.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connectparticipant_complete_attachment_upload/} for full documentation.
 }
 \keyword{internal}

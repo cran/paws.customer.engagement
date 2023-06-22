@@ -14,12 +14,11 @@ sesv2_list_domain_deliverability_campaigns(
 )
 }
 \arguments{
-\item{StartDate}{[required] The first day, in Unix time format, that you want to obtain
-deliverability data for.}
+\item{StartDate}{[required] The first day that you want to obtain deliverability data for.}
 
-\item{EndDate}{[required] The last day, in Unix time format, that you want to obtain
-deliverability data for. This value has to be less than or equal to 30
-days after the value of the \code{StartDate} parameter.}
+\item{EndDate}{[required] The last day that you want to obtain deliverability data for. This value
+has to be less than or equal to 30 days after the value of the
+\code{StartDate} parameter.}
 
 \item{SubscribedDomain}{[required] The domain to obtain deliverability data for.}
 
@@ -38,6 +37,6 @@ which you can use to obtain additional results.}
 \description{
 Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.
 
-See \url{https://paws-r.github.io/docs/sesv2/list_domain_deliverability_campaigns.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/sesv2_list_domain_deliverability_campaigns/} for full documentation.
 }
 \keyword{internal}

@@ -9,12 +9,12 @@ connect_stop_contact(ContactId, InstanceId)
 \arguments{
 \item{ContactId}{[required] The ID of the contact.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 }
 \description{
 Ends the specified contact. This call does not work for the following initiation methods:
 
-See \url{https://paws-r.github.io/docs/connect/stop_contact.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_stop_contact/} for full documentation.
 }
 \keyword{internal}

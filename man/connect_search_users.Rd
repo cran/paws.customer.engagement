@@ -13,8 +13,8 @@ connect_search_users(
 )
 }
 \arguments{
-\item{InstanceId}{The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{NextToken}{The token for the next set of results. Use the value returned in the
 previous response in the next request to retrieve the next set of
@@ -29,6 +29,6 @@ results.}
 \description{
 Searches users in an Amazon Connect instance, with optional filtering.
 
-See \url{https://paws-r.github.io/docs/connect/search_users.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_search_users/} for full documentation.
 }
 \keyword{internal}

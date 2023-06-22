@@ -8,14 +8,14 @@ Connect instance}
 connect_delete_integration_association(InstanceId, IntegrationAssociationId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{IntegrationAssociationId}{[required] The identifier for the integration association.}
 }
 \description{
 Deletes an Amazon Web Services resource association from an Amazon Connect instance. The association must not have any use cases associated with it.
 
-See \url{https://paws-r.github.io/docs/connect/delete_integration_association.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_delete_integration_association/} for full documentation.
 }
 \keyword{internal}

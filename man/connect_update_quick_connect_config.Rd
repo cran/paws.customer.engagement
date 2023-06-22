@@ -11,8 +11,8 @@ connect_update_quick_connect_config(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{QuickConnectId}{[required] The identifier for the quick connect.}
 
@@ -21,6 +21,6 @@ instanceId in the ARN of the instance.}
 \description{
 Updates the configuration settings for the specified quick connect.
 
-See \url{https://paws-r.github.io/docs/connect/update_quick_connect_config.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_update_quick_connect_config/} for full documentation.
 }
 \keyword{internal}

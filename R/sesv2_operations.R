@@ -3,12 +3,42 @@
 #' @include sesv2_service.R
 NULL
 
+#' Retrieves batches of metric data collected based on your sending
+#' activity
+#'
+#' @description
+#' Retrieves batches of metric data collected based on your sending activity.
+#'
+#' See [https://www.paws-r-sdk.com/docs/sesv2_batch_get_metric_data/](https://www.paws-r-sdk.com/docs/sesv2_batch_get_metric_data/) for full documentation.
+#'
+#' @param Queries &#91;required&#93; A list of queries for metrics to be retrieved.
+#'
+#' @keywords internal
+#'
+#' @rdname sesv2_batch_get_metric_data
+sesv2_batch_get_metric_data <- function(Queries) {
+  op <- new_operation(
+    name = "BatchGetMetricData",
+    http_method = "POST",
+    http_path = "/v2/email/metrics/batch",
+    paginator = list()
+  )
+  input <- .sesv2$batch_get_metric_data_input(Queries = Queries)
+  output <- .sesv2$batch_get_metric_data_output()
+  config <- get_config()
+  svc <- .sesv2$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.sesv2$operations$batch_get_metric_data <- sesv2_batch_get_metric_data
+
 #' Create a configuration set
 #'
 #' @description
 #' Create a configuration set. *Configuration sets* are groups of rules that you can apply to the emails that you send. You apply a configuration set to an email by specifying the name of the configuration set when you call the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/create_configuration_set.html](https://paws-r.github.io/docs/sesv2/create_configuration_set.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_create_configuration_set/](https://www.paws-r-sdk.com/docs/sesv2_create_configuration_set/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set. The name can contain up to 64
 #' alphanumeric characters, including letters, numbers, hyphens (-) and
@@ -24,18 +54,20 @@ NULL
 #' @param Tags An array of objects that define the tags (keys and values) to associate
 #' with the configuration set.
 #' @param SuppressionOptions 
+#' @param VdmOptions An object that defines the VDM options for emails that you send using
+#' the configuration set.
 #'
 #' @keywords internal
 #'
 #' @rdname sesv2_create_configuration_set
-sesv2_create_configuration_set <- function(ConfigurationSetName, TrackingOptions = NULL, DeliveryOptions = NULL, ReputationOptions = NULL, SendingOptions = NULL, Tags = NULL, SuppressionOptions = NULL) {
+sesv2_create_configuration_set <- function(ConfigurationSetName, TrackingOptions = NULL, DeliveryOptions = NULL, ReputationOptions = NULL, SendingOptions = NULL, Tags = NULL, SuppressionOptions = NULL, VdmOptions = NULL) {
   op <- new_operation(
     name = "CreateConfigurationSet",
     http_method = "POST",
     http_path = "/v2/email/configuration-sets",
     paginator = list()
   )
-  input <- .sesv2$create_configuration_set_input(ConfigurationSetName = ConfigurationSetName, TrackingOptions = TrackingOptions, DeliveryOptions = DeliveryOptions, ReputationOptions = ReputationOptions, SendingOptions = SendingOptions, Tags = Tags, SuppressionOptions = SuppressionOptions)
+  input <- .sesv2$create_configuration_set_input(ConfigurationSetName = ConfigurationSetName, TrackingOptions = TrackingOptions, DeliveryOptions = DeliveryOptions, ReputationOptions = ReputationOptions, SendingOptions = SendingOptions, Tags = Tags, SuppressionOptions = SuppressionOptions, VdmOptions = VdmOptions)
   output <- .sesv2$create_configuration_set_output()
   config <- get_config()
   svc <- .sesv2$service(config)
@@ -50,7 +82,7 @@ sesv2_create_configuration_set <- function(ConfigurationSetName, TrackingOptions
 #' @description
 #' Create an event destination. *Events* include message sends, deliveries, opens, clicks, bounces, and complaints. *Event destinations* are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/create_configuration_set_event_destination.html](https://paws-r.github.io/docs/sesv2/create_configuration_set_event_destination.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_create_configuration_set_event_destination/](https://www.paws-r-sdk.com/docs/sesv2_create_configuration_set_event_destination/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set .
 #' @param EventDestinationName &#91;required&#93; A name that identifies the event destination within the configuration
@@ -83,7 +115,7 @@ sesv2_create_configuration_set_event_destination <- function(ConfigurationSetNam
 #' @description
 #' Creates a contact, which is an end-user who is receiving the email, and adds them to a contact list.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/create_contact.html](https://paws-r.github.io/docs/sesv2/create_contact.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_create_contact/](https://www.paws-r-sdk.com/docs/sesv2_create_contact/) for full documentation.
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list to which the contact should be added.
 #' @param EmailAddress &#91;required&#93; The contact's email address.
@@ -117,7 +149,7 @@ sesv2_create_contact <- function(ContactListName, EmailAddress, TopicPreferences
 #' @description
 #' Creates a contact list.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/create_contact_list.html](https://paws-r.github.io/docs/sesv2/create_contact_list.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_create_contact_list/](https://www.paws-r-sdk.com/docs/sesv2_create_contact_list/) for full documentation.
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list.
 #' @param Topics An interest group, theme, or label within a list. A contact list can
@@ -150,16 +182,16 @@ sesv2_create_contact_list <- function(ContactListName, Topics = NULL, Descriptio
 #' @description
 #' Creates a new custom verification email template.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/create_custom_verification_email_template.html](https://paws-r.github.io/docs/sesv2/create_custom_verification_email_template.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_create_custom_verification_email_template/](https://www.paws-r-sdk.com/docs/sesv2_create_custom_verification_email_template/) for full documentation.
 #'
 #' @param TemplateName &#91;required&#93; The name of the custom verification email template.
 #' @param FromEmailAddress &#91;required&#93; The email address that the custom verification email is sent from.
 #' @param TemplateSubject &#91;required&#93; The subject line of the custom verification email.
 #' @param TemplateContent &#91;required&#93; The content of the custom verification email. The total size of the
 #' email must be less than 10 MB. The message body may contain HTML, with
-#' some limitations. For more information, see [Custom Verification Email
-#' Frequently Asked
-#' Questions](https://docs.aws.amazon.com/ses/latest/dg/#custom-verification-emails-faq)
+#' some limitations. For more information, see [Custom verification email
+#' frequently asked
+#' questions](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq)
 #' in the *Amazon SES Developer Guide*.
 #' @param SuccessRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his
 #' or her address is successfully verified.
@@ -191,23 +223,24 @@ sesv2_create_custom_verification_email_template <- function(TemplateName, FromEm
 #' @description
 #' Create a new pool of dedicated IP addresses. A pool can include one or more dedicated IP addresses that are associated with your Amazon Web Services account. You can associate a pool with a configuration set. When you send an email that uses that configuration set, the message is sent from one of the addresses in the associated pool.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/create_dedicated_ip_pool.html](https://paws-r.github.io/docs/sesv2/create_dedicated_ip_pool.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_create_dedicated_ip_pool/](https://www.paws-r-sdk.com/docs/sesv2_create_dedicated_ip_pool/) for full documentation.
 #'
 #' @param PoolName &#91;required&#93; The name of the dedicated IP pool.
 #' @param Tags An object that defines the tags (keys and values) that you want to
 #' associate with the pool.
+#' @param ScalingMode The type of scaling mode.
 #'
 #' @keywords internal
 #'
 #' @rdname sesv2_create_dedicated_ip_pool
-sesv2_create_dedicated_ip_pool <- function(PoolName, Tags = NULL) {
+sesv2_create_dedicated_ip_pool <- function(PoolName, Tags = NULL, ScalingMode = NULL) {
   op <- new_operation(
     name = "CreateDedicatedIpPool",
     http_method = "POST",
     http_path = "/v2/email/dedicated-ip-pools",
     paginator = list()
   )
-  input <- .sesv2$create_dedicated_ip_pool_input(PoolName = PoolName, Tags = Tags)
+  input <- .sesv2$create_dedicated_ip_pool_input(PoolName = PoolName, Tags = Tags, ScalingMode = ScalingMode)
   output <- .sesv2$create_dedicated_ip_pool_output()
   config <- get_config()
   svc <- .sesv2$service(config)
@@ -222,7 +255,7 @@ sesv2_create_dedicated_ip_pool <- function(PoolName, Tags = NULL) {
 #' @description
 #' Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. Amazon SES then sends that message to special email addresses spread across several major email providers. After about 24 hours, the test is complete, and you can use the [`get_deliverability_test_report`][sesv2_get_deliverability_test_report] operation to view the results of the test.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/create_deliverability_test_report.html](https://paws-r.github.io/docs/sesv2/create_deliverability_test_report.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_create_deliverability_test_report/](https://www.paws-r-sdk.com/docs/sesv2_create_deliverability_test_report/) for full documentation.
 #'
 #' @param ReportName A unique name that helps you to identify the predictive inbox placement
 #' test when you retrieve the results.
@@ -258,7 +291,7 @@ sesv2_create_deliverability_test_report <- function(ReportName = NULL, FromEmail
 #' @description
 #' Starts the process of verifying an email identity. An *identity* is an email address or domain that you use when you send email. Before you can use an identity to send email, you first have to verify it. By verifying an identity, you demonstrate that you're the owner of the identity, and that you've given Amazon SES API v2 permission to send email from the identity.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/create_email_identity.html](https://paws-r.github.io/docs/sesv2/create_email_identity.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_create_email_identity/](https://www.paws-r-sdk.com/docs/sesv2_create_email_identity/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The email address or domain to verify.
 #' @param Tags An array of objects that define the tags (keys and values) to associate
@@ -300,7 +333,7 @@ sesv2_create_email_identity <- function(EmailIdentity, Tags = NULL, DkimSigningA
 #' @description
 #' Creates the specified sending authorization policy for the given identity (an email address or a domain).
 #'
-#' See [https://paws-r.github.io/docs/sesv2/create_email_identity_policy.html](https://paws-r.github.io/docs/sesv2/create_email_identity_policy.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_create_email_identity_policy/](https://www.paws-r-sdk.com/docs/sesv2_create_email_identity_policy/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #' @param PolicyName &#91;required&#93; The name of the policy.
@@ -338,7 +371,7 @@ sesv2_create_email_identity_policy <- function(EmailIdentity, PolicyName, Policy
 #' @description
 #' Creates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html).
 #'
-#' See [https://paws-r.github.io/docs/sesv2/create_email_template.html](https://paws-r.github.io/docs/sesv2/create_email_template.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_create_email_template/](https://www.paws-r-sdk.com/docs/sesv2_create_email_template/) for full documentation.
 #'
 #' @param TemplateName &#91;required&#93; The name of the template.
 #' @param TemplateContent &#91;required&#93; The content of the email template, composed of a subject line, an HTML
@@ -369,7 +402,7 @@ sesv2_create_email_template <- function(TemplateName, TemplateContent) {
 #' @description
 #' Creates an import job for a data destination.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/create_import_job.html](https://paws-r.github.io/docs/sesv2/create_import_job.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_create_import_job/](https://www.paws-r-sdk.com/docs/sesv2_create_import_job/) for full documentation.
 #'
 #' @param ImportDestination &#91;required&#93; The destination for the import job.
 #' @param ImportDataSource &#91;required&#93; The data source for the import job.
@@ -399,7 +432,7 @@ sesv2_create_import_job <- function(ImportDestination, ImportDataSource) {
 #' @description
 #' Delete an existing configuration set.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/delete_configuration_set.html](https://paws-r.github.io/docs/sesv2/delete_configuration_set.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_delete_configuration_set/](https://www.paws-r-sdk.com/docs/sesv2_delete_configuration_set/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set.
 #'
@@ -428,7 +461,7 @@ sesv2_delete_configuration_set <- function(ConfigurationSetName) {
 #' @description
 #' Delete an event destination.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/delete_configuration_set_event_destination.html](https://paws-r.github.io/docs/sesv2/delete_configuration_set_event_destination.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_delete_configuration_set_event_destination/](https://www.paws-r-sdk.com/docs/sesv2_delete_configuration_set_event_destination/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set that contains the event destination to
 #' delete.
@@ -459,7 +492,7 @@ sesv2_delete_configuration_set_event_destination <- function(ConfigurationSetNam
 #' @description
 #' Removes a contact from a contact list.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/delete_contact.html](https://paws-r.github.io/docs/sesv2/delete_contact.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_delete_contact/](https://www.paws-r-sdk.com/docs/sesv2_delete_contact/) for full documentation.
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list from which the contact should be removed.
 #' @param EmailAddress &#91;required&#93; The contact's email address.
@@ -489,7 +522,7 @@ sesv2_delete_contact <- function(ContactListName, EmailAddress) {
 #' @description
 #' Deletes a contact list and all of the contacts on that list.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/delete_contact_list.html](https://paws-r.github.io/docs/sesv2/delete_contact_list.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_delete_contact_list/](https://www.paws-r-sdk.com/docs/sesv2_delete_contact_list/) for full documentation.
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list.
 #'
@@ -518,7 +551,7 @@ sesv2_delete_contact_list <- function(ContactListName) {
 #' @description
 #' Deletes an existing custom verification email template.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/delete_custom_verification_email_template.html](https://paws-r.github.io/docs/sesv2/delete_custom_verification_email_template.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_delete_custom_verification_email_template/](https://www.paws-r-sdk.com/docs/sesv2_delete_custom_verification_email_template/) for full documentation.
 #'
 #' @param TemplateName &#91;required&#93; The name of the custom verification email template that you want to
 #' delete.
@@ -548,7 +581,7 @@ sesv2_delete_custom_verification_email_template <- function(TemplateName) {
 #' @description
 #' Delete a dedicated IP pool.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/delete_dedicated_ip_pool.html](https://paws-r.github.io/docs/sesv2/delete_dedicated_ip_pool.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_delete_dedicated_ip_pool/](https://www.paws-r-sdk.com/docs/sesv2_delete_dedicated_ip_pool/) for full documentation.
 #'
 #' @param PoolName &#91;required&#93; The name of the dedicated IP pool that you want to delete.
 #'
@@ -577,7 +610,7 @@ sesv2_delete_dedicated_ip_pool <- function(PoolName) {
 #' @description
 #' Deletes an email identity. An identity can be either an email address or a domain name.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/delete_email_identity.html](https://paws-r.github.io/docs/sesv2/delete_email_identity.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_delete_email_identity/](https://www.paws-r-sdk.com/docs/sesv2_delete_email_identity/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The identity (that is, the email address or domain) to delete.
 #'
@@ -607,7 +640,7 @@ sesv2_delete_email_identity <- function(EmailIdentity) {
 #' @description
 #' Deletes the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/delete_email_identity_policy.html](https://paws-r.github.io/docs/sesv2/delete_email_identity_policy.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_delete_email_identity_policy/](https://www.paws-r-sdk.com/docs/sesv2_delete_email_identity_policy/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #' @param PolicyName &#91;required&#93; The name of the policy.
@@ -640,7 +673,7 @@ sesv2_delete_email_identity_policy <- function(EmailIdentity, PolicyName) {
 #' @description
 #' Deletes an email template.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/delete_email_template.html](https://paws-r.github.io/docs/sesv2/delete_email_template.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_delete_email_template/](https://www.paws-r-sdk.com/docs/sesv2_delete_email_template/) for full documentation.
 #'
 #' @param TemplateName &#91;required&#93; The name of the template to be deleted.
 #'
@@ -669,7 +702,7 @@ sesv2_delete_email_template <- function(TemplateName) {
 #' @description
 #' Removes an email address from the suppression list for your account.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/delete_suppressed_destination.html](https://paws-r.github.io/docs/sesv2/delete_suppressed_destination.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_delete_suppressed_destination/](https://www.paws-r-sdk.com/docs/sesv2_delete_suppressed_destination/) for full documentation.
 #'
 #' @param EmailAddress &#91;required&#93; The suppressed email destination to remove from the account suppression
 #' list.
@@ -700,7 +733,7 @@ sesv2_delete_suppressed_destination <- function(EmailAddress) {
 #' @description
 #' Obtain information about the email-sending status and capabilities of your Amazon SES account in the current Amazon Web Services Region.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_account.html](https://paws-r.github.io/docs/sesv2/get_account.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_account/](https://www.paws-r-sdk.com/docs/sesv2_get_account/) for full documentation.
 #'
 #' @keywords internal
 #'
@@ -728,7 +761,7 @@ sesv2_get_account <- function() {
 #' @description
 #' Retrieve a list of the blacklists that your dedicated IP addresses appear on.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_blacklist_reports.html](https://paws-r.github.io/docs/sesv2/get_blacklist_reports.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_blacklist_reports/](https://www.paws-r-sdk.com/docs/sesv2_get_blacklist_reports/) for full documentation.
 #'
 #' @param BlacklistItemNames &#91;required&#93; A list of IP addresses that you want to retrieve blacklist information
 #' about. You can only specify the dedicated IP addresses that you use to
@@ -761,7 +794,7 @@ sesv2_get_blacklist_reports <- function(BlacklistItemNames) {
 #' @description
 #' Get information about an existing configuration set, including the dedicated IP pool that it's associated with, whether or not it's enabled for sending email, and more.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_configuration_set.html](https://paws-r.github.io/docs/sesv2/get_configuration_set.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_configuration_set/](https://www.paws-r-sdk.com/docs/sesv2_get_configuration_set/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set.
 #'
@@ -791,7 +824,7 @@ sesv2_get_configuration_set <- function(ConfigurationSetName) {
 #' @description
 #' Retrieve a list of event destinations that are associated with a configuration set.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_configuration_set_event_destinations.html](https://paws-r.github.io/docs/sesv2/get_configuration_set_event_destinations.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_configuration_set_event_destinations/](https://www.paws-r-sdk.com/docs/sesv2_get_configuration_set_event_destinations/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set that contains the event destination.
 #'
@@ -820,10 +853,10 @@ sesv2_get_configuration_set_event_destinations <- function(ConfigurationSetName)
 #' @description
 #' Returns a contact from a contact list.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_contact.html](https://paws-r.github.io/docs/sesv2/get_contact.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_contact/](https://www.paws-r-sdk.com/docs/sesv2_get_contact/) for full documentation.
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list to which the contact belongs.
-#' @param EmailAddress &#91;required&#93; The contact's email addres.
+#' @param EmailAddress &#91;required&#93; The contact's email address.
 #'
 #' @keywords internal
 #'
@@ -850,7 +883,7 @@ sesv2_get_contact <- function(ContactListName, EmailAddress) {
 #' @description
 #' Returns contact list metadata. It does not return any information about the contacts present in the list.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_contact_list.html](https://paws-r.github.io/docs/sesv2/get_contact_list.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_contact_list/](https://www.paws-r-sdk.com/docs/sesv2_get_contact_list/) for full documentation.
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list.
 #'
@@ -880,7 +913,7 @@ sesv2_get_contact_list <- function(ContactListName) {
 #' @description
 #' Returns the custom email verification template for the template name you specify.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_custom_verification_email_template.html](https://paws-r.github.io/docs/sesv2/get_custom_verification_email_template.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_custom_verification_email_template/](https://www.paws-r-sdk.com/docs/sesv2_get_custom_verification_email_template/) for full documentation.
 #'
 #' @param TemplateName &#91;required&#93; The name of the custom verification email template that you want to
 #' retrieve.
@@ -912,7 +945,7 @@ sesv2_get_custom_verification_email_template <- function(TemplateName) {
 #' @description
 #' Get information about a dedicated IP address, including the name of the dedicated IP pool that it's associated with, as well information about the automatic warm-up process for the address.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_dedicated_ip.html](https://paws-r.github.io/docs/sesv2/get_dedicated_ip.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_dedicated_ip/](https://www.paws-r-sdk.com/docs/sesv2_get_dedicated_ip/) for full documentation.
 #'
 #' @param Ip &#91;required&#93; The IP address that you want to obtain more information about. The value
 #' you specify has to be a dedicated IP address that's assocaited with your
@@ -938,13 +971,42 @@ sesv2_get_dedicated_ip <- function(Ip) {
 }
 .sesv2$operations$get_dedicated_ip <- sesv2_get_dedicated_ip
 
+#' Retrieve information about the dedicated pool
+#'
+#' @description
+#' Retrieve information about the dedicated pool.
+#'
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_dedicated_ip_pool/](https://www.paws-r-sdk.com/docs/sesv2_get_dedicated_ip_pool/) for full documentation.
+#'
+#' @param PoolName &#91;required&#93; The name of the dedicated IP pool to retrieve.
+#'
+#' @keywords internal
+#'
+#' @rdname sesv2_get_dedicated_ip_pool
+sesv2_get_dedicated_ip_pool <- function(PoolName) {
+  op <- new_operation(
+    name = "GetDedicatedIpPool",
+    http_method = "GET",
+    http_path = "/v2/email/dedicated-ip-pools/{PoolName}",
+    paginator = list()
+  )
+  input <- .sesv2$get_dedicated_ip_pool_input(PoolName = PoolName)
+  output <- .sesv2$get_dedicated_ip_pool_output()
+  config <- get_config()
+  svc <- .sesv2$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.sesv2$operations$get_dedicated_ip_pool <- sesv2_get_dedicated_ip_pool
+
 #' List the dedicated IP addresses that are associated with your Amazon Web
 #' Services account
 #'
 #' @description
 #' List the dedicated IP addresses that are associated with your Amazon Web Services account.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_dedicated_ips.html](https://paws-r.github.io/docs/sesv2/get_dedicated_ips.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_dedicated_ips/](https://www.paws-r-sdk.com/docs/sesv2_get_dedicated_ips/) for full documentation.
 #'
 #' @param PoolName The name of the IP pool that the dedicated IP address is associated
 #' with.
@@ -982,7 +1044,7 @@ sesv2_get_dedicated_ips <- function(PoolName = NULL, NextToken = NULL, PageSize 
 #' @description
 #' Retrieve information about the status of the Deliverability dashboard for your account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email. You also gain the ability to perform predictive inbox placement tests.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_deliverability_dashboard_options.html](https://paws-r.github.io/docs/sesv2/get_deliverability_dashboard_options.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_deliverability_dashboard_options/](https://www.paws-r-sdk.com/docs/sesv2_get_deliverability_dashboard_options/) for full documentation.
 #'
 #' @keywords internal
 #'
@@ -1009,7 +1071,7 @@ sesv2_get_deliverability_dashboard_options <- function() {
 #' @description
 #' Retrieve the results of a predictive inbox placement test.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_deliverability_test_report.html](https://paws-r.github.io/docs/sesv2/get_deliverability_test_report.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_deliverability_test_report/](https://www.paws-r-sdk.com/docs/sesv2_get_deliverability_test_report/) for full documentation.
 #'
 #' @param ReportId &#91;required&#93; A unique string that identifies the predictive inbox placement test.
 #'
@@ -1038,7 +1100,7 @@ sesv2_get_deliverability_test_report <- function(ReportId) {
 #' @description
 #' Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_domain_deliverability_campaign.html](https://paws-r.github.io/docs/sesv2/get_domain_deliverability_campaign.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_domain_deliverability_campaign/](https://www.paws-r-sdk.com/docs/sesv2_get_domain_deliverability_campaign/) for full documentation.
 #'
 #' @param CampaignId &#91;required&#93; The unique identifier for the campaign. The Deliverability dashboard
 #' automatically generates and assigns this identifier to a campaign.
@@ -1069,7 +1131,7 @@ sesv2_get_domain_deliverability_campaign <- function(CampaignId) {
 #' @description
 #' Retrieve inbox placement and engagement rates for the domains that you use to send email.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_domain_statistics_report.html](https://paws-r.github.io/docs/sesv2/get_domain_statistics_report.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_domain_statistics_report/](https://www.paws-r-sdk.com/docs/sesv2_get_domain_statistics_report/) for full documentation.
 #'
 #' @param Domain &#91;required&#93; The domain that you want to obtain deliverability metrics for.
 #' @param StartDate &#91;required&#93; The first day (in Unix time) that you want to obtain domain
@@ -1105,7 +1167,7 @@ sesv2_get_domain_statistics_report <- function(Domain, StartDate, EndDate) {
 #' @description
 #' Provides information about a specific identity, including the identity's verification status, sending authorization policies, its DKIM authentication status, and its custom Mail-From settings.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_email_identity.html](https://paws-r.github.io/docs/sesv2/get_email_identity.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_email_identity/](https://www.paws-r-sdk.com/docs/sesv2_get_email_identity/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #'
@@ -1135,7 +1197,7 @@ sesv2_get_email_identity <- function(EmailIdentity) {
 #' @description
 #' Returns the requested sending authorization policies for the given identity (an email address or a domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_email_identity_policies.html](https://paws-r.github.io/docs/sesv2/get_email_identity_policies.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_email_identity_policies/](https://www.paws-r-sdk.com/docs/sesv2_get_email_identity_policies/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #'
@@ -1165,7 +1227,7 @@ sesv2_get_email_identity_policies <- function(EmailIdentity) {
 #' @description
 #' Displays the template object (which includes the subject line, HTML part and text part) for the template you specify.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_email_template.html](https://paws-r.github.io/docs/sesv2/get_email_template.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_email_template/](https://www.paws-r-sdk.com/docs/sesv2_get_email_template/) for full documentation.
 #'
 #' @param TemplateName &#91;required&#93; The name of the template.
 #'
@@ -1194,7 +1256,7 @@ sesv2_get_email_template <- function(TemplateName) {
 #' @description
 #' Provides information about an import job.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_import_job.html](https://paws-r.github.io/docs/sesv2/get_import_job.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_import_job/](https://www.paws-r-sdk.com/docs/sesv2_get_import_job/) for full documentation.
 #'
 #' @param JobId &#91;required&#93; The ID of the import job.
 #'
@@ -1224,7 +1286,7 @@ sesv2_get_import_job <- function(JobId) {
 #' @description
 #' Retrieves information about a specific email address that's on the suppression list for your account.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/get_suppressed_destination.html](https://paws-r.github.io/docs/sesv2/get_suppressed_destination.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_get_suppressed_destination/](https://www.paws-r-sdk.com/docs/sesv2_get_suppressed_destination/) for full documentation.
 #'
 #' @param EmailAddress &#91;required&#93; The email address that's on the account suppression list.
 #'
@@ -1254,7 +1316,7 @@ sesv2_get_suppressed_destination <- function(EmailAddress) {
 #' @description
 #' List all of the configuration sets associated with your account in the current region.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_configuration_sets.html](https://paws-r.github.io/docs/sesv2/list_configuration_sets.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_configuration_sets/](https://www.paws-r-sdk.com/docs/sesv2_list_configuration_sets/) for full documentation.
 #'
 #' @param NextToken A token returned from a previous call to
 #' [`list_configuration_sets`][sesv2_list_configuration_sets] to indicate
@@ -1290,7 +1352,7 @@ sesv2_list_configuration_sets <- function(NextToken = NULL, PageSize = NULL) {
 #' @description
 #' Lists all of the contact lists available.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_contact_lists.html](https://paws-r.github.io/docs/sesv2/list_contact_lists.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_contact_lists/](https://www.paws-r-sdk.com/docs/sesv2_list_contact_lists/) for full documentation.
 #'
 #' @param PageSize Maximum number of contact lists to return at once. Use this parameter to
 #' paginate results. If additional contact lists exist beyond the specified
@@ -1326,7 +1388,7 @@ sesv2_list_contact_lists <- function(PageSize = NULL, NextToken = NULL) {
 #' @description
 #' Lists the contacts present in a specific contact list.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_contacts.html](https://paws-r.github.io/docs/sesv2/list_contacts.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_contacts/](https://www.paws-r-sdk.com/docs/sesv2_list_contacts/) for full documentation.
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list.
 #' @param Filter A filter that can be applied to a list of contacts.
@@ -1367,7 +1429,7 @@ sesv2_list_contacts <- function(ContactListName, Filter = NULL, PageSize = NULL,
 #' @description
 #' Lists the existing custom verification email templates for your account in the current Amazon Web Services Region.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_custom_verification_email_templates.html](https://paws-r.github.io/docs/sesv2/list_custom_verification_email_templates.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_custom_verification_email_templates/](https://www.paws-r-sdk.com/docs/sesv2_list_custom_verification_email_templates/) for full documentation.
 #'
 #' @param NextToken A token returned from a previous call to
 #' [`list_custom_verification_email_templates`][sesv2_list_custom_verification_email_templates]
@@ -1407,7 +1469,7 @@ sesv2_list_custom_verification_email_templates <- function(NextToken = NULL, Pag
 #' @description
 #' List all of the dedicated IP pools that exist in your Amazon Web Services account in the current Region.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_dedicated_ip_pools.html](https://paws-r.github.io/docs/sesv2/list_dedicated_ip_pools.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_dedicated_ip_pools/](https://www.paws-r-sdk.com/docs/sesv2_list_dedicated_ip_pools/) for full documentation.
 #'
 #' @param NextToken A token returned from a previous call to
 #' [`list_dedicated_ip_pools`][sesv2_list_dedicated_ip_pools] to indicate
@@ -1444,7 +1506,7 @@ sesv2_list_dedicated_ip_pools <- function(NextToken = NULL, PageSize = NULL) {
 #' @description
 #' Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For predictive inbox placement tests that are complete, you can use the [`get_deliverability_test_report`][sesv2_get_deliverability_test_report] operation to view the results.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_deliverability_test_reports.html](https://paws-r.github.io/docs/sesv2/list_deliverability_test_reports.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_deliverability_test_reports/](https://www.paws-r-sdk.com/docs/sesv2_list_deliverability_test_reports/) for full documentation.
 #'
 #' @param NextToken A token returned from a previous call to
 #' [`list_deliverability_test_reports`][sesv2_list_deliverability_test_reports]
@@ -1485,13 +1547,12 @@ sesv2_list_deliverability_test_reports <- function(NextToken = NULL, PageSize = 
 #' @description
 #' Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_domain_deliverability_campaigns.html](https://paws-r.github.io/docs/sesv2/list_domain_deliverability_campaigns.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_domain_deliverability_campaigns/](https://www.paws-r-sdk.com/docs/sesv2_list_domain_deliverability_campaigns/) for full documentation.
 #'
-#' @param StartDate &#91;required&#93; The first day, in Unix time format, that you want to obtain
-#' deliverability data for.
-#' @param EndDate &#91;required&#93; The last day, in Unix time format, that you want to obtain
-#' deliverability data for. This value has to be less than or equal to 30
-#' days after the value of the `StartDate` parameter.
+#' @param StartDate &#91;required&#93; The first day that you want to obtain deliverability data for.
+#' @param EndDate &#91;required&#93; The last day that you want to obtain deliverability data for. This value
+#' has to be less than or equal to 30 days after the value of the
+#' `StartDate` parameter.
 #' @param SubscribedDomain &#91;required&#93; The domain to obtain deliverability data for.
 #' @param NextToken A token that’s returned from a previous call to the
 #' [`list_domain_deliverability_campaigns`][sesv2_list_domain_deliverability_campaigns]
@@ -1530,7 +1591,7 @@ sesv2_list_domain_deliverability_campaigns <- function(StartDate, EndDate, Subsc
 #' @description
 #' Returns a list of all of the email identities that are associated with your Amazon Web Services account. An identity can be either an email address or a domain. This operation returns identities that are verified as well as those that aren't. This operation returns identities that are associated with Amazon SES and Amazon Pinpoint.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_email_identities.html](https://paws-r.github.io/docs/sesv2/list_email_identities.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_email_identities/](https://www.paws-r-sdk.com/docs/sesv2_list_email_identities/) for full documentation.
 #'
 #' @param NextToken A token returned from a previous call to
 #' [`list_email_identities`][sesv2_list_email_identities] to indicate the
@@ -1570,7 +1631,7 @@ sesv2_list_email_identities <- function(NextToken = NULL, PageSize = NULL) {
 #' @description
 #' Lists the email templates present in your Amazon SES account in the current Amazon Web Services Region.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_email_templates.html](https://paws-r.github.io/docs/sesv2/list_email_templates.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_email_templates/](https://www.paws-r-sdk.com/docs/sesv2_list_email_templates/) for full documentation.
 #'
 #' @param NextToken A token returned from a previous call to
 #' [`list_email_templates`][sesv2_list_email_templates] to indicate the
@@ -1608,7 +1669,7 @@ sesv2_list_email_templates <- function(NextToken = NULL, PageSize = NULL) {
 #' @description
 #' Lists all of the import jobs.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_import_jobs.html](https://paws-r.github.io/docs/sesv2/list_import_jobs.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_import_jobs/](https://www.paws-r-sdk.com/docs/sesv2_list_import_jobs/) for full documentation.
 #'
 #' @param ImportDestinationType The destination of the import job, which can be used to list import jobs
 #' that have a certain `ImportDestinationType`.
@@ -1642,21 +1703,61 @@ sesv2_list_import_jobs <- function(ImportDestinationType = NULL, NextToken = NUL
 }
 .sesv2$operations$list_import_jobs <- sesv2_list_import_jobs
 
+#' Lists the recommendations present in your Amazon SES account in the
+#' current Amazon Web Services Region
+#'
+#' @description
+#' Lists the recommendations present in your Amazon SES account in the current Amazon Web Services Region.
+#'
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_recommendations/](https://www.paws-r-sdk.com/docs/sesv2_list_recommendations/) for full documentation.
+#'
+#' @param Filter Filters applied when retrieving recommendations. Can eiter be an
+#' individual filter, or combinations of `STATUS` and `IMPACT` or `STATUS`
+#' and `TYPE`
+#' @param NextToken A token returned from a previous call to
+#' [`list_recommendations`][sesv2_list_recommendations] to indicate the
+#' position in the list of recommendations.
+#' @param PageSize The number of results to show in a single call to
+#' [`list_recommendations`][sesv2_list_recommendations]. If the number of
+#' results is larger than the number you specified in this parameter, then
+#' the response includes a `NextToken` element, which you can use to obtain
+#' additional results.
+#' 
+#' The value you specify has to be at least 1, and can be no more than 100.
+#'
+#' @keywords internal
+#'
+#' @rdname sesv2_list_recommendations
+sesv2_list_recommendations <- function(Filter = NULL, NextToken = NULL, PageSize = NULL) {
+  op <- new_operation(
+    name = "ListRecommendations",
+    http_method = "POST",
+    http_path = "/v2/email/vdm/recommendations",
+    paginator = list()
+  )
+  input <- .sesv2$list_recommendations_input(Filter = Filter, NextToken = NextToken, PageSize = PageSize)
+  output <- .sesv2$list_recommendations_output()
+  config <- get_config()
+  svc <- .sesv2$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.sesv2$operations$list_recommendations <- sesv2_list_recommendations
+
 #' Retrieves a list of email addresses that are on the suppression list for
 #' your account
 #'
 #' @description
 #' Retrieves a list of email addresses that are on the suppression list for your account.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_suppressed_destinations.html](https://paws-r.github.io/docs/sesv2/list_suppressed_destinations.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_suppressed_destinations/](https://www.paws-r-sdk.com/docs/sesv2_list_suppressed_destinations/) for full documentation.
 #'
 #' @param Reasons The factors that caused the email address to be added to .
 #' @param StartDate Used to filter the list of suppressed email destinations so that it only
 #' includes addresses that were added to the list after a specific date.
-#' The date that you specify should be in Unix time format.
 #' @param EndDate Used to filter the list of suppressed email destinations so that it only
 #' includes addresses that were added to the list before a specific date.
-#' The date that you specify should be in Unix time format.
 #' @param NextToken A token returned from a previous call to
 #' [`list_suppressed_destinations`][sesv2_list_suppressed_destinations] to
 #' indicate the position in the list of suppressed email addresses.
@@ -1692,7 +1793,7 @@ sesv2_list_suppressed_destinations <- function(Reasons = NULL, StartDate = NULL,
 #' @description
 #' Retrieve a list of the tags (keys and values) that are associated with a specified resource. A *tag* is a label that you optionally define and associate with a resource. Each tag consists of a required *tag key* and an optional associated *tag value*. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/list_tags_for_resource.html](https://paws-r.github.io/docs/sesv2/list_tags_for_resource.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/sesv2_list_tags_for_resource/) for full documentation.
 #'
 #' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to retrieve
 #' tag information for.
@@ -1723,7 +1824,7 @@ sesv2_list_tags_for_resource <- function(ResourceArn) {
 #' @description
 #' Enable or disable the automatic warm-up feature for dedicated IP addresses.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_account_dedicated_ip_warmup_attributes.html](https://paws-r.github.io/docs/sesv2/put_account_dedicated_ip_warmup_attributes.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_account_dedicated_ip_warmup_attributes/](https://www.paws-r-sdk.com/docs/sesv2_put_account_dedicated_ip_warmup_attributes/) for full documentation.
 #'
 #' @param AutoWarmupEnabled Enables or disables the automatic warm-up feature for dedicated IP
 #' addresses that are associated with your Amazon SES account in the
@@ -1755,7 +1856,7 @@ sesv2_put_account_dedicated_ip_warmup_attributes <- function(AutoWarmupEnabled =
 #' @description
 #' Update your Amazon SES account details.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_account_details.html](https://paws-r.github.io/docs/sesv2/put_account_details.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_account_details/](https://www.paws-r-sdk.com/docs/sesv2_put_account_details/) for full documentation.
 #'
 #' @param MailType &#91;required&#93; The type of email your account will send.
 #' @param WebsiteURL &#91;required&#93; The URL of your website. This information helps us better understand the
@@ -1803,7 +1904,7 @@ sesv2_put_account_details <- function(MailType, WebsiteURL, ContactLanguage = NU
 #' @description
 #' Enable or disable the ability of your account to send email.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_account_sending_attributes.html](https://paws-r.github.io/docs/sesv2/put_account_sending_attributes.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_account_sending_attributes/](https://www.paws-r-sdk.com/docs/sesv2_put_account_sending_attributes/) for full documentation.
 #'
 #' @param SendingEnabled Enables or disables your account's ability to send email. Set to `true`
 #' to enable email sending, or set to `false` to disable email sending.
@@ -1836,7 +1937,7 @@ sesv2_put_account_sending_attributes <- function(SendingEnabled = NULL) {
 #' @description
 #' Change the settings for the account-level suppression list.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_account_suppression_attributes.html](https://paws-r.github.io/docs/sesv2/put_account_suppression_attributes.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_account_suppression_attributes/](https://www.paws-r-sdk.com/docs/sesv2_put_account_suppression_attributes/) for full documentation.
 #'
 #' @param SuppressedReasons A list that contains the reasons that email addresses will be
 #' automatically added to the suppression list for your account. This list
@@ -1870,12 +1971,41 @@ sesv2_put_account_suppression_attributes <- function(SuppressedReasons = NULL) {
 }
 .sesv2$operations$put_account_suppression_attributes <- sesv2_put_account_suppression_attributes
 
+#' Update your Amazon SES account VDM attributes
+#'
+#' @description
+#' Update your Amazon SES account VDM attributes.
+#'
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_account_vdm_attributes/](https://www.paws-r-sdk.com/docs/sesv2_put_account_vdm_attributes/) for full documentation.
+#'
+#' @param VdmAttributes &#91;required&#93; The VDM attributes that you wish to apply to your Amazon SES account.
+#'
+#' @keywords internal
+#'
+#' @rdname sesv2_put_account_vdm_attributes
+sesv2_put_account_vdm_attributes <- function(VdmAttributes) {
+  op <- new_operation(
+    name = "PutAccountVdmAttributes",
+    http_method = "PUT",
+    http_path = "/v2/email/account/vdm",
+    paginator = list()
+  )
+  input <- .sesv2$put_account_vdm_attributes_input(VdmAttributes = VdmAttributes)
+  output <- .sesv2$put_account_vdm_attributes_output()
+  config <- get_config()
+  svc <- .sesv2$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.sesv2$operations$put_account_vdm_attributes <- sesv2_put_account_vdm_attributes
+
 #' Associate a configuration set with a dedicated IP pool
 #'
 #' @description
 #' Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools to create groups of dedicated IP addresses for sending specific types of email.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_configuration_set_delivery_options.html](https://paws-r.github.io/docs/sesv2/put_configuration_set_delivery_options.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_delivery_options/](https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_delivery_options/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to associate with a dedicated IP pool.
 #' @param TlsPolicy Specifies whether messages that use the configuration set are required
@@ -1913,7 +2043,7 @@ sesv2_put_configuration_set_delivery_options <- function(ConfigurationSetName, T
 #' @description
 #' Enable or disable collection of reputation metrics for emails that you send using a particular configuration set in a specific Amazon Web Services Region.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_configuration_set_reputation_options.html](https://paws-r.github.io/docs/sesv2/put_configuration_set_reputation_options.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_reputation_options/](https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_reputation_options/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set.
 #' @param ReputationMetricsEnabled If `true`, tracking of reputation metrics is enabled for the
@@ -1946,7 +2076,7 @@ sesv2_put_configuration_set_reputation_options <- function(ConfigurationSetName,
 #' @description
 #' Enable or disable email sending for messages that use a particular configuration set in a specific Amazon Web Services Region.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_configuration_set_sending_options.html](https://paws-r.github.io/docs/sesv2/put_configuration_set_sending_options.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_sending_options/](https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_sending_options/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to enable or disable email sending
 #' for.
@@ -1978,7 +2108,7 @@ sesv2_put_configuration_set_sending_options <- function(ConfigurationSetName, Se
 #' @description
 #' Specify the account suppression list preferences for a configuration set.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_configuration_set_suppression_options.html](https://paws-r.github.io/docs/sesv2/put_configuration_set_suppression_options.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_suppression_options/](https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_suppression_options/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to change the suppression list
 #' preferences for.
@@ -2020,7 +2150,7 @@ sesv2_put_configuration_set_suppression_options <- function(ConfigurationSetName
 #' @description
 #' Specify a custom domain to use for open and click tracking elements in email that you send.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_configuration_set_tracking_options.html](https://paws-r.github.io/docs/sesv2/put_configuration_set_tracking_options.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_tracking_options/](https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_tracking_options/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set.
 #' @param CustomRedirectDomain The domain to use to track open and click events.
@@ -2045,12 +2175,43 @@ sesv2_put_configuration_set_tracking_options <- function(ConfigurationSetName, C
 }
 .sesv2$operations$put_configuration_set_tracking_options <- sesv2_put_configuration_set_tracking_options
 
+#' Specify VDM preferences for email that you send using the configuration
+#' set
+#'
+#' @description
+#' Specify VDM preferences for email that you send using the configuration set.
+#'
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_vdm_options/](https://www.paws-r-sdk.com/docs/sesv2_put_configuration_set_vdm_options/) for full documentation.
+#'
+#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set.
+#' @param VdmOptions The VDM options to apply to the configuration set.
+#'
+#' @keywords internal
+#'
+#' @rdname sesv2_put_configuration_set_vdm_options
+sesv2_put_configuration_set_vdm_options <- function(ConfigurationSetName, VdmOptions = NULL) {
+  op <- new_operation(
+    name = "PutConfigurationSetVdmOptions",
+    http_method = "PUT",
+    http_path = "/v2/email/configuration-sets/{ConfigurationSetName}/vdm-options",
+    paginator = list()
+  )
+  input <- .sesv2$put_configuration_set_vdm_options_input(ConfigurationSetName = ConfigurationSetName, VdmOptions = VdmOptions)
+  output <- .sesv2$put_configuration_set_vdm_options_output()
+  config <- get_config()
+  svc <- .sesv2$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.sesv2$operations$put_configuration_set_vdm_options <- sesv2_put_configuration_set_vdm_options
+
 #' Move a dedicated IP address to an existing dedicated IP pool
 #'
 #' @description
 #' Move a dedicated IP address to an existing dedicated IP pool.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_dedicated_ip_in_pool.html](https://paws-r.github.io/docs/sesv2/put_dedicated_ip_in_pool.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_dedicated_ip_in_pool/](https://www.paws-r-sdk.com/docs/sesv2_put_dedicated_ip_in_pool/) for full documentation.
 #'
 #' @param Ip &#91;required&#93; The IP address that you want to move to the dedicated IP pool. The value
 #' you specify has to be a dedicated IP address that's associated with your
@@ -2078,12 +2239,44 @@ sesv2_put_dedicated_ip_in_pool <- function(Ip, DestinationPoolName) {
 }
 .sesv2$operations$put_dedicated_ip_in_pool <- sesv2_put_dedicated_ip_in_pool
 
+#' Used to convert a dedicated IP pool to a different scaling mode
+#'
+#' @description
+#' Used to convert a dedicated IP pool to a different scaling mode.
+#'
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_dedicated_ip_pool_scaling_attributes/](https://www.paws-r-sdk.com/docs/sesv2_put_dedicated_ip_pool_scaling_attributes/) for full documentation.
+#'
+#' @param PoolName &#91;required&#93; The name of the dedicated IP pool.
+#' @param ScalingMode &#91;required&#93; The scaling mode to apply to the dedicated IP pool.
+#' 
+#' Changing the scaling mode from `MANAGED` to `STANDARD` is not supported.
+#'
+#' @keywords internal
+#'
+#' @rdname sesv2_put_dedicated_ip_pool_scaling_attributes
+sesv2_put_dedicated_ip_pool_scaling_attributes <- function(PoolName, ScalingMode) {
+  op <- new_operation(
+    name = "PutDedicatedIpPoolScalingAttributes",
+    http_method = "PUT",
+    http_path = "/v2/email/dedicated-ip-pools/{PoolName}/scaling",
+    paginator = list()
+  )
+  input <- .sesv2$put_dedicated_ip_pool_scaling_attributes_input(PoolName = PoolName, ScalingMode = ScalingMode)
+  output <- .sesv2$put_dedicated_ip_pool_scaling_attributes_output()
+  config <- get_config()
+  svc <- .sesv2$service(config)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.sesv2$operations$put_dedicated_ip_pool_scaling_attributes <- sesv2_put_dedicated_ip_pool_scaling_attributes
+
 #' Put dedicated ip warmup attributes
 #'
 #' @description
 #' Put dedicated ip warmup attributes
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_dedicated_ip_warmup_attributes.html](https://paws-r.github.io/docs/sesv2/put_dedicated_ip_warmup_attributes.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_dedicated_ip_warmup_attributes/](https://www.paws-r-sdk.com/docs/sesv2_put_dedicated_ip_warmup_attributes/) for full documentation.
 #'
 #' @param Ip &#91;required&#93; The dedicated IP address that you want to update the warm-up attributes
 #' for.
@@ -2115,7 +2308,7 @@ sesv2_put_dedicated_ip_warmup_attributes <- function(Ip, WarmupPercentage) {
 #' @description
 #' Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email. You also gain the ability to perform predictive inbox placement tests.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_deliverability_dashboard_option.html](https://paws-r.github.io/docs/sesv2/put_deliverability_dashboard_option.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_deliverability_dashboard_option/](https://www.paws-r-sdk.com/docs/sesv2_put_deliverability_dashboard_option/) for full documentation.
 #'
 #' @param DashboardEnabled &#91;required&#93; Specifies whether to enable the Deliverability dashboard. To enable the
 #' dashboard, set this value to `true`.
@@ -2147,7 +2340,7 @@ sesv2_put_deliverability_dashboard_option <- function(DashboardEnabled, Subscrib
 #' @description
 #' Used to associate a configuration set with an email identity.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_email_identity_configuration_set_attributes.html](https://paws-r.github.io/docs/sesv2/put_email_identity_configuration_set_attributes.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_email_identity_configuration_set_attributes/](https://www.paws-r-sdk.com/docs/sesv2_put_email_identity_configuration_set_attributes/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The email address or domain to associate with a configuration set.
 #' @param ConfigurationSetName The configuration set to associate with an email identity.
@@ -2177,7 +2370,7 @@ sesv2_put_email_identity_configuration_set_attributes <- function(EmailIdentity,
 #' @description
 #' Used to enable or disable DKIM authentication for an email identity.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_email_identity_dkim_attributes.html](https://paws-r.github.io/docs/sesv2/put_email_identity_dkim_attributes.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_email_identity_dkim_attributes/](https://www.paws-r-sdk.com/docs/sesv2_put_email_identity_dkim_attributes/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #' @param SigningEnabled Sets the DKIM signing configuration for the identity.
@@ -2212,7 +2405,7 @@ sesv2_put_email_identity_dkim_attributes <- function(EmailIdentity, SigningEnabl
 #' @description
 #' Used to configure or change the DKIM authentication settings for an email domain identity. You can use this operation to do any of the following:
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_email_identity_dkim_signing_attributes.html](https://paws-r.github.io/docs/sesv2/put_email_identity_dkim_signing_attributes.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_email_identity_dkim_signing_attributes/](https://www.paws-r-sdk.com/docs/sesv2_put_email_identity_dkim_signing_attributes/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #' @param SigningAttributesOrigin &#91;required&#93; The method to use to configure DKIM for the identity. There are the
@@ -2254,7 +2447,7 @@ sesv2_put_email_identity_dkim_signing_attributes <- function(EmailIdentity, Sign
 #' @description
 #' Used to enable or disable feedback forwarding for an identity. This setting determines what happens when an identity is used to send an email that results in a bounce or complaint event.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_email_identity_feedback_attributes.html](https://paws-r.github.io/docs/sesv2/put_email_identity_feedback_attributes.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_email_identity_feedback_attributes/](https://www.paws-r-sdk.com/docs/sesv2_put_email_identity_feedback_attributes/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #' @param EmailForwardingEnabled Sets the feedback forwarding configuration for the identity.
@@ -2295,7 +2488,7 @@ sesv2_put_email_identity_feedback_attributes <- function(EmailIdentity, EmailFor
 #' @description
 #' Used to enable or disable the custom Mail-From domain configuration for an email identity.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_email_identity_mail_from_attributes.html](https://paws-r.github.io/docs/sesv2/put_email_identity_mail_from_attributes.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_email_identity_mail_from_attributes/](https://www.paws-r-sdk.com/docs/sesv2_put_email_identity_mail_from_attributes/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The verified email identity.
 #' @param MailFromDomain The custom MAIL FROM domain that you want the verified identity to use.
@@ -2342,7 +2535,7 @@ sesv2_put_email_identity_mail_from_attributes <- function(EmailIdentity, MailFro
 #' @description
 #' Adds an email address to the suppression list for your account.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/put_suppressed_destination.html](https://paws-r.github.io/docs/sesv2/put_suppressed_destination.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_put_suppressed_destination/](https://www.paws-r-sdk.com/docs/sesv2_put_suppressed_destination/) for full documentation.
 #'
 #' @param EmailAddress &#91;required&#93; The email address that should be added to the suppression list for your
 #' account.
@@ -2374,7 +2567,7 @@ sesv2_put_suppressed_destination <- function(EmailAddress, Reason) {
 #' @description
 #' Composes an email message to multiple destinations.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/send_bulk_email.html](https://paws-r.github.io/docs/sesv2/send_bulk_email.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_send_bulk_email/](https://www.paws-r-sdk.com/docs/sesv2_send_bulk_email/) for full documentation.
 #'
 #' @param FromEmailAddress The email address to use as the "From" address for the email. The
 #' address that you specify has to be verified.
@@ -2448,7 +2641,7 @@ sesv2_send_bulk_email <- function(FromEmailAddress = NULL, FromEmailAddressIdent
 #' @description
 #' Adds an email address to the list of identities for your Amazon SES account in the current Amazon Web Services Region and attempts to verify it. As a result of executing this operation, a customized verification email is sent to the specified address.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/send_custom_verification_email.html](https://paws-r.github.io/docs/sesv2/send_custom_verification_email.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_send_custom_verification_email/](https://www.paws-r-sdk.com/docs/sesv2_send_custom_verification_email/) for full documentation.
 #'
 #' @param EmailAddress &#91;required&#93; The email address to verify.
 #' @param TemplateName &#91;required&#93; The name of the custom verification email template to use when sending
@@ -2480,7 +2673,7 @@ sesv2_send_custom_verification_email <- function(EmailAddress, TemplateName, Con
 #' @description
 #' Sends an email message. You can use the Amazon SES API v2 to send the following types of messages:
 #'
-#' See [https://paws-r.github.io/docs/sesv2/send_email.html](https://paws-r.github.io/docs/sesv2/send_email.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_send_email/](https://www.paws-r-sdk.com/docs/sesv2_send_email/) for full documentation.
 #'
 #' @param FromEmailAddress The email address to use as the "From" address for the email. The
 #' address that you specify has to be verified.
@@ -2558,7 +2751,7 @@ sesv2_send_email <- function(FromEmailAddress = NULL, FromEmailAddressIdentityAr
 #' @description
 #' Add one or more tags (keys and values) to a specified resource. A *tag* is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/tag_resource.html](https://paws-r.github.io/docs/sesv2/tag_resource.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_tag_resource/](https://www.paws-r-sdk.com/docs/sesv2_tag_resource/) for full documentation.
 #'
 #' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to add one
 #' or more tags to.
@@ -2593,7 +2786,7 @@ sesv2_tag_resource <- function(ResourceArn, Tags) {
 #' @description
 #' Creates a preview of the MIME content of an email when provided with a template and a set of replacement data.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/test_render_email_template.html](https://paws-r.github.io/docs/sesv2/test_render_email_template.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_test_render_email_template/](https://www.paws-r-sdk.com/docs/sesv2_test_render_email_template/) for full documentation.
 #'
 #' @param TemplateName &#91;required&#93; The name of the template.
 #' @param TemplateData &#91;required&#93; A list of replacement values to apply to the template. This parameter is
@@ -2625,7 +2818,7 @@ sesv2_test_render_email_template <- function(TemplateName, TemplateData) {
 #' @description
 #' Remove one or more tags (keys and values) from a specified resource.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/untag_resource.html](https://paws-r.github.io/docs/sesv2/untag_resource.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_untag_resource/](https://www.paws-r-sdk.com/docs/sesv2_untag_resource/) for full documentation.
 #'
 #' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to remove
 #' one or more tags from.
@@ -2663,7 +2856,7 @@ sesv2_untag_resource <- function(ResourceArn, TagKeys) {
 #' @description
 #' Update the configuration of an event destination for a configuration set.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/update_configuration_set_event_destination.html](https://paws-r.github.io/docs/sesv2/update_configuration_set_event_destination.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_update_configuration_set_event_destination/](https://www.paws-r-sdk.com/docs/sesv2_update_configuration_set_event_destination/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set that contains the event destination to
 #' modify.
@@ -2695,10 +2888,10 @@ sesv2_update_configuration_set_event_destination <- function(ConfigurationSetNam
 #' @description
 #' Updates a contact's preferences for a list. It is not necessary to specify all existing topic preferences in the TopicPreferences object, just the ones that need updating.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/update_contact.html](https://paws-r.github.io/docs/sesv2/update_contact.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_update_contact/](https://www.paws-r-sdk.com/docs/sesv2_update_contact/) for full documentation.
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list.
-#' @param EmailAddress &#91;required&#93; The contact's email addres.
+#' @param EmailAddress &#91;required&#93; The contact's email address.
 #' @param TopicPreferences The contact's preference for being opted-in to or opted-out of a topic.
 #' @param UnsubscribeAll A boolean value status noting if the contact is unsubscribed from all
 #' contact list topics.
@@ -2729,7 +2922,7 @@ sesv2_update_contact <- function(ContactListName, EmailAddress, TopicPreferences
 #' @description
 #' Updates contact list metadata. This operation does a complete replacement.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/update_contact_list.html](https://paws-r.github.io/docs/sesv2/update_contact_list.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_update_contact_list/](https://www.paws-r-sdk.com/docs/sesv2_update_contact_list/) for full documentation.
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list.
 #' @param Topics An interest group, theme, or label within a list. A contact list can
@@ -2761,7 +2954,7 @@ sesv2_update_contact_list <- function(ContactListName, Topics = NULL, Descriptio
 #' @description
 #' Updates an existing custom verification email template.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/update_custom_verification_email_template.html](https://paws-r.github.io/docs/sesv2/update_custom_verification_email_template.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_update_custom_verification_email_template/](https://www.paws-r-sdk.com/docs/sesv2_update_custom_verification_email_template/) for full documentation.
 #'
 #' @param TemplateName &#91;required&#93; The name of the custom verification email template that you want to
 #' update.
@@ -2769,9 +2962,9 @@ sesv2_update_contact_list <- function(ContactListName, Topics = NULL, Descriptio
 #' @param TemplateSubject &#91;required&#93; The subject line of the custom verification email.
 #' @param TemplateContent &#91;required&#93; The content of the custom verification email. The total size of the
 #' email must be less than 10 MB. The message body may contain HTML, with
-#' some limitations. For more information, see [Custom Verification Email
-#' Frequently Asked
-#' Questions](https://docs.aws.amazon.com/ses/latest/dg/#custom-verification-emails-faq)
+#' some limitations. For more information, see [Custom verification email
+#' frequently asked
+#' questions](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq)
 #' in the *Amazon SES Developer Guide*.
 #' @param SuccessRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his
 #' or her address is successfully verified.
@@ -2804,7 +2997,7 @@ sesv2_update_custom_verification_email_template <- function(TemplateName, FromEm
 #' @description
 #' Updates the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.
 #'
-#' See [https://paws-r.github.io/docs/sesv2/update_email_identity_policy.html](https://paws-r.github.io/docs/sesv2/update_email_identity_policy.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_update_email_identity_policy/](https://www.paws-r-sdk.com/docs/sesv2_update_email_identity_policy/) for full documentation.
 #'
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #' @param PolicyName &#91;required&#93; The name of the policy.
@@ -2842,7 +3035,7 @@ sesv2_update_email_identity_policy <- function(EmailIdentity, PolicyName, Policy
 #' @description
 #' Updates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html).
 #'
-#' See [https://paws-r.github.io/docs/sesv2/update_email_template.html](https://paws-r.github.io/docs/sesv2/update_email_template.html) for full documentation.
+#' See [https://www.paws-r-sdk.com/docs/sesv2_update_email_template/](https://www.paws-r-sdk.com/docs/sesv2_update_email_template/) for full documentation.
 #'
 #' @param TemplateName &#91;required&#93; The name of the template.
 #' @param TemplateContent &#91;required&#93; The content of the email template, composed of a subject line, an HTML

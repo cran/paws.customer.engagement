@@ -17,7 +17,9 @@ connectwisdomservice_create_knowledge_base(
 }
 \arguments{
 \item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+idempotency of the request. If not provided, the Amazon Web Services SDK
+populates this field. For more information about idempotency, see
+\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{description}{The description.}
 
@@ -39,6 +41,6 @@ EXTERNAL knowledge bases.}
 \description{
 Creates a knowledge base.
 
-See \url{https://paws-r.github.io/docs/connectwisdomservice/create_knowledge_base.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connectwisdomservice_create_knowledge_base/} for full documentation.
 }
 \keyword{internal}

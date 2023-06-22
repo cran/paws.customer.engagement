@@ -12,8 +12,8 @@ connect_list_default_vocabularies(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{LanguageCode}{The language code of the vocabulary entries. For a list of languages and
 their corresponding language codes, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html}{What is Amazon Transcribe?}}
@@ -27,6 +27,6 @@ results.}
 \description{
 Lists the default vocabularies for the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/list_default_vocabularies.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_list_default_vocabularies/} for full documentation.
 }
 \keyword{internal}

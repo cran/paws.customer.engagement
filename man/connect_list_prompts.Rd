@@ -14,11 +14,12 @@ connect_list_prompts(InstanceId, NextToken = NULL, MaxResults = NULL)
 previous response in the next request to retrieve the next set of
 results.}
 
-\item{MaxResults}{The maximum number of results to return per page.}
+\item{MaxResults}{The maximum number of results to return per page. The default MaxResult
+size is 100.}
 }
 \description{
 Provides information about the prompts for the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/list_prompts.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_list_prompts/} for full documentation.
 }
 \keyword{internal}

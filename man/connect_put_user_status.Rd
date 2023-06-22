@@ -9,14 +9,14 @@ connect_put_user_status(UserId, InstanceId, AgentStatusId)
 \arguments{
 \item{UserId}{[required] The identifier of the user.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{AgentStatusId}{[required] The identifier of the agent status.}
 }
 \description{
 Changes the current status of a user or agent in Amazon Connect. If the agent is currently handling a contact, this sets the agent's next status.
 
-See \url{https://paws-r.github.io/docs/connect/put_user_status.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_put_user_status/} for full documentation.
 }
 \keyword{internal}

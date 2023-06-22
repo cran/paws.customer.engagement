@@ -12,8 +12,8 @@ connect_start_contact_recording(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{ContactId}{[required] The identifier of the contact.}
 
@@ -25,6 +25,6 @@ associated with the first interaction with the contact center.}
 \description{
 Starts recording the contact:
 
-See \url{https://paws-r.github.io/docs/connect/start_contact_recording.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_start_contact_recording/} for full documentation.
 }
 \keyword{internal}

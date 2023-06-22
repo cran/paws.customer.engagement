@@ -3,7 +3,7 @@
 \name{connect_describe_phone_number}
 \alias{connect_describe_phone_number}
 \title{Gets details and status of a phone number that’s claimed to your Amazon
-Connect instance}
+Connect instance or traffic distribution group}
 \usage{
 connect_describe_phone_number(PhoneNumberId)
 }
@@ -11,8 +11,8 @@ connect_describe_phone_number(PhoneNumberId)
 \item{PhoneNumberId}{[required] A unique identifier for the phone number.}
 }
 \description{
-Gets details and status of a phone number that’s claimed to your Amazon Connect instance
+Gets details and status of a phone number that’s claimed to your Amazon Connect instance or traffic distribution group.
 
-See \url{https://paws-r.github.io/docs/connect/describe_phone_number.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_describe_phone_number/} for full documentation.
 }
 \keyword{internal}

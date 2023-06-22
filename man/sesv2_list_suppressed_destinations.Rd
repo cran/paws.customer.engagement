@@ -17,12 +17,10 @@ sesv2_list_suppressed_destinations(
 \item{Reasons}{The factors that caused the email address to be added to .}
 
 \item{StartDate}{Used to filter the list of suppressed email destinations so that it only
-includes addresses that were added to the list after a specific date.
-The date that you specify should be in Unix time format.}
+includes addresses that were added to the list after a specific date.}
 
 \item{EndDate}{Used to filter the list of suppressed email destinations so that it only
-includes addresses that were added to the list before a specific date.
-The date that you specify should be in Unix time format.}
+includes addresses that were added to the list before a specific date.}
 
 \item{NextToken}{A token returned from a previous call to
 \code{\link[=sesv2_list_suppressed_destinations]{list_suppressed_destinations}} to
@@ -37,6 +35,6 @@ can use to obtain additional results.}
 \description{
 Retrieves a list of email addresses that are on the suppression list for your account.
 
-See \url{https://paws-r.github.io/docs/sesv2/list_suppressed_destinations.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/sesv2_list_suppressed_destinations/} for full documentation.
 }
 \keyword{internal}

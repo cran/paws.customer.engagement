@@ -14,8 +14,8 @@ connect_list_phone_numbers(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{PhoneNumberTypes}{The type of phone number.}
 
@@ -25,11 +25,12 @@ instanceId in the ARN of the instance.}
 previous response in the next request to retrieve the next set of
 results.}
 
-\item{MaxResults}{The maximum number of results to return per page.}
+\item{MaxResults}{The maximum number of results to return per page. The default MaxResult
+size is 100.}
 }
 \description{
 Provides information about the phone numbers for the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/list_phone_numbers.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_list_phone_numbers/} for full documentation.
 }
 \keyword{internal}

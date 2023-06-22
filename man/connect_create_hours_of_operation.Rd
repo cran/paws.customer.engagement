@@ -15,8 +15,8 @@ connect_create_hours_of_operation(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Name}{[required] The name of the hours of operation.}
 
@@ -27,11 +27,12 @@ instanceId in the ARN of the instance.}
 \item{Config}{[required] Configuration information for the hours of operation: day, start time,
 and end time.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.}
+\item{Tags}{The tags used to organize, track, or control access for this resource.
+For example, \{ "tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
 This API is in preview release for Amazon Connect and is subject to change.
 
-See \url{https://paws-r.github.io/docs/connect/create_hours_of_operation.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_create_hours_of_operation/} for full documentation.
 }
 \keyword{internal}

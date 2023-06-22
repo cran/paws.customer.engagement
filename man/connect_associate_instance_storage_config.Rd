@@ -12,8 +12,8 @@ connect_associate_instance_storage_config(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{ResourceType}{[required] A valid resource type.}
 
@@ -22,6 +22,6 @@ instanceId in the ARN of the instance.}
 \description{
 This API is in preview release for Amazon Connect and is subject to change.
 
-See \url{https://paws-r.github.io/docs/connect/associate_instance_storage_config.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_associate_instance_storage_config/} for full documentation.
 }
 \keyword{internal}

@@ -15,7 +15,7 @@ sesv2_update_contact(
 \arguments{
 \item{ContactListName}{[required] The name of the contact list.}
 
-\item{EmailAddress}{[required] The contact's email addres.}
+\item{EmailAddress}{[required] The contact's email address.}
 
 \item{TopicPreferences}{The contact's preference for being opted-in to or opted-out of a topic.}
 
@@ -27,6 +27,6 @@ contact list topics.}
 \description{
 Updates a contact's preferences for a list. It is not necessary to specify all existing topic preferences in the TopicPreferences object, just the ones that need updating.
 
-See \url{https://paws-r.github.io/docs/sesv2/update_contact.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/sesv2_update_contact/} for full documentation.
 }
 \keyword{internal}

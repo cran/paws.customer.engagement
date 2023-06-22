@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_update_contact_flow_name}
 \alias{connect_update_contact_flow_name}
-\title{The name of the contact flow}
+\title{The name of the flow}
 \usage{
 connect_update_contact_flow_name(
   InstanceId,
@@ -14,15 +14,15 @@ connect_update_contact_flow_name(
 \arguments{
 \item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
 
-\item{ContactFlowId}{[required] The identifier of the contact flow.}
+\item{ContactFlowId}{[required] The identifier of the flow.}
 
-\item{Name}{The name of the contact flow.}
+\item{Name}{The name of the flow.}
 
-\item{Description}{The description of the contact flow.}
+\item{Description}{The description of the flow.}
 }
 \description{
-The name of the contact flow.
+The name of the flow.
 
-See \url{https://paws-r.github.io/docs/connect/update_contact_flow_name.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_update_contact_flow_name/} for full documentation.
 }
 \keyword{internal}

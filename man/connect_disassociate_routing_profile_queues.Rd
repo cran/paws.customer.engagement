@@ -11,8 +11,8 @@ connect_disassociate_routing_profile_queues(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{RoutingProfileId}{[required] The identifier of the routing profile.}
 
@@ -21,6 +21,6 @@ instanceId in the ARN of the instance.}
 \description{
 Disassociates a set of queues from a routing profile.
 
-See \url{https://paws-r.github.io/docs/connect/disassociate_routing_profile_queues.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_disassociate_routing_profile_queues/} for full documentation.
 }
 \keyword{internal}

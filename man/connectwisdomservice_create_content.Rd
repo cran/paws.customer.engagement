@@ -17,7 +17,9 @@ connectwisdomservice_create_content(
 }
 \arguments{
 \item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+idempotency of the request. If not provided, the Amazon Web Services SDK
+populates this field. For more information about idempotency, see
+\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{knowledgeBaseId}{[required] The identifier of the knowledge base. Can be either the ID or the ARN.
 URLs cannot contain the ARN.}
@@ -46,6 +48,6 @@ content.}
 \description{
 Creates Wisdom content. Before to calling this API, use \code{\link[=connectwisdomservice_start_content_upload]{start_content_upload}} to upload an asset.
 
-See \url{https://paws-r.github.io/docs/connectwisdomservice/create_content.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connectwisdomservice_create_content/} for full documentation.
 }
 \keyword{internal}

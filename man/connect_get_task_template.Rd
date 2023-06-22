@@ -8,8 +8,8 @@ Connect instance}
 connect_get_task_template(InstanceId, TaskTemplateId, SnapshotVersion = NULL)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{TaskTemplateId}{[required] A unique identifier for the task template.}
 
@@ -19,6 +19,6 @@ a task, when the task is created.}
 \description{
 Gets details about a specific task template in the specified Amazon Connect instance.
 
-See \url{https://paws-r.github.io/docs/connect/get_task_template.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_get_task_template/} for full documentation.
 }
 \keyword{internal}

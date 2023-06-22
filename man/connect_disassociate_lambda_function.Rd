@@ -8,8 +8,8 @@ change}
 connect_disassociate_lambda_function(InstanceId, FunctionArn)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance..}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance..}
 
 \item{FunctionArn}{[required] The Amazon Resource Name (ARN) of the Lambda function being
 disassociated.}
@@ -17,6 +17,6 @@ disassociated.}
 \description{
 This API is in preview release for Amazon Connect and is subject to change.
 
-See \url{https://paws-r.github.io/docs/connect/disassociate_lambda_function.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_disassociate_lambda_function/} for full documentation.
 }
 \keyword{internal}

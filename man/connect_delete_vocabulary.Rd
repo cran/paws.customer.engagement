@@ -7,14 +7,14 @@
 connect_delete_vocabulary(InstanceId, VocabularyId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance.}
 
 \item{VocabularyId}{[required] The identifier of the custom vocabulary.}
 }
 \description{
 Deletes the vocabulary that has the given identifier.
 
-See \url{https://paws-r.github.io/docs/connect/delete_vocabulary.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/connect_delete_vocabulary/} for full documentation.
 }
 \keyword{internal}

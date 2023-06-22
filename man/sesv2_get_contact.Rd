@@ -9,11 +9,11 @@ sesv2_get_contact(ContactListName, EmailAddress)
 \arguments{
 \item{ContactListName}{[required] The name of the contact list to which the contact belongs.}
 
-\item{EmailAddress}{[required] The contact's email addres.}
+\item{EmailAddress}{[required] The contact's email address.}
 }
 \description{
 Returns a contact from a contact list.
 
-See \url{https://paws-r.github.io/docs/sesv2/get_contact.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/sesv2_get_contact/} for full documentation.
 }
 \keyword{internal}

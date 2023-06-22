@@ -27,7 +27,9 @@ customerprofiles_update_profile(
   ShippingAddress = NULL,
   MailingAddress = NULL,
   BillingAddress = NULL,
-  Attributes = NULL
+  Attributes = NULL,
+  PartyTypeString = NULL,
+  GenderString = NULL
 )
 }
 \arguments{
@@ -79,10 +81,14 @@ shipping, or billing.}
 \item{BillingAddress}{The customer’s billing address.}
 
 \item{Attributes}{A key value pair of attributes of a customer profile.}
+
+\item{PartyTypeString}{An alternative to \code{PartyType} which accepts any string as input.}
+
+\item{GenderString}{An alternative to \code{Gender} which accepts any string as input.}
 }
 \description{
 Updates the properties of a profile. The ProfileId is required for updating a customer profile.
 
-See \url{https://paws-r.github.io/docs/customerprofiles/update_profile.html} for full documentation.
+See \url{https://www.paws-r-sdk.com/docs/customerprofiles_update_profile/} for full documentation.
 }
 \keyword{internal}
