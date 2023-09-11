@@ -1,6 +1,6 @@
 Package: paws.customer.engagement
 Title: 'Amazon Web Services' Customer Engagement Services
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: c(
     person("David", "Kretch", , "david.kretch@gmail.com", role = "aut"),
     person("Adam", "Banker", , "adam.banker39@gmail.com", role = "aut"),
@@ -13,7 +13,7 @@ Description: Interface to 'Amazon Web Services' customer engagement
 License: Apache License (>= 2.0)
 URL: https://github.com/paws-r/paws
 BugReports: https://github.com/paws-r/paws/issues
-Imports: paws.common (>= 0.5.4)
+Imports: paws.common (>= 0.6.0)
 Suggests: testthat
 Encoding: UTF-8
 RoxygenNote: 7.2.3
@@ -38,15 +38,15 @@ Collate: 'connect_service.R' 'connect_interfaces.R'
         'pinpointsmsvoice_interfaces.R' 'pinpointsmsvoice_operations.R'
         'pinpointsmsvoicev2_service.R'
         'pinpointsmsvoicev2_interfaces.R'
-        'pinpointsmsvoicev2_operations.R' 'ses_service.R'
-        'ses_interfaces.R' 'ses_operations.R' 'sesv2_service.R'
-        'sesv2_interfaces.R' 'sesv2_operations.R'
+        'pinpointsmsvoicev2_operations.R' 'reexports_paws.common.R'
+        'ses_service.R' 'ses_interfaces.R' 'ses_operations.R'
+        'sesv2_service.R' 'sesv2_interfaces.R' 'sesv2_operations.R'
 NeedsCompilation: no
-Packaged: 2023-06-22 08:25:17 UTC; dyfanjones
+Packaged: 2023-09-11 15:34:49 UTC; dyfanjones
 Author: David Kretch [aut],
   Adam Banker [aut],
   Dyfan Jones [cre],
   Amazon.com, Inc. [cph]
 Maintainer: Dyfan Jones <dyfan.r.jones@gmail.com>
 Repository: CRAN
-Date/Publication: 2023-06-22 10:22:46 UTC
+Date/Publication: 2023-09-11 17:40:05 UTC

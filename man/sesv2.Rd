@@ -4,22 +4,42 @@
 \alias{sesv2}
 \title{Amazon Simple Email Service}
 \usage{
-sesv2(config = list())
+sesv2(config = list(), credentials = list(), endpoint = NULL, region = NULL)
 }
 \arguments{
 \item{config}{Optional configuration of credentials, endpoint, and/or region.
 \itemize{
+\item{\strong{credentials}:} {\itemize{
+\item{\strong{creds}:} {\itemize{
 \item{\strong{access_key_id}:} {AWS access key ID}
 \item{\strong{secret_access_key}:} {AWS secret access key}
 \item{\strong{session_token}:} {AWS temporary session token}
+}}
 \item{\strong{profile}:} {The name of a profile to use. If not given, then the default profile is used.}
 \item{\strong{anonymous}:} {Set anonymous credentials.}
 \item{\strong{endpoint}:} {The complete URL to use for the constructed client.}
 \item{\strong{region}:} {The AWS Region used in instantiating the client.}
+}}
 \item{\strong{close_connection}:} {Immediately close all HTTP connections.}
 \item{\strong{timeout}:} {The time in seconds till a timeout exception is thrown when attempting to make a connection. The default is 60 seconds.}
-\item{\strong{s3_force_path_style}:} {Set this to \code{true} to force the request to use path-style addressing, i.e., \verb{http://s3.amazonaws.com/BUCKET/KEY}.}
+\item{\strong{s3_force_path_style}:} {Set this to \code{true} to force the request to use path-style addressing, i.e. \verb{http://s3.amazonaws.com/BUCKET/KEY}.}
+\item{\strong{sts_regional_endpoint}:} {Set sts regional endpoint resolver to regional or legacy \url{https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html}}
 }}
+
+\item{credentials}{Optional credentials shorthand for the config parameter
+\itemize{
+\item{\strong{creds}:} {\itemize{
+\item{\strong{access_key_id}:} {AWS access key ID}
+\item{\strong{secret_access_key}:} {AWS secret access key}
+\item{\strong{session_token}:} {AWS temporary session token}
+}}
+\item{\strong{profile}:} {The name of a profile to use. If not given, then the default profile is used.}
+\item{\strong{anonymous}:} {Set anonymous credentials.}
+}}
+
+\item{endpoint}{Optional shorthand for complete URL to use for the constructed client.}
+
+\item{region}{Optional shorthand for AWS Region used in instantiating the client.}
 }
 \value{
 A client for the service. You can call the service's operations using
@@ -56,8 +76,20 @@ demonstrate how to use Amazon SES API v2 features programmatically.
     region = "string",
     close_connection = "logical",
     timeout = "numeric",
-    s3_force_path_style = "logical"
-  )
+    s3_force_path_style = "logical",
+    sts_regional_endpoint = "string"
+  ),
+  credentials = list(
+    creds = list(
+      access_key_id = "string",
+      secret_access_key = "string",
+      session_token = "string"
+    ),
+    profile = "string",
+    anonymous = "logical"
+  ),
+  endpoint = "string",
+  region = "string"
 )
 }\if{html}{\out{</div>}}
 }
@@ -66,6 +98,7 @@ demonstrate how to use Amazon SES API v2 features programmatically.
 
 \tabular{ll}{
 \link[=sesv2_batch_get_metric_data]{batch_get_metric_data} \tab Retrieves batches of metric data collected based on your sending activity\cr
+\link[=sesv2_cancel_export_job]{cancel_export_job} \tab Cancels an export job\cr
 \link[=sesv2_create_configuration_set]{create_configuration_set} \tab Create a configuration set\cr
 \link[=sesv2_create_configuration_set_event_destination]{create_configuration_set_event_destination} \tab Create an event destination\cr
 \link[=sesv2_create_contact]{create_contact} \tab Creates a contact, which is an end-user who is receiving the email, and adds them to a contact list\cr
@@ -76,6 +109,7 @@ demonstrate how to use Amazon SES API v2 features programmatically.
 \link[=sesv2_create_email_identity]{create_email_identity} \tab Starts the process of verifying an email identity\cr
 \link[=sesv2_create_email_identity_policy]{create_email_identity_policy} \tab Creates the specified sending authorization policy for the given identity (an email address or a domain)\cr
 \link[=sesv2_create_email_template]{create_email_template} \tab Creates an email template\cr
+\link[=sesv2_create_export_job]{create_export_job} \tab Creates an export job for a data source and destination\cr
 \link[=sesv2_create_import_job]{create_import_job} \tab Creates an import job for a data destination\cr
 \link[=sesv2_delete_configuration_set]{delete_configuration_set} \tab Delete an existing configuration set\cr
 \link[=sesv2_delete_configuration_set_event_destination]{delete_configuration_set_event_destination} \tab Delete an event destination\cr
@@ -104,7 +138,9 @@ demonstrate how to use Amazon SES API v2 features programmatically.
 \link[=sesv2_get_email_identity]{get_email_identity} \tab Provides information about a specific identity, including the identity's verification status, sending authorization policies, its DKIM authentication status, and its custom Mail-From settings\cr
 \link[=sesv2_get_email_identity_policies]{get_email_identity_policies} \tab Returns the requested sending authorization policies for the given identity (an email address or a domain)\cr
 \link[=sesv2_get_email_template]{get_email_template} \tab Displays the template object (which includes the subject line, HTML part and text part) for the template you specify\cr
+\link[=sesv2_get_export_job]{get_export_job} \tab Provides information about an export job\cr
 \link[=sesv2_get_import_job]{get_import_job} \tab Provides information about an import job\cr
+\link[=sesv2_get_message_insights]{get_message_insights} \tab Provides information about a specific message, including the from address, the subject, the recipient address, email tags, as well as events associated with the message\cr
 \link[=sesv2_get_suppressed_destination]{get_suppressed_destination} \tab Retrieves information about a specific email address that's on the suppression list for your account\cr
 \link[=sesv2_list_configuration_sets]{list_configuration_sets} \tab List all of the configuration sets associated with your account in the current region\cr
 \link[=sesv2_list_contact_lists]{list_contact_lists} \tab Lists all of the contact lists available\cr
@@ -115,6 +151,7 @@ demonstrate how to use Amazon SES API v2 features programmatically.
 \link[=sesv2_list_domain_deliverability_campaigns]{list_domain_deliverability_campaigns} \tab Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range\cr
 \link[=sesv2_list_email_identities]{list_email_identities} \tab Returns a list of all of the email identities that are associated with your Amazon Web Services account\cr
 \link[=sesv2_list_email_templates]{list_email_templates} \tab Lists the email templates present in your Amazon SES account in the current Amazon Web Services Region\cr
+\link[=sesv2_list_export_jobs]{list_export_jobs} \tab Lists all of the export jobs\cr
 \link[=sesv2_list_import_jobs]{list_import_jobs} \tab Lists all of the import jobs\cr
 \link[=sesv2_list_recommendations]{list_recommendations} \tab Lists the recommendations present in your Amazon SES account in the current Amazon Web Services Region\cr
 \link[=sesv2_list_suppressed_destinations]{list_suppressed_destinations} \tab Retrieves a list of email addresses that are on the suppression list for your account\cr
@@ -158,10 +195,9 @@ demonstrate how to use Amazon SES API v2 features programmatically.
 \examples{
 \dontrun{
 svc <- sesv2()
-# This example converts a dedicated IP pool from STANDARD to MANAGED.
-svc$put_dedicated_ip_pool_scaling_attributes(
-  PoolName = "sample-ses-pool",
-  ScalingMode = "MANAGED"
+# Cancels the export job with ID ef28cf62-9d8e-4b60-9283-b09816c99a99
+svc$cancel_export_job(
+  JobId = "ef28cf62-9d8e-4b60-9283-b09816c99a99"
 )
 }
 
