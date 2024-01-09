@@ -6,7 +6,8 @@
 traffic distribution group}
 \usage{
 connect_claim_phone_number(
-  TargetArn,
+  TargetArn = NULL,
+  InstanceId = NULL,
   PhoneNumber,
   PhoneNumberDescription = NULL,
   Tags = NULL,
@@ -14,8 +15,14 @@ connect_claim_phone_number(
 )
 }
 \arguments{
-\item{TargetArn}{[required] The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-distribution groups that phone numbers are claimed to.}
+\item{TargetArn}{The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+distribution groups that phone number inbound traffic is routed through.
+You must enter \code{InstanceId} or \code{TargetArn}.}
+
+\item{InstanceId}{The identifier of the Amazon Connect instance that phone numbers are
+claimed to. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
+in the Amazon Resource Name (ARN) of the instance. You must enter
+\code{InstanceId} or \code{TargetArn}.}
 
 \item{PhoneNumber}{[required] The phone number you want to claim. Phone numbers are formatted
 \verb{[+] [country code] [subscriber number including area code]}.}
@@ -23,7 +30,7 @@ distribution groups that phone numbers are claimed to.}
 \item{PhoneNumberDescription}{The description of the phone number.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "tags": \{"key1":"value1", "key2":"value2"\} \}.}
+For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 
 \item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
 idempotency of the request. If not provided, the Amazon Web Services SDK

@@ -2,8 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_security_profile}
 \alias{connect_create_security_profile}
-\title{This API is in preview release for Amazon Connect and is subject to
-change}
+\title{Creates a security profile}
 \usage{
 connect_create_security_profile(
   SecurityProfileName,
@@ -12,7 +11,8 @@ connect_create_security_profile(
   InstanceId,
   Tags = NULL,
   AllowedAccessControlTags = NULL,
-  TagRestrictedResources = NULL
+  TagRestrictedResources = NULL,
+  Applications = NULL
 )
 }
 \arguments{
@@ -27,7 +27,7 @@ permissions, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/sec
 in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "tags": \{"key1":"value1", "key2":"value2"\} \}.}
+For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 
 \item{AllowedAccessControlTags}{The list of tags that a security profile uses to restrict access to
 resources in Amazon Connect.}
@@ -35,9 +35,15 @@ resources in Amazon Connect.}
 \item{TagRestrictedResources}{The list of resources that a security profile applies tag restrictions
 to in Amazon Connect. Following are acceptable ResourceNames: \code{User} |
 \code{SecurityProfile} | \code{Queue} | \code{RoutingProfile}}
+
+\item{Applications}{This API is in preview release for Amazon Connect and is subject to
+change.
+
+A list of third-party applications that the security profile will give
+access to.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+Creates a security profile.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_security_profile/} for full documentation.
 }

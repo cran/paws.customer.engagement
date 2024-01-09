@@ -14,10 +14,13 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Description}{The description of the prompt.}
 
-\item{S3Uri}{[required] The URI for the S3 bucket where the prompt is stored.}
+\item{S3Uri}{[required] The URI for the S3 bucket where the prompt is stored. You can provide S3
+pre-signed URLs returned by the
+\code{\link[=connect_get_prompt_file]{get_prompt_file}} API instead of providing S3
+URIs.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "tags": \{"key1":"value1", "key2":"value2"\} \}.}
+For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
 Creates a prompt. For more information about prompts, such as supported file types and maximum length, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html}{Create prompts} in the \emph{Amazon Connect Administrator's Guide}.
