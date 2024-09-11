@@ -12,7 +12,7 @@ NULL
 #'
 #' @param InstanceId &#91;required&#93; The identifier of the Amazon Connect instance.
 #' @param ContactId &#91;required&#93; The identifier of the contact.
-#' @param MaxResults The maximimum number of results to return per page.
+#' @param MaxResults The maximum number of results to return per page.
 #' @param NextToken The token for the next set of results. Use the value returned in the
 #' previous response in the next request to retrieve the next set of
 #' results.
@@ -25,12 +25,13 @@ connectcontactlens_list_realtime_contact_analysis_segments <- function(InstanceI
     name = "ListRealtimeContactAnalysisSegments",
     http_method = "POST",
     http_path = "/realtime-contact-analysis/analysis-segments",
+    host_prefix = "",
     paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults")
   )
   input <- .connectcontactlens$list_realtime_contact_analysis_segments_input(InstanceId = InstanceId, ContactId = ContactId, MaxResults = MaxResults, NextToken = NextToken)
   output <- .connectcontactlens$list_realtime_contact_analysis_segments_output()
   config <- get_config()
-  svc <- .connectcontactlens$service(config)
+  svc <- .connectcontactlens$service(config, op)
   request <- new_request(svc, op, input, output)
   response <- send_request(request)
   return(response)
