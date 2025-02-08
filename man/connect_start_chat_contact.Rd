@@ -15,7 +15,8 @@ connect_start_chat_contact(
   SupportedMessagingContentTypes = NULL,
   PersistentChat = NULL,
   RelatedContactId = NULL,
-  SegmentAttributes = NULL
+  SegmentAttributes = NULL,
+  CustomerId = NULL
 )
 }
 \arguments{
@@ -24,10 +25,9 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{ContactFlowId}{[required] The identifier of the flow for initiating the chat. To see the
 ContactFlowId in the Amazon Connect admin website, on the navigation
-menu go to \strong{Routing}, \strong{Contact Flows}. Choose the flow. On the flow
-page, under the name of the flow, choose \strong{Show additional flow
-information}. The ContactFlowId is the last part of the ARN, shown here
-in bold:
+menu go to \strong{Routing}, \strong{Flows}. Choose the flow. On the flow page,
+under the name of the flow, choose \strong{Show additional flow information}.
+The ContactFlowId is the last part of the ARN, shown here in bold:
 
 arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/\strong{846ec553-a005-41c0-8341-xxxxxxxxxxxx}}
 
@@ -93,6 +93,9 @@ The types \code{application/vnd.amazonaws.connect.message.interactive} and
 present in the SupportedMessagingContentTypes field of this API in order
 to set \code{SegmentAttributes} as
 \{\verb{ "connect:Subtype": \\\{"valueString" : "connect:Guide" \\\}\\\}}.}
+
+\item{CustomerId}{The customer's identification number. For example, the \code{CustomerId} may
+be a customer number from your CRM.}
 }
 \description{
 Initiates a flow to start a new chat for the customer. Response of this API provides a token required to obtain credentials from the \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-participant_CreateParticipantConnection.html}{CreateParticipantConnection} API in the Amazon Connect Participant Service.

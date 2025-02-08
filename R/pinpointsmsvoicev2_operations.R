@@ -13,12 +13,18 @@ NULL
 #' @param PoolId &#91;required&#93; The pool to update with the new Identity. This value can be either the
 #' PoolId or PoolArn, and you can find these values using
 #' [`describe_pools`][pinpointsmsvoicev2_describe_pools].
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param OriginationIdentity &#91;required&#93; The origination identity to use, such as PhoneNumberId, PhoneNumberArn,
 #' SenderId, or SenderIdArn. You can use
 #' [`describe_phone_numbers`][pinpointsmsvoicev2_describe_phone_numbers] to
 #' find the values for PhoneNumberId and PhoneNumberArn, while
 #' [`describe_sender_ids`][pinpointsmsvoicev2_describe_sender_ids] can be
 #' used to get the values for SenderId and SenderIdArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param IsoCountryCode &#91;required&#93; The new two-character code, in ISO 3166-1 alpha-2 format, for the
 #' country or region of the origination identity.
 #' @param ClientToken Unique, case-sensitive identifier that you provide to ensure the
@@ -34,7 +40,8 @@ pinpointsmsvoicev2_associate_origination_identity <- function(PoolId, Originatio
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$associate_origination_identity_input(PoolId = PoolId, OriginationIdentity = OriginationIdentity, IsoCountryCode = IsoCountryCode, ClientToken = ClientToken)
   output <- .pinpointsmsvoicev2$associate_origination_identity_output()
@@ -65,7 +72,8 @@ pinpointsmsvoicev2_associate_protect_configuration <- function(ProtectConfigurat
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$associate_protect_configuration_input(ProtectConfigurationId = ProtectConfigurationId, ConfigurationSetName = ConfigurationSetName)
   output <- .pinpointsmsvoicev2$associate_protect_configuration_output()
@@ -100,7 +108,8 @@ pinpointsmsvoicev2_create_configuration_set <- function(ConfigurationSetName, Ta
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$create_configuration_set_input(ConfigurationSetName = ConfigurationSetName, Tags = Tags, ClientToken = ClientToken)
   output <- .pinpointsmsvoicev2$create_configuration_set_output()
@@ -148,7 +157,8 @@ pinpointsmsvoicev2_create_event_destination <- function(ConfigurationSetName, Ev
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$create_event_destination_input(ConfigurationSetName = ConfigurationSetName, EventDestinationName = EventDestinationName, MatchingEventTypes = MatchingEventTypes, CloudWatchLogsDestination = CloudWatchLogsDestination, KinesisFirehoseDestination = KinesisFirehoseDestination, SnsDestination = SnsDestination, ClientToken = ClientToken)
   output <- .pinpointsmsvoicev2$create_event_destination_output()
@@ -183,7 +193,8 @@ pinpointsmsvoicev2_create_opt_out_list <- function(OptOutListName, Tags = NULL, 
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$create_opt_out_list_input(OptOutListName = OptOutListName, Tags = Tags, ClientToken = ClientToken)
   output <- .pinpointsmsvoicev2$create_opt_out_list_output()
@@ -213,6 +224,9 @@ pinpointsmsvoicev2_create_opt_out_list <- function(OptOutListName, Tags = NULL, 
 #' After the pool is created you can add more origination identities to the
 #' pool by using
 #' [`associate_origination_identity`][pinpointsmsvoicev2_associate_origination_identity].
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param IsoCountryCode &#91;required&#93; The new two-character code, in ISO 3166-1 alpha-2 format, for the
 #' country or region of the new pool.
 #' @param MessageType &#91;required&#93; The type of message. Valid values are TRANSACTIONAL for messages that
@@ -236,7 +250,8 @@ pinpointsmsvoicev2_create_pool <- function(OriginationIdentity, IsoCountryCode, 
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$create_pool_input(OriginationIdentity = OriginationIdentity, IsoCountryCode = IsoCountryCode, MessageType = MessageType, DeletionProtectionEnabled = DeletionProtectionEnabled, Tags = Tags, ClientToken = ClientToken)
   output <- .pinpointsmsvoicev2$create_pool_output()
@@ -272,7 +287,8 @@ pinpointsmsvoicev2_create_protect_configuration <- function(ClientToken = NULL, 
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$create_protect_configuration_input(ClientToken = ClientToken, DeletionProtectionEnabled = DeletionProtectionEnabled, Tags = Tags)
   output <- .pinpointsmsvoicev2$create_protect_configuration_output()
@@ -310,7 +326,8 @@ pinpointsmsvoicev2_create_registration <- function(RegistrationType, Tags = NULL
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$create_registration_input(RegistrationType = RegistrationType, Tags = Tags, ClientToken = ClientToken)
   output <- .pinpointsmsvoicev2$create_registration_output()
@@ -343,7 +360,8 @@ pinpointsmsvoicev2_create_registration_association <- function(RegistrationId, R
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$create_registration_association_input(RegistrationId = RegistrationId, ResourceId = ResourceId)
   output <- .pinpointsmsvoicev2$create_registration_association_output()
@@ -359,14 +377,14 @@ pinpointsmsvoicev2_create_registration_association <- function(RegistrationId, R
 #' URL to a file
 #'
 #' @description
-#' Create a new registration attachment to use for uploading a file or a URL to a file. The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG. For example, many sender ID registrations require a signed “letter of authorization” (LOA) to be submitted.
+#' Create a new registration attachment to use for uploading a file or a URL to a file. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG. For example, many sender ID registrations require a signed “letter of authorization” (LOA) to be submitted.
 #'
 #' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_create_registration_attachment/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_create_registration_attachment/) for full documentation.
 #'
-#' @param AttachmentBody The registration file to upload. The maximum file size is 1MiB and valid
-#' file extensions are PDF, JPEG and PNG.
-#' @param AttachmentUrl A URL to the required registration file. For example, you can provide
-#' the S3 object URL.
+#' @param AttachmentBody The registration file to upload. The maximum file size is 500KB and
+#' valid file extensions are PDF, JPEG and PNG.
+#' @param AttachmentUrl Registration files have to be stored in an Amazon S3 bucket. The URI to
+#' use when sending is in the format `s3://BucketName/FileName`.
 #' @param Tags An array of tags (key and value pairs) to associate with the
 #' registration attachment.
 #' @param ClientToken Unique, case-sensitive identifier that you provide to ensure the
@@ -382,7 +400,8 @@ pinpointsmsvoicev2_create_registration_attachment <- function(AttachmentBody = N
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$create_registration_attachment_input(AttachmentBody = AttachmentBody, AttachmentUrl = AttachmentUrl, Tags = Tags, ClientToken = ClientToken)
   output <- .pinpointsmsvoicev2$create_registration_attachment_output()
@@ -412,7 +431,8 @@ pinpointsmsvoicev2_create_registration_version <- function(RegistrationId) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$create_registration_version_input(RegistrationId = RegistrationId)
   output <- .pinpointsmsvoicev2$create_registration_version_output()
@@ -448,7 +468,8 @@ pinpointsmsvoicev2_create_verified_destination_number <- function(DestinationPho
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$create_verified_destination_number_input(DestinationPhoneNumber = DestinationPhoneNumber, Tags = Tags, ClientToken = ClientToken)
   output <- .pinpointsmsvoicev2$create_verified_destination_number_output()
@@ -478,7 +499,8 @@ pinpointsmsvoicev2_delete_account_default_protect_configuration <- function() {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_account_default_protect_configuration_input()
   output <- .pinpointsmsvoicev2$delete_account_default_protect_configuration_output()
@@ -512,7 +534,8 @@ pinpointsmsvoicev2_delete_configuration_set <- function(ConfigurationSetName) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_configuration_set_input(ConfigurationSetName = ConfigurationSetName)
   output <- .pinpointsmsvoicev2$delete_configuration_set_output()
@@ -546,7 +569,8 @@ pinpointsmsvoicev2_delete_default_message_type <- function(ConfigurationSetName)
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_default_message_type_input(ConfigurationSetName = ConfigurationSetName)
   output <- .pinpointsmsvoicev2$delete_default_message_type_output()
@@ -580,7 +604,8 @@ pinpointsmsvoicev2_delete_default_sender_id <- function(ConfigurationSetName) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_default_sender_id_input(ConfigurationSetName = ConfigurationSetName)
   output <- .pinpointsmsvoicev2$delete_default_sender_id_output()
@@ -615,7 +640,8 @@ pinpointsmsvoicev2_delete_event_destination <- function(ConfigurationSetName, Ev
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_event_destination_input(ConfigurationSetName = ConfigurationSetName, EventDestinationName = EventDestinationName)
   output <- .pinpointsmsvoicev2$delete_event_destination_output()
@@ -640,6 +666,9 @@ pinpointsmsvoicev2_delete_event_destination <- function(ConfigurationSetName, Ev
 #' find the values for PhoneNumberId and PhoneNumberArn and
 #' [`describe_pools`][pinpointsmsvoicev2_describe_pools] to find the values
 #' of PoolId and PoolArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param Keyword &#91;required&#93; The keyword to delete.
 #'
 #' @keywords internal
@@ -651,7 +680,8 @@ pinpointsmsvoicev2_delete_keyword <- function(OriginationIdentity, Keyword) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_keyword_input(OriginationIdentity = OriginationIdentity, Keyword = Keyword)
   output <- .pinpointsmsvoicev2$delete_keyword_output()
@@ -682,7 +712,8 @@ pinpointsmsvoicev2_delete_media_message_spend_limit_override <- function() {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_media_message_spend_limit_override_input()
   output <- .pinpointsmsvoicev2$delete_media_message_spend_limit_override_output()
@@ -705,6 +736,9 @@ pinpointsmsvoicev2_delete_media_message_spend_limit_override <- function() {
 #' use
 #' [`describe_opt_out_lists`][pinpointsmsvoicev2_describe_opt_out_lists] to
 #' find the values for OptOutListName and OptOutListArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #'
 #' @keywords internal
 #'
@@ -715,7 +749,8 @@ pinpointsmsvoicev2_delete_opt_out_list <- function(OptOutListName) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_opt_out_list_input(OptOutListName = OptOutListName)
   output <- .pinpointsmsvoicev2$delete_opt_out_list_output()
@@ -736,6 +771,9 @@ pinpointsmsvoicev2_delete_opt_out_list <- function(OptOutListName) {
 #' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_delete_opted_out_number/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_delete_opted_out_number/) for full documentation.
 #'
 #' @param OptOutListName &#91;required&#93; The OptOutListName or OptOutListArn to remove the phone number from.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param OptedOutNumber &#91;required&#93; The phone number, in E.164 format, to remove from the OptOutList.
 #'
 #' @keywords internal
@@ -747,7 +785,8 @@ pinpointsmsvoicev2_delete_opted_out_number <- function(OptOutListName, OptedOutN
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_opted_out_number_input(OptOutListName = OptOutListName, OptedOutNumber = OptedOutNumber)
   output <- .pinpointsmsvoicev2$delete_opted_out_number_output()
@@ -769,6 +808,9 @@ pinpointsmsvoicev2_delete_opted_out_number <- function(OptOutListName, OptedOutN
 #' @param PoolId &#91;required&#93; The PoolId or PoolArn of the pool to delete. You can use
 #' [`describe_pools`][pinpointsmsvoicev2_describe_pools] to find the values
 #' for PoolId and PoolArn .
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #'
 #' @keywords internal
 #'
@@ -779,7 +821,8 @@ pinpointsmsvoicev2_delete_pool <- function(PoolId) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_pool_input(PoolId = PoolId)
   output <- .pinpointsmsvoicev2$delete_pool_output()
@@ -809,7 +852,8 @@ pinpointsmsvoicev2_delete_protect_configuration <- function(ProtectConfiguration
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_protect_configuration_input(ProtectConfigurationId = ProtectConfigurationId)
   output <- .pinpointsmsvoicev2$delete_protect_configuration_output()
@@ -820,6 +864,38 @@ pinpointsmsvoicev2_delete_protect_configuration <- function(ProtectConfiguration
   return(response)
 }
 .pinpointsmsvoicev2$operations$delete_protect_configuration <- pinpointsmsvoicev2_delete_protect_configuration
+
+#' Permanently delete the protect configuration rule set number override
+#'
+#' @description
+#' Permanently delete the protect configuration rule set number override.
+#'
+#' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_delete_protect_configuration_rule_set_number_override/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_delete_protect_configuration_rule_set_number_override/) for full documentation.
+#'
+#' @param ProtectConfigurationId &#91;required&#93; The unique identifier for the protect configuration.
+#' @param DestinationPhoneNumber &#91;required&#93; The destination phone number in E.164 format.
+#'
+#' @keywords internal
+#'
+#' @rdname pinpointsmsvoicev2_dele_prot_conf_rule_set_numb_over
+pinpointsmsvoicev2_delete_protect_configuration_rule_set_number_override <- function(ProtectConfigurationId, DestinationPhoneNumber) {
+  op <- new_operation(
+    name = "DeleteProtectConfigurationRuleSetNumberOverride",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .pinpointsmsvoicev2$delete_protect_configuration_rule_set_number_override_input(ProtectConfigurationId = ProtectConfigurationId, DestinationPhoneNumber = DestinationPhoneNumber)
+  output <- .pinpointsmsvoicev2$delete_protect_configuration_rule_set_number_override_output()
+  config <- get_config()
+  svc <- .pinpointsmsvoicev2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.pinpointsmsvoicev2$operations$delete_protect_configuration_rule_set_number_override <- pinpointsmsvoicev2_delete_protect_configuration_rule_set_number_override
 
 #' Permanently delete an existing registration from your account
 #'
@@ -839,7 +915,8 @@ pinpointsmsvoicev2_delete_registration <- function(RegistrationId) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_registration_input(RegistrationId = RegistrationId)
   output <- .pinpointsmsvoicev2$delete_registration_output()
@@ -869,7 +946,8 @@ pinpointsmsvoicev2_delete_registration_attachment <- function(RegistrationAttach
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_registration_attachment_input(RegistrationAttachmentId = RegistrationAttachmentId)
   output <- .pinpointsmsvoicev2$delete_registration_attachment_output()
@@ -902,7 +980,8 @@ pinpointsmsvoicev2_delete_registration_field_value <- function(RegistrationId, F
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_registration_field_value_input(RegistrationId = RegistrationId, FieldPath = FieldPath)
   output <- .pinpointsmsvoicev2$delete_registration_field_value_output()
@@ -913,6 +992,39 @@ pinpointsmsvoicev2_delete_registration_field_value <- function(RegistrationId, F
   return(response)
 }
 .pinpointsmsvoicev2$operations$delete_registration_field_value <- pinpointsmsvoicev2_delete_registration_field_value
+
+#' Deletes the resource-based policy document attached to the AWS End User
+#' Messaging SMS and Voice resource
+#'
+#' @description
+#' Deletes the resource-based policy document attached to the AWS End User Messaging SMS and Voice resource. A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number.
+#'
+#' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_delete_resource_policy/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_delete_resource_policy/) for full documentation.
+#'
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and
+#' Voice resource you're deleting the resource-based policy from.
+#'
+#' @keywords internal
+#'
+#' @rdname pinpointsmsvoicev2_delete_resource_policy
+pinpointsmsvoicev2_delete_resource_policy <- function(ResourceArn) {
+  op <- new_operation(
+    name = "DeleteResourcePolicy",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .pinpointsmsvoicev2$delete_resource_policy_input(ResourceArn = ResourceArn)
+  output <- .pinpointsmsvoicev2$delete_resource_policy_output()
+  config <- get_config()
+  svc <- .pinpointsmsvoicev2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.pinpointsmsvoicev2$operations$delete_resource_policy <- pinpointsmsvoicev2_delete_resource_policy
 
 #' Deletes an account-level monthly spending limit override for sending
 #' text messages
@@ -933,7 +1045,8 @@ pinpointsmsvoicev2_delete_text_message_spend_limit_override <- function() {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_text_message_spend_limit_override_input()
   output <- .pinpointsmsvoicev2$delete_text_message_spend_limit_override_output()
@@ -963,7 +1076,8 @@ pinpointsmsvoicev2_delete_verified_destination_number <- function(VerifiedDestin
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_verified_destination_number_input(VerifiedDestinationNumberId = VerifiedDestinationNumberId)
   output <- .pinpointsmsvoicev2$delete_verified_destination_number_output()
@@ -994,7 +1108,8 @@ pinpointsmsvoicev2_delete_voice_message_spend_limit_override <- function() {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$delete_voice_message_spend_limit_override_input()
   output <- .pinpointsmsvoicev2$delete_voice_message_spend_limit_override_output()
@@ -1026,7 +1141,8 @@ pinpointsmsvoicev2_describe_account_attributes <- function(NextToken = NULL, Max
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "AccountAttributes")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "AccountAttributes"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_account_attributes_input(NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_account_attributes_output()
@@ -1059,7 +1175,8 @@ pinpointsmsvoicev2_describe_account_limits <- function(NextToken = NULL, MaxResu
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "AccountLimits")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "AccountLimits"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_account_limits_input(NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_account_limits_output()
@@ -1094,7 +1211,8 @@ pinpointsmsvoicev2_describe_configuration_sets <- function(ConfigurationSetNames
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "ConfigurationSets")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "ConfigurationSets"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_configuration_sets_input(ConfigurationSetNames = ConfigurationSetNames, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_configuration_sets_output()
@@ -1120,6 +1238,9 @@ pinpointsmsvoicev2_describe_configuration_sets <- function(ConfigurationSetNames
 #' find the values for PhoneNumberId and PhoneNumberArn while
 #' [`describe_sender_ids`][pinpointsmsvoicev2_describe_sender_ids] can be
 #' used to get the values for SenderId and SenderIdArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param Keywords An array of keywords to search for.
 #' @param Filters An array of keyword filters to filter the results.
 #' @param NextToken The token to be used for the next set of paginated results. You don't
@@ -1135,7 +1256,8 @@ pinpointsmsvoicev2_describe_keywords <- function(OriginationIdentity, Keywords =
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "Keywords")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "Keywords"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_keywords_input(OriginationIdentity = OriginationIdentity, Keywords = Keywords, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_keywords_output()
@@ -1157,22 +1279,29 @@ pinpointsmsvoicev2_describe_keywords <- function(OriginationIdentity, Keywords =
 #'
 #' @param OptOutListNames The OptOutLists to show the details of. This is an array of strings that
 #' can be either the OptOutListName or OptOutListArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param NextToken The token to be used for the next set of paginated results. You don't
 #' need to supply a value for this field in the initial request.
 #' @param MaxResults The maximum number of results to return per each request.
+#' @param Owner Use `SELF` to filter the list of Opt-Out List to ones your account owns
+#' or use `SHARED` to filter on Opt-Out List shared with your account. The
+#' `Owner` and `OptOutListNames` parameters can't be used at the same time.
 #'
 #' @keywords internal
 #'
 #' @rdname pinpointsmsvoicev2_describe_opt_out_lists
-pinpointsmsvoicev2_describe_opt_out_lists <- function(OptOutListNames = NULL, NextToken = NULL, MaxResults = NULL) {
+pinpointsmsvoicev2_describe_opt_out_lists <- function(OptOutListNames = NULL, NextToken = NULL, MaxResults = NULL, Owner = NULL) {
   op <- new_operation(
     name = "DescribeOptOutLists",
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "OptOutLists")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "OptOutLists"),
+    stream_api = FALSE
   )
-  input <- .pinpointsmsvoicev2$describe_opt_out_lists_input(OptOutListNames = OptOutListNames, NextToken = NextToken, MaxResults = MaxResults)
+  input <- .pinpointsmsvoicev2$describe_opt_out_lists_input(OptOutListNames = OptOutListNames, NextToken = NextToken, MaxResults = MaxResults, Owner = Owner)
   output <- .pinpointsmsvoicev2$describe_opt_out_lists_output()
   config <- get_config()
   svc <- .pinpointsmsvoicev2$service(config, op)
@@ -1193,7 +1322,13 @@ pinpointsmsvoicev2_describe_opt_out_lists <- function(OptOutListNames = NULL, Ne
 #' @param OptOutListName &#91;required&#93; The OptOutListName or OptOutListArn of the OptOutList. You can use
 #' [`describe_opt_out_lists`][pinpointsmsvoicev2_describe_opt_out_lists] to
 #' find the values for OptOutListName and OptOutListArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param OptedOutNumbers An array of phone numbers to search for in the OptOutList.
+#' 
+#' If you specify an opted out number that isn't valid, an exception is
+#' returned.
 #' @param Filters An array of OptedOutFilter objects to filter the results on.
 #' @param NextToken The token to be used for the next set of paginated results. You don't
 #' need to supply a value for this field in the initial request.
@@ -1208,7 +1343,8 @@ pinpointsmsvoicev2_describe_opted_out_numbers <- function(OptOutListName, OptedO
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "OptedOutNumbers")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "OptedOutNumbers"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_opted_out_numbers_input(OptOutListName = OptOutListName, OptedOutNumbers = OptedOutNumbers, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_opted_out_numbers_output()
@@ -1231,23 +1367,30 @@ pinpointsmsvoicev2_describe_opted_out_numbers <- function(OptOutListName, OptedO
 #' @param PhoneNumberIds The unique identifier of phone numbers to find information about. This
 #' is an array of strings that can be either the PhoneNumberId or
 #' PhoneNumberArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param Filters An array of PhoneNumberFilter objects to filter the results.
 #' @param NextToken The token to be used for the next set of paginated results. You don't
 #' need to supply a value for this field in the initial request.
 #' @param MaxResults The maximum number of results to return per each request.
+#' @param Owner Use `SELF` to filter the list of phone numbers to ones your account owns
+#' or use `SHARED` to filter on phone numbers shared with your account. The
+#' `Owner` and `PhoneNumberIds` parameters can't be used at the same time.
 #'
 #' @keywords internal
 #'
 #' @rdname pinpointsmsvoicev2_describe_phone_numbers
-pinpointsmsvoicev2_describe_phone_numbers <- function(PhoneNumberIds = NULL, Filters = NULL, NextToken = NULL, MaxResults = NULL) {
+pinpointsmsvoicev2_describe_phone_numbers <- function(PhoneNumberIds = NULL, Filters = NULL, NextToken = NULL, MaxResults = NULL, Owner = NULL) {
   op <- new_operation(
     name = "DescribePhoneNumbers",
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "PhoneNumbers")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "PhoneNumbers"),
+    stream_api = FALSE
   )
-  input <- .pinpointsmsvoicev2$describe_phone_numbers_input(PhoneNumberIds = PhoneNumberIds, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
+  input <- .pinpointsmsvoicev2$describe_phone_numbers_input(PhoneNumberIds = PhoneNumberIds, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults, Owner = Owner)
   output <- .pinpointsmsvoicev2$describe_phone_numbers_output()
   config <- get_config()
   svc <- .pinpointsmsvoicev2$service(config, op)
@@ -1267,23 +1410,30 @@ pinpointsmsvoicev2_describe_phone_numbers <- function(PhoneNumberIds = NULL, Fil
 #'
 #' @param PoolIds The unique identifier of pools to find. This is an array of strings that
 #' can be either the PoolId or PoolArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param Filters An array of PoolFilter objects to filter the results.
 #' @param NextToken The token to be used for the next set of paginated results. You don't
 #' need to supply a value for this field in the initial request.
 #' @param MaxResults The maximum number of results to return per each request.
+#' @param Owner Use `SELF` to filter the list of Pools to ones your account owns or use
+#' `SHARED` to filter on Pools shared with your account. The `Owner` and
+#' `PoolIds` parameters can't be used at the same time.
 #'
 #' @keywords internal
 #'
 #' @rdname pinpointsmsvoicev2_describe_pools
-pinpointsmsvoicev2_describe_pools <- function(PoolIds = NULL, Filters = NULL, NextToken = NULL, MaxResults = NULL) {
+pinpointsmsvoicev2_describe_pools <- function(PoolIds = NULL, Filters = NULL, NextToken = NULL, MaxResults = NULL, Owner = NULL) {
   op <- new_operation(
     name = "DescribePools",
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "Pools")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "Pools"),
+    stream_api = FALSE
   )
-  input <- .pinpointsmsvoicev2$describe_pools_input(PoolIds = PoolIds, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
+  input <- .pinpointsmsvoicev2$describe_pools_input(PoolIds = PoolIds, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults, Owner = Owner)
   output <- .pinpointsmsvoicev2$describe_pools_output()
   config <- get_config()
   svc <- .pinpointsmsvoicev2$service(config, op)
@@ -1315,7 +1465,8 @@ pinpointsmsvoicev2_describe_protect_configurations <- function(ProtectConfigurat
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "ProtectConfigurations")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "ProtectConfigurations"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_protect_configurations_input(ProtectConfigurationIds = ProtectConfigurationIds, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_protect_configurations_output()
@@ -1351,7 +1502,8 @@ pinpointsmsvoicev2_describe_registration_attachments <- function(RegistrationAtt
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationAttachments")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationAttachments"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_registration_attachments_input(RegistrationAttachmentIds = RegistrationAttachmentIds, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_registration_attachments_output()
@@ -1389,7 +1541,8 @@ pinpointsmsvoicev2_describe_registration_field_definitions <- function(Registrat
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationFieldDefinitions")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationFieldDefinitions"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_registration_field_definitions_input(RegistrationType = RegistrationType, SectionPath = SectionPath, FieldPaths = FieldPaths, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_registration_field_definitions_output()
@@ -1425,7 +1578,8 @@ pinpointsmsvoicev2_describe_registration_field_values <- function(RegistrationId
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationFieldValues")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationFieldValues"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_registration_field_values_input(RegistrationId = RegistrationId, VersionNumber = VersionNumber, SectionPath = SectionPath, FieldPaths = FieldPaths, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_registration_field_values_output()
@@ -1462,7 +1616,8 @@ pinpointsmsvoicev2_describe_registration_section_definitions <- function(Registr
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationSectionDefinitions")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationSectionDefinitions"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_registration_section_definitions_input(RegistrationType = RegistrationType, SectionPaths = SectionPaths, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_registration_section_definitions_output()
@@ -1499,7 +1654,8 @@ pinpointsmsvoicev2_describe_registration_type_definitions <- function(Registrati
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationTypeDefinitions")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationTypeDefinitions"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_registration_type_definitions_input(RegistrationTypes = RegistrationTypes, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_registration_type_definitions_output()
@@ -1534,7 +1690,8 @@ pinpointsmsvoicev2_describe_registration_versions <- function(RegistrationId, Ve
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationVersions")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationVersions"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_registration_versions_input(RegistrationId = RegistrationId, VersionNumbers = VersionNumbers, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_registration_versions_output()
@@ -1568,7 +1725,8 @@ pinpointsmsvoicev2_describe_registrations <- function(RegistrationIds = NULL, Fi
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "Registrations")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "Registrations"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_registrations_input(RegistrationIds = RegistrationIds, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_registrations_output()
@@ -1589,23 +1747,30 @@ pinpointsmsvoicev2_describe_registrations <- function(RegistrationIds = NULL, Fi
 #' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_describe_sender_ids/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_describe_sender_ids/) for full documentation.
 #'
 #' @param SenderIds An array of SenderIdAndCountry objects to search for.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param Filters An array of SenderIdFilter objects to filter the results.
 #' @param NextToken The token to be used for the next set of paginated results. You don't
 #' need to supply a value for this field in the initial request.
 #' @param MaxResults The maximum number of results to return per each request.
+#' @param Owner Use `SELF` to filter the list of Sender Ids to ones your account owns or
+#' use `SHARED` to filter on Sender Ids shared with your account. The
+#' `Owner` and `SenderIds` parameters can't be used at the same time.
 #'
 #' @keywords internal
 #'
 #' @rdname pinpointsmsvoicev2_describe_sender_ids
-pinpointsmsvoicev2_describe_sender_ids <- function(SenderIds = NULL, Filters = NULL, NextToken = NULL, MaxResults = NULL) {
+pinpointsmsvoicev2_describe_sender_ids <- function(SenderIds = NULL, Filters = NULL, NextToken = NULL, MaxResults = NULL, Owner = NULL) {
   op <- new_operation(
     name = "DescribeSenderIds",
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "SenderIds")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "SenderIds"),
+    stream_api = FALSE
   )
-  input <- .pinpointsmsvoicev2$describe_sender_ids_input(SenderIds = SenderIds, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
+  input <- .pinpointsmsvoicev2$describe_sender_ids_input(SenderIds = SenderIds, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults, Owner = Owner)
   output <- .pinpointsmsvoicev2$describe_sender_ids_output()
   config <- get_config()
   svc <- .pinpointsmsvoicev2$service(config, op)
@@ -1636,7 +1801,8 @@ pinpointsmsvoicev2_describe_spend_limits <- function(NextToken = NULL, MaxResult
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "SpendLimits")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "SpendLimits"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_spend_limits_input(NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_spend_limits_output()
@@ -1648,14 +1814,14 @@ pinpointsmsvoicev2_describe_spend_limits <- function(NextToken = NULL, MaxResult
 }
 .pinpointsmsvoicev2$operations$describe_spend_limits <- pinpointsmsvoicev2_describe_spend_limits
 
-#' Retrieves the specified verified destiona numbers
+#' Retrieves the specified verified destination numbers
 #'
 #' @description
-#' Retrieves the specified verified destiona numbers.
+#' Retrieves the specified verified destination numbers.
 #'
 #' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_describe_verified_destination_numbers/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_describe_verified_destination_numbers/) for full documentation.
 #'
-#' @param VerifiedDestinationNumberIds An array of VerifiedDestinationNumberid to retreive.
+#' @param VerifiedDestinationNumberIds An array of VerifiedDestinationNumberid to retrieve.
 #' @param DestinationPhoneNumbers An array of verified destination phone number, in E.164 format.
 #' @param Filters An array of VerifiedDestinationNumberFilter objects to filter the
 #' results.
@@ -1672,7 +1838,8 @@ pinpointsmsvoicev2_describe_verified_destination_numbers <- function(VerifiedDes
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "VerifiedDestinationNumbers")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "VerifiedDestinationNumbers"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$describe_verified_destination_numbers_input(VerifiedDestinationNumberIds = VerifiedDestinationNumberIds, DestinationPhoneNumbers = DestinationPhoneNumbers, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$describe_verified_destination_numbers_output()
@@ -1693,12 +1860,18 @@ pinpointsmsvoicev2_describe_verified_destination_numbers <- function(VerifiedDes
 #'
 #' @param PoolId &#91;required&#93; The unique identifier for the pool to disassociate with the origination
 #' identity. This value can be either the PoolId or PoolArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param OriginationIdentity &#91;required&#93; The origination identity to use such as a PhoneNumberId, PhoneNumberArn,
 #' SenderId or SenderIdArn. You can use
 #' [`describe_phone_numbers`][pinpointsmsvoicev2_describe_phone_numbers]
 #' find the values for PhoneNumberId and PhoneNumberArn, or use
 #' [`describe_sender_ids`][pinpointsmsvoicev2_describe_sender_ids] to get
 #' the values for SenderId and SenderIdArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param IsoCountryCode &#91;required&#93; The two-character code, in ISO 3166-1 alpha-2 format, for the country or
 #' region.
 #' @param ClientToken Unique, case-sensitive identifier you provide to ensure the idempotency
@@ -1714,7 +1887,8 @@ pinpointsmsvoicev2_disassociate_origination_identity <- function(PoolId, Origina
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$disassociate_origination_identity_input(PoolId = PoolId, OriginationIdentity = OriginationIdentity, IsoCountryCode = IsoCountryCode, ClientToken = ClientToken)
   output <- .pinpointsmsvoicev2$disassociate_origination_identity_output()
@@ -1745,7 +1919,8 @@ pinpointsmsvoicev2_disassociate_protect_configuration <- function(ProtectConfigu
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$disassociate_protect_configuration_input(ProtectConfigurationId = ProtectConfigurationId, ConfigurationSetName = ConfigurationSetName)
   output <- .pinpointsmsvoicev2$disassociate_protect_configuration_output()
@@ -1775,7 +1950,8 @@ pinpointsmsvoicev2_discard_registration_version <- function(RegistrationId) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$discard_registration_version_input(RegistrationId = RegistrationId)
   output <- .pinpointsmsvoicev2$discard_registration_version_output()
@@ -1808,7 +1984,8 @@ pinpointsmsvoicev2_get_protect_configuration_country_rule_set <- function(Protec
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$get_protect_configuration_country_rule_set_input(ProtectConfigurationId = ProtectConfigurationId, NumberCapability = NumberCapability)
   output <- .pinpointsmsvoicev2$get_protect_configuration_country_rule_set_output()
@@ -1820,6 +1997,39 @@ pinpointsmsvoicev2_get_protect_configuration_country_rule_set <- function(Protec
 }
 .pinpointsmsvoicev2$operations$get_protect_configuration_country_rule_set <- pinpointsmsvoicev2_get_protect_configuration_country_rule_set
 
+#' Retrieves the JSON text of the resource-based policy document attached
+#' to the AWS End User Messaging SMS and Voice resource
+#'
+#' @description
+#' Retrieves the JSON text of the resource-based policy document attached to the AWS End User Messaging SMS and Voice resource. A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number.
+#'
+#' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_get_resource_policy/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_get_resource_policy/) for full documentation.
+#'
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and
+#' Voice resource attached to the resource-based policy.
+#'
+#' @keywords internal
+#'
+#' @rdname pinpointsmsvoicev2_get_resource_policy
+pinpointsmsvoicev2_get_resource_policy <- function(ResourceArn) {
+  op <- new_operation(
+    name = "GetResourcePolicy",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .pinpointsmsvoicev2$get_resource_policy_input(ResourceArn = ResourceArn)
+  output <- .pinpointsmsvoicev2$get_resource_policy_output()
+  config <- get_config()
+  svc <- .pinpointsmsvoicev2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.pinpointsmsvoicev2$operations$get_resource_policy <- pinpointsmsvoicev2_get_resource_policy
+
 #' Lists all associated origination identities in your pool
 #'
 #' @description
@@ -1829,6 +2039,9 @@ pinpointsmsvoicev2_get_protect_configuration_country_rule_set <- function(Protec
 #'
 #' @param PoolId &#91;required&#93; The unique identifier for the pool. This value can be either the PoolId
 #' or PoolArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param Filters An array of PoolOriginationIdentitiesFilter objects to filter the
 #' results..
 #' @param NextToken The token to be used for the next set of paginated results. You don't
@@ -1844,7 +2057,8 @@ pinpointsmsvoicev2_list_pool_origination_identities <- function(PoolId, Filters 
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "OriginationIdentities")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "OriginationIdentities"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$list_pool_origination_identities_input(PoolId = PoolId, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$list_pool_origination_identities_output()
@@ -1856,11 +2070,48 @@ pinpointsmsvoicev2_list_pool_origination_identities <- function(PoolId, Filters 
 }
 .pinpointsmsvoicev2$operations$list_pool_origination_identities <- pinpointsmsvoicev2_list_pool_origination_identities
 
-#' Retreive all of the origination identies that are associated with a
+#' Retrieve all of the protect configuration rule set number overrides that
+#' match the filters
+#'
+#' @description
+#' Retrieve all of the protect configuration rule set number overrides that match the filters.
+#'
+#' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_list_protect_configuration_rule_set_number_overrides/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_list_protect_configuration_rule_set_number_overrides/) for full documentation.
+#'
+#' @param ProtectConfigurationId &#91;required&#93; The unique identifier for the protect configuration.
+#' @param Filters An array of ProtectConfigurationRuleSetNumberOverrideFilterItem objects
+#' to filter the results.
+#' @param NextToken The token to be used for the next set of paginated results. You don't
+#' need to supply a value for this field in the initial request.
+#' @param MaxResults The maximum number of results to return per each request.
+#'
+#' @keywords internal
+#'
+#' @rdname pinpointsmsvoicev2_list_prot_conf_rule_set_numb_over
+pinpointsmsvoicev2_list_protect_configuration_rule_set_number_overrides <- function(ProtectConfigurationId, Filters = NULL, NextToken = NULL, MaxResults = NULL) {
+  op <- new_operation(
+    name = "ListProtectConfigurationRuleSetNumberOverrides",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RuleSetNumberOverrides"),
+    stream_api = FALSE
+  )
+  input <- .pinpointsmsvoicev2$list_protect_configuration_rule_set_number_overrides_input(ProtectConfigurationId = ProtectConfigurationId, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
+  output <- .pinpointsmsvoicev2$list_protect_configuration_rule_set_number_overrides_output()
+  config <- get_config()
+  svc <- .pinpointsmsvoicev2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.pinpointsmsvoicev2$operations$list_protect_configuration_rule_set_number_overrides <- pinpointsmsvoicev2_list_protect_configuration_rule_set_number_overrides
+
+#' Retrieve all of the origination identities that are associated with a
 #' registration
 #'
 #' @description
-#' Retreive all of the origination identies that are associated with a registration.
+#' Retrieve all of the origination identities that are associated with a registration.
 #'
 #' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_list_registration_associations/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_list_registration_associations/) for full documentation.
 #'
@@ -1880,7 +2131,8 @@ pinpointsmsvoicev2_list_registration_associations <- function(RegistrationId, Fi
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationAssociations")
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "RegistrationAssociations"),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$list_registration_associations_input(RegistrationId = RegistrationId, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .pinpointsmsvoicev2$list_registration_associations_output()
@@ -1910,7 +2162,8 @@ pinpointsmsvoicev2_list_tags_for_resource <- function(ResourceArn) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$list_tags_for_resource_input(ResourceArn = ResourceArn)
   output <- .pinpointsmsvoicev2$list_tags_for_resource_output()
@@ -1936,6 +2189,9 @@ pinpointsmsvoicev2_list_tags_for_resource <- function(ResourceArn) {
 #' get the values for PhoneNumberId and PhoneNumberArn while
 #' [`describe_sender_ids`][pinpointsmsvoicev2_describe_sender_ids] can be
 #' used to get the values for SenderId and SenderIdArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param Keyword &#91;required&#93; The new keyword to add.
 #' @param KeywordMessage &#91;required&#93; The message associated with the keyword.
 #' @param KeywordAction The action to perform for the new keyword when it is received.
@@ -1955,7 +2211,8 @@ pinpointsmsvoicev2_put_keyword <- function(OriginationIdentity, Keyword, Keyword
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$put_keyword_input(OriginationIdentity = OriginationIdentity, Keyword = Keyword, KeywordMessage = KeywordMessage, KeywordAction = KeywordAction)
   output <- .pinpointsmsvoicev2$put_keyword_output()
@@ -1967,6 +2224,39 @@ pinpointsmsvoicev2_put_keyword <- function(OriginationIdentity, Keyword, Keyword
 }
 .pinpointsmsvoicev2$operations$put_keyword <- pinpointsmsvoicev2_put_keyword
 
+#' Set the MessageFeedbackStatus as RECEIVED or FAILED for the passed in
+#' MessageId
+#'
+#' @description
+#' Set the MessageFeedbackStatus as `RECEIVED` or `FAILED` for the passed in MessageId.
+#'
+#' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_put_message_feedback/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_put_message_feedback/) for full documentation.
+#'
+#' @param MessageId &#91;required&#93; The unique identifier for the message.
+#' @param MessageFeedbackStatus &#91;required&#93; Set the message feedback to be either `RECEIVED` or `FAILED`.
+#'
+#' @keywords internal
+#'
+#' @rdname pinpointsmsvoicev2_put_message_feedback
+pinpointsmsvoicev2_put_message_feedback <- function(MessageId, MessageFeedbackStatus) {
+  op <- new_operation(
+    name = "PutMessageFeedback",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .pinpointsmsvoicev2$put_message_feedback_input(MessageId = MessageId, MessageFeedbackStatus = MessageFeedbackStatus)
+  output <- .pinpointsmsvoicev2$put_message_feedback_output()
+  config <- get_config()
+  svc <- .pinpointsmsvoicev2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.pinpointsmsvoicev2$operations$put_message_feedback <- pinpointsmsvoicev2_put_message_feedback
+
 #' Creates an opted out destination phone number in the opt-out list
 #'
 #' @description
@@ -1975,6 +2265,9 @@ pinpointsmsvoicev2_put_keyword <- function(OriginationIdentity, Keyword, Keyword
 #' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_put_opted_out_number/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_put_opted_out_number/) for full documentation.
 #'
 #' @param OptOutListName &#91;required&#93; The OptOutListName or OptOutListArn to add the phone number to.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param OptedOutNumber &#91;required&#93; The phone number to add to the OptOutList in E.164 format.
 #'
 #' @keywords internal
@@ -1986,7 +2279,8 @@ pinpointsmsvoicev2_put_opted_out_number <- function(OptOutListName, OptedOutNumb
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$put_opted_out_number_input(OptOutListName = OptOutListName, OptedOutNumber = OptedOutNumber)
   output <- .pinpointsmsvoicev2$put_opted_out_number_output()
@@ -1997,6 +2291,46 @@ pinpointsmsvoicev2_put_opted_out_number <- function(OptOutListName, OptedOutNumb
   return(response)
 }
 .pinpointsmsvoicev2$operations$put_opted_out_number <- pinpointsmsvoicev2_put_opted_out_number
+
+#' Create or update a RuleSetNumberOverride and associate it with a protect
+#' configuration
+#'
+#' @description
+#' Create or update a RuleSetNumberOverride and associate it with a protect configuration.
+#'
+#' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_put_protect_configuration_rule_set_number_override/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_put_protect_configuration_rule_set_number_override/) for full documentation.
+#'
+#' @param ClientToken Unique, case-sensitive identifier that you provide to ensure the
+#' idempotency of the request. If you don't specify a client token, a
+#' randomly generated token is used for the request to ensure idempotency.
+#' @param ProtectConfigurationId &#91;required&#93; The unique identifier for the protect configuration.
+#' @param DestinationPhoneNumber &#91;required&#93; The destination phone number in E.164 format.
+#' @param Action &#91;required&#93; The action for the rule to either block or allow messages to the
+#' destination phone number.
+#' @param ExpirationTimestamp The time the rule will expire at. If `ExpirationTimestamp` is not set
+#' then the rule does not expire.
+#'
+#' @keywords internal
+#'
+#' @rdname pinpointsmsvoicev2_put_prot_conf_rule_set_numb_over
+pinpointsmsvoicev2_put_protect_configuration_rule_set_number_override <- function(ClientToken = NULL, ProtectConfigurationId, DestinationPhoneNumber, Action, ExpirationTimestamp = NULL) {
+  op <- new_operation(
+    name = "PutProtectConfigurationRuleSetNumberOverride",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .pinpointsmsvoicev2$put_protect_configuration_rule_set_number_override_input(ClientToken = ClientToken, ProtectConfigurationId = ProtectConfigurationId, DestinationPhoneNumber = DestinationPhoneNumber, Action = Action, ExpirationTimestamp = ExpirationTimestamp)
+  output <- .pinpointsmsvoicev2$put_protect_configuration_rule_set_number_override_output()
+  config <- get_config()
+  svc <- .pinpointsmsvoicev2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.pinpointsmsvoicev2$operations$put_protect_configuration_rule_set_number_override <- pinpointsmsvoicev2_put_protect_configuration_rule_set_number_override
 
 #' Creates or updates a field value for a registration
 #'
@@ -2022,7 +2356,8 @@ pinpointsmsvoicev2_put_registration_field_value <- function(RegistrationId, Fiel
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$put_registration_field_value_input(RegistrationId = RegistrationId, FieldPath = FieldPath, SelectChoices = SelectChoices, TextValue = TextValue, RegistrationAttachmentId = RegistrationAttachmentId)
   output <- .pinpointsmsvoicev2$put_registration_field_value_output()
@@ -2033,6 +2368,41 @@ pinpointsmsvoicev2_put_registration_field_value <- function(RegistrationId, Fiel
   return(response)
 }
 .pinpointsmsvoicev2$operations$put_registration_field_value <- pinpointsmsvoicev2_put_registration_field_value
+
+#' Attaches a resource-based policy to a AWS End User Messaging SMS and
+#' Voice resource(phone number, sender Id, phone poll, or opt-out list)
+#' that is used for sharing the resource
+#'
+#' @description
+#' Attaches a resource-based policy to a AWS End User Messaging SMS and Voice resource(phone number, sender Id, phone poll, or opt-out list) that is used for sharing the resource. A shared resource can be a Pool, Opt-out list, Sender Id, or Phone number. For more information about resource-based policies, see [Working with shared resources](https://docs.aws.amazon.com/sms-voice/latest/userguide/shared-resources.html) in the *AWS End User Messaging SMS User Guide*.
+#'
+#' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_put_resource_policy/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_put_resource_policy/) for full documentation.
+#'
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the AWS End User Messaging SMS and
+#' Voice resource to attach the resource-based policy to.
+#' @param Policy &#91;required&#93; The JSON formatted resource-based policy to attach.
+#'
+#' @keywords internal
+#'
+#' @rdname pinpointsmsvoicev2_put_resource_policy
+pinpointsmsvoicev2_put_resource_policy <- function(ResourceArn, Policy) {
+  op <- new_operation(
+    name = "PutResourcePolicy",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .pinpointsmsvoicev2$put_resource_policy_input(ResourceArn = ResourceArn, Policy = Policy)
+  output <- .pinpointsmsvoicev2$put_resource_policy_output()
+  config <- get_config()
+  svc <- .pinpointsmsvoicev2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.pinpointsmsvoicev2$operations$put_resource_policy <- pinpointsmsvoicev2_put_resource_policy
 
 #' Releases an existing origination phone number in your account
 #'
@@ -2045,6 +2415,9 @@ pinpointsmsvoicev2_put_registration_field_value <- function(RegistrationId, Fiel
 #' can use
 #' [`describe_phone_numbers`][pinpointsmsvoicev2_describe_phone_numbers] to
 #' get the values for PhoneNumberId and PhoneNumberArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #'
 #' @keywords internal
 #'
@@ -2055,7 +2428,8 @@ pinpointsmsvoicev2_release_phone_number <- function(PhoneNumberId) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$release_phone_number_input(PhoneNumberId = PhoneNumberId)
   output <- .pinpointsmsvoicev2$release_phone_number_output()
@@ -2087,7 +2461,8 @@ pinpointsmsvoicev2_release_sender_id <- function(SenderId, IsoCountryCode) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$release_sender_id_input(SenderId = SenderId, IsoCountryCode = IsoCountryCode)
   output <- .pinpointsmsvoicev2$release_sender_id_output()
@@ -2116,8 +2491,14 @@ pinpointsmsvoicev2_release_sender_id <- function(SenderId, IsoCountryCode) {
 #' @param NumberType &#91;required&#93; The type of phone number to request.
 #' @param OptOutListName The name of the OptOutList to associate with the phone number. You can
 #' use the OptOutListName or OptOutListArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param PoolId The pool to associated with the phone number. You can use the PoolId or
 #' PoolArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param RegistrationId Use this field to attach your phone number for an external registration
 #' process.
 #' @param DeletionProtectionEnabled By default this is set to false. When set to true the phone number can't
@@ -2137,7 +2518,8 @@ pinpointsmsvoicev2_request_phone_number <- function(IsoCountryCode, MessageType,
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$request_phone_number_input(IsoCountryCode = IsoCountryCode, MessageType = MessageType, NumberCapabilities = NumberCapabilities, NumberType = NumberType, OptOutListName = OptOutListName, PoolId = PoolId, RegistrationId = RegistrationId, DeletionProtectionEnabled = DeletionProtectionEnabled, Tags = Tags, ClientToken = ClientToken)
   output <- .pinpointsmsvoicev2$request_phone_number_output()
@@ -2178,7 +2560,8 @@ pinpointsmsvoicev2_request_sender_id <- function(SenderId, IsoCountryCode, Messa
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$request_sender_id_input(SenderId = SenderId, IsoCountryCode = IsoCountryCode, MessageTypes = MessageTypes, DeletionProtectionEnabled = DeletionProtectionEnabled, Tags = Tags, ClientToken = ClientToken)
   output <- .pinpointsmsvoicev2$request_sender_id_output()
@@ -2204,6 +2587,9 @@ pinpointsmsvoicev2_request_sender_id <- function(SenderId, IsoCountryCode, Messa
 #' @param OriginationIdentity The origination identity of the message. This can be either the
 #' PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn,
 #' PoolId, or PoolArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param ConfigurationSetName The name of the configuration set to use. This can be either the
 #' ConfigurationSetName or ConfigurationSetArn.
 #' @param Context You can specify custom data in this field. If you do, that data is
@@ -2223,7 +2609,8 @@ pinpointsmsvoicev2_send_destination_number_verification_code <- function(Verifie
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$send_destination_number_verification_code_input(VerifiedDestinationNumberId = VerifiedDestinationNumberId, VerificationChannel = VerificationChannel, LanguageCode = LanguageCode, OriginationIdentity = OriginationIdentity, ConfigurationSetName = ConfigurationSetName, Context = Context, DestinationCountryParameters = DestinationCountryParameters)
   output <- .pinpointsmsvoicev2$send_destination_number_verification_code_output()
@@ -2247,6 +2634,9 @@ pinpointsmsvoicev2_send_destination_number_verification_code <- function(Verifie
 #' @param OriginationIdentity &#91;required&#93; The origination identity of the message. This can be either the
 #' PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn,
 #' PoolId, or PoolArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param MessageBody The text body of the message.
 #' @param MediaUrls An array of URLs to each media file to send.
 #' 
@@ -2264,25 +2654,29 @@ pinpointsmsvoicev2_send_destination_number_verification_code <- function(Verifie
 #' ConfigurationSetName or ConfigurationSetArn.
 #' @param MaxPrice The maximum amount that you want to spend, in US dollars, per each MMS
 #' message.
-#' @param TimeToLive How long the text message is valid for. By default this is 72 hours.
+#' @param TimeToLive How long the media message is valid for. By default this is 72 hours.
 #' @param Context You can specify custom data in this field. If you do, that data is
 #' logged to the event destination.
 #' @param DryRun When set to true, the message is checked and validated, but isn't sent
 #' to the end recipient.
 #' @param ProtectConfigurationId The unique identifier of the protect configuration to use.
+#' @param MessageFeedbackEnabled Set to true to enable message feedback for the message. When a user
+#' receives the message you need to update the message status using
+#' [`put_message_feedback`][pinpointsmsvoicev2_put_message_feedback].
 #'
 #' @keywords internal
 #'
 #' @rdname pinpointsmsvoicev2_send_media_message
-pinpointsmsvoicev2_send_media_message <- function(DestinationPhoneNumber, OriginationIdentity, MessageBody = NULL, MediaUrls = NULL, ConfigurationSetName = NULL, MaxPrice = NULL, TimeToLive = NULL, Context = NULL, DryRun = NULL, ProtectConfigurationId = NULL) {
+pinpointsmsvoicev2_send_media_message <- function(DestinationPhoneNumber, OriginationIdentity, MessageBody = NULL, MediaUrls = NULL, ConfigurationSetName = NULL, MaxPrice = NULL, TimeToLive = NULL, Context = NULL, DryRun = NULL, ProtectConfigurationId = NULL, MessageFeedbackEnabled = NULL) {
   op <- new_operation(
     name = "SendMediaMessage",
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
-  input <- .pinpointsmsvoicev2$send_media_message_input(DestinationPhoneNumber = DestinationPhoneNumber, OriginationIdentity = OriginationIdentity, MessageBody = MessageBody, MediaUrls = MediaUrls, ConfigurationSetName = ConfigurationSetName, MaxPrice = MaxPrice, TimeToLive = TimeToLive, Context = Context, DryRun = DryRun, ProtectConfigurationId = ProtectConfigurationId)
+  input <- .pinpointsmsvoicev2$send_media_message_input(DestinationPhoneNumber = DestinationPhoneNumber, OriginationIdentity = OriginationIdentity, MessageBody = MessageBody, MediaUrls = MediaUrls, ConfigurationSetName = ConfigurationSetName, MaxPrice = MaxPrice, TimeToLive = TimeToLive, Context = Context, DryRun = DryRun, ProtectConfigurationId = ProtectConfigurationId, MessageFeedbackEnabled = MessageFeedbackEnabled)
   output <- .pinpointsmsvoicev2$send_media_message_output()
   config <- get_config()
   svc <- .pinpointsmsvoicev2$service(config, op)
@@ -2303,6 +2697,9 @@ pinpointsmsvoicev2_send_media_message <- function(DestinationPhoneNumber, Origin
 #' @param OriginationIdentity The origination identity of the message. This can be either the
 #' PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn,
 #' PoolId, or PoolArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param MessageBody The body of the text message.
 #' @param MessageType The type of message. Valid values are for messages that are critical or
 #' time-sensitive and PROMOTIONAL for messages that aren't critical or
@@ -2345,19 +2742,23 @@ pinpointsmsvoicev2_send_media_message <- function(DestinationPhoneNumber, Origin
 #' limits](https://docs.aws.amazon.com/sms-voice/latest/userguide/sms-limitations-mps.html)
 #' in the *AWS End User Messaging SMS User Guide*..
 #' @param ProtectConfigurationId The unique identifier for the protect configuration.
+#' @param MessageFeedbackEnabled Set to true to enable message feedback for the message. When a user
+#' receives the message you need to update the message status using
+#' [`put_message_feedback`][pinpointsmsvoicev2_put_message_feedback].
 #'
 #' @keywords internal
 #'
 #' @rdname pinpointsmsvoicev2_send_text_message
-pinpointsmsvoicev2_send_text_message <- function(DestinationPhoneNumber, OriginationIdentity = NULL, MessageBody = NULL, MessageType = NULL, Keyword = NULL, ConfigurationSetName = NULL, MaxPrice = NULL, TimeToLive = NULL, Context = NULL, DestinationCountryParameters = NULL, DryRun = NULL, ProtectConfigurationId = NULL) {
+pinpointsmsvoicev2_send_text_message <- function(DestinationPhoneNumber, OriginationIdentity = NULL, MessageBody = NULL, MessageType = NULL, Keyword = NULL, ConfigurationSetName = NULL, MaxPrice = NULL, TimeToLive = NULL, Context = NULL, DestinationCountryParameters = NULL, DryRun = NULL, ProtectConfigurationId = NULL, MessageFeedbackEnabled = NULL) {
   op <- new_operation(
     name = "SendTextMessage",
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
-  input <- .pinpointsmsvoicev2$send_text_message_input(DestinationPhoneNumber = DestinationPhoneNumber, OriginationIdentity = OriginationIdentity, MessageBody = MessageBody, MessageType = MessageType, Keyword = Keyword, ConfigurationSetName = ConfigurationSetName, MaxPrice = MaxPrice, TimeToLive = TimeToLive, Context = Context, DestinationCountryParameters = DestinationCountryParameters, DryRun = DryRun, ProtectConfigurationId = ProtectConfigurationId)
+  input <- .pinpointsmsvoicev2$send_text_message_input(DestinationPhoneNumber = DestinationPhoneNumber, OriginationIdentity = OriginationIdentity, MessageBody = MessageBody, MessageType = MessageType, Keyword = Keyword, ConfigurationSetName = ConfigurationSetName, MaxPrice = MaxPrice, TimeToLive = TimeToLive, Context = Context, DestinationCountryParameters = DestinationCountryParameters, DryRun = DryRun, ProtectConfigurationId = ProtectConfigurationId, MessageFeedbackEnabled = MessageFeedbackEnabled)
   output <- .pinpointsmsvoicev2$send_text_message_output()
   config <- get_config()
   svc <- .pinpointsmsvoicev2$service(config, op)
@@ -2377,6 +2778,9 @@ pinpointsmsvoicev2_send_text_message <- function(DestinationPhoneNumber, Origina
 #' @param DestinationPhoneNumber &#91;required&#93; The destination phone number in E.164 format.
 #' @param OriginationIdentity &#91;required&#93; The origination identity to use for the voice call. This can be the
 #' PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param MessageBody The text to convert to a voice message.
 #' @param MessageBodyTextType Specifies if the MessageBody field contains text or [speech synthesis
 #' markup language
@@ -2399,19 +2803,23 @@ pinpointsmsvoicev2_send_text_message <- function(DestinationPhoneNumber, Origina
 #' @param DryRun When set to true, the message is checked and validated, but isn't sent
 #' to the end recipient.
 #' @param ProtectConfigurationId The unique identifier for the protect configuration.
+#' @param MessageFeedbackEnabled Set to true to enable message feedback for the message. When a user
+#' receives the message you need to update the message status using
+#' [`put_message_feedback`][pinpointsmsvoicev2_put_message_feedback].
 #'
 #' @keywords internal
 #'
 #' @rdname pinpointsmsvoicev2_send_voice_message
-pinpointsmsvoicev2_send_voice_message <- function(DestinationPhoneNumber, OriginationIdentity, MessageBody = NULL, MessageBodyTextType = NULL, VoiceId = NULL, ConfigurationSetName = NULL, MaxPricePerMinute = NULL, TimeToLive = NULL, Context = NULL, DryRun = NULL, ProtectConfigurationId = NULL) {
+pinpointsmsvoicev2_send_voice_message <- function(DestinationPhoneNumber, OriginationIdentity, MessageBody = NULL, MessageBodyTextType = NULL, VoiceId = NULL, ConfigurationSetName = NULL, MaxPricePerMinute = NULL, TimeToLive = NULL, Context = NULL, DryRun = NULL, ProtectConfigurationId = NULL, MessageFeedbackEnabled = NULL) {
   op <- new_operation(
     name = "SendVoiceMessage",
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
-  input <- .pinpointsmsvoicev2$send_voice_message_input(DestinationPhoneNumber = DestinationPhoneNumber, OriginationIdentity = OriginationIdentity, MessageBody = MessageBody, MessageBodyTextType = MessageBodyTextType, VoiceId = VoiceId, ConfigurationSetName = ConfigurationSetName, MaxPricePerMinute = MaxPricePerMinute, TimeToLive = TimeToLive, Context = Context, DryRun = DryRun, ProtectConfigurationId = ProtectConfigurationId)
+  input <- .pinpointsmsvoicev2$send_voice_message_input(DestinationPhoneNumber = DestinationPhoneNumber, OriginationIdentity = OriginationIdentity, MessageBody = MessageBody, MessageBodyTextType = MessageBodyTextType, VoiceId = VoiceId, ConfigurationSetName = ConfigurationSetName, MaxPricePerMinute = MaxPricePerMinute, TimeToLive = TimeToLive, Context = Context, DryRun = DryRun, ProtectConfigurationId = ProtectConfigurationId, MessageFeedbackEnabled = MessageFeedbackEnabled)
   output <- .pinpointsmsvoicev2$send_voice_message_output()
   config <- get_config()
   svc <- .pinpointsmsvoicev2$service(config, op)
@@ -2439,7 +2847,8 @@ pinpointsmsvoicev2_set_account_default_protect_configuration <- function(Protect
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$set_account_default_protect_configuration_input(ProtectConfigurationId = ProtectConfigurationId)
   output <- .pinpointsmsvoicev2$set_account_default_protect_configuration_output()
@@ -2450,6 +2859,39 @@ pinpointsmsvoicev2_set_account_default_protect_configuration <- function(Protect
   return(response)
 }
 .pinpointsmsvoicev2$operations$set_account_default_protect_configuration <- pinpointsmsvoicev2_set_account_default_protect_configuration
+
+#' Sets a configuration set's default for message feedback
+#'
+#' @description
+#' Sets a configuration set's default for message feedback.
+#'
+#' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_set_default_message_feedback_enabled/](https://www.paws-r-sdk.com/docs/pinpointsmsvoicev2_set_default_message_feedback_enabled/) for full documentation.
+#'
+#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to use. This can be either the
+#' ConfigurationSetName or ConfigurationSetArn.
+#' @param MessageFeedbackEnabled &#91;required&#93; Set to true to enable message feedback.
+#'
+#' @keywords internal
+#'
+#' @rdname pinpointsmsvoicev2_set_default_message_feedback_enabled
+pinpointsmsvoicev2_set_default_message_feedback_enabled <- function(ConfigurationSetName, MessageFeedbackEnabled) {
+  op <- new_operation(
+    name = "SetDefaultMessageFeedbackEnabled",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .pinpointsmsvoicev2$set_default_message_feedback_enabled_input(ConfigurationSetName = ConfigurationSetName, MessageFeedbackEnabled = MessageFeedbackEnabled)
+  output <- .pinpointsmsvoicev2$set_default_message_feedback_enabled_output()
+  config <- get_config()
+  svc <- .pinpointsmsvoicev2$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.pinpointsmsvoicev2$operations$set_default_message_feedback_enabled <- pinpointsmsvoicev2_set_default_message_feedback_enabled
 
 #' Sets the default message type on a configuration set
 #'
@@ -2473,7 +2915,8 @@ pinpointsmsvoicev2_set_default_message_type <- function(ConfigurationSetName, Me
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$set_default_message_type_input(ConfigurationSetName = ConfigurationSetName, MessageType = MessageType)
   output <- .pinpointsmsvoicev2$set_default_message_type_output()
@@ -2511,7 +2954,8 @@ pinpointsmsvoicev2_set_default_sender_id <- function(ConfigurationSetName, Sende
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$set_default_sender_id_input(ConfigurationSetName = ConfigurationSetName, SenderId = SenderId)
   output <- .pinpointsmsvoicev2$set_default_sender_id_output()
@@ -2542,7 +2986,8 @@ pinpointsmsvoicev2_set_media_message_spend_limit_override <- function(MonthlyLim
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$set_media_message_spend_limit_override_input(MonthlyLimit = MonthlyLimit)
   output <- .pinpointsmsvoicev2$set_media_message_spend_limit_override_output()
@@ -2573,7 +3018,8 @@ pinpointsmsvoicev2_set_text_message_spend_limit_override <- function(MonthlyLimi
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$set_text_message_spend_limit_override_input(MonthlyLimit = MonthlyLimit)
   output <- .pinpointsmsvoicev2$set_text_message_spend_limit_override_output()
@@ -2604,7 +3050,8 @@ pinpointsmsvoicev2_set_voice_message_spend_limit_override <- function(MonthlyLim
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$set_voice_message_spend_limit_override_input(MonthlyLimit = MonthlyLimit)
   output <- .pinpointsmsvoicev2$set_voice_message_spend_limit_override_output()
@@ -2634,7 +3081,8 @@ pinpointsmsvoicev2_submit_registration_version <- function(RegistrationId) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$submit_registration_version_input(RegistrationId = RegistrationId)
   output <- .pinpointsmsvoicev2$submit_registration_version_output()
@@ -2666,7 +3114,8 @@ pinpointsmsvoicev2_tag_resource <- function(ResourceArn, Tags) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$tag_resource_input(ResourceArn = ResourceArn, Tags = Tags)
   output <- .pinpointsmsvoicev2$tag_resource_output()
@@ -2697,7 +3146,8 @@ pinpointsmsvoicev2_untag_resource <- function(ResourceArn, TagKeys) {
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$untag_resource_input(ResourceArn = ResourceArn, TagKeys = TagKeys)
   output <- .pinpointsmsvoicev2$untag_resource_output()
@@ -2739,7 +3189,8 @@ pinpointsmsvoicev2_update_event_destination <- function(ConfigurationSetName, Ev
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$update_event_destination_input(ConfigurationSetName = ConfigurationSetName, EventDestinationName = EventDestinationName, Enabled = Enabled, MatchingEventTypes = MatchingEventTypes, CloudWatchLogsDestination = CloudWatchLogsDestination, KinesisFirehoseDestination = KinesisFirehoseDestination, SnsDestination = SnsDestination)
   output <- .pinpointsmsvoicev2$update_event_destination_output()
@@ -2760,6 +3211,9 @@ pinpointsmsvoicev2_update_event_destination <- function(ConfigurationSetName, Ev
 #'
 #' @param PhoneNumberId &#91;required&#93; The unique identifier of the phone number. Valid values for this field
 #' can be either the PhoneNumberId or PhoneNumberArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param TwoWayEnabled By default this is set to false. When set to true you can receive
 #' incoming text messages from your end recipients.
 #' @param TwoWayChannelArn The Amazon Resource Name (ARN) of the two way channel.
@@ -2785,7 +3239,8 @@ pinpointsmsvoicev2_update_phone_number <- function(PhoneNumberId, TwoWayEnabled 
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$update_phone_number_input(PhoneNumberId = PhoneNumberId, TwoWayEnabled = TwoWayEnabled, TwoWayChannelArn = TwoWayChannelArn, TwoWayChannelRole = TwoWayChannelRole, SelfManagedOptOutsEnabled = SelfManagedOptOutsEnabled, OptOutListName = OptOutListName, DeletionProtectionEnabled = DeletionProtectionEnabled)
   output <- .pinpointsmsvoicev2$update_phone_number_output()
@@ -2806,6 +3261,9 @@ pinpointsmsvoicev2_update_phone_number <- function(PhoneNumberId, TwoWayEnabled 
 #'
 #' @param PoolId &#91;required&#93; The unique identifier of the pool to update. Valid values are either the
 #' PoolId or PoolArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param TwoWayEnabled By default this is set to false. When set to true you can receive
 #' incoming text messages from your end recipients.
 #' @param TwoWayChannelArn The Amazon Resource Name (ARN) of the two way channel.
@@ -2819,6 +3277,9 @@ pinpointsmsvoicev2_update_phone_number <- function(PhoneNumberId, TwoWayEnabled 
 #' responsible for tracking and honoring opt-out requests.
 #' @param OptOutListName The OptOutList to associate with the pool. Valid values are either
 #' OptOutListName or OptOutListArn.
+#' 
+#' If you are using a shared AWS End User Messaging SMS and Voice resource
+#' then you must use the full Amazon Resource Name(ARN).
 #' @param SharedRoutesEnabled Indicates whether shared routes are enabled for the pool.
 #' @param DeletionProtectionEnabled When set to true the pool can't be deleted.
 #'
@@ -2831,7 +3292,8 @@ pinpointsmsvoicev2_update_pool <- function(PoolId, TwoWayEnabled = NULL, TwoWayC
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$update_pool_input(PoolId = PoolId, TwoWayEnabled = TwoWayEnabled, TwoWayChannelArn = TwoWayChannelArn, TwoWayChannelRole = TwoWayChannelRole, SelfManagedOptOutsEnabled = SelfManagedOptOutsEnabled, OptOutListName = OptOutListName, SharedRoutesEnabled = SharedRoutesEnabled, DeletionProtectionEnabled = DeletionProtectionEnabled)
   output <- .pinpointsmsvoicev2$update_pool_output()
@@ -2863,7 +3325,8 @@ pinpointsmsvoicev2_update_protect_configuration <- function(ProtectConfiguration
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$update_protect_configuration_input(ProtectConfigurationId = ProtectConfigurationId, DeletionProtectionEnabled = DeletionProtectionEnabled)
   output <- .pinpointsmsvoicev2$update_protect_configuration_output()
@@ -2901,7 +3364,8 @@ pinpointsmsvoicev2_update_protect_configuration_country_rule_set <- function(Pro
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$update_protect_configuration_country_rule_set_input(ProtectConfigurationId = ProtectConfigurationId, NumberCapability = NumberCapability, CountryRuleSetUpdates = CountryRuleSetUpdates)
   output <- .pinpointsmsvoicev2$update_protect_configuration_country_rule_set_output()
@@ -2935,7 +3399,8 @@ pinpointsmsvoicev2_update_sender_id <- function(SenderId, IsoCountryCode, Deleti
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$update_sender_id_input(SenderId = SenderId, IsoCountryCode = IsoCountryCode, DeletionProtectionEnabled = DeletionProtectionEnabled)
   output <- .pinpointsmsvoicev2$update_sender_id_output()
@@ -2969,7 +3434,8 @@ pinpointsmsvoicev2_verify_destination_number <- function(VerifiedDestinationNumb
     http_method = "POST",
     http_path = "/",
     host_prefix = "",
-    paginator = list()
+    paginator = list(),
+    stream_api = FALSE
   )
   input <- .pinpointsmsvoicev2$verify_destination_number_input(VerifiedDestinationNumberId = VerifiedDestinationNumberId, VerificationCode = VerificationCode)
   output <- .pinpointsmsvoicev2$verify_destination_number_output()

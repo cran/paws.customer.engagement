@@ -1,6 +1,6 @@
 Package: paws.customer.engagement
 Title: 'Amazon Web Services' Customer Engagement Services
-Version: 0.7.0
+Version: 0.8.0
 Authors@R: c(
     person("David", "Kretch", , "david.kretch@gmail.com", role = "aut"),
     person("Adam", "Banker", , "adam.banker39@gmail.com", role = "aut"),
@@ -11,18 +11,22 @@ Description: Interface to 'Amazon Web Services' customer engagement
     services, including 'Simple Email Service', 'Connect' contact center
     service, and more <https://aws.amazon.com/>.
 License: Apache License (>= 2.0)
-URL: https://github.com/paws-r/paws
+URL: https://github.com/paws-r/paws,
+        https://paws-r.r-universe.dev/paws.customer.engagement
 BugReports: https://github.com/paws-r/paws/issues
-Imports: paws.common (>= 0.7.5)
+Imports: paws.common (>= 0.8.0)
 Suggests: testthat
 Encoding: UTF-8
 RoxygenNote: 7.3.2
 Collate: 'connect_service.R' 'connect_interfaces.R'
         'connect_operations.R' 'connectcampaignservice_service.R'
         'connectcampaignservice_interfaces.R'
-        'connectcampaignservice_operations.R' 'connectcases_service.R'
-        'connectcases_interfaces.R' 'connectcases_operations.R'
-        'connectcontactlens_service.R'
+        'connectcampaignservice_operations.R'
+        'connectcampaignservicev2_service.R'
+        'connectcampaignservicev2_interfaces.R'
+        'connectcampaignservicev2_operations.R'
+        'connectcases_service.R' 'connectcases_interfaces.R'
+        'connectcases_operations.R' 'connectcontactlens_service.R'
         'connectcontactlens_interfaces.R'
         'connectcontactlens_operations.R'
         'connectparticipant_service.R'
@@ -43,11 +47,11 @@ Collate: 'connect_service.R' 'connect_interfaces.R'
         'ses_service.R' 'ses_interfaces.R' 'ses_operations.R'
         'sesv2_service.R' 'sesv2_interfaces.R' 'sesv2_operations.R'
 NeedsCompilation: no
-Packaged: 2024-09-11 08:28:33 UTC; dyfanjones
+Packaged: 2025-02-08 18:36:48 UTC; dyfanjones
 Author: David Kretch [aut],
   Adam Banker [aut],
   Dyfan Jones [cre],
   Amazon.com, Inc. [cph]
 Maintainer: Dyfan Jones <dyfan.r.jones@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-09-11 22:51:51 UTC
+Date/Publication: 2025-02-08 21:10:02 UTC
