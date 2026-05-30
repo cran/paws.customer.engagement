@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_batch_associate_analytics_data_set}
 \alias{connect_batch_associate_analytics_data_set}
-\title{Associates a list of analytics datasets for a given Amazon Connect
+\title{Associates a list of analytics datasets for a given Connect Customer
 instance to a target account}
 \usage{
 connect_batch_associate_analytics_data_set(
@@ -12,18 +12,14 @@ connect_batch_associate_analytics_data_set(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{DataSetIds}{[required] An array of dataset identifiers to associate.}
 
-\item{TargetAccountId}{The identifier of the target account. Use to associate a dataset to a
-different account than the one containing the Amazon Connect instance.
-If not specified, by default this value is the Amazon Web Services
-account that has the Amazon Connect instance.}
+\item{TargetAccountId}{The identifier of the target account. Use to associate a dataset to a different account than the one containing the Connect Customer instance. If not specified, by default this value is the Amazon Web Services account that has the Connect Customer instance.}
 }
 \description{
-Associates a list of analytics datasets for a given Amazon Connect instance to a target account. You can associate multiple datasets in a single call.
+Associates a list of analytics datasets for a given Connect Customer instance to a target account. You can associate multiple datasets in a single call.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_batch_associate_analytics_data_set/} for full documentation.
 }

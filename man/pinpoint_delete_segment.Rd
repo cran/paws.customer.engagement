@@ -7,8 +7,7 @@
 pinpoint_delete_segment(ApplicationId, SegmentId)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
 \item{SegmentId}{[required] The unique identifier for the segment.}
 }

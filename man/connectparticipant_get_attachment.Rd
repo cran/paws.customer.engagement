@@ -15,9 +15,7 @@ connectparticipant_get_attachment(
 
 \item{ConnectionToken}{[required] The authentication token associated with the participant's connection.}
 
-\item{UrlExpiryInSeconds}{The expiration time of the URL in ISO timestamp. It's specified in ISO
-8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-2019-11-08T02:41:28.172Z.}
+\item{UrlExpiryInSeconds}{The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.}
 }
 \description{
 Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active contacts.

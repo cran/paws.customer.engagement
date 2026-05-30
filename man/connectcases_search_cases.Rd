@@ -6,33 +6,28 @@
 \usage{
 connectcases_search_cases(
   domainId,
-  fields = NULL,
-  filter = NULL,
   maxResults = NULL,
   nextToken = NULL,
   searchTerm = NULL,
-  sorts = NULL
+  filter = NULL,
+  sorts = NULL,
+  fields = NULL
 )
 }
 \arguments{
 \item{domainId}{[required] The unique identifier of the Cases domain.}
 
-\item{fields}{The list of field identifiers to be returned as part of the response.}
+\item{maxResults}{The maximum number of cases to return. When no value is provided, 25 is the default.}
 
-\item{filter}{A list of filter objects.}
-
-\item{maxResults}{The maximum number of cases to return. The current maximum supported
-value is 25. This is also the default value when no other value is
-provided.}
-
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{searchTerm}{A word or phrase used to perform a quick search.}
 
-\item{sorts}{A list of sorts where each sort specifies a field and their sort order
-to be applied to the results.}
+\item{filter}{A list of filter objects.}
+
+\item{sorts}{A list of sorts where each sort specifies a field and their sort order to be applied to the results.}
+
+\item{fields}{The list of field identifiers to be returned as part of the response.}
 }
 \description{
 Searches for cases within their associated Cases domain. Search results are returned as a paginated list of abridged case documents.

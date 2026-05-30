@@ -10,9 +10,9 @@ connectcampaignservicev2_update_campaign_channel_subtype_config(
 )
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{channelSubtypeConfig}{[required]}
+\item{channelSubtypeConfig}{[required] Campaign Channel Subtype config}
 }
 \description{
 Updates the channel subtype config of a campaign. This API is idempotent.

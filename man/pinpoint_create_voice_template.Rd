@@ -8,12 +8,9 @@ channel}
 pinpoint_create_voice_template(TemplateName, VoiceTemplateRequest)
 }
 \arguments{
-\item{TemplateName}{[required] The name of the message template. A template name must start with an
-alphanumeric character and can contain a maximum of 128 characters. The
-characters can be alphanumeric characters, underscores (_), or hyphens
-(-). Template names are case sensitive.}
+\item{TemplateName}{[required] The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.}
 
-\item{VoiceTemplateRequest}{[required]}
+\item{VoiceTemplateRequest}{[required] Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.}
 }
 \description{
 Creates a message template for messages that are sent through the voice channel.

@@ -14,27 +14,17 @@ connectwisdomservice_create_assistant(
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{description}{The description of the assistant.}
 
 \item{name}{[required] The name of the assistant.}
 
-\item{serverSideEncryptionConfiguration}{The configuration information for the customer managed key used for
-encryption.
+\item{serverSideEncryptionConfiguration}{The configuration information for the customer managed key used for encryption.
 
-The customer managed key must have a policy that allows
-\code{kms:CreateGrant}, \code{ kms:DescribeKey}, and
-\code{kms:Decrypt/kms:GenerateDataKey} permissions to the IAM identity using
-the key to invoke Wisdom. To use Wisdom with chat, the key policy must
-also allow \code{kms:Decrypt}, \verb{kms:GenerateDataKey*}, and \code{kms:DescribeKey}
-permissions to the \code{connect.amazonaws.com} service principal.
+The customer managed key must have a policy that allows \code{kms:CreateGrant}, \code{ kms:DescribeKey}, and \code{kms:Decrypt/kms:GenerateDataKey} permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow \code{kms:Decrypt}, \verb{kms:GenerateDataKey*}, and \code{kms:DescribeKey} permissions to the \code{connect.amazonaws.com} service principal.
 
-For more information about setting up a customer managed key for Wisdom,
-see \href{https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html}{Enable Amazon Connect Wisdom for your instance}.}
+For more information about setting up a customer managed key for Wisdom, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/ai-agent-initial-setup.html}{Enable Amazon Connect Wisdom for your instance}.}
 
 \item{tags}{The tags used to organize, track, or control access for this resource.}
 

@@ -11,14 +11,11 @@ connect_associate_traffic_distribution_group_user(
 )
 }
 \arguments{
-\item{TrafficDistributionGroupId}{[required] The identifier of the traffic distribution group. This can be the ID or
-the ARN of the traffic distribution group.}
+\item{TrafficDistributionGroupId}{[required] The identifier of the traffic distribution group. This can be the ID or the ARN of the traffic distribution group.}
 
-\item{UserId}{[required] The identifier of the user account. This can be the ID or the ARN of the
-user.}
+\item{UserId}{[required] The identifier of the user account. This can be the ID or the ARN of the user.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 }
 \description{
 Associates an agent with a traffic distribution group. This API can be called only in the Region where the traffic distribution group is created.

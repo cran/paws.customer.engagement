@@ -7,9 +7,9 @@
 connectcampaignservice_untag_resource(arn, tagKeys)
 }
 \arguments{
-\item{arn}{[required]}
+\item{arn}{[required] Arn}
 
-\item{tagKeys}{[required]}
+\item{tagKeys}{[required] List of tag keys.}
 }
 \description{
 Untag a resource.

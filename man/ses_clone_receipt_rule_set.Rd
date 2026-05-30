@@ -7,11 +7,9 @@
 ses_clone_receipt_rule_set(RuleSetName, OriginalRuleSetName)
 }
 \arguments{
-\item{RuleSetName}{[required] The name of the rule set to create. The name must meet the following
-requirements:
+\item{RuleSetName}{[required] The name of the rule set to create. The name must meet the following requirements:
 \itemize{
-\item Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores
-(_), or dashes (-).
+\item Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
 \item Start and end with a letter or number.
 \item Contain 64 characters or fewer.
 }}

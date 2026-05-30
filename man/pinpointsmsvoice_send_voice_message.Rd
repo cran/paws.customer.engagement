@@ -13,20 +13,15 @@ pinpointsmsvoice_send_voice_message(
 )
 }
 \arguments{
-\item{CallerId}{The phone number that appears on recipients' devices when they receive
-the message.}
+\item{CallerId}{The phone number that appears on recipients' devices when they receive the message.}
 
-\item{ConfigurationSetName}{The name of the configuration set that you want to use to send the
-message.}
+\item{ConfigurationSetName}{The name of the configuration set that you want to use to send the message.}
 
-\item{Content}{}
+\item{Content}{An object that contains a voice message and information about the recipient that you want to send it to.}
 
 \item{DestinationPhoneNumber}{The phone number that you want to send the voice message to.}
 
-\item{OriginationPhoneNumber}{The phone number that Amazon Pinpoint should use to send the voice
-message. This isn't necessarily the phone number that appears on
-recipients' devices when they receive the message, because you can
-specify a CallerId parameter in the request.}
+\item{OriginationPhoneNumber}{The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.}
 }
 \description{
 Create a new voice message and send it to a recipient's phone number.

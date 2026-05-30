@@ -8,8 +8,7 @@ settings for the channel}
 pinpoint_delete_gcm_channel(ApplicationId)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 }
 \description{
 Disables the GCM channel for an application and deletes any existing settings for the channel.

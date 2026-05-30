@@ -12,14 +12,11 @@ connectwisdomservice_search_sessions(
 )
 }
 \arguments{
-\item{assistantId}{[required] The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-URLs cannot contain the ARN.}
+\item{assistantId}{[required] The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{searchExpression}{[required] The search expression to filter results.}
 }

@@ -2,8 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_hours_of_operation}
 \alias{connect_create_hours_of_operation}
-\title{This API is in preview release for Amazon Connect and is subject to
-change}
+\title{Creates hours of operation}
 \usage{
 connect_create_hours_of_operation(
   InstanceId,
@@ -11,12 +10,12 @@ connect_create_hours_of_operation(
   Description = NULL,
   TimeZone,
   Config,
+  ParentHoursOfOperationConfigs = NULL,
   Tags = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Name}{[required] The name of the hours of operation.}
 
@@ -24,14 +23,16 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{TimeZone}{[required] The time zone of the hours of operation.}
 
-\item{Config}{[required] Configuration information for the hours of operation: day, start time,
-and end time.}
+\item{Config}{[required] Configuration information for the hours of operation: day, start time, and end time.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{ParentHoursOfOperationConfigs}{Configuration for parent hours of operations. Eg: ResourceArn.
+
+For more information about parent hours of operations, see Link overrides from different hours of operation in the \emph{Administrator Guide}.}
+
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+Creates hours of operation.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_hours_of_operation/} for full documentation.
 }

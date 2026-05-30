@@ -8,11 +8,7 @@ the given identity (an email address or a domain)}
 ses_list_identity_policies(Identity)
 }
 \arguments{
-\item{Identity}{[required] The identity that is associated with the policy for which the policies
-are listed. You can specify an identity by using its name or by using
-its Amazon Resource Name (ARN). Examples: \code{user@example.com},
-\code{example.com},
-\code{arn:aws:ses:us-east-1:123456789012:identity/example.com}.
+\item{Identity}{[required] The identity that is associated with the policy for which the policies are listed. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: \code{user@example.com}, \code{example.com}, \code{arn:aws:ses:us-east-1:123456789012:identity/example.com}.
 
 To successfully call this operation, you must own the identity.}
 }

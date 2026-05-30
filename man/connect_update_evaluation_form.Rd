@@ -3,7 +3,7 @@
 \name{connect_update_evaluation_form}
 \alias{connect_update_evaluation_form}
 \title{Updates details about a specific evaluation form version in the
-specified Amazon Connect instance}
+specified Connect Customer instance}
 \usage{
 connect_update_evaluation_form(
   InstanceId,
@@ -14,12 +14,16 @@ connect_update_evaluation_form(
   Description = NULL,
   Items,
   ScoringStrategy = NULL,
-  ClientToken = NULL
+  AutoEvaluationConfiguration = NULL,
+  ReviewConfiguration = NULL,
+  AsDraft = NULL,
+  ClientToken = NULL,
+  TargetConfiguration = NULL,
+  LanguageConfiguration = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{EvaluationFormId}{[required] The unique identifier for the evaluation form.}
 
@@ -31,19 +35,24 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Description}{The description of the evaluation form.}
 
-\item{Items}{[required] Items that are part of the evaluation form. The total number of sections
-and questions must not exceed 100 each. Questions must be contained in a
-section.}
+\item{Items}{[required] Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.}
 
 \item{ScoringStrategy}{A scoring strategy of the evaluation form.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{AutoEvaluationConfiguration}{Whether automated evaluations are enabled.}
+
+\item{ReviewConfiguration}{Configuration for evaluation review settings of the evaluation form.}
+
+\item{AsDraft}{A boolean flag indicating whether to update evaluation form to draft state.}
+
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+
+\item{TargetConfiguration}{Configuration that specifies the target for the evaluation form.}
+
+\item{LanguageConfiguration}{Configuration for language settings of the evaluation form.}
 }
 \description{
-Updates details about a specific evaluation form version in the specified Amazon Connect instance. Question and section identifiers cannot be duplicated within the same evaluation form.
+Updates details about a specific evaluation form version in the specified Connect Customer instance. Question and section identifiers cannot be duplicated within the same evaluation form.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_update_evaluation_form/} for full documentation.
 }

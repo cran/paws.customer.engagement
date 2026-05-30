@@ -8,19 +8,11 @@ current Amazon Web Services Region}
 sesv2_list_recommendations(Filter = NULL, NextToken = NULL, PageSize = NULL)
 }
 \arguments{
-\item{Filter}{Filters applied when retrieving recommendations. Can eiter be an
-individual filter, or combinations of \code{STATUS} and \code{IMPACT} or \code{STATUS}
-and \code{TYPE}}
+\item{Filter}{Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of \code{STATUS} and \code{IMPACT} or \code{STATUS} and \code{TYPE}}
 
-\item{NextToken}{A token returned from a previous call to
-\code{\link[=sesv2_list_recommendations]{list_recommendations}} to indicate the
-position in the list of recommendations.}
+\item{NextToken}{A token returned from a previous call to \code{\link[=sesv2_list_recommendations]{list_recommendations}} to indicate the position in the list of recommendations.}
 
-\item{PageSize}{The number of results to show in a single call to
-\code{\link[=sesv2_list_recommendations]{list_recommendations}}. If the number of
-results is larger than the number you specified in this parameter, then
-the response includes a \code{NextToken} element, which you can use to obtain
-additional results.
+\item{PageSize}{The number of results to show in a single call to \code{\link[=sesv2_list_recommendations]{list_recommendations}}. If the number of results is larger than the number you specified in this parameter, then the response includes a \code{NextToken} element, which you can use to obtain additional results.
 
 The value you specify has to be at least 1, and can be no more than 100.}
 }

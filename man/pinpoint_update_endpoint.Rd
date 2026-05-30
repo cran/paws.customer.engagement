@@ -8,13 +8,11 @@ attributes of an existing endpoint for an application}
 pinpoint_update_endpoint(ApplicationId, EndpointId, EndpointRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{EndpointId}{[required] The case insensitive unique identifier for the endpoint. The identifier
-can't contain \code{$}, \verb{\\\{} or \verb{\\\}}.}
+\item{EndpointId}{[required] The case insensitive unique identifier for the endpoint. The identifier can't contain \code{$}, \verb{\\\{} or \verb{\\\}}.}
 
-\item{EndpointRequest}{[required]}
+\item{EndpointRequest}{[required] Specifies the channel type and other settings for an endpoint.}
 }
 \description{
 Creates a new endpoint for an application or updates the settings and attributes of an existing endpoint for an application. You can also use this operation to define custom attributes for an endpoint. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_describe_evaluation_form}
 \alias{connect_describe_evaluation_form}
-\title{Describes an evaluation form in the specified Amazon Connect instance}
+\title{Describes an evaluation form in the specified Connect Customer instance}
 \usage{
 connect_describe_evaluation_form(
   InstanceId,
@@ -11,15 +11,14 @@ connect_describe_evaluation_form(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{EvaluationFormId}{[required] A unique identifier for the contact evaluation.}
 
 \item{EvaluationFormVersion}{A version of the evaluation form.}
 }
 \description{
-Describes an evaluation form in the specified Amazon Connect instance. If the version property is not provided, the latest version of the evaluation form is described.
+Describes an evaluation form in the specified Connect Customer instance. If the version property is not provided, the latest version of the evaluation form is described.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_describe_evaluation_form/} for full documentation.
 }

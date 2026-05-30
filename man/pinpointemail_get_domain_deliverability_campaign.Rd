@@ -7,11 +7,7 @@
 pinpointemail_get_domain_deliverability_campaign(CampaignId)
 }
 \arguments{
-\item{CampaignId}{[required] The unique identifier for the campaign. Amazon Pinpoint automatically
-generates and assigns this identifier to a campaign. This value is not
-the same as the campaign identifier that Amazon Pinpoint assigns to
-campaigns that you create and manage by using the Amazon Pinpoint API or
-the Amazon Pinpoint console.}
+\item{CampaignId}{[required] The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.}
 }
 \description{
 Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (\code{\link[=pinpointemail_put_deliverability_dashboard_option]{put_deliverability_dashboard_option}} operation).

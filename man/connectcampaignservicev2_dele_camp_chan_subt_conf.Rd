@@ -10,9 +10,9 @@ connectcampaignservicev2_delete_campaign_channel_subtype_config(
 )
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{channelSubtype}{[required]}
+\item{channelSubtype}{[required] The type of campaign channel subtype.}
 }
 \description{
 Deletes the channel subtype config of a campaign. This API is idempotent.

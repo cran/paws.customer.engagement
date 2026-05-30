@@ -10,13 +10,13 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_batch_get_case_rule/](https://www.paws-r-sdk.com/docs/connectcases_batch_get_case_rule/) for full documentation.
 #'
-#' @param caseRules &#91;required&#93; List of case rule identifiers.
 #' @param domainId &#91;required&#93; Unique identifier of a Cases domain.
+#' @param caseRules &#91;required&#93; A list of case rule identifiers.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_batch_get_case_rule
-connectcases_batch_get_case_rule <- function(caseRules, domainId) {
+connectcases_batch_get_case_rule <- function(domainId, caseRules) {
   op <- new_operation(
     name = "BatchGetCaseRule",
     http_method = "POST",
@@ -25,7 +25,7 @@ connectcases_batch_get_case_rule <- function(caseRules, domainId) {
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$batch_get_case_rule_input(caseRules = caseRules, domainId = domainId)
+  input <- .connectcases$batch_get_case_rule_input(domainId = domainId, caseRules = caseRules)
   output <- .connectcases$batch_get_case_rule_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -108,21 +108,17 @@ connectcases_batch_put_field_options <- function(domainId, fieldId, options) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_create_case/](https://www.paws-r-sdk.com/docs/connectcases_create_case/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param fields &#91;required&#93; An array of objects with field ID (matching ListFields/DescribeField)
-#' and value union data.
-#' @param performedBy 
 #' @param templateId &#91;required&#93; A unique identifier of a template.
+#' @param fields &#91;required&#93; An array of objects with field ID (matching ListFields/DescribeField) and value union data.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param performedBy Represents the entity that performed the action.
+#' @param tags A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_create_case
-connectcases_create_case <- function(clientToken = NULL, domainId, fields, performedBy = NULL, templateId) {
+connectcases_create_case <- function(domainId, templateId, fields, clientToken = NULL, performedBy = NULL, tags = NULL) {
   op <- new_operation(
     name = "CreateCase",
     http_method = "POST",
@@ -131,7 +127,7 @@ connectcases_create_case <- function(clientToken = NULL, domainId, fields, perfo
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$create_case_input(clientToken = clientToken, domainId = domainId, fields = fields, performedBy = performedBy, templateId = templateId)
+  input <- .connectcases$create_case_input(domainId = domainId, templateId = templateId, fields = fields, clientToken = clientToken, performedBy = performedBy, tags = tags)
   output <- .connectcases$create_case_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -148,15 +144,15 @@ connectcases_create_case <- function(clientToken = NULL, domainId, fields, perfo
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_create_case_rule/](https://www.paws-r-sdk.com/docs/connectcases_create_case_rule/) for full documentation.
 #'
-#' @param description The description of a case rule.
 #' @param domainId &#91;required&#93; Unique identifier of a Cases domain.
 #' @param name &#91;required&#93; Name of the case rule.
+#' @param description The description of a case rule.
 #' @param rule &#91;required&#93; Represents what rule type should take place, under what conditions.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_create_case_rule
-connectcases_create_case_rule <- function(description = NULL, domainId, name, rule) {
+connectcases_create_case_rule <- function(domainId, name, description = NULL, rule) {
   op <- new_operation(
     name = "CreateCaseRule",
     http_method = "POST",
@@ -165,7 +161,7 @@ connectcases_create_case_rule <- function(description = NULL, domainId, name, ru
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$create_case_rule_input(description = description, domainId = domainId, name = name, rule = rule)
+  input <- .connectcases$create_case_rule_input(domainId = domainId, name = name, description = description, rule = rule)
   output <- .connectcases$create_case_rule_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -183,8 +179,7 @@ connectcases_create_case_rule <- function(description = NULL, domainId, name, ru
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_create_domain/](https://www.paws-r-sdk.com/docs/connectcases_create_domain/) for full documentation.
 #'
-#' @param name &#91;required&#93; The name for your Cases domain. It must be unique for your Amazon Web
-#' Services account.
+#' @param name &#91;required&#93; The name for your Cases domain. It must be unique for your Amazon Web Services account.
 #'
 #' @keywords internal
 #'
@@ -215,16 +210,16 @@ connectcases_create_domain <- function(name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_create_field/](https://www.paws-r-sdk.com/docs/connectcases_create_field/) for full documentation.
 #'
-#' @param description The description of the field.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param name &#91;required&#93; The name of the field.
-#' @param type &#91;required&#93; Defines the data type, some system constraints, and default display of
-#' the field.
+#' @param type &#91;required&#93; Defines the data type, some system constraints, and default display of the field.
+#' @param description The description of the field.
+#' @param attributes Union of field attributes.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_create_field
-connectcases_create_field <- function(description = NULL, domainId, name, type) {
+connectcases_create_field <- function(domainId, name, type, description = NULL, attributes = NULL) {
   op <- new_operation(
     name = "CreateField",
     http_method = "POST",
@@ -233,7 +228,7 @@ connectcases_create_field <- function(description = NULL, domainId, name, type) 
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$create_field_input(description = description, domainId = domainId, name = name, type = type)
+  input <- .connectcases$create_field_input(domainId = domainId, name = name, type = type, description = description, attributes = attributes)
   output <- .connectcases$create_field_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -250,15 +245,14 @@ connectcases_create_field <- function(description = NULL, domainId, name, type) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_create_layout/](https://www.paws-r-sdk.com/docs/connectcases_create_layout/) for full documentation.
 #'
-#' @param content &#91;required&#93; Information about which fields will be present in the layout, and
-#' information about the order of the fields.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param name &#91;required&#93; The name of the layout. It must be unique for the Cases domain.
+#' @param content &#91;required&#93; Information about which fields will be present in the layout, and information about the order of the fields.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_create_layout
-connectcases_create_layout <- function(content, domainId, name) {
+connectcases_create_layout <- function(domainId, name, content) {
   op <- new_operation(
     name = "CreateLayout",
     http_method = "POST",
@@ -267,7 +261,7 @@ connectcases_create_layout <- function(content, domainId, name) {
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$create_layout_input(content = content, domainId = domainId, name = name)
+  input <- .connectcases$create_layout_input(domainId = domainId, name = name, content = content)
   output <- .connectcases$create_layout_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -285,16 +279,16 @@ connectcases_create_layout <- function(content, domainId, name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_create_related_item/](https://www.paws-r-sdk.com/docs/connectcases_create_related_item/) for full documentation.
 #'
-#' @param caseId &#91;required&#93; A unique identifier of the case.
-#' @param content &#91;required&#93; The content of a related item to be created.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param performedBy Represents the creator of the related item.
+#' @param caseId &#91;required&#93; A unique identifier of the case.
 #' @param type &#91;required&#93; The type of a related item.
+#' @param content &#91;required&#93; The content of a related item to be created.
+#' @param performedBy Represents the creator of the related item.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_create_related_item
-connectcases_create_related_item <- function(caseId, content, domainId, performedBy = NULL, type) {
+connectcases_create_related_item <- function(domainId, caseId, type, content, performedBy = NULL) {
   op <- new_operation(
     name = "CreateRelatedItem",
     http_method = "POST",
@@ -303,7 +297,7 @@ connectcases_create_related_item <- function(caseId, content, domainId, performe
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$create_related_item_input(caseId = caseId, content = content, domainId = domainId, performedBy = performedBy, type = type)
+  input <- .connectcases$create_related_item_input(domainId = domainId, caseId = caseId, type = type, content = content, performedBy = performedBy)
   output <- .connectcases$create_related_item_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -320,21 +314,19 @@ connectcases_create_related_item <- function(caseId, content, domainId, performe
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_create_template/](https://www.paws-r-sdk.com/docs/connectcases_create_template/) for full documentation.
 #'
-#' @param description A brief description of the template.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param layoutConfiguration Configuration of layouts associated to the template.
 #' @param name &#91;required&#93; A name for the template. It must be unique per domain.
-#' @param requiredFields A list of fields that must contain a value for a case to be successfully
-#' created with this template.
-#' @param rules A list of case rules (also known as [case field
-#' conditions](https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html))
-#' on a template.
+#' @param description A brief description of the template.
+#' @param layoutConfiguration Configuration of layouts associated to the template.
+#' @param requiredFields A list of fields that must contain a value for a case to be successfully created with this template.
 #' @param status The status of the template.
+#' @param rules A list of case rules (also known as [case field conditions](https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html)) on a template.
+#' @param tagPropagationConfigurations Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_create_template
-connectcases_create_template <- function(description = NULL, domainId, layoutConfiguration = NULL, name, requiredFields = NULL, rules = NULL, status = NULL) {
+connectcases_create_template <- function(domainId, name, description = NULL, layoutConfiguration = NULL, requiredFields = NULL, status = NULL, rules = NULL, tagPropagationConfigurations = NULL) {
   op <- new_operation(
     name = "CreateTemplate",
     http_method = "POST",
@@ -343,7 +335,7 @@ connectcases_create_template <- function(description = NULL, domainId, layoutCon
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$create_template_input(description = description, domainId = domainId, layoutConfiguration = layoutConfiguration, name = name, requiredFields = requiredFields, rules = rules, status = status)
+  input <- .connectcases$create_template_input(domainId = domainId, name = name, description = description, layoutConfiguration = layoutConfiguration, requiredFields = requiredFields, status = status, rules = rules, tagPropagationConfigurations = tagPropagationConfigurations)
   output <- .connectcases$create_template_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -353,6 +345,39 @@ connectcases_create_template <- function(description = NULL, domainId, layoutCon
 }
 .connectcases$operations$create_template <- connectcases_create_template
 
+#' The DeleteCase API permanently deletes a case and all its associated
+#' resources from the cases data store
+#'
+#' @description
+#' The DeleteCase API permanently deletes a case and all its associated resources from the cases data store. After a successful deletion, you cannot:
+#'
+#' See [https://www.paws-r-sdk.com/docs/connectcases_delete_case/](https://www.paws-r-sdk.com/docs/connectcases_delete_case/) for full documentation.
+#'
+#' @param domainId &#91;required&#93; A unique identifier of the Cases domain.
+#' @param caseId &#91;required&#93; A unique identifier of the case.
+#'
+#' @keywords internal
+#'
+#' @rdname connectcases_delete_case
+connectcases_delete_case <- function(domainId, caseId) {
+  op <- new_operation(
+    name = "DeleteCase",
+    http_method = "DELETE",
+    http_path = "/domains/{domainId}/cases/{caseId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .connectcases$delete_case_input(domainId = domainId, caseId = caseId)
+  output <- .connectcases$delete_case_output()
+  config <- get_config()
+  svc <- .connectcases$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connectcases$operations$delete_case <- connectcases_delete_case
+
 #' Deletes a case rule
 #'
 #' @description
@@ -360,13 +385,13 @@ connectcases_create_template <- function(description = NULL, domainId, layoutCon
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_delete_case_rule/](https://www.paws-r-sdk.com/docs/connectcases_delete_case_rule/) for full documentation.
 #'
-#' @param caseRuleId &#91;required&#93; Unique identifier of a case rule.
 #' @param domainId &#91;required&#93; Unique identifier of a Cases domain.
+#' @param caseRuleId &#91;required&#93; Unique identifier of a case rule.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_delete_case_rule
-connectcases_delete_case_rule <- function(caseRuleId, domainId) {
+connectcases_delete_case_rule <- function(domainId, caseRuleId) {
   op <- new_operation(
     name = "DeleteCaseRule",
     http_method = "DELETE",
@@ -375,7 +400,7 @@ connectcases_delete_case_rule <- function(caseRuleId, domainId) {
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$delete_case_rule_input(caseRuleId = caseRuleId, domainId = domainId)
+  input <- .connectcases$delete_case_rule_input(domainId = domainId, caseRuleId = caseRuleId)
   output <- .connectcases$delete_case_rule_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -419,7 +444,7 @@ connectcases_delete_domain <- function(domainId) {
 #' Deletes a field from a cases template
 #'
 #' @description
-#' Deletes a field from a cases template. You can delete up to 100 fields per domain.
+#' Deletes a field from a cases template.
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_delete_field/](https://www.paws-r-sdk.com/docs/connectcases_delete_field/) for full documentation.
 #'
@@ -480,6 +505,39 @@ connectcases_delete_layout <- function(domainId, layoutId) {
 }
 .connectcases$operations$delete_layout <- connectcases_delete_layout
 
+#' Deletes the related item resource under a case
+#'
+#' @description
+#' Deletes the related item resource under a case.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connectcases_delete_related_item/](https://www.paws-r-sdk.com/docs/connectcases_delete_related_item/) for full documentation.
+#'
+#' @param domainId &#91;required&#93; A unique identifier of the Cases domain.
+#' @param caseId &#91;required&#93; A unique identifier of the case.
+#' @param relatedItemId &#91;required&#93; A unique identifier of a related item.
+#'
+#' @keywords internal
+#'
+#' @rdname connectcases_delete_related_item
+connectcases_delete_related_item <- function(domainId, caseId, relatedItemId) {
+  op <- new_operation(
+    name = "DeleteRelatedItem",
+    http_method = "DELETE",
+    http_path = "/domains/{domainId}/cases/{caseId}/related-items/{relatedItemId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .connectcases$delete_related_item_input(domainId = domainId, caseId = caseId, relatedItemId = relatedItemId)
+  output <- .connectcases$delete_related_item_output()
+  config <- get_config()
+  svc <- .connectcases$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connectcases$operations$delete_related_item <- connectcases_delete_related_item
+
 #' Deletes a cases template
 #'
 #' @description
@@ -522,9 +580,7 @@ connectcases_delete_template <- function(domainId, templateId) {
 #' @param caseId &#91;required&#93; A unique identifier of the case.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param fields &#91;required&#93; A list of unique field identifiers.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -557,12 +613,8 @@ connectcases_get_case <- function(caseId, domainId, fields, nextToken = NULL) {
 #'
 #' @param caseId &#91;required&#93; A unique identifier of the case.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param maxResults The maximum number of audit events to return. The current maximum
-#' supported value is 25. This is also the default when no other value is
-#' provided.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param maxResults The maximum number of audit events to return. When no value is provided, 25 is the default.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -721,9 +773,7 @@ connectcases_get_template <- function(domainId, templateId) {
 #'
 #' @param domainId &#91;required&#93; Unique identifier of a Cases domain.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -754,17 +804,15 @@ connectcases_list_case_rules <- function(domainId, maxResults = NULL, nextToken 
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_list_cases_for_contact/](https://www.paws-r-sdk.com/docs/connectcases_list_cases_for_contact/) for full documentation.
 #'
-#' @param contactArn &#91;required&#93; A unique identifier of a contact in Amazon Connect.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
+#' @param contactArn &#91;required&#93; A unique identifier of a contact in Amazon Connect.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_list_cases_for_contact
-connectcases_list_cases_for_contact <- function(contactArn, domainId, maxResults = NULL, nextToken = NULL) {
+connectcases_list_cases_for_contact <- function(domainId, contactArn, maxResults = NULL, nextToken = NULL) {
   op <- new_operation(
     name = "ListCasesForContact",
     http_method = "POST",
@@ -773,7 +821,7 @@ connectcases_list_cases_for_contact <- function(contactArn, domainId, maxResults
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults"),
     stream_api = FALSE
   )
-  input <- .connectcases$list_cases_for_contact_input(contactArn = contactArn, domainId = domainId, maxResults = maxResults, nextToken = nextToken)
+  input <- .connectcases$list_cases_for_contact_input(domainId = domainId, contactArn = contactArn, maxResults = maxResults, nextToken = nextToken)
   output <- .connectcases$list_cases_for_contact_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -791,9 +839,7 @@ connectcases_list_cases_for_contact <- function(contactArn, domainId, maxResults
 #' See [https://www.paws-r-sdk.com/docs/connectcases_list_domains/](https://www.paws-r-sdk.com/docs/connectcases_list_domains/) for full documentation.
 #'
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -827,11 +873,8 @@ connectcases_list_domains <- function(maxResults = NULL, nextToken = NULL) {
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param fieldId &#91;required&#93; The unique identifier of a field.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
-#' @param values A list of `FieldOption` values to filter on for
-#' [`list_field_options`][connectcases_list_field_options].
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param values A list of `FieldOption` values to filter on for [`list_field_options`][connectcases_list_field_options].
 #'
 #' @keywords internal
 #'
@@ -864,9 +907,7 @@ connectcases_list_field_options <- function(domainId, fieldId, maxResults = NULL
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -899,9 +940,7 @@ connectcases_list_fields <- function(domainId, maxResults = NULL, nextToken = NU
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -965,9 +1004,7 @@ connectcases_list_tags_for_resource <- function(arn) {
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param status A list of status values to filter on.
 #'
 #' @keywords internal
@@ -1000,8 +1037,7 @@ connectcases_list_templates <- function(domainId, maxResults = NULL, nextToken =
 #' See [https://www.paws-r-sdk.com/docs/connectcases_put_case_event_configuration/](https://www.paws-r-sdk.com/docs/connectcases_put_case_event_configuration/) for full documentation.
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param eventBridge &#91;required&#93; Configuration to enable EventBridge case event delivery and determine
-#' what data is delivered.
+#' @param eventBridge &#91;required&#93; Configuration to enable EventBridge case event delivery and determine what data is delivered.
 #'
 #' @keywords internal
 #'
@@ -1025,6 +1061,41 @@ connectcases_put_case_event_configuration <- function(domainId, eventBridge) {
 }
 .connectcases$operations$put_case_event_configuration <- connectcases_put_case_event_configuration
 
+#' Searches for related items across all cases within a domain
+#'
+#' @description
+#' Searches for related items across all cases within a domain. This is a global search operation that returns related items from multiple cases, unlike the case-specific [`search_related_items`][connectcases_search_related_items] API.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connectcases_search_all_related_items/](https://www.paws-r-sdk.com/docs/connectcases_search_all_related_items/) for full documentation.
+#'
+#' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
+#' @param maxResults The maximum number of results to return per page.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param filters The list of types of related items and their parameters to use for filtering. The filters work as an OR condition: caller gets back related items that match any of the specified filter types.
+#' @param sorts A structured set of sort terms to specify the order in which related items should be returned. Supports sorting by association time or case ID. The sorts work in the order specified: first sort term takes precedence over subsequent terms.
+#'
+#' @keywords internal
+#'
+#' @rdname connectcases_search_all_related_items
+connectcases_search_all_related_items <- function(domainId, maxResults = NULL, nextToken = NULL, filters = NULL, sorts = NULL) {
+  op <- new_operation(
+    name = "SearchAllRelatedItems",
+    http_method = "POST",
+    http_path = "/domains/{domainId}/related-items-search",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "relatedItems"),
+    stream_api = FALSE
+  )
+  input <- .connectcases$search_all_related_items_input(domainId = domainId, maxResults = maxResults, nextToken = nextToken, filters = filters, sorts = sorts)
+  output <- .connectcases$search_all_related_items_output()
+  config <- get_config()
+  svc <- .connectcases$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connectcases$operations$search_all_related_items <- connectcases_search_all_related_items
+
 #' Searches for cases within their associated Cases domain
 #'
 #' @description
@@ -1033,22 +1104,17 @@ connectcases_put_case_event_configuration <- function(domainId, eventBridge) {
 #' See [https://www.paws-r-sdk.com/docs/connectcases_search_cases/](https://www.paws-r-sdk.com/docs/connectcases_search_cases/) for full documentation.
 #'
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param fields The list of field identifiers to be returned as part of the response.
-#' @param filter A list of filter objects.
-#' @param maxResults The maximum number of cases to return. The current maximum supported
-#' value is 25. This is also the default value when no other value is
-#' provided.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param maxResults The maximum number of cases to return. When no value is provided, 25 is the default.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param searchTerm A word or phrase used to perform a quick search.
-#' @param sorts A list of sorts where each sort specifies a field and their sort order
-#' to be applied to the results.
+#' @param filter A list of filter objects.
+#' @param sorts A list of sorts where each sort specifies a field and their sort order to be applied to the results.
+#' @param fields The list of field identifiers to be returned as part of the response.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_search_cases
-connectcases_search_cases <- function(domainId, fields = NULL, filter = NULL, maxResults = NULL, nextToken = NULL, searchTerm = NULL, sorts = NULL) {
+connectcases_search_cases <- function(domainId, maxResults = NULL, nextToken = NULL, searchTerm = NULL, filter = NULL, sorts = NULL, fields = NULL) {
   op <- new_operation(
     name = "SearchCases",
     http_method = "POST",
@@ -1057,7 +1123,7 @@ connectcases_search_cases <- function(domainId, fields = NULL, filter = NULL, ma
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "cases"),
     stream_api = FALSE
   )
-  input <- .connectcases$search_cases_input(domainId = domainId, fields = fields, filter = filter, maxResults = maxResults, nextToken = nextToken, searchTerm = searchTerm, sorts = sorts)
+  input <- .connectcases$search_cases_input(domainId = domainId, maxResults = maxResults, nextToken = nextToken, searchTerm = searchTerm, filter = filter, sorts = sorts, fields = fields)
   output <- .connectcases$search_cases_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -1074,19 +1140,16 @@ connectcases_search_cases <- function(domainId, fields = NULL, filter = NULL, ma
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_search_related_items/](https://www.paws-r-sdk.com/docs/connectcases_search_related_items/) for full documentation.
 #'
-#' @param caseId &#91;required&#93; A unique identifier of the case.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param filters The list of types of related items and their parameters to use for
-#' filtering.
+#' @param caseId &#91;required&#93; A unique identifier of the case.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param filters The list of types of related items and their parameters to use for filtering.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_search_related_items
-connectcases_search_related_items <- function(caseId, domainId, filters = NULL, maxResults = NULL, nextToken = NULL) {
+connectcases_search_related_items <- function(domainId, caseId, maxResults = NULL, nextToken = NULL, filters = NULL) {
   op <- new_operation(
     name = "SearchRelatedItems",
     http_method = "POST",
@@ -1095,7 +1158,7 @@ connectcases_search_related_items <- function(caseId, domainId, filters = NULL, 
     paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "relatedItems"),
     stream_api = FALSE
   )
-  input <- .connectcases$search_related_items_input(caseId = caseId, domainId = domainId, filters = filters, maxResults = maxResults, nextToken = nextToken)
+  input <- .connectcases$search_related_items_input(domainId = domainId, caseId = caseId, maxResults = maxResults, nextToken = nextToken, filters = filters)
   output <- .connectcases$search_related_items_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -1113,8 +1176,7 @@ connectcases_search_related_items <- function(caseId, domainId, filters = NULL, 
 #' See [https://www.paws-r-sdk.com/docs/connectcases_tag_resource/](https://www.paws-r-sdk.com/docs/connectcases_tag_resource/) for full documentation.
 #'
 #' @param arn &#91;required&#93; The Amazon Resource Name (ARN)
-#' @param tags &#91;required&#93; A map of of key-value pairs that represent tags on a resource. Tags are
-#' used to organize, track, or control access for this resource.
+#' @param tags &#91;required&#93; A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
 #'
@@ -1177,17 +1239,15 @@ connectcases_untag_resource <- function(arn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_update_case/](https://www.paws-r-sdk.com/docs/connectcases_update_case/) for full documentation.
 #'
-#' @param caseId &#91;required&#93; A unique identifier of the case.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param fields &#91;required&#93; An array of objects with `fieldId` (matching ListFields/DescribeField)
-#' and value union data, structured identical to
-#' [`create_case`][connectcases_create_case].
-#' @param performedBy 
+#' @param caseId &#91;required&#93; A unique identifier of the case.
+#' @param fields &#91;required&#93; An array of objects with `fieldId` (matching ListFields/DescribeField) and value union data, structured identical to [`create_case`][connectcases_create_case].
+#' @param performedBy Represents the entity that performed the action.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_update_case
-connectcases_update_case <- function(caseId, domainId, fields, performedBy = NULL) {
+connectcases_update_case <- function(domainId, caseId, fields, performedBy = NULL) {
   op <- new_operation(
     name = "UpdateCase",
     http_method = "PUT",
@@ -1196,7 +1256,7 @@ connectcases_update_case <- function(caseId, domainId, fields, performedBy = NUL
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$update_case_input(caseId = caseId, domainId = domainId, fields = fields, performedBy = performedBy)
+  input <- .connectcases$update_case_input(domainId = domainId, caseId = caseId, fields = fields, performedBy = performedBy)
   output <- .connectcases$update_case_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -1213,16 +1273,16 @@ connectcases_update_case <- function(caseId, domainId, fields, performedBy = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_update_case_rule/](https://www.paws-r-sdk.com/docs/connectcases_update_case_rule/) for full documentation.
 #'
-#' @param caseRuleId &#91;required&#93; Unique identifier of a case rule.
-#' @param description Description of a case rule.
 #' @param domainId &#91;required&#93; Unique identifier of a Cases domain.
+#' @param caseRuleId &#91;required&#93; Unique identifier of a case rule.
 #' @param name Name of the case rule.
+#' @param description Description of a case rule.
 #' @param rule Represents what rule type should take place, under what conditions.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_update_case_rule
-connectcases_update_case_rule <- function(caseRuleId, description = NULL, domainId, name = NULL, rule = NULL) {
+connectcases_update_case_rule <- function(domainId, caseRuleId, name = NULL, description = NULL, rule = NULL) {
   op <- new_operation(
     name = "UpdateCaseRule",
     http_method = "PUT",
@@ -1231,7 +1291,7 @@ connectcases_update_case_rule <- function(caseRuleId, description = NULL, domain
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$update_case_rule_input(caseRuleId = caseRuleId, description = description, domainId = domainId, name = name, rule = rule)
+  input <- .connectcases$update_case_rule_input(domainId = domainId, caseRuleId = caseRuleId, name = name, description = description, rule = rule)
   output <- .connectcases$update_case_rule_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -1248,15 +1308,16 @@ connectcases_update_case_rule <- function(caseRuleId, description = NULL, domain
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_update_field/](https://www.paws-r-sdk.com/docs/connectcases_update_field/) for full documentation.
 #'
-#' @param description The description of a field.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param fieldId &#91;required&#93; The unique identifier of a field.
 #' @param name The name of the field.
+#' @param description The description of a field.
+#' @param attributes Union of field attributes.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_update_field
-connectcases_update_field <- function(description = NULL, domainId, fieldId, name = NULL) {
+connectcases_update_field <- function(domainId, fieldId, name = NULL, description = NULL, attributes = NULL) {
   op <- new_operation(
     name = "UpdateField",
     http_method = "PUT",
@@ -1265,7 +1326,7 @@ connectcases_update_field <- function(description = NULL, domainId, fieldId, nam
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$update_field_input(description = description, domainId = domainId, fieldId = fieldId, name = name)
+  input <- .connectcases$update_field_input(domainId = domainId, fieldId = fieldId, name = name, description = description, attributes = attributes)
   output <- .connectcases$update_field_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -1282,16 +1343,15 @@ connectcases_update_field <- function(description = NULL, domainId, fieldId, nam
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_update_layout/](https://www.paws-r-sdk.com/docs/connectcases_update_layout/) for full documentation.
 #'
-#' @param content Information about which fields will be present in the layout, the order
-#' of the fields.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
 #' @param layoutId &#91;required&#93; The unique identifier of the layout.
 #' @param name The name of the layout. It must be unique per domain.
+#' @param content Information about which fields will be present in the layout, the order of the fields.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_update_layout
-connectcases_update_layout <- function(content = NULL, domainId, layoutId, name = NULL) {
+connectcases_update_layout <- function(domainId, layoutId, name = NULL, content = NULL) {
   op <- new_operation(
     name = "UpdateLayout",
     http_method = "PUT",
@@ -1300,7 +1360,7 @@ connectcases_update_layout <- function(content = NULL, domainId, layoutId, name 
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$update_layout_input(content = content, domainId = domainId, layoutId = layoutId, name = name)
+  input <- .connectcases$update_layout_input(domainId = domainId, layoutId = layoutId, name = name, content = content)
   output <- .connectcases$update_layout_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)
@@ -1310,6 +1370,41 @@ connectcases_update_layout <- function(content = NULL, domainId, layoutId, name 
 }
 .connectcases$operations$update_layout <- connectcases_update_layout
 
+#' Updates the content of a related item associated with a case
+#'
+#' @description
+#' Updates the content of a related item associated with a case. The following related item types are supported:
+#'
+#' See [https://www.paws-r-sdk.com/docs/connectcases_update_related_item/](https://www.paws-r-sdk.com/docs/connectcases_update_related_item/) for full documentation.
+#'
+#' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
+#' @param caseId &#91;required&#93; A unique identifier of the case.
+#' @param relatedItemId &#91;required&#93; Unique identifier of a related item.
+#' @param content &#91;required&#93; The content of a related item to be updated.
+#' @param performedBy Represents the user who performed the update of the related item.
+#'
+#' @keywords internal
+#'
+#' @rdname connectcases_update_related_item
+connectcases_update_related_item <- function(domainId, caseId, relatedItemId, content, performedBy = NULL) {
+  op <- new_operation(
+    name = "UpdateRelatedItem",
+    http_method = "PUT",
+    http_path = "/domains/{domainId}/cases/{caseId}/related-items/{relatedItemId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .connectcases$update_related_item_input(domainId = domainId, caseId = caseId, relatedItemId = relatedItemId, content = content, performedBy = performedBy)
+  output <- .connectcases$update_related_item_output()
+  config <- get_config()
+  svc <- .connectcases$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connectcases$operations$update_related_item <- connectcases_update_related_item
+
 #' Updates the attributes of an existing template
 #'
 #' @description
@@ -1317,22 +1412,20 @@ connectcases_update_layout <- function(content = NULL, domainId, layoutId, name 
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcases_update_template/](https://www.paws-r-sdk.com/docs/connectcases_update_template/) for full documentation.
 #'
-#' @param description A brief description of the template.
 #' @param domainId &#91;required&#93; The unique identifier of the Cases domain.
-#' @param layoutConfiguration Configuration of layouts associated to the template.
-#' @param name The name of the template. It must be unique per domain.
-#' @param requiredFields A list of fields that must contain a value for a case to be successfully
-#' created with this template.
-#' @param rules A list of case rules (also known as [case field
-#' conditions](https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html))
-#' on a template.
-#' @param status The status of the template.
 #' @param templateId &#91;required&#93; A unique identifier for the template.
+#' @param name The name of the template. It must be unique per domain.
+#' @param description A brief description of the template.
+#' @param layoutConfiguration Configuration of layouts associated to the template.
+#' @param requiredFields A list of fields that must contain a value for a case to be successfully created with this template.
+#' @param status The status of the template.
+#' @param rules A list of case rules (also known as [case field conditions](https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html)) on a template.
+#' @param tagPropagationConfigurations Defines tag propagation configuration for resources created within a domain. Tags specified here will be automatically applied to resources being created for the specified resource type.
 #'
 #' @keywords internal
 #'
 #' @rdname connectcases_update_template
-connectcases_update_template <- function(description = NULL, domainId, layoutConfiguration = NULL, name = NULL, requiredFields = NULL, rules = NULL, status = NULL, templateId) {
+connectcases_update_template <- function(domainId, templateId, name = NULL, description = NULL, layoutConfiguration = NULL, requiredFields = NULL, status = NULL, rules = NULL, tagPropagationConfigurations = NULL) {
   op <- new_operation(
     name = "UpdateTemplate",
     http_method = "PUT",
@@ -1341,7 +1434,7 @@ connectcases_update_template <- function(description = NULL, domainId, layoutCon
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .connectcases$update_template_input(description = description, domainId = domainId, layoutConfiguration = layoutConfiguration, name = name, requiredFields = requiredFields, rules = rules, status = status, templateId = templateId)
+  input <- .connectcases$update_template_input(domainId = domainId, templateId = templateId, name = name, description = description, layoutConfiguration = layoutConfiguration, requiredFields = requiredFields, status = status, rules = rules, tagPropagationConfigurations = tagPropagationConfigurations)
   output <- .connectcases$update_template_output()
   config <- get_config()
   svc <- .connectcases$service(config, op)

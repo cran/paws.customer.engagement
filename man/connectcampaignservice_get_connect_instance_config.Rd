@@ -7,7 +7,7 @@
 connectcampaignservice_get_connect_instance_config(connectInstanceId)
 }
 \arguments{
-\item{connectInstanceId}{[required]}
+\item{connectInstanceId}{[required] Amazon Connect Instance Id}
 }
 \description{
 Get the specific Connect instance config.

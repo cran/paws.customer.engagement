@@ -11,9 +11,7 @@ sesv2_put_email_identity_dkim_attributes(EmailIdentity, SigningEnabled = NULL)
 
 \item{SigningEnabled}{Sets the DKIM signing configuration for the identity.
 
-When you set this value \code{true}, then the messages that are sent from the
-identity are signed using DKIM. If you set this value to \code{false}, your
-messages are sent without DKIM signing.}
+When you set this value \code{true}, then the messages that are sent from the identity are signed using DKIM. If you set this value to \code{false}, your messages are sent without DKIM signing.}
 }
 \description{
 Used to enable or disable DKIM authentication for an email identity.

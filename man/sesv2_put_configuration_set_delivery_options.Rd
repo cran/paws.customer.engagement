@@ -14,19 +14,11 @@ sesv2_put_configuration_set_delivery_options(
 \arguments{
 \item{ConfigurationSetName}{[required] The name of the configuration set to associate with a dedicated IP pool.}
 
-\item{TlsPolicy}{Specifies whether messages that use the configuration set are required
-to use Transport Layer Security (TLS). If the value is \code{Require},
-messages are only delivered if a TLS connection can be established. If
-the value is \code{Optional}, messages can be delivered in plain text if a
-TLS connection can't be established.}
+\item{TlsPolicy}{Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is \code{Require}, messages are only delivered if a TLS connection can be established. If the value is \code{Optional}, messages can be delivered in plain text if a TLS connection can't be established.}
 
-\item{SendingPoolName}{The name of the dedicated IP pool to associate with the configuration
-set.}
+\item{SendingPoolName}{The name of the dedicated IP pool to associate with the configuration set.}
 
-\item{MaxDeliverySeconds}{The maximum amount of time, in seconds, that Amazon SES API v2 will
-attempt delivery of email. If specified, the value must greater than or
-equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds
-(840 minutes).}
+\item{MaxDeliverySeconds}{The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery of email. If specified, the value must greater than or equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes).}
 }
 \description{
 Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools to create groups of dedicated IP addresses for sending specific types of email.

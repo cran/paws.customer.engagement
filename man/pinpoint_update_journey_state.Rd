@@ -7,12 +7,11 @@
 pinpoint_update_journey_state(ApplicationId, JourneyId, JourneyStateRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
 \item{JourneyId}{[required] The unique identifier for the journey.}
 
-\item{JourneyStateRequest}{[required]}
+\item{JourneyStateRequest}{[required] Changes the status of a journey.}
 }
 \description{
 Cancels (stops) an active journey.

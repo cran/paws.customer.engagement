@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_search_vocabularies}
 \alias{connect_search_vocabularies}
-\title{Searches for vocabularies within a specific Amazon Connect instance
+\title{Searches for vocabularies within a specific Connect Customer instance
 using State, NameStartsWith, and LanguageCode}
 \usage{
 connect_search_vocabularies(
@@ -15,24 +15,20 @@ connect_search_vocabularies(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{State}{The current state of the custom vocabulary.}
 
 \item{NameStartsWith}{The starting pattern of the name of the vocabulary.}
 
-\item{LanguageCode}{The language code of the vocabulary entries. For a list of languages and
-their corresponding language codes, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html}{What is Amazon Transcribe?}}
+\item{LanguageCode}{The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html}{What is Amazon Transcribe?}}
 }
 \description{
-Searches for vocabularies within a specific Amazon Connect instance using \code{State}, \code{NameStartsWith}, and \code{LanguageCode}.
+Searches for vocabularies within a specific Connect Customer instance using \code{State}, \code{NameStartsWith}, and \code{LanguageCode}.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_search_vocabularies/} for full documentation.
 }

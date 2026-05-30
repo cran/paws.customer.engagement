@@ -10,9 +10,9 @@ connectcampaignservicev2_put_connect_instance_integration(
 )
 }
 \arguments{
-\item{connectInstanceId}{[required]}
+\item{connectInstanceId}{[required] Amazon Connect Instance Id}
 
-\item{integrationConfig}{[required]}
+\item{integrationConfig}{[required] Integration config for Connect Instance}
 }
 \description{
 Put or update the integration for the specified Amazon Connect instance.

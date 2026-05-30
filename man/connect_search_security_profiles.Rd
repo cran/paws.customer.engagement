@@ -2,8 +2,8 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_search_security_profiles}
 \alias{connect_search_security_profiles}
-\title{Searches security profiles in an Amazon Connect instance, with optional
-filtering}
+\title{Searches security profiles in an Connect Customer instance, with
+optional filtering}
 \usage{
 connect_search_security_profiles(
   InstanceId,
@@ -14,27 +14,22 @@ connect_search_security_profiles(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
 \item{SearchCriteria}{The search criteria to be used to return security profiles.
 
-The \code{name} field support "contains" queries with a minimum of 2
-characters and maximum of 25 characters. Any queries with character
-lengths outside of this range will throw invalid results.
+The \code{name} field support "contains" queries with a minimum of 2 characters and maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.
 
 The currently supported value for \code{FieldName}: \code{name}}
 
 \item{SearchFilter}{Filters to be applied to search results.}
 }
 \description{
-Searches security profiles in an Amazon Connect instance, with optional filtering.
+Searches security profiles in an Connect Customer instance, with optional filtering.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_search_security_profiles/} for full documentation.
 }

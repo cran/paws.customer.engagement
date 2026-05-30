@@ -12,16 +12,11 @@ connect_update_traffic_distribution(
 )
 }
 \arguments{
-\item{Id}{[required] The identifier of the traffic distribution group. This can be the ID or
-the ARN if the API is being called in the Region where the traffic
-distribution group was created. The ARN must be provided if the call is
-from the replicated Region.}
+\item{Id}{[required] The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.}
 
 \item{TelephonyConfig}{The distribution of traffic between the instance and its replica(s).}
 
-\item{SignInConfig}{The distribution that determines which Amazon Web Services Regions
-should be used to sign in agents in to both the instance and its
-replica(s).}
+\item{SignInConfig}{The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both the instance and its replica(s).}
 
 \item{AgentConfig}{The distribution of agents between the instance and its replica(s).}
 }

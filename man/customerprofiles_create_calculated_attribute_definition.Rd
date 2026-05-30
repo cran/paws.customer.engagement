@@ -13,6 +13,7 @@ customerprofiles_create_calculated_attribute_definition(
   Conditions = NULL,
   Filter = NULL,
   Statistic,
+  UseHistoricalData = NULL,
   Tags = NULL
 )
 }
@@ -25,16 +26,15 @@ customerprofiles_create_calculated_attribute_definition(
 
 \item{Description}{The description of the calculated attribute.}
 
-\item{AttributeDetails}{[required] Mathematical expression and a list of attribute items specified in that
-expression.}
+\item{AttributeDetails}{[required] Mathematical expression and a list of attribute items specified in that expression.}
 
-\item{Conditions}{The conditions including range, object count, and threshold for the
-calculated attribute.}
+\item{Conditions}{The conditions including range, object count, and threshold for the calculated attribute.}
 
-\item{Filter}{Defines how to filter incoming objects to include part of the Calculated
-Attribute.}
+\item{Filter}{Defines how to filter incoming objects to include part of the Calculated Attribute.}
 
 \item{Statistic}{[required] The aggregation operation to perform for the calculated attribute.}
+
+\item{UseHistoricalData}{Whether historical data ingested before the Calculated Attribute was created should be included in calculations.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.}
 }

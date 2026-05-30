@@ -8,10 +8,9 @@ settings of the voice channel for an application}
 pinpoint_update_voice_channel(ApplicationId, VoiceChannelRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{VoiceChannelRequest}{[required]}
+\item{VoiceChannelRequest}{[required] Specifies the status and settings of the voice channel for an application.}
 }
 \description{
 Enables the voice channel for an application or updates the status and settings of the voice channel for an application.

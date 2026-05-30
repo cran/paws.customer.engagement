@@ -9,8 +9,7 @@ application}
 pinpoint_get_segment_version(ApplicationId, SegmentId, Version)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
 \item{SegmentId}{[required] The unique identifier for the segment.}
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_phone_numbers_v2}
 \alias{connect_list_phone_numbers_v2}
-\title{Lists phone numbers claimed to your Amazon Connect instance or traffic
+\title{Lists phone numbers claimed to your Connect Customer instance or traffic
 distribution group}
 \usage{
 connect_list_phone_numbers_v2(
@@ -16,34 +16,22 @@ connect_list_phone_numbers_v2(
 )
 }
 \arguments{
-\item{TargetArn}{The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-distribution groups that phone number inbound traffic is routed through.
-If both \code{TargetArn} and \code{InstanceId} input are not provided, this API
-lists numbers claimed to all the Amazon Connect instances belonging to
-your account in the same Amazon Web Services Region as the request.}
+\item{TargetArn}{The Amazon Resource Name (ARN) for Connect Customer instances or traffic distribution groups that phone number inbound traffic is routed through. If both \code{TargetArn} and \code{InstanceId} input are not provided, this API lists numbers claimed to all the Connect Customer instances belonging to your account in the same Amazon Web Services Region as the request.}
 
-\item{InstanceId}{The identifier of the Amazon Connect instance that phone numbers are
-claimed to. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance. If both \code{TargetArn}
-and \code{InstanceId} are not provided, this API lists numbers claimed to all
-the Amazon Connect instances belonging to your account in the same AWS
-Region as the request.}
+\item{InstanceId}{The identifier of the Connect Customer instance that phone numbers are claimed to. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance. If both \code{TargetArn} and \code{InstanceId} are not provided, this API lists numbers claimed to all the Connect Customer instances belonging to your account in the same Amazon Web Services Region as the request.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{PhoneNumberCountryCodes}{The ISO country code.}
 
 \item{PhoneNumberTypes}{The type of phone number.}
 
-\item{PhoneNumberPrefix}{The prefix of the phone number. If provided, it must contain \code{+} as part
-of the country code.}
+\item{PhoneNumberPrefix}{The prefix of the phone number. If provided, it must contain \code{+} as part of the country code.}
 }
 \description{
-Lists phone numbers claimed to your Amazon Connect instance or traffic distribution group. If the provided \code{TargetArn} is a traffic distribution group, you can call this API in both Amazon Web Services Regions associated with traffic distribution group.
+Lists phone numbers claimed to your Connect Customer instance or traffic distribution group. If the provided \code{TargetArn} is a traffic distribution group, you can call this API in both Amazon Web Services Regions associated with traffic distribution group.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_phone_numbers_v2/} for full documentation.
 }

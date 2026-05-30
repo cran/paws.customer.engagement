@@ -15,8 +15,7 @@ sesv2_send_custom_verification_email(
 \arguments{
 \item{EmailAddress}{[required] The email address to verify.}
 
-\item{TemplateName}{[required] The name of the custom verification email template to use when sending
-the verification email.}
+\item{TemplateName}{[required] The name of the custom verification email template to use when sending the verification email.}
 
 \item{ConfigurationSetName}{Name of a configuration set to use when sending the verification email.}
 }

@@ -4,18 +4,16 @@
 \alias{connectcases_update_case}
 \title{If you provide a value for PerformedBy}
 \usage{
-connectcases_update_case(caseId, domainId, fields, performedBy = NULL)
+connectcases_update_case(domainId, caseId, fields, performedBy = NULL)
 }
 \arguments{
-\item{caseId}{[required] A unique identifier of the case.}
-
 \item{domainId}{[required] The unique identifier of the Cases domain.}
 
-\item{fields}{[required] An array of objects with \code{fieldId} (matching ListFields/DescribeField)
-and value union data, structured identical to
-\code{\link[=connectcases_create_case]{create_case}}.}
+\item{caseId}{[required] A unique identifier of the case.}
 
-\item{performedBy}{}
+\item{fields}{[required] An array of objects with \code{fieldId} (matching ListFields/DescribeField) and value union data, structured identical to \code{\link[=connectcases_create_case]{create_case}}.}
+
+\item{performedBy}{Represents the entity that performed the action.}
 }
 \description{
 If you provide a value for \code{PerformedBy.UserArn} you must also have \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html}{connect:DescribeUser} permission on the User ARN resource that you provide

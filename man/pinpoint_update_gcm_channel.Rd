@@ -8,10 +8,9 @@ settings of the GCM channel for an application}
 pinpoint_update_gcm_channel(ApplicationId, GCMChannelRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{GCMChannelRequest}{[required]}
+\item{GCMChannelRequest}{[required] Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.}
 }
 \description{
 Enables the GCM channel for an application or updates the status and settings of the GCM channel for an application.

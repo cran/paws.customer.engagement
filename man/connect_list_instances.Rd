@@ -2,20 +2,18 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_instances}
 \alias{connect_list_instances}
-\title{This API is in preview release for Amazon Connect and is subject to
+\title{This API is in preview release for Connect Customer and is subject to
 change}
 \usage{
 connect_list_instances(NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+This API is in preview release for Connect Customer and is subject to change.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_instances/} for full documentation.
 }

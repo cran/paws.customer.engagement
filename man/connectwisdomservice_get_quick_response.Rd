@@ -7,8 +7,7 @@
 connectwisdomservice_get_quick_response(knowledgeBaseId, quickResponseId)
 }
 \arguments{
-\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should be a QUICK_RESPONSES
-type knowledge base.}
+\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base.}
 
 \item{quickResponseId}{[required] The identifier of the quick response.}
 }

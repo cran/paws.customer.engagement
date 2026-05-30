@@ -2,7 +2,8 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_realtime_contact_analysis_segments_v2}
 \alias{connect_list_realtime_contact_analysis_segments_v2}
-\title{Provides a list of analysis segments for a real-time analysis session}
+\title{Provides a list of analysis segments for a real-time chat analysis
+session}
 \usage{
 connect_list_realtime_contact_analysis_segments_v2(
   InstanceId,
@@ -14,26 +15,20 @@ connect_list_realtime_contact_analysis_segments_v2(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ContactId}{[required] The identifier of the contact in this instance of Amazon Connect.}
+\item{ContactId}{[required] The identifier of the contact in this instance of Connect Customer.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{OutputType}{[required] The Contact Lens output type to be returned.}
 
-\item{SegmentTypes}{[required] Enum with segment types . Each value corresponds to a segment type
-returned in the segments list of the API. Each segment type has its own
-structure. Different channels may have different sets of supported
-segment types.}
+\item{SegmentTypes}{[required] Enum with segment types . Each value corresponds to a segment type returned in the segments list of the API. Each segment type has its own structure. Different channels may have different sets of supported segment types.}
 }
 \description{
-Provides a list of analysis segments for a real-time analysis session.
+Provides a list of analysis segments for a real-time chat analysis session. This API supports CHAT channels only.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_realtime_contact_analysis_segments_v2/} for full documentation.
 }

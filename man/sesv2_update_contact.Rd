@@ -19,8 +19,7 @@ sesv2_update_contact(
 
 \item{TopicPreferences}{The contact's preference for being opted-in to or opted-out of a topic.}
 
-\item{UnsubscribeAll}{A boolean value status noting if the contact is unsubscribed from all
-contact list topics.}
+\item{UnsubscribeAll}{A boolean value status noting if the contact is unsubscribed from all contact list topics.}
 
 \item{AttributesData}{The attribute data attached to a contact.}
 }

@@ -13,8 +13,7 @@ connect_update_prompt(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{PromptId}{[required] A unique identifier for the prompt.}
 
@@ -22,10 +21,7 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Description}{A description of the prompt.}
 
-\item{S3Uri}{The URI for the S3 bucket where the prompt is stored. You can provide S3
-pre-signed URLs returned by the
-\code{\link[=connect_get_prompt_file]{get_prompt_file}} API instead of providing S3
-URIs.}
+\item{S3Uri}{The URI for the S3 bucket where the prompt is stored. You can provide S3 pre-signed URLs returned by the \code{\link[=connect_get_prompt_file]{get_prompt_file}} API instead of providing S3 URIs.}
 }
 \description{
 Updates a prompt.

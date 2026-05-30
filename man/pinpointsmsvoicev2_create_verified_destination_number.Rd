@@ -7,6 +7,7 @@ account is in the sandbox}
 \usage{
 pinpointsmsvoicev2_create_verified_destination_number(
   DestinationPhoneNumber,
+  RcsAgentId = NULL,
   Tags = NULL,
   ClientToken = NULL
 )
@@ -14,12 +15,11 @@ pinpointsmsvoicev2_create_verified_destination_number(
 \arguments{
 \item{DestinationPhoneNumber}{[required] The verified destination phone number, in E.164 format.}
 
-\item{Tags}{An array of tags (key and value pairs) to associate with the destination
-number.}
+\item{RcsAgentId}{The unique identifier of the RCS agent to associate with the verified destination number. You can use either the RcsAgentId or RcsAgentArn.}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don't specify a client token, a
-randomly generated token is used for the request to ensure idempotency.}
+\item{Tags}{An array of tags (key and value pairs) to associate with the destination number.}
+
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.}
 }
 \description{
 You can only send messages to verified destination numbers when your account is in the sandbox. You can add up to 10 verified destination numbers.

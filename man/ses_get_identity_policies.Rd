@@ -8,17 +8,11 @@ identity (an email address or a domain)}
 ses_get_identity_policies(Identity, PolicyNames)
 }
 \arguments{
-\item{Identity}{[required] The identity for which the policies are retrieved. You can specify an
-identity by using its name or by using its Amazon Resource Name (ARN).
-Examples: \code{user@example.com}, \code{example.com},
-\code{arn:aws:ses:us-east-1:123456789012:identity/example.com}.
+\item{Identity}{[required] The identity for which the policies are retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: \code{user@example.com}, \code{example.com}, \code{arn:aws:ses:us-east-1:123456789012:identity/example.com}.
 
 To successfully call this operation, you must own the identity.}
 
-\item{PolicyNames}{[required] A list of the names of policies to be retrieved. You can retrieve a
-maximum of 20 policies at a time. If you do not know the names of the
-policies that are attached to the identity, you can use
-\code{\link[=ses_list_identity_policies]{list_identity_policies}}.}
+\item{PolicyNames}{[required] A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use \code{\link[=ses_list_identity_policies]{list_identity_policies}}.}
 }
 \description{
 Returns the requested sending authorization policies for the given identity (an email address or a domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.

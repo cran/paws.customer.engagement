@@ -18,8 +18,7 @@ customerprofiles_list_integrations(
 
 \item{MaxResults}{The maximum number of objects returned per page.}
 
-\item{IncludeHidden}{Boolean to indicate if hidden integration should be returned. Defaults
-to \code{False}.}
+\item{IncludeHidden}{Boolean to indicate if hidden integration should be returned. Defaults to \code{False}.}
 }
 \description{
 Lists all of the integrations in your domain.

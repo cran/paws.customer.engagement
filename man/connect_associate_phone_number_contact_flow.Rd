@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_associate_phone_number_contact_flow}
 \alias{connect_associate_phone_number_contact_flow}
-\title{Associates a flow with a phone number claimed to your Amazon Connect
+\title{Associates a flow with a phone number claimed to your Connect Customer
 instance}
 \usage{
 connect_associate_phone_number_contact_flow(
@@ -14,13 +14,12 @@ connect_associate_phone_number_contact_flow(
 \arguments{
 \item{PhoneNumberId}{[required] A unique identifier for the phone number.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{ContactFlowId}{[required] The identifier of the flow.}
 }
 \description{
-Associates a flow with a phone number claimed to your Amazon Connect instance.
+Associates a flow with a phone number claimed to your Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_associate_phone_number_contact_flow/} for full documentation.
 }

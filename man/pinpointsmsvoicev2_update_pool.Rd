@@ -16,32 +16,21 @@ pinpointsmsvoicev2_update_pool(
 )
 }
 \arguments{
-\item{PoolId}{[required] The unique identifier of the pool to update. Valid values are either the
-PoolId or PoolArn.
+\item{PoolId}{[required] The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.
 
-If you are using a shared AWS End User Messaging SMS and Voice resource
-then you must use the full Amazon Resource Name(ARN).}
+If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).}
 
-\item{TwoWayEnabled}{By default this is set to false. When set to true you can receive
-incoming text messages from your end recipients.}
+\item{TwoWayEnabled}{By default this is set to false. When set to true you can receive incoming text messages from your end recipients.}
 
 \item{TwoWayChannelArn}{The Amazon Resource Name (ARN) of the two way channel.}
 
-\item{TwoWayChannelRole}{An optional IAM Role Arn for a service to assume, to be able to post
-inbound SMS messages.}
+\item{TwoWayChannelRole}{An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.}
 
-\item{SelfManagedOptOutsEnabled}{By default this is set to false. When an end recipient sends a message
-that begins with HELP or STOP to one of your dedicated numbers, AWS End
-User Messaging SMS and Voice automatically replies with a customizable
-message and adds the end recipient to the OptOutList. When set to true
-you're responsible for responding to HELP and STOP requests. You're also
-responsible for tracking and honoring opt-out requests.}
+\item{SelfManagedOptOutsEnabled}{By default this is set to false. When set to false and an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, End User Messaging SMS automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.}
 
-\item{OptOutListName}{The OptOutList to associate with the pool. Valid values are either
-OptOutListName or OptOutListArn.
+\item{OptOutListName}{The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.
 
-If you are using a shared AWS End User Messaging SMS and Voice resource
-then you must use the full Amazon Resource Name(ARN).}
+If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).}
 
 \item{SharedRoutesEnabled}{Indicates whether shared routes are enabled for the pool.}
 

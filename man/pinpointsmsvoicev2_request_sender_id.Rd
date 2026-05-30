@@ -16,21 +16,15 @@ pinpointsmsvoicev2_request_sender_id(
 \arguments{
 \item{SenderId}{[required] The sender ID string to request.}
 
-\item{IsoCountryCode}{[required] The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-region.}
+\item{IsoCountryCode}{[required] The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.}
 
-\item{MessageTypes}{The type of message. Valid values are TRANSACTIONAL for messages that
-are critical or time-sensitive and PROMOTIONAL for messages that aren't
-critical or time-sensitive.}
+\item{MessageTypes}{The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.}
 
-\item{DeletionProtectionEnabled}{By default this is set to false. When set to true the sender ID can't be
-deleted.}
+\item{DeletionProtectionEnabled}{By default this is set to false. When set to true the sender ID can't be deleted.}
 
 \item{Tags}{An array of tags (key and value pairs) to associate with the sender ID.}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don't specify a client token, a
-randomly generated token is used for the request to ensure idempotency.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.}
 }
 \description{
 Request a new sender ID that doesn't require registration.

@@ -11,11 +11,9 @@ sesv2_put_configuration_set_sending_options(
 )
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The name of the configuration set to enable or disable email sending
-for.}
+\item{ConfigurationSetName}{[required] The name of the configuration set to enable or disable email sending for.}
 
-\item{SendingEnabled}{If \code{true}, email sending is enabled for the configuration set. If
-\code{false}, email sending is disabled for the configuration set.}
+\item{SendingEnabled}{If \code{true}, email sending is enabled for the configuration set. If \code{false}, email sending is disabled for the configuration set.}
 }
 \description{
 Enable or disable email sending for messages that use a particular configuration set in a specific Amazon Web Services Region.

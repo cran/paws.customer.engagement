@@ -11,9 +11,7 @@ customerprofiles_list_rule_based_matches(
 )
 }
 \arguments{
-\item{NextToken}{The pagination token from the previous
-\code{\link[=customerprofiles_list_rule_based_matches]{list_rule_based_matches}}
-API call.}
+\item{NextToken}{The pagination token from the previous \code{\link[=customerprofiles_list_rule_based_matches]{list_rule_based_matches}} API call.}
 
 \item{MaxResults}{The maximum number of \code{MatchIds} returned per page.}
 

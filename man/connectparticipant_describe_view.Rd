@@ -7,8 +7,7 @@
 connectparticipant_describe_view(ViewToken, ConnectionToken)
 }
 \arguments{
-\item{ViewToken}{[required] An encrypted token originating from the interactive message of a
-ShowView block operation. Represents the desired view.}
+\item{ViewToken}{[required] An encrypted token originating from the interactive message of a ShowView block operation. Represents the desired view.}
 
 \item{ConnectionToken}{[required] The connection token.}
 }

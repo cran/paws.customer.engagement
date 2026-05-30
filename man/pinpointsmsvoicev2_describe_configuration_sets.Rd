@@ -12,13 +12,11 @@ pinpointsmsvoicev2_describe_configuration_sets(
 )
 }
 \arguments{
-\item{ConfigurationSetNames}{An array of strings. Each element can be either a ConfigurationSetName
-or ConfigurationSetArn.}
+\item{ConfigurationSetNames}{An array of strings. Each element can be either a ConfigurationSetName or ConfigurationSetArn.}
 
 \item{Filters}{An array of filters to apply to the results that are returned.}
 
-\item{NextToken}{The token to be used for the next set of paginated results. You don't
-need to supply a value for this field in the initial request.}
+\item{NextToken}{The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.}
 
 \item{MaxResults}{The maximum number of results to return per each request.}
 }

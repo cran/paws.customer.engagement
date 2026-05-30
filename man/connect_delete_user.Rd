@@ -2,18 +2,17 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_delete_user}
 \alias{connect_delete_user}
-\title{Deletes a user account from the specified Amazon Connect instance}
+\title{Deletes a user account from the specified Connect Customer instance}
 \usage{
 connect_delete_user(InstanceId, UserId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{UserId}{[required] The identifier of the user.}
 }
 \description{
-Deletes a user account from the specified Amazon Connect instance.
+Deletes a user account from the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_delete_user/} for full documentation.
 }

@@ -29,7 +29,9 @@ customerprofiles_update_profile(
   BillingAddress = NULL,
   Attributes = NULL,
   PartyTypeString = NULL,
-  GenderString = NULL
+  GenderString = NULL,
+  ProfileType = NULL,
+  EngagementPreferences = NULL
 )
 }
 \arguments{
@@ -39,7 +41,7 @@ customerprofiles_update_profile(
 
 \item{AdditionalInformation}{Any additional information relevant to the customer’s profile.}
 
-\item{AccountNumber}{An account number that you have given to the customer.}
+\item{AccountNumber}{An account number that you have assigned to the customer.}
 
 \item{PartyType}{The type of profile used to describe the customer.}
 
@@ -55,8 +57,7 @@ customerprofiles_update_profile(
 
 \item{Gender}{The gender with which the customer identifies.}
 
-\item{PhoneNumber}{The customer’s phone number, which has not been specified as a mobile,
-home, or business number.}
+\item{PhoneNumber}{The customer’s phone number, which has not been specified as a mobile, home, or business number.}
 
 \item{MobilePhoneNumber}{The customer’s mobile phone number.}
 
@@ -64,15 +65,13 @@ home, or business number.}
 
 \item{BusinessPhoneNumber}{The customer’s business phone number.}
 
-\item{EmailAddress}{The customer’s email address, which has not been specified as a personal
-or business address.}
+\item{EmailAddress}{The customer’s email address, which has not been specified as a personal or business address.}
 
 \item{PersonalEmailAddress}{The customer’s personal email address.}
 
 \item{BusinessEmailAddress}{The customer’s business email address.}
 
-\item{Address}{A generic address associated with the customer that is not mailing,
-shipping, or billing.}
+\item{Address}{A generic address associated with the customer that is not mailing, shipping, or billing.}
 
 \item{ShippingAddress}{The customer’s shipping address.}
 
@@ -85,6 +84,10 @@ shipping, or billing.}
 \item{PartyTypeString}{An alternative to \code{PartyType} which accepts any string as input.}
 
 \item{GenderString}{An alternative to \code{Gender} which accepts any string as input.}
+
+\item{ProfileType}{Determines the type of the profile.}
+
+\item{EngagementPreferences}{Object that defines users preferred methods of engagement.}
 }
 \description{
 Updates the properties of a profile. The ProfileId is required for updating a customer profile.

@@ -2,8 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_update_agent_status}
 \alias{connect_update_agent_status}
-\title{This API is in preview release for Amazon Connect and is subject to
-change}
+\title{Updates agent status}
 \usage{
 connect_update_agent_status(
   InstanceId,
@@ -16,8 +15,7 @@ connect_update_agent_status(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{AgentStatusId}{[required] The identifier of the agent status.}
 
@@ -32,7 +30,7 @@ in the Amazon Resource Name (ARN) of the instance.}
 \item{ResetOrderNumber}{A number indicating the reset order of the agent status.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+Updates agent status.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_update_agent_status/} for full documentation.
 }

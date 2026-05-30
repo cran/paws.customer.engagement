@@ -14,24 +14,16 @@ sesv2_put_email_identity_mail_from_attributes(
 \arguments{
 \item{EmailIdentity}{[required] The verified email identity.}
 
-\item{MailFromDomain}{The custom MAIL FROM domain that you want the verified identity to use.
-The MAIL FROM domain must meet the following criteria:
+\item{MailFromDomain}{The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:
 \itemize{
 \item It has to be a subdomain of the verified identity.
 \item It can't be used to receive email.
-\item It can't be used in a "From" address if the MAIL FROM domain is a
-destination for feedback forwarding emails.
+\item It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.
 }}
 
-\item{BehaviorOnMxFailure}{The action to take if the required MX record isn't found when you send
-an email. When you set this value to \code{UseDefaultValue}, the mail is sent
-using \emph{amazonses.com} as the MAIL FROM domain. When you set this value
-to \code{RejectMessage}, the Amazon SES API v2 returns a
-\code{MailFromDomainNotVerified} error, and doesn't attempt to deliver the
-email.
+\item{BehaviorOnMxFailure}{The action to take if the required MX record isn't found when you send an email. When you set this value to \code{UseDefaultValue}, the mail is sent using \emph{amazonses.com} as the MAIL FROM domain. When you set this value to \code{RejectMessage}, the Amazon SES API v2 returns a \code{MailFromDomainNotVerified} error, and doesn't attempt to deliver the email.
 
-These behaviors are taken when the custom MAIL FROM domain configuration
-is in the \code{Pending}, \code{Failed}, and \code{TemporaryFailure} states.}
+These behaviors are taken when the custom MAIL FROM domain configuration is in the \code{Pending}, \code{Failed}, and \code{TemporaryFailure} states.}
 }
 \description{
 Used to enable or disable the custom Mail-From domain configuration for an email identity.

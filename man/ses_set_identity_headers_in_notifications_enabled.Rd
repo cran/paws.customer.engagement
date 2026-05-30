@@ -13,20 +13,13 @@ ses_set_identity_headers_in_notifications_enabled(
 )
 }
 \arguments{
-\item{Identity}{[required] The identity for which to enable or disable headers in notifications.
-Examples: \code{user@example.com}, \code{example.com}.}
+\item{Identity}{[required] The identity for which to enable or disable headers in notifications. Examples: \code{user@example.com}, \code{example.com}.}
 
-\item{NotificationType}{[required] The notification type for which to enable or disable headers in
-notifications.}
+\item{NotificationType}{[required] The notification type for which to enable or disable headers in notifications.}
 
-\item{Enabled}{[required] Sets whether Amazon SES includes the original email headers in Amazon
-SNS notifications of the specified notification type. A value of \code{true}
-specifies that Amazon SES includes headers in notifications, and a value
-of \code{false} specifies that Amazon SES does not include headers in
-notifications.
+\item{Enabled}{[required] Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified notification type. A value of \code{true} specifies that Amazon SES includes headers in notifications, and a value of \code{false} specifies that Amazon SES does not include headers in notifications.
 
-This value can only be set when \code{NotificationType} is already set to use
-a particular Amazon SNS topic.}
+This value can only be set when \code{NotificationType} is already set to use a particular Amazon SNS topic.}
 }
 \description{
 Given an identity (an email address or a domain), sets whether Amazon SES includes the original email headers in the Amazon Simple Notification Service (Amazon SNS) notifications of a specified type.

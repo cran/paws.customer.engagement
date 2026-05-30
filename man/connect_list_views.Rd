@@ -12,17 +12,13 @@ connect_list_views(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.}
 
 \item{Type}{The type of the view.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{MaxResults}{The maximum number of results to return per page. The default MaxResult
-size is 100.}
+\item{MaxResults}{The maximum number of results to return per page. The default MaxResult size is 100.}
 }
 \description{
 Returns views in the given instance.

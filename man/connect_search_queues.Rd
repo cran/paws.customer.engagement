@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_search_queues}
 \alias{connect_search_queues}
-\title{Searches queues in an Amazon Connect instance, with optional filtering}
+\title{Searches queues in an Connect Customer instance, with optional filtering}
 \usage{
 connect_search_queues(
   InstanceId,
@@ -13,12 +13,9 @@ connect_search_queues(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
@@ -26,12 +23,10 @@ results.}
 
 \item{SearchCriteria}{The search criteria to be used to return queues.
 
-The \code{name} and \code{description} fields support "contains" queries with a
-minimum of 2 characters and a maximum of 25 characters. Any queries with
-character lengths outside of this range will throw invalid results.}
+The \code{name} and \code{description} fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.}
 }
 \description{
-Searches queues in an Amazon Connect instance, with optional filtering.
+Searches queues in an Connect Customer instance, with optional filtering.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_search_queues/} for full documentation.
 }

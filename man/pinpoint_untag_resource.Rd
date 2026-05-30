@@ -10,9 +10,7 @@ pinpoint_untag_resource(ResourceArn, TagKeys)
 \arguments{
 \item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource.}
 
-\item{TagKeys}{[required] The key of the tag to remove from the resource. To remove multiple tags,
-append the tagKeys parameter and argument for each additional tag to
-remove, separated by an ampersand (&).}
+\item{TagKeys}{[required] The key of the tag to remove from the resource. To remove multiple tags, append the tagKeys parameter and argument for each additional tag to remove, separated by an ampersand (&).}
 }
 \description{
 Removes one or more tags (keys and values) from an application, campaign, message template, or segment.

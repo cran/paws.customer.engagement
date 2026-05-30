@@ -18,8 +18,7 @@ customerprofiles_batch_get_calculated_attribute_for_profile(
 
 \item{ProfileIds}{[required] List of unique identifiers for customer profiles to retrieve.}
 
-\item{ConditionOverrides}{Overrides the condition block within the original calculated attribute
-definition.}
+\item{ConditionOverrides}{Overrides the condition block within the original calculated attribute definition.}
 }
 \description{
 Fetch the possible attribute values given the attribute name.

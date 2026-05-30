@@ -7,10 +7,9 @@
 pinpoint_send_messages(ApplicationId, MessageRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{MessageRequest}{[required]}
+\item{MessageRequest}{[required] Specifies the configuration and other settings for a message.}
 }
 \description{
 Creates and sends a direct message.

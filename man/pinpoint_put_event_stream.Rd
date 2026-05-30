@@ -8,10 +8,9 @@ an existing event stream for an application}
 pinpoint_put_event_stream(ApplicationId, WriteEventStream)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{WriteEventStream}{[required]}
+\item{WriteEventStream}{[required] Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.}
 }
 \description{
 Creates a new event stream for an application or updates the settings of an existing event stream for an application.

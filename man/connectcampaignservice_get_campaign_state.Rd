@@ -7,7 +7,7 @@
 connectcampaignservice_get_campaign_state(id)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 }
 \description{
 Get state of a campaign for the specified Amazon Connect account.

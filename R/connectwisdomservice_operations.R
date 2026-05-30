@@ -10,26 +10,14 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_create_assistant/](https://www.paws-r-sdk.com/docs/connectwisdomservice_create_assistant/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param description The description of the assistant.
 #' @param name &#91;required&#93; The name of the assistant.
-#' @param serverSideEncryptionConfiguration The configuration information for the customer managed key used for
-#' encryption.
+#' @param serverSideEncryptionConfiguration The configuration information for the customer managed key used for encryption.
 #' 
-#' The customer managed key must have a policy that allows
-#' `kms:CreateGrant`, ` kms:DescribeKey`, and
-#' `kms:Decrypt/kms:GenerateDataKey` permissions to the IAM identity using
-#' the key to invoke Wisdom. To use Wisdom with chat, the key policy must
-#' also allow `kms:Decrypt`, `kms:GenerateDataKey*`, and `kms:DescribeKey`
-#' permissions to the `connect.amazonaws.com` service principal.
+#' The customer managed key must have a policy that allows `kms:CreateGrant`, ` kms:DescribeKey`, and `kms:Decrypt/kms:GenerateDataKey` permissions to the IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow `kms:Decrypt`, `kms:GenerateDataKey*`, and `kms:DescribeKey` permissions to the `connect.amazonaws.com` service principal.
 #' 
-#' For more information about setting up a customer managed key for Wisdom,
-#' see [Enable Amazon Connect Wisdom for your
-#' instance](https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html).
+#' For more information about setting up a customer managed key for Wisdom, see [Enable Amazon Connect Wisdom for your instance](https://docs.aws.amazon.com/connect/latest/adminguide/ai-agent-initial-setup.html).
 #' @param tags The tags used to organize, track, or control access for this resource.
 #' @param type &#91;required&#93; The type of assistant.
 #'
@@ -63,15 +51,10 @@ connectwisdomservice_create_assistant <- function(clientToken = NULL, descriptio
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_create_assistant_association/](https://www.paws-r-sdk.com/docs/connectwisdomservice_create_assistant_association/) for full documentation.
 #'
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param association &#91;required&#93; The identifier of the associated resource.
 #' @param associationType &#91;required&#93; The type of association.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param tags The tags used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
@@ -103,30 +86,14 @@ connectwisdomservice_create_assistant_association <- function(assistantId, assoc
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_create_content/](https://www.paws-r-sdk.com/docs/connectwisdomservice_create_content/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
-#' @param metadata A key/value map to store attributes without affecting tagging or
-#' recommendations. For example, when synchronizing data between an
-#' external system and Wisdom, you can store an external version identifier
-#' as metadata to utilize for determining drift.
-#' @param name &#91;required&#93; The name of the content. Each piece of content in a knowledge base must
-#' have a unique name. You can retrieve a piece of content using only its
-#' knowledge base and its name with the
-#' [`search_content`][connectwisdomservice_search_content] API.
-#' @param overrideLinkOutUri The URI you want to use for the article. If the knowledge base has a
-#' templateUri, setting this argument overrides it for this piece of
-#' content.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param metadata A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.
+#' @param name &#91;required&#93; The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the [`search_content`][connectwisdomservice_search_content] API.
+#' @param overrideLinkOutUri The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.
 #' @param tags The tags used to organize, track, or control access for this resource.
 #' @param title The title of the content. If not set, the title is equal to the name.
-#' @param uploadId &#91;required&#93; A pointer to the uploaded asset. This value is returned by
-#' [`start_content_upload`][connectwisdomservice_start_content_upload].
+#' @param uploadId &#91;required&#93; A pointer to the uploaded asset. This value is returned by [`start_content_upload`][connectwisdomservice_start_content_upload].
 #'
 #' @keywords internal
 #'
@@ -157,29 +124,17 @@ connectwisdomservice_create_content <- function(clientToken = NULL, knowledgeBas
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_create_knowledge_base/](https://www.paws-r-sdk.com/docs/connectwisdomservice_create_knowledge_base/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param description The description.
-#' @param knowledgeBaseType &#91;required&#93; The type of knowledge base. Only CUSTOM knowledge bases allow you to
-#' upload your own content. EXTERNAL knowledge bases support integrations
-#' with third-party systems whose content is synchronized automatically.
+#' @param knowledgeBaseType &#91;required&#93; The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically.
 #' @param name &#91;required&#93; The name of the knowledge base.
 #' @param renderingConfiguration Information about how to render the content.
-#' @param serverSideEncryptionConfiguration The configuration information for the customer managed key used for
-#' encryption.
+#' @param serverSideEncryptionConfiguration The configuration information for the customer managed key used for encryption.
 #' 
-#' This KMS key must have a policy that allows `kms:CreateGrant`,
-#' `kms:DescribeKey`, and `kms:Decrypt/kms:GenerateDataKey` permissions to
-#' the IAM identity using the key to invoke Wisdom.
+#' This KMS key must have a policy that allows `kms:CreateGrant`, `kms:DescribeKey`, and `kms:Decrypt/kms:GenerateDataKey` permissions to the IAM identity using the key to invoke Wisdom.
 #' 
-#' For more information about setting up a customer managed key for Wisdom,
-#' see [Enable Amazon Connect Wisdom for your
-#' instance](https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html).
-#' @param sourceConfiguration The source of the knowledge base content. Only set this argument for
-#' EXTERNAL knowledge bases.
+#' For more information about setting up a customer managed key for Wisdom, see [Enable Amazon Connect Wisdom for your instance](https://docs.aws.amazon.com/connect/latest/adminguide/ai-agent-initial-setup.html).
+#' @param sourceConfiguration The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.
 #' @param tags The tags used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
@@ -212,33 +167,20 @@ connectwisdomservice_create_knowledge_base <- function(clientToken = NULL, descr
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_create_quick_response/](https://www.paws-r-sdk.com/docs/connectwisdomservice_create_quick_response/) for full documentation.
 #'
 #' @param channels The Amazon Connect channels this quick response applies to.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param content &#91;required&#93; The content of the quick response.
 #' @param contentType The media type of the quick response content.
 #' 
-#' -   Use `application/x.quickresponse;format=plain` for a quick response
-#'     written in plain text.
+#' -   Use `application/x.quickresponse;format=plain` for a quick response written in plain text.
 #' 
-#' -   Use `application/x.quickresponse;format=markdown` for a quick
-#'     response written in richtext.
+#' -   Use `application/x.quickresponse;format=markdown` for a quick response written in richtext.
 #' @param description The description of the quick response.
-#' @param groupingConfiguration The configuration information of the user groups that the quick response
-#' is accessible to.
+#' @param groupingConfiguration The configuration information of the user groups that the quick response is accessible to.
 #' @param isActive Whether the quick response is active.
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
-#' @param language The language code value for the language in which the quick response is
-#' written. The supported language codes include `de_DE`, `en_US`, `es_ES`,
-#' `fr_FR`, `id_ID`, `it_IT`, `ja_JP`, `ko_KR`, `pt_BR`, `zh_CN`, `zh_TW`
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param language The language code value for the language in which the quick response is written. The supported language codes include `de_DE`, `en_US`, `es_ES`, `fr_FR`, `id_ID`, `it_IT`, `ja_JP`, `ko_KR`, `pt_BR`, `zh_CN`, `zh_TW`
 #' @param name &#91;required&#93; The name of the quick response.
-#' @param shortcutKey The shortcut key of the quick response. The value should be unique
-#' across the knowledge base.
+#' @param shortcutKey The shortcut key of the quick response. The value should be unique across the knowledge base.
 #' @param tags The tags used to organize, track, or control access for this resource.
 #'
 #' @keywords internal
@@ -270,13 +212,8 @@ connectwisdomservice_create_quick_response <- function(channels = NULL, clientTo
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_create_session/](https://www.paws-r-sdk.com/docs/connectwisdomservice_create_session/) for full documentation.
 #'
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param description The description.
 #' @param name &#91;required&#93; The name of the session.
 #' @param tags The tags used to organize, track, or control access for this resource.
@@ -310,8 +247,7 @@ connectwisdomservice_create_session <- function(assistantId, clientToken = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_assistant/](https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_assistant/) for full documentation.
 #'
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -342,10 +278,8 @@ connectwisdomservice_delete_assistant <- function(assistantId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_assistant_association/](https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_assistant_association/) for full documentation.
 #'
-#' @param assistantAssociationId &#91;required&#93; The identifier of the assistant association. Can be either the ID or the
-#' ARN. URLs cannot contain the ARN.
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
+#' @param assistantAssociationId &#91;required&#93; The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -376,12 +310,8 @@ connectwisdomservice_delete_assistant_association <- function(assistantAssociati
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_content/](https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_content/) for full documentation.
 #'
-#' @param contentId &#91;required&#93; The identifier of the content. Can be either the ID or the ARN. URLs
-#' cannot contain the ARN.
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
+#' @param contentId &#91;required&#93; The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -413,9 +343,7 @@ connectwisdomservice_delete_content <- function(contentId, knowledgeBaseId) {
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_import_job/](https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_import_job/) for full documentation.
 #'
 #' @param importJobId &#91;required&#93; The identifier of the import job to be deleted.
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.
 #'
 #' @keywords internal
 #'
@@ -446,8 +374,7 @@ connectwisdomservice_delete_import_job <- function(importJobId, knowledgeBaseId)
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_knowledge_base/](https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_knowledge_base/) for full documentation.
 #'
-#' @param knowledgeBaseId &#91;required&#93; The knowledge base to delete content from. Can be either the ID or the
-#' ARN. URLs cannot contain the ARN.
+#' @param knowledgeBaseId &#91;required&#93; The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -478,9 +405,7 @@ connectwisdomservice_delete_knowledge_base <- function(knowledgeBaseId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_quick_response/](https://www.paws-r-sdk.com/docs/connectwisdomservice_delete_quick_response/) for full documentation.
 #'
-#' @param knowledgeBaseId &#91;required&#93; The knowledge base from which the quick response is deleted. The
-#' identifier of the knowledge base. This should not be a QUICK_RESPONSES
-#' type knowledge base if you're storing Wisdom Content resource to it.
+#' @param knowledgeBaseId &#91;required&#93; The knowledge base from which the quick response is deleted. The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.
 #' @param quickResponseId &#91;required&#93; The identifier of the quick response to delete.
 #'
 #' @keywords internal
@@ -512,8 +437,7 @@ connectwisdomservice_delete_quick_response <- function(knowledgeBaseId, quickRes
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_get_assistant/](https://www.paws-r-sdk.com/docs/connectwisdomservice_get_assistant/) for full documentation.
 #'
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -544,10 +468,8 @@ connectwisdomservice_get_assistant <- function(assistantId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_get_assistant_association/](https://www.paws-r-sdk.com/docs/connectwisdomservice_get_assistant_association/) for full documentation.
 #'
-#' @param assistantAssociationId &#91;required&#93; The identifier of the assistant association. Can be either the ID or the
-#' ARN. URLs cannot contain the ARN.
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
+#' @param assistantAssociationId &#91;required&#93; The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -578,12 +500,8 @@ connectwisdomservice_get_assistant_association <- function(assistantAssociationI
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_get_content/](https://www.paws-r-sdk.com/docs/connectwisdomservice_get_content/) for full documentation.
 #'
-#' @param contentId &#91;required&#93; The identifier of the content. Can be either the ID or the ARN. URLs
-#' cannot contain the ARN.
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
+#' @param contentId &#91;required&#93; The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -614,12 +532,8 @@ connectwisdomservice_get_content <- function(contentId, knowledgeBaseId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_get_content_summary/](https://www.paws-r-sdk.com/docs/connectwisdomservice_get_content_summary/) for full documentation.
 #'
-#' @param contentId &#91;required&#93; The identifier of the content. Can be either the ID or the ARN. URLs
-#' cannot contain the ARN.
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
+#' @param contentId &#91;required&#93; The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -682,10 +596,7 @@ connectwisdomservice_get_import_job <- function(importJobId, knowledgeBaseId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_get_knowledge_base/](https://www.paws-r-sdk.com/docs/connectwisdomservice_get_knowledge_base/) for full documentation.
 #'
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -716,8 +627,7 @@ connectwisdomservice_get_knowledge_base <- function(knowledgeBaseId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_get_quick_response/](https://www.paws-r-sdk.com/docs/connectwisdomservice_get_quick_response/) for full documentation.
 #'
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should be a QUICK_RESPONSES
-#' type knowledge base.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base.
 #' @param quickResponseId &#91;required&#93; The identifier of the quick response.
 #'
 #' @keywords internal
@@ -749,16 +659,10 @@ connectwisdomservice_get_quick_response <- function(knowledgeBaseId, quickRespon
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_get_recommendations/](https://www.paws-r-sdk.com/docs/connectwisdomservice_get_recommendations/) for full documentation.
 #'
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param maxResults The maximum number of results to return per page.
-#' @param sessionId &#91;required&#93; The identifier of the session. Can be either the ID or the ARN. URLs
-#' cannot contain the ARN.
-#' @param waitTimeSeconds The duration (in seconds) for which the call waits for a recommendation
-#' to be made available before returning. If a recommendation is available,
-#' the call returns sooner than `WaitTimeSeconds`. If no messages are
-#' available and the wait time expires, the call returns successfully with
-#' an empty list.
+#' @param sessionId &#91;required&#93; The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param waitTimeSeconds The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than `WaitTimeSeconds`. If no messages are available and the wait time expires, the call returns successfully with an empty list.
 #'
 #' @keywords internal
 #'
@@ -789,10 +693,8 @@ connectwisdomservice_get_recommendations <- function(assistantId, maxResults = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_get_session/](https://www.paws-r-sdk.com/docs/connectwisdomservice_get_session/) for full documentation.
 #'
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
-#' @param sessionId &#91;required&#93; The identifier of the session. Can be either the ID or the ARN. URLs
-#' cannot contain the ARN.
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param sessionId &#91;required&#93; The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -823,12 +725,9 @@ connectwisdomservice_get_session <- function(assistantId, sessionId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_list_assistant_associations/](https://www.paws-r-sdk.com/docs/connectwisdomservice_list_assistant_associations/) for full documentation.
 #'
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -860,9 +759,7 @@ connectwisdomservice_list_assistant_associations <- function(assistantId, maxRes
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_list_assistants/](https://www.paws-r-sdk.com/docs/connectwisdomservice_list_assistants/) for full documentation.
 #'
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -893,14 +790,9 @@ connectwisdomservice_list_assistants <- function(maxResults = NULL, nextToken = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_list_contents/](https://www.paws-r-sdk.com/docs/connectwisdomservice_list_contents/) for full documentation.
 #'
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -931,14 +823,9 @@ connectwisdomservice_list_contents <- function(knowledgeBaseId, maxResults = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_list_import_jobs/](https://www.paws-r-sdk.com/docs/connectwisdomservice_list_import_jobs/) for full documentation.
 #'
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -970,9 +857,7 @@ connectwisdomservice_list_import_jobs <- function(knowledgeBaseId, maxResults = 
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_list_knowledge_bases/](https://www.paws-r-sdk.com/docs/connectwisdomservice_list_knowledge_bases/) for full documentation.
 #'
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -1003,14 +888,9 @@ connectwisdomservice_list_knowledge_bases <- function(maxResults = NULL, nextTok
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_list_quick_responses/](https://www.paws-r-sdk.com/docs/connectwisdomservice_list_quick_responses/) for full documentation.
 #'
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -1073,11 +953,9 @@ connectwisdomservice_list_tags_for_resource <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_notify_recommendations_received/](https://www.paws-r-sdk.com/docs/connectwisdomservice_notify_recommendations_received/) for full documentation.
 #'
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param recommendationIds &#91;required&#93; The identifiers of the recommendations.
-#' @param sessionId &#91;required&#93; The identifier of the session. Can be either the ID or the ARN. URLs
-#' cannot contain the ARN.
+#' @param sessionId &#91;required&#93; The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -1108,12 +986,9 @@ connectwisdomservice_notify_recommendations_received <- function(assistantId, re
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_query_assistant/](https://www.paws-r-sdk.com/docs/connectwisdomservice_query_assistant/) for full documentation.
 #'
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param queryText &#91;required&#93; The text to search for.
 #'
 #' @keywords internal
@@ -1145,10 +1020,7 @@ connectwisdomservice_query_assistant <- function(assistantId, maxResults = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_remove_knowledge_base_template_uri/](https://www.paws-r-sdk.com/docs/connectwisdomservice_remove_knowledge_base_template_uri/) for full documentation.
 #'
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #'
 #' @keywords internal
 #'
@@ -1179,14 +1051,9 @@ connectwisdomservice_remove_knowledge_base_template_uri <- function(knowledgeBas
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_search_content/](https://www.paws-r-sdk.com/docs/connectwisdomservice_search_content/) for full documentation.
 #'
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param searchExpression &#91;required&#93; The search expression to filter results.
 #'
 #' @keywords internal
@@ -1218,16 +1085,10 @@ connectwisdomservice_search_content <- function(knowledgeBaseId, maxResults = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_search_quick_responses/](https://www.paws-r-sdk.com/docs/connectwisdomservice_search_quick_responses/) for full documentation.
 #'
-#' @param attributes The [user-defined Amazon Connect contact
-#' attributes](https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html#user-defined-attributes)
-#' to be resolved when search results are returned.
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should be a QUICK_RESPONSES
-#' type knowledge base. Can be either the ID or the ARN. URLs cannot
-#' contain the ARN.
+#' @param attributes The [user-defined Amazon Connect contact attributes](https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html#user-defined-attributes) to be resolved when search results are returned.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param searchExpression &#91;required&#93; The search expression for querying the quick response.
 #'
 #' @keywords internal
@@ -1259,12 +1120,9 @@ connectwisdomservice_search_quick_responses <- function(attributes = NULL, knowl
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_search_sessions/](https://www.paws-r-sdk.com/docs/connectwisdomservice_search_sessions/) for full documentation.
 #'
-#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-#' URLs cannot contain the ARN.
+#' @param assistantId &#91;required&#93; The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param searchExpression &#91;required&#93; The search expression to filter results.
 #'
 #' @keywords internal
@@ -1297,12 +1155,8 @@ connectwisdomservice_search_sessions <- function(assistantId, maxResults = NULL,
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_start_content_upload/](https://www.paws-r-sdk.com/docs/connectwisdomservice_start_content_upload/) for full documentation.
 #'
 #' @param contentType &#91;required&#93; The type of content to upload.
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
-#' @param presignedUrlTimeToLive The expected expiration time of the generated presigned URL, specified
-#' in minutes.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param presignedUrlTimeToLive The expected expiration time of the generated presigned URL, specified in minutes.
 #'
 #' @keywords internal
 #'
@@ -1335,22 +1189,15 @@ connectwisdomservice_start_content_upload <- function(contentType, knowledgeBase
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_start_import_job/](https://www.paws-r-sdk.com/docs/connectwisdomservice_start_import_job/) for full documentation.
 #'
 #' @param clientToken The tags used to organize, track, or control access for this resource.
-#' @param externalSourceConfiguration The configuration information of the external source that the resource
-#' data are imported from.
+#' @param externalSourceConfiguration The configuration information of the external source that the resource data are imported from.
 #' @param importJobType &#91;required&#93; The type of the import job.
 #' 
-#' -   For importing quick response resource, set the value to
-#'     `QUICK_RESPONSES`.
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
+#' -   For importing quick response resource, set the value to `QUICK_RESPONSES`.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' 
-#' -   For importing Wisdom quick responses, this should be a
-#'     `QUICK_RESPONSES` type knowledge base.
+#' -   For importing Wisdom quick responses, this should be a `QUICK_RESPONSES` type knowledge base.
 #' @param metadata The metadata fields of the imported Wisdom resources.
-#' @param uploadId &#91;required&#93; A pointer to the uploaded asset. This value is returned by
-#' [`start_content_upload`][connectwisdomservice_start_content_upload].
+#' @param uploadId &#91;required&#93; A pointer to the uploaded asset. This value is returned by [`start_content_upload`][connectwisdomservice_start_content_upload].
 #'
 #' @keywords internal
 #'
@@ -1445,31 +1292,14 @@ connectwisdomservice_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_update_content/](https://www.paws-r-sdk.com/docs/connectwisdomservice_update_content/) for full documentation.
 #'
-#' @param contentId &#91;required&#93; The identifier of the content. Can be either the ID or the ARN. URLs
-#' cannot contain the ARN.
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN
-#' @param metadata A key/value map to store attributes without affecting tagging or
-#' recommendations. For example, when synchronizing data between an
-#' external system and Wisdom, you can store an external version identifier
-#' as metadata to utilize for determining drift.
-#' @param overrideLinkOutUri The URI for the article. If the knowledge base has a templateUri,
-#' setting this argument overrides it for this piece of content. To remove
-#' an existing `overrideLinkOurUri`, exclude this argument and set
-#' `removeOverrideLinkOutUri` to true.
+#' @param contentId &#91;required&#93; The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN
+#' @param metadata A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.
+#' @param overrideLinkOutUri The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing `overrideLinkOurUri`, exclude this argument and set `removeOverrideLinkOutUri` to true.
 #' @param removeOverrideLinkOutUri Unset the existing `overrideLinkOutUri` if it exists.
-#' @param revisionId The `revisionId` of the content resource to update, taken from an
-#' earlier call to [`get_content`][connectwisdomservice_get_content],
-#' [`get_content_summary`][connectwisdomservice_get_content_summary],
-#' [`search_content`][connectwisdomservice_search_content], or
-#' [`list_contents`][connectwisdomservice_list_contents]. If included, this
-#' argument acts as an optimistic lock to ensure content was not modified
-#' since it was last read. If it has been modified, this API throws a
-#' `PreconditionFailedException`.
+#' @param revisionId The `revisionId` of the content resource to update, taken from an earlier call to [`get_content`][connectwisdomservice_get_content], [`get_content_summary`][connectwisdomservice_get_content_summary], [`search_content`][connectwisdomservice_search_content], or [`list_contents`][connectwisdomservice_list_contents]. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a `PreconditionFailedException`.
 #' @param title The title of the content.
-#' @param uploadId A pointer to the uploaded asset. This value is returned by
-#' [`start_content_upload`][connectwisdomservice_start_content_upload].
+#' @param uploadId A pointer to the uploaded asset. This value is returned by [`start_content_upload`][connectwisdomservice_start_content_upload].
 #'
 #' @keywords internal
 #'
@@ -1500,10 +1330,7 @@ connectwisdomservice_update_content <- function(contentId, knowledgeBaseId, meta
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_update_knowledge_base_template_uri/](https://www.paws-r-sdk.com/docs/connectwisdomservice_update_knowledge_base_template_uri/) for full documentation.
 #'
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 #' @param templateUri &#91;required&#93; The template URI to update.
 #'
 #' @keywords internal
@@ -1535,33 +1362,24 @@ connectwisdomservice_update_knowledge_base_template_uri <- function(knowledgeBas
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectwisdomservice_update_quick_response/](https://www.paws-r-sdk.com/docs/connectwisdomservice_update_quick_response/) for full documentation.
 #'
-#' @param channels The Amazon Connect contact channels this quick response applies to. The
-#' supported contact channel types include `Chat`.
+#' @param channels The Amazon Connect contact channels this quick response applies to. The supported contact channel types include `Chat`.
 #' @param content The updated content of the quick response.
 #' @param contentType The media type of the quick response content.
 #' 
-#' -   Use `application/x.quickresponse;format=plain` for quick response
-#'     written in plain text.
+#' -   Use `application/x.quickresponse;format=plain` for quick response written in plain text.
 #' 
-#' -   Use `application/x.quickresponse;format=markdown` for quick response
-#'     written in richtext.
+#' -   Use `application/x.quickresponse;format=markdown` for quick response written in richtext.
 #' @param description The updated description of the quick response.
 #' @param groupingConfiguration The updated grouping configuration of the quick response.
 #' @param isActive Whether the quick response is active.
-#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a
-#' QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-#' resource to it. Can be either the ID or the ARN. URLs cannot contain the
-#' ARN.
-#' @param language The language code value for the language in which the quick response is
-#' written. The supported language codes include `de_DE`, `en_US`, `es_ES`,
-#' `fr_FR`, `id_ID`, `it_IT`, `ja_JP`, `ko_KR`, `pt_BR`, `zh_CN`, `zh_TW`
+#' @param knowledgeBaseId &#91;required&#93; The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
+#' @param language The language code value for the language in which the quick response is written. The supported language codes include `de_DE`, `en_US`, `es_ES`, `fr_FR`, `id_ID`, `it_IT`, `ja_JP`, `ko_KR`, `pt_BR`, `zh_CN`, `zh_TW`
 #' @param name The name of the quick response.
 #' @param quickResponseId &#91;required&#93; The identifier of the quick response.
 #' @param removeDescription Whether to remove the description from the quick response.
 #' @param removeGroupingConfiguration Whether to remove the grouping configuration of the quick response.
 #' @param removeShortcutKey Whether to remove the shortcut key of the quick response.
-#' @param shortcutKey The shortcut key of the quick response. The value should be unique
-#' across the knowledge base.
+#' @param shortcutKey The shortcut key of the quick response. The value should be unique across the knowledge base.
 #'
 #' @keywords internal
 #'

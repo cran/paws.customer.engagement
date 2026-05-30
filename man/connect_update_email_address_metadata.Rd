@@ -13,8 +13,7 @@ connect_update_email_address_metadata(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{EmailAddressId}{[required] The identifier of the email address.}
 
@@ -22,13 +21,10 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{DisplayName}{The display name of email address.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 }
 \description{
-Updates an email address metadata. For more information about email addresses, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html}{Create email addresses} in the Amazon Connect Administrator Guide.
+Updates an email address metadata. For more information about email addresses, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html}{Create email addresses} in the Connect Customer Administrator Guide.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_update_email_address_metadata/} for full documentation.
 }

@@ -9,9 +9,7 @@ pinpointsmsvoicev2_delete_registration_field_value(RegistrationId, FieldPath)
 \arguments{
 \item{RegistrationId}{[required] The unique identifier for the registration.}
 
-\item{FieldPath}{[required] The path to the registration form field. You can use
-\code{\link[=pinpointsmsvoicev2_describe_registration_field_definitions]{describe_registration_field_definitions}}
-for a list of \strong{FieldPaths}.}
+\item{FieldPath}{[required] The path to the registration form field. You can use \code{\link[=pinpointsmsvoicev2_describe_registration_field_definitions]{describe_registration_field_definitions}} for a list of \strong{FieldPaths}.}
 }
 \description{
 Delete the value in a registration form field.

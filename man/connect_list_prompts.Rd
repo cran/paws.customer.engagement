@@ -2,23 +2,20 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_prompts}
 \alias{connect_list_prompts}
-\title{Provides information about the prompts for the specified Amazon Connect
-instance}
+\title{Provides information about the prompts for the specified Connect
+Customer instance}
 \usage{
 connect_list_prompts(InstanceId, NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{MaxResults}{The maximum number of results to return per page. The default MaxResult
-size is 100.}
+\item{MaxResults}{The maximum number of results to return per page. The default MaxResult size is 100.}
 }
 \description{
-Provides information about the prompts for the specified Amazon Connect instance.
+Provides information about the prompts for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_prompts/} for full documentation.
 }

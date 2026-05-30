@@ -9,8 +9,7 @@ sesv2_update_contact_list(ContactListName, Topics = NULL, Description = NULL)
 \arguments{
 \item{ContactListName}{[required] The name of the contact list.}
 
-\item{Topics}{An interest group, theme, or label within a list. A contact list can
-have multiple topics.}
+\item{Topics}{An interest group, theme, or label within a list. A contact list can have multiple topics.}
 
 \item{Description}{A description of what the contact list is about.}
 }

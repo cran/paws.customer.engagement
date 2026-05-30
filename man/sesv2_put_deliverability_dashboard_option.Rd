@@ -10,11 +10,9 @@ sesv2_put_deliverability_dashboard_option(
 )
 }
 \arguments{
-\item{DashboardEnabled}{[required] Specifies whether to enable the Deliverability dashboard. To enable the
-dashboard, set this value to \code{true}.}
+\item{DashboardEnabled}{[required] Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to \code{true}.}
 
-\item{SubscribedDomains}{An array of objects, one for each verified domain that you use to send
-email and enabled the Deliverability dashboard for.}
+\item{SubscribedDomains}{An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.}
 }
 \description{
 Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email. You also gain the ability to perform predictive inbox placement tests.

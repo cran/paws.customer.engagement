@@ -8,10 +8,9 @@ endpoint data that existing events are associated with}
 pinpoint_put_events(ApplicationId, EventsRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{EventsRequest}{[required]}
+\item{EventsRequest}{[required] Specifies a batch of events to process.}
 }
 \description{
 Creates a new event to record for endpoints, or creates or updates endpoint data that existing events are associated with.

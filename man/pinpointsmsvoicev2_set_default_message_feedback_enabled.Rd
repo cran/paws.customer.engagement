@@ -10,8 +10,7 @@ pinpointsmsvoicev2_set_default_message_feedback_enabled(
 )
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The name of the configuration set to use. This can be either the
-ConfigurationSetName or ConfigurationSetArn.}
+\item{ConfigurationSetName}{[required] The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.}
 
 \item{MessageFeedbackEnabled}{[required] Set to true to enable message feedback.}
 }

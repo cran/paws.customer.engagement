@@ -15,7 +15,7 @@ connect_create_contact_flow_version(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{Description}{The description of the flow version.}
 

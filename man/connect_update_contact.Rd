@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_update_contact}
 \alias{connect_update_contact}
-\title{This API is in preview release for Amazon Connect and is subject to
+\title{This API is in preview release for Connect Customer and is subject to
 change}
 \usage{
 connect_update_contact(
@@ -19,56 +19,34 @@ connect_update_contact(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ContactId}{[required] The identifier of the contact. This is the identifier of the contact
-associated with the first interaction with your contact center.}
+\item{ContactId}{[required] The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.}
 
 \item{Name}{The name of the contact.}
 
 \item{Description}{The description of the contact.}
 
-\item{References}{Well-formed data on contact, shown to agents on Contact Control Panel
-(CCP).}
+\item{References}{Well-formed data on contact, shown to agents on Contact Control Panel (CCP).}
 
-\item{SegmentAttributes}{A set of system defined key-value pairs stored on individual contact
-segments (unique contact ID) using an attribute map. The attributes are
-standard Amazon Connect attributes. They can be accessed in flows.
+\item{SegmentAttributes}{A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.
 
 Attribute keys can include only alphanumeric, -, and _.
 
 This field can be used to show channel subtype, such as \code{connect:Guide}.
 
-Currently Contact Expiry is the only segment attribute which can be
-updated by using the UpdateContact API.}
+Contact Expiry, and user-defined attributes (String - String) that are defined in predefined attributes, can be updated by using the UpdateContact API.}
 
-\item{QueueInfo}{Information about the queue associated with a contact. This parameter
-can only be updated for external audio contacts. It is used when you
-integrate third-party systems with Contact Lens for analytics. For more
-information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html}{Amazon Connect Contact Lens integration}
-in the \emph{Amazon Connect Administrator Guide}.}
+\item{QueueInfo}{Information about the queue associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html}{Connect Customer Contact Lens integration} in the \emph{Connect Customer Administrator Guide}.}
 
-\item{UserInfo}{Information about the agent associated with a contact. This parameter
-can only be updated for external audio contacts. It is used when you
-integrate third-party systems with Contact Lens for analytics. For more
-information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html}{Amazon Connect Contact Lens integration}
-in the \emph{Amazon Connect Administrator Guide}.}
+\item{UserInfo}{Information about the agent associated with a contact. This parameter can only be updated for external audio contacts. It is used when you integrate third-party systems with Contact Lens for analytics. For more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html}{Connect Customer Contact Lens integration} in the \emph{Connect Customer Administrator Guide}.}
 
-\item{CustomerEndpoint}{The endpoint of the customer for which the contact was initiated. For
-external audio contacts, this is usually the end customer's phone
-number. This value can only be updated for external audio contacts. For
-more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html}{Amazon Connect Contact Lens integration}
-in the \emph{Amazon Connect Administrator Guide}.}
+\item{CustomerEndpoint}{The endpoint of the customer for which the contact was initiated. For external audio contacts, this is usually the end customer's phone number. This value can only be updated for external audio contacts. For more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html}{Connect Customer Contact Lens integration} in the \emph{Connect Customer Administrator Guide}.}
 
-\item{SystemEndpoint}{External system endpoint for the contact was initiated. For external
-audio contacts, this is the phone number of the external system such as
-the contact center. This value can only be updated for external audio
-contacts. For more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html}{Amazon Connect Contact Lens integration}
-in the \emph{Amazon Connect Administrator Guide}.}
+\item{SystemEndpoint}{External system endpoint for the contact was initiated. For external audio contacts, this is the phone number of the external system such as the contact center. This value can only be updated for external audio contacts. For more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html}{Connect Customer Contact Lens integration} in the \emph{Connect Customer Administrator Guide}.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+This API is in preview release for Connect Customer and is subject to change.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_update_contact/} for full documentation.
 }

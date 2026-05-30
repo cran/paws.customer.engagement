@@ -12,16 +12,9 @@ sesv2_list_export_jobs(
 )
 }
 \arguments{
-\item{NextToken}{The pagination token returned from a previous call to
-\code{\link[=sesv2_list_export_jobs]{list_export_jobs}} to indicate the position in
-the list of export jobs.}
+\item{NextToken}{The pagination token returned from a previous call to \code{\link[=sesv2_list_export_jobs]{list_export_jobs}} to indicate the position in the list of export jobs.}
 
-\item{PageSize}{Maximum number of export jobs to return at once. Use this parameter to
-paginate results. If additional export jobs exist beyond the specified
-limit, the \code{NextToken} element is sent in the response. Use the
-\code{NextToken} value in subsequent calls to
-\code{\link[=sesv2_list_export_jobs]{list_export_jobs}} to retrieve additional
-export jobs.}
+\item{PageSize}{Maximum number of export jobs to return at once. Use this parameter to paginate results. If additional export jobs exist beyond the specified limit, the \code{NextToken} element is sent in the response. Use the \code{NextToken} value in subsequent calls to \code{\link[=sesv2_list_export_jobs]{list_export_jobs}} to retrieve additional export jobs.}
 
 \item{ExportSourceType}{A value used to list export jobs that have a certain \code{ExportSourceType}.}
 

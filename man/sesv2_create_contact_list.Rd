@@ -14,8 +14,7 @@ sesv2_create_contact_list(
 \arguments{
 \item{ContactListName}{[required] The name of the contact list.}
 
-\item{Topics}{An interest group, theme, or label within a list. A contact list can
-have multiple topics.}
+\item{Topics}{An interest group, theme, or label within a list. A contact list can have multiple topics.}
 
 \item{Description}{A description of what the contact list is about.}
 

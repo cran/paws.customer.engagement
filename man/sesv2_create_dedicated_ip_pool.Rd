@@ -9,8 +9,7 @@ sesv2_create_dedicated_ip_pool(PoolName, Tags = NULL, ScalingMode = NULL)
 \arguments{
 \item{PoolName}{[required] The name of the dedicated IP pool.}
 
-\item{Tags}{An object that defines the tags (keys and values) that you want to
-associate with the pool.}
+\item{Tags}{An object that defines the tags (keys and values) that you want to associate with the pool.}
 
 \item{ScalingMode}{The type of scaling mode.}
 }

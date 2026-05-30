@@ -7,7 +7,7 @@
 connectcampaignservicev2_start_campaign(id)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 }
 \description{
 Starts a campaign for the specified Amazon Connect account.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_start_outbound_chat_contact}
 \alias{connect_start_outbound_chat_contact}
-\title{Initiates a new outbound SMS contact to a customer}
+\title{Initiates a new outbound SMS or WhatsApp contact to a customer}
 \usage{
 connect_start_outbound_chat_contact(
   SourceEndpoint,
@@ -14,52 +14,41 @@ connect_start_outbound_chat_contact(
   ChatDurationInMinutes = NULL,
   ParticipantDetails = NULL,
   InitialSystemMessage = NULL,
+  InitialTemplatedSystemMessage = NULL,
   RelatedContactId = NULL,
   SupportedMessagingContentTypes = NULL,
   ClientToken = NULL
 )
 }
 \arguments{
-\item{SourceEndpoint}{[required]}
+\item{SourceEndpoint}{[required] Information about the endpoint.}
 
-\item{DestinationEndpoint}{[required]}
+\item{DestinationEndpoint}{[required] Information about the endpoint.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the instance
-ID in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.}
 
-\item{SegmentAttributes}{[required] A set of system defined key-value pairs stored on individual contact
-segments using an attribute map. The attributes are standard Amazon
-Connect attributes. They can be accessed in flows.
+\item{SegmentAttributes}{[required] A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.
 \itemize{
 \item Attribute keys can include only alphanumeric, \code{-}, and \verb{_}.
-\item This field can be used to show channel subtype, such as
-\code{connect:Guide} and \code{connect:SMS}.
+\item This field can be used to show channel subtype, such as \code{connect:SMS} and \code{connect:WhatsApp}.
 }}
 
-\item{Attributes}{A custom key-value pair using an attribute map. The attributes are
-standard Amazon Connect attributes, and can be accessed in flows just
-like any other contact attributes.}
+\item{Attributes}{A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.}
 
-\item{ContactFlowId}{[required] The identifier of the flow for the call. To see the ContactFlowId in the
-Amazon Connect console user interface, on the navigation menu go to
-\strong{Routing, Contact Flows}. Choose the flow. On the flow page, under the
-name of the flow, choose \strong{Show additional flow information}. The
-ContactFlowId is the last part of the ARN, shown here in bold:
+\item{ContactFlowId}{[required] The identifier of the flow for the call. To see the ContactFlowId in the Connect Customer console user interface, on the navigation menu go to \strong{Routing, Contact Flows}. Choose the flow. On the flow page, under the name of the flow, choose \strong{Show additional flow information}. The ContactFlowId is the last part of the ARN, shown here in bold:
 \itemize{
 \item arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/\strong{123ec456-a007-89c0-1234-xxxxxxxxxxxx}
 }}
 
-\item{ChatDurationInMinutes}{The total duration of the newly started chat session. If not specified,
-the chat session duration defaults to 25 hour. The minimum configurable
-time is 60 minutes. The maximum configurable time is 10,080 minutes (7
-days).}
+\item{ChatDurationInMinutes}{The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).}
 
-\item{ParticipantDetails}{}
+\item{ParticipantDetails}{The customer's details.}
 
-\item{InitialSystemMessage}{}
+\item{InitialSystemMessage}{A chat message.}
 
-\item{RelatedContactId}{The unique identifier for an Amazon Connect contact. This identifier is
-related to the contact starting.}
+\item{InitialTemplatedSystemMessage}{Information about template message configuration.}
+
+\item{RelatedContactId}{The unique identifier for an Connect Customer contact. This identifier is related to the contact starting.}
 
 \item{SupportedMessagingContentTypes}{The supported chat message content types. Supported types are:
 \itemize{
@@ -69,23 +58,17 @@ related to the contact starting.}
 \item \code{application/vnd.amazonaws.connect.message.interactive.response}
 }
 
-Content types must always contain \code{text/plain}. You can then put any
-other supported type in the list. For example, all the following lists
-are valid because they contain \code{text/plain}:
+Content types must always contain \code{text/plain}. You can then put any other supported type in the list. For example, all the following lists are valid because they contain \code{text/plain}:
 \itemize{
 \item \verb{[text/plain, text/markdown, application/json]}
 \item \verb{[text/markdown, text/plain]}
 \item \verb{[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]}
 }}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the AWS SDK populates this
-field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.
-The token is valid for 7 days after creation. If a contact is already
-started, the contact ID is returned.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.}
 }
 \description{
-Initiates a new outbound SMS contact to a customer. Response of this API provides the \code{ContactId} of the outbound SMS contact created.
+Initiates a new outbound SMS or WhatsApp contact to a customer. Response of this API provides the \code{ContactId} of the outbound SMS or WhatsApp contact created.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_start_outbound_chat_contact/} for full documentation.
 }

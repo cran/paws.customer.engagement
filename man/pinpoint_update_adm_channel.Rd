@@ -8,10 +8,9 @@ settings of the ADM channel for an application}
 pinpoint_update_adm_channel(ADMChannelRequest, ApplicationId)
 }
 \arguments{
-\item{ADMChannelRequest}{[required]}
+\item{ADMChannelRequest}{[required] Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.}
 
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 }
 \description{
 Enables the ADM channel for an application or updates the status and settings of the ADM channel for an application.

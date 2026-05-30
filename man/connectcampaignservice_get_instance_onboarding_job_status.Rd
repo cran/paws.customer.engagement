@@ -7,7 +7,7 @@
 connectcampaignservice_get_instance_onboarding_job_status(connectInstanceId)
 }
 \arguments{
-\item{connectInstanceId}{[required]}
+\item{connectInstanceId}{[required] Amazon Connect Instance Id}
 }
 \description{
 Get the specific instance onboarding job status.

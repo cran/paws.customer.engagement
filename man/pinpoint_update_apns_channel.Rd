@@ -8,10 +8,9 @@ settings of the APNs channel for an application}
 pinpoint_update_apns_channel(APNSChannelRequest, ApplicationId)
 }
 \arguments{
-\item{APNSChannelRequest}{[required]}
+\item{APNSChannelRequest}{[required] Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.}
 
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 }
 \description{
 Enables the APNs channel for an application or updates the status and settings of the APNs channel for an application.

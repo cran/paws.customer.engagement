@@ -8,9 +8,9 @@ account}
 connectcampaignservicev2_put_outbound_request_batch(id, outboundRequests)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{outboundRequests}{[required]}
+\item{outboundRequests}{[required] A list of outbound requests.}
 }
 \description{
 Creates outbound requests for the specified campaign Amazon Connect account. This API is idempotent.

@@ -4,16 +4,24 @@
 \alias{connectcases_update_field}
 \title{Updates the properties of an existing field}
 \usage{
-connectcases_update_field(description = NULL, domainId, fieldId, name = NULL)
+connectcases_update_field(
+  domainId,
+  fieldId,
+  name = NULL,
+  description = NULL,
+  attributes = NULL
+)
 }
 \arguments{
-\item{description}{The description of a field.}
-
 \item{domainId}{[required] The unique identifier of the Cases domain.}
 
 \item{fieldId}{[required] The unique identifier of a field.}
 
 \item{name}{The name of the field.}
+
+\item{description}{The description of a field.}
+
+\item{attributes}{Union of field attributes.}
 }
 \description{
 Updates the properties of an existing field.

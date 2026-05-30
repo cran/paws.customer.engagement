@@ -2,8 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_update_hours_of_operation}
 \alias{connect_update_hours_of_operation}
-\title{This API is in preview release for Amazon Connect and is subject to
-change}
+\title{Updates the hours of operation}
 \usage{
 connect_update_hours_of_operation(
   InstanceId,
@@ -15,8 +14,7 @@ connect_update_hours_of_operation(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{HoursOfOperationId}{[required] The identifier of the hours of operation.}
 
@@ -29,7 +27,7 @@ in the Amazon Resource Name (ARN) of the instance.}
 \item{Config}{Configuration information of the hours of operation.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+Updates the hours of operation.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_update_hours_of_operation/} for full documentation.
 }

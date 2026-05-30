@@ -7,8 +7,7 @@
 sesv2_delete_suppressed_destination(EmailAddress)
 }
 \arguments{
-\item{EmailAddress}{[required] The suppressed email destination to remove from the account suppression
-list.}
+\item{EmailAddress}{[required] The suppressed email destination to remove from the account suppression list.}
 }
 \description{
 Removes an email address from the suppression list for your account.

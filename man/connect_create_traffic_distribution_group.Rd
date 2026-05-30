@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_traffic_distribution_group}
 \alias{connect_create_traffic_distribution_group}
-\title{Creates a traffic distribution group given an Amazon Connect instance
+\title{Creates a traffic distribution group given an Connect Customer instance
 that has been replicated}
 \usage{
 connect_create_traffic_distribution_group(
@@ -18,19 +18,14 @@ connect_create_traffic_distribution_group(
 
 \item{Description}{A description for the traffic distribution group.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance that has been replicated.
-You can find the \code{instanceId} in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance that has been replicated. You can find the \code{instanceId} in the ARN of the instance.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
-Creates a traffic distribution group given an Amazon Connect instance that has been replicated.
+Creates a traffic distribution group given an Connect Customer instance that has been replicated.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_traffic_distribution_group/} for full documentation.
 }

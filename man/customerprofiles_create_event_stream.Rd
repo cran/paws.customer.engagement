@@ -3,7 +3,7 @@
 \name{customerprofiles_create_event_stream}
 \alias{customerprofiles_create_event_stream}
 \title{Creates an event stream, which is a subscription to real-time events,
-such as when profiles are created and updated through Amazon Connect
+such as when profiles are created and updated through Connect Customer
 Customer Profiles}
 \usage{
 customerprofiles_create_event_stream(
@@ -16,15 +16,14 @@ customerprofiles_create_event_stream(
 \arguments{
 \item{DomainName}{[required] The unique name of the domain.}
 
-\item{Uri}{[required] The StreamARN of the destination to deliver profile events to. For
-example, arn:aws:kinesis:region:account-id:stream/stream-name}
+\item{Uri}{[required] The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name}
 
 \item{EventStreamName}{[required] The name of the event stream.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.}
 }
 \description{
-Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Amazon Connect Customer Profiles.
+Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Connect Customer Customer Profiles.
 
 See \url{https://www.paws-r-sdk.com/docs/customerprofiles_create_event_stream/} for full documentation.
 }

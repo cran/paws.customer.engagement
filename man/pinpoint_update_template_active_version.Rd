@@ -11,15 +11,11 @@ pinpoint_update_template_active_version(
 )
 }
 \arguments{
-\item{TemplateActiveVersionRequest}{[required]}
+\item{TemplateActiveVersionRequest}{[required] Specifies which version of a message template to use as the active version of the template.}
 
-\item{TemplateName}{[required] The name of the message template. A template name must start with an
-alphanumeric character and can contain a maximum of 128 characters. The
-characters can be alphanumeric characters, underscores (_), or hyphens
-(-). Template names are case sensitive.}
+\item{TemplateName}{[required] The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.}
 
-\item{TemplateType}{[required] The type of channel that the message template is designed for. Valid
-values are: EMAIL, PUSH, SMS, and VOICE.}
+\item{TemplateType}{[required] The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.}
 }
 \description{
 Changes the status of a specific version of a message template to \emph{active}.

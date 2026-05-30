@@ -2,8 +2,8 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_integration_association}
 \alias{connect_create_integration_association}
-\title{Creates an Amazon Web Services resource association with an Amazon
-Connect instance}
+\title{Creates an Amazon Web Services resource association with an Connect
+Customer instance}
 \usage{
 connect_create_integration_association(
   InstanceId,
@@ -16,31 +16,24 @@ connect_create_integration_association(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{IntegrationType}{[required] The type of information to be ingested.}
 
 \item{IntegrationArn}{[required] The Amazon Resource Name (ARN) of the integration.
 
-When integrating with Amazon Web Services End User Messaging, the Amazon
-Connect and Amazon Web Services End User Messaging instances must be in
-the same account.}
+When integrating with Amazon Web Services End User Messaging, the Connect Customer and Amazon Web Services End User Messaging instances must be in the same account.}
 
-\item{SourceApplicationUrl}{The URL for the external application. This field is only required for
-the EVENT integration type.}
+\item{SourceApplicationUrl}{The URL for the external application. This field is only required for the EVENT integration type.}
 
-\item{SourceApplicationName}{The name of the external application. This field is only required for
-the EVENT integration type.}
+\item{SourceApplicationName}{The name of the external application. This field is only required for the EVENT integration type.}
 
-\item{SourceType}{The type of the data source. This field is only required for the EVENT
-integration type.}
+\item{SourceType}{The type of the data source. This field is only required for the EVENT integration type.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
-Creates an Amazon Web Services resource association with an Amazon Connect instance.
+Creates an Amazon Web Services resource association with an Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_integration_association/} for full documentation.
 }

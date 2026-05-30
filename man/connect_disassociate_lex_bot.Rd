@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_disassociate_lex_bot}
 \alias{connect_disassociate_lex_bot}
-\title{This API is in preview release for Amazon Connect and is subject to
+\title{This API is in preview release for Connect Customer and is subject to
 change}
 \usage{
 connect_disassociate_lex_bot(
@@ -13,21 +13,16 @@ connect_disassociate_lex_bot(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{BotName}{[required] The name of the Amazon Lex bot. Maximum character limit of 50.}
 
-\item{LexRegion}{[required] The Amazon Web Services Region in which the Amazon Lex bot has been
-created.}
+\item{LexRegion}{[required] The Amazon Web Services Region in which the Amazon Lex bot has been created.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+This API is in preview release for Connect Customer and is subject to change.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_disassociate_lex_bot/} for full documentation.
 }

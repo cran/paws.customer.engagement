@@ -10,39 +10,34 @@ connect_create_routing_profile(
   Description,
   DefaultOutboundQueueId,
   QueueConfigs = NULL,
+  ManualAssignmentQueueConfigs = NULL,
   MediaConcurrencies,
   Tags = NULL,
   AgentAvailabilityTimer = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Name}{[required] The name of the routing profile. Must not be more than 127 characters.}
 
-\item{Description}{[required] Description of the routing profile. Must not be more than 250
-characters.}
+\item{Description}{[required] Description of the routing profile. Must not be more than 250 characters.}
 
 \item{DefaultOutboundQueueId}{[required] The default outbound queue for the routing profile.}
 
-\item{QueueConfigs}{The inbound queues associated with the routing profile. If no queue is
-added, the agent can make only outbound calls.
+\item{QueueConfigs}{The inbound queues associated with the routing profile. If no queue is added, the agent can make only outbound calls.
 
-The limit of 10 array members applies to the maximum number of
-\code{RoutingProfileQueueConfig} objects that can be passed during a
-CreateRoutingProfile API request. It is different from the quota of 50
-queues per routing profile per instance that is listed in \href{https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html}{Amazon Connect service quotas}.}
+The limit of 10 array members applies to the maximum number of \code{RoutingProfileQueueConfig} objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in \href{https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html}{Connect Customer service quotas}.}
 
-\item{MediaConcurrencies}{[required] The channels that agents can handle in the Contact Control Panel (CCP)
-for this routing profile.}
+\item{ManualAssignmentQueueConfigs}{The manual assignment queues associated with the routing profile. If no queue is added, agents and supervisors can't pick or assign any contacts from this routing profile. The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in Connect Customer service quotas.
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+Note: Use this config for chat, email, and task contacts. It does not support voice contacts.}
 
-\item{AgentAvailabilityTimer}{Whether agents with this routing profile will have their routing order
-calculated based on \emph{longest idle time} or \emph{time since their last
-inbound contact}.}
+\item{MediaConcurrencies}{[required] The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.}
+
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+
+\item{AgentAvailabilityTimer}{Whether agents with this routing profile will have their routing order calculated based on \emph{longest idle time} or \emph{time since their last inbound contact}.}
 }
 \description{
 Creates a new routing profile.

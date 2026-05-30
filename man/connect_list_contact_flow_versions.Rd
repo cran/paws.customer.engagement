@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_contact_flow_versions}
 \alias{connect_list_contact_flow_versions}
-\title{Returns all the available versions for the specified Amazon Connect
+\title{Returns all the available versions for the specified Connect Customer
 instance and flow identifier}
 \usage{
 connect_list_contact_flow_versions(
@@ -13,19 +13,16 @@ connect_list_contact_flow_versions(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{ContactFlowId}{[required] The identifier of the flow.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{MaxResults}{The maximum number of results to return per page. The default MaxResult
-size is 100.}
+\item{MaxResults}{The maximum number of results to return per page. The default MaxResult size is 100.}
 }
 \description{
-Returns all the available versions for the specified Amazon Connect instance and flow identifier.
+Returns all the available versions for the specified Connect Customer instance and flow identifier.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_contact_flow_versions/} for full documentation.
 }

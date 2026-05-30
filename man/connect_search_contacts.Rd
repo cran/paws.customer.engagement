@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_search_contacts}
 \alias{connect_search_contacts}
-\title{Searches contacts in an Amazon Connect instance}
+\title{Searches contacts in an Connect Customer instance}
 \usage{
 connect_search_contacts(
   InstanceId,
@@ -14,8 +14,7 @@ connect_search_contacts(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of Amazon Connect instance. You can find the instance ID
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.}
 
 \item{TimeRange}{[required] Time range that you want to search results.}
 
@@ -23,14 +22,12 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{Sort}{Specifies a field to sort by and a sort order.}
 }
 \description{
-Searches contacts in an Amazon Connect instance.
+Searches contacts in an Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_search_contacts/} for full documentation.
 }

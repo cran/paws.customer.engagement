@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_view_versions}
 \alias{connect_list_view_versions}
-\title{Returns all the available versions for the specified Amazon Connect
+\title{Returns all the available versions for the specified Connect Customer
 instance and view identifier}
 \usage{
 connect_list_view_versions(
@@ -13,20 +13,16 @@ connect_list_view_versions(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.}
 
 \item{ViewId}{[required] The identifier of the view. Both \code{ViewArn} and \code{ViewId} can be used.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{MaxResults}{The maximum number of results to return per page. The default MaxResult
-size is 100.}
+\item{MaxResults}{The maximum number of results to return per page. The default MaxResult size is 100.}
 }
 \description{
-Returns all the available versions for the specified Amazon Connect instance and view identifier.
+Returns all the available versions for the specified Connect Customer instance and view identifier.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_view_versions/} for full documentation.
 }

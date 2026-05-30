@@ -9,8 +9,7 @@ pinpointsmsvoicev2_release_sender_id(SenderId, IsoCountryCode)
 \arguments{
 \item{SenderId}{[required] The sender ID to release.}
 
-\item{IsoCountryCode}{[required] The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-region.}
+\item{IsoCountryCode}{[required] The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.}
 }
 \description{
 Releases an existing sender ID in your account.

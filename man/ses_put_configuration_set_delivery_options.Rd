@@ -12,8 +12,7 @@ ses_put_configuration_set_delivery_options(
 \arguments{
 \item{ConfigurationSetName}{[required] The name of the configuration set.}
 
-\item{DeliveryOptions}{Specifies whether messages that use the configuration set are required
-to use Transport Layer Security (TLS).}
+\item{DeliveryOptions}{Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).}
 }
 \description{
 Adds or updates the delivery options for a configuration set.

@@ -7,9 +7,9 @@
 connectcampaignservicev2_update_campaign_source(id, source)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{source}{[required]}
+\item{source}{[required] Source of the campaign}
 }
 \description{
 Updates the campaign source with a campaign. This API is idempotent.

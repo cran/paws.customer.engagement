@@ -8,10 +8,7 @@ addresses}
 sesv2_put_account_dedicated_ip_warmup_attributes(AutoWarmupEnabled = NULL)
 }
 \arguments{
-\item{AutoWarmupEnabled}{Enables or disables the automatic warm-up feature for dedicated IP
-addresses that are associated with your Amazon SES account in the
-current Amazon Web Services Region. Set to \code{true} to enable the
-automatic warm-up feature, or set to \code{false} to disable it.}
+\item{AutoWarmupEnabled}{Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to \code{true} to enable the automatic warm-up feature, or set to \code{false} to disable it.}
 }
 \description{
 Enable or disable the automatic warm-up feature for dedicated IP addresses.

@@ -2,18 +2,17 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_delete_contact_flow}
 \alias{connect_delete_contact_flow}
-\title{Deletes a flow for the specified Amazon Connect instance}
+\title{Deletes a flow for the specified Connect Customer instance}
 \usage{
 connect_delete_contact_flow(InstanceId, ContactFlowId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{ContactFlowId}{[required] The identifier of the flow.}
 }
 \description{
-Deletes a flow for the specified Amazon Connect instance.
+Deletes a flow for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_delete_contact_flow/} for full documentation.
 }

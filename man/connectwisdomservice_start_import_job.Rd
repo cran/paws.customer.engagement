@@ -17,28 +17,21 @@ connectwisdomservice_start_import_job(
 \arguments{
 \item{clientToken}{The tags used to organize, track, or control access for this resource.}
 
-\item{externalSourceConfiguration}{The configuration information of the external source that the resource
-data are imported from.}
+\item{externalSourceConfiguration}{The configuration information of the external source that the resource data are imported from.}
 
 \item{importJobType}{[required] The type of the import job.
 \itemize{
-\item For importing quick response resource, set the value to
-\code{QUICK_RESPONSES}.
+\item For importing quick response resource, set the value to \code{QUICK_RESPONSES}.
 }}
 
-\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should not be a
-QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-resource to it. Can be either the ID or the ARN. URLs cannot contain the
-ARN.
+\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.
 \itemize{
-\item For importing Wisdom quick responses, this should be a
-\code{QUICK_RESPONSES} type knowledge base.
+\item For importing Wisdom quick responses, this should be a \code{QUICK_RESPONSES} type knowledge base.
 }}
 
 \item{metadata}{The metadata fields of the imported Wisdom resources.}
 
-\item{uploadId}{[required] A pointer to the uploaded asset. This value is returned by
-\code{\link[=connectwisdomservice_start_content_upload]{start_content_upload}}.}
+\item{uploadId}{[required] A pointer to the uploaded asset. This value is returned by \code{\link[=connectwisdomservice_start_content_upload]{start_content_upload}}.}
 }
 \description{
 Start an asynchronous job to import Wisdom resources from an uploaded source file. Before calling this API, use \code{\link[=connectwisdomservice_start_content_upload]{start_content_upload}} to upload an asset that contains the resource data.

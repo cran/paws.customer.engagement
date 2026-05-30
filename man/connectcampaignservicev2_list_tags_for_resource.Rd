@@ -7,7 +7,7 @@
 connectcampaignservicev2_list_tags_for_resource(arn)
 }
 \arguments{
-\item{arn}{[required]}
+\item{arn}{[required] Amazon Resource Names(ARN)}
 }
 \description{
 List tags for a resource.

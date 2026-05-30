@@ -9,7 +9,7 @@ pinpoint_verify_otp_message(ApplicationId, VerifyOTPMessageRequestParameters)
 \arguments{
 \item{ApplicationId}{[required] The unique ID of your Amazon Pinpoint application.}
 
-\item{VerifyOTPMessageRequestParameters}{[required]}
+\item{VerifyOTPMessageRequestParameters}{[required] Verify OTP message request.}
 }
 \description{
 Verify an OTP

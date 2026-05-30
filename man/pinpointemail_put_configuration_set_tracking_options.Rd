@@ -11,8 +11,7 @@ pinpointemail_put_configuration_set_tracking_options(
 )
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The name of the configuration set that you want to add a custom tracking
-domain to.}
+\item{ConfigurationSetName}{[required] The name of the configuration set that you want to add a custom tracking domain to.}
 
 \item{CustomRedirectDomain}{The domain that you want to use to track open and click events.}
 }

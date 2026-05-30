@@ -16,23 +16,19 @@ connect_start_outbound_email_contact(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ContactId}{[required] The identifier of the contact in this instance of Amazon Connect.}
+\item{ContactId}{[required] The identifier of the contact in this instance of Connect Customer.}
 
-\item{FromEmailAddress}{The email address associated with the instance.}
+\item{FromEmailAddress}{The email address associated with the Connect Customer instance.}
 
 \item{DestinationEmailAddress}{[required] The email address of the customer.}
 
-\item{AdditionalRecipients}{The addtional recipients address of email in CC.}
+\item{AdditionalRecipients}{The additional recipients address of email in CC.}
 
 \item{EmailMessage}{[required] The email message body to be sent to the newly created email.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 }
 \description{
 Initiates a flow to send an agent reply or outbound email contact (created from the CreateContact API) to a customer.

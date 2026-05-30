@@ -13,12 +13,9 @@ pinpointsmsvoicev2_create_configuration_set(
 \arguments{
 \item{ConfigurationSetName}{[required] The name to use for the new configuration set.}
 
-\item{Tags}{An array of key and value pair tags that's associated with the new
-configuration set.}
+\item{Tags}{An array of key and value pair tags that's associated with the new configuration set.}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don't specify a client token, a
-randomly generated token is used for the request to ensure idempotency.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.}
 }
 \description{
 Creates a new configuration set. After you create the configuration set, you can add one or more event destinations to it.

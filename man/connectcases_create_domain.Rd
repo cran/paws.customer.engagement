@@ -8,8 +8,7 @@ fields, templates and layouts}
 connectcases_create_domain(name)
 }
 \arguments{
-\item{name}{[required] The name for your Cases domain. It must be unique for your Amazon Web
-Services account.}
+\item{name}{[required] The name for your Cases domain. It must be unique for your Amazon Web Services account.}
 }
 \description{
 Creates a domain, which is a container for all case data, such as cases, fields, templates and layouts. Each Amazon Connect instance can be associated with only one Cases domain.

@@ -13,9 +13,7 @@ connectcases_get_case(caseId, domainId, fields, nextToken = NULL)
 
 \item{fields}{[required] A list of unique field identifiers.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Returns information about a specific case if it exists.

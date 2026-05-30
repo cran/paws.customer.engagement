@@ -10,8 +10,7 @@ connect_dismiss_user_contact(UserId, InstanceId, ContactId)
 \arguments{
 \item{UserId}{[required] The identifier of the user account.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.}
 
 \item{ContactId}{[required] The identifier of the contact.}
 }

@@ -9,8 +9,7 @@ connectcases_put_case_event_configuration(domainId, eventBridge)
 \arguments{
 \item{domainId}{[required] The unique identifier of the Cases domain.}
 
-\item{eventBridge}{[required] Configuration to enable EventBridge case event delivery and determine
-what data is delivered.}
+\item{eventBridge}{[required] Configuration to enable EventBridge case event delivery and determine what data is delivered.}
 }
 \description{
 Adds case event publishing configuration. For a complete list of fields you can add to the event message, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html}{Create case fields} in the \emph{Amazon Connect Administrator Guide}

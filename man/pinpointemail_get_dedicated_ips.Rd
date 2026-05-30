@@ -12,17 +12,11 @@ pinpointemail_get_dedicated_ips(
 )
 }
 \arguments{
-\item{PoolName}{The name of the IP pool that the dedicated IP address is associated
-with.}
+\item{PoolName}{The name of the IP pool that the dedicated IP address is associated with.}
 
-\item{NextToken}{A token returned from a previous call to
-\code{\link[=pinpointemail_get_dedicated_ips]{get_dedicated_ips}} to indicate the
-position of the dedicated IP pool in the list of IP pools.}
+\item{NextToken}{A token returned from a previous call to \code{\link[=pinpointemail_get_dedicated_ips]{get_dedicated_ips}} to indicate the position of the dedicated IP pool in the list of IP pools.}
 
-\item{PageSize}{The number of results to show in a single call to
-\code{GetDedicatedIpsRequest}. If the number of results is larger than the
-number you specified in this parameter, then the response includes a
-\code{NextToken} element, which you can use to obtain additional results.}
+\item{PageSize}{The number of results to show in a single call to \code{GetDedicatedIpsRequest}. If the number of results is larger than the number you specified in this parameter, then the response includes a \code{NextToken} element, which you can use to obtain additional results.}
 }
 \description{
 List the dedicated IP addresses that are associated with your Amazon Pinpoint account.

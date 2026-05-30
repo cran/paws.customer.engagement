@@ -8,11 +8,9 @@ account in the current region}
 pinpointsmsvoice_list_configuration_sets(NextToken = NULL, PageSize = NULL)
 }
 \arguments{
-\item{NextToken}{A token returned from a previous call to the API that indicates the
-position in the list of results.}
+\item{NextToken}{A token returned from a previous call to the API that indicates the position in the list of results.}
 
-\item{PageSize}{Used to specify the number of items that should be returned in the
-response.}
+\item{PageSize}{Used to specify the number of items that should be returned in the response.}
 }
 \description{
 List all of the configuration sets associated with your Amazon Pinpoint account in the current region.

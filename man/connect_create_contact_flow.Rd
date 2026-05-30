@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_contact_flow}
 \alias{connect_create_contact_flow}
-\title{Creates a flow for the specified Amazon Connect instance}
+\title{Creates a flow for the specified Connect Customer instance}
 \usage{
 connect_create_contact_flow(
   InstanceId,
@@ -15,31 +15,24 @@ connect_create_contact_flow(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{Name}{[required] The name of the flow.}
 
-\item{Type}{[required] The type of the flow. For descriptions of the available types, see
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types}{Choose a flow type}
-in the \emph{Amazon Connect Administrator Guide}.}
+\item{Type}{[required] The type of the flow. For descriptions of the available types, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types}{Choose a flow type} in the \emph{Connect Customer Administrator Guide}.}
 
 \item{Description}{The description of the flow.}
 
-\item{Content}{[required] The JSON string that represents the content of the flow. For an example,
-see \href{https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html}{Example flow in Amazon Connect Flow language}.
+\item{Content}{[required] The JSON string that represents the content of the flow. For an example, see \href{https://docs.aws.amazon.com/connect/latest/devguide/flow-language-example.html}{Example flow in Connect Customer Flow language}.
 
 Length Constraints: Minimum length of 1. Maximum length of 256000.}
 
-\item{Status}{Indicates the flow status as either \code{SAVED} or \code{PUBLISHED}. The
-\code{PUBLISHED} status will initiate validation on the content. the \code{SAVED}
-status does not initiate validation of the content. \code{SAVED} |
-\code{PUBLISHED}.}
+\item{Status}{Indicates the flow status as either \code{SAVED} or \code{PUBLISHED}. The \code{PUBLISHED} status will initiate validation on the content. the \code{SAVED} status does not initiate validation of the content. \code{SAVED} | \code{PUBLISHED}.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
-Creates a flow for the specified Amazon Connect instance.
+Creates a flow for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_contact_flow/} for full documentation.
 }

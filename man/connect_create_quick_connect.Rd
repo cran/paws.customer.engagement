@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_quick_connect}
 \alias{connect_create_quick_connect}
-\title{Creates a quick connect for the specified Amazon Connect instance}
+\title{Creates a quick connect for the specified Connect Customer instance}
 \usage{
 connect_create_quick_connect(
   InstanceId,
@@ -13,8 +13,7 @@ connect_create_quick_connect(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Name}{[required] A unique name of the quick connect.}
 
@@ -22,11 +21,10 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{QuickConnectConfig}{[required] Configuration settings for the quick connect.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
-Creates a quick connect for the specified Amazon Connect instance.
+Creates a quick connect for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_quick_connect/} for full documentation.
 }

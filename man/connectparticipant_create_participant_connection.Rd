@@ -11,19 +11,13 @@ connectparticipant_create_participant_connection(
 )
 }
 \arguments{
-\item{Type}{Type of connection information required. If you need
-\code{CONNECTION_CREDENTIALS} along with marking participant as connected,
-pass \code{CONNECTION_CREDENTIALS} in \code{Type}.}
+\item{Type}{Type of connection information required. If you need \code{CONNECTION_CREDENTIALS} along with marking participant as connected, pass \code{CONNECTION_CREDENTIALS} in \code{Type}.}
 
 \item{ParticipantToken}{[required] This is a header parameter.
 
-The ParticipantToken as obtained from
-\href{https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html}{StartChatContact}
-API response.}
+The ParticipantToken as obtained from \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html}{StartChatContact} API response.}
 
-\item{ConnectParticipant}{Amazon Connect Participant is used to mark the participant as connected
-for customer participant in message streaming, as well as for agent or
-manager participant in non-streaming chats.}
+\item{ConnectParticipant}{Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.}
 }
 \description{
 Creates the participant's connection.

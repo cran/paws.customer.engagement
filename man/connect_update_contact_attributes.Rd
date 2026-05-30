@@ -8,31 +8,18 @@ specified contact}
 connect_update_contact_attributes(InitialContactId, InstanceId, Attributes)
 }
 \arguments{
-\item{InitialContactId}{[required] The identifier of the contact. This is the identifier of the contact
-associated with the first interaction with the contact center.}
+\item{InitialContactId}{[required] The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{Attributes}{[required] The Amazon Connect attributes. These attributes can be accessed in flows
-just like any other contact attributes.
+\item{Attributes}{[required] The Connect Customer attributes. These attributes can be accessed in flows just like any other contact attributes.
 
-You can have up to 32,768 UTF-8 bytes across all attributes for a
-contact. Attribute keys can include only alphanumeric, dash, and
-underscore characters.
+You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.
 
-In the \href{https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html}{Set contact attributes}
-block, when the attributes for a contact exceed 32 KB, the contact is
-routed down the Error branch of the flow. As a mitigation, consider the
-following options:
+In the \href{https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html}{Set contact attributes} block, when the attributes for a contact exceed 32 KB, the contact is routed down the Error branch of the flow. As a mitigation, consider the following options:
 \itemize{
 \item Remove unnecessary attributes by setting their values to empty.
-\item If the attributes are only used in one flow and don't need to be
-referred to outside of that flow (for example, by a Lambda or
-another flow), then use flow attributes. This way you aren't
-needlessly persisting the 32 KB of information from one flow to
-another. For more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html}{Flow block: Set contact attributes}
-in the \emph{Amazon Connect Administrator Guide}.
+\item If the attributes are only used in one flow and don't need to be referred to outside of that flow (for example, by a Lambda or another flow), then use flow attributes. This way you aren't needlessly persisting the 32 KB of information from one flow to another. For more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html}{Flow block: Set contact attributes} in the \emph{Connect Customer Administrator Guide}.
 }}
 }
 \description{

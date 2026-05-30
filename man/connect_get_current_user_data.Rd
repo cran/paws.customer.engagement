@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_get_current_user_data}
 \alias{connect_get_current_user_data}
-\title{Gets the real-time active user data from the specified Amazon Connect
+\title{Gets the real-time active user data from the specified Connect Customer
 instance}
 \usage{
 connect_get_current_user_data(
@@ -13,11 +13,9 @@ connect_get_current_user_data(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{Filters}{[required] The filters to apply to returned user data. You can filter up to the
-following limits:
+\item{Filters}{[required] The filters to apply to returned user data. You can filter up to the following limits:
 \itemize{
 \item Queues: 100
 \item Routing profiles: 100
@@ -26,21 +24,16 @@ following limits:
 \item User hierarchy groups: 1
 }
 
-The user data is retrieved for only the specified values/resources in
-the filter. A maximum of one filter can be passed from queues, routing
-profiles, agents, and user hierarchy groups.
+The user data is retrieved for only the specified values/resources in the filter. A maximum of one filter can be passed from queues, routing profiles, agents, and user hierarchy groups.
 
-Currently tagging is only supported on the resources that are passed in
-the filter.}
+Currently tagging is only supported on the resources that are passed in the filter.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 }
 \description{
-Gets the real-time active user data from the specified Amazon Connect instance.
+Gets the real-time active user data from the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_get_current_user_data/} for full documentation.
 }

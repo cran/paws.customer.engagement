@@ -2,22 +2,20 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_get_task_template}
 \alias{connect_get_task_template}
-\title{Gets details about a specific task template in the specified Amazon
-Connect instance}
+\title{Gets details about a specific task template in the specified Connect
+Customer instance}
 \usage{
 connect_get_task_template(InstanceId, TaskTemplateId, SnapshotVersion = NULL)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{TaskTemplateId}{[required] A unique identifier for the task template.}
 
-\item{SnapshotVersion}{The system generated version of a task template that is associated with
-a task, when the task is created.}
+\item{SnapshotVersion}{The system generated version of a task template that is associated with a task, when the task is created.}
 }
 \description{
-Gets details about a specific task template in the specified Amazon Connect instance.
+Gets details about a specific task template in the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_get_task_template/} for full documentation.
 }

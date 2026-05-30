@@ -10,8 +10,7 @@ sesv2_delete_configuration_set_event_destination(
 )
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The name of the configuration set that contains the event destination to
-delete.}
+\item{ConfigurationSetName}{[required] The name of the configuration set that contains the event destination to delete.}
 
 \item{EventDestinationName}{[required] The name of the event destination to delete.}
 }

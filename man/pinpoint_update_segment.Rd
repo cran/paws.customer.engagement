@@ -9,12 +9,11 @@ with an application}
 pinpoint_update_segment(ApplicationId, SegmentId, WriteSegmentRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
 \item{SegmentId}{[required] The unique identifier for the segment.}
 
-\item{WriteSegmentRequest}{[required]}
+\item{WriteSegmentRequest}{[required] Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.}
 }
 \description{
 Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that's associated with an application.

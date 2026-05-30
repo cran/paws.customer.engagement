@@ -11,17 +11,11 @@ pinpointemail_put_configuration_set_delivery_options(
 )
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The name of the configuration set that you want to associate with a
-dedicated IP pool.}
+\item{ConfigurationSetName}{[required] The name of the configuration set that you want to associate with a dedicated IP pool.}
 
-\item{TlsPolicy}{Specifies whether messages that use the configuration set are required
-to use Transport Layer Security (TLS). If the value is \code{Require},
-messages are only delivered if a TLS connection can be established. If
-the value is \code{Optional}, messages can be delivered in plain text if a
-TLS connection can't be established.}
+\item{TlsPolicy}{Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is \code{Require}, messages are only delivered if a TLS connection can be established. If the value is \code{Optional}, messages can be delivered in plain text if a TLS connection can't be established.}
 
-\item{SendingPoolName}{The name of the dedicated IP pool that you want to associate with the
-configuration set.}
+\item{SendingPoolName}{The name of the dedicated IP pool that you want to associate with the configuration set.}
 }
 \description{
 Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools to create groups of dedicated IP addresses for sending specific types of email.

@@ -12,7 +12,7 @@ connect_update_contact_flow_name(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{ContactFlowId}{[required] The identifier of the flow.}
 

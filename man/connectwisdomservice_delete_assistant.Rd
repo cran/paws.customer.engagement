@@ -7,8 +7,7 @@
 connectwisdomservice_delete_assistant(assistantId)
 }
 \arguments{
-\item{assistantId}{[required] The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-URLs cannot contain the ARN.}
+\item{assistantId}{[required] The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 }
 \description{
 Deletes an assistant.

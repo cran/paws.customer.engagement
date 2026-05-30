@@ -13,21 +13,13 @@ pinpoint_list_template_versions(
 )
 }
 \arguments{
-\item{NextToken}{The string that specifies which page of results to return in a paginated
-response. This parameter is not supported for application, campaign, and
-journey metrics.}
+\item{NextToken}{The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.}
 
-\item{PageSize}{The maximum number of items to include in each page of a paginated
-response. This parameter is not supported for application, campaign, and
-journey metrics.}
+\item{PageSize}{The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.}
 
-\item{TemplateName}{[required] The name of the message template. A template name must start with an
-alphanumeric character and can contain a maximum of 128 characters. The
-characters can be alphanumeric characters, underscores (_), or hyphens
-(-). Template names are case sensitive.}
+\item{TemplateName}{[required] The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.}
 
-\item{TemplateType}{[required] The type of channel that the message template is designed for. Valid
-values are: EMAIL, PUSH, SMS, and VOICE.}
+\item{TemplateType}{[required] The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.}
 }
 \description{
 Retrieves information about all the versions of a specific message template.

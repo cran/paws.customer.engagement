@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_rules}
 \alias{connect_list_rules}
-\title{List all rules for the specified Amazon Connect instance}
+\title{List all rules for the specified Connect Customer instance}
 \usage{
 connect_list_rules(
   InstanceId,
@@ -13,8 +13,7 @@ connect_list_rules(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{PublishStatus}{The publish status of the rule.}
 
@@ -22,12 +21,10 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
-List all rules for the specified Amazon Connect instance.
+List all rules for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_rules/} for full documentation.
 }

@@ -7,8 +7,7 @@
 ses_get_identity_dkim_attributes(Identities)
 }
 \arguments{
-\item{Identities}{[required] A list of one or more verified identities - email addresses, domains, or
-both.}
+\item{Identities}{[required] A list of one or more verified identities - email addresses, domains, or both.}
 }
 \description{
 Returns the current status of Easy DKIM signing for an entity. For domain name identities, this operation also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.

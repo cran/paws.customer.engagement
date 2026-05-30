@@ -7,12 +7,11 @@
 connect_update_contact_flow_content(InstanceId, ContactFlowId, Content)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{ContactFlowId}{[required] The identifier of the flow.}
 
-\item{Content}{[required] The JSON string that represents the content of the flow. For an example,
-see \href{https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html}{Example flow in Amazon Connect Flow language}.
+\item{Content}{[required] The JSON string that represents the content of the flow. For an example, see \href{https://docs.aws.amazon.com/connect/latest/devguide/flow-language-example.html}{Example flow in Connect Customer Flow language}.
 
 Length Constraints: Minimum length of 1. Maximum length of 256000.}
 }

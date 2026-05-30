@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_evaluation_form_versions}
 \alias{connect_list_evaluation_form_versions}
-\title{Lists versions of an evaluation form in the specified Amazon Connect
+\title{Lists versions of an evaluation form in the specified Connect Customer
 instance}
 \usage{
 connect_list_evaluation_form_versions(
@@ -13,19 +13,16 @@ connect_list_evaluation_form_versions(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{EvaluationFormId}{[required] The unique identifier for the evaluation form.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
-Lists versions of an evaluation form in the specified Amazon Connect instance.
+Lists versions of an evaluation form in the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_evaluation_form_versions/} for full documentation.
 }

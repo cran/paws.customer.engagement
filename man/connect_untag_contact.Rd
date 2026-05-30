@@ -7,16 +7,14 @@
 connect_untag_contact(ContactId, InstanceId, TagKeys)
 }
 \arguments{
-\item{ContactId}{[required] The identifier of the contact in this instance of Amazon Connect.}
+\item{ContactId}{[required] The identifier of the contact in this instance of Connect Customer.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{TagKeys}{[required] A list of tag keys. Existing tags on the contact whose keys are members
-of this list will be removed.}
+\item{TagKeys}{[required] A list of tag keys. Existing tags on the contact whose keys are members of this list will be removed.}
 }
 \description{
-Removes the specified tags from the contact resource. For more information about this API is used, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html}{Set up granular billing for a detailed view of your Amazon Connect usage}.
+Removes the specified tags from the contact resource. For more information about this API is used, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html}{Set up granular billing for a detailed view of your Connect Customer usage}.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_untag_contact/} for full documentation.
 }

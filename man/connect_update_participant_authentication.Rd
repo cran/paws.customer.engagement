@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_update_participant_authentication}
 \alias{connect_update_participant_authentication}
-\title{Instructs Amazon Connect to resume the authentication process}
+\title{Instructs Connect Customer to resume the authentication process}
 \usage{
 connect_update_participant_authentication(
   State,
@@ -13,24 +13,18 @@ connect_update_participant_authentication(
 )
 }
 \arguments{
-\item{State}{[required] The \code{state} query parameter that was provided by Cognito in the
-\code{redirectUri}. This will also match the \code{state} parameter provided in
-the \code{AuthenticationUrl} from the
-\href{https://docs.aws.amazon.com/connect/latest/APIReference/}{GetAuthenticationUrl}
-response.}
+\item{State}{[required] The \code{state} query parameter that was provided by Cognito in the \code{redirectUri}. This will also match the \code{state} parameter provided in the \code{AuthenticationUrl} from the \href{https://docs.aws.amazon.com/connect/latest/APIReference/}{GetAuthenticationUrl} response.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Code}{The \code{code} query parameter provided by Cognito in the \code{redirectUri}.}
 
 \item{Error}{The \code{error} query parameter provided by Cognito in the \code{redirectUri}.}
 
-\item{ErrorDescription}{The \code{error_description} parameter provided by Cognito in the
-\code{redirectUri}.}
+\item{ErrorDescription}{The \code{error_description} parameter provided by Cognito in the \code{redirectUri}.}
 }
 \description{
-Instructs Amazon Connect to resume the authentication process. The subsequent actions depend on the request body contents:
+Instructs Connect Customer to resume the authentication process. The subsequent actions depend on the request body contents:
 
 See \url{https://www.paws-r-sdk.com/docs/connect_update_participant_authentication/} for full documentation.
 }

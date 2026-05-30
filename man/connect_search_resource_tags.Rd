@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_search_resource_tags}
 \alias{connect_search_resource_tags}
-\title{Searches tags used in an Amazon Connect instance using optional search
+\title{Searches tags used in an Connect Customer instance using optional search
 criteria}
 \usage{
 connect_search_resource_tags(
@@ -14,12 +14,9 @@ connect_search_resource_tags(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ResourceTypes}{The list of resource types to be used to search tags from. If not
-provided or if any empty list is provided, this API will search from all
-supported resource types. Note that lowercase and - are required.
+\item{ResourceTypes}{The list of resource types to be used to search tags from. If not provided or if any empty list is provided, this API will search from all supported resource types. Note that lowercase and - are required.
 
 \strong{Supported resource types}
 \itemize{
@@ -35,16 +32,14 @@ supported resource types. Note that lowercase and - are required.
 \item transfer-destination (also known as quick connect)
 }}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
 \item{SearchCriteria}{The search criteria to be used to return tags.}
 }
 \description{
-Searches tags used in an Amazon Connect instance using optional search criteria.
+Searches tags used in an Connect Customer instance using optional search criteria.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_search_resource_tags/} for full documentation.
 }

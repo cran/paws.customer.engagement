@@ -8,9 +8,7 @@ recommender model}
 pinpoint_get_recommender_configuration(RecommenderId)
 }
 \arguments{
-\item{RecommenderId}{[required] The unique identifier for the recommender model configuration. This
-identifier is displayed as the \strong{Recommender ID} on the Amazon Pinpoint
-console.}
+\item{RecommenderId}{[required] The unique identifier for the recommender model configuration. This identifier is displayed as the \strong{Recommender ID} on the Amazon Pinpoint console.}
 }
 \description{
 Retrieves information about an Amazon Pinpoint configuration for a recommender model.

@@ -2,8 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_queue_quick_connects}
 \alias{connect_list_queue_quick_connects}
-\title{This API is in preview release for Amazon Connect and is subject to
-change}
+\title{Lists the quick connects associated with a queue}
 \usage{
 connect_list_queue_quick_connects(
   InstanceId,
@@ -13,20 +12,16 @@ connect_list_queue_quick_connects(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{QueueId}{[required] The identifier for the queue.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{MaxResults}{The maximum number of results to return per page. The default MaxResult
-size is 100.}
+\item{MaxResults}{The maximum number of results to return per page. The default MaxResult size is 100.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+Lists the quick connects associated with a queue.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_queue_quick_connects/} for full documentation.
 }

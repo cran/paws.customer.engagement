@@ -13,11 +13,9 @@ pinpointsmsvoicev2_update_sender_id(
 \arguments{
 \item{SenderId}{[required] The sender ID to update.}
 
-\item{IsoCountryCode}{[required] The two-character code, in ISO 3166-1 alpha-2 format, for the country or
-region.}
+\item{IsoCountryCode}{[required] The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.}
 
-\item{DeletionProtectionEnabled}{By default this is set to false. When set to true the sender ID can't be
-deleted.}
+\item{DeletionProtectionEnabled}{By default this is set to false. When set to true the sender ID can't be deleted.}
 }
 \description{
 Updates the configuration of an existing sender ID.

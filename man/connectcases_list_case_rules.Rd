@@ -11,9 +11,7 @@ connectcases_list_case_rules(domainId, maxResults = NULL, nextToken = NULL)
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Lists all case rules in a Cases domain. In the Amazon Connect admin website, case rules are known as \emph{case field conditions}. For more information about case field conditions, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html}{Add case field conditions to a case template}.

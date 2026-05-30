@@ -12,11 +12,11 @@ connectcampaignservicev2_list_connect_instance_integrations(
 )
 }
 \arguments{
-\item{connectInstanceId}{[required]}
+\item{connectInstanceId}{[required] Amazon Connect Instance Id}
 
-\item{maxResults}{}
+\item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{}
+\item{nextToken}{The token for the next set of results.}
 }
 \description{
 Provides summary information about the integration under the specified Connect instance.

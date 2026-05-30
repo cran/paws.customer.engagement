@@ -13,12 +13,9 @@ pinpointsmsvoicev2_create_opt_out_list(
 \arguments{
 \item{OptOutListName}{[required] The name of the new OptOutList.}
 
-\item{Tags}{An array of tags (key and value pairs) to associate with the new
-OptOutList.}
+\item{Tags}{An array of tags (key and value pairs) to associate with the new OptOutList.}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don't specify a client token, a
-randomly generated token is used for the request to ensure idempotency.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.}
 }
 \description{
 Creates a new opt-out list.

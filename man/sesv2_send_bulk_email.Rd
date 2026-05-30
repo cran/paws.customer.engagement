@@ -14,60 +14,42 @@ sesv2_send_bulk_email(
   DefaultContent,
   BulkEmailEntries,
   ConfigurationSetName = NULL,
-  EndpointId = NULL
+  EndpointId = NULL,
+  TenantName = NULL
 )
 }
 \arguments{
-\item{FromEmailAddress}{The email address to use as the "From" address for the email. The
-address that you specify has to be verified.}
+\item{FromEmailAddress}{The email address to use as the "From" address for the email. The address that you specify has to be verified.}
 
-\item{FromEmailAddressIdentityArn}{This parameter is used only for sending authorization. It is the ARN of
-the identity that is associated with the sending authorization policy
-that permits you to use the email address specified in the
-\code{FromEmailAddress} parameter.
+\item{FromEmailAddressIdentityArn}{This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the \code{FromEmailAddress} parameter.
 
-For example, if the owner of example.com (which has ARN
-arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a
-policy to it that authorizes you to use sender@example.com, then you
-would specify the \code{FromEmailAddressIdentityArn} to be
-arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-\code{FromEmailAddress} to be sender@example.com.
+For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the \code{FromEmailAddressIdentityArn} to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the \code{FromEmailAddress} to be sender@example.com.
 
 For more information about sending authorization, see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html}{Amazon SES Developer Guide}.}
 
-\item{ReplyToAddresses}{The "Reply-to" email addresses for the message. When the recipient
-replies to the message, each Reply-to address receives the reply.}
+\item{ReplyToAddresses}{The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.}
 
-\item{FeedbackForwardingEmailAddress}{The address that you want bounce and complaint notifications to be sent
-to.}
+\item{FeedbackForwardingEmailAddress}{The address that you want bounce and complaint notifications to be sent to.}
 
-\item{FeedbackForwardingEmailAddressIdentityArn}{This parameter is used only for sending authorization. It is the ARN of
-the identity that is associated with the sending authorization policy
-that permits you to use the email address specified in the
-\code{FeedbackForwardingEmailAddress} parameter.
+\item{FeedbackForwardingEmailAddressIdentityArn}{This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the \code{FeedbackForwardingEmailAddress} parameter.
 
-For example, if the owner of example.com (which has ARN
-arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a
-policy to it that authorizes you to use feedback@example.com, then you
-would specify the \code{FeedbackForwardingEmailAddressIdentityArn} to be
-arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-\code{FeedbackForwardingEmailAddress} to be feedback@example.com.
+For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the \code{FeedbackForwardingEmailAddressIdentityArn} to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the \code{FeedbackForwardingEmailAddress} to be feedback@example.com.
 
 For more information about sending authorization, see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html}{Amazon SES Developer Guide}.}
 
-\item{DefaultEmailTags}{A list of tags, in the form of name/value pairs, to apply to an email
-that you send using the \code{\link[=sesv2_send_email]{send_email}} operation. Tags
-correspond to characteristics of the email that you define, so that you
-can publish email sending events.}
+\item{DefaultEmailTags}{A list of tags, in the form of name/value pairs, to apply to an email that you send using the \code{\link[=sesv2_send_email]{send_email}} operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.}
 
-\item{DefaultContent}{[required] An object that contains the body of the message. You can specify a
-template message.}
+\item{DefaultContent}{[required] An object that contains the body of the message. You can specify a template message.}
 
 \item{BulkEmailEntries}{[required] The list of bulk email entry objects.}
 
 \item{ConfigurationSetName}{The name of the configuration set to use when sending the email.}
 
 \item{EndpointId}{The ID of the multi-region endpoint (global-endpoint).}
+
+\item{TenantName}{The name of the tenant through which this bulk email will be sent.
+
+The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.}
 }
 \description{
 Composes an email message to multiple destinations.

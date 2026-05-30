@@ -7,8 +7,7 @@
 connect_disassociate_user_proficiencies(InstanceId, UserId, UserProficiencies)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the instance
-ID in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.}
 
 \item{UserId}{[required] The identifier of the user account.}
 

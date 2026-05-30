@@ -2,8 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_agent_status}
 \alias{connect_create_agent_status}
-\title{This API is in preview release for Amazon Connect and is subject to
-change}
+\title{Creates an agent status for the specified Connect Customer instance}
 \usage{
 connect_create_agent_status(
   InstanceId,
@@ -15,8 +14,7 @@ connect_create_agent_status(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Name}{[required] The name of the status.}
 
@@ -26,11 +24,10 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{DisplayOrder}{The display order of the status.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+Creates an agent status for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_agent_status/} for full documentation.
 }

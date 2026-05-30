@@ -18,74 +18,47 @@ connect_start_outbound_voice_contact(
   Attributes = NULL,
   AnswerMachineDetectionConfig = NULL,
   CampaignId = NULL,
-  TrafficType = NULL
+  TrafficType = NULL,
+  OutboundStrategy = NULL,
+  RingTimeoutInSeconds = NULL
 )
 }
 \arguments{
-\item{Name}{The name of a voice contact that is shown to an agent in the Contact
-Control Panel (CCP).}
+\item{Name}{The name of a voice contact that is shown to an agent in the Contact Control Panel (CCP).}
 
-\item{Description}{A description of the voice contact that is shown to an agent in the
-Contact Control Panel (CCP).}
+\item{Description}{A description of the voice contact that appears in the agent's snapshot in the CCP logs. For more information about CCP logs, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/download-ccp-logs.html}{Download and review CCP logs} in the \emph{Connect Customer Administrator Guide}.}
 
-\item{References}{A formatted URL that is shown to an agent in the Contact Control Panel
-(CCP). Contacts can have the following reference types at the time of
-creation: \code{URL} | \code{NUMBER} | \code{STRING} | \code{DATE} | \code{EMAIL}. \code{ATTACHMENT}
-is not a supported reference type during voice contact creation.}
+\item{References}{A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Contacts can have the following reference types at the time of creation: \code{URL} | \code{NUMBER} | \code{STRING} | \code{DATE} | \code{EMAIL}. \code{ATTACHMENT} is not a supported reference type during voice contact creation.}
 
-\item{RelatedContactId}{The \code{contactId} that is related to this contact. Linking voice, task, or
-chat by using \code{RelatedContactID} copies over contact attributes from the
-related contact to the new contact. All updates to user-defined
-attributes in the new contact are limited to the individual contact ID.
-There are no limits to the number of contacts that can be linked by
-using \code{RelatedContactId}.}
+\item{RelatedContactId}{The \code{contactId} that is related to this contact. Linking voice, task, or chat by using \code{RelatedContactID} copies over contact attributes from the related contact to the new contact. All updates to user-defined attributes in the new contact are limited to the individual contact ID. There are no limits to the number of contacts that can be linked by using \code{RelatedContactId}.}
 
 \item{DestinationPhoneNumber}{[required] The phone number of the customer, in E.164 format.}
 
-\item{ContactFlowId}{[required] The identifier of the flow for the outbound call. To see the
-ContactFlowId in the Amazon Connect admin website, on the navigation
-menu go to \strong{Routing}, \strong{Contact Flows}. Choose the flow. On the flow
-page, under the name of the flow, choose \strong{Show additional flow
-information}. The ContactFlowId is the last part of the ARN, shown here
-in bold:
+\item{ContactFlowId}{[required] The identifier of the flow for the outbound call. To see the ContactFlowId in the Connect Customer admin website, on the navigation menu go to \strong{Routing}, \strong{Contact Flows}. Choose the flow. On the flow page, under the name of the flow, choose \strong{Show additional flow information}. The ContactFlowId is the last part of the ARN, shown here in bold:
 
 arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/\strong{846ec553-a005-41c0-8341-xxxxxxxxxxxx}}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.
-The token is valid for 7 days after creation. If a contact is already
-started, the contact ID is returned.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}. The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.}
 
-\item{SourcePhoneNumber}{The phone number associated with the Amazon Connect instance, in E.164
-format. If you do not specify a source phone number, you must specify a
-queue.}
+\item{SourcePhoneNumber}{The phone number associated with the Connect Customer instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.}
 
-\item{QueueId}{The queue for the call. If you specify a queue, the phone displayed for
-caller ID is the phone number specified in the queue. If you do not
-specify a queue, the queue defined in the flow is used. If you do not
-specify a queue, you must specify a source phone number.}
+\item{QueueId}{The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the flow is used. If you do not specify a queue, you must specify a source phone number.}
 
-\item{Attributes}{A custom key-value pair using an attribute map. The attributes are
-standard Amazon Connect attributes, and can be accessed in flows just
-like any other contact attributes.
+\item{Attributes}{A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.
 
-There can be up to 32,768 UTF-8 bytes across all key-value pairs per
-contact. Attribute keys can include only alphanumeric, dash, and
-underscore characters.}
+There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.}
 
 \item{AnswerMachineDetectionConfig}{Configuration of the answering machine detection for this outbound call.}
 
 \item{CampaignId}{The campaign identifier of the outbound communication.}
 
-\item{TrafficType}{Denotes the class of traffic. Calls with different traffic types are
-handled differently by Amazon Connect. The default value is \code{GENERAL}.
-Use \code{CAMPAIGN} if \code{EnableAnswerMachineDetection} is set to \code{true}. For
-all other cases, use \code{GENERAL}.}
+\item{TrafficType}{Denotes the class of traffic. Calls with different traffic types are handled differently by Connect Customer. The default value is \code{GENERAL}. Use \code{CAMPAIGN} if \code{EnableAnswerMachineDetection} is set to \code{true}. For all other cases, use \code{GENERAL}.}
+
+\item{OutboundStrategy}{Information about the outbound strategy.}
+
+\item{RingTimeoutInSeconds}{The maximum time the outbound call will wait for the destination to answer the call, in seconds}
 }
 \description{
 Places an outbound call to a contact, and then initiates the flow. It performs the actions in the flow that's specified (in \code{ContactFlowId}).

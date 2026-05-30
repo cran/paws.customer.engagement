@@ -9,12 +9,9 @@ ses_create_receipt_rule(RuleSetName, After = NULL, Rule)
 \arguments{
 \item{RuleSetName}{[required] The name of the rule set where the receipt rule is added.}
 
-\item{After}{The name of an existing rule after which the new rule is placed. If this
-parameter is null, the new rule is inserted at the beginning of the rule
-list.}
+\item{After}{The name of an existing rule after which the new rule is placed. If this parameter is null, the new rule is inserted at the beginning of the rule list.}
 
-\item{Rule}{[required] A data structure that contains the specified rule's name, actions,
-recipients, domains, enabled status, scan status, and TLS policy.}
+\item{Rule}{[required] A data structure that contains the specified rule's name, actions, recipients, domains, enabled status, scan status, and TLS policy.}
 }
 \description{
 Creates a receipt rule.

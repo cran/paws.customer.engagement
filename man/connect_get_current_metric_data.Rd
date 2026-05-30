@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_get_current_metric_data}
 \alias{connect_get_current_metric_data}
-\title{Gets the real-time metric data from the specified Amazon Connect
+\title{Gets the real-time metric data from the specified Connect Customer
 instance}
 \usage{
 connect_get_current_metric_data(
@@ -16,169 +16,151 @@ connect_get_current_metric_data(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{Filters}{[required] The filters to apply to returned metrics. You can filter up to the
-following limits:
+\item{Filters}{[required] The filters to apply to returned metrics. You can filter up to the following limits:
 \itemize{
 \item Queues: 100
 \item Routing profiles: 100
 \item Channels: 3 (VOICE, CHAT, and TASK channels are supported.)
 \item RoutingStepExpressions: 50
+\item AgentStatuses: 50
+\item Subtypes: 10
+\item ValidationTestTypes: 10
 }
 
-Metric data is retrieved only for the resources associated with the
-queues or routing profiles, and by any channels included in the filter.
-(You cannot filter by both queue AND routing profile.) You can include
-both resource IDs and resource ARNs in the same request.
+Metric data is retrieved only for the resources associated with the queues or routing profiles, and by any channels included in the filter. (You cannot filter by both queue AND routing profile.) You can include both resource IDs and resource ARNs in the same request.
 
-When using the \code{RoutingStepExpression} filter, you need to pass exactly
-one \code{QueueId}. The filter is also case sensitive so when using the
-\code{RoutingStepExpression} filter, grouping by \code{ROUTING_STEP_EXPRESSION} is
-required.
+When using \code{AgentStatuses} as filter make sure Queues is added as primary filter.
 
-Currently tagging is only supported on the resources that are passed in
-the filter.}
+When using \code{Subtypes} as filter make sure Queues is added as primary filter.
 
-\item{Groupings}{The grouping applied to the metrics returned. For example, when grouped
-by \code{QUEUE}, the metrics returned apply to each queue rather than
-aggregated for all queues.
+When using \code{ValidationTestTypes} as filter make sure Queues is added as primary filter.
+
+When using the \code{RoutingStepExpression} filter, you need to pass exactly one \code{QueueId}. The filter is also case sensitive so when using the \code{RoutingStepExpression} filter, grouping by \code{ROUTING_STEP_EXPRESSION} is required.
+
+Currently tagging is only supported on the resources that are passed in the filter.}
+
+\item{Groupings}{Defines the level of aggregation for metrics data by a dimension(s). Its similar to sorting items into buckets based on a common characteristic, then counting or calculating something for each bucket. For example, when grouped by \code{QUEUE}, the metrics returned apply to each queue rather than aggregated for all queues.
+
+The grouping list is an ordered list, with the first item in the list defined as the primary grouping. If no grouping is included in the request, the aggregation happens at the instance-level.
 \itemize{
-\item If you group by \code{CHANNEL}, you should include a Channels filter.
-VOICE, CHAT, and TASK channels are supported.
-\item If you group by \code{ROUTING_PROFILE}, you must include either a queue
-or routing profile filter. In addition, a routing profile filter is
-required for metrics \code{CONTACTS_SCHEDULED}, \code{CONTACTS_IN_QUEUE}, and
-\code{ OLDEST_CONTACT_AGE}.
-\item If no \code{Grouping} is included in the request, a summary of metrics is
-returned.
-\item When using the \code{RoutingStepExpression} filter, group by
-\code{ROUTING_STEP_EXPRESSION} is required.
+\item If you group by \code{CHANNEL}, you should include a Channels filter. VOICE, CHAT, and TASK channels are supported.
+\item If you group by \code{AGENT_STATUS}, you must include the \code{QUEUE} as the primary grouping and use queue filter. When you group by \code{AGENT_STATUS}, the only metric available is the \code{AGENTS_ONLINE} metric.
+\item If you group by \code{SUBTYPE} or \code{VALIDATION_TEST_TYPE} as secondary grouping then you must include \code{QUEUE} as primary grouping and use Queue as filter
+\item If you group by \code{ROUTING_PROFILE}, you must include either a queue or routing profile filter. In addition, a routing profile filter is required for metrics \code{CONTACTS_SCHEDULED}, \code{CONTACTS_IN_QUEUE}, and \code{ OLDEST_CONTACT_AGE}.
+\item When using the \code{RoutingStepExpression} filter, group by \code{ROUTING_STEP_EXPRESSION} is required.
 }}
 
-\item{CurrentMetrics}{[required] The metrics to retrieve. Specify the name and unit for each metric. The
-following metrics are available. For a description of all the metrics,
-see \href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html}{Real-time Metrics Definitions}
-in the \emph{Amazon Connect Administrator Guide}.
+\item{CurrentMetrics}{[required] The metrics to retrieve. Specify the name or metricId, and unit for each metric. The following metrics are available. For a description of all the metrics, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html}{Metrics definitions} in the \emph{Connect Customer Administrator Guide}.
+
+MetricId should be used to reference custom metrics or out of the box metrics as Arn. If using MetricId, the limit is 10 MetricId per request.
 
 \strong{AGENTS_AFTER_CONTACT_WORK}
 
 Unit: COUNT
 
-Name in real-time metrics report:
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#aftercallwork-real-time}{ACW}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#aftercallwork-real-time}{ACW}
 
 \strong{AGENTS_AVAILABLE}
 
 Unit: COUNT
 
-Name in real-time metrics report:
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#available-real-time}{Available}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#available-real-time}{Available}
 
 \strong{AGENTS_ERROR}
 
 Unit: COUNT
 
-Name in real-time metrics report:
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#error-real-time}{Error}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#error-real-time}{Error}
 
 \strong{AGENTS_NON_PRODUCTIVE}
 
 Unit: COUNT
 
-Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#non-productive-time-real-time}{NPT (Non-Productive Time)}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#non-productive-time-real-time}{NPT (Non-Productive Time)}
 
 \strong{AGENTS_ON_CALL}
 
 Unit: COUNT
 
-Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time}{On contact}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#on-call-real-time}{On contact}
 
 \strong{AGENTS_ON_CONTACT}
 
 Unit: COUNT
 
-Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#on-call-real-time}{On contact}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#on-call-real-time}{On contact}
 
 \strong{AGENTS_ONLINE}
 
 Unit: COUNT
 
-Name in real-time metrics report:
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#online-real-time}{Online}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#online-real-time}{Online}
 
 \strong{AGENTS_STAFFED}
 
 Unit: COUNT
 
-Name in real-time metrics report:
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#staffed-real-time}{Staffed}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#staffed-real-time}{Staffed}
 
 \strong{CONTACTS_IN_QUEUE}
 
 Unit: COUNT
 
-Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#in-queue-real-time}{In queue}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#in-queue-real-time}{In queue}
 
 \strong{CONTACTS_SCHEDULED}
 
 Unit: COUNT
 
-Name in real-time metrics report:
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#scheduled-real-time}{Scheduled}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#scheduled-real-time}{Scheduled}
+
+\strong{ESTIMATED_WAIT_TIME}
+
+Unit: SECONDS
+
+This metric supports filter and grouping combination only used for core routing purpose. Valid filter and grouping use cases:
+\itemize{
+\item Filter by a list of [Queues] and a list of [Channels], group by [“QUEUE”, “CHANNEL”]
+\item Filter by a singleton list of [Queue], a singleton list of [Channel], a list of [RoutingStepExpression], group by [“ROUTING_STEP_EXPRESSION”].
+}
 
 \strong{OLDEST_CONTACT_AGE}
 
 Unit: SECONDS
 
-When you use groupings, Unit says SECONDS and the Value is returned in
-SECONDS.
+When you use groupings, Unit says SECONDS and the Value is returned in SECONDS.
 
-When you do not use groupings, Unit says SECONDS but the Value is
-returned in MILLISECONDS. For example, if you get a response like this:
+When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:
 
 \verb{\\\{ "Metric": \\\{ "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" \\\}, "Value": 24113.0 }\}
 
 The actual OLDEST_CONTACT_AGE is 24 seconds.
 
-When the filter \code{RoutingStepExpression} is used, this metric is still
-calculated from enqueue time. For example, if a contact that has been
-queued under \verb{<Expression 1>} for 10 seconds has expired and
-\verb{<Expression 2>} becomes active, then \code{OLDEST_CONTACT_AGE} for this
-queue will be counted starting from 10, not 0.
+When the filter \code{RoutingStepExpression} is used, this metric is still calculated from enqueue time. For example, if a contact that has been queued under \verb{<Expression 1>} for 10 seconds has expired and \verb{<Expression 2>} becomes active, then \code{OLDEST_CONTACT_AGE} for this queue will be counted starting from 10, not 0.
 
-Name in real-time metrics report:
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#oldest-real-time}{Oldest}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#oldest-real-time}{Oldest}
 
 \strong{SLOTS_ACTIVE}
 
 Unit: COUNT
 
-Name in real-time metrics report:
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#active-real-time}{Active}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#active-real-time}{Active}
 
 \strong{SLOTS_AVAILABLE}
 
 Unit: COUNT
 
-Name in real-time metrics report:
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html#availability-real-time}{Availability}}
+Name in real-time metrics report: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#availability-real-time}{Availability}}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 
-The token expires after 5 minutes from the time it is created.
-Subsequent requests that use the token must use the same request
-parameters as the request that generated the token.}
+The token expires after 5 minutes from the time it is created. Subsequent requests that use the token must use the same request parameters as the request that generated the token.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
-\item{SortCriteria}{The way to sort the resulting response based on metrics. You can enter
-one sort criteria. By default resources are sorted based on
-\code{AGENTS_ONLINE}, \code{DESCENDING}. The metric collection is sorted based on
-the input metrics.
+\item{SortCriteria}{The way to sort the resulting response based on metrics. You can enter one sort criteria. By default resources are sorted based on \code{AGENTS_ONLINE}, \code{DESCENDING}. The metric collection is sorted based on the input metrics.
 
 Note the following:
 \itemize{
@@ -186,7 +168,7 @@ Note the following:
 }}
 }
 \description{
-Gets the real-time metric data from the specified Amazon Connect instance.
+Gets the real-time metric data from the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_get_current_metric_data/} for full documentation.
 }

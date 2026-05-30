@@ -7,7 +7,7 @@
 pinpoint_create_recommender_configuration(CreateRecommenderConfiguration)
 }
 \arguments{
-\item{CreateRecommenderConfiguration}{[required]}
+\item{CreateRecommenderConfiguration}{[required] Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.}
 }
 \description{
 Creates an Amazon Pinpoint configuration for a recommender model.

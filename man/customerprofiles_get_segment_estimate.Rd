@@ -9,9 +9,7 @@ customerprofiles_get_segment_estimate(DomainName, EstimateId)
 \arguments{
 \item{DomainName}{[required] The unique name of the domain.}
 
-\item{EstimateId}{[required] The query Id passed by a previous
-\code{\link[=customerprofiles_create_segment_estimate]{create_segment_estimate}}
-operation.}
+\item{EstimateId}{[required] The query Id passed by a previous \code{\link[=customerprofiles_create_segment_estimate]{create_segment_estimate}} operation.}
 }
 \description{
 Gets the result of a segment estimate query.

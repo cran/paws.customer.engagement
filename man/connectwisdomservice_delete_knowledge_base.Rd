@@ -7,8 +7,7 @@
 connectwisdomservice_delete_knowledge_base(knowledgeBaseId)
 }
 \arguments{
-\item{knowledgeBaseId}{[required] The knowledge base to delete content from. Can be either the ID or the
-ARN. URLs cannot contain the ARN.}
+\item{knowledgeBaseId}{[required] The knowledge base to delete content from. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 }
 \description{
 Deletes the knowledge base.

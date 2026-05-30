@@ -14,22 +14,11 @@ ses_set_identity_mail_from_domain(
 \arguments{
 \item{Identity}{[required] The verified identity.}
 
-\item{MailFromDomain}{The custom MAIL FROM domain for the verified identity to use. The MAIL
-FROM domain must 1) be a subdomain of the verified identity, 2) not be
-used in a "From" address if the MAIL FROM domain is the destination of
-email feedback forwarding (for more information, see the \href{https://docs.aws.amazon.com/ses/latest/dg/mail-from.html}{Amazon SES Developer Guide}), and
-3) not be used to receive emails. A value of \code{null} disables the custom
-MAIL FROM setting for the identity.}
+\item{MailFromDomain}{The custom MAIL FROM domain for the verified identity to use. The MAIL FROM domain must 1) be a subdomain of the verified identity, 2) not be used in a "From" address if the MAIL FROM domain is the destination of email feedback forwarding (for more information, see the \href{https://docs.aws.amazon.com/ses/latest/dg/mail-from.html}{Amazon SES Developer Guide}), and 3) not be used to receive emails. A value of \code{null} disables the custom MAIL FROM setting for the identity.}
 
-\item{BehaviorOnMXFailure}{The action for Amazon SES to take if it cannot successfully read the
-required MX record when you send an email. If you choose
-\code{UseDefaultValue}, Amazon SES uses amazonses.com (or a subdomain of
-that) as the MAIL FROM domain. If you choose \code{RejectMessage}, Amazon SES
-returns a \code{MailFromDomainNotVerified} error and not send the email.
+\item{BehaviorOnMXFailure}{The action for Amazon SES to take if it cannot successfully read the required MX record when you send an email. If you choose \code{UseDefaultValue}, Amazon SES uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. If you choose \code{RejectMessage}, Amazon SES returns a \code{MailFromDomainNotVerified} error and not send the email.
 
-The action specified in \code{BehaviorOnMXFailure} is taken when the custom
-MAIL FROM domain setup is in the \code{Pending}, \code{Failed}, and
-\code{TemporaryFailure} states.}
+The action specified in \code{BehaviorOnMXFailure} is taken when the custom MAIL FROM domain setup is in the \code{Pending}, \code{Failed}, and \code{TemporaryFailure} states.}
 }
 \description{
 Enables or disables the custom MAIL FROM domain setup for a verified identity (an email address or a domain).

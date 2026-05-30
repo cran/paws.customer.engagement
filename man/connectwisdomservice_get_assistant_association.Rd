@@ -10,11 +10,9 @@ connectwisdomservice_get_assistant_association(
 )
 }
 \arguments{
-\item{assistantAssociationId}{[required] The identifier of the assistant association. Can be either the ID or the
-ARN. URLs cannot contain the ARN.}
+\item{assistantAssociationId}{[required] The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 
-\item{assistantId}{[required] The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-URLs cannot contain the ARN.}
+\item{assistantId}{[required] The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 }
 \description{
 Retrieves information about an assistant association.

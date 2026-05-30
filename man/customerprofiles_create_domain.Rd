@@ -13,6 +13,7 @@ customerprofiles_create_domain(
   DeadLetterQueueUrl = NULL,
   Matching = NULL,
   RuleBasedMatching = NULL,
+  DataStore = NULL,
   Tags = NULL
 )
 }
@@ -21,36 +22,17 @@ customerprofiles_create_domain(
 
 \item{DefaultExpirationDays}{[required] The default number of days until the data within the domain expires.}
 
-\item{DefaultEncryptionKey}{The default encryption key, which is an AWS managed key, is used when no
-specific type of encryption key is specified. It is used to encrypt all
-data before it is placed in permanent or semi-permanent storage.}
+\item{DefaultEncryptionKey}{The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.}
 
-\item{DeadLetterQueueUrl}{The URL of the SQS dead letter queue, which is used for reporting errors
-associated with ingesting data from third party applications. You must
-set up a policy on the DeadLetterQueue for the SendMessage operation to
-enable Amazon Connect Customer Profiles to send messages to the
-DeadLetterQueue.}
+\item{DeadLetterQueueUrl}{The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.}
 
-\item{Matching}{The process of matching duplicate profiles. If \code{Matching} = \code{true},
-Amazon Connect Customer Profiles starts a weekly batch process called
-Identity Resolution Job. If you do not specify a date and time for
-Identity Resolution Job to run, by default it runs every Saturday at
-12AM UTC to detect duplicate profiles in your domains.
+\item{Matching}{The process of matching duplicate profiles. If \code{Matching} = \code{true}, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.
 
-After the Identity Resolution Job completes, use the
-\code{\link[=customerprofiles_get_matches]{get_matches}} API to return and review
-the results. Or, if you have configured \code{ExportingConfig} in the
-\code{MatchingRequest}, you can download the results from S3.}
+After the Identity Resolution Job completes, use the \code{\link[=customerprofiles_get_matches]{get_matches}} API to return and review the results. Or, if you have configured \code{ExportingConfig} in the \code{MatchingRequest}, you can download the results from S3.}
 
-\item{RuleBasedMatching}{The process of matching duplicate profiles using the Rule-Based
-matching. If \code{RuleBasedMatching} = true, Amazon Connect Customer
-Profiles will start to match and merge your profiles according to your
-configuration in the \code{RuleBasedMatchingRequest}. You can use the
-\code{\link[=customerprofiles_list_rule_based_matches]{list_rule_based_matches}}
-and \code{\link[=customerprofiles_get_similar_profiles]{get_similar_profiles}} API
-to return and review the results. Also, if you have configured
-\code{ExportingConfig} in the \code{RuleBasedMatchingRequest}, you can download
-the results from S3.}
+\item{RuleBasedMatching}{The process of matching duplicate profiles using the Rule-Based matching. If \code{RuleBasedMatching} = true, Connect Customer Customer Profiles will start to match and merge your profiles according to your configuration in the \code{RuleBasedMatchingRequest}. You can use the \code{\link[=customerprofiles_list_rule_based_matches]{list_rule_based_matches}} and \code{\link[=customerprofiles_get_similar_profiles]{get_similar_profiles}} API to return and review the results. Also, if you have configured \code{ExportingConfig} in the \code{RuleBasedMatchingRequest}, you can download the results from S3.}
+
+\item{DataStore}{Set to true to enabled data store for this domain.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.}
 }

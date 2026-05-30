@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_contact}
 \alias{connect_create_contact}
-\title{Only the EMAIL channel is supported}
+\title{Only the VOICE, EMAIL, and TASK channels are supported}
 \usage{
 connect_create_contact(
   InstanceId,
@@ -17,71 +17,62 @@ connect_create_contact(
   InitiateAs = NULL,
   Name = NULL,
   Description = NULL,
-  SegmentAttributes = NULL
+  SegmentAttributes = NULL,
+  PreviousContactId = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
-\item{RelatedContactId}{The identifier of the contact in this instance of Amazon Connect.}
+\item{RelatedContactId}{The identifier of the contact in this instance of Connect Customer.}
 
-\item{Attributes}{A custom key-value pair using an attribute map. The attributes are
-standard Amazon Connect attributes, and can be accessed in flows just
-like any other contact attributes.
+\item{Attributes}{A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.
 
-There can be up to 32,768 UTF-8 bytes across all key-value pairs per
-contact. Attribute keys can include only alphanumeric, dash, and
-underscore characters.}
+There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.}
 
-\item{References}{A formatted URL that is shown to an agent in the Contact Control Panel
-(CCP). Tasks can have the following reference types at the time of
-creation: URL | NUMBER | STRING | DATE | EMAIL | ATTACHMENT.}
+\item{References}{A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: \code{URL} | \code{NUMBER} | \code{STRING} | \code{DATE} | \code{EMAIL} | \code{ATTACHMENT}.}
 
-\item{Channel}{[required] The channel for the contact
+\item{Channel}{[required] The channel for the contact.
 
-CreateContact only supports the EMAIL channel. The following information
-that states other channels are supported is incorrect. We are working to
-update this topic.}
+The CHAT channel is not supported. The following information is incorrect. We're working to correct it.}
 
 \item{InitiationMethod}{[required] Indicates how the contact was initiated.
 
-CreateContact only supports the following initiation methods: OUTBOUND,
-AGENT_REPLY, and FLOW. The following information that states other
-initiation methods are supported is incorrect. We are working to update
-this topic.}
+CreateContact only supports the following initiation methods. Valid values by channel are:
+\itemize{
+\item For VOICE: \code{TRANSFER} and the subtype \code{connect:ExternalAudio}
+\item For EMAIL: \code{OUTBOUND} | \code{AGENT_REPLY} | \code{FLOW}
+\item For TASK: \code{API}
+}
+
+The other channels listed below are incorrect. We're working to correct this information.}
 
 \item{ExpiryDurationInMinutes}{Number of minutes the contact will be active for before expiring}
 
-\item{UserInfo}{User details for the contact}
+\item{UserInfo}{User details for the contact
 
-\item{InitiateAs}{Initial state of the contact when it's created}
+UserInfo is required when creating an EMAIL contact with \code{OUTBOUND} and \code{AGENT_REPLY} contact initiation methods.}
+
+\item{InitiateAs}{Initial state of the contact when it's created. Only TASK channel contacts can be initiated with \code{COMPLETED} state.}
 
 \item{Name}{The name of a the contact.}
 
 \item{Description}{A description of the contact.}
 
-\item{SegmentAttributes}{A set of system defined key-value pairs stored on individual contact
-segments (unique contact ID) using an attribute map. The attributes are
-standard Amazon Connect attributes. They can be accessed in flows.
+\item{SegmentAttributes}{A set of system defined key-value pairs stored on individual contact segments (unique contact ID) using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.
 
 Attribute keys can include only alphanumeric, -, and _.
 
-This field can be used to set Segment Contact Expiry as a duration in
-minutes.
+This field can be used to set Segment Contact Expiry as a duration in minutes.
 
-To set contact expiry, a ValueMap must be specified containing the
-integer number of minutes the contact will be active for before
-expiring, with \code{SegmentAttributes} like \{
-\verb{ "connect:ContactExpiry": \\\{"ValueMap" : \\\{ "ExpiryDuration": \\\{ "ValueInteger": 135\\\}\\\}\\\}\\\}}.}
+To set contact expiry, a ValueMap must be specified containing the integer number of minutes the contact will be active for before expiring, with \code{SegmentAttributes} like \{ \verb{ "connect:ContactExpiry": \\\{"ValueMap" : \\\{ "ExpiryDuration": \\\{ "ValueInteger": 135\\\}\\\}\\\}\\\}}.}
+
+\item{PreviousContactId}{The ID of the previous contact when creating a transfer contact. This value can be provided only for external audio contacts. For more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html}{Integrate Connect Customer Contact Lens with external voice systems} in the \emph{Connect Customer Administrator Guide}.}
 }
 \description{
-Only the EMAIL channel is supported. The supported initiation methods are: OUTBOUND, AGENT_REPLY, and FLOW.
+Only the VOICE, EMAIL, and TASK channels are supported.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_contact/} for full documentation.
 }

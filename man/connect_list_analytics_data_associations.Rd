@@ -2,8 +2,8 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_analytics_data_associations}
 \alias{connect_list_analytics_data_associations}
-\title{Lists the association status of requested dataset ID for a given Amazon
-Connect instance}
+\title{Lists the association status of requested dataset ID for a given Connect
+Customer instance}
 \usage{
 connect_list_analytics_data_associations(
   InstanceId,
@@ -13,19 +13,16 @@ connect_list_analytics_data_associations(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{DataSetId}{The identifier of the dataset to get the association status.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 }
 \description{
-Lists the association status of requested dataset ID for a given Amazon Connect instance.
+Lists the association status of requested dataset ID for a given Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_analytics_data_associations/} for full documentation.
 }

@@ -7,8 +7,7 @@
 pinpoint_get_in_app_messages(ApplicationId, EndpointId)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
 \item{EndpointId}{[required] The unique identifier for the endpoint.}
 }

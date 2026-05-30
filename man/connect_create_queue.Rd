@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_queue}
 \alias{connect_create_queue}
-\title{Creates a new queue for the specified Amazon Connect instance}
+\title{Creates a new queue for the specified Connect Customer instance}
 \usage{
 connect_create_queue(
   InstanceId,
@@ -13,12 +13,12 @@ connect_create_queue(
   HoursOfOperationId,
   MaxContacts = NULL,
   QuickConnectIds = NULL,
+  EmailAddressesConfig = NULL,
   Tags = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Name}{[required] The name of the queue.}
 
@@ -30,16 +30,16 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{HoursOfOperationId}{[required] The identifier for the hours of operation.}
 
-\item{MaxContacts}{The maximum number of contacts that can be in the queue before it is
-considered full.}
+\item{MaxContacts}{The maximum number of contacts that can be in the queue before it is considered full.}
 
 \item{QuickConnectIds}{The quick connects available to agents who are working the queue.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{EmailAddressesConfig}{Configuration list containing the email addresses to associate with the queue during creation. Each configuration specifies an email address ID that agents can select when handling email contacts in this queue.}
+
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
-Creates a new queue for the specified Amazon Connect instance.
+Creates a new queue for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_queue/} for full documentation.
 }

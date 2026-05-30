@@ -2,8 +2,8 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_quick_connects}
 \alias{connect_list_quick_connects}
-\title{Provides information about the quick connects for the specified Amazon
-Connect instance}
+\title{Provides information about the quick connects for the specified Connect
+Customer instance}
 \usage{
 connect_list_quick_connects(
   InstanceId,
@@ -13,22 +13,16 @@ connect_list_quick_connects(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance. Both Instance ID and Instance ARN are supported input formats.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{MaxResults}{The maximum number of results to return per page. The default MaxResult
-size is 100.}
+\item{MaxResults}{The maximum number of results to return per page. The default MaxResult size is 100.}
 
-\item{QuickConnectTypes}{The type of quick connect. In the Amazon Connect admin website, when you
-create a quick connect, you are prompted to assign one of the following
-types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).}
+\item{QuickConnectTypes}{The type of quick connect. In the Connect Customer admin website, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).}
 }
 \description{
-Provides information about the quick connects for the specified Amazon Connect instance.
+Provides information about the quick connects for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_quick_connects/} for full documentation.
 }

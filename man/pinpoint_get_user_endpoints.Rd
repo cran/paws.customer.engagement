@@ -8,8 +8,7 @@ specific user ID}
 pinpoint_get_user_endpoints(ApplicationId, UserId)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
 \item{UserId}{[required] The unique identifier for the user.}
 }

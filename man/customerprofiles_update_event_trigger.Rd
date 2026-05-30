@@ -23,15 +23,11 @@ customerprofiles_update_event_trigger(
 
 \item{Description}{The description of the event trigger.}
 
-\item{EventTriggerConditions}{A list of conditions that determine when an event should trigger the
-destination.}
+\item{EventTriggerConditions}{A list of conditions that determine when an event should trigger the destination.}
 
-\item{SegmentFilter}{The destination is triggered only for profiles that meet the criteria of
-a segment definition.}
+\item{SegmentFilter}{The destination is triggered only for profiles that meet the criteria of a segment definition.}
 
-\item{EventTriggerLimits}{Defines limits controlling whether an event triggers the destination,
-based on ingestion latency and the number of invocations per profile
-over specific time periods.}
+\item{EventTriggerLimits}{Defines limits controlling whether an event triggers the destination, based on ingestion latency and the number of invocations per profile over specific time periods.}
 }
 \description{
 Update the properties of an Event Trigger.

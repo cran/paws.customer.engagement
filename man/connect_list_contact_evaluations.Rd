@@ -2,25 +2,21 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_contact_evaluations}
 \alias{connect_list_contact_evaluations}
-\title{Lists contact evaluations in the specified Amazon Connect instance}
+\title{Lists contact evaluations in the specified Connect Customer instance}
 \usage{
 connect_list_contact_evaluations(InstanceId, ContactId, NextToken = NULL)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ContactId}{[required] The identifier of the contact in this instance of Amazon Connect.}
+\item{ContactId}{[required] The identifier of the contact in this instance of Connect Customer.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 
-This is not expected to be set because the value returned in the
-previous response is always null.}
+This is not expected to be set because the value returned in the previous response is always null.}
 }
 \description{
-Lists contact evaluations in the specified Amazon Connect instance.
+Lists contact evaluations in the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_contact_evaluations/} for full documentation.
 }

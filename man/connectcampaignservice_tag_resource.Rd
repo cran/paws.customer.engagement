@@ -7,9 +7,9 @@
 connectcampaignservice_tag_resource(arn, tags)
 }
 \arguments{
-\item{arn}{[required]}
+\item{arn}{[required] Arn}
 
-\item{tags}{[required]}
+\item{tags}{[required] Tag map with key and value.}
 }
 \description{
 Tag a resource.

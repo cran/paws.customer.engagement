@@ -9,11 +9,9 @@ sesv2_create_multi_region_endpoint(EndpointName, Details, Tags = NULL)
 \arguments{
 \item{EndpointName}{[required] The name of the multi-region endpoint (global-endpoint).}
 
-\item{Details}{[required] Contains details of a multi-region endpoint (global-endpoint) being
-created.}
+\item{Details}{[required] Contains details of a multi-region endpoint (global-endpoint) being created.}
 
-\item{Tags}{An array of objects that define the tags (keys and values) to associate
-with the multi-region endpoint (global-endpoint).}
+\item{Tags}{An array of objects that define the tags (keys and values) to associate with the multi-region endpoint (global-endpoint).}
 }
 \description{
 Creates a multi-region endpoint (global-endpoint).

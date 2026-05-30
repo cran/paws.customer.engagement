@@ -15,9 +15,7 @@ pinpointsmsvoicev2_put_registration_field_value(
 \arguments{
 \item{RegistrationId}{[required] The unique identifier for the registration.}
 
-\item{FieldPath}{[required] The path to the registration form field. You can use
-\code{\link[=pinpointsmsvoicev2_describe_registration_field_definitions]{describe_registration_field_definitions}}
-for a list of \strong{FieldPaths}.}
+\item{FieldPath}{[required] The path to the registration form field. You can use \code{\link[=pinpointsmsvoicev2_describe_registration_field_definitions]{describe_registration_field_definitions}} for a list of \strong{FieldPaths}.}
 
 \item{SelectChoices}{An array of values for the form field.}
 

@@ -11,15 +11,11 @@ pinpointsmsvoicev2_create_protect_configuration(
 )
 }
 \arguments{
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don't specify a client token, a
-randomly generated token is used for the request to ensure idempotency.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.}
 
-\item{DeletionProtectionEnabled}{When set to true deletion protection is enabled. By default this is set
-to false.}
+\item{DeletionProtectionEnabled}{When set to true deletion protection is enabled. By default this is set to false.}
 
-\item{Tags}{An array of key and value pair tags that are associated with the
-resource.}
+\item{Tags}{An array of key and value pair tags that are associated with the resource.}
 }
 \description{
 Create a new protect configuration. By default all country rule sets for each capability are set to \code{ALLOW}. Update the country rule sets using \code{\link[=pinpointsmsvoicev2_update_protect_configuration_country_rule_set]{update_protect_configuration_country_rule_set}}. A protect configurations name is stored as a Tag with the key set to \code{Name} and value as the name of the protect configuration.

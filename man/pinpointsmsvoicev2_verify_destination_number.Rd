@@ -14,8 +14,7 @@ pinpointsmsvoicev2_verify_destination_number(
 \arguments{
 \item{VerifiedDestinationNumberId}{[required] The unique identifier for the verififed destination phone number.}
 
-\item{VerificationCode}{[required] The verification code that was received by the verified destination
-phone number.}
+\item{VerificationCode}{[required] The verification code that was received by the verified destination phone number.}
 }
 \description{
 Use the verification code that was received by the verified destination phone number to opt-in the verified destination phone number to receive more messages.

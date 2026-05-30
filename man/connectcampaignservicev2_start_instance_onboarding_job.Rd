@@ -10,9 +10,9 @@ connectcampaignservicev2_start_instance_onboarding_job(
 )
 }
 \arguments{
-\item{connectInstanceId}{[required]}
+\item{connectInstanceId}{[required] Amazon Connect Instance Id}
 
-\item{encryptionConfig}{[required]}
+\item{encryptionConfig}{[required] Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported}
 }
 \description{
 Onboard the specific Amazon Connect instance to Connect Campaigns.

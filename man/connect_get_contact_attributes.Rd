@@ -7,7 +7,7 @@
 connect_get_contact_attributes(InstanceId, InitialContactId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{InitialContactId}{[required] The identifier of the initial contact.}
 }

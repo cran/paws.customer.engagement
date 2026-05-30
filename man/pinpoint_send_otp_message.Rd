@@ -9,7 +9,7 @@ pinpoint_send_otp_message(ApplicationId, SendOTPMessageRequestParameters)
 \arguments{
 \item{ApplicationId}{[required] The unique ID of your Amazon Pinpoint application.}
 
-\item{SendOTPMessageRequestParameters}{[required]}
+\item{SendOTPMessageRequestParameters}{[required] Send OTP message request parameters.}
 }
 \description{
 Send an OTP message

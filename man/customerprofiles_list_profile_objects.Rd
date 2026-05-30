@@ -25,8 +25,7 @@ customerprofiles_list_profile_objects(
 
 \item{ProfileId}{[required] The unique identifier of a customer profile.}
 
-\item{ObjectFilter}{Applies a filter to the response to include profile objects with the
-specified index values.}
+\item{ObjectFilter}{Applies a filter to the response to include profile objects with the specified index values.}
 }
 \description{
 Returns a list of objects associated with a profile of a given ProfileObjectType.

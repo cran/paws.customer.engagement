@@ -16,8 +16,7 @@ pinpointsmsvoicev2_describe_registrations(
 
 \item{Filters}{An array of RegistrationFilter objects to filter the results.}
 
-\item{NextToken}{The token to be used for the next set of paginated results. You don't
-need to supply a value for this field in the initial request.}
+\item{NextToken}{The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.}
 
 \item{MaxResults}{The maximum number of results to return per each request.}
 }

@@ -15,13 +15,9 @@ connect_create_push_notification_registration(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{PinpointAppArn}{[required] The Amazon Resource Name (ARN) of the Pinpoint application.}
 
@@ -32,7 +28,7 @@ populates this field. For more information about idempotency, see
 \item{ContactConfiguration}{[required] The contact configuration for push notification registration.}
 }
 \description{
-Creates registration for a device token and a chat contact to receive real-time push notifications. For more information about push notifications, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/enable-push-notifications-for-mobile-chat.html}{Set up push notifications in Amazon Connect for mobile chat} in the \emph{Amazon Connect Administrator Guide}.
+Creates registration for a device token and a chat contact to receive real-time push notifications. For more information about push notifications, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/enable-push-notifications-for-mobile-chat.html}{Set up push notifications in Connect Customer for mobile chat} in the \emph{Connect Customer Administrator Guide}.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_push_notification_registration/} for full documentation.
 }

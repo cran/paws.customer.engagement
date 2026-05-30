@@ -7,7 +7,7 @@
 connectcampaignservicev2_get_campaign_state_batch(campaignIds)
 }
 \arguments{
-\item{campaignIds}{[required]}
+\item{campaignIds}{[required] List of CampaignId}
 }
 \description{
 Get state of campaigns for the specified Amazon Connect account.

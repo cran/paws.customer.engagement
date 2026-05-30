@@ -8,10 +8,9 @@ settings of the email channel for an application}
 pinpoint_update_email_channel(ApplicationId, EmailChannelRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{EmailChannelRequest}{[required]}
+\item{EmailChannelRequest}{[required] Specifies the status and settings of the email channel for an application.}
 }
 \description{
 Enables the email channel for an application or updates the status and settings of the email channel for an application.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_instance}
 \alias{connect_create_instance}
-\title{This API is in preview release for Amazon Connect and is subject to
+\title{This API is in preview release for Connect Customer and is subject to
 change}
 \usage{
 connect_create_instance(
@@ -18,7 +18,7 @@ connect_create_instance(
 \arguments{
 \item{ClientToken}{The idempotency token.}
 
-\item{IdentityManagementType}{[required] The type of identity management for your Amazon Connect users.}
+\item{IdentityManagementType}{[required] The type of identity management for your Connect Customer users.}
 
 \item{InstanceAlias}{The name for your instance.}
 
@@ -28,11 +28,10 @@ connect_create_instance(
 
 \item{OutboundCallsEnabled}{[required] Your contact center allows outbound calls.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \verb{\{ "tags": \{"key1":"value1", "key2":"value2"\} \}}.}
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \verb{\{ "tags": \{"key1":"value1", "key2":"value2"\} \}}.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+This API is in preview release for Connect Customer and is subject to change.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_instance/} for full documentation.
 }

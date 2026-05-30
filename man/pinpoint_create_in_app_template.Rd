@@ -8,12 +8,9 @@ channel}
 pinpoint_create_in_app_template(InAppTemplateRequest, TemplateName)
 }
 \arguments{
-\item{InAppTemplateRequest}{[required]}
+\item{InAppTemplateRequest}{[required] InApp Template Request.}
 
-\item{TemplateName}{[required] The name of the message template. A template name must start with an
-alphanumeric character and can contain a maximum of 128 characters. The
-characters can be alphanumeric characters, underscores (_), or hyphens
-(-). Template names are case sensitive.}
+\item{TemplateName}{[required] The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.}
 }
 \description{
 Creates a new message template for messages using the in-app message channel.

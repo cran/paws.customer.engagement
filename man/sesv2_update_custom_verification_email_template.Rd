@@ -14,23 +14,17 @@ sesv2_update_custom_verification_email_template(
 )
 }
 \arguments{
-\item{TemplateName}{[required] The name of the custom verification email template that you want to
-update.}
+\item{TemplateName}{[required] The name of the custom verification email template that you want to update.}
 
 \item{FromEmailAddress}{[required] The email address that the custom verification email is sent from.}
 
 \item{TemplateSubject}{[required] The subject line of the custom verification email.}
 
-\item{TemplateContent}{[required] The content of the custom verification email. The total size of the
-email must be less than 10 MB. The message body may contain HTML, with
-some limitations. For more information, see \href{https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq}{Custom verification email frequently asked questions}
-in the \emph{Amazon SES Developer Guide}.}
+\item{TemplateContent}{[required] The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see \href{https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq}{Custom verification email frequently asked questions} in the \emph{Amazon SES Developer Guide}.}
 
-\item{SuccessRedirectionURL}{[required] The URL that the recipient of the verification email is sent to if his
-or her address is successfully verified.}
+\item{SuccessRedirectionURL}{[required] The URL that the recipient of the verification email is sent to if his or her address is successfully verified.}
 
-\item{FailureRedirectionURL}{[required] The URL that the recipient of the verification email is sent to if his
-or her address is not successfully verified.}
+\item{FailureRedirectionURL}{[required] The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.}
 }
 \description{
 Updates an existing custom verification email template.

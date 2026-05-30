@@ -2,28 +2,30 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_update_contact_evaluation}
 \alias{connect_update_contact_evaluation}
-\title{Updates details about a contact evaluation in the specified Amazon
-Connect instance}
+\title{Updates details about a contact evaluation in the specified Connect
+Customer instance}
 \usage{
 connect_update_contact_evaluation(
   InstanceId,
   EvaluationId,
   Answers = NULL,
-  Notes = NULL
+  Notes = NULL,
+  UpdatedBy = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{EvaluationId}{[required] A unique identifier for the contact evaluation.}
 
 \item{Answers}{A map of question identifiers to answer value.}
 
 \item{Notes}{A map of question identifiers to note value.}
+
+\item{UpdatedBy}{The ID of the user who updated the contact evaluation.}
 }
 \description{
-Updates details about a contact evaluation in the specified Amazon Connect instance. A contact evaluation must be in draft state. Answers included in the request are merged with existing answers for the given evaluation. An answer or note can be deleted by passing an empty object (\code{{}}) to the question identifier.
+Updates details about a contact evaluation in the specified Connect Customer instance. A contact evaluation must be in draft state. Answers included in the request are merged with existing answers for the given evaluation. An answer or note can be deleted by passing an empty object (\code{{}}) to the question identifier.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_update_contact_evaluation/} for full documentation.
 }

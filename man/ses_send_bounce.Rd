@@ -17,25 +17,15 @@ ses_send_bounce(
 \arguments{
 \item{OriginalMessageId}{[required] The message ID of the message to be bounced.}
 
-\item{BounceSender}{[required] The address to use in the "From" header of the bounce message. This must
-be an identity that you have verified with Amazon SES.}
+\item{BounceSender}{[required] The address to use in the "From" header of the bounce message. This must be an identity that you have verified with Amazon SES.}
 
-\item{Explanation}{Human-readable text for the bounce message to explain the failure. If
-not specified, the text is auto-generated based on the bounced recipient
-information.}
+\item{Explanation}{Human-readable text for the bounce message to explain the failure. If not specified, the text is auto-generated based on the bounced recipient information.}
 
-\item{MessageDsn}{Message-related DSN fields. If not specified, Amazon SES chooses the
-values.}
+\item{MessageDsn}{Message-related DSN fields. If not specified, Amazon SES chooses the values.}
 
-\item{BouncedRecipientInfoList}{[required] A list of recipients of the bounced message, including the information
-required to create the Delivery Status Notifications (DSNs) for the
-recipients. You must specify at least one \code{BouncedRecipientInfo} in the
-list.}
+\item{BouncedRecipientInfoList}{[required] A list of recipients of the bounced message, including the information required to create the Delivery Status Notifications (DSNs) for the recipients. You must specify at least one \code{BouncedRecipientInfo} in the list.}
 
-\item{BounceSenderArn}{This parameter is used only for sending authorization. It is the ARN of
-the identity that is associated with the sending authorization policy
-that permits you to use the address in the "From" header of the bounce.
-For more information about sending authorization, see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html}{Amazon SES Developer Guide}.}
+\item{BounceSenderArn}{This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the address in the "From" header of the bounce. For more information about sending authorization, see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html}{Amazon SES Developer Guide}.}
 }
 \description{
 Generates and sends a bounce message to the sender of an email you received through Amazon SES. You can only use this operation on an email up to 24 hours after you receive it.

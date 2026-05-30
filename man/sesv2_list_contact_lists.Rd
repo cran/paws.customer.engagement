@@ -7,15 +7,9 @@
 sesv2_list_contact_lists(PageSize = NULL, NextToken = NULL)
 }
 \arguments{
-\item{PageSize}{Maximum number of contact lists to return at once. Use this parameter to
-paginate results. If additional contact lists exist beyond the specified
-limit, the \code{NextToken} element is sent in the response. Use the
-\code{NextToken} value in subsequent requests to retrieve additional lists.}
+\item{PageSize}{Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the \code{NextToken} element is sent in the response. Use the \code{NextToken} value in subsequent requests to retrieve additional lists.}
 
-\item{NextToken}{A string token indicating that there might be additional contact lists
-available to be listed. Use the token provided in the Response to use in
-the subsequent call to ListContactLists with the same parameters to
-retrieve the next page of contact lists.}
+\item{NextToken}{A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.}
 }
 \description{
 Lists all of the contact lists available.

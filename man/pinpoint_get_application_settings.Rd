@@ -7,8 +7,7 @@
 pinpoint_get_application_settings(ApplicationId)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 }
 \description{
 Retrieves information about the settings for an application.

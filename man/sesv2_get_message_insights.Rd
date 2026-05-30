@@ -9,8 +9,7 @@ events associated with the message}
 sesv2_get_message_insights(MessageId)
 }
 \arguments{
-\item{MessageId}{[required] A \code{MessageId} is a unique identifier for a message, and is returned when
-sending emails through Amazon SES.}
+\item{MessageId}{[required] A \code{MessageId} is a unique identifier for a message, and is returned when sending emails through Amazon SES.}
 }
 \description{
 Provides information about a specific message, including the from address, the subject, the recipient address, email tags, as well as events associated with the message.

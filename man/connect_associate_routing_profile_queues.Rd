@@ -7,16 +7,20 @@
 connect_associate_routing_profile_queues(
   InstanceId,
   RoutingProfileId,
-  QueueConfigs
+  QueueConfigs = NULL,
+  ManualAssignmentQueueConfigs = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{RoutingProfileId}{[required] The identifier of the routing profile.}
 
-\item{QueueConfigs}{[required] The queues to associate with this routing profile.}
+\item{QueueConfigs}{The queues to associate with this routing profile.}
+
+\item{ManualAssignmentQueueConfigs}{The manual assignment queues to associate with this routing profile.
+
+Note: Use this config for chat, email, and task contacts. It does not support voice contacts.}
 }
 \description{
 Associates a set of queues with a routing profile.

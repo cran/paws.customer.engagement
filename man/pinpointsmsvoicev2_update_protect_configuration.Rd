@@ -12,8 +12,7 @@ pinpointsmsvoicev2_update_protect_configuration(
 \arguments{
 \item{ProtectConfigurationId}{[required] The unique identifier for the protect configuration.}
 
-\item{DeletionProtectionEnabled}{When set to true deletion protection is enabled. By default this is set
-to false.}
+\item{DeletionProtectionEnabled}{When set to true deletion protection is enabled. By default this is set to false.}
 }
 \description{
 Update the setting for an existing protect configuration.

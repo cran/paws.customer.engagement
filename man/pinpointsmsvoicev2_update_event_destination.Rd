@@ -15,8 +15,7 @@ pinpointsmsvoicev2_update_event_destination(
 )
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The configuration set to update with the new event destination. Valid
-values for this can be the ConfigurationSetName or ConfigurationSetArn.}
+\item{ConfigurationSetName}{[required] The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.}
 
 \item{EventDestinationName}{[required] The name to use for the event destination.}
 
@@ -26,14 +25,11 @@ values for this can be the ConfigurationSetName or ConfigurationSetArn.}
 
 The \code{TEXT_SENT} event type is not supported.}
 
-\item{CloudWatchLogsDestination}{An object that contains information about an event destination that
-sends data to CloudWatch Logs.}
+\item{CloudWatchLogsDestination}{An object that contains information about an event destination that sends data to CloudWatch Logs.}
 
-\item{KinesisFirehoseDestination}{An object that contains information about an event destination for
-logging to Firehose.}
+\item{KinesisFirehoseDestination}{An object that contains information about an event destination for logging to Firehose.}
 
-\item{SnsDestination}{An object that contains information about an event destination that
-sends data to Amazon SNS.}
+\item{SnsDestination}{An object that contains information about an event destination that sends data to Amazon SNS.}
 }
 \description{
 Updates an existing event destination in a configuration set. You can update the IAM role ARN for CloudWatch Logs and Firehose. You can also enable or disable the event destination.

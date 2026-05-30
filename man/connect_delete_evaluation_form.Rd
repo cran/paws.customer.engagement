@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_delete_evaluation_form}
 \alias{connect_delete_evaluation_form}
-\title{Deletes an evaluation form in the specified Amazon Connect instance}
+\title{Deletes an evaluation form in the specified Connect Customer instance}
 \usage{
 connect_delete_evaluation_form(
   InstanceId,
@@ -11,15 +11,14 @@ connect_delete_evaluation_form(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{EvaluationFormId}{[required] The unique identifier for the evaluation form.}
 
 \item{EvaluationFormVersion}{The unique identifier for the evaluation form.}
 }
 \description{
-Deletes an evaluation form in the specified Amazon Connect instance.
+Deletes an evaluation form in the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_delete_evaluation_form/} for full documentation.
 }

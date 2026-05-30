@@ -10,23 +10,13 @@ pinpointemail_put_email_identity_feedback_attributes(
 )
 }
 \arguments{
-\item{EmailIdentity}{[required] The email identity that you want to configure bounce and complaint
-feedback forwarding for.}
+\item{EmailIdentity}{[required] The email identity that you want to configure bounce and complaint feedback forwarding for.}
 
 \item{EmailForwardingEnabled}{Sets the feedback forwarding configuration for the identity.
 
-If the value is \code{true}, Amazon Pinpoint sends you email notifications
-when bounce or complaint events occur. Amazon Pinpoint sends this
-notification to the address that you specified in the Return-Path header
-of the original email.
+If the value is \code{true}, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.
 
-When you set this value to \code{false}, Amazon Pinpoint sends notifications
-through other mechanisms, such as by notifying an Amazon SNS topic or
-another event destination. You're required to have a method of tracking
-bounces and complaints. If you haven't set up another mechanism for
-receiving bounce or complaint notifications, Amazon Pinpoint sends an
-email notification when these events occur (even if this setting is
-disabled).}
+When you set this value to \code{false}, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).}
 }
 \description{
 Used to enable or disable feedback forwarding for an identity. This setting determines what happens when an identity is used to send an email that results in a bounce or complaint event.

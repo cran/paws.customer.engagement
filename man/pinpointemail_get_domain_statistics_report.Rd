@@ -10,12 +10,9 @@ pinpointemail_get_domain_statistics_report(Domain, StartDate, EndDate)
 \arguments{
 \item{Domain}{[required] The domain that you want to obtain deliverability metrics for.}
 
-\item{StartDate}{[required] The first day (in Unix time) that you want to obtain domain
-deliverability metrics for.}
+\item{StartDate}{[required] The first day (in Unix time) that you want to obtain domain deliverability metrics for.}
 
-\item{EndDate}{[required] The last day (in Unix time) that you want to obtain domain
-deliverability metrics for. The \code{EndDate} that you specify has to be
-less than or equal to 30 days after the \code{StartDate}.}
+\item{EndDate}{[required] The last day (in Unix time) that you want to obtain domain deliverability metrics for. The \code{EndDate} that you specify has to be less than or equal to 30 days after the \code{StartDate}.}
 }
 \description{
 Retrieve inbox placement and engagement rates for the domains that you use to send email.

@@ -7,7 +7,7 @@
 connectcampaignservice_delete_campaign(id)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 }
 \description{
 Deletes a campaign from the specified Amazon Connect account.

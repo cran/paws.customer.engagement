@@ -10,8 +10,7 @@ pinpointsmsvoicev2_create_registration_association(RegistrationId, ResourceId)
 \arguments{
 \item{RegistrationId}{[required] The unique identifier for the registration.}
 
-\item{ResourceId}{[required] The unique identifier for the origination identity. For example this
-could be a \strong{PhoneNumberId} or \strong{SenderId}.}
+\item{ResourceId}{[required] The unique identifier for the origination identity. For example this could be a \strong{PhoneNumberId} or \strong{SenderId}.}
 }
 \description{
 Associate the registration with an origination identity such as a phone number or sender ID.

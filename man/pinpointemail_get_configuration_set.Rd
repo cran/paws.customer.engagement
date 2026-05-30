@@ -9,8 +9,7 @@ for sending email, and more}
 pinpointemail_get_configuration_set(ConfigurationSetName)
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The name of the configuration set that you want to obtain more
-information about.}
+\item{ConfigurationSetName}{[required] The name of the configuration set that you want to obtain more information about.}
 }
 \description{
 Get information about an existing configuration set, including the dedicated IP pool that it's associated with, whether or not it's enabled for sending email, and more.

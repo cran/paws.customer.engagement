@@ -9,10 +9,9 @@ application}
 pinpoint_update_endpoints_batch(ApplicationId, EndpointBatchRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{EndpointBatchRequest}{[required]}
+\item{EndpointBatchRequest}{[required] Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.}
 }
 \description{
 Creates a new batch of endpoints for an application or updates the settings and attributes of a batch of existing endpoints for an application. You can also use this operation to define custom attributes for a batch of endpoints. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values.

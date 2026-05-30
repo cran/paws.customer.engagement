@@ -13,14 +13,11 @@ connect_update_routing_profile_agent_availability_timer(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{RoutingProfileId}{[required] The identifier of the routing profile.}
 
-\item{AgentAvailabilityTimer}{[required] Whether agents with this routing profile will have their routing order
-calculated based on \emph{time since their last inbound contact} or \emph{longest
-idle time}.}
+\item{AgentAvailabilityTimer}{[required] Whether agents with this routing profile will have their routing order calculated based on \emph{time since their last inbound contact} or \emph{longest idle time}.}
 }
 \description{
 Whether agents with this routing profile will have their routing order calculated based on \emph{time since their last inbound contact} or \emph{longest idle time}.

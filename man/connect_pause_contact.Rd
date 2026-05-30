@@ -9,8 +9,7 @@ connect_pause_contact(ContactId, InstanceId, ContactFlowId = NULL)
 \arguments{
 \item{ContactId}{[required] The identifier of the contact.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-\code{instanceId} in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the \code{instanceId} in the ARN of the instance.}
 
 \item{ContactFlowId}{The identifier of the flow.}
 }

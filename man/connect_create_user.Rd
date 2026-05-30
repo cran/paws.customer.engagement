@@ -2,26 +2,28 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_user}
 \alias{connect_create_user}
-\title{Creates a user account for the specified Amazon Connect instance}
+\title{Creates a user account for the specified Connect Customer instance}
 \usage{
 connect_create_user(
   Username,
   Password = NULL,
   IdentityInfo = NULL,
-  PhoneConfig,
+  PhoneConfig = NULL,
   DirectoryUserId = NULL,
   SecurityProfileIds,
   RoutingProfileId,
   HierarchyGroupId = NULL,
   InstanceId,
+  AutoAcceptConfigs = NULL,
+  AfterContactWorkConfigs = NULL,
+  PhoneNumberConfigs = NULL,
+  PersistentConnectionConfigs = NULL,
+  VoiceEnhancementConfigs = NULL,
   Tags = NULL
 )
 }
 \arguments{
-\item{Username}{[required] The user name for the account. For instances not using SAML for identity
-management, the user name can include up to 20 characters. If you are
-using SAML for identity management, the user name can include up to 64
-characters from [a-zA-Z0-9_-.\\@]+.
+\item{Username}{[required] The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\\@]+.
 
 Username can include @ only if used in an email format. For example:
 \itemize{
@@ -30,25 +32,15 @@ Username can include @ only if used in an email format. For example:
 \item Incorrect: testuser@example
 }}
 
-\item{Password}{The password for the user account. A password is required if you are
-using Amazon Connect for identity management. Otherwise, it is an error
-to include a password.}
+\item{Password}{The password for the user account. A password is required if you are using Connect Customer for identity management. Otherwise, it is an error to include a password.}
 
 \item{IdentityInfo}{The information about the identity of the user.}
 
-\item{PhoneConfig}{[required] The phone settings for the user.}
+\item{PhoneConfig}{The phone settings for the user. This parameter is optional. If not provided, the user can be configured using channel-specific parameters such as \code{AutoAcceptConfigs}, \code{AfterContactWorkConfigs}, \code{PhoneNumberConfigs}, \code{PersistentConnectionConfigs}, and \code{VoiceEnhancementConfigs}.}
 
-\item{DirectoryUserId}{The identifier of the user account in the directory used for identity
-management. If Amazon Connect cannot access the directory, you can
-specify this identifier to authenticate users. If you include the
-identifier, we assume that Amazon Connect cannot access the directory.
-Otherwise, the identity information is used to authenticate users from
-your directory.
+\item{DirectoryUserId}{The identifier of the user account in the directory used for identity management. If Connect Customer cannot access the directory, you can specify this identifier to authenticate users. If you include the identifier, we assume that Connect Customer cannot access the directory. Otherwise, the identity information is used to authenticate users from your directory.
 
-This parameter is required if you are using an existing directory for
-identity management in Amazon Connect when Amazon Connect cannot access
-your directory to authenticate users. If you are using SAML for identity
-management and include this parameter, an error is returned.}
+This parameter is required if you are using an existing directory for identity management in Connect Customer when Connect Customer cannot access your directory to authenticate users. If you are using SAML for identity management and include this parameter, an error is returned.}
 
 \item{SecurityProfileIds}{[required] The identifier of the security profile for the user.}
 
@@ -56,14 +48,22 @@ management and include this parameter, an error is returned.}
 
 \item{HierarchyGroupId}{The identifier of the hierarchy group for the user.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{AutoAcceptConfigs}{The list of auto-accept configuration settings for each channel.}
+
+\item{AfterContactWorkConfigs}{The list of after contact work (ACW) timeout configuration settings for each channel.}
+
+\item{PhoneNumberConfigs}{The list of phone number configuration settings for each channel.}
+
+\item{PersistentConnectionConfigs}{The list of persistent connection configuration settings for each channel.}
+
+\item{VoiceEnhancementConfigs}{The list of voice enhancement configuration settings for each channel.}
+
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
-Creates a user account for the specified Amazon Connect instance.
+Creates a user account for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_user/} for full documentation.
 }

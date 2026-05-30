@@ -13,8 +13,7 @@ customerprofiles_get_segment_membership(
 \arguments{
 \item{DomainName}{[required] The unique name of the domain.}
 
-\item{SegmentDefinitionName}{[required] The Id of the wanted segment. Needs to be a valid, and existing segment
-Id.}
+\item{SegmentDefinitionName}{[required] The Id of the wanted segment. Needs to be a valid, and existing segment Id.}
 
 \item{ProfileIds}{[required] The list of profile IDs to query for.}
 }

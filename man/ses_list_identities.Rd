@@ -9,14 +9,11 @@ Services Region, regardless of verification status}
 ses_list_identities(IdentityType = NULL, NextToken = NULL, MaxItems = NULL)
 }
 \arguments{
-\item{IdentityType}{The type of the identities to list. Possible values are "EmailAddress"
-and "Domain". If this parameter is omitted, then all identities are
-listed.}
+\item{IdentityType}{The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities are listed.}
 
 \item{NextToken}{The token to use for pagination.}
 
-\item{MaxItems}{The maximum number of identities per page. Possible values are 1-1000
-inclusive.}
+\item{MaxItems}{The maximum number of identities per page. Possible values are 1-1000 inclusive.}
 }
 \description{
 Returns a list containing all of the identities (email addresses and domains) for your Amazon Web Services account in the current Amazon Web Services Region, regardless of verification status.

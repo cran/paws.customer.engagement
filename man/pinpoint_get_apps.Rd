@@ -8,12 +8,9 @@ with your Amazon Pinpoint account}
 pinpoint_get_apps(PageSize = NULL, Token = NULL)
 }
 \arguments{
-\item{PageSize}{The maximum number of items to include in each page of a paginated
-response. This parameter is not supported for application, campaign, and
-journey metrics.}
+\item{PageSize}{The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.}
 
-\item{Token}{The NextToken string that specifies which page of results to return in a
-paginated response.}
+\item{Token}{The NextToken string that specifies which page of results to return in a paginated response.}
 }
 \description{
 Retrieves information about all the applications that are associated with your Amazon Pinpoint account.

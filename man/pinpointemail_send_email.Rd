@@ -15,27 +15,19 @@ pinpointemail_send_email(
 )
 }
 \arguments{
-\item{FromEmailAddress}{The email address that you want to use as the "From" address for the
-email. The address that you specify has to be verified.}
+\item{FromEmailAddress}{The email address that you want to use as the "From" address for the email. The address that you specify has to be verified.}
 
 \item{Destination}{[required] An object that contains the recipients of the email message.}
 
-\item{ReplyToAddresses}{The "Reply-to" email addresses for the message. When the recipient
-replies to the message, each Reply-to address receives the reply.}
+\item{ReplyToAddresses}{The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.}
 
-\item{FeedbackForwardingEmailAddress}{The address that Amazon Pinpoint should send bounce and complaint
-notifications to.}
+\item{FeedbackForwardingEmailAddress}{The address that Amazon Pinpoint should send bounce and complaint notifications to.}
 
-\item{Content}{[required] An object that contains the body of the message. You can send either a
-Simple message or a Raw message.}
+\item{Content}{[required] An object that contains the body of the message. You can send either a Simple message or a Raw message.}
 
-\item{EmailTags}{A list of tags, in the form of name/value pairs, to apply to an email
-that you send using the \code{\link[=pinpointemail_send_email]{send_email}}
-operation. Tags correspond to characteristics of the email that you
-define, so that you can publish email sending events.}
+\item{EmailTags}{A list of tags, in the form of name/value pairs, to apply to an email that you send using the \code{\link[=pinpointemail_send_email]{send_email}} operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.}
 
-\item{ConfigurationSetName}{The name of the configuration set that you want to use when sending the
-email.}
+\item{ConfigurationSetName}{The name of the configuration set that you want to use when sending the email.}
 }
 \description{
 Sends an email message. You can use the Amazon Pinpoint Email API to send two types of messages:

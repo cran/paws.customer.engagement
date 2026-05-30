@@ -15,17 +15,13 @@ connect_create_view(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.}
 
-\item{ClientToken}{A unique Id for each create view request to avoid duplicate view
-creation. For example, the view is idempotent ClientToken is provided.}
+\item{ClientToken}{A unique Id for each create view request to avoid duplicate view creation. For example, the view is idempotent ClientToken is provided.}
 
-\item{Status}{[required] Indicates the view status as either \code{SAVED} or \code{PUBLISHED}. The
-\code{PUBLISHED} status will initiate validation on the content.}
+\item{Status}{[required] Indicates the view status as either \code{SAVED} or \code{PUBLISHED}. The \code{PUBLISHED} status will initiate validation on the content.}
 
-\item{Content}{[required] View content containing all content necessary to render a view except
-for runtime input data.
+\item{Content}{[required] View content containing all content necessary to render a view except for runtime input data.
 
 The total uncompressed content has a maximum file size of 400kB.}
 
@@ -33,10 +29,7 @@ The total uncompressed content has a maximum file size of 400kB.}
 
 \item{Name}{[required] The name of the view.}
 
-\item{Tags}{The tags associated with the view resource (not specific to view
-version).These tags can be used to organize, track, or control access
-for this resource. For example, \{ "tags": \{"key1":"value1",
-"key2":"value2"\} \}.}
+\item{Tags}{The tags associated with the view resource (not specific to view version).These tags can be used to organize, track, or control access for this resource. For example, \{ "tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
 Creates a new view with the possible status of \code{SAVED} or \code{PUBLISHED}.

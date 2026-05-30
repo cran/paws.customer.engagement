@@ -11,17 +11,11 @@ pinpointsmsvoicev2_create_registration(
 )
 }
 \arguments{
-\item{RegistrationType}{[required] The type of registration form to create. The list of
-\strong{RegistrationTypes} can be found using the
-\code{\link[=pinpointsmsvoicev2_describe_registration_type_definitions]{describe_registration_type_definitions}}
-action.}
+\item{RegistrationType}{[required] The type of registration form to create. The list of \strong{RegistrationTypes} can be found using the \code{\link[=pinpointsmsvoicev2_describe_registration_type_definitions]{describe_registration_type_definitions}} action.}
 
-\item{Tags}{An array of tags (key and value pairs) to associate with the
-registration.}
+\item{Tags}{An array of tags (key and value pairs) to associate with the registration.}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don't specify a client token, a
-randomly generated token is used for the request to ensure idempotency.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.}
 }
 \description{
 Creates a new registration based on the \strong{RegistrationType} field.

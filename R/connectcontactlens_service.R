@@ -5,23 +5,13 @@ NULL
 #' Amazon Connect Contact Lens
 #'
 #' @description
-#' -   [Contact Lens
-#'     actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Contact_Lens.html)
+#' -   [Contact Lens actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Contact_Lens.html)
 #' 
-#' -   [Contact Lens data
-#'     types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Contact_Lens.html)
+#' -   [Contact Lens data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Contact_Lens.html)
 #' 
-#' Amazon Connect Contact Lens enables you to analyze conversations between
-#' customer and agents, by using speech transcription, natural language
-#' processing, and intelligent search capabilities. It performs sentiment
-#' analysis, detects issues, and enables you to automatically categorize
-#' contacts.
+#' Amazon Connect Contact Lens enables you to analyze conversations between customer and agents, by using speech transcription, natural language processing, and intelligent search capabilities. It performs sentiment analysis, detects issues, and enables you to automatically categorize contacts.
 #' 
-#' Amazon Connect Contact Lens provides both real-time and post-call
-#' analytics of customer-agent conversations. For more information, see
-#' [Analyze conversations using speech
-#' analytics](https://docs.aws.amazon.com/connect/latest/adminguide/analyze-conversations.html)
-#' in the *Amazon Connect Administrator Guide*.
+#' Amazon Connect Contact Lens provides both real-time and post-call analytics of customer-agent conversations. For more information, see [Analyze conversations using speech analytics](https://docs.aws.amazon.com/connect/latest/adminguide/analyze-conversations.html) in the *Amazon Connect Administrator Guide*.
 #'
 #' @param
 #' config
@@ -138,7 +128,7 @@ connectcontactlens <- function(config = list(), credentials = list(), endpoint =
 
 .connectcontactlens$metadata <- list(
   service_name = "connectcontactlens",
-  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.csp.hci.ic.gov", global = FALSE)),
+  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.csp.hci.ic.gov", global = FALSE), "^eusc\\-(de)\\-\\w+\\-\\d+$" = list(endpoint = "contact-lens.{region}.amazonaws.eu", global = FALSE)),
   service_id = "Connect Contact Lens",
   api_version = "2020-08-21",
   signing_name = "connect",

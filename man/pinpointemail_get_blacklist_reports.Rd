@@ -8,9 +8,7 @@ appear on}
 pinpointemail_get_blacklist_reports(BlacklistItemNames)
 }
 \arguments{
-\item{BlacklistItemNames}{[required] A list of IP addresses that you want to retrieve blacklist information
-about. You can only specify the dedicated IP addresses that you use to
-send email using Amazon Pinpoint or Amazon SES.}
+\item{BlacklistItemNames}{[required] A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon Pinpoint or Amazon SES.}
 }
 \description{
 Retrieve a list of the blacklists that your dedicated IP addresses appear on.

@@ -7,8 +7,7 @@
 pinpoint_get_event_stream(ApplicationId)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 }
 \description{
 Retrieves information about the event stream settings for an application.

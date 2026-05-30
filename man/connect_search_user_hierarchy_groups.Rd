@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_search_user_hierarchy_groups}
 \alias{connect_search_user_hierarchy_groups}
-\title{Searches UserHierarchyGroups in an Amazon Connect instance, with
+\title{Searches UserHierarchyGroups in an Connect Customer instance, with
 optional filtering}
 \usage{
 connect_search_user_hierarchy_groups(
@@ -14,12 +14,9 @@ connect_search_user_hierarchy_groups(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
@@ -28,7 +25,7 @@ results.}
 \item{SearchCriteria}{The search criteria to be used to return UserHierarchyGroups.}
 }
 \description{
-Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering.
+Searches UserHierarchyGroups in an Connect Customer instance, with optional filtering.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_search_user_hierarchy_groups/} for full documentation.
 }

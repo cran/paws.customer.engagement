@@ -7,13 +7,9 @@
 pinpointsmsvoicev2_delete_opt_out_list(OptOutListName)
 }
 \arguments{
-\item{OptOutListName}{[required] The OptOutListName or OptOutListArn of the OptOutList to delete. You can
-use
-\code{\link[=pinpointsmsvoicev2_describe_opt_out_lists]{describe_opt_out_lists}} to
-find the values for OptOutListName and OptOutListArn.
+\item{OptOutListName}{[required] The OptOutListName or OptOutListArn of the OptOutList to delete. You can use \code{\link[=pinpointsmsvoicev2_describe_opt_out_lists]{describe_opt_out_lists}} to find the values for OptOutListName and OptOutListArn.
 
-If you are using a shared AWS End User Messaging SMS and Voice resource
-then you must use the full Amazon Resource Name(ARN).}
+If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).}
 }
 \description{
 Deletes an existing opt-out list. All opted out phone numbers in the opt-out list are deleted.

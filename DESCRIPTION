@@ -1,6 +1,6 @@
 Package: paws.customer.engagement
 Title: 'Amazon Web Services' Customer Engagement Services
-Version: 0.9.0
+Version: 0.10.0
 Authors@R: c(
     person("David", "Kretch", , "david.kretch@gmail.com", role = "aut"),
     person("Adam", "Banker", , "adam.banker39@gmail.com", role = "aut"),
@@ -12,12 +12,13 @@ Description: Interface to 'Amazon Web Services' customer engagement
     service, and more <https://aws.amazon.com/>.
 License: Apache License (>= 2.0)
 URL: https://github.com/paws-r/paws,
-        https://paws-r.r-universe.dev/paws.customer.engagement
+        https://paws-r.r-universe.dev/paws.customer.engagement,
+        https://www.paws-r-sdk.com
 BugReports: https://github.com/paws-r/paws/issues
 Imports: paws.common (>= 0.8.0)
 Suggests: testthat
 Encoding: UTF-8
-RoxygenNote: 7.3.2
+Config/roxygen2/version: 8.0.0
 Collate: 'connect_service.R' 'connect_interfaces.R'
         'connect_operations.R' 'connectcampaignservice_service.R'
         'connectcampaignservice_interfaces.R'
@@ -47,11 +48,11 @@ Collate: 'connect_service.R' 'connect_interfaces.R'
         'ses_service.R' 'ses_interfaces.R' 'ses_operations.R'
         'sesv2_service.R' 'sesv2_interfaces.R' 'sesv2_operations.R'
 NeedsCompilation: no
-Packaged: 2025-03-14 09:20:49 UTC; dyfanjones
+Packaged: 2026-05-29 17:21:28 UTC; dyfan
 Author: David Kretch [aut],
   Adam Banker [aut],
   Dyfan Jones [cre],
   Amazon.com, Inc. [cph]
 Maintainer: Dyfan Jones <dyfan.r.jones@gmail.com>
 Repository: CRAN
-Date/Publication: 2025-03-14 15:00:02 UTC
+Date/Publication: 2026-05-30 05:40:02 UTC

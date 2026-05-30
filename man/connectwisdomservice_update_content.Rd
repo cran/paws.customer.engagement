@@ -16,38 +16,21 @@ connectwisdomservice_update_content(
 )
 }
 \arguments{
-\item{contentId}{[required] The identifier of the content. Can be either the ID or the ARN. URLs
-cannot contain the ARN.}
+\item{contentId}{[required] The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 
-\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should not be a
-QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-resource to it. Can be either the ID or the ARN}
+\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN}
 
-\item{metadata}{A key/value map to store attributes without affecting tagging or
-recommendations. For example, when synchronizing data between an
-external system and Wisdom, you can store an external version identifier
-as metadata to utilize for determining drift.}
+\item{metadata}{A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.}
 
-\item{overrideLinkOutUri}{The URI for the article. If the knowledge base has a templateUri,
-setting this argument overrides it for this piece of content. To remove
-an existing \code{overrideLinkOurUri}, exclude this argument and set
-\code{removeOverrideLinkOutUri} to true.}
+\item{overrideLinkOutUri}{The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing \code{overrideLinkOurUri}, exclude this argument and set \code{removeOverrideLinkOutUri} to true.}
 
 \item{removeOverrideLinkOutUri}{Unset the existing \code{overrideLinkOutUri} if it exists.}
 
-\item{revisionId}{The \code{revisionId} of the content resource to update, taken from an
-earlier call to \code{\link[=connectwisdomservice_get_content]{get_content}},
-\code{\link[=connectwisdomservice_get_content_summary]{get_content_summary}},
-\code{\link[=connectwisdomservice_search_content]{search_content}}, or
-\code{\link[=connectwisdomservice_list_contents]{list_contents}}. If included, this
-argument acts as an optimistic lock to ensure content was not modified
-since it was last read. If it has been modified, this API throws a
-\code{PreconditionFailedException}.}
+\item{revisionId}{The \code{revisionId} of the content resource to update, taken from an earlier call to \code{\link[=connectwisdomservice_get_content]{get_content}}, \code{\link[=connectwisdomservice_get_content_summary]{get_content_summary}}, \code{\link[=connectwisdomservice_search_content]{search_content}}, or \code{\link[=connectwisdomservice_list_contents]{list_contents}}. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a \code{PreconditionFailedException}.}
 
 \item{title}{The title of the content.}
 
-\item{uploadId}{A pointer to the uploaded asset. This value is returned by
-\code{\link[=connectwisdomservice_start_content_upload]{start_content_upload}}.}
+\item{uploadId}{A pointer to the uploaded asset. This value is returned by \code{\link[=connectwisdomservice_start_content_upload]{start_content_upload}}.}
 }
 \description{
 Updates information about the content.

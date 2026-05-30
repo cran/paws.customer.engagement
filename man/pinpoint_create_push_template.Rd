@@ -8,12 +8,9 @@ notification channel}
 pinpoint_create_push_template(PushNotificationTemplateRequest, TemplateName)
 }
 \arguments{
-\item{PushNotificationTemplateRequest}{[required]}
+\item{PushNotificationTemplateRequest}{[required] Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.}
 
-\item{TemplateName}{[required] The name of the message template. A template name must start with an
-alphanumeric character and can contain a maximum of 128 characters. The
-characters can be alphanumeric characters, underscores (_), or hyphens
-(-). Template names are case sensitive.}
+\item{TemplateName}{[required] The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.}
 }
 \description{
 Creates a message template for messages that are sent through a push notification channel.

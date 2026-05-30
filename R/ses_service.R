@@ -5,32 +5,19 @@ NULL
 #' Amazon Simple Email Service
 #'
 #' @description
-#' This document contains reference information for the [Amazon Simple
-#' Email Service](https://aws.amazon.com/ses/) (Amazon SES) API, version
-#' 2010-12-01. This document is best used in conjunction with the [Amazon
-#' SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/Welcome.html).
+#' This document contains reference information for the [Amazon Simple Email Service](https://aws.amazon.com/ses/) (Amazon SES) API, version 2010-12-01. This document is best used in conjunction with the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/Welcome.html).
 #' 
-#' For a list of Amazon SES endpoints to use in service requests, see
-#' [Regions and Amazon
-#' SES](https://docs.aws.amazon.com/ses/latest/dg/regions.html) in the
-#' [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/Welcome.html).
+#' For a list of Amazon SES endpoints to use in service requests, see [Regions and Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/regions.html) in the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/Welcome.html).
 #' 
-#' This documentation contains reference information related to the
-#' following:
+#' This documentation contains reference information related to the following:
 #' 
-#' -   [Amazon SES API
-#'     Actions](https://docs.aws.amazon.com/ses/latest/APIReference/API_Operations.html)
+#' -   [Amazon SES API Actions](https://docs.aws.amazon.com/ses/latest/APIReference/API_Operations.html)
 #' 
-#' -   [Amazon SES API Data
-#'     Types](https://docs.aws.amazon.com/ses/latest/APIReference/API_Types.html)
+#' -   [Amazon SES API Data Types](https://docs.aws.amazon.com/ses/latest/APIReference/API_Types.html)
 #' 
-#' -   [Common
-#'     Parameters](https://docs.aws.amazon.com/ses/latest/APIReference/CommonParameters.html)
+#' -   [Common Parameters](https://docs.aws.amazon.com/ses/latest/APIReference/CommonParameters.html)
 #' 
-#' -   [Common
-#'     Errors](https://docs.aws.amazon.com/ses/latest/APIReference/CommonErrors.html)
+#' -   [Common Errors](https://docs.aws.amazon.com/ses/latest/APIReference/CommonErrors.html)
 #'
 #' @param
 #' config
@@ -220,7 +207,7 @@ ses <- function(config = list(), credentials = list(), endpoint = NULL, region =
 
 .ses$metadata <- list(
   service_name = "email",
-  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.csp.hci.ic.gov", global = FALSE)),
+  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.csp.hci.ic.gov", global = FALSE), "^eusc\\-(de)\\-\\w+\\-\\d+$" = list(endpoint = "email.{region}.amazonaws.eu", global = FALSE)),
   service_id = "SES",
   api_version = "2010-12-01",
   signing_name = "ses",

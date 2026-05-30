@@ -7,8 +7,7 @@
 ses_delete_receipt_rule(RuleSetName, RuleName)
 }
 \arguments{
-\item{RuleSetName}{[required] The name of the receipt rule set that contains the receipt rule to
-delete.}
+\item{RuleSetName}{[required] The name of the receipt rule set that contains the receipt rule to delete.}
 
 \item{RuleName}{[required] The name of the receipt rule to delete.}
 }

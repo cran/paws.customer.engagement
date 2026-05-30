@@ -9,6 +9,7 @@ connect_start_chat_contact(
   ContactFlowId,
   Attributes = NULL,
   ParticipantDetails,
+  ParticipantConfiguration = NULL,
   InitialMessage = NULL,
   ClientToken = NULL,
   ChatDurationInMinutes = NULL,
@@ -16,89 +17,57 @@ connect_start_chat_contact(
   PersistentChat = NULL,
   RelatedContactId = NULL,
   SegmentAttributes = NULL,
-  CustomerId = NULL
+  CustomerId = NULL,
+  DisconnectOnCustomerExit = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ContactFlowId}{[required] The identifier of the flow for initiating the chat. To see the
-ContactFlowId in the Amazon Connect admin website, on the navigation
-menu go to \strong{Routing}, \strong{Flows}. Choose the flow. On the flow page,
-under the name of the flow, choose \strong{Show additional flow information}.
-The ContactFlowId is the last part of the ARN, shown here in bold:
+\item{ContactFlowId}{[required] The identifier of the flow for initiating the chat. To see the ContactFlowId in the Connect Customer admin website, on the navigation menu go to \strong{Routing}, \strong{Flows}. Choose the flow. On the flow page, under the name of the flow, choose \strong{Show additional flow information}. The ContactFlowId is the last part of the ARN, shown here in bold:
 
 arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/\strong{846ec553-a005-41c0-8341-xxxxxxxxxxxx}}
 
-\item{Attributes}{A custom key-value pair using an attribute map. The attributes are
-standard Amazon Connect attributes. They can be accessed in flows just
-like any other contact attributes.
+\item{Attributes}{A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows just like any other contact attributes.
 
-There can be up to 32,768 UTF-8 bytes across all key-value pairs per
-contact. Attribute keys can include only alphanumeric, dash, and
-underscore characters.}
+There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.}
 
 \item{ParticipantDetails}{[required] Information identifying the participant.}
 
-\item{InitialMessage}{The initial message to be sent to the newly created chat. If you have a
-Lex bot in your flow, the initial message is not delivered to the Lex
-bot.}
+\item{ParticipantConfiguration}{The configuration of the participant.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{InitialMessage}{The initial message to be sent to the newly created chat.}
 
-\item{ChatDurationInMinutes}{The total duration of the newly started chat session. If not specified,
-the chat session duration defaults to 25 hour. The minimum configurable
-time is 60 minutes. The maximum configurable time is 10,080 minutes (7
-days).}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
-\item{SupportedMessagingContentTypes}{The supported chat message content types. Supported types are
-\code{text/plain}, \code{text/markdown}, \code{application/json},
-\code{application/vnd.amazonaws.connect.message.interactive}, and
-\code{application/vnd.amazonaws.connect.message.interactive.response}.
+\item{ChatDurationInMinutes}{The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).}
 
-Content types must always contain \code{text/plain}. You can then put any
-other supported type in the list. For example, all the following lists
-are valid because they contain \code{text/plain}:
-\verb{[text/plain, text/markdown, application/json]},
-\verb{[text/markdown, text/plain]},
-\verb{[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]}.
+\item{SupportedMessagingContentTypes}{The supported chat message content types. Supported types are \code{text/plain}, \code{text/markdown}, \code{application/json}, \code{application/vnd.amazonaws.connect.message.interactive}, and \code{application/vnd.amazonaws.connect.message.interactive.response}.
 
-The type \code{application/vnd.amazonaws.connect.message.interactive} is
-required to use the \href{https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html}{Show view}
-flow block.}
+Content types must always contain \code{text/plain}. You can then put any other supported type in the list. For example, all the following lists are valid because they contain \code{text/plain}: \verb{[text/plain, text/markdown, application/json]}, \verb{[text/markdown, text/plain]}, \verb{[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]}.
 
-\item{PersistentChat}{Enable persistent chats. For more information about enabling persistent
-chat, and for example use cases and how to configure for them, see
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html}{Enable persistent chat}.}
+The type \code{application/vnd.amazonaws.connect.message.interactive} is required to use the \href{https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html}{Show view} flow block.}
 
-\item{RelatedContactId}{The unique identifier for an Amazon Connect contact. This identifier is
-related to the chat starting.
+\item{PersistentChat}{Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how to configure for them, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html}{Enable persistent chat}.}
+
+\item{RelatedContactId}{The unique identifier for an Connect Customer contact. This identifier is related to the chat starting.
 
 You cannot provide data for both RelatedContactId and PersistentChat.}
 
-\item{SegmentAttributes}{A set of system defined key-value pairs stored on individual contact
-segments using an attribute map. The attributes are standard Amazon
-Connect attributes. They can be accessed in flows.
+\item{SegmentAttributes}{A set of system defined key-value pairs stored on individual contact segments using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows.
 
 Attribute keys can include only alphanumeric, -, and _.
 
 This field can be used to show channel subtype, such as \code{connect:Guide}.
 
-The types \code{application/vnd.amazonaws.connect.message.interactive} and
-\code{application/vnd.amazonaws.connect.message.interactive.response} must be
-present in the SupportedMessagingContentTypes field of this API in order
-to set \code{SegmentAttributes} as
-\{\verb{ "connect:Subtype": \\\{"valueString" : "connect:Guide" \\\}\\\}}.}
+The types \code{application/vnd.amazonaws.connect.message.interactive} and \code{application/vnd.amazonaws.connect.message.interactive.response} must be present in the SupportedMessagingContentTypes field of this API in order to set \code{SegmentAttributes} as \{\verb{ "connect:Subtype": \\\{"valueString" : "connect:Guide" \\\}\\\}}.}
 
-\item{CustomerId}{The customer's identification number. For example, the \code{CustomerId} may
-be a customer number from your CRM.}
+\item{CustomerId}{The customer's identification number. For example, the \code{CustomerId} may be a customer number from your CRM.}
+
+\item{DisconnectOnCustomerExit}{A list of participant types to automatically disconnect when the end customer ends the chat session, allowing them to continue through disconnect flows such as surveys or feedback forms.}
 }
 \description{
-Initiates a flow to start a new chat for the customer. Response of this API provides a token required to obtain credentials from the \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-participant_CreateParticipantConnection.html}{CreateParticipantConnection} API in the Amazon Connect Participant Service.
+Initiates a flow to start a new chat for the customer. Response of this API provides a token required to obtain credentials from the \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-participant_CreateParticipantConnection.html}{CreateParticipantConnection} API in the Connect Customer Participant Service.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_start_chat_contact/} for full documentation.
 }

@@ -8,9 +8,7 @@ SES account in the current Amazon Web Services Region}
 ses_list_configuration_sets(NextToken = NULL, MaxItems = NULL)
 }
 \arguments{
-\item{NextToken}{A token returned from a previous call to
-\code{\link[=ses_list_configuration_sets]{list_configuration_sets}} to indicate the
-position of the configuration set in the configuration set list.}
+\item{NextToken}{A token returned from a previous call to \code{\link[=ses_list_configuration_sets]{list_configuration_sets}} to indicate the position of the configuration set in the configuration set list.}
 
 \item{MaxItems}{The number of configuration sets to return.}
 }

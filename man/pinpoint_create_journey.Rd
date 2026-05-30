@@ -7,10 +7,9 @@
 pinpoint_create_journey(ApplicationId, WriteJourneyRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{WriteJourneyRequest}{[required]}
+\item{WriteJourneyRequest}{[required] Specifies the configuration and other settings for a journey.}
 }
 \description{
 Creates a journey for an application.

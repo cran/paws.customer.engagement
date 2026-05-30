@@ -42,7 +42,7 @@ pinpointsmsvoice_create_configuration_set <- function(ConfigurationSetName = NUL
 #' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoice_create_configuration_set_event_destination/](https://www.paws-r-sdk.com/docs/pinpointsmsvoice_create_configuration_set_event_destination/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; ConfigurationSetName
-#' @param EventDestination 
+#' @param EventDestination An object that defines an event destination.
 #' @param EventDestinationName A name that identifies the event destination.
 #'
 #' @keywords internal
@@ -171,10 +171,8 @@ pinpointsmsvoice_get_configuration_set_event_destinations <- function(Configurat
 #'
 #' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoice_list_configuration_sets/](https://www.paws-r-sdk.com/docs/pinpointsmsvoice_list_configuration_sets/) for full documentation.
 #'
-#' @param NextToken A token returned from a previous call to the API that indicates the
-#' position in the list of results.
-#' @param PageSize Used to specify the number of items that should be returned in the
-#' response.
+#' @param NextToken A token returned from a previous call to the API that indicates the position in the list of results.
+#' @param PageSize Used to specify the number of items that should be returned in the response.
 #'
 #' @keywords internal
 #'
@@ -205,16 +203,11 @@ pinpointsmsvoice_list_configuration_sets <- function(NextToken = NULL, PageSize 
 #'
 #' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoice_send_voice_message/](https://www.paws-r-sdk.com/docs/pinpointsmsvoice_send_voice_message/) for full documentation.
 #'
-#' @param CallerId The phone number that appears on recipients' devices when they receive
-#' the message.
-#' @param ConfigurationSetName The name of the configuration set that you want to use to send the
-#' message.
-#' @param Content 
+#' @param CallerId The phone number that appears on recipients' devices when they receive the message.
+#' @param ConfigurationSetName The name of the configuration set that you want to use to send the message.
+#' @param Content An object that contains a voice message and information about the recipient that you want to send it to.
 #' @param DestinationPhoneNumber The phone number that you want to send the voice message to.
-#' @param OriginationPhoneNumber The phone number that Amazon Pinpoint should use to send the voice
-#' message. This isn't necessarily the phone number that appears on
-#' recipients' devices when they receive the message, because you can
-#' specify a CallerId parameter in the request.
+#' @param OriginationPhoneNumber The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
 #'
 #' @keywords internal
 #'
@@ -246,7 +239,7 @@ pinpointsmsvoice_send_voice_message <- function(CallerId = NULL, ConfigurationSe
 #' See [https://www.paws-r-sdk.com/docs/pinpointsmsvoice_update_configuration_set_event_destination/](https://www.paws-r-sdk.com/docs/pinpointsmsvoice_update_configuration_set_event_destination/) for full documentation.
 #'
 #' @param ConfigurationSetName &#91;required&#93; ConfigurationSetName
-#' @param EventDestination 
+#' @param EventDestination An object that defines an event destination.
 #' @param EventDestinationName &#91;required&#93; EventDestinationName
 #'
 #' @keywords internal

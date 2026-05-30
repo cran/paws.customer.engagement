@@ -11,8 +11,7 @@ pinpointemail_update_configuration_set_event_destination(
 )
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The name of the configuration set that contains the event destination
-that you want to modify.}
+\item{ConfigurationSetName}{[required] The name of the configuration set that contains the event destination that you want to modify.}
 
 \item{EventDestinationName}{[required] The name of the event destination that you want to modify.}
 

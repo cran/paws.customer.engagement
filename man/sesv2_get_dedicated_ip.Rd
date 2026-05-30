@@ -9,9 +9,7 @@ the automatic warm-up process for the address}
 sesv2_get_dedicated_ip(Ip)
 }
 \arguments{
-\item{Ip}{[required] The IP address that you want to obtain more information about. The value
-you specify has to be a dedicated IP address that's assocaited with your
-Amazon Web Services account.}
+\item{Ip}{[required] The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.}
 }
 \description{
 Get information about a dedicated IP address, including the name of the dedicated IP pool that it's associated with, as well information about the automatic warm-up process for the address.

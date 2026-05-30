@@ -14,18 +14,13 @@ connectparticipant_start_attachment_upload(
 )
 }
 \arguments{
-\item{ContentType}{[required] Describes the MIME file type of the attachment. For a list of supported
-file types, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html}{Feature specifications}
-in the \emph{Amazon Connect Administrator Guide}.}
+\item{ContentType}{[required] Describes the MIME file type of the attachment. For a list of supported file types, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html}{Feature specifications} in the \emph{Amazon Connect Administrator Guide}.}
 
 \item{AttachmentSizeInBytes}{[required] The size of the attachment in bytes.}
 
 \item{AttachmentName}{[required] A case-sensitive name of the attachment being uploaded.}
 
-\item{ClientToken}{[required] A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{[required] A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{ConnectionToken}{[required] The authentication token associated with the participant's connection.}
 }

@@ -7,8 +7,7 @@
 ses_create_template(Template)
 }
 \arguments{
-\item{Template}{[required] The content of the email, composed of a subject line and either an HTML
-part or a text-only part.}
+\item{Template}{[required] The content of the email, composed of a subject line and either an HTML part or a text-only part.}
 }
 \description{
 Creates an email template. Email templates enable you to send personalized email to one or more destinations in a single operation. For more information, see the \href{https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html}{Amazon SES Developer Guide}.

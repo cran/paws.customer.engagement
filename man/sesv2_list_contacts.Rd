@@ -16,17 +16,9 @@ sesv2_list_contacts(
 
 \item{Filter}{A filter that can be applied to a list of contacts.}
 
-\item{PageSize}{The number of contacts that may be returned at once, which is dependent
-on if there are more or less contacts than the value of the PageSize.
-Use this parameter to paginate results. If additional contacts exist
-beyond the specified limit, the \code{NextToken} element is sent in the
-response. Use the \code{NextToken} value in subsequent requests to retrieve
-additional contacts.}
+\item{PageSize}{The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the \code{NextToken} element is sent in the response. Use the \code{NextToken} value in subsequent requests to retrieve additional contacts.}
 
-\item{NextToken}{A string token indicating that there might be additional contacts
-available to be listed. Use the token provided in the Response to use in
-the subsequent call to ListContacts with the same parameters to retrieve
-the next page of contacts.}
+\item{NextToken}{A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.}
 }
 \description{
 Lists the contacts present in a specific contact list.

@@ -11,9 +11,7 @@ connectcases_list_fields(domainId, maxResults = NULL, nextToken = NULL)
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Lists all fields in a Cases domain.

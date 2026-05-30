@@ -11,9 +11,9 @@ connectcampaignservicev2_put_profile_outbound_request_batch(
 )
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{profileOutboundRequests}{[required]}
+\item{profileOutboundRequests}{[required] List of profile outbound requests}
 }
 \description{
 Takes in a list of profile outbound requests to be placed as part of an outbound campaign. This API is idempotent.

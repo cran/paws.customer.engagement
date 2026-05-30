@@ -9,9 +9,7 @@ connectcases_list_domains(maxResults = NULL, nextToken = NULL)
 \arguments{
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Lists all cases domains in the Amazon Web Services account. Each list item is a condensed summary object of the domain.

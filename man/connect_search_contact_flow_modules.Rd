@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_search_contact_flow_modules}
 \alias{connect_search_contact_flow_modules}
-\title{Searches the flow modules in an Amazon Connect instance, with optional
+\title{Searches the flow modules in an Connect Customer instance, with optional
 filtering}
 \usage{
 connect_search_contact_flow_modules(
@@ -14,12 +14,9 @@ connect_search_contact_flow_modules(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the instance
-ID in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
@@ -27,12 +24,10 @@ results.}
 
 \item{SearchCriteria}{The search criteria to be used to return flow modules.
 
-The \code{name} and \code{description} fields support "contains" queries with a
-minimum of 2 characters and a maximum of 25 characters. Any queries with
-character lengths outside of this range will result in invalid results.}
+The \code{name} and \code{description} fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will result in invalid results.}
 }
 \description{
-Searches the flow modules in an Amazon Connect instance, with optional filtering.
+Searches the flow modules in an Connect Customer instance, with optional filtering.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_search_contact_flow_modules/} for full documentation.
 }

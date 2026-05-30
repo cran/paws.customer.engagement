@@ -17,11 +17,9 @@ pinpointsmsvoicev2_describe_verified_destination_numbers(
 
 \item{DestinationPhoneNumbers}{An array of verified destination phone number, in E.164 format.}
 
-\item{Filters}{An array of VerifiedDestinationNumberFilter objects to filter the
-results.}
+\item{Filters}{An array of VerifiedDestinationNumberFilter objects to filter the results.}
 
-\item{NextToken}{The token to be used for the next set of paginated results. You don't
-need to supply a value for this field in the initial request.}
+\item{NextToken}{The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.}
 
 \item{MaxResults}{The maximum number of results to return per each request.}
 }

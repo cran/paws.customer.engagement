@@ -10,9 +10,9 @@ connectcampaignservicev2_update_campaign_flow_association(
 )
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{connectCampaignFlowArn}{[required]}
+\item{connectCampaignFlowArn}{[required] Amazon Resource Names(ARN)}
 }
 \description{
 Updates the campaign flow associated with a campaign. This API is idempotent.

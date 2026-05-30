@@ -10,11 +10,9 @@ pinpoint_update_recommender_configuration(
 )
 }
 \arguments{
-\item{RecommenderId}{[required] The unique identifier for the recommender model configuration. This
-identifier is displayed as the \strong{Recommender ID} on the Amazon Pinpoint
-console.}
+\item{RecommenderId}{[required] The unique identifier for the recommender model configuration. This identifier is displayed as the \strong{Recommender ID} on the Amazon Pinpoint console.}
 
-\item{UpdateRecommenderConfiguration}{[required]}
+\item{UpdateRecommenderConfiguration}{[required] Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.}
 }
 \description{
 Updates an Amazon Pinpoint configuration for a recommender model.

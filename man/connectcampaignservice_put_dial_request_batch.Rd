@@ -7,9 +7,9 @@
 connectcampaignservice_put_dial_request_batch(id, dialRequests)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{dialRequests}{[required]}
+\item{dialRequests}{[required] A list of dial requests.}
 }
 \description{
 Creates dials requests for the specified campaign Amazon Connect account. This API is idempotent.

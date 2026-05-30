@@ -13,21 +13,13 @@ pinpoint_list_templates(
 )
 }
 \arguments{
-\item{NextToken}{The string that specifies which page of results to return in a paginated
-response. This parameter is not supported for application, campaign, and
-journey metrics.}
+\item{NextToken}{The string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.}
 
-\item{PageSize}{The maximum number of items to include in each page of a paginated
-response. This parameter is not supported for application, campaign, and
-journey metrics.}
+\item{PageSize}{The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.}
 
-\item{Prefix}{The substring to match in the names of the message templates to include
-in the results. If you specify this value, Amazon Pinpoint returns only
-those templates whose names begin with the value that you specify.}
+\item{Prefix}{The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.}
 
-\item{TemplateType}{The type of message template to include in the results. Valid values
-are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in
-the results, don't include this parameter in your request.}
+\item{TemplateType}{The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.}
 }
 \description{
 Retrieves information about all the message templates that are associated with your Amazon Pinpoint account.

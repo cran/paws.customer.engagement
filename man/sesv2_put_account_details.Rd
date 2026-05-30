@@ -16,27 +16,19 @@ sesv2_put_account_details(
 \arguments{
 \item{MailType}{[required] The type of email your account will send.}
 
-\item{WebsiteURL}{[required] The URL of your website. This information helps us better understand the
-type of content that you plan to send.}
+\item{WebsiteURL}{[required] The URL of your website. This information helps us better understand the type of content that you plan to send.}
 
 \item{ContactLanguage}{The language you would prefer to be contacted with.}
 
 \item{UseCaseDescription}{A description of the types of email that you plan to send.}
 
-\item{AdditionalContactEmailAddresses}{Additional email addresses that you would like to be notified regarding
-Amazon SES matters.}
+\item{AdditionalContactEmailAddresses}{Additional email addresses that you would like to be notified regarding Amazon SES matters.}
 
-\item{ProductionAccessEnabled}{Indicates whether or not your account should have production access in
-the current Amazon Web Services Region.
+\item{ProductionAccessEnabled}{Indicates whether or not your account should have production access in the current Amazon Web Services Region.
 
-If the value is \code{false}, then your account is in the \emph{sandbox}. When
-your account is in the sandbox, you can only send email to verified
-identities.
+If the value is \code{false}, then your account is in the \emph{sandbox}. When your account is in the sandbox, you can only send email to verified identities.
 
-If the value is \code{true}, then your account has production access. When
-your account has production access, you can send email to any address.
-The sending quota and maximum sending rate for your account vary based
-on your specific use case.}
+If the value is \code{true}, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.}
 }
 \description{
 Update your Amazon SES account details.

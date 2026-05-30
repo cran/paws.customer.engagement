@@ -15,67 +15,46 @@ sesv2_send_email(
   EmailTags = NULL,
   ConfigurationSetName = NULL,
   EndpointId = NULL,
+  TenantName = NULL,
   ListManagementOptions = NULL
 )
 }
 \arguments{
-\item{FromEmailAddress}{The email address to use as the "From" address for the email. The
-address that you specify has to be verified.}
+\item{FromEmailAddress}{The email address to use as the "From" address for the email. The address that you specify has to be verified.}
 
-\item{FromEmailAddressIdentityArn}{This parameter is used only for sending authorization. It is the ARN of
-the identity that is associated with the sending authorization policy
-that permits you to use the email address specified in the
-\code{FromEmailAddress} parameter.
+\item{FromEmailAddressIdentityArn}{This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the \code{FromEmailAddress} parameter.
 
-For example, if the owner of example.com (which has ARN
-arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a
-policy to it that authorizes you to use sender@example.com, then you
-would specify the \code{FromEmailAddressIdentityArn} to be
-arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-\code{FromEmailAddress} to be sender@example.com.
+For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the \code{FromEmailAddressIdentityArn} to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the \code{FromEmailAddress} to be sender@example.com.
 
 For more information about sending authorization, see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html}{Amazon SES Developer Guide}.
 
-For Raw emails, the \code{FromEmailAddressIdentityArn} value overrides the
-X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email
-message content.}
+For Raw emails, the \code{FromEmailAddressIdentityArn} value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.}
 
 \item{Destination}{An object that contains the recipients of the email message.}
 
-\item{ReplyToAddresses}{The "Reply-to" email addresses for the message. When the recipient
-replies to the message, each Reply-to address receives the reply.}
+\item{ReplyToAddresses}{The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.}
 
-\item{FeedbackForwardingEmailAddress}{The address that you want bounce and complaint notifications to be sent
-to.}
+\item{FeedbackForwardingEmailAddress}{The address that you want bounce and complaint notifications to be sent to.}
 
-\item{FeedbackForwardingEmailAddressIdentityArn}{This parameter is used only for sending authorization. It is the ARN of
-the identity that is associated with the sending authorization policy
-that permits you to use the email address specified in the
-\code{FeedbackForwardingEmailAddress} parameter.
+\item{FeedbackForwardingEmailAddressIdentityArn}{This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the \code{FeedbackForwardingEmailAddress} parameter.
 
-For example, if the owner of example.com (which has ARN
-arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a
-policy to it that authorizes you to use feedback@example.com, then you
-would specify the \code{FeedbackForwardingEmailAddressIdentityArn} to be
-arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-\code{FeedbackForwardingEmailAddress} to be feedback@example.com.
+For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the \code{FeedbackForwardingEmailAddressIdentityArn} to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the \code{FeedbackForwardingEmailAddress} to be feedback@example.com.
 
 For more information about sending authorization, see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html}{Amazon SES Developer Guide}.}
 
-\item{Content}{[required] An object that contains the body of the message. You can send either a
-Simple message, Raw message, or a Templated message.}
+\item{Content}{[required] An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.}
 
-\item{EmailTags}{A list of tags, in the form of name/value pairs, to apply to an email
-that you send using the \code{\link[=sesv2_send_email]{send_email}} operation. Tags
-correspond to characteristics of the email that you define, so that you
-can publish email sending events.}
+\item{EmailTags}{A list of tags, in the form of name/value pairs, to apply to an email that you send using the \code{\link[=sesv2_send_email]{send_email}} operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.}
 
 \item{ConfigurationSetName}{The name of the configuration set to use when sending the email.}
 
 \item{EndpointId}{The ID of the multi-region endpoint (global-endpoint).}
 
-\item{ListManagementOptions}{An object used to specify a list or topic to which an email belongs,
-which will be used when a contact chooses to unsubscribe.}
+\item{TenantName}{The name of the tenant through which this email will be sent.
+
+The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.}
+
+\item{ListManagementOptions}{An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.}
 }
 \description{
 Sends an email message. You can use the Amazon SES API v2 to send the following types of messages:

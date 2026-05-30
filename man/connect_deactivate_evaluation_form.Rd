@@ -2,7 +2,8 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_deactivate_evaluation_form}
 \alias{connect_deactivate_evaluation_form}
-\title{Deactivates an evaluation form in the specified Amazon Connect instance}
+\title{Deactivates an evaluation form in the specified Connect Customer
+instance}
 \usage{
 connect_deactivate_evaluation_form(
   InstanceId,
@@ -11,16 +12,14 @@ connect_deactivate_evaluation_form(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{EvaluationFormId}{[required] The unique identifier for the evaluation form.}
 
-\item{EvaluationFormVersion}{[required] A version of the evaluation form. If the version property is not
-provided, the latest version of the evaluation form is deactivated.}
+\item{EvaluationFormVersion}{[required] A version of the evaluation form. If the version property is not provided, the latest version of the evaluation form is deactivated.}
 }
 \description{
-Deactivates an evaluation form in the specified Amazon Connect instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form.
+Deactivates an evaluation form in the specified Connect Customer instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_deactivate_evaluation_form/} for full documentation.
 }

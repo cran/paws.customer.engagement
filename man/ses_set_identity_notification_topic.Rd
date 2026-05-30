@@ -16,17 +16,11 @@ ses_set_identity_notification_topic(
 
 You can only specify a verified identity for this parameter.
 
-You can specify an identity by using its name or by using its Amazon
-Resource Name (ARN). The following examples are all valid identities:
-\code{sender@example.com}, \code{example.com},
-\code{arn:aws:ses:us-east-1:123456789012:identity/example.com}.}
+You can specify an identity by using its name or by using its Amazon Resource Name (ARN). The following examples are all valid identities: \code{sender@example.com}, \code{example.com}, \code{arn:aws:ses:us-east-1:123456789012:identity/example.com}.}
 
-\item{NotificationType}{[required] The type of notifications that are published to the specified Amazon SNS
-topic.}
+\item{NotificationType}{[required] The type of notifications that are published to the specified Amazon SNS topic.}
 
-\item{SnsTopic}{The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter
-is omitted from the request or a null value is passed, \code{SnsTopic} is
-cleared and publishing is disabled.}
+\item{SnsTopic}{The Amazon Resource Name (ARN) of the Amazon SNS topic. If the parameter is omitted from the request or a null value is passed, \code{SnsTopic} is cleared and publishing is disabled.}
 }
 \description{
 Sets an Amazon Simple Notification Service (Amazon SNS) topic to use when delivering notifications. When you use this operation, you specify a verified identity, such as an email address or domain. When you send an email that uses the chosen identity in the Source field, Amazon SES sends notifications to the topic you specified. You can send bounce, complaint, or delivery notifications (or any combination of the three) to the Amazon SNS topic that you specify.

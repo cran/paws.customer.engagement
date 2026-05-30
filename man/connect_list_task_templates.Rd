@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_task_templates}
 \alias{connect_list_task_templates}
-\title{Lists task templates for the specified Amazon Connect instance}
+\title{Lists task templates for the specified Connect Customer instance}
 \usage{
 connect_list_task_templates(
   InstanceId,
@@ -13,29 +13,22 @@ connect_list_task_templates(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 
-It is not expected that you set this because the value returned in the
-previous response is always null.}
+It is not expected that you set this because the value returned in the previous response is always null.}
 
 \item{MaxResults}{The maximum number of results to return per page.
 
 It is not expected that you set this.}
 
-\item{Status}{Marks a template as \code{ACTIVE} or \code{INACTIVE} for a task to refer to it.
-Tasks can only be created from \code{ACTIVE} templates. If a template is
-marked as \code{INACTIVE}, then a task that refers to this template cannot be
-created.}
+\item{Status}{Marks a template as \code{ACTIVE} or \code{INACTIVE} for a task to refer to it. Tasks can only be created from \code{ACTIVE} templates. If a template is marked as \code{INACTIVE}, then a task that refers to this template cannot be created.}
 
 \item{Name}{The name of the task template.}
 }
 \description{
-Lists task templates for the specified Amazon Connect instance.
+Lists task templates for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_task_templates/} for full documentation.
 }

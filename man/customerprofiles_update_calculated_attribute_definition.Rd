@@ -21,8 +21,7 @@ customerprofiles_update_calculated_attribute_definition(
 
 \item{Description}{The description of the calculated attribute.}
 
-\item{Conditions}{The conditions including range, object count, and threshold for the
-calculated attribute.}
+\item{Conditions}{The conditions including range, object count, and threshold for the calculated attribute.}
 }
 \description{
 Updates an existing calculated attribute definition. When updating the Conditions, note that increasing the date range of a calculated attribute will not trigger inclusion of historical data greater than the current date range.

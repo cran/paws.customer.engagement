@@ -10,7 +10,7 @@ pinpoint_tag_resource(ResourceArn, TagsModel)
 \arguments{
 \item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource.}
 
-\item{TagsModel}{[required]}
+\item{TagsModel}{[required] Specifies the tags (keys and values) for an application, campaign, message template, or segment.}
 }
 \description{
 Adds one or more tags (keys and values) to an application, campaign, message template, or segment.

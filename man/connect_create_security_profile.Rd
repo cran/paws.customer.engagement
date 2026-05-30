@@ -14,7 +14,9 @@ connect_create_security_profile(
   TagRestrictedResources = NULL,
   Applications = NULL,
   HierarchyRestrictedResources = NULL,
-  AllowedAccessControlHierarchyGroupId = NULL
+  AllowedAccessControlHierarchyGroupId = NULL,
+  AllowedFlowModules = NULL,
+  GranularAccessControlConfiguration = NULL
 )
 }
 \arguments{
@@ -22,32 +24,25 @@ connect_create_security_profile(
 
 \item{Description}{The description of the security profile.}
 
-\item{Permissions}{Permissions assigned to the security profile. For a list of valid
-permissions, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html}{List of security profile permissions}.}
+\item{Permissions}{Permissions assigned to the security profile. For a list of valid permissions, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html}{List of security profile permissions}.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 
-\item{AllowedAccessControlTags}{The list of tags that a security profile uses to restrict access to
-resources in Amazon Connect.}
+\item{AllowedAccessControlTags}{The list of tags that a security profile uses to restrict access to resources in Connect Customer.}
 
-\item{TagRestrictedResources}{The list of resources that a security profile applies tag restrictions
-to in Amazon Connect. For a list of Amazon Connect resources that you
-can tag, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html}{Add tags to resources in Amazon Connect}
-in the \emph{Amazon Connect Administrator Guide}.}
+\item{TagRestrictedResources}{The list of resources that a security profile applies tag restrictions to in Connect Customer. For a list of Connect Customer resources that you can tag, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html}{Add tags to resources in Connect Customer} in the \emph{Connect Customer Administrator Guide}.}
 
-\item{Applications}{A list of third-party applications that the security profile will give
-access to.}
+\item{Applications}{A list of third-party applications or MCP Servers that the security profile will give access to.}
 
-\item{HierarchyRestrictedResources}{The list of resources that a security profile applies hierarchy
-restrictions to in Amazon Connect. Following are acceptable
-ResourceNames: \code{User}.}
+\item{HierarchyRestrictedResources}{The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: \code{User}.}
 
-\item{AllowedAccessControlHierarchyGroupId}{The identifier of the hierarchy group that a security profile uses to
-restrict access to resources in Amazon Connect.}
+\item{AllowedAccessControlHierarchyGroupId}{The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.}
+
+\item{AllowedFlowModules}{A list of Flow Modules an AI Agent can invoke as a tool.}
+
+\item{GranularAccessControlConfiguration}{The granular access control configuration for the security profile, including data table permissions.}
 }
 \description{
 Creates a security profile.

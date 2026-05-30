@@ -10,9 +10,9 @@ connectcampaignservicev2_delete_connect_instance_config(
 )
 }
 \arguments{
-\item{connectInstanceId}{[required]}
+\item{connectInstanceId}{[required] Amazon Connect Instance Id}
 
-\item{campaignDeletionPolicy}{}
+\item{campaignDeletionPolicy}{Enumeration of the policies to enact on existing campaigns during instance config deletion}
 }
 \description{
 Deletes a connect instance config from the specified AWS account.

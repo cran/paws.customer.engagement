@@ -12,25 +12,20 @@ connectparticipant_send_message(
 )
 }
 \arguments{
-\item{ContentType}{[required] The type of the content. Supported types are \code{text/plain},
-\code{text/markdown}, \code{application/json}, and
-\code{application/vnd.amazonaws.connect.message.interactive.response}.}
+\item{ContentType}{[required] The type of the content. Possible types are \code{text/plain}, \code{text/markdown}, \code{application/json}, and \code{application/vnd.amazonaws.connect.message.interactive.response}.
+
+Supported types on the contact are configured through \code{SupportedMessagingContentTypes} on \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html}{StartChatContact} and \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html}{StartOutboundChatContact}.
+
+For Apple Messages for Business, SMS, and WhatsApp Business Messaging contacts, only \code{text/plain} is supported.}
 
 \item{Content}{[required] The content of the message.
 \itemize{
-\item For \code{text/plain} and \code{text/markdown}, the Length Constraints are
-Minimum of 1, Maximum of 1024.
-\item For \code{application/json}, the Length Constraints are Minimum of 1,
-Maximum of 12000.
-\item For
-\code{application/vnd.amazonaws.connect.message.interactive.response},
-the Length Constraints are Minimum of 1, Maximum of 12288.
+\item For \code{text/plain} and \code{text/markdown}, the Length Constraints are Minimum of 1, Maximum of 1024.
+\item For \code{application/json}, the Length Constraints are Minimum of 1, Maximum of 12000.
+\item For \code{application/vnd.amazonaws.connect.message.interactive.response}, the Length Constraints are Minimum of 1, Maximum of 12288.
 }}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{ConnectionToken}{[required] The authentication token associated with the connection.}
 }

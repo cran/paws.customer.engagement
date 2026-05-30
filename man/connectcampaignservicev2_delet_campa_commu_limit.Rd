@@ -7,9 +7,9 @@
 connectcampaignservicev2_delete_campaign_communication_limits(id, config)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{config}{[required]}
+\item{config}{[required] The type of campaign communication limits config.}
 }
 \description{
 Deletes the communication limits config for a campaign. This API is idempotent.

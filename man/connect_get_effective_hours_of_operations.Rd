@@ -12,13 +12,13 @@ connect_get_effective_hours_of_operations(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{HoursOfOperationId}{[required] The identifier for the hours of operation.}
 
-\item{FromDate}{[required] The Date from when the hours of operation are listed.}
+\item{FromDate}{[required] The date from when the hours of operation are listed.}
 
-\item{ToDate}{[required] The Date until when the hours of operation are listed.}
+\item{ToDate}{[required] The date until when the hours of operation are listed.}
 }
 \description{
 Get the hours of operations with the effective override applied.

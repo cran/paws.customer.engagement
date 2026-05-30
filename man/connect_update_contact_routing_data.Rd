@@ -14,23 +14,15 @@ connect_update_contact_routing_data(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ContactId}{[required] The identifier of the contact in this instance of Amazon Connect.}
+\item{ContactId}{[required] The identifier of the contact in this instance of Connect Customer.}
 
-\item{QueueTimeAdjustmentSeconds}{The number of seconds to add or subtract from the contact's routing age.
-Contacts are routed to agents on a first-come, first-serve basis. This
-means that changing their amount of time in queue compared to others
-also changes their position in queue.}
+\item{QueueTimeAdjustmentSeconds}{The number of seconds to add or subtract from the contact's routing age. Contacts are routed to agents on a first-come, first-serve basis. This means that changing their amount of time in queue compared to others also changes their position in queue.}
 
-\item{QueuePriority}{Priority of the contact in the queue. The default priority for new
-contacts is 5. You can raise the priority of a contact compared to other
-contacts in the queue by assigning them a higher priority, such as 1 or
-2.}
+\item{QueuePriority}{Priority of the contact in the queue. The default priority for new contacts is 5. You can raise the priority of a contact compared to other contacts in the queue by assigning them a higher priority, such as 1 or 2.}
 
-\item{RoutingCriteria}{Updates the routing criteria on the contact. These properties can be
-used to change how a contact is routed within the queue.}
+\item{RoutingCriteria}{Updates the routing criteria on the contact. These properties can be used to change how a contact is routed within the queue.}
 }
 \description{
 Updates routing priority and age on the contact (\strong{QueuePriority} and \strong{QueueTimeAdjustmentInSeconds}). These properties can be used to change a customer's position in the queue. For example, you can move a contact to the back of the queue by setting a lower routing priority relative to other contacts in queue; or you can move a contact to the front of the queue by increasing the routing age which will make the contact look artificially older and therefore higher up in the first-in-first-out routing order. Note that adjusting the routing age of a contact affects only its position in queue, and not its actual queue wait time as reported through metrics. These properties can also be updated by using \href{https://docs.aws.amazon.com/connect/latest/adminguide/change-routing-priority.html}{the Set routing priority / age flow block}.

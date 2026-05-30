@@ -7,7 +7,7 @@
 connectcampaignservice_resume_campaign(id)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 }
 \description{
 Stops a campaign for the specified Amazon Connect account.

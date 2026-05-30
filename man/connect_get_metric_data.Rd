@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_get_metric_data}
 \alias{connect_get_metric_data}
-\title{Gets historical metric data from the specified Amazon Connect instance}
+\title{Gets historical metric data from the specified Connect Customer instance}
 \usage{
 connect_get_metric_data(
   InstanceId,
@@ -16,55 +16,31 @@ connect_get_metric_data(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{StartTime}{[required] The timestamp, in UNIX Epoch time format, at which to start the
-reporting interval for the retrieval of historical metrics data. The
-time must be specified using a multiple of 5 minutes, such as 10:05,
-10:10, 10:15.
+\item{StartTime}{[required] The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.
 
-The start time cannot be earlier than 24 hours before the time of the
-request. Historical metrics are available only for 24 hours.}
+The start time cannot be earlier than 24 hours before the time of the request. Historical metrics are available only for 24 hours.}
 
-\item{EndTime}{[required] The timestamp, in UNIX Epoch time format, at which to end the reporting
-interval for the retrieval of historical metrics data. The time must be
-specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10,
-and must be later than the start time timestamp.
+\item{EndTime}{[required] The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.
 
-The time range between the start and end time must be less than 24
-hours.}
+The time range between the start and end time must be less than 24 hours.}
 
-\item{Filters}{[required] The queues, up to 100, or channels, to use to filter the metrics
-returned. Metric data is retrieved only for the resources associated
-with the queues or channels included in the filter. You can include both
-queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK
-channels are supported.
+\item{Filters}{[required] The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the resources associated with the queues or channels included in the filter. You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
 
-RoutingStepExpression is not a valid filter for GetMetricData and we
-recommend switching to GetMetricDataV2 for more up-to-date features.
+RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for more up-to-date features.
 
-To filter by \code{Queues}, enter the queue ID/ARN, not the name of the
-queue.}
+To filter by \code{Queues}, enter the queue ID/ARN, not the name of the queue.}
 
-\item{Groupings}{The grouping applied to the metrics returned. For example, when results
-are grouped by queue, the metrics returned are grouped by queue. The
-values returned apply to the metrics for each queue rather than
-aggregated for all queues.
+\item{Groupings}{The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.
 
-If no grouping is specified, a summary of metrics for all queues is
-returned.
+If no grouping is specified, a summary of metrics for all queues is returned.
 
-RoutingStepExpression is not a valid filter for GetMetricData and we
-recommend switching to GetMetricDataV2 for more up-to-date features.}
+RoutingStepExpression is not a valid filter for GetMetricData and we recommend switching to GetMetricDataV2 for more up-to-date features.}
 
-\item{HistoricalMetrics}{[required] The metrics to retrieve. Specify the name, unit, and statistic for each
-metric. The following historical metrics are available. For a
-description of each metric, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html}{Historical Metrics Definitions}
-in the \emph{Amazon Connect Administrator Guide}.
+\item{HistoricalMetrics}{[required] The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics are available. For a description of each metric, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html}{Metrics definition} in the \emph{Connect Customer Administrator Guide}.
 
-This API does not support a contacts incoming metric (there's no
-CONTACTS_INCOMING metric missing from the documented list).
+This API does not support a contacts incoming metric (there's no CONTACTS_INCOMING metric missing from the documented list).
 
 \strong{ABANDON_TIME}
 
@@ -72,11 +48,15 @@ Unit: SECONDS
 
 Statistic: AVG
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time}{Average queue abandon time}
+
 \strong{AFTER_CONTACT_WORK_TIME}
 
 Unit: SECONDS
 
 Statistic: AVG
+
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#after-contact-work-time}{After contact work time}
 
 \strong{API_CONTACTS_HANDLED}
 
@@ -84,11 +64,23 @@ Unit: COUNT
 
 Statistic: SUM
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled}{API contacts handled}
+
+\strong{AVG_HOLD_TIME}
+
+Unit: SECONDS
+
+Statistic: AVG
+
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-hold-time}{Average customer hold time}
+
 \strong{CALLBACK_CONTACTS_HANDLED}
 
 Unit: COUNT
 
 Statistic: SUM
+
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#callback-contacts-handled}{Callback contacts handled}
 
 \strong{CONTACTS_ABANDONED}
 
@@ -96,11 +88,15 @@ Unit: COUNT
 
 Statistic: SUM
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned}{Contacts abandoned}
+
 \strong{CONTACTS_AGENT_HUNG_UP_FIRST}
 
 Unit: COUNT
 
 Statistic: SUM
+
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-agent-hung-up-first}{Contacts agent hung up first}
 
 \strong{CONTACTS_CONSULTED}
 
@@ -108,11 +104,15 @@ Unit: COUNT
 
 Statistic: SUM
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-consulted}{Contacts consulted}
+
 \strong{CONTACTS_HANDLED}
 
 Unit: COUNT
 
 Statistic: SUM
+
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled}{Contacts handled}
 
 \strong{CONTACTS_HANDLED_INCOMING}
 
@@ -120,11 +120,15 @@ Unit: COUNT
 
 Statistic: SUM
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled-incoming}{Contacts handled incoming}
+
 \strong{CONTACTS_HANDLED_OUTBOUND}
 
 Unit: COUNT
 
 Statistic: SUM
+
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled-outbound}{Contacts handled outbound}
 
 \strong{CONTACTS_HOLD_ABANDONS}
 
@@ -132,11 +136,15 @@ Unit: COUNT
 
 Statistic: SUM
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-hold-disconnect}{Contacts hold disconnect}
+
 \strong{CONTACTS_MISSED}
 
 Unit: COUNT
 
 Statistic: SUM
+
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-non-response}{AGENT_NON_RESPONSE}
 
 \strong{CONTACTS_QUEUED}
 
@@ -144,11 +152,15 @@ Unit: COUNT
 
 Statistic: SUM
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-queued}{Contacts queued}
+
 \strong{CONTACTS_TRANSFERRED_IN}
 
 Unit: COUNT
 
 Statistic: SUM
+
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-in}{Contacts transferred in}
 
 \strong{CONTACTS_TRANSFERRED_IN_FROM_QUEUE}
 
@@ -156,11 +168,15 @@ Unit: COUNT
 
 Statistic: SUM
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-queue}{Contacts transferred out queue}
+
 \strong{CONTACTS_TRANSFERRED_OUT}
 
 Unit: COUNT
 
 Statistic: SUM
+
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out}{Contacts transferred out}
 
 \strong{CONTACTS_TRANSFERRED_OUT_FROM_QUEUE}
 
@@ -168,17 +184,15 @@ Unit: COUNT
 
 Statistic: SUM
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-queue}{Contacts transferred out queue}
+
 \strong{HANDLE_TIME}
 
 Unit: SECONDS
 
 Statistic: AVG
 
-\strong{HOLD_TIME}
-
-Unit: SECONDS
-
-Statistic: AVG
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-handle-time}{Average handle time}
 
 \strong{INTERACTION_AND_HOLD_TIME}
 
@@ -186,11 +200,15 @@ Unit: SECONDS
 
 Statistic: AVG
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interaction-and-customer-hold-time}{Average agent interaction and customer hold time}
+
 \strong{INTERACTION_TIME}
 
 Unit: SECONDS
 
 Statistic: AVG
+
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#aaverage-agent-interaction-time}{Average agent interaction time}
 
 \strong{OCCUPANCY}
 
@@ -198,17 +216,23 @@ Unit: PERCENT
 
 Statistic: AVG
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#occupancy}{Occupancy}
+
 \strong{QUEUE_ANSWER_TIME}
 
 Unit: SECONDS
 
 Statistic: AVG
 
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#\%23average-queue-answer-time}{Average queue answer time}
+
 \strong{QUEUED_TIME}
 
 Unit: SECONDS
 
 Statistic: MAX
+
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#minimum-flow-time}{Minimum flow time}
 
 \strong{SERVICE_LEVEL}
 
@@ -218,18 +242,16 @@ Unit: PERCENT
 
 Statistic: AVG
 
-Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800
-(inclusive), in seconds. For \code{Comparison}, you must enter \code{LT} (for
-"Less than").}
+Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800 (inclusive), in seconds. For \code{Comparison}, you must enter \code{LT} (for "Less than").
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time}{Average queue abandon time}}
+
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 }
 \description{
-Gets historical metric data from the specified Amazon Connect instance.
+Gets historical metric data from the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_get_metric_data/} for full documentation.
 }

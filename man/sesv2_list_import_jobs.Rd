@@ -11,19 +11,11 @@ sesv2_list_import_jobs(
 )
 }
 \arguments{
-\item{ImportDestinationType}{The destination of the import job, which can be used to list import jobs
-that have a certain \code{ImportDestinationType}.}
+\item{ImportDestinationType}{The destination of the import job, which can be used to list import jobs that have a certain \code{ImportDestinationType}.}
 
-\item{NextToken}{A string token indicating that there might be additional import jobs
-available to be listed. Copy this token to a subsequent call to
-\code{\link[=sesv2_list_import_jobs]{list_import_jobs}} with the same parameters to
-retrieve the next page of import jobs.}
+\item{NextToken}{A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to \code{\link[=sesv2_list_import_jobs]{list_import_jobs}} with the same parameters to retrieve the next page of import jobs.}
 
-\item{PageSize}{Maximum number of import jobs to return at once. Use this parameter to
-paginate results. If additional import jobs exist beyond the specified
-limit, the \code{NextToken} element is sent in the response. Use the
-\code{NextToken} value in subsequent requests to retrieve additional
-addresses.}
+\item{PageSize}{Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the \code{NextToken} element is sent in the response. Use the \code{NextToken} value in subsequent requests to retrieve additional addresses.}
 }
 \description{
 Lists all of the import jobs.

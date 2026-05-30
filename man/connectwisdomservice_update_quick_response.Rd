@@ -22,17 +22,14 @@ connectwisdomservice_update_quick_response(
 )
 }
 \arguments{
-\item{channels}{The Amazon Connect contact channels this quick response applies to. The
-supported contact channel types include \code{Chat}.}
+\item{channels}{The Amazon Connect contact channels this quick response applies to. The supported contact channel types include \code{Chat}.}
 
 \item{content}{The updated content of the quick response.}
 
 \item{contentType}{The media type of the quick response content.
 \itemize{
-\item Use \verb{application/x.quickresponse;format=plain} for quick response
-written in plain text.
-\item Use \verb{application/x.quickresponse;format=markdown} for quick response
-written in richtext.
+\item Use \verb{application/x.quickresponse;format=plain} for quick response written in plain text.
+\item Use \verb{application/x.quickresponse;format=markdown} for quick response written in richtext.
 }}
 
 \item{description}{The updated description of the quick response.}
@@ -41,14 +38,9 @@ written in richtext.
 
 \item{isActive}{Whether the quick response is active.}
 
-\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should not be a
-QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-resource to it. Can be either the ID or the ARN. URLs cannot contain the
-ARN.}
+\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 
-\item{language}{The language code value for the language in which the quick response is
-written. The supported language codes include \code{de_DE}, \code{en_US}, \code{es_ES},
-\code{fr_FR}, \code{id_ID}, \code{it_IT}, \code{ja_JP}, \code{ko_KR}, \code{pt_BR}, \code{zh_CN}, \code{zh_TW}}
+\item{language}{The language code value for the language in which the quick response is written. The supported language codes include \code{de_DE}, \code{en_US}, \code{es_ES}, \code{fr_FR}, \code{id_ID}, \code{it_IT}, \code{ja_JP}, \code{ko_KR}, \code{pt_BR}, \code{zh_CN}, \code{zh_TW}}
 
 \item{name}{The name of the quick response.}
 
@@ -60,8 +52,7 @@ written. The supported language codes include \code{de_DE}, \code{en_US}, \code{
 
 \item{removeShortcutKey}{Whether to remove the shortcut key of the quick response.}
 
-\item{shortcutKey}{The shortcut key of the quick response. The value should be unique
-across the knowledge base.}
+\item{shortcutKey}{The shortcut key of the quick response. The value should be unique across the knowledge base.}
 }
 \description{
 Updates an existing Wisdom quick response.

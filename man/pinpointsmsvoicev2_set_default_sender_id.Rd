@@ -7,16 +7,9 @@
 pinpointsmsvoicev2_set_default_sender_id(ConfigurationSetName, SenderId)
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The configuration set to updated with a new default SenderId. This field
-can be the ConsigurationSetName or ConfigurationSetArn.}
+\item{ConfigurationSetName}{[required] The configuration set to updated with a new default SenderId. This field can be the ConsigurationSetName or ConfigurationSetArn.}
 
-\item{SenderId}{[required] The current sender ID for the configuration set. When sending a text
-message to a destination country which supports SenderIds, the default
-sender ID on the configuration set specified on
-\code{\link[=pinpointsmsvoicev2_send_text_message]{send_text_message}} will be used
-if no dedicated origination phone numbers or registered SenderIds are
-available in your account, instead of a generic sender ID, such as
-'NOTICE'.}
+\item{SenderId}{[required] The current sender ID for the configuration set. When sending a text message to a destination country which supports SenderIds, the default sender ID on the configuration set specified on \code{\link[=pinpointsmsvoicev2_send_text_message]{send_text_message}} will be used if no dedicated origination phone numbers or registered SenderIds are available in your account, instead of a generic sender ID, such as 'NOTICE'.}
 }
 \description{
 Sets default sender ID on a configuration set.

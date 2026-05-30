@@ -13,13 +13,11 @@ pinpointsmsvoicev2_describe_registration_attachments(
 )
 }
 \arguments{
-\item{RegistrationAttachmentIds}{The unique identifier of registration attachments to find. This is an
-array of \strong{RegistrationAttachmentId}.}
+\item{RegistrationAttachmentIds}{The unique identifier of registration attachments to find. This is an array of \strong{RegistrationAttachmentId}.}
 
 \item{Filters}{An array of RegistrationAttachmentFilter objects to filter the results.}
 
-\item{NextToken}{The token to be used for the next set of paginated results. You don't
-need to supply a value for this field in the initial request.}
+\item{NextToken}{The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.}
 
 \item{MaxResults}{The maximum number of results to return per each request.}
 }

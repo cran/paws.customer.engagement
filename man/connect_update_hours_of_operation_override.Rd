@@ -12,11 +12,13 @@ connect_update_hours_of_operation_override(
   Description = NULL,
   Config = NULL,
   EffectiveFrom = NULL,
-  EffectiveTill = NULL
+  EffectiveTill = NULL,
+  RecurrenceConfig = NULL,
+  OverrideType = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{HoursOfOperationId}{[required] The identifier for the hours of operation.}
 
@@ -26,12 +28,17 @@ connect_update_hours_of_operation_override(
 
 \item{Description}{The description of the hours of operation override.}
 
-\item{Config}{Configuration information for the hours of operation override: day,
-start time, and end time.}
+\item{Config}{Configuration information for the hours of operation override: day, start time, and end time.}
 
 \item{EffectiveFrom}{The date from when the hours of operation override would be effective.}
 
-\item{EffectiveTill}{The date till when the hours of operation override would be effective.}
+\item{EffectiveTill}{The date until the hours of operation override is effective.}
+
+\item{RecurrenceConfig}{Configuration for a recurring event.}
+
+\item{OverrideType}{Whether the override will be defined as a \emph{standard} or as a \emph{recurring event}.
+
+For more information about how override types are applied, see Build your list of overrides in the \emph{Administrator Guide}.}
 }
 \description{
 Update the hours of operation override.

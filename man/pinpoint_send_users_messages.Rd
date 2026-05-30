@@ -7,10 +7,9 @@
 pinpoint_send_users_messages(ApplicationId, SendUsersMessageRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{SendUsersMessageRequest}{[required]}
+\item{SendUsersMessageRequest}{[required] Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.}
 }
 \description{
 Creates and sends a message to a list of users.

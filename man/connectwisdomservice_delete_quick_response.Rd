@@ -7,9 +7,7 @@
 connectwisdomservice_delete_quick_response(knowledgeBaseId, quickResponseId)
 }
 \arguments{
-\item{knowledgeBaseId}{[required] The knowledge base from which the quick response is deleted. The
-identifier of the knowledge base. This should not be a QUICK_RESPONSES
-type knowledge base if you're storing Wisdom Content resource to it.}
+\item{knowledgeBaseId}{[required] The knowledge base from which the quick response is deleted. The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.}
 
 \item{quickResponseId}{[required] The identifier of the quick response to delete.}
 }

@@ -3,7 +3,7 @@
 \name{connect_list_analytics_data_lake_data_sets}
 \alias{connect_list_analytics_data_lake_data_sets}
 \title{Lists the data lake datasets available to associate with for a given
-Amazon Connect instance}
+Connect Customer instance}
 \usage{
 connect_list_analytics_data_lake_data_sets(
   InstanceId,
@@ -12,17 +12,14 @@ connect_list_analytics_data_lake_data_sets(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 }
 \description{
-Lists the data lake datasets available to associate with for a given Amazon Connect instance.
+Lists the data lake datasets available to associate with for a given Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_analytics_data_lake_data_sets/} for full documentation.
 }

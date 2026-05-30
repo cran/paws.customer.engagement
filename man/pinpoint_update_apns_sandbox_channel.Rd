@@ -8,10 +8,9 @@ status and settings of the APNs sandbox channel for an application}
 pinpoint_update_apns_sandbox_channel(APNSSandboxChannelRequest, ApplicationId)
 }
 \arguments{
-\item{APNSSandboxChannelRequest}{[required]}
+\item{APNSSandboxChannelRequest}{[required] Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.}
 
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 }
 \description{
 Enables the APNs sandbox channel for an application or updates the status and settings of the APNs sandbox channel for an application.

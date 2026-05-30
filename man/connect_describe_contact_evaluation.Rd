@@ -2,18 +2,18 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_describe_contact_evaluation}
 \alias{connect_describe_contact_evaluation}
-\title{Describes a contact evaluation in the specified Amazon Connect instance}
+\title{Describes a contact evaluation in the specified Connect Customer
+instance}
 \usage{
 connect_describe_contact_evaluation(InstanceId, EvaluationId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{EvaluationId}{[required] A unique identifier for the contact evaluation.}
 }
 \description{
-Describes a contact evaluation in the specified Amazon Connect instance.
+Describes a contact evaluation in the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_describe_contact_evaluation/} for full documentation.
 }

@@ -10,10 +10,9 @@ pinpoint_update_application_settings(
 )
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{WriteApplicationSettingsRequest}{[required]}
+\item{WriteApplicationSettingsRequest}{[required] Specifies the default settings for an application.}
 }
 \description{
 Updates the settings for an application.

@@ -2,8 +2,8 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_phone_numbers}
 \alias{connect_list_phone_numbers}
-\title{Provides information about the phone numbers for the specified Amazon
-Connect instance}
+\title{Provides information about the phone numbers for the specified Connect
+Customer instance}
 \usage{
 connect_list_phone_numbers(
   InstanceId,
@@ -14,28 +14,20 @@ connect_list_phone_numbers(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{PhoneNumberTypes}{The type of phone number.
 
-We recommend using
-\code{\link[=connect_list_phone_numbers_v2]{list_phone_numbers_v2}} to return phone
-number types. While ListPhoneNumbers returns number types \code{UIFN},
-\code{SHARED}, \code{THIRD_PARTY_TF}, and \code{THIRD_PARTY_DID}, it incorrectly lists
-them as \code{TOLL_FREE} or \code{DID}.}
+We recommend using \code{\link[=connect_list_phone_numbers_v2]{list_phone_numbers_v2}} to return phone number types. While ListPhoneNumbers returns number types \code{UIFN}, \code{SHARED}, \code{THIRD_PARTY_TF}, and \code{THIRD_PARTY_DID}, it incorrectly lists them as \code{TOLL_FREE} or \code{DID}.}
 
 \item{PhoneNumberCountryCodes}{The ISO country code.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{MaxResults}{The maximum number of results to return per page. The default MaxResult
-size is 100.}
+\item{MaxResults}{The maximum number of results to return per page. The default MaxResult size is 100.}
 }
 \description{
-Provides information about the phone numbers for the specified Amazon Connect instance.
+Provides information about the phone numbers for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_phone_numbers/} for full documentation.
 }

@@ -12,17 +12,13 @@ pinpointsmsvoicev2_list_pool_origination_identities(
 )
 }
 \arguments{
-\item{PoolId}{[required] The unique identifier for the pool. This value can be either the PoolId
-or PoolArn.
+\item{PoolId}{[required] The unique identifier for the pool. This value can be either the PoolId or PoolArn.
 
-If you are using a shared AWS End User Messaging SMS and Voice resource
-then you must use the full Amazon Resource Name(ARN).}
+If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).}
 
-\item{Filters}{An array of PoolOriginationIdentitiesFilter objects to filter the
-results..}
+\item{Filters}{An array of PoolOriginationIdentitiesFilter objects to filter the results..}
 
-\item{NextToken}{The token to be used for the next set of paginated results. You don't
-need to supply a value for this field in the initial request.}
+\item{NextToken}{The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.}
 
 \item{MaxResults}{The maximum number of results to return per each request.}
 }

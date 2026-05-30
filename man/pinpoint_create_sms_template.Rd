@@ -8,12 +8,9 @@ channel}
 pinpoint_create_sms_template(SMSTemplateRequest, TemplateName)
 }
 \arguments{
-\item{SMSTemplateRequest}{[required]}
+\item{SMSTemplateRequest}{[required] Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.}
 
-\item{TemplateName}{[required] The name of the message template. A template name must start with an
-alphanumeric character and can contain a maximum of 128 characters. The
-characters can be alphanumeric characters, underscores (_), or hyphens
-(-). Template names are case sensitive.}
+\item{TemplateName}{[required] The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.}
 }
 \description{
 Creates a message template for messages that are sent through the SMS channel.

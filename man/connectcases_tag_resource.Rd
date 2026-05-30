@@ -9,8 +9,7 @@ connectcases_tag_resource(arn, tags)
 \arguments{
 \item{arn}{[required] The Amazon Resource Name (ARN)}
 
-\item{tags}{[required] A map of of key-value pairs that represent tags on a resource. Tags are
-used to organize, track, or control access for this resource.}
+\item{tags}{[required] A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.}
 }
 \description{
 Adds tags to a resource.

@@ -9,8 +9,7 @@ connect_describe_security_profile(SecurityProfileId, InstanceId)
 \arguments{
 \item{SecurityProfileId}{[required] The identifier for the security profle.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 }
 \description{
 Gets basic information about the security profile.

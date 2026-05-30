@@ -16,110 +16,50 @@ ses_send_raw_email(
 )
 }
 \arguments{
-\item{Source}{The identity's email address. If you do not provide a value for this
-parameter, you must specify a "From" address in the raw text of the
-message. (You can also specify both.)
+\item{Source}{The identity's email address. If you do not provide a value for this parameter, you must specify a "From" address in the raw text of the message. (You can also specify both.)
 
-Amazon SES does not support the SMTPUTF8 extension, as described
-in\href{https://datatracker.ietf.org/doc/html/rfc6531}{RFC6531}. For this
-reason, the email address string must be 7-bit ASCII. If you want to
-send to or from email addresses that contain Unicode characters in the
-domain part of an address, you must encode the domain using Punycode.
-Punycode is not permitted in the local part of the email address (the
-part before the @ sign) nor in the "friendly from" name. If you want to
-use Unicode characters in the "friendly from" name, you must encode the
-"friendly from" name using MIME encoded-word syntax, as described in
-\href{https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html}{Sending raw email using the Amazon SES API}. For
-more information about Punycode, see \href{https://datatracker.ietf.org/doc/html/rfc3492}{RFC 3492}.
+Amazon SES does not support the SMTPUTF8 extension, as described in\href{https://datatracker.ietf.org/doc/html/rfc6531}{RFC6531}. For this reason, the email address string must be 7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described in \href{https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html}{Sending raw email using the Amazon SES API}. For more information about Punycode, see \href{https://datatracker.ietf.org/doc/html/rfc3492}{RFC 3492}.
 
-If you specify the \code{Source} parameter and have feedback forwarding
-enabled, then bounces and complaints are sent to this email address.
-This takes precedence over any Return-Path header that you might include
-in the raw text of the message.}
+If you specify the \code{Source} parameter and have feedback forwarding enabled, then bounces and complaints are sent to this email address. This takes precedence over any Return-Path header that you might include in the raw text of the message.}
 
-\item{Destinations}{A list of destinations for the message, consisting of To:, CC:, and BCC:
-addresses.}
+\item{Destinations}{A list of destinations for the message, consisting of To:, CC:, and BCC: addresses.}
 
-\item{RawMessage}{[required] The raw email message itself. The message has to meet the following
-criteria:
+\item{RawMessage}{[required] The raw email message itself. The message has to meet the following criteria:
 \itemize{
-\item The message has to contain a header and a body, separated by a blank
-line.
+\item The message has to contain a header and a body, separated by a blank line.
 \item All of the required header fields must be present in the message.
 \item Each part of a multipart MIME message must be formatted properly.
-\item Attachments must be of a content type that Amazon SES supports. For
-a list on unsupported content types, see \href{https://docs.aws.amazon.com/ses/latest/dg/mime-types.html}{Unsupported Attachment Types} in
-the \emph{Amazon SES Developer Guide}.
+\item Attachments must be of a content type that Amazon SES supports. For a list on unsupported content types, see \href{https://docs.aws.amazon.com/ses/latest/dg/}{Unsupported Attachment Types} in the \emph{Amazon SES Developer Guide}.
 \item The entire message must be base64-encoded.
-\item If any of the MIME parts in your message contain content that is
-outside of the 7-bit ASCII character range, we highly recommend that
-you encode that content. For more information, see \href{https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html}{Sending Raw Email}
-in the \emph{Amazon SES Developer Guide}.
-\item Per \href{https://datatracker.ietf.org/doc/html/rfc5321#section-4.5.3.1.6}{RFC 5321},
-the maximum length of each line of text, including the \<CRLF\>,
-must not exceed 1,000 characters.
+\item If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, we highly recommend that you encode that content. For more information, see \href{https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html}{Sending Raw Email} in the \emph{Amazon SES Developer Guide}.
+\item Per \href{https://datatracker.ietf.org/doc/html/rfc5321#section-4.5.3.1.6}{RFC 5321}, the maximum length of each line of text, including the \<CRLF\>, must not exceed 1,000 characters.
 }}
 
-\item{FromArn}{This parameter is used only for sending authorization. It is the ARN of
-the identity that is associated with the sending authorization policy
-that permits you to specify a particular "From" address in the header of
-the raw email.
+\item{FromArn}{This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to specify a particular "From" address in the header of the raw email.
 
-Instead of using this parameter, you can use the X-header
-\code{X-SES-FROM-ARN} in the raw message of the email. If you use both the
-\code{FromArn} parameter and the corresponding X-header, Amazon SES uses the
-value of the \code{FromArn} parameter.
+Instead of using this parameter, you can use the X-header \code{X-SES-FROM-ARN} in the raw message of the email. If you use both the \code{FromArn} parameter and the corresponding X-header, Amazon SES uses the value of the \code{FromArn} parameter.
 
-For information about when to use this parameter, see the description of
-\code{\link[=ses_send_raw_email]{send_raw_email}} in this guide, or see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html}{Amazon SES Developer Guide}.}
+For information about when to use this parameter, see the description of \code{\link[=ses_send_raw_email]{send_raw_email}} in this guide, or see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html}{Amazon SES Developer Guide}.}
 
-\item{SourceArn}{This parameter is used only for sending authorization. It is the ARN of
-the identity that is associated with the sending authorization policy
-that permits you to send for the email address specified in the \code{Source}
-parameter.
+\item{SourceArn}{This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the \code{Source} parameter.
 
-For example, if the owner of \code{example.com} (which has ARN
-\code{arn:aws:ses:us-east-1:123456789012:identity/example.com}) attaches a
-policy to it that authorizes you to send from \code{user@example.com}, then
-you would specify the \code{SourceArn} to be
-\code{arn:aws:ses:us-east-1:123456789012:identity/example.com}, and the
-\code{Source} to be \code{user@example.com}.
+For example, if the owner of \code{example.com} (which has ARN \code{arn:aws:ses:us-east-1:123456789012:identity/example.com}) attaches a policy to it that authorizes you to send from \code{user@example.com}, then you would specify the \code{SourceArn} to be \code{arn:aws:ses:us-east-1:123456789012:identity/example.com}, and the \code{Source} to be \code{user@example.com}.
 
-Instead of using this parameter, you can use the X-header
-\code{X-SES-SOURCE-ARN} in the raw message of the email. If you use both the
-\code{SourceArn} parameter and the corresponding X-header, Amazon SES uses
-the value of the \code{SourceArn} parameter.
+Instead of using this parameter, you can use the X-header \code{X-SES-SOURCE-ARN} in the raw message of the email. If you use both the \code{SourceArn} parameter and the corresponding X-header, Amazon SES uses the value of the \code{SourceArn} parameter.
 
-For information about when to use this parameter, see the description of
-\code{\link[=ses_send_raw_email]{send_raw_email}} in this guide, or see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html}{Amazon SES Developer Guide}.}
+For information about when to use this parameter, see the description of \code{\link[=ses_send_raw_email]{send_raw_email}} in this guide, or see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html}{Amazon SES Developer Guide}.}
 
-\item{ReturnPathArn}{This parameter is used only for sending authorization. It is the ARN of
-the identity that is associated with the sending authorization policy
-that permits you to use the email address specified in the \code{ReturnPath}
-parameter.
+\item{ReturnPathArn}{This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the \code{ReturnPath} parameter.
 
-For example, if the owner of \code{example.com} (which has ARN
-\code{arn:aws:ses:us-east-1:123456789012:identity/example.com}) attaches a
-policy to it that authorizes you to use \code{feedback@example.com}, then you
-would specify the \code{ReturnPathArn} to be
-\code{arn:aws:ses:us-east-1:123456789012:identity/example.com}, and the
-\code{ReturnPath} to be \code{feedback@example.com}.
+For example, if the owner of \code{example.com} (which has ARN \code{arn:aws:ses:us-east-1:123456789012:identity/example.com}) attaches a policy to it that authorizes you to use \code{feedback@example.com}, then you would specify the \code{ReturnPathArn} to be \code{arn:aws:ses:us-east-1:123456789012:identity/example.com}, and the \code{ReturnPath} to be \code{feedback@example.com}.
 
-Instead of using this parameter, you can use the X-header
-\code{X-SES-RETURN-PATH-ARN} in the raw message of the email. If you use both
-the \code{ReturnPathArn} parameter and the corresponding X-header, Amazon SES
-uses the value of the \code{ReturnPathArn} parameter.
+Instead of using this parameter, you can use the X-header \code{X-SES-RETURN-PATH-ARN} in the raw message of the email. If you use both the \code{ReturnPathArn} parameter and the corresponding X-header, Amazon SES uses the value of the \code{ReturnPathArn} parameter.
 
-For information about when to use this parameter, see the description of
-\code{\link[=ses_send_raw_email]{send_raw_email}} in this guide, or see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html}{Amazon SES Developer Guide}.}
+For information about when to use this parameter, see the description of \code{\link[=ses_send_raw_email]{send_raw_email}} in this guide, or see the \href{https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html}{Amazon SES Developer Guide}.}
 
-\item{Tags}{A list of tags, in the form of name/value pairs, to apply to an email
-that you send using \code{\link[=ses_send_raw_email]{send_raw_email}}. Tags
-correspond to characteristics of the email that you define, so that you
-can publish email sending events.}
+\item{Tags}{A list of tags, in the form of name/value pairs, to apply to an email that you send using \code{\link[=ses_send_raw_email]{send_raw_email}}. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.}
 
-\item{ConfigurationSetName}{The name of the configuration set to use when you send an email using
-\code{\link[=ses_send_raw_email]{send_raw_email}}.}
+\item{ConfigurationSetName}{The name of the configuration set to use when you send an email using \code{\link[=ses_send_raw_email]{send_raw_email}}.}
 }
 \description{
 Composes an email message and immediately queues it for sending.

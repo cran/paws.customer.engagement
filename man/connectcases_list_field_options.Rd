@@ -19,12 +19,9 @@ connectcases_list_field_options(
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{values}{A list of \code{FieldOption} values to filter on for
-\code{\link[=connectcases_list_field_options]{list_field_options}}.}
+\item{values}{A list of \code{FieldOption} values to filter on for \code{\link[=connectcases_list_field_options]{list_field_options}}.}
 }
 \description{
 Lists all of the field options for a field identifier in the domain.

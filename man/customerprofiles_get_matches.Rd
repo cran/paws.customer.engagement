@@ -8,9 +8,7 @@ identity resolution: set Matching to true}
 customerprofiles_get_matches(NextToken = NULL, MaxResults = NULL, DomainName)
 }
 \arguments{
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 

@@ -10,9 +10,9 @@ connectcampaignservicev2_update_campaign_communication_limits(
 )
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{communicationLimitsOverride}{[required]}
+\item{communicationLimitsOverride}{[required] Communication limits config}
 }
 \description{
 Updates the communication limits config for a campaign. This API is idempotent.

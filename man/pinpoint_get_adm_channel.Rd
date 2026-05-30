@@ -8,8 +8,7 @@ for an application}
 pinpoint_get_adm_channel(ApplicationId)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 }
 \description{
 Retrieves information about the status and settings of the ADM channel for an application.

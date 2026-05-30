@@ -8,8 +8,7 @@ specify}
 sesv2_get_custom_verification_email_template(TemplateName)
 }
 \arguments{
-\item{TemplateName}{[required] The name of the custom verification email template that you want to
-retrieve.}
+\item{TemplateName}{[required] The name of the custom verification email template that you want to retrieve.}
 }
 \description{
 Returns the custom email verification template for the template name you specify.

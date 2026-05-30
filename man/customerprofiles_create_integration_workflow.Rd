@@ -22,9 +22,7 @@ customerprofiles_create_integration_workflow(
 
 \item{ObjectTypeName}{[required] The name of the profile object type.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role. Customer Profiles
-assumes this role to create resources on your behalf as part of workflow
-execution.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.}
 }

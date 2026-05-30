@@ -7,7 +7,7 @@
 connectcampaignservicev2_pause_campaign(id)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 }
 \description{
 Pauses a campaign for the specified Amazon Connect account.

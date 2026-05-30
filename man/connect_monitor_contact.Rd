@@ -13,21 +13,15 @@ connect_monitor_contact(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.}
 
 \item{ContactId}{[required] The identifier of the contact.}
 
 \item{UserId}{[required] The identifier of the user account.}
 
-\item{AllowedMonitorCapabilities}{Specify which monitoring actions the user is allowed to take. For
-example, whether the user is allowed to escalate from silent monitoring
-to barge. AllowedMonitorCapabilities is required if barge is enabled.}
+\item{AllowedMonitorCapabilities}{Specify which monitoring actions the user is allowed to take. For example, whether the user is allowed to escalate from silent monitoring to barge. AllowedMonitorCapabilities is required if barge is enabled.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 }
 \description{
 Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user specified by \emph{userId} will be set to silent monitoring mode on the contact.

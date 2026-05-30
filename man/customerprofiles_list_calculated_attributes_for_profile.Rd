@@ -12,8 +12,7 @@ customerprofiles_list_calculated_attributes_for_profile(
 )
 }
 \arguments{
-\item{NextToken}{The pagination token from the previous call to
-ListCalculatedAttributesForProfile.}
+\item{NextToken}{The pagination token from the previous call to ListCalculatedAttributesForProfile.}
 
 \item{MaxResults}{The maximum number of calculated attributes returned per page.}
 

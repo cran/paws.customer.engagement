@@ -44,11 +44,7 @@ connectparticipant_cancel_participant_authentication <- function(SessionId, Conn
 #' See [https://www.paws-r-sdk.com/docs/connectparticipant_complete_attachment_upload/](https://www.paws-r-sdk.com/docs/connectparticipant_complete_attachment_upload/) for full documentation.
 #'
 #' @param AttachmentIds &#91;required&#93; A list of unique identifiers for the attachments.
-#' @param ClientToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param ClientToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param ConnectionToken &#91;required&#93; The authentication token associated with the participant's connection.
 #'
 #' @keywords internal
@@ -80,17 +76,11 @@ connectparticipant_complete_attachment_upload <- function(AttachmentIds, ClientT
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectparticipant_create_participant_connection/](https://www.paws-r-sdk.com/docs/connectparticipant_create_participant_connection/) for full documentation.
 #'
-#' @param Type Type of connection information required. If you need
-#' `CONNECTION_CREDENTIALS` along with marking participant as connected,
-#' pass `CONNECTION_CREDENTIALS` in `Type`.
+#' @param Type Type of connection information required. If you need `CONNECTION_CREDENTIALS` along with marking participant as connected, pass `CONNECTION_CREDENTIALS` in `Type`.
 #' @param ParticipantToken &#91;required&#93; This is a header parameter.
 #' 
-#' The ParticipantToken as obtained from
-#' [StartChatContact](https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html)
-#' API response.
-#' @param ConnectParticipant Amazon Connect Participant is used to mark the participant as connected
-#' for customer participant in message streaming, as well as for agent or
-#' manager participant in non-streaming chats.
+#' The ParticipantToken as obtained from [StartChatContact](https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html) API response.
+#' @param ConnectParticipant Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.
 #'
 #' @keywords internal
 #'
@@ -121,8 +111,7 @@ connectparticipant_create_participant_connection <- function(Type = NULL, Partic
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectparticipant_describe_view/](https://www.paws-r-sdk.com/docs/connectparticipant_describe_view/) for full documentation.
 #'
-#' @param ViewToken &#91;required&#93; An encrypted token originating from the interactive message of a
-#' ShowView block operation. Represents the desired view.
+#' @param ViewToken &#91;required&#93; An encrypted token originating from the interactive message of a ShowView block operation. Represents the desired view.
 #' @param ConnectionToken &#91;required&#93; The connection token.
 #'
 #' @keywords internal
@@ -154,11 +143,7 @@ connectparticipant_describe_view <- function(ViewToken, ConnectionToken) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectparticipant_disconnect_participant/](https://www.paws-r-sdk.com/docs/connectparticipant_disconnect_participant/) for full documentation.
 #'
-#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param ConnectionToken &#91;required&#93; The authentication token associated with the participant's connection.
 #'
 #' @keywords internal
@@ -192,9 +177,7 @@ connectparticipant_disconnect_participant <- function(ClientToken = NULL, Connec
 #'
 #' @param AttachmentId &#91;required&#93; A unique identifier for the attachment.
 #' @param ConnectionToken &#91;required&#93; The authentication token associated with the participant's connection.
-#' @param UrlExpiryInSeconds The expiration time of the URL in ISO timestamp. It's specified in ISO
-#' 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-#' 2019-11-08T02:41:28.172Z.
+#' @param UrlExpiryInSeconds The expiration time of the URL in ISO timestamp. It's specified in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example, 2019-11-08T02:41:28.172Z.
 #'
 #' @keywords internal
 #'
@@ -227,8 +210,7 @@ connectparticipant_get_attachment <- function(AttachmentId, ConnectionToken, Url
 #' See [https://www.paws-r-sdk.com/docs/connectparticipant_get_authentication_url/](https://www.paws-r-sdk.com/docs/connectparticipant_get_authentication_url/) for full documentation.
 #'
 #' @param SessionId &#91;required&#93; The sessionId provided in the authenticationInitiated event.
-#' @param RedirectUri &#91;required&#93; The URL where the customer will be redirected after Amazon Cognito
-#' authorizes the user.
+#' @param RedirectUri &#91;required&#93; The URL where the customer will be redirected after Amazon Cognito authorizes the user.
 #' @param ConnectionToken &#91;required&#93; The authentication token associated with the participant's connection.
 #'
 #' @keywords internal
@@ -261,14 +243,10 @@ connectparticipant_get_authentication_url <- function(SessionId, RedirectUri, Co
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectparticipant_get_transcript/](https://www.paws-r-sdk.com/docs/connectparticipant_get_transcript/) for full documentation.
 #'
-#' @param ContactId The contactId from the current contact chain for which transcript is
-#' needed.
+#' @param ContactId The contactId from the current contact chain for which transcript is needed.
 #' @param MaxResults The maximum number of results to return in the page. Default: 10.
-#' @param NextToken The pagination token. Use the value returned previously in the next
-#' subsequent request to retrieve the next set of results.
-#' @param ScanDirection The direction from StartPosition from which to retrieve message.
-#' Default: BACKWARD when no StartPosition is provided, FORWARD with
-#' StartPosition.
+#' @param NextToken The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.
+#' @param ScanDirection The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.
 #' @param SortOrder The sort order for the records. Default: DESCENDING.
 #' @param StartPosition A filtering option for where to start.
 #' @param ConnectionToken &#91;required&#93; The authentication token associated with the participant's connection.
@@ -298,7 +276,7 @@ connectparticipant_get_transcript <- function(ContactId = NULL, MaxResults = NUL
 #' The application/vnd
 #'
 #' @description
-#' The `application/vnd.amazonaws.connect.event.connection.acknowledged` ContentType will no longer be supported starting December 31, 2024. This event has been migrated to the [`create_participant_connection`][connectparticipant_create_participant_connection] API using the `ConnectParticipant` field.
+#' The `application/vnd.amazonaws.connect.event.connection.acknowledged` ContentType is no longer maintained since December 31, 2024. This event has been migrated to the [`create_participant_connection`][connectparticipant_create_participant_connection] API using the `ConnectParticipant` field.
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectparticipant_send_event/](https://www.paws-r-sdk.com/docs/connectparticipant_send_event/) for full documentation.
 #'
@@ -306,23 +284,15 @@ connectparticipant_get_transcript <- function(ContactId = NULL, MaxResults = NUL
 #' 
 #' -   application/vnd.amazonaws.connect.event.typing
 #' 
-#' -   application/vnd.amazonaws.connect.event.connection.acknowledged
-#'     (will be deprecated on December 31, 2024)
+#' -   application/vnd.amazonaws.connect.event.connection.acknowledged (is no longer maintained since December 31, 2024)
 #' 
 #' -   application/vnd.amazonaws.connect.event.message.delivered
 #' 
 #' -   application/vnd.amazonaws.connect.event.message.read
-#' @param Content The content of the event to be sent (for example, message text). For
-#' content related to message receipts, this is supported in the form of a
-#' JSON string.
+#' @param Content The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.
 #' 
-#' Sample Content:
-#' "\{\\"messageId\\":\\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\\"\}"
-#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' Sample Content: "\{\\"messageId\\":\\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\\"\}"
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param ConnectionToken &#91;required&#93; The authentication token associated with the participant's connection.
 #'
 #' @keywords internal
@@ -354,25 +324,19 @@ connectparticipant_send_event <- function(ContentType, Content = NULL, ClientTok
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectparticipant_send_message/](https://www.paws-r-sdk.com/docs/connectparticipant_send_message/) for full documentation.
 #'
-#' @param ContentType &#91;required&#93; The type of the content. Supported types are `text/plain`,
-#' `text/markdown`, `application/json`, and
-#' `application/vnd.amazonaws.connect.message.interactive.response`.
+#' @param ContentType &#91;required&#93; The type of the content. Possible types are `text/plain`, `text/markdown`, `application/json`, and `application/vnd.amazonaws.connect.message.interactive.response`.
+#' 
+#' Supported types on the contact are configured through `SupportedMessagingContentTypes` on [StartChatContact](https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html) and [StartOutboundChatContact](https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html).
+#' 
+#' For Apple Messages for Business, SMS, and WhatsApp Business Messaging contacts, only `text/plain` is supported.
 #' @param Content &#91;required&#93; The content of the message.
 #' 
-#' -   For `text/plain` and `text/markdown`, the Length Constraints are
-#'     Minimum of 1, Maximum of 1024.
+#' -   For `text/plain` and `text/markdown`, the Length Constraints are Minimum of 1, Maximum of 1024.
 #' 
-#' -   For `application/json`, the Length Constraints are Minimum of 1,
-#'     Maximum of 12000.
+#' -   For `application/json`, the Length Constraints are Minimum of 1, Maximum of 12000.
 #' 
-#' -   For
-#'     `application/vnd.amazonaws.connect.message.interactive.response`,
-#'     the Length Constraints are Minimum of 1, Maximum of 12288.
-#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' -   For `application/vnd.amazonaws.connect.message.interactive.response`, the Length Constraints are Minimum of 1, Maximum of 12288.
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param ConnectionToken &#91;required&#93; The authentication token associated with the connection.
 #'
 #' @keywords internal
@@ -405,17 +369,10 @@ connectparticipant_send_message <- function(ContentType, Content, ClientToken = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectparticipant_start_attachment_upload/](https://www.paws-r-sdk.com/docs/connectparticipant_start_attachment_upload/) for full documentation.
 #'
-#' @param ContentType &#91;required&#93; Describes the MIME file type of the attachment. For a list of supported
-#' file types, see [Feature
-#' specifications](https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html)
-#' in the *Amazon Connect Administrator Guide*.
+#' @param ContentType &#91;required&#93; Describes the MIME file type of the attachment. For a list of supported file types, see [Feature specifications](https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html) in the *Amazon Connect Administrator Guide*.
 #' @param AttachmentSizeInBytes &#91;required&#93; The size of the attachment in bytes.
 #' @param AttachmentName &#91;required&#93; A case-sensitive name of the attachment being uploaded.
-#' @param ClientToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If not provided, the Amazon Web Services SDK
-#' populates this field. For more information about idempotency, see
-#' [Making retries safe with idempotent
-#' APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param ClientToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param ConnectionToken &#91;required&#93; The authentication token associated with the participant's connection.
 #'
 #' @keywords internal

@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_evaluation_form}
 \alias{connect_create_evaluation_form}
-\title{Creates an evaluation form in the specified Amazon Connect instance}
+\title{Creates an evaluation form in the specified Connect Customer instance}
 \usage{
 connect_create_evaluation_form(
   InstanceId,
@@ -10,30 +10,42 @@ connect_create_evaluation_form(
   Description = NULL,
   Items,
   ScoringStrategy = NULL,
-  ClientToken = NULL
+  AutoEvaluationConfiguration = NULL,
+  ClientToken = NULL,
+  AsDraft = NULL,
+  Tags = NULL,
+  ReviewConfiguration = NULL,
+  TargetConfiguration = NULL,
+  LanguageConfiguration = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Title}{[required] A title of the evaluation form.}
 
 \item{Description}{The description of the evaluation form.}
 
-\item{Items}{[required] Items that are part of the evaluation form. The total number of sections
-and questions must not exceed 100 each. Questions must be contained in a
-section.}
+\item{Items}{[required] Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.}
 
 \item{ScoringStrategy}{A scoring strategy of the evaluation form.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{AutoEvaluationConfiguration}{Configuration information about automated evaluations.}
+
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+
+\item{AsDraft}{A boolean flag indicating whether to create evaluation form in draft state.}
+
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+
+\item{ReviewConfiguration}{Configuration information about evaluation reviews.}
+
+\item{TargetConfiguration}{Configuration that specifies the target for the evaluation form.}
+
+\item{LanguageConfiguration}{Configuration for language settings of the evaluation form.}
 }
 \description{
-Creates an evaluation form in the specified Amazon Connect instance. The form can be used to define questions related to agent performance, and create sections to organize such questions. Question and section identifiers cannot be duplicated within the same evaluation form.
+Creates an evaluation form in the specified Connect Customer instance. The form can be used to define questions related to agent performance, and create sections to organize such questions. Question and section identifiers cannot be duplicated within the same evaluation form.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_evaluation_form/} for full documentation.
 }

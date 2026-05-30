@@ -16,33 +16,23 @@ connectwisdomservice_create_knowledge_base(
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
 \item{description}{The description.}
 
-\item{knowledgeBaseType}{[required] The type of knowledge base. Only CUSTOM knowledge bases allow you to
-upload your own content. EXTERNAL knowledge bases support integrations
-with third-party systems whose content is synchronized automatically.}
+\item{knowledgeBaseType}{[required] The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically.}
 
 \item{name}{[required] The name of the knowledge base.}
 
 \item{renderingConfiguration}{Information about how to render the content.}
 
-\item{serverSideEncryptionConfiguration}{The configuration information for the customer managed key used for
-encryption.
+\item{serverSideEncryptionConfiguration}{The configuration information for the customer managed key used for encryption.
 
-This KMS key must have a policy that allows \code{kms:CreateGrant},
-\code{kms:DescribeKey}, and \code{kms:Decrypt/kms:GenerateDataKey} permissions to
-the IAM identity using the key to invoke Wisdom.
+This KMS key must have a policy that allows \code{kms:CreateGrant}, \code{kms:DescribeKey}, and \code{kms:Decrypt/kms:GenerateDataKey} permissions to the IAM identity using the key to invoke Wisdom.
 
-For more information about setting up a customer managed key for Wisdom,
-see \href{https://docs.aws.amazon.com/connect/latest/adminguide/enable-q.html}{Enable Amazon Connect Wisdom for your instance}.}
+For more information about setting up a customer managed key for Wisdom, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/ai-agent-initial-setup.html}{Enable Amazon Connect Wisdom for your instance}.}
 
-\item{sourceConfiguration}{The source of the knowledge base content. Only set this argument for
-EXTERNAL knowledge bases.}
+\item{sourceConfiguration}{The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.}
 
 \item{tags}{The tags used to organize, track, or control access for this resource.}
 }

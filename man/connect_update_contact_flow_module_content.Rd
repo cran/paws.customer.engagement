@@ -2,25 +2,27 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_update_contact_flow_module_content}
 \alias{connect_update_contact_flow_module_content}
-\title{Updates specified flow module for the specified Amazon Connect instance}
+\title{Updates specified flow module for the specified Connect Customer
+instance}
 \usage{
 connect_update_contact_flow_module_content(
   InstanceId,
   ContactFlowModuleId,
-  Content
+  Content = NULL,
+  Settings = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{ContactFlowModuleId}{[required] The identifier of the flow module.}
 
-\item{Content}{[required] The JSON string that represents the content of the flow. For an example,
-see \href{https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html}{Example flow in Amazon Connect Flow language}.}
+\item{Content}{The JSON string that represents the content of the flow. For an example, see \href{https://docs.aws.amazon.com/connect/latest/devguide/flow-language-example.html}{Example flow in Connect Customer Flow language}.}
+
+\item{Settings}{Serialized JSON string of the flow module Settings schema.}
 }
 \description{
-Updates specified flow module for the specified Amazon Connect instance.
+Updates specified flow module for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_update_contact_flow_module_content/} for full documentation.
 }

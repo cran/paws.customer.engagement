@@ -11,12 +11,11 @@ connect_delete_push_notification_registration(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{RegistrationId}{[required] The identifier for the registration.}
 
-\item{ContactId}{[required] The identifier of the contact within the Amazon Connect instance.}
+\item{ContactId}{[required] The identifier of the contact within the Connect Customer instance.}
 }
 \description{
 Deletes registration for a device token and a chat contact.

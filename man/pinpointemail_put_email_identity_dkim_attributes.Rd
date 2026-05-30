@@ -14,10 +14,7 @@ pinpointemail_put_email_identity_dkim_attributes(
 
 \item{SigningEnabled}{Sets the DKIM signing configuration for the identity.
 
-When you set this value \code{true}, then the messages that Amazon Pinpoint
-sends from the identity are DKIM-signed. When you set this value to
-\code{false}, then the messages that Amazon Pinpoint sends from the identity
-aren't DKIM-signed.}
+When you set this value \code{true}, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. When you set this value to \code{false}, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.}
 }
 \description{
 Used to enable or disable DKIM authentication for an email identity.

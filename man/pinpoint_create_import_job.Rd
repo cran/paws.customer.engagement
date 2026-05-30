@@ -7,10 +7,9 @@
 pinpoint_create_import_job(ApplicationId, ImportJobRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{ImportJobRequest}{[required]}
+\item{ImportJobRequest}{[required] Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.}
 }
 \description{
 Creates an import job for an application.

@@ -15,9 +15,7 @@ customerprofiles_get_similar_profiles(
 )
 }
 \arguments{
-\item{NextToken}{The pagination token from the previous
-\code{\link[=customerprofiles_get_similar_profiles]{get_similar_profiles}} API
-call.}
+\item{NextToken}{The pagination token from the previous \code{\link[=customerprofiles_get_similar_profiles]{get_similar_profiles}} API call.}
 
 \item{MaxResults}{The maximum number of objects returned per page.}
 

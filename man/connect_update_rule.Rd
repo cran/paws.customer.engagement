@@ -2,20 +2,16 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_update_rule}
 \alias{connect_update_rule}
-\title{Updates a rule for the specified Amazon Connect instance}
+\title{Updates a rule for the specified Connect Customer instance}
 \usage{
 connect_update_rule(RuleId, InstanceId, Name, Function, Actions, PublishStatus)
 }
 \arguments{
 \item{RuleId}{[required] A unique identifier for the rule.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{Name}{[required] The name of the rule. You can change the name only if
-\code{TriggerEventSource} is one of the following values:
-\code{OnZendeskTicketCreate} | \code{OnZendeskTicketStatusUpdate} |
-\code{OnSalesforceCaseCreate}}
+\item{Name}{[required] The name of the rule. You can change the name only if \code{TriggerEventSource} is one of the following values: \code{OnZendeskTicketCreate} | \code{OnZendeskTicketStatusUpdate} | \code{OnSalesforceCaseCreate}}
 
 \item{Function}{[required] The conditions of the rule.}
 
@@ -24,7 +20,7 @@ in the Amazon Resource Name (ARN) of the instance.}
 \item{PublishStatus}{[required] The publish status of the rule.}
 }
 \description{
-Updates a rule for the specified Amazon Connect instance.
+Updates a rule for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_update_rule/} for full documentation.
 }

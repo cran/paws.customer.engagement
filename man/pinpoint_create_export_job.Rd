@@ -7,10 +7,9 @@
 pinpoint_create_export_job(ApplicationId, ExportJobRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{ExportJobRequest}{[required]}
+\item{ExportJobRequest}{[required] Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.}
 }
 \description{
 Creates an export job for an application.

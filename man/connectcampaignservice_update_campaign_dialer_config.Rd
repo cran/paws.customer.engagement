@@ -7,9 +7,9 @@
 connectcampaignservice_update_campaign_dialer_config(id, dialerConfig)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{dialerConfig}{[required]}
+\item{dialerConfig}{[required] The possible types of dialer config parameters}
 }
 \description{
 Updates the dialer config of a campaign. This API is idempotent.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_delete_hours_of_operation_override}
 \alias{connect_delete_hours_of_operation_override}
-\title{Deletes an hours of operation override in an Amazon Connect hours of
+\title{Deletes an hours of operation override in an Connect Customer hours of
 operation resource}
 \usage{
 connect_delete_hours_of_operation_override(
@@ -12,14 +12,14 @@ connect_delete_hours_of_operation_override(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{HoursOfOperationId}{[required] The identifier for the hours of operation.}
 
 \item{HoursOfOperationOverrideId}{[required] The identifier for the hours of operation override.}
 }
 \description{
-Deletes an hours of operation override in an Amazon Connect hours of operation resource
+Deletes an hours of operation override in an Connect Customer hours of operation resource.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_delete_hours_of_operation_override/} for full documentation.
 }

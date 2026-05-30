@@ -18,10 +18,7 @@ customerprofiles_merge_profiles(
 
 \item{ProfileIdsToBeMerged}{[required] The identifier of the profile to be merged into MainProfileId.}
 
-\item{FieldSourceProfileIds}{The identifiers of the fields in the profile that has the information
-you want to apply to the merge. For example, say you want to merge
-EmailAddress from Profile1 into MainProfile. This would be the
-identifier of the EmailAddress field in Profile1.}
+\item{FieldSourceProfileIds}{The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.}
 }
 \description{
 Runs an AWS Lambda job that does the following:

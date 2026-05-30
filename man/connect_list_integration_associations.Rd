@@ -3,7 +3,7 @@
 \name{connect_list_integration_associations}
 \alias{connect_list_integration_associations}
 \title{Provides summary information about the Amazon Web Services resource
-associations for the specified Amazon Connect instance}
+associations for the specified Connect Customer instance}
 \usage{
 connect_list_integration_associations(
   InstanceId,
@@ -14,21 +14,18 @@ connect_list_integration_associations(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{IntegrationType}{The integration type.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
 \item{IntegrationArn}{The Amazon Resource Name (ARN) of the integration.}
 }
 \description{
-Provides summary information about the Amazon Web Services resource associations for the specified Amazon Connect instance.
+Provides summary information about the Amazon Web Services resource associations for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_integration_associations/} for full documentation.
 }

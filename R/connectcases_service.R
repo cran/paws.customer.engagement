@@ -5,19 +5,11 @@ NULL
 #' Amazon Connect Cases
 #'
 #' @description
-#' -   [Cases
-#'     actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Cases.html)
+#' -   [Cases actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Cases.html)
 #' 
-#' -   [Cases data
-#'     types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Cases.html)
+#' -   [Cases data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Cases.html)
 #' 
-#' With Amazon Connect Cases, your agents can track and manage customer
-#' issues that require multiple interactions, follow-up tasks, and teams in
-#' your contact center. A case represents a customer issue. It records the
-#' issue, the steps and interactions taken to resolve the issue, and the
-#' outcome. For more information, see [Amazon Connect
-#' Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html)
-#' in the *Amazon Connect Administrator Guide*.
+#' With Amazon Connect Cases, your agents can track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center. A case represents a customer issue. It records the issue, the steps and interactions taken to resolve the issue, and the outcome. For more information, see [Amazon Connect Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html) in the *Amazon Connect Administrator Guide*.
 #'
 #' @param
 #' config
@@ -112,10 +104,12 @@ NULL
 #'  \link[=connectcases_create_layout]{create_layout} \tab Creates a layout in the Cases domain\cr
 #'  \link[=connectcases_create_related_item]{create_related_item} \tab Creates a related item (comments, tasks, and contacts) and associates it with a case\cr
 #'  \link[=connectcases_create_template]{create_template} \tab Creates a template in the Cases domain\cr
+#'  \link[=connectcases_delete_case]{delete_case} \tab The DeleteCase API permanently deletes a case and all its associated resources from the cases data store\cr
 #'  \link[=connectcases_delete_case_rule]{delete_case_rule} \tab Deletes a case rule\cr
 #'  \link[=connectcases_delete_domain]{delete_domain} \tab Deletes a Cases domain\cr
 #'  \link[=connectcases_delete_field]{delete_field} \tab Deletes a field from a cases template\cr
 #'  \link[=connectcases_delete_layout]{delete_layout} \tab Deletes a layout from a cases template\cr
+#'  \link[=connectcases_delete_related_item]{delete_related_item} \tab Deletes the related item resource under a case\cr
 #'  \link[=connectcases_delete_template]{delete_template} \tab Deletes a cases template\cr
 #'  \link[=connectcases_get_case]{get_case} \tab Returns information about a specific case if it exists\cr
 #'  \link[=connectcases_get_case_audit_events]{get_case_audit_events} \tab Returns the audit history about a specific case if it exists\cr
@@ -132,6 +126,7 @@ NULL
 #'  \link[=connectcases_list_tags_for_resource]{list_tags_for_resource} \tab Lists tags for a resource\cr
 #'  \link[=connectcases_list_templates]{list_templates} \tab Lists all of the templates in a Cases domain\cr
 #'  \link[=connectcases_put_case_event_configuration]{put_case_event_configuration} \tab Adds case event publishing configuration\cr
+#'  \link[=connectcases_search_all_related_items]{search_all_related_items} \tab Searches for related items across all cases within a domain\cr
 #'  \link[=connectcases_search_cases]{search_cases} \tab Searches for cases within their associated Cases domain\cr
 #'  \link[=connectcases_search_related_items]{search_related_items} \tab Searches for related items that are associated with a case\cr
 #'  \link[=connectcases_tag_resource]{tag_resource} \tab Adds tags to a resource\cr
@@ -140,6 +135,7 @@ NULL
 #'  \link[=connectcases_update_case_rule]{update_case_rule} \tab Updates a case rule\cr
 #'  \link[=connectcases_update_field]{update_field} \tab Updates the properties of an existing field\cr
 #'  \link[=connectcases_update_layout]{update_layout} \tab Updates the attributes of an existing layout\cr
+#'  \link[=connectcases_update_related_item]{update_related_item} \tab Updates the content of a related item associated with a case\cr
 #'  \link[=connectcases_update_template]{update_template} \tab Updates the attributes of an existing template
 #' }
 #'
@@ -172,11 +168,11 @@ connectcases <- function(config = list(), credentials = list(), endpoint = NULL,
 
 .connectcases$metadata <- list(
   service_name = "connectcases",
-  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.csp.hci.ic.gov", global = FALSE)),
+  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.csp.hci.ic.gov", global = FALSE), "^eusc\\-(de)\\-\\w+\\-\\d+$" = list(endpoint = "cases.{region}.amazonaws.eu", global = FALSE)),
   service_id = "ConnectCases",
   api_version = "2022-10-03",
   signing_name = "cases",
-  json_version = "1.1",
+  json_version = "",
   target_prefix = ""
 )
 

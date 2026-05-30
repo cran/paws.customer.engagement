@@ -12,13 +12,13 @@ connectcampaignservice_update_campaign_outbound_call_config(
 )
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{connectContactFlowId}{}
+\item{connectContactFlowId}{The identifier of the contact flow for the outbound call.}
 
-\item{connectSourcePhoneNumber}{}
+\item{connectSourcePhoneNumber}{The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.}
 
-\item{answerMachineDetectionConfig}{}
+\item{answerMachineDetectionConfig}{Answering Machine Detection config}
 }
 \description{
 Updates the outbound call config of a campaign. This API is idempotent.

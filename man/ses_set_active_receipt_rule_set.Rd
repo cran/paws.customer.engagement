@@ -7,8 +7,7 @@
 ses_set_active_receipt_rule_set(RuleSetName = NULL)
 }
 \arguments{
-\item{RuleSetName}{The name of the receipt rule set to make active. Setting this value to
-null disables all email receiving.}
+\item{RuleSetName}{The name of the receipt rule set to make active. Setting this value to null disables all email receiving.}
 }
 \description{
 Sets the specified receipt rule set as the active receipt rule set.

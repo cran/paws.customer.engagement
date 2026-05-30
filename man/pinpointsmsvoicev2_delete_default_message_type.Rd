@@ -7,11 +7,7 @@
 pinpointsmsvoicev2_delete_default_message_type(ConfigurationSetName)
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The name of the configuration set or the configuration set Amazon
-Resource Name (ARN) to delete the default message type from. The
-ConfigurationSetName and ConfigurationSetArn can be found using the
-\code{\link[=pinpointsmsvoicev2_describe_configuration_sets]{describe_configuration_sets}}
-action.}
+\item{ConfigurationSetName}{[required] The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the \code{\link[=pinpointsmsvoicev2_describe_configuration_sets]{describe_configuration_sets}} action.}
 }
 \description{
 Deletes an existing default message type on a configuration set.

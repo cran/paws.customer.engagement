@@ -16,8 +16,7 @@ connect_send_outbound_email(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{FromEmailAddress}{[required] The email address to be used for sending email.}
 
@@ -27,17 +26,16 @@ in the Amazon Resource Name (ARN) of the instance.}
 
 \item{EmailMessage}{[required] The email message body to be sent to the newly created email.}
 
-\item{TrafficType}{[required] Denotes the class of traffic.}
+\item{TrafficType}{[required] Denotes the class of traffic.
+
+Only the CAMPAIGN traffic type is supported.}
 
 \item{SourceCampaign}{A Campaign object need for Campaign traffic type.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 }
 \description{
-Send outbound email for outbound campaigns. For more information about outbound campaigns, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html}{Set up Amazon Connect outbound campaigns}.
+Send outbound email for outbound campaigns. For more information about outbound campaigns, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html}{Set up Connect Customer outbound campaigns}.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_send_outbound_email/} for full documentation.
 }

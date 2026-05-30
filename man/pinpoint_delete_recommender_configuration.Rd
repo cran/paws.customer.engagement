@@ -7,9 +7,7 @@
 pinpoint_delete_recommender_configuration(RecommenderId)
 }
 \arguments{
-\item{RecommenderId}{[required] The unique identifier for the recommender model configuration. This
-identifier is displayed as the \strong{Recommender ID} on the Amazon Pinpoint
-console.}
+\item{RecommenderId}{[required] The unique identifier for the recommender model configuration. This identifier is displayed as the \strong{Recommender ID} on the Amazon Pinpoint console.}
 }
 \description{
 Deletes an Amazon Pinpoint configuration for a recommender model.

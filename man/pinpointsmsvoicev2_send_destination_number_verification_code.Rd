@@ -22,22 +22,15 @@ pinpointsmsvoicev2_send_destination_number_verification_code(
 
 \item{LanguageCode}{Choose the language to use for the message.}
 
-\item{OriginationIdentity}{The origination identity of the message. This can be either the
-PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn,
-PoolId, or PoolArn.
+\item{OriginationIdentity}{The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.
 
-If you are using a shared AWS End User Messaging SMS and Voice resource
-then you must use the full Amazon Resource Name(ARN).}
+If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).}
 
-\item{ConfigurationSetName}{The name of the configuration set to use. This can be either the
-ConfigurationSetName or ConfigurationSetArn.}
+\item{ConfigurationSetName}{The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.}
 
-\item{Context}{You can specify custom data in this field. If you do, that data is
-logged to the event destination.}
+\item{Context}{You can specify custom data in this field. If you do, that data is logged to the event destination.}
 
-\item{DestinationCountryParameters}{This field is used for any country-specific registration requirements.
-Currently, this setting is only used when you send messages to
-recipients in India using a sender ID. For more information see \href{https://docs.aws.amazon.com/sms-voice/latest/userguide/registrations-sms-senderid-india.html}{Special requirements for sending SMS messages to recipients in India}.}
+\item{DestinationCountryParameters}{This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see \href{https://docs.aws.amazon.com/sms-voice/latest/userguide/registrations-sms-senderid-india.html}{Special requirements for sending SMS messages to recipients in India}.}
 }
 \description{
 Before you can send test messages to a verified destination phone number you need to opt-in the verified destination phone number. Creates a new text message with a verification code and send it to a verified destination phone number. Once you have the verification code use \code{\link[=pinpointsmsvoicev2_verify_destination_number]{verify_destination_number}} to opt-in the verified destination phone number to receive messages.

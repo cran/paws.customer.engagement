@@ -7,15 +7,9 @@
 pinpointsmsvoicev2_delete_keyword(OriginationIdentity, Keyword)
 }
 \arguments{
-\item{OriginationIdentity}{[required] The origination identity to use such as a PhoneNumberId, PhoneNumberArn,
-PoolId or PoolArn. You can use
-\code{\link[=pinpointsmsvoicev2_describe_phone_numbers]{describe_phone_numbers}} to
-find the values for PhoneNumberId and PhoneNumberArn and
-\code{\link[=pinpointsmsvoicev2_describe_pools]{describe_pools}} to find the values
-of PoolId and PoolArn.
+\item{OriginationIdentity}{[required] The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use \code{\link[=pinpointsmsvoicev2_describe_phone_numbers]{describe_phone_numbers}} to find the values for PhoneNumberId and PhoneNumberArn and \code{\link[=pinpointsmsvoicev2_describe_pools]{describe_pools}} to find the values of PoolId and PoolArn.
 
-If you are using a shared AWS End User Messaging SMS and Voice resource
-then you must use the full Amazon Resource Name(ARN).}
+If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).}
 
 \item{Keyword}{[required] The keyword to delete.}
 }

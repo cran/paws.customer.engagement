@@ -3,7 +3,7 @@
 \name{connect_import_phone_number}
 \alias{connect_import_phone_number}
 \title{Imports a claimed phone number from an external service, such as Amazon
-Web Services End User Messaging, into an Amazon Connect instance}
+Web Services End User Messaging, into an Connect Customer instance}
 \usage{
 connect_import_phone_number(
   InstanceId,
@@ -14,26 +14,18 @@ connect_import_phone_number(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{SourcePhoneNumberArn}{[required] The claimed phone number ARN being imported from the external service,
-such as Amazon Web Services End User Messaging. If it is from Amazon Web
-Services End User Messaging, it looks like the ARN of the phone number
-to import from Amazon Web Services End User Messaging.}
+\item{SourcePhoneNumberArn}{[required] The claimed phone number ARN being imported from the external service, such as Amazon Web Services End User Messaging. If it is from Amazon Web Services End User Messaging, it looks like the ARN of the phone number to import from Amazon Web Services End User Messaging.}
 
 \item{PhoneNumberDescription}{The description of the phone number.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 }
 \description{
-Imports a claimed phone number from an external service, such as Amazon Web Services End User Messaging, into an Amazon Connect instance. You can call this API only in the same Amazon Web Services Region where the Amazon Connect instance was created.
+Imports a claimed phone number from an external service, such as Amazon Web Services End User Messaging, into an Connect Customer instance. You can call this API only in the same Amazon Web Services Region where the Connect Customer instance was created.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_import_phone_number/} for full documentation.
 }

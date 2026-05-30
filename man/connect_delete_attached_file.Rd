@@ -11,9 +11,7 @@ connect_delete_attached_file(InstanceId, FileId, AssociatedResourceArn)
 
 \item{FileId}{[required] The unique identifier of the attached file resource.}
 
-\item{AssociatedResourceArn}{[required] The resource to which the attached file is (being) uploaded to.
-\href{https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html}{Cases}
-are the only current supported resource.
+\item{AssociatedResourceArn}{[required] The resource to which the attached file is (being) uploaded to. \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html}{Cases} are the only current supported resource.
 
 This value must be a valid ARN.}
 }

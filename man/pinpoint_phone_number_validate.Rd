@@ -7,7 +7,7 @@
 pinpoint_phone_number_validate(NumberValidateRequest)
 }
 \arguments{
-\item{NumberValidateRequest}{[required]}
+\item{NumberValidateRequest}{[required] Specifies a phone number to validate and retrieve information about.}
 }
 \description{
 Retrieves information about a phone number.

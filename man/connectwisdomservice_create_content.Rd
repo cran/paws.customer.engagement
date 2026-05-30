@@ -16,36 +16,21 @@ connectwisdomservice_create_content(
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
-\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should not be a
-QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-resource to it. Can be either the ID or the ARN. URLs cannot contain the
-ARN.}
+\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 
-\item{metadata}{A key/value map to store attributes without affecting tagging or
-recommendations. For example, when synchronizing data between an
-external system and Wisdom, you can store an external version identifier
-as metadata to utilize for determining drift.}
+\item{metadata}{A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.}
 
-\item{name}{[required] The name of the content. Each piece of content in a knowledge base must
-have a unique name. You can retrieve a piece of content using only its
-knowledge base and its name with the
-\code{\link[=connectwisdomservice_search_content]{search_content}} API.}
+\item{name}{[required] The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the \code{\link[=connectwisdomservice_search_content]{search_content}} API.}
 
-\item{overrideLinkOutUri}{The URI you want to use for the article. If the knowledge base has a
-templateUri, setting this argument overrides it for this piece of
-content.}
+\item{overrideLinkOutUri}{The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.}
 
 \item{tags}{The tags used to organize, track, or control access for this resource.}
 
 \item{title}{The title of the content. If not set, the title is equal to the name.}
 
-\item{uploadId}{[required] A pointer to the uploaded asset. This value is returned by
-\code{\link[=connectwisdomservice_start_content_upload]{start_content_upload}}.}
+\item{uploadId}{[required] A pointer to the uploaded asset. This value is returned by \code{\link[=connectwisdomservice_start_content_upload]{start_content_upload}}.}
 }
 \description{
 Creates Wisdom content. Before to calling this API, use \code{\link[=connectwisdomservice_start_content_upload]{start_content_upload}} to upload an asset.

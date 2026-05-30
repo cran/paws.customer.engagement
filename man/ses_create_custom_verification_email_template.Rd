@@ -20,16 +20,11 @@ ses_create_custom_verification_email_template(
 
 \item{TemplateSubject}{[required] The subject line of the custom verification email.}
 
-\item{TemplateContent}{[required] The content of the custom verification email. The total size of the
-email must be less than 10 MB. The message body may contain HTML, with
-some limitations. For more information, see \href{https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom}{Custom Verification Email Frequently Asked Questions}
-in the \emph{Amazon SES Developer Guide}.}
+\item{TemplateContent}{[required] The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see \href{https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom}{Custom Verification Email Frequently Asked Questions} in the \emph{Amazon SES Developer Guide}.}
 
-\item{SuccessRedirectionURL}{[required] The URL that the recipient of the verification email is sent to if his
-or her address is successfully verified.}
+\item{SuccessRedirectionURL}{[required] The URL that the recipient of the verification email is sent to if his or her address is successfully verified.}
 
-\item{FailureRedirectionURL}{[required] The URL that the recipient of the verification email is sent to if his
-or her address is not successfully verified.}
+\item{FailureRedirectionURL}{[required] The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.}
 }
 \description{
 Creates a new custom verification email template.

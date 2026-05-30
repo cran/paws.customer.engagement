@@ -13,17 +13,13 @@ pinpointsmsvoicev2_describe_registration_field_definitions(
 )
 }
 \arguments{
-\item{RegistrationType}{[required] The type of registration form. The list of \strong{RegistrationTypes} can be
-found using the
-\code{\link[=pinpointsmsvoicev2_describe_registration_type_definitions]{describe_registration_type_definitions}}
-action.}
+\item{RegistrationType}{[required] The type of registration form. The list of \strong{RegistrationTypes} can be found using the \code{\link[=pinpointsmsvoicev2_describe_registration_type_definitions]{describe_registration_type_definitions}} action.}
 
 \item{SectionPath}{The path to the section of the registration.}
 
 \item{FieldPaths}{An array of paths to the registration form field.}
 
-\item{NextToken}{The token to be used for the next set of paginated results. You don't
-need to supply a value for this field in the initial request.}
+\item{NextToken}{The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.}
 
 \item{MaxResults}{The maximum number of results to return per each request.}
 }

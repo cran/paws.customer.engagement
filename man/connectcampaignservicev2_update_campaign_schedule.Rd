@@ -7,9 +7,9 @@
 connectcampaignservicev2_update_campaign_schedule(id, schedule)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{schedule}{[required]}
+\item{schedule}{[required] Campaign schedule}
 }
 \description{
 Updates the schedule for a campaign. This API is idempotent.

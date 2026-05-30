@@ -2,8 +2,8 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_contact_flow_modules}
 \alias{connect_list_contact_flow_modules}
-\title{Provides information about the flow modules for the specified Amazon
-Connect instance}
+\title{Provides information about the flow modules for the specified Connect
+Customer instance}
 \usage{
 connect_list_contact_flow_modules(
   InstanceId,
@@ -13,19 +13,16 @@ connect_list_contact_flow_modules(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
 \item{ContactFlowModuleState}{The state of the flow module.}
 }
 \description{
-Provides information about the flow modules for the specified Amazon Connect instance.
+Provides information about the flow modules for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_contact_flow_modules/} for full documentation.
 }

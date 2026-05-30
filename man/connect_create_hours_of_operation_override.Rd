@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_hours_of_operation_override}
 \alias{connect_create_hours_of_operation_override}
-\title{Creates an hours of operation override in an Amazon Connect hours of
+\title{Creates an hours of operation override in an Connect Customer hours of
 operation resource}
 \usage{
 connect_create_hours_of_operation_override(
@@ -12,11 +12,13 @@ connect_create_hours_of_operation_override(
   Description = NULL,
   Config,
   EffectiveFrom,
-  EffectiveTill
+  EffectiveTill,
+  RecurrenceConfig = NULL,
+  OverrideType = NULL
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{HoursOfOperationId}{[required] The identifier for the hours of operation}
 
@@ -24,15 +26,20 @@ connect_create_hours_of_operation_override(
 
 \item{Description}{The description of the hours of operation override.}
 
-\item{Config}{[required] Configuration information for the hours of operation override: day,
-start time, and end time.}
+\item{Config}{[required] Configuration information for the hours of operation override: day, start time, and end time.}
 
-\item{EffectiveFrom}{[required] The date from when the hours of operation override would be effective.}
+\item{EffectiveFrom}{[required] The date from when the hours of operation override is effective.}
 
-\item{EffectiveTill}{[required] The date until when the hours of operation override would be effective.}
+\item{EffectiveTill}{[required] The date until when the hours of operation override is effective.}
+
+\item{RecurrenceConfig}{Configuration for a recurring event.}
+
+\item{OverrideType}{Whether the override will be defined as a \emph{standard} or as a \emph{recurring event}.
+
+For more information about how override types are applied, see Build your list of overrides in the \emph{Administrator Guide}.}
 }
 \description{
-Creates an hours of operation override in an Amazon Connect hours of operation resource
+Creates an hours of operation override in an Connect Customer hours of operation resource.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_hours_of_operation_override/} for full documentation.
 }

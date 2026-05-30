@@ -8,10 +8,9 @@ existing campaign for an application}
 pinpoint_create_campaign(ApplicationId, WriteCampaignRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
-\item{WriteCampaignRequest}{[required]}
+\item{WriteCampaignRequest}{[required] Specifies the configuration and other settings for a campaign.}
 }
 \description{
 Creates a new campaign for an application or updates the settings of an existing campaign for an application.

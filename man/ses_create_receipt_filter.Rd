@@ -7,9 +7,7 @@
 ses_create_receipt_filter(Filter)
 }
 \arguments{
-\item{Filter}{[required] A data structure that describes the IP address filter to create, which
-consists of a name, an IP address range, and whether to allow or block
-mail from it.}
+\item{Filter}{[required] A data structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.}
 }
 \description{
 Creates a new IP address filter.

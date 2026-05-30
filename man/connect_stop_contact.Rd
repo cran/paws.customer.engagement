@@ -9,11 +9,9 @@ connect_stop_contact(ContactId, InstanceId, DisconnectReason = NULL)
 \arguments{
 \item{ContactId}{[required] The ID of the contact.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{DisconnectReason}{The reason a contact can be disconnected. Only Amazon Connect outbound
-campaigns can provide this field.}
+\item{DisconnectReason}{The reason a contact can be disconnected. Only Connect Customer outbound campaigns can provide this field. For a list and description of all the possible disconnect reasons by channel (including outbound campaign voice contacts) see DisconnectReason under \href{https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord}{ContactTraceRecord} in the \emph{Connect Customer Administrator Guide}.}
 }
 \description{
 Ends the specified contact. Use this API to stop queued callbacks. It does not work for voice contacts that use the following initiation methods:

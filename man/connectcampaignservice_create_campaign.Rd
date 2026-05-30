@@ -13,15 +13,15 @@ connectcampaignservice_create_campaign(
 )
 }
 \arguments{
-\item{name}{[required]}
+\item{name}{[required] The name of an Amazon Connect Campaign name.}
 
-\item{connectInstanceId}{[required]}
+\item{connectInstanceId}{[required] Amazon Connect Instance Id}
 
-\item{dialerConfig}{[required]}
+\item{dialerConfig}{[required] The possible types of dialer config parameters}
 
-\item{outboundCallConfig}{[required]}
+\item{outboundCallConfig}{[required] The configuration used for outbound calls.}
 
-\item{tags}{}
+\item{tags}{Tag map with key and value.}
 }
 \description{
 Creates a campaign for the specified Amazon Connect account. This API is idempotent.

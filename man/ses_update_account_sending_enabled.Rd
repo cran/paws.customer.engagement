@@ -8,8 +8,7 @@ in the current Amazon Web Services Region}
 ses_update_account_sending_enabled(Enabled = NULL)
 }
 \arguments{
-\item{Enabled}{Describes whether email sending is enabled or disabled for your Amazon
-SES account in the current Amazon Web Services Region.}
+\item{Enabled}{Describes whether email sending is enabled or disabled for your Amazon SES account in the current Amazon Web Services Region.}
 }
 \description{
 Enables or disables email sending across your entire Amazon SES account in the current Amazon Web Services Region. You can use this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending across your Amazon SES account in a given Amazon Web Services Region when reputation metrics (such as your bounce or complaint rates) reach certain thresholds.

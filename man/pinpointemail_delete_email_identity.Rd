@@ -8,8 +8,7 @@ Amazon Pinpoint}
 pinpointemail_delete_email_identity(EmailIdentity)
 }
 \arguments{
-\item{EmailIdentity}{[required] The identity (that is, the email address or domain) that you want to
-delete from your Amazon Pinpoint account.}
+\item{EmailIdentity}{[required] The identity (that is, the email address or domain) that you want to delete from your Amazon Pinpoint account.}
 }
 \description{
 Deletes an email identity that you previously verified for use with Amazon Pinpoint. An identity can be either an email address or a domain name.

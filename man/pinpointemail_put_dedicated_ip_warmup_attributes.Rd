@@ -7,11 +7,9 @@
 pinpointemail_put_dedicated_ip_warmup_attributes(Ip, WarmupPercentage)
 }
 \arguments{
-\item{Ip}{[required] The dedicated IP address that you want to update the warm-up attributes
-for.}
+\item{Ip}{[required] The dedicated IP address that you want to update the warm-up attributes for.}
 
-\item{WarmupPercentage}{[required] The warm-up percentage that you want to associate with the dedicated IP
-address.}
+\item{WarmupPercentage}{[required] The warm-up percentage that you want to associate with the dedicated IP address.}
 }
 \description{
 Put dedicated ip warmup attributes

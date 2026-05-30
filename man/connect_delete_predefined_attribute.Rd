@@ -2,19 +2,18 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_delete_predefined_attribute}
 \alias{connect_delete_predefined_attribute}
-\title{Deletes a predefined attribute from the specified Amazon Connect
+\title{Deletes a predefined attribute from the specified Connect Customer
 instance}
 \usage{
 connect_delete_predefined_attribute(InstanceId, Name)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the instance
-ID in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Name}{[required] The name of the predefined attribute.}
 }
 \description{
-Deletes a predefined attribute from the specified Amazon Connect instance.
+Deletes a predefined attribute from the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_delete_predefined_attribute/} for full documentation.
 }

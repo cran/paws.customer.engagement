@@ -18,51 +18,32 @@ connect_start_web_rtc_contact(
 )
 }
 \arguments{
-\item{Attributes}{A custom key-value pair using an attribute map. The attributes are
-standard Amazon Connect attributes, and can be accessed in flows just
-like any other contact attributes.
+\item{Attributes}{A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.
 
-There can be up to 32,768 UTF-8 bytes across all key-value pairs per
-contact. Attribute keys can include only alphanumeric, -, and _
-characters.}
+There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, -, and _ characters.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.
 
-The token is valid for 7 days after creation. If a contact is already
-started, the contact ID is returned.}
+The token is valid for 7 days after creation. If a contact is already started, the contact ID is returned.}
 
-\item{ContactFlowId}{[required] The identifier of the flow for the call. To see the ContactFlowId in the
-Amazon Connect admin website, on the navigation menu go to \strong{Routing},
-\strong{Flows}. Choose the flow. On the flow page, under the name of the
-flow, choose \strong{Show additional flow information}. The ContactFlowId is
-the last part of the ARN, shown here in bold:
+\item{ContactFlowId}{[required] The identifier of the flow for the call. To see the ContactFlowId in the Connect Customer admin website, on the navigation menu go to \strong{Routing}, \strong{Flows}. Choose the flow. On the flow page, under the name of the flow, choose \strong{Show additional flow information}. The ContactFlowId is the last part of the ARN, shown here in bold:
 
 arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/\strong{846ec553-a005-41c0-8341-xxxxxxxxxxxx}}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{AllowedCapabilities}{Information about the video sharing capabilities of the participants
-(customer, agent).}
+\item{AllowedCapabilities}{Information about the video sharing capabilities of the participants (customer, agent).}
 
-\item{ParticipantDetails}{[required]}
+\item{ParticipantDetails}{[required] The customer's details.}
 
-\item{RelatedContactId}{The unique identifier for an Amazon Connect contact. This identifier is
-related to the contact starting.}
+\item{RelatedContactId}{The unique identifier for an Connect Customer contact. This identifier is related to the contact starting.}
 
-\item{References}{A formatted URL that is shown to an agent in the Contact Control Panel
-(CCP). Tasks can have the following reference types at the time of
-creation: \code{URL} | \code{NUMBER} | \code{STRING} | \code{DATE} | \code{EMAIL}. \code{ATTACHMENT}
-is not a supported reference type during task creation.}
+\item{References}{A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: \code{URL} | \code{NUMBER} | \code{STRING} | \code{DATE} | \code{EMAIL}. \code{ATTACHMENT} is not a supported reference type during task creation.}
 
-\item{Description}{A description of the task that is shown to an agent in the Contact
-Control Panel (CCP).}
+\item{Description}{A description of the task that is shown to an agent in the Contact Control Panel (CCP).}
 }
 \description{
-Places an inbound in-app, web, or video call to a contact, and then initiates the flow. It performs the actions in the flow that are specified (in ContactFlowId) and present in the Amazon Connect instance (specified as InstanceId).
+Places an inbound in-app, web, or video call to a contact, and then initiates the flow. It performs the actions in the flow that are specified (in ContactFlowId) and present in the Connect Customer instance (specified as InstanceId).
 
 See \url{https://www.paws-r-sdk.com/docs/connect_start_web_rtc_contact/} for full documentation.
 }

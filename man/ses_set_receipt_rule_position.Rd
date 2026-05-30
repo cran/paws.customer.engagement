@@ -7,13 +7,11 @@
 ses_set_receipt_rule_position(RuleSetName, RuleName, After = NULL)
 }
 \arguments{
-\item{RuleSetName}{[required] The name of the receipt rule set that contains the receipt rule to
-reposition.}
+\item{RuleSetName}{[required] The name of the receipt rule set that contains the receipt rule to reposition.}
 
 \item{RuleName}{[required] The name of the receipt rule to reposition.}
 
-\item{After}{The name of the receipt rule after which to place the specified receipt
-rule.}
+\item{After}{The name of the receipt rule after which to place the specified receipt rule.}
 }
 \description{
 Sets the position of the specified receipt rule in the receipt rule set.

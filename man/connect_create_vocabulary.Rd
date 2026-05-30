@@ -2,7 +2,8 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_create_vocabulary}
 \alias{connect_create_vocabulary}
-\title{Creates a custom vocabulary associated with your Amazon Connect instance}
+\title{Creates a custom vocabulary associated with your Connect Customer
+instance}
 \usage{
 connect_create_vocabulary(
   ClientToken = NULL,
@@ -14,33 +15,20 @@ connect_create_vocabulary(
 )
 }
 \arguments{
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.
-If a create request is received more than once with same client token,
-subsequent requests return the previous response without creating a
-vocabulary again.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}. If a create request is received more than once with same client token, subsequent requests return the previous response without creating a vocabulary again.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{VocabularyName}{[required] A unique name of the custom vocabulary.}
 
-\item{LanguageCode}{[required] The language code of the vocabulary entries. For a list of languages and
-their corresponding language codes, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html}{What is Amazon Transcribe?}}
+\item{LanguageCode}{[required] The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html}{What is Amazon Transcribe?}}
 
-\item{Content}{[required] The content of the custom vocabulary in plain-text format with a table
-of values. Each row in the table represents a word or a phrase,
-described with \code{Phrase}, \code{IPA}, \code{SoundsLike}, and \code{DisplayAs} fields.
-Separate the fields with TAB characters. The size limit is 50KB. For
-more information, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table}{Create a custom vocabulary using a table}.}
+\item{Content}{[required] The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with \code{Phrase}, \code{IPA}, \code{SoundsLike}, and \code{DisplayAs} fields. Separate the fields with TAB characters. The size limit is 50KB. For more information, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table}{Create a custom vocabulary using a table}.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
-Creates a custom vocabulary associated with your Amazon Connect instance. You can set a custom vocabulary to be your default vocabulary for a given language. Contact Lens for Amazon Connect uses the default vocabulary in post-call and real-time contact analysis sessions for that language.
+Creates a custom vocabulary associated with your Connect Customer instance. You can set a custom vocabulary to be your default vocabulary for a given language. Contact Lens for Connect Customer uses the default vocabulary in post-call and real-time contact analysis sessions for that language.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_create_vocabulary/} for full documentation.
 }

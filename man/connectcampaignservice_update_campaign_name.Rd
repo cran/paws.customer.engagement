@@ -7,9 +7,9 @@
 connectcampaignservice_update_campaign_name(id, name)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{name}{[required]}
+\item{name}{[required] The name of an Amazon Connect Campaign name.}
 }
 \description{
 Updates the name of a campaign. This API is idempotent.

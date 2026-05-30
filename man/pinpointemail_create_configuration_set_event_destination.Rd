@@ -11,11 +11,9 @@ pinpointemail_create_configuration_set_event_destination(
 )
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The name of the configuration set that you want to add an event
-destination to.}
+\item{ConfigurationSetName}{[required] The name of the configuration set that you want to add an event destination to.}
 
-\item{EventDestinationName}{[required] A name that identifies the event destination within the configuration
-set.}
+\item{EventDestinationName}{[required] A name that identifies the event destination within the configuration set.}
 
 \item{EventDestination}{[required] An object that defines the event destination.}
 }

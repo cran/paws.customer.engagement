@@ -7,12 +7,11 @@
 pinpoint_update_campaign(ApplicationId, CampaignId, WriteCampaignRequest)
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
 \item{CampaignId}{[required] The unique identifier for the campaign.}
 
-\item{WriteCampaignRequest}{[required]}
+\item{WriteCampaignRequest}{[required] Specifies the configuration and other settings for a campaign.}
 }
 \description{
 Updates the configuration and other settings for a campaign.

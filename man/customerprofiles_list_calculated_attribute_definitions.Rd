@@ -13,11 +13,9 @@ customerprofiles_list_calculated_attribute_definitions(
 \arguments{
 \item{DomainName}{[required] The unique name of the domain.}
 
-\item{NextToken}{The pagination token from the previous call to
-ListCalculatedAttributeDefinitions.}
+\item{NextToken}{The pagination token from the previous call to ListCalculatedAttributeDefinitions.}
 
-\item{MaxResults}{The maximum number of calculated attribute definitions returned per
-page.}
+\item{MaxResults}{The maximum number of calculated attribute definitions returned per page.}
 }
 \description{
 Lists calculated attribute definitions for Customer Profiles

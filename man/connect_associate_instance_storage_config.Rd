@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_associate_instance_storage_config}
 \alias{connect_associate_instance_storage_config}
-\title{This API is in preview release for Amazon Connect and is subject to
+\title{This API is in preview release for Connect Customer and is subject to
 change}
 \usage{
 connect_associate_instance_storage_config(
@@ -13,34 +13,24 @@ connect_associate_instance_storage_config(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ResourceType}{[required] A valid resource type. To \href{https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html}{enable streaming for real-time analysis of contacts},
-use the following types:
+\item{ResourceType}{[required] A valid resource type. To \href{https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html}{enable streaming for real-time analysis of contacts}, use the following types:
 \itemize{
 \item For chat contacts, use \code{REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS}.
 \item For voice contacts, use \code{REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS}.
 }
 
-\code{REAL_TIME_CONTACT_ANALYSIS_SEGMENTS} is deprecated, but it is still
-supported and will apply only to VOICE channel contacts. Use
-\code{REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS} for voice contacts moving
-forward.
+\code{REAL_TIME_CONTACT_ANALYSIS_SEGMENTS} is deprecated, but it is still supported and will apply only to VOICE channel contacts. Use \code{REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS} for voice contacts moving forward.
 
-If you have previously associated a stream with
-\code{REAL_TIME_CONTACT_ANALYSIS_SEGMENTS}, no action is needed to update the
-stream to \code{REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS}.}
+If you have previously associated a stream with \code{REAL_TIME_CONTACT_ANALYSIS_SEGMENTS}, no action is needed to update the stream to \code{REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS}.}
 
 \item{StorageConfig}{[required] A valid storage type.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+This API is in preview release for Connect Customer and is subject to change.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_associate_instance_storage_config/} for full documentation.
 }

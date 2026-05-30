@@ -17,11 +17,9 @@ customerprofiles_get_auto_merging_preview(
 
 \item{Consolidation}{[required] A list of matching attributes that represent matching criteria.}
 
-\item{ConflictResolution}{[required] How the auto-merging process should resolve conflicts between different
-profiles.}
+\item{ConflictResolution}{[required] How the auto-merging process should resolve conflicts between different profiles.}
 
-\item{MinAllowedConfidenceScoreForMerging}{Minimum confidence score required for profiles within a matching group
-to be merged during the auto-merge process.}
+\item{MinAllowedConfidenceScoreForMerging}{Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.}
 }
 \description{
 Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly selects a sample of matching groups from the existing matching results, and applies the automerging settings that you provided. You can then view the number of profiles in the sample, the number of matches, and the number of profiles identified to be merged. This enables you to evaluate the accuracy of the attributes in your matching list.

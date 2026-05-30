@@ -11,13 +11,9 @@ ses_list_custom_verification_email_templates(
 )
 }
 \arguments{
-\item{NextToken}{An array the contains the name and creation time stamp for each template
-in your Amazon SES account.}
+\item{NextToken}{An array the contains the name and creation time stamp for each template in your Amazon SES account.}
 
-\item{MaxResults}{The maximum number of custom verification email templates to return.
-This value must be at least 1 and less than or equal to 50. If you do
-not specify a value, or if you specify a value less than 1 or greater
-than 50, the operation returns up to 50 results.}
+\item{MaxResults}{The maximum number of custom verification email templates to return. This value must be at least 1 and less than or equal to 50. If you do not specify a value, or if you specify a value less than 1 or greater than 50, the operation returns up to 50 results.}
 }
 \description{
 Lists the existing custom verification email templates for your account in the current Amazon Web Services Region.

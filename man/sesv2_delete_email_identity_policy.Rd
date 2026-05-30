@@ -12,8 +12,7 @@ sesv2_delete_email_identity_policy(EmailIdentity, PolicyName)
 
 \item{PolicyName}{[required] The name of the policy.
 
-The policy name cannot exceed 64 characters and can only include
-alphanumeric characters, dashes, and underscores.}
+The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.}
 }
 \description{
 Deletes the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.

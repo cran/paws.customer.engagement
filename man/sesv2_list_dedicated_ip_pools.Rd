@@ -8,15 +8,9 @@ Services account in the current Region}
 sesv2_list_dedicated_ip_pools(NextToken = NULL, PageSize = NULL)
 }
 \arguments{
-\item{NextToken}{A token returned from a previous call to
-\code{\link[=sesv2_list_dedicated_ip_pools]{list_dedicated_ip_pools}} to indicate
-the position in the list of dedicated IP pools.}
+\item{NextToken}{A token returned from a previous call to \code{\link[=sesv2_list_dedicated_ip_pools]{list_dedicated_ip_pools}} to indicate the position in the list of dedicated IP pools.}
 
-\item{PageSize}{The number of results to show in a single call to
-\code{\link[=sesv2_list_dedicated_ip_pools]{list_dedicated_ip_pools}}. If the
-number of results is larger than the number you specified in this
-parameter, then the response includes a \code{NextToken} element, which you
-can use to obtain additional results.}
+\item{PageSize}{The number of results to show in a single call to \code{\link[=sesv2_list_dedicated_ip_pools]{list_dedicated_ip_pools}}. If the number of results is larger than the number you specified in this parameter, then the response includes a \code{NextToken} element, which you can use to obtain additional results.}
 }
 \description{
 List all of the dedicated IP pools that exist in your Amazon Web Services account in the current Region.

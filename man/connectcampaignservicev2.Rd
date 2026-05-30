@@ -99,6 +99,7 @@ Provide APIs to create and manage Amazon Connect Campaigns.
 \link[=connectcampaignservicev2_delete_campaign_channel_subtype_config]{delete_campaign_channel_subtype_config} \tab Deletes the channel subtype config of a campaign\cr
 \link[=connectcampaignservicev2_delete_campaign_communication_limits]{delete_campaign_communication_limits} \tab Deletes the communication limits config for a campaign\cr
 \link[=connectcampaignservicev2_delete_campaign_communication_time]{delete_campaign_communication_time} \tab Deletes the communication time config for a campaign\cr
+\link[=connectcampaignservicev2_delete_campaign_entry_limits]{delete_campaign_entry_limits} \tab Deletes the entry limits config for a campaign\cr
 \link[=connectcampaignservicev2_delete_connect_instance_config]{delete_connect_instance_config} \tab Deletes a connect instance config from the specified AWS account\cr
 \link[=connectcampaignservicev2_delete_connect_instance_integration]{delete_connect_instance_integration} \tab Delete the integration for the specified Amazon Connect instance\cr
 \link[=connectcampaignservicev2_delete_instance_onboarding_job]{delete_instance_onboarding_job} \tab Delete the Connect Campaigns onboarding job for the specified Amazon Connect instance\cr
@@ -106,12 +107,14 @@ Provide APIs to create and manage Amazon Connect Campaigns.
 \link[=connectcampaignservicev2_get_campaign_state]{get_campaign_state} \tab Get state of a campaign for the specified Amazon Connect account\cr
 \link[=connectcampaignservicev2_get_campaign_state_batch]{get_campaign_state_batch} \tab Get state of campaigns for the specified Amazon Connect account\cr
 \link[=connectcampaignservicev2_get_connect_instance_config]{get_connect_instance_config} \tab Get the specific Connect instance config\cr
+\link[=connectcampaignservicev2_get_instance_communication_limits]{get_instance_communication_limits} \tab Get the instance communication limits\cr
 \link[=connectcampaignservicev2_get_instance_onboarding_job_status]{get_instance_onboarding_job_status} \tab Get the specific instance onboarding job status\cr
 \link[=connectcampaignservicev2_list_campaigns]{list_campaigns} \tab Provides summary information about the campaigns under the specified Amazon Connect account\cr
 \link[=connectcampaignservicev2_list_connect_instance_integrations]{list_connect_instance_integrations} \tab Provides summary information about the integration under the specified Connect instance\cr
 \link[=connectcampaignservicev2_list_tags_for_resource]{list_tags_for_resource} \tab List tags for a resource\cr
 \link[=connectcampaignservicev2_pause_campaign]{pause_campaign} \tab Pauses a campaign for the specified Amazon Connect account\cr
 \link[=connectcampaignservicev2_put_connect_instance_integration]{put_connect_instance_integration} \tab Put or update the integration for the specified Amazon Connect instance\cr
+\link[=connectcampaignservicev2_put_instance_communication_limits]{put_instance_communication_limits} \tab Put the instance communication limits\cr
 \link[=connectcampaignservicev2_put_outbound_request_batch]{put_outbound_request_batch} \tab Creates outbound requests for the specified campaign Amazon Connect account\cr
 \link[=connectcampaignservicev2_put_profile_outbound_request_batch]{put_profile_outbound_request_batch} \tab Takes in a list of profile outbound requests to be placed as part of an outbound campaign\cr
 \link[=connectcampaignservicev2_resume_campaign]{resume_campaign} \tab Stops a campaign for the specified Amazon Connect account\cr
@@ -123,6 +126,7 @@ Provide APIs to create and manage Amazon Connect Campaigns.
 \link[=connectcampaignservicev2_update_campaign_channel_subtype_config]{update_campaign_channel_subtype_config} \tab Updates the channel subtype config of a campaign\cr
 \link[=connectcampaignservicev2_update_campaign_communication_limits]{update_campaign_communication_limits} \tab Updates the communication limits config for a campaign\cr
 \link[=connectcampaignservicev2_update_campaign_communication_time]{update_campaign_communication_time} \tab Updates the communication time config for a campaign\cr
+\link[=connectcampaignservicev2_update_campaign_entry_limits]{update_campaign_entry_limits} \tab Updates the entry limits config for a campaign\cr
 \link[=connectcampaignservicev2_update_campaign_flow_association]{update_campaign_flow_association} \tab Updates the campaign flow associated with a campaign\cr
 \link[=connectcampaignservicev2_update_campaign_name]{update_campaign_name} \tab Updates the name of a campaign\cr
 \link[=connectcampaignservicev2_update_campaign_schedule]{update_campaign_schedule} \tab Updates the schedule for a campaign\cr

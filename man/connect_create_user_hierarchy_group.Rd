@@ -12,17 +12,13 @@ connect_create_user_hierarchy_group(
 )
 }
 \arguments{
-\item{Name}{[required] The name of the user hierarchy group. Must not be more than 100
-characters.}
+\item{Name}{[required] The name of the user hierarchy group. Must not be more than 100 characters.}
 
-\item{ParentGroupId}{The identifier for the parent hierarchy group. The user hierarchy is
-created at level one if the parent group ID is null.}
+\item{ParentGroupId}{The identifier for the parent hierarchy group. The user hierarchy is created at level one if the parent group ID is null.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{Tags}{The tags used to organize, track, or control access for this resource.
-For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
+\item{Tags}{The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.}
 }
 \description{
 Creates a new user hierarchy group.

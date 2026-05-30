@@ -19,8 +19,7 @@ customerprofiles_list_account_integrations(
 
 \item{MaxResults}{The maximum number of objects returned per page.}
 
-\item{IncludeHidden}{Boolean to indicate if hidden integration should be returned. Defaults
-to \code{False}.}
+\item{IncludeHidden}{Boolean to indicate if hidden integration should be returned. Defaults to \code{False}.}
 }
 \description{
 Lists all of the integrations associated to a specific URI in the AWS account.

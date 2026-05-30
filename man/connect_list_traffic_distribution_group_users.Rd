@@ -11,16 +11,11 @@ connect_list_traffic_distribution_group_users(
 )
 }
 \arguments{
-\item{TrafficDistributionGroupId}{[required] The identifier of the traffic distribution group. This can be the ID or
-the ARN if the API is being called in the Region where the traffic
-distribution group was created. The ARN must be provided if the call is
-from the replicated Region.}
+\item{TrafficDistributionGroupId}{[required] The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Lists traffic distribution group users.

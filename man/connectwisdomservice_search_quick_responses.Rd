@@ -13,18 +13,13 @@ connectwisdomservice_search_quick_responses(
 )
 }
 \arguments{
-\item{attributes}{The \href{https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html#user-defined-attributes}{user-defined Amazon Connect contact attributes}
-to be resolved when search results are returned.}
+\item{attributes}{The \href{https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html#user-defined-attributes}{user-defined Amazon Connect contact attributes} to be resolved when search results are returned.}
 
-\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should be a QUICK_RESPONSES
-type knowledge base. Can be either the ID or the ARN. URLs cannot
-contain the ARN.}
+\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should be a QUICK_RESPONSES type knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{searchExpression}{[required] The search expression for querying the quick response.}
 }

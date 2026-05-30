@@ -2,9 +2,9 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_replicate_instance}
 \alias{connect_replicate_instance}
-\title{Replicates an Amazon Connect instance in the specified Amazon Web
-Services Region and copies configuration information for Amazon Connect
-resources across Amazon Web Services Regions}
+\title{Replicates an Connect Customer instance in the specified Amazon Web
+Services Region and copies configuration information for Connect
+Customer resources across Amazon Web Services Regions}
 \usage{
 connect_replicate_instance(
   InstanceId,
@@ -14,23 +14,16 @@ connect_replicate_instance(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance. You can provide the
-\code{InstanceId}, or the entire ARN.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance. You can provide the \code{InstanceId}, or the entire ARN.}
 
-\item{ReplicaRegion}{[required] The Amazon Web Services Region where to replicate the Amazon Connect
-instance.}
+\item{ReplicaRegion}{[required] The Amazon Web Services Region where to replicate the Connect Customer instance.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If not provided, the Amazon Web Services SDK
-populates this field. For more information about idempotency, see
-\href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see \href{https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/}{Making retries safe with idempotent APIs}.}
 
-\item{ReplicaAlias}{[required] The alias for the replicated instance. The \code{ReplicaAlias} must be
-unique.}
+\item{ReplicaAlias}{[required] The alias for the replicated instance. The \code{ReplicaAlias} must be unique.}
 }
 \description{
-Replicates an Amazon Connect instance in the specified Amazon Web Services Region and copies configuration information for Amazon Connect resources across Amazon Web Services Regions.
+Replicates an Connect Customer instance in the specified Amazon Web Services Region and copies configuration information for Connect Customer resources across Amazon Web Services Regions.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_replicate_instance/} for full documentation.
 }

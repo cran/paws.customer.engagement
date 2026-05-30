@@ -9,9 +9,7 @@ connectwisdomservice_delete_import_job(importJobId, knowledgeBaseId)
 \arguments{
 \item{importJobId}{[required] The identifier of the import job to be deleted.}
 
-\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should not be a
-QUICK_RESPONSES type knowledge base if you're storing Wisdom Content
-resource to it.}
+\item{knowledgeBaseId}{[required] The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing Wisdom Content resource to it.}
 }
 \description{
 Deletes the quick response import job.

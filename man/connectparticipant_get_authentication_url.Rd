@@ -14,8 +14,7 @@ connectparticipant_get_authentication_url(
 \arguments{
 \item{SessionId}{[required] The sessionId provided in the authenticationInitiated event.}
 
-\item{RedirectUri}{[required] The URL where the customer will be redirected after Amazon Cognito
-authorizes the user.}
+\item{RedirectUri}{[required] The URL where the customer will be redirected after Amazon Cognito authorizes the user.}
 
 \item{ConnectionToken}{[required] The authentication token associated with the participant's connection.}
 }

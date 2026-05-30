@@ -12,11 +12,11 @@ connectcampaignservicev2_list_campaigns(
 )
 }
 \arguments{
-\item{maxResults}{}
+\item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{}
+\item{nextToken}{The token for the next set of results.}
 
-\item{filters}{}
+\item{filters}{Filter model by type}
 }
 \description{
 Provides summary information about the campaigns under the specified Amazon Connect account.

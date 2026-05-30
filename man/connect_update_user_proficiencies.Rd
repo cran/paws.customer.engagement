@@ -7,14 +7,11 @@
 connect_update_user_proficiencies(InstanceId, UserId, UserProficiencies)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the instance
-ID in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.}
 
 \item{UserId}{[required] The identifier of the user account.}
 
-\item{UserProficiencies}{[required] The proficiencies to be updated for the user. Proficiencies must first
-be associated to the user. You can do this using
-AssociateUserProficiencies API.}
+\item{UserProficiencies}{[required] The proficiencies to be updated for the user. Proficiencies must first be associated to the user. You can do this using AssociateUserProficiencies API.}
 }
 \description{
 Updates the properties associated with the proficiencies of a user.

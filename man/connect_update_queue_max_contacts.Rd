@@ -2,22 +2,20 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_update_queue_max_contacts}
 \alias{connect_update_queue_max_contacts}
-\title{This API is in preview release for Amazon Connect and is subject to
-change}
+\title{Updates the maximum number of contacts allowed in a queue before it is
+considered full}
 \usage{
 connect_update_queue_max_contacts(InstanceId, QueueId, MaxContacts = NULL)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{QueueId}{[required] The identifier for the queue.}
 
-\item{MaxContacts}{The maximum number of contacts that can be in the queue before it is
-considered full.}
+\item{MaxContacts}{The maximum number of contacts that can be in the queue before it is considered full.}
 }
 \description{
-This API is in preview release for Amazon Connect and is subject to change.
+Updates the maximum number of contacts allowed in a queue before it is considered full.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_update_queue_max_contacts/} for full documentation.
 }

@@ -14,15 +14,9 @@ sesv2_put_email_identity_feedback_attributes(
 
 \item{EmailForwardingEnabled}{Sets the feedback forwarding configuration for the identity.
 
-If the value is \code{true}, you receive email notifications when bounce or
-complaint events occur. These notifications are sent to the address that
-you specified in the \code{Return-Path} header of the original email.
+If the value is \code{true}, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the \code{Return-Path} header of the original email.
 
-You're required to have a method of tracking bounces and complaints. If
-you haven't set up another mechanism for receiving bounce or complaint
-notifications (for example, by setting up an event destination), you
-receive an email notification when these events occur (even if this
-setting is disabled).}
+You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).}
 }
 \description{
 Used to enable or disable feedback forwarding for an identity. This setting determines what happens when an identity is used to send an email that results in a bounce or complaint event.

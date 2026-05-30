@@ -20,16 +20,11 @@ customerprofiles_create_segment_snapshot(
 
 \item{DataFormat}{[required] The format in which the segment will be exported.}
 
-\item{EncryptionKey}{The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-exported segment.}
+\item{EncryptionKey}{The Amazon Resource Name (ARN) of the KMS key used to encrypt the exported segment.}
 
-\item{RoleArn}{The Amazon Resource Name (ARN) of the IAM role that allows Customer
-Profiles service principal to assume the role for conducting KMS and S3
-operations.}
+\item{RoleArn}{The Amazon Resource Name (ARN) of the IAM role that allows Customer Profiles service principal to assume the role for conducting KMS and S3 operations.}
 
-\item{DestinationUri}{The destination to which the segment will be exported. This field must
-be provided if the request is not submitted from the Amazon Connect
-Admin Website.}
+\item{DestinationUri}{The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Connect Customer Admin Website.}
 }
 \description{
 Triggers a job to export a segment to a specified destination.

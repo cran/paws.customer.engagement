@@ -2,20 +2,18 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_describe_view}
 \alias{connect_describe_view}
-\title{Retrieves the view for the specified Amazon Connect instance and view
+\title{Retrieves the view for the specified Connect Customer instance and view
 identifier}
 \usage{
 connect_describe_view(InstanceId, ViewId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the
-instanceId in the ARN of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can find the instanceId in the ARN of the instance.}
 
-\item{ViewId}{[required] The ViewId of the view. This must be an ARN for Amazon Web Services
-managed views.}
+\item{ViewId}{[required] The ViewId of the view. This must be an ARN for Amazon Web Services managed views.}
 }
 \description{
-Retrieves the view for the specified Amazon Connect instance and view identifier.
+Retrieves the view for the specified Connect Customer instance and view identifier.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_describe_view/} for full documentation.
 }

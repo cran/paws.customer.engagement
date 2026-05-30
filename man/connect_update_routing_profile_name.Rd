@@ -12,15 +12,13 @@ connect_update_routing_profile_name(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{RoutingProfileId}{[required] The identifier of the routing profile.}
 
 \item{Name}{The name of the routing profile. Must not be more than 127 characters.}
 
-\item{Description}{The description of the routing profile. Must not be more than 250
-characters.}
+\item{Description}{The description of the routing profile. Must not be more than 250 characters.}
 }
 \description{
 Updates the name and description of a routing profile. The request accepts the following data in JSON format. At least \code{Name} or \code{Description} must be provided.

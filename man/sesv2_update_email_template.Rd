@@ -9,8 +9,7 @@ sesv2_update_email_template(TemplateName, TemplateContent)
 \arguments{
 \item{TemplateName}{[required] The name of the template.}
 
-\item{TemplateContent}{[required] The content of the email template, composed of a subject line, an HTML
-part, and a text-only part.}
+\item{TemplateContent}{[required] The content of the email template, composed of a subject line, an HTML part, and a text-only part.}
 }
 \description{
 Updates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the \href{https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html}{Amazon SES Developer Guide}.

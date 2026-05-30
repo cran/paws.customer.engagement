@@ -14,9 +14,7 @@ sesv2_put_configuration_set_reputation_options(
 \arguments{
 \item{ConfigurationSetName}{[required] The name of the configuration set.}
 
-\item{ReputationMetricsEnabled}{If \code{true}, tracking of reputation metrics is enabled for the
-configuration set. If \code{false}, tracking of reputation metrics is
-disabled for the configuration set.}
+\item{ReputationMetricsEnabled}{If \code{true}, tracking of reputation metrics is enabled for the configuration set. If \code{false}, tracking of reputation metrics is disabled for the configuration set.}
 }
 \description{
 Enable or disable collection of reputation metrics for emails that you send using a particular configuration set in a specific Amazon Web Services Region.

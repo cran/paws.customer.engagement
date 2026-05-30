@@ -8,7 +8,7 @@ Connect instance}
 connectcampaignservicev2_delete_instance_onboarding_job(connectInstanceId)
 }
 \arguments{
-\item{connectInstanceId}{[required]}
+\item{connectInstanceId}{[required] Amazon Connect Instance Id}
 }
 \description{
 Delete the Connect Campaigns onboarding job for the specified Amazon Connect instance.

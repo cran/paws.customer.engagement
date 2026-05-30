@@ -13,34 +13,33 @@ connect_update_security_profile(
   TagRestrictedResources = NULL,
   Applications = NULL,
   HierarchyRestrictedResources = NULL,
-  AllowedAccessControlHierarchyGroupId = NULL
+  AllowedAccessControlHierarchyGroupId = NULL,
+  AllowedFlowModules = NULL,
+  GranularAccessControlConfiguration = NULL
 )
 }
 \arguments{
 \item{Description}{The description of the security profile.}
 
-\item{Permissions}{The permissions granted to a security profile. For a list of valid
-permissions, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html}{List of security profile permissions}.}
+\item{Permissions}{The permissions granted to a security profile. For a list of valid permissions, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html}{List of security profile permissions}.}
 
 \item{SecurityProfileId}{[required] The identifier for the security profle.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{AllowedAccessControlTags}{The list of tags that a security profile uses to restrict access to
-resources in Amazon Connect.}
+\item{AllowedAccessControlTags}{The list of tags that a security profile uses to restrict access to resources in Connect Customer.}
 
-\item{TagRestrictedResources}{The list of resources that a security profile applies tag restrictions
-to in Amazon Connect.}
+\item{TagRestrictedResources}{The list of resources that a security profile applies tag restrictions to in Connect Customer.}
 
 \item{Applications}{A list of the third-party application's metadata.}
 
-\item{HierarchyRestrictedResources}{The list of resources that a security profile applies hierarchy
-restrictions to in Amazon Connect. Following are acceptable
-ResourceNames: \code{User}.}
+\item{HierarchyRestrictedResources}{The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: \code{User}.}
 
-\item{AllowedAccessControlHierarchyGroupId}{The identifier of the hierarchy group that a security profile uses to
-restrict access to resources in Amazon Connect.}
+\item{AllowedAccessControlHierarchyGroupId}{The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.}
+
+\item{AllowedFlowModules}{A list of Flow Modules an AI Agent can invoke as a tool}
+
+\item{GranularAccessControlConfiguration}{The granular access control configuration for the security profile, including data table permissions.}
 }
 \description{
 Updates a security profile.

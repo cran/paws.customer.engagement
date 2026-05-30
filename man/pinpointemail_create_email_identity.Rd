@@ -9,8 +9,7 @@ pinpointemail_create_email_identity(EmailIdentity, Tags = NULL)
 \arguments{
 \item{EmailIdentity}{[required] The email address or domain that you want to verify.}
 
-\item{Tags}{An array of objects that define the tags (keys and values) that you want
-to associate with the email identity.}
+\item{Tags}{An array of objects that define the tags (keys and values) that you want to associate with the email identity.}
 }
 \description{
 Verifies an email identity for use with Amazon Pinpoint. In Amazon Pinpoint, an identity is an email address or domain that you use when you send email. Before you can use an identity to send email with Amazon Pinpoint, you first have to verify it. By verifying an address, you demonstrate that you're the owner of the address, and that you've given Amazon Pinpoint permission to send email from the address.

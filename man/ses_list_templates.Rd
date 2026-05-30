@@ -8,14 +8,9 @@ current Amazon Web Services Region}
 ses_list_templates(NextToken = NULL, MaxItems = NULL)
 }
 \arguments{
-\item{NextToken}{A token returned from a previous call to
-\code{\link[=ses_list_templates]{list_templates}} to indicate the position in the
-list of email templates.}
+\item{NextToken}{A token returned from a previous call to \code{\link[=ses_list_templates]{list_templates}} to indicate the position in the list of email templates.}
 
-\item{MaxItems}{The maximum number of templates to return. This value must be at least 1
-and less than or equal to 100. If more than 100 items are requested, the
-page size will automatically set to 100. If you do not specify a value,
-10 is the default page size.}
+\item{MaxItems}{The maximum number of templates to return. This value must be at least 1 and less than or equal to 100. If more than 100 items are requested, the page size will automatically set to 100. If you do not specify a value, 10 is the default page size.}
 }
 \description{
 Lists the email templates present in your Amazon SES account in the current Amazon Web Services Region.

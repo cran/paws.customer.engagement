@@ -10,11 +10,11 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_create_campaign/](https://www.paws-r-sdk.com/docs/connectcampaignservice_create_campaign/) for full documentation.
 #'
-#' @param name &#91;required&#93; 
-#' @param connectInstanceId &#91;required&#93; 
-#' @param dialerConfig &#91;required&#93; 
-#' @param outboundCallConfig &#91;required&#93; 
-#' @param tags 
+#' @param name &#91;required&#93; The name of an Amazon Connect Campaign name.
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
+#' @param dialerConfig &#91;required&#93; The possible types of dialer config parameters
+#' @param outboundCallConfig &#91;required&#93; The configuration used for outbound calls.
+#' @param tags Tag map with key and value.
 #'
 #' @keywords internal
 #'
@@ -45,7 +45,7 @@ connectcampaignservice_create_campaign <- function(name, connectInstanceId, dial
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_delete_campaign/](https://www.paws-r-sdk.com/docs/connectcampaignservice_delete_campaign/) for full documentation.
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @keywords internal
 #'
@@ -76,7 +76,7 @@ connectcampaignservice_delete_campaign <- function(id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_delete_connect_instance_config/](https://www.paws-r-sdk.com/docs/connectcampaignservice_delete_connect_instance_config/) for full documentation.
 #'
-#' @param connectInstanceId &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
 #'
 #' @keywords internal
 #'
@@ -108,7 +108,7 @@ connectcampaignservice_delete_connect_instance_config <- function(connectInstanc
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_delete_instance_onboarding_job/](https://www.paws-r-sdk.com/docs/connectcampaignservice_delete_instance_onboarding_job/) for full documentation.
 #'
-#' @param connectInstanceId &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
 #'
 #' @keywords internal
 #'
@@ -139,7 +139,7 @@ connectcampaignservice_delete_instance_onboarding_job <- function(connectInstanc
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_describe_campaign/](https://www.paws-r-sdk.com/docs/connectcampaignservice_describe_campaign/) for full documentation.
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @keywords internal
 #'
@@ -170,7 +170,7 @@ connectcampaignservice_describe_campaign <- function(id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_get_campaign_state/](https://www.paws-r-sdk.com/docs/connectcampaignservice_get_campaign_state/) for full documentation.
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @keywords internal
 #'
@@ -201,7 +201,7 @@ connectcampaignservice_get_campaign_state <- function(id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_get_campaign_state_batch/](https://www.paws-r-sdk.com/docs/connectcampaignservice_get_campaign_state_batch/) for full documentation.
 #'
-#' @param campaignIds &#91;required&#93; 
+#' @param campaignIds &#91;required&#93; List of CampaignId
 #'
 #' @keywords internal
 #'
@@ -232,7 +232,7 @@ connectcampaignservice_get_campaign_state_batch <- function(campaignIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_get_connect_instance_config/](https://www.paws-r-sdk.com/docs/connectcampaignservice_get_connect_instance_config/) for full documentation.
 #'
-#' @param connectInstanceId &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
 #'
 #' @keywords internal
 #'
@@ -263,7 +263,7 @@ connectcampaignservice_get_connect_instance_config <- function(connectInstanceId
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_get_instance_onboarding_job_status/](https://www.paws-r-sdk.com/docs/connectcampaignservice_get_instance_onboarding_job_status/) for full documentation.
 #'
-#' @param connectInstanceId &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
 #'
 #' @keywords internal
 #'
@@ -295,9 +295,9 @@ connectcampaignservice_get_instance_onboarding_job_status <- function(connectIns
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_list_campaigns/](https://www.paws-r-sdk.com/docs/connectcampaignservice_list_campaigns/) for full documentation.
 #'
-#' @param maxResults 
-#' @param nextToken 
-#' @param filters 
+#' @param maxResults The maximum number of results to return per page.
+#' @param nextToken The token for the next set of results.
+#' @param filters Filter model by type
 #'
 #' @keywords internal
 #'
@@ -328,7 +328,7 @@ connectcampaignservice_list_campaigns <- function(maxResults = NULL, nextToken =
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/connectcampaignservice_list_tags_for_resource/) for full documentation.
 #'
-#' @param arn &#91;required&#93; 
+#' @param arn &#91;required&#93; Arn
 #'
 #' @keywords internal
 #'
@@ -359,7 +359,7 @@ connectcampaignservice_list_tags_for_resource <- function(arn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_pause_campaign/](https://www.paws-r-sdk.com/docs/connectcampaignservice_pause_campaign/) for full documentation.
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @keywords internal
 #'
@@ -390,8 +390,8 @@ connectcampaignservice_pause_campaign <- function(id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_put_dial_request_batch/](https://www.paws-r-sdk.com/docs/connectcampaignservice_put_dial_request_batch/) for full documentation.
 #'
-#' @param id &#91;required&#93; 
-#' @param dialRequests &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param dialRequests &#91;required&#93; A list of dial requests.
 #'
 #' @keywords internal
 #'
@@ -422,7 +422,7 @@ connectcampaignservice_put_dial_request_batch <- function(id, dialRequests) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_resume_campaign/](https://www.paws-r-sdk.com/docs/connectcampaignservice_resume_campaign/) for full documentation.
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @keywords internal
 #'
@@ -453,7 +453,7 @@ connectcampaignservice_resume_campaign <- function(id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_start_campaign/](https://www.paws-r-sdk.com/docs/connectcampaignservice_start_campaign/) for full documentation.
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @keywords internal
 #'
@@ -484,8 +484,8 @@ connectcampaignservice_start_campaign <- function(id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_start_instance_onboarding_job/](https://www.paws-r-sdk.com/docs/connectcampaignservice_start_instance_onboarding_job/) for full documentation.
 #'
-#' @param connectInstanceId &#91;required&#93; 
-#' @param encryptionConfig &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
+#' @param encryptionConfig &#91;required&#93; Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
 #'
 #' @keywords internal
 #'
@@ -516,7 +516,7 @@ connectcampaignservice_start_instance_onboarding_job <- function(connectInstance
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_stop_campaign/](https://www.paws-r-sdk.com/docs/connectcampaignservice_stop_campaign/) for full documentation.
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @keywords internal
 #'
@@ -547,8 +547,8 @@ connectcampaignservice_stop_campaign <- function(id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_tag_resource/](https://www.paws-r-sdk.com/docs/connectcampaignservice_tag_resource/) for full documentation.
 #'
-#' @param arn &#91;required&#93; 
-#' @param tags &#91;required&#93; 
+#' @param arn &#91;required&#93; Arn
+#' @param tags &#91;required&#93; Tag map with key and value.
 #'
 #' @keywords internal
 #'
@@ -579,8 +579,8 @@ connectcampaignservice_tag_resource <- function(arn, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_untag_resource/](https://www.paws-r-sdk.com/docs/connectcampaignservice_untag_resource/) for full documentation.
 #'
-#' @param arn &#91;required&#93; 
-#' @param tagKeys &#91;required&#93; 
+#' @param arn &#91;required&#93; Arn
+#' @param tagKeys &#91;required&#93; List of tag keys.
 #'
 #' @keywords internal
 #'
@@ -611,8 +611,8 @@ connectcampaignservice_untag_resource <- function(arn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_update_campaign_dialer_config/](https://www.paws-r-sdk.com/docs/connectcampaignservice_update_campaign_dialer_config/) for full documentation.
 #'
-#' @param id &#91;required&#93; 
-#' @param dialerConfig &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param dialerConfig &#91;required&#93; The possible types of dialer config parameters
 #'
 #' @keywords internal
 #'
@@ -643,8 +643,8 @@ connectcampaignservice_update_campaign_dialer_config <- function(id, dialerConfi
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_update_campaign_name/](https://www.paws-r-sdk.com/docs/connectcampaignservice_update_campaign_name/) for full documentation.
 #'
-#' @param id &#91;required&#93; 
-#' @param name &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param name &#91;required&#93; The name of an Amazon Connect Campaign name.
 #'
 #' @keywords internal
 #'
@@ -675,10 +675,10 @@ connectcampaignservice_update_campaign_name <- function(id, name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcampaignservice_update_campaign_outbound_call_config/](https://www.paws-r-sdk.com/docs/connectcampaignservice_update_campaign_outbound_call_config/) for full documentation.
 #'
-#' @param id &#91;required&#93; 
-#' @param connectContactFlowId 
-#' @param connectSourcePhoneNumber 
-#' @param answerMachineDetectionConfig 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param connectContactFlowId The identifier of the contact flow for the outbound call.
+#' @param connectSourcePhoneNumber The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
+#' @param answerMachineDetectionConfig Answering Machine Detection config
 #'
 #' @keywords internal
 #'

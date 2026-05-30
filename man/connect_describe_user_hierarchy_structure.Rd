@@ -2,17 +2,16 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_describe_user_hierarchy_structure}
 \alias{connect_describe_user_hierarchy_structure}
-\title{Describes the hierarchy structure of the specified Amazon Connect
+\title{Describes the hierarchy structure of the specified Connect Customer
 instance}
 \usage{
 connect_describe_user_hierarchy_structure(InstanceId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 }
 \description{
-Describes the hierarchy structure of the specified Amazon Connect instance.
+Describes the hierarchy structure of the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_describe_user_hierarchy_structure/} for full documentation.
 }

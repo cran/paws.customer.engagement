@@ -7,11 +7,9 @@
 connectwisdomservice_get_session(assistantId, sessionId)
 }
 \arguments{
-\item{assistantId}{[required] The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-URLs cannot contain the ARN.}
+\item{assistantId}{[required] The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 
-\item{sessionId}{[required] The identifier of the session. Can be either the ID or the ARN. URLs
-cannot contain the ARN.}
+\item{sessionId}{[required] The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 }
 \description{
 Retrieves information for a specified session.

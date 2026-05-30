@@ -8,15 +8,9 @@ current Amazon Web Services Region}
 sesv2_list_email_templates(NextToken = NULL, PageSize = NULL)
 }
 \arguments{
-\item{NextToken}{A token returned from a previous call to
-\code{\link[=sesv2_list_email_templates]{list_email_templates}} to indicate the
-position in the list of email templates.}
+\item{NextToken}{A token returned from a previous call to \code{\link[=sesv2_list_email_templates]{list_email_templates}} to indicate the position in the list of email templates.}
 
-\item{PageSize}{The number of results to show in a single call to
-\code{\link[=sesv2_list_email_templates]{list_email_templates}}. If the number of
-results is larger than the number you specified in this parameter, then
-the response includes a \code{NextToken} element, which you can use to obtain
-additional results.
+\item{PageSize}{The number of results to show in a single call to \code{\link[=sesv2_list_email_templates]{list_email_templates}}. If the number of results is larger than the number you specified in this parameter, then the response includes a \code{NextToken} element, which you can use to obtain additional results.
 
 The value you specify has to be at least 1, and can be no more than 100.}
 }

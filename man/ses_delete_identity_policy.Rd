@@ -8,10 +8,7 @@ identity (an email address or a domain)}
 ses_delete_identity_policy(Identity, PolicyName)
 }
 \arguments{
-\item{Identity}{[required] The identity that is associated with the policy to delete. You can
-specify the identity by using its name or by using its Amazon Resource
-Name (ARN). Examples: \code{user@example.com}, \code{example.com},
-\code{arn:aws:ses:us-east-1:123456789012:identity/example.com}.
+\item{Identity}{[required] The identity that is associated with the policy to delete. You can specify the identity by using its name or by using its Amazon Resource Name (ARN). Examples: \code{user@example.com}, \code{example.com}, \code{arn:aws:ses:us-east-1:123456789012:identity/example.com}.
 
 To successfully call this operation, you must own the identity.}
 

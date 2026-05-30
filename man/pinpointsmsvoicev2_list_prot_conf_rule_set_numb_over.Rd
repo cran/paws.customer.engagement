@@ -15,11 +15,9 @@ pinpointsmsvoicev2_list_protect_configuration_rule_set_number_overrides(
 \arguments{
 \item{ProtectConfigurationId}{[required] The unique identifier for the protect configuration.}
 
-\item{Filters}{An array of ProtectConfigurationRuleSetNumberOverrideFilterItem objects
-to filter the results.}
+\item{Filters}{An array of ProtectConfigurationRuleSetNumberOverrideFilterItem objects to filter the results.}
 
-\item{NextToken}{The token to be used for the next set of paginated results. You don't
-need to supply a value for this field in the initial request.}
+\item{NextToken}{The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.}
 
 \item{MaxResults}{The maximum number of results to return per each request.}
 }

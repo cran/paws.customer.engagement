@@ -8,10 +8,9 @@ and settings of the APNs VoIP channel for an application}
 pinpoint_update_apns_voip_channel(APNSVoipChannelRequest, ApplicationId)
 }
 \arguments{
-\item{APNSVoipChannelRequest}{[required]}
+\item{APNSVoipChannelRequest}{[required] Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.}
 
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 }
 \description{
 Enables the APNs VoIP channel for an application or updates the status and settings of the APNs VoIP channel for an application.

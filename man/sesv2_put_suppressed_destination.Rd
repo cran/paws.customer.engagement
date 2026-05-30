@@ -7,11 +7,9 @@
 sesv2_put_suppressed_destination(EmailAddress, Reason)
 }
 \arguments{
-\item{EmailAddress}{[required] The email address that should be added to the suppression list for your
-account.}
+\item{EmailAddress}{[required] The email address that should be added to the suppression list for your account.}
 
-\item{Reason}{[required] The factors that should cause the email address to be added to the
-suppression list for your account.}
+\item{Reason}{[required] The factors that should cause the email address to be added to the suppression list for your account.}
 }
 \description{
 Adds an email address to the suppression list for your account.

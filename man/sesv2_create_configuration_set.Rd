@@ -17,32 +17,23 @@ sesv2_create_configuration_set(
 )
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The name of the configuration set. The name can contain up to 64
-alphanumeric characters, including letters, numbers, hyphens (-) and
-underscores (_) only.}
+\item{ConfigurationSetName}{[required] The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.}
 
-\item{TrackingOptions}{An object that defines the open and click tracking options for emails
-that you send using the configuration set.}
+\item{TrackingOptions}{An object that defines the open and click tracking options for emails that you send using the configuration set.}
 
-\item{DeliveryOptions}{An object that defines the dedicated IP pool that is used to send emails
-that you send using the configuration set.}
+\item{DeliveryOptions}{An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.}
 
-\item{ReputationOptions}{An object that defines whether or not Amazon SES collects reputation
-metrics for the emails that you send that use the configuration set.}
+\item{ReputationOptions}{An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.}
 
-\item{SendingOptions}{An object that defines whether or not Amazon SES can send email that you
-send using the configuration set.}
+\item{SendingOptions}{An object that defines whether or not Amazon SES can send email that you send using the configuration set.}
 
-\item{Tags}{An array of objects that define the tags (keys and values) to associate
-with the configuration set.}
+\item{Tags}{An array of objects that define the tags (keys and values) to associate with the configuration set.}
 
-\item{SuppressionOptions}{}
+\item{SuppressionOptions}{An object that contains information about the suppression list preferences for your account.}
 
-\item{VdmOptions}{An object that defines the VDM options for emails that you send using
-the configuration set.}
+\item{VdmOptions}{An object that defines the VDM options for emails that you send using the configuration set.}
 
-\item{ArchivingOptions}{An object that defines the MailManager archiving options for emails that
-you send using the configuration set.}
+\item{ArchivingOptions}{An object that defines the MailManager archiving options for emails that you send using the configuration set.}
 }
 \description{
 Create a configuration set. \emph{Configuration sets} are groups of rules that you can apply to the emails that you send. You apply a configuration set to an email by specifying the name of the configuration set when you call the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.

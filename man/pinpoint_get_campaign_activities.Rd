@@ -12,17 +12,13 @@ pinpoint_get_campaign_activities(
 )
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
 \item{CampaignId}{[required] The unique identifier for the campaign.}
 
-\item{PageSize}{The maximum number of items to include in each page of a paginated
-response. This parameter is not supported for application, campaign, and
-journey metrics.}
+\item{PageSize}{The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.}
 
-\item{Token}{The NextToken string that specifies which page of results to return in a
-paginated response.}
+\item{Token}{The NextToken string that specifies which page of results to return in a paginated response.}
 }
 \description{
 Retrieves information about all the activities for a campaign.

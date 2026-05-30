@@ -14,20 +14,15 @@ pinpoint_get_journey_execution_activity_metrics(
 )
 }
 \arguments{
-\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed
-as the \strong{Project ID} on the Amazon Pinpoint console.}
+\item{ApplicationId}{[required] The unique identifier for the application. This identifier is displayed as the \strong{Project ID} on the Amazon Pinpoint console.}
 
 \item{JourneyActivityId}{[required] The unique identifier for the journey activity.}
 
 \item{JourneyId}{[required] The unique identifier for the journey.}
 
-\item{NextToken}{The `` string that specifies which page of results to return in a
-paginated response. This parameter is not supported for application,
-campaign, and journey metrics.}
+\item{NextToken}{The `` string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.}
 
-\item{PageSize}{The maximum number of items to include in each page of a paginated
-response. This parameter is not supported for application, campaign, and
-journey metrics.}
+\item{PageSize}{The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.}
 }
 \description{
 Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey activity.

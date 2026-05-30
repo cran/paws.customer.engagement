@@ -12,19 +12,13 @@ connectwisdomservice_get_recommendations(
 )
 }
 \arguments{
-\item{assistantId}{[required] The identifier of the Wisdom assistant. Can be either the ID or the ARN.
-URLs cannot contain the ARN.}
+\item{assistantId}{[required] The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{sessionId}{[required] The identifier of the session. Can be either the ID or the ARN. URLs
-cannot contain the ARN.}
+\item{sessionId}{[required] The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.}
 
-\item{waitTimeSeconds}{The duration (in seconds) for which the call waits for a recommendation
-to be made available before returning. If a recommendation is available,
-the call returns sooner than \code{WaitTimeSeconds}. If no messages are
-available and the wait time expires, the call returns successfully with
-an empty list.}
+\item{waitTimeSeconds}{The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than \code{WaitTimeSeconds}. If no messages are available and the wait time expires, the call returns successfully with an empty list.}
 }
 \description{
 Retrieves recommendations for the specified session. To avoid retrieving the same recommendations in subsequent calls, use \code{\link[=connectwisdomservice_notify_recommendations_received]{notify_recommendations_received}}. This API supports long-polling behavior with the \code{waitTimeSeconds} parameter. Short poll is the default behavior and only returns recommendations already available. To perform a manual query against an assistant, use \code{\link[=connectwisdomservice_query_assistant]{query_assistant}}.

@@ -10,9 +10,9 @@ connectcampaignservicev2_update_campaign_communication_time(
 )
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 
-\item{communicationTimeConfig}{[required]}
+\item{communicationTimeConfig}{[required] Campaign communication time config}
 }
 \description{
 Updates the communication time config for a campaign. This API is idempotent.

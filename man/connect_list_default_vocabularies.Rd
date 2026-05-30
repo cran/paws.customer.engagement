@@ -2,7 +2,8 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_list_default_vocabularies}
 \alias{connect_list_default_vocabularies}
-\title{Lists the default vocabularies for the specified Amazon Connect instance}
+\title{Lists the default vocabularies for the specified Connect Customer
+instance}
 \usage{
 connect_list_default_vocabularies(
   InstanceId,
@@ -12,20 +13,16 @@ connect_list_default_vocabularies(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{LanguageCode}{The language code of the vocabulary entries. For a list of languages and
-their corresponding language codes, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html}{What is Amazon Transcribe?}}
+\item{LanguageCode}{The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html}{What is Amazon Transcribe?}}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
-Lists the default vocabularies for the specified Amazon Connect instance.
+Lists the default vocabularies for the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_list_default_vocabularies/} for full documentation.
 }

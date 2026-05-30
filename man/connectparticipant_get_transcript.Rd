@@ -16,17 +16,13 @@ connectparticipant_get_transcript(
 )
 }
 \arguments{
-\item{ContactId}{The contactId from the current contact chain for which transcript is
-needed.}
+\item{ContactId}{The contactId from the current contact chain for which transcript is needed.}
 
 \item{MaxResults}{The maximum number of results to return in the page. Default: 10.}
 
-\item{NextToken}{The pagination token. Use the value returned previously in the next
-subsequent request to retrieve the next set of results.}
+\item{NextToken}{The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.}
 
-\item{ScanDirection}{The direction from StartPosition from which to retrieve message.
-Default: BACKWARD when no StartPosition is provided, FORWARD with
-StartPosition.}
+\item{ScanDirection}{The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition.}
 
 \item{SortOrder}{The sort order for the records. Default: DESCENDING.}
 

@@ -2,8 +2,8 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_update_task_template}
 \alias{connect_update_task_template}
-\title{Updates details about a specific task template in the specified Amazon
-Connect instance}
+\title{Updates details about a specific task template in the specified Connect
+Customer instance}
 \usage{
 connect_update_task_template(
   TaskTemplateId,
@@ -21,33 +21,26 @@ connect_update_task_template(
 \arguments{
 \item{TaskTemplateId}{[required] A unique identifier for the task template.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{Name}{The name of the task template.}
 
 \item{Description}{The description of the task template.}
 
-\item{ContactFlowId}{The identifier of the flow that runs by default when a task is created
-by referencing this template.}
+\item{ContactFlowId}{The identifier of the flow that runs by default when a task is created by referencing this template.}
 
-\item{SelfAssignFlowId}{The ContactFlowId for the flow that will be run if this template is used
-to create a self-assigned task.}
+\item{SelfAssignFlowId}{The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.}
 
 \item{Constraints}{Constraints that are applicable to the fields listed.}
 
-\item{Defaults}{The default values for fields when a task is created by referencing this
-template.}
+\item{Defaults}{The default values for fields when a task is created by referencing this template.}
 
-\item{Status}{Marks a template as \code{ACTIVE} or \code{INACTIVE} for a task to refer to it.
-Tasks can only be created from \code{ACTIVE} templates. If a template is
-marked as \code{INACTIVE}, then a task that refers to this template cannot be
-created.}
+\item{Status}{Marks a template as \code{ACTIVE} or \code{INACTIVE} for a task to refer to it. Tasks can only be created from \code{ACTIVE} templates. If a template is marked as \code{INACTIVE}, then a task that refers to this template cannot be created.}
 
 \item{Fields}{Fields that are part of the template.}
 }
 \description{
-Updates details about a specific task template in the specified Amazon Connect instance. This operation does not support partial updates. Instead it does a full update of template content.
+Updates details about a specific task template in the specified Connect Customer instance. This operation does not support partial updates. Instead it does a full update of template content.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_update_task_template/} for full documentation.
 }

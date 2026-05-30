@@ -7,12 +7,9 @@
 pinpointsmsvoicev2_set_default_message_type(ConfigurationSetName, MessageType)
 }
 \arguments{
-\item{ConfigurationSetName}{[required] The configuration set to update with a new default message type. This
-field can be the ConsigurationSetName or ConfigurationSetArn.}
+\item{ConfigurationSetName}{[required] The configuration set to update with a new default message type. This field can be the ConsigurationSetName or ConfigurationSetArn.}
 
-\item{MessageType}{[required] The type of message. Valid values are TRANSACTIONAL for messages that
-are critical or time-sensitive and PROMOTIONAL for messages that aren't
-critical or time-sensitive.}
+\item{MessageType}{[required] The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.}
 }
 \description{
 Sets the default message type on a configuration set.

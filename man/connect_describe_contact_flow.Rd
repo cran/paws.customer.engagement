@@ -7,7 +7,7 @@
 connect_describe_contact_flow(InstanceId, ContactFlowId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance.}
 
 \item{ContactFlowId}{[required] The identifier of the flow.}
 }

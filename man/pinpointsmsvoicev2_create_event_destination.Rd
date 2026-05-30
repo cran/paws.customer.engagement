@@ -15,31 +15,21 @@ pinpointsmsvoicev2_create_event_destination(
 )
 }
 \arguments{
-\item{ConfigurationSetName}{[required] Either the name of the configuration set or the configuration set ARN to
-apply event logging to. The ConfigurateSetName and ConfigurationSetArn
-can be found using the
-\code{\link[=pinpointsmsvoicev2_describe_configuration_sets]{describe_configuration_sets}}
-action.}
+\item{ConfigurationSetName}{[required] Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the \code{\link[=pinpointsmsvoicev2_describe_configuration_sets]{describe_configuration_sets}} action.}
 
 \item{EventDestinationName}{[required] The name that identifies the event destination.}
 
-\item{MatchingEventTypes}{[required] An array of event types that determine which events to log. If "ALL" is
-used, then AWS End User Messaging SMS and Voice logs every event type.
+\item{MatchingEventTypes}{[required] An array of event types that determine which events to log. If "ALL" is used, then End User Messaging SMS logs every event type.
 
 The \code{TEXT_SENT} event type is not supported.}
 
-\item{CloudWatchLogsDestination}{An object that contains information about an event destination for
-logging to Amazon CloudWatch Logs.}
+\item{CloudWatchLogsDestination}{An object that contains information about an event destination for logging to Amazon CloudWatch Logs.}
 
-\item{KinesisFirehoseDestination}{An object that contains information about an event destination for
-logging to Amazon Data Firehose.}
+\item{KinesisFirehoseDestination}{An object that contains information about an event destination for logging to Amazon Data Firehose.}
 
-\item{SnsDestination}{An object that contains information about an event destination for
-logging to Amazon SNS.}
+\item{SnsDestination}{An object that contains information about an event destination for logging to Amazon SNS.}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you don't specify a client token, a
-randomly generated token is used for the request to ensure idempotency.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.}
 }
 \description{
 Creates a new event destination in a configuration set.

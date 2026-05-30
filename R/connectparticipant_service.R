@@ -5,24 +5,13 @@ NULL
 #' Amazon Connect Participant Service
 #'
 #' @description
-#' -   [Participant Service
-#'     actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Participant_Service.html)
+#' -   [Participant Service actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Participant_Service.html)
 #' 
-#' -   [Participant Service data
-#'     types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Participant_Service.html)
+#' -   [Participant Service data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Participant_Service.html)
 #' 
-#' Amazon Connect is an easy-to-use omnichannel cloud contact center
-#' service that enables companies of any size to deliver superior customer
-#' service at a lower cost. Amazon Connect communications capabilities make
-#' it easy for companies to deliver personalized interactions across
-#' communication channels, including chat.
+#' Amazon Connect is an easy-to-use omnichannel cloud contact center service that enables companies of any size to deliver superior customer service at a lower cost. Amazon Connect communications capabilities make it easy for companies to deliver personalized interactions across communication channels, including chat.
 #' 
-#' Use the Amazon Connect Participant Service to manage participants (for
-#' example, agents, customers, and managers listening in), and to send
-#' messages and events within a chat contact. The APIs in the service
-#' enable the following: sending chat messages, attachment sharing,
-#' managing a participant's connection state and message events, and
-#' retrieving chat transcripts.
+#' Use the Amazon Connect Participant Service to manage participants (for example, agents, customers, and managers listening in), and to send messages and events within a chat contact. The APIs in the service enable the following: sending chat messages, attachment sharing, managing a participant's connection state and message events, and retrieving chat transcripts.
 #'
 #' @param
 #' config
@@ -149,7 +138,7 @@ connectparticipant <- function(config = list(), credentials = list(), endpoint =
 
 .connectparticipant$metadata <- list(
   service_name = "connectparticipant",
-  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.csp.hci.ic.gov", global = FALSE)),
+  endpoints = list("^(us|eu|ap|sa|ca|me|af|il|mx)\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.amazonaws.com", global = FALSE), "^cn\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.amazonaws.com.cn", global = FALSE), "^us\\-gov\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.amazonaws.com", global = FALSE), "^us\\-iso\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.c2s.ic.gov", global = FALSE), "^us\\-isob\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.sc2s.sgov.gov", global = FALSE), "^eu\\-isoe\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.cloud.adc-e.uk", global = FALSE), "^us\\-isof\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.csp.hci.ic.gov", global = FALSE), "^eusc\\-(de)\\-\\w+\\-\\d+$" = list(endpoint = "participant.connect.{region}.amazonaws.eu", global = FALSE)),
   service_id = "ConnectParticipant",
   api_version = "2018-09-07",
   signing_name = "execute-api",

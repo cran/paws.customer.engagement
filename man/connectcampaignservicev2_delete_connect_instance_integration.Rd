@@ -10,9 +10,9 @@ connectcampaignservicev2_delete_connect_instance_integration(
 )
 }
 \arguments{
-\item{connectInstanceId}{[required]}
+\item{connectInstanceId}{[required] Amazon Connect Instance Id}
 
-\item{integrationIdentifier}{[required]}
+\item{integrationIdentifier}{[required] Integration identifier for Connect instance}
 }
 \description{
 Delete the integration for the specified Amazon Connect instance.

@@ -13,20 +13,15 @@ pinpointsmsvoicev2_describe_opt_out_lists(
 )
 }
 \arguments{
-\item{OptOutListNames}{The OptOutLists to show the details of. This is an array of strings that
-can be either the OptOutListName or OptOutListArn.
+\item{OptOutListNames}{The OptOutLists to show the details of. This is an array of strings that can be either the OptOutListName or OptOutListArn.
 
-If you are using a shared AWS End User Messaging SMS and Voice resource
-then you must use the full Amazon Resource Name(ARN).}
+If you are using a shared End User Messaging SMS resource then you must use the full Amazon Resource Name(ARN).}
 
-\item{NextToken}{The token to be used for the next set of paginated results. You don't
-need to supply a value for this field in the initial request.}
+\item{NextToken}{The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.}
 
 \item{MaxResults}{The maximum number of results to return per each request.}
 
-\item{Owner}{Use \code{SELF} to filter the list of Opt-Out List to ones your account owns
-or use \code{SHARED} to filter on Opt-Out List shared with your account. The
-\code{Owner} and \code{OptOutListNames} parameters can't be used at the same time.}
+\item{Owner}{Use \code{SELF} to filter the list of Opt-Out List to ones your account owns or use \code{SHARED} to filter on Opt-Out List shared with your account. The \code{Owner} and \code{OptOutListNames} parameters can't be used at the same time.}
 }
 \description{
 Describes the specified opt-out list or all opt-out lists in your account.

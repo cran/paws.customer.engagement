@@ -7,7 +7,7 @@
 pinpoint_create_app(CreateApplicationRequest)
 }
 \arguments{
-\item{CreateApplicationRequest}{[required]}
+\item{CreateApplicationRequest}{[required] Specifies the display name of an application and the tags to associate with the application.}
 }
 \description{
 Creates an application.

@@ -13,8 +13,7 @@ pinpointsmsvoicev2_get_protect_configuration_country_rule_set(
 \arguments{
 \item{ProtectConfigurationId}{[required] The unique identifier for the protect configuration.}
 
-\item{NumberCapability}{[required] The capability type to return the CountryRuleSet for. Valid values are
-\code{SMS}, \code{VOICE}, or \code{MMS}.}
+\item{NumberCapability}{[required] The capability type to return the CountryRuleSet for. Valid values are \code{SMS}, \code{VOICE}, or \code{MMS}.}
 }
 \description{
 Retrieve the CountryRuleSet for the specified NumberCapability from a protect configuration.
