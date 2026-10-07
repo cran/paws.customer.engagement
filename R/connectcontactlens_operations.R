@@ -4,9 +4,10 @@
 NULL
 
 #' Provides a list of analysis segments for a real-time analysis session
+#' for voice
 #'
 #' @description
-#' Provides a list of analysis segments for a real-time analysis session.
+#' Provides a list of analysis segments for a real-time analysis session for voice.
 #'
 #' See [https://www.paws-r-sdk.com/docs/connectcontactlens_list_realtime_contact_analysis_segments/](https://www.paws-r-sdk.com/docs/connectcontactlens_list_realtime_contact_analysis_segments/) for full documentation.
 #'
@@ -25,7 +26,8 @@ connectcontactlens_list_realtime_contact_analysis_segments <- function(InstanceI
     http_path = "/realtime-contact-analysis/analysis-segments",
     host_prefix = "",
     paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connectcontactlens$list_realtime_contact_analysis_segments_input(InstanceId = InstanceId, ContactId = ContactId, MaxResults = MaxResults, NextToken = NextToken)
   output <- .connectcontactlens$list_realtime_contact_analysis_segments_output()

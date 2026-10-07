@@ -24,7 +24,8 @@ connect_activate_evaluation_form <- function(InstanceId, EvaluationFormId, Evalu
     http_path = "/evaluation-forms/{InstanceId}/{EvaluationFormId}/activate",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$activate_evaluation_form_input(InstanceId = InstanceId, EvaluationFormId = EvaluationFormId, EvaluationFormVersion = EvaluationFormVersion)
   output <- .connect$activate_evaluation_form_output()
@@ -58,7 +59,8 @@ connect_associate_analytics_data_set <- function(InstanceId, DataSetId, TargetAc
     http_path = "/analytics-data/instance/{InstanceId}/association",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_analytics_data_set_input(InstanceId = InstanceId, DataSetId = DataSetId, TargetAccountId = TargetAccountId)
   output <- .connect$associate_analytics_data_set_output()
@@ -92,7 +94,8 @@ connect_associate_approved_origin <- function(InstanceId, Origin, ClientToken = 
     http_path = "/instance/{InstanceId}/approved-origin",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_approved_origin_input(InstanceId = InstanceId, Origin = Origin, ClientToken = ClientToken)
   output <- .connect$associate_approved_origin_output()
@@ -127,7 +130,8 @@ connect_associate_bot <- function(InstanceId, LexBot = NULL, LexV2Bot = NULL, Cl
     http_path = "/instance/{InstanceId}/bot",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_bot_input(InstanceId = InstanceId, LexBot = LexBot, LexV2Bot = LexV2Bot, ClientToken = ClientToken)
   output <- .connect$associate_bot_output()
@@ -160,7 +164,8 @@ connect_associate_contact_with_user <- function(InstanceId, ContactId, UserId) {
     http_path = "/contacts/{InstanceId}/{ContactId}/associate-user",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_contact_with_user_input(InstanceId = InstanceId, ContactId = ContactId, UserId = UserId)
   output <- .connect$associate_contact_with_user_output()
@@ -193,7 +198,8 @@ connect_associate_default_vocabulary <- function(InstanceId, LanguageCode, Vocab
     http_path = "/default-vocabulary/{InstanceId}/{LanguageCode}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_default_vocabulary_input(InstanceId = InstanceId, LanguageCode = LanguageCode, VocabularyId = VocabularyId)
   output <- .connect$associate_default_vocabulary_output()
@@ -228,7 +234,8 @@ connect_associate_email_address_alias <- function(EmailAddressId, InstanceId, Al
     http_path = "/email-addresses/{InstanceId}/{EmailAddressId}/associate-alias",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_email_address_alias_input(EmailAddressId = EmailAddressId, InstanceId = InstanceId, AliasConfiguration = AliasConfiguration, ClientToken = ClientToken)
   output <- .connect$associate_email_address_alias_output()
@@ -266,7 +273,8 @@ connect_associate_flow <- function(InstanceId, ResourceId, FlowId, ResourceType)
     http_path = "/flow-associations/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_flow_input(InstanceId = InstanceId, ResourceId = ResourceId, FlowId = FlowId, ResourceType = ResourceType)
   output <- .connect$associate_flow_output()
@@ -281,7 +289,7 @@ connect_associate_flow <- function(InstanceId, ResourceId, FlowId, ResourceType)
 #' Associates a set of hours of operations with another hours of operation
 #'
 #' @description
-#' Associates a set of hours of operations with another hours of operation. Refer to Administrator Guide [here](https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html) for more information on inheriting overrides from parent hours of operation(s).
+#' Associates a set of hours of operations with another hours of operation. For more information about inheriting overrides from parent hours of operation, see [Hours of operation overrides](https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html) in the Administrator Guide.
 #'
 #' See [https://www.paws-r-sdk.com/docs/connect_associate_hours_of_operations/](https://www.paws-r-sdk.com/docs/connect_associate_hours_of_operations/) for full documentation.
 #'
@@ -299,7 +307,8 @@ connect_associate_hours_of_operations <- function(InstanceId, HoursOfOperationId
     http_path = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}/associate-hours",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_hours_of_operations_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId, ParentHoursOfOperationConfigs = ParentHoursOfOperationConfigs)
   output <- .connect$associate_hours_of_operations_output()
@@ -342,7 +351,8 @@ connect_associate_instance_storage_config <- function(InstanceId, ResourceType, 
     http_path = "/instance/{InstanceId}/storage-config",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_instance_storage_config_input(InstanceId = InstanceId, ResourceType = ResourceType, StorageConfig = StorageConfig, ClientToken = ClientToken)
   output <- .connect$associate_instance_storage_config_output()
@@ -376,7 +386,8 @@ connect_associate_lambda_function <- function(InstanceId, FunctionArn, ClientTok
     http_path = "/instance/{InstanceId}/lambda-function",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_lambda_function_input(InstanceId = InstanceId, FunctionArn = FunctionArn, ClientToken = ClientToken)
   output <- .connect$associate_lambda_function_output()
@@ -410,7 +421,8 @@ connect_associate_lex_bot <- function(InstanceId, LexBot, ClientToken = NULL) {
     http_path = "/instance/{InstanceId}/lex-bot",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_lex_bot_input(InstanceId = InstanceId, LexBot = LexBot, ClientToken = ClientToken)
   output <- .connect$associate_lex_bot_output()
@@ -444,7 +456,8 @@ connect_associate_phone_number_contact_flow <- function(PhoneNumberId, InstanceI
     http_path = "/phone-number/{PhoneNumberId}/contact-flow",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_phone_number_contact_flow_input(PhoneNumberId = PhoneNumberId, InstanceId = InstanceId, ContactFlowId = ContactFlowId)
   output <- .connect$associate_phone_number_contact_flow_output()
@@ -480,7 +493,8 @@ connect_associate_queue_email_addresses <- function(InstanceId, QueueId, EmailAd
     http_path = "/queues/{InstanceId}/{QueueId}/associate-email-addresses",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_queue_email_addresses_input(InstanceId = InstanceId, QueueId = QueueId, EmailAddressesConfig = EmailAddressesConfig, ClientToken = ClientToken)
   output <- .connect$associate_queue_email_addresses_output()
@@ -513,7 +527,8 @@ connect_associate_queue_quick_connects <- function(InstanceId, QueueId, QuickCon
     http_path = "/queues/{InstanceId}/{QueueId}/associate-quick-connects",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_queue_quick_connects_input(InstanceId = InstanceId, QueueId = QueueId, QuickConnectIds = QuickConnectIds)
   output <- .connect$associate_queue_quick_connects_output()
@@ -537,7 +552,7 @@ connect_associate_queue_quick_connects <- function(InstanceId, QueueId, QuickCon
 #' @param QueueConfigs The queues to associate with this routing profile.
 #' @param ManualAssignmentQueueConfigs The manual assignment queues to associate with this routing profile.
 #' 
-#' Note: Use this config for chat, email, and task contacts. It does not support voice contacts.
+#' For voice contacts, manual assignment supports only agent-first callback contacts. Chat, email, and task contacts are fully supported.
 #'
 #' @keywords internal
 #'
@@ -549,7 +564,8 @@ connect_associate_routing_profile_queues <- function(InstanceId, RoutingProfileI
     http_path = "/routing-profiles/{InstanceId}/{RoutingProfileId}/associate-queues",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_routing_profile_queues_input(InstanceId = InstanceId, RoutingProfileId = RoutingProfileId, QueueConfigs = QueueConfigs, ManualAssignmentQueueConfigs = ManualAssignmentQueueConfigs)
   output <- .connect$associate_routing_profile_queues_output()
@@ -583,7 +599,8 @@ connect_associate_security_key <- function(InstanceId, Key, ClientToken = NULL) 
     http_path = "/instance/{InstanceId}/security-key",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_security_key_input(InstanceId = InstanceId, Key = Key, ClientToken = ClientToken)
   output <- .connect$associate_security_key_output()
@@ -617,7 +634,8 @@ connect_associate_security_profiles <- function(InstanceId, SecurityProfiles, En
     http_path = "/associate-security-profiles/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_security_profiles_input(InstanceId = InstanceId, SecurityProfiles = SecurityProfiles, EntityType = EntityType, EntityArn = EntityArn)
   output <- .connect$associate_security_profiles_output()
@@ -650,7 +668,8 @@ connect_associate_traffic_distribution_group_user <- function(TrafficDistributio
     http_path = "/traffic-distribution-group/{TrafficDistributionGroupId}/user",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_traffic_distribution_group_user_input(TrafficDistributionGroupId = TrafficDistributionGroupId, UserId = UserId, InstanceId = InstanceId)
   output <- .connect$associate_traffic_distribution_group_user_output()
@@ -683,7 +702,8 @@ connect_associate_user_proficiencies <- function(InstanceId, UserId, UserProfici
     http_path = "/users/{InstanceId}/{UserId}/associate-proficiencies",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_user_proficiencies_input(InstanceId = InstanceId, UserId = UserId, UserProficiencies = UserProficiencies)
   output <- .connect$associate_user_proficiencies_output()
@@ -717,7 +737,8 @@ connect_associate_workspace <- function(InstanceId, WorkspaceId, ResourceArns) {
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/associate",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$associate_workspace_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId, ResourceArns = ResourceArns)
   output <- .connect$associate_workspace_output()
@@ -751,7 +772,8 @@ connect_batch_associate_analytics_data_set <- function(InstanceId, DataSetIds, T
     http_path = "/analytics-data/instance/{InstanceId}/associations",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$batch_associate_analytics_data_set_input(InstanceId = InstanceId, DataSetIds = DataSetIds, TargetAccountId = TargetAccountId)
   output <- .connect$batch_associate_analytics_data_set_output()
@@ -784,7 +806,8 @@ connect_batch_create_data_table_value <- function(InstanceId, DataTableId, Value
     http_path = "/data-tables/{InstanceId}/{DataTableId}/values/create",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$batch_create_data_table_value_input(InstanceId = InstanceId, DataTableId = DataTableId, Values = Values)
   output <- .connect$batch_create_data_table_value_output()
@@ -817,7 +840,8 @@ connect_batch_delete_data_table_value <- function(InstanceId, DataTableId, Value
     http_path = "/data-tables/{InstanceId}/{DataTableId}/values/delete",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$batch_delete_data_table_value_input(InstanceId = InstanceId, DataTableId = DataTableId, Values = Values)
   output <- .connect$batch_delete_data_table_value_output()
@@ -851,7 +875,8 @@ connect_batch_describe_data_table_value <- function(InstanceId, DataTableId, Val
     http_path = "/data-tables/{InstanceId}/{DataTableId}/values/describe",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$batch_describe_data_table_value_input(InstanceId = InstanceId, DataTableId = DataTableId, Values = Values)
   output <- .connect$batch_describe_data_table_value_output()
@@ -885,7 +910,8 @@ connect_batch_disassociate_analytics_data_set <- function(InstanceId, DataSetIds
     http_path = "/analytics-data/instance/{InstanceId}/associations",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$batch_disassociate_analytics_data_set_input(InstanceId = InstanceId, DataSetIds = DataSetIds, TargetAccountId = TargetAccountId)
   output <- .connect$batch_disassociate_analytics_data_set_output()
@@ -907,7 +933,7 @@ connect_batch_disassociate_analytics_data_set <- function(InstanceId, DataSetIds
 #'
 #' @param FileIds &#91;required&#93; The unique identifiers of the attached file resource.
 #' @param InstanceId &#91;required&#93; The unique identifier of the Connect instance.
-#' @param AssociatedResourceArn &#91;required&#93; The resource to which the attached file is (being) uploaded to. The supported resources are [Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html) and [Email](https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html).
+#' @param AssociatedResourceArn &#91;required&#93; The resource to which the attached file is (being) uploaded to. The supported resources are [Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html), [Email](https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html), and [Task](https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html).
 #' 
 #' This value must be a valid ARN.
 #'
@@ -921,7 +947,8 @@ connect_batch_get_attached_file_metadata <- function(FileIds, InstanceId, Associ
     http_path = "/attached-files/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$batch_get_attached_file_metadata_input(FileIds = FileIds, InstanceId = InstanceId, AssociatedResourceArn = AssociatedResourceArn)
   output <- .connect$batch_get_attached_file_metadata_output()
@@ -958,7 +985,8 @@ connect_batch_get_flow_association <- function(InstanceId, ResourceIds, Resource
     http_path = "/flow-associations-batch/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$batch_get_flow_association_input(InstanceId = InstanceId, ResourceIds = ResourceIds, ResourceType = ResourceType)
   output <- .connect$batch_get_flow_association_output()
@@ -992,7 +1020,8 @@ connect_batch_put_contact <- function(ClientToken = NULL, InstanceId, ContactDat
     http_path = "/contact/batch/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$batch_put_contact_input(ClientToken = ClientToken, InstanceId = InstanceId, ContactDataRequestList = ContactDataRequestList)
   output <- .connect$batch_put_contact_output()
@@ -1026,7 +1055,8 @@ connect_batch_update_data_table_value <- function(InstanceId, DataTableId, Value
     http_path = "/data-tables/{InstanceId}/{DataTableId}/values/update",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$batch_update_data_table_value_input(InstanceId = InstanceId, DataTableId = DataTableId, Values = Values)
   output <- .connect$batch_update_data_table_value_output()
@@ -1065,7 +1095,8 @@ connect_claim_phone_number <- function(TargetArn = NULL, InstanceId = NULL, Phon
     http_path = "/phone-number/claim",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$claim_phone_number_input(TargetArn = TargetArn, InstanceId = InstanceId, PhoneNumber = PhoneNumber, PhoneNumberDescription = PhoneNumberDescription, Tags = Tags, ClientToken = ClientToken)
   output <- .connect$claim_phone_number_output()
@@ -1087,7 +1118,7 @@ connect_claim_phone_number <- function(TargetArn = NULL, InstanceId = NULL, Phon
 #'
 #' @param InstanceId &#91;required&#93; The unique identifier of the Connect Customer instance.
 #' @param FileId &#91;required&#93; The unique identifier of the attached file resource.
-#' @param AssociatedResourceArn &#91;required&#93; The resource to which the attached file is (being) uploaded to. The supported resources are [Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html) and [Email](https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html).
+#' @param AssociatedResourceArn &#91;required&#93; The resource to which the attached file is (being) uploaded to. The supported resources are [Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html), [Email](https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html), and [Task](https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html).
 #' 
 #' This value must be a valid ARN.
 #'
@@ -1101,7 +1132,8 @@ connect_complete_attached_file_upload <- function(InstanceId, FileId, Associated
     http_path = "/attached-files/{InstanceId}/{FileId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$complete_attached_file_upload_input(InstanceId = InstanceId, FileId = FileId, AssociatedResourceArn = AssociatedResourceArn)
   output <- .connect$complete_attached_file_upload_output()
@@ -1137,7 +1169,8 @@ connect_create_agent_status <- function(InstanceId, Name, Description = NULL, St
     http_path = "/agent-status/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_agent_status_input(InstanceId = InstanceId, Name = Name, Description = Description, State = State, DisplayOrder = DisplayOrder, Tags = Tags)
   output <- .connect$create_agent_status_output()
@@ -1148,6 +1181,84 @@ connect_create_agent_status <- function(InstanceId, Name, Description = NULL, St
   return(response)
 }
 .connect$operations$create_agent_status <- connect_create_agent_status
+
+#' Creates an attached file for a completed voice contact by copying a
+#' recording from a source S3 URI into Connect Customer managed storage
+#'
+#' @description
+#' Creates an attached file for a completed voice contact by copying a recording from a source S3 URI into Connect Customer managed storage. Use this API to attach voice recordings to contacts for downstream processing such as conversational analytics.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_create_attached_file/](https://www.paws-r-sdk.com/docs/connect_create_attached_file/) for full documentation.
+#'
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param FileUseCaseType &#91;required&#93; The use case for the file.
+#' 
+#' Only `VOICE_RECORDING` is supported.
+#' @param FileSourceUri &#91;required&#93; The S3 URI of the file to be attached. Only S3 source URIs are supported.
+#' @param AssociatedResourceArn &#91;required&#93; The ARN of the completed voice contact to attach the file to. Only voice contacts with Telephony subtype are supported.
+#' 
+#' This value must be a valid ARN.
+#' @param Tags The tags used to organize, track, or control access for this resource. For example, `{ "Tags": {"key1":"value1", "key2":"value2"} }`.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_create_attached_file
+connect_create_attached_file <- function(ClientToken = NULL, InstanceId, FileUseCaseType, FileSourceUri, AssociatedResourceArn, Tags = NULL) {
+  op <- new_operation(
+    name = "CreateAttachedFile",
+    http_method = "PUT",
+    http_path = "/attached-files/{InstanceId}/files",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$create_attached_file_input(ClientToken = ClientToken, InstanceId = InstanceId, FileUseCaseType = FileUseCaseType, FileSourceUri = FileSourceUri, AssociatedResourceArn = AssociatedResourceArn, Tags = Tags)
+  output <- .connect$create_attached_file_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$create_attached_file <- connect_create_attached_file
+
+#' Creates an authorization code for the specified Connect Customer
+#' instance
+#'
+#' @description
+#' Creates an authorization code for the specified Connect Customer instance. The authorization code can be used to establish a session with scoped permissions defined by the specified scope parameters.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_create_auth_code/](https://www.paws-r-sdk.com/docs/connect_create_auth_code/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param Scope &#91;required&#93; The scope for the authorization code. Defines the permissions and access boundaries for the session.
+#' @param MaxSessionDurationMinutes The maximum duration of the session, in minutes. Minimum value of 1440 (24 hours). Maximum value of 43200 (30 days). If no value is provided, the session will expire after 400 days.
+#' @param SessionInactivityDurationMinutes &#91;required&#93; The duration of inactivity, in minutes, after which the session expires. Minimum value of 1440 (24 hours). Maximum value of 20160 (14 days).
+#'
+#' @keywords internal
+#'
+#' @rdname connect_create_auth_code
+connect_create_auth_code <- function(InstanceId, Scope, MaxSessionDurationMinutes = NULL, SessionInactivityDurationMinutes) {
+  op <- new_operation(
+    name = "CreateAuthCode",
+    http_method = "POST",
+    http_path = "/auth/code/{InstanceId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$create_auth_code_input(InstanceId = InstanceId, Scope = Scope, MaxSessionDurationMinutes = MaxSessionDurationMinutes, SessionInactivityDurationMinutes = SessionInactivityDurationMinutes)
+  output <- .connect$create_auth_code_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$create_auth_code <- connect_create_auth_code
 
 #' Only the VOICE, EMAIL, and TASK channels are supported
 #'
@@ -1203,7 +1314,8 @@ connect_create_contact <- function(InstanceId, ClientToken = NULL, RelatedContac
     http_path = "/contact/create-contact",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_contact_input(InstanceId = InstanceId, ClientToken = ClientToken, RelatedContactId = RelatedContactId, Attributes = Attributes, References = References, Channel = Channel, InitiationMethod = InitiationMethod, ExpiryDurationInMinutes = ExpiryDurationInMinutes, UserInfo = UserInfo, InitiateAs = InitiateAs, Name = Name, Description = Description, SegmentAttributes = SegmentAttributes, PreviousContactId = PreviousContactId)
   output <- .connect$create_contact_output()
@@ -1242,7 +1354,8 @@ connect_create_contact_flow <- function(InstanceId, Name, Type, Description = NU
     http_path = "/contact-flows/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_contact_flow_input(InstanceId = InstanceId, Name = Name, Type = Type, Description = Description, Content = Content, Status = Status, Tags = Tags)
   output <- .connect$create_contact_flow_output()
@@ -1280,7 +1393,8 @@ connect_create_contact_flow_module <- function(InstanceId, Name, Description = N
     http_path = "/contact-flow-modules/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_contact_flow_module_input(InstanceId = InstanceId, Name = Name, Description = Description, Content = Content, Tags = Tags, ClientToken = ClientToken, Settings = Settings, ExternalInvocationConfiguration = ExternalInvocationConfiguration)
   output <- .connect$create_contact_flow_module_output()
@@ -1316,7 +1430,8 @@ connect_create_contact_flow_module_alias <- function(InstanceId, Description = N
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/alias",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_contact_flow_module_alias_input(InstanceId = InstanceId, Description = Description, ContactFlowModuleId = ContactFlowModuleId, ContactFlowModuleVersion = ContactFlowModuleVersion, AliasName = AliasName)
   output <- .connect$create_contact_flow_module_alias_output()
@@ -1352,7 +1467,8 @@ connect_create_contact_flow_module_version <- function(InstanceId, Description =
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/version",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_contact_flow_module_version_input(InstanceId = InstanceId, Description = Description, ContactFlowModuleId = ContactFlowModuleId, FlowModuleContentSha256 = FlowModuleContentSha256)
   output <- .connect$create_contact_flow_module_version_output()
@@ -1389,7 +1505,8 @@ connect_create_contact_flow_version <- function(InstanceId, Description = NULL, 
     http_path = "/contact-flows/{InstanceId}/{ContactFlowId}/version",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_contact_flow_version_input(InstanceId = InstanceId, Description = Description, ContactFlowId = ContactFlowId, FlowContentSha256 = FlowContentSha256, ContactFlowVersion = ContactFlowVersion, LastModifiedTime = LastModifiedTime, LastModifiedRegion = LastModifiedRegion)
   output <- .connect$create_contact_flow_version_output()
@@ -1426,7 +1543,8 @@ connect_create_data_table <- function(InstanceId, Name, Description = NULL, Time
     http_path = "/data-tables/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_data_table_input(InstanceId = InstanceId, Name = Name, Description = Description, TimeZone = TimeZone, ValueLockLevel = ValueLockLevel, Status = Status, Tags = Tags)
   output <- .connect$create_data_table_output()
@@ -1463,7 +1581,8 @@ connect_create_data_table_attribute <- function(InstanceId, DataTableId, Name, V
     http_path = "/data-tables/{InstanceId}/{DataTableId}/attributes",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_data_table_attribute_input(InstanceId = InstanceId, DataTableId = DataTableId, Name = Name, ValueType = ValueType, Description = Description, Primary = Primary, Validation = Validation)
   output <- .connect$create_data_table_attribute_output()
@@ -1499,7 +1618,8 @@ connect_create_email_address <- function(Description = NULL, InstanceId, EmailAd
     http_path = "/email-addresses/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_email_address_input(Description = Description, InstanceId = InstanceId, EmailAddress = EmailAddress, DisplayName = DisplayName, Tags = Tags, ClientToken = ClientToken)
   output <- .connect$create_email_address_output()
@@ -1530,20 +1650,22 @@ connect_create_email_address <- function(Description = NULL, InstanceId, EmailAd
 #' @param ReviewConfiguration Configuration information about evaluation reviews.
 #' @param TargetConfiguration Configuration that specifies the target for the evaluation form.
 #' @param LanguageConfiguration Configuration for language settings of the evaluation form.
+#' @param AIVersion The AI version to use for the evaluation form. This specifies which AI model version is used for automated evaluations.
 #'
 #' @keywords internal
 #'
 #' @rdname connect_create_evaluation_form
-connect_create_evaluation_form <- function(InstanceId, Title, Description = NULL, Items, ScoringStrategy = NULL, AutoEvaluationConfiguration = NULL, ClientToken = NULL, AsDraft = NULL, Tags = NULL, ReviewConfiguration = NULL, TargetConfiguration = NULL, LanguageConfiguration = NULL) {
+connect_create_evaluation_form <- function(InstanceId, Title, Description = NULL, Items, ScoringStrategy = NULL, AutoEvaluationConfiguration = NULL, ClientToken = NULL, AsDraft = NULL, Tags = NULL, ReviewConfiguration = NULL, TargetConfiguration = NULL, LanguageConfiguration = NULL, AIVersion = NULL) {
   op <- new_operation(
     name = "CreateEvaluationForm",
     http_method = "PUT",
     http_path = "/evaluation-forms/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
-  input <- .connect$create_evaluation_form_input(InstanceId = InstanceId, Title = Title, Description = Description, Items = Items, ScoringStrategy = ScoringStrategy, AutoEvaluationConfiguration = AutoEvaluationConfiguration, ClientToken = ClientToken, AsDraft = AsDraft, Tags = Tags, ReviewConfiguration = ReviewConfiguration, TargetConfiguration = TargetConfiguration, LanguageConfiguration = LanguageConfiguration)
+  input <- .connect$create_evaluation_form_input(InstanceId = InstanceId, Title = Title, Description = Description, Items = Items, ScoringStrategy = ScoringStrategy, AutoEvaluationConfiguration = AutoEvaluationConfiguration, ClientToken = ClientToken, AsDraft = AsDraft, Tags = Tags, ReviewConfiguration = ReviewConfiguration, TargetConfiguration = TargetConfiguration, LanguageConfiguration = LanguageConfiguration, AIVersion = AIVersion)
   output <- .connect$create_evaluation_form_output()
   config <- get_config()
   svc <- .connect$service(config, op)
@@ -1552,6 +1674,44 @@ connect_create_evaluation_form <- function(InstanceId, Title, Description = NULL
   return(response)
 }
 .connect$operations$create_evaluation_form <- connect_create_evaluation_form
+
+#' Creates an extraction definition in the specified Connect Customer
+#' instance
+#'
+#' @description
+#' Creates an extraction definition in the specified Connect Customer instance. An extraction definition specifies how structured data is extracted from customer interactions using generative AI, including the prompt hint that guides extraction and the behavior when a value cannot be found.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_create_extraction_definition/](https://www.paws-r-sdk.com/docs/connect_create_extraction_definition/) for full documentation.
+#'
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field.
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param Name &#91;required&#93; A unique name of the extraction definition.
+#' @param ExtractionConfiguration &#91;required&#93; The configuration that defines how data is extracted, including the prompt hint and not-found behavior.
+#' @param Display The display settings for the extraction definition, including the label shown in the agent workspace.
+#' @param Tags The tags used to organize, track, or control access for this resource.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_create_extraction_definition
+connect_create_extraction_definition <- function(ClientToken = NULL, InstanceId, Name, ExtractionConfiguration, Display = NULL, Tags = NULL) {
+  op <- new_operation(
+    name = "CreateExtractionDefinition",
+    http_method = "POST",
+    http_path = "/extraction-definitions/{InstanceId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$create_extraction_definition_input(ClientToken = ClientToken, InstanceId = InstanceId, Name = Name, ExtractionConfiguration = ExtractionConfiguration, Display = Display, Tags = Tags)
+  output <- .connect$create_extraction_definition_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$create_extraction_definition <- connect_create_extraction_definition
 
 #' Creates hours of operation
 #'
@@ -1567,7 +1727,7 @@ connect_create_evaluation_form <- function(InstanceId, Title, Description = NULL
 #' @param Config &#91;required&#93; Configuration information for the hours of operation: day, start time, and end time.
 #' @param ParentHoursOfOperationConfigs Configuration for parent hours of operations. Eg: ResourceArn.
 #' 
-#' For more information about parent hours of operations, see Link overrides from different hours of operation in the *Administrator Guide*.
+#' For more information about parent hours of operations, see [Link overrides from different hours of operation](https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html) in the *Administrator Guide*.
 #' @param Tags The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.
 #'
 #' @keywords internal
@@ -1580,7 +1740,8 @@ connect_create_hours_of_operation <- function(InstanceId, Name, Description = NU
     http_path = "/hours-of-operations/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_hours_of_operation_input(InstanceId = InstanceId, Name = Name, Description = Description, TimeZone = TimeZone, Config = Config, ParentHoursOfOperationConfigs = ParentHoursOfOperationConfigs, Tags = Tags)
   output <- .connect$create_hours_of_operation_output()
@@ -1610,7 +1771,7 @@ connect_create_hours_of_operation <- function(InstanceId, Name, Description = NU
 #' @param RecurrenceConfig Configuration for a recurring event.
 #' @param OverrideType Whether the override will be defined as a *standard* or as a *recurring event*.
 #' 
-#' For more information about how override types are applied, see Build your list of overrides in the *Administrator Guide*.
+#' For more information about how override types are applied, see [Build your list of overrides](https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html) in the *Administrator Guide*.
 #'
 #' @keywords internal
 #'
@@ -1622,7 +1783,8 @@ connect_create_hours_of_operation_override <- function(InstanceId, HoursOfOperat
     http_path = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}/overrides",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_hours_of_operation_override_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId, Name = Name, Description = Description, Config = Config, EffectiveFrom = EffectiveFrom, EffectiveTill = EffectiveTill, RecurrenceConfig = RecurrenceConfig, OverrideType = OverrideType)
   output <- .connect$create_hours_of_operation_override_output()
@@ -1660,7 +1822,8 @@ connect_create_instance <- function(ClientToken = NULL, IdentityManagementType, 
     http_path = "/instance",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_instance_input(ClientToken = ClientToken, IdentityManagementType = IdentityManagementType, InstanceAlias = InstanceAlias, DirectoryId = DirectoryId, InboundCallsEnabled = InboundCallsEnabled, OutboundCallsEnabled = OutboundCallsEnabled, Tags = Tags)
   output <- .connect$create_instance_output()
@@ -1700,7 +1863,8 @@ connect_create_integration_association <- function(InstanceId, IntegrationType, 
     http_path = "/instance/{InstanceId}/integration-associations",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_integration_association_input(InstanceId = InstanceId, IntegrationType = IntegrationType, IntegrationArn = IntegrationArn, SourceApplicationUrl = SourceApplicationUrl, SourceApplicationName = SourceApplicationName, SourceType = SourceType, Tags = Tags)
   output <- .connect$create_integration_association_output()
@@ -1711,6 +1875,47 @@ connect_create_integration_association <- function(InstanceId, IntegrationType, 
   return(response)
 }
 .connect$operations$create_integration_association <- connect_create_integration_association
+
+#' Creates a new metric definition for the specified Connect Customer
+#' instance
+#'
+#' @description
+#' Creates a new metric definition for the specified Connect Customer instance. You can create custom metrics that use formulas referencing existing Amazon Web Services-managed metrics, optionally with filters applied.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_create_metric/](https://www.paws-r-sdk.com/docs/connect_create_metric/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param Name &#91;required&#93; The name of the metric.
+#' @param MetricCalculation &#91;required&#93; The calculation definition for the metric, including the formula expression and the component metrics it references.
+#' @param Unit &#91;required&#93; The display unit for the metric's data.
+#' @param Status The publish status of the metric. Set to `PUBLISHED` to make the metric available for use in dashboards and reports, or `SAVED` to keep it in draft state.
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param Description The description of the metric.
+#' @param PositiveTrendIndicator How an increase in the metric value should be interpreted. Valid values: `POSITIVE`, `NEUTRAL`, `NEGATIVE`.
+#' @param Tags The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_create_metric
+connect_create_metric <- function(InstanceId, Name, MetricCalculation, Unit, Status = NULL, ClientToken = NULL, Description = NULL, PositiveTrendIndicator = NULL, Tags = NULL) {
+  op <- new_operation(
+    name = "CreateMetric",
+    http_method = "PUT",
+    http_path = "/metrics/definitions/{InstanceId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$create_metric_input(InstanceId = InstanceId, Name = Name, MetricCalculation = MetricCalculation, Unit = Unit, Status = Status, ClientToken = ClientToken, Description = Description, PositiveTrendIndicator = PositiveTrendIndicator, Tags = Tags)
+  output <- .connect$create_metric_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$create_metric <- connect_create_metric
 
 #' Creates a new notification to be delivered to specified recipients
 #'
@@ -1738,7 +1943,8 @@ connect_create_notification <- function(InstanceId, ExpiresAt = NULL, Recipients
     http_path = "/notifications/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_notification_input(InstanceId = InstanceId, ExpiresAt = ExpiresAt, Recipients = Recipients, Priority = Priority, Content = Content, Tags = Tags, PredefinedNotificationId = PredefinedNotificationId, ClientToken = ClientToken)
   output <- .connect$create_notification_output()
@@ -1774,7 +1980,8 @@ connect_create_participant <- function(InstanceId, ContactId, ClientToken = NULL
     http_path = "/contact/create-participant",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_participant_input(InstanceId = InstanceId, ContactId = ContactId, ClientToken = ClientToken, ParticipantDetails = ParticipantDetails)
   output <- .connect$create_participant_output()
@@ -1841,7 +2048,8 @@ connect_create_persistent_contact_association <- function(InstanceId, InitialCon
     http_path = "/contact/persistent-contact-association/{InstanceId}/{InitialContactId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_persistent_contact_association_input(InstanceId = InstanceId, InitialContactId = InitialContactId, RehydrationType = RehydrationType, SourceContactId = SourceContactId, ClientToken = ClientToken)
   output <- .connect$create_persistent_contact_association_output()
@@ -1877,7 +2085,8 @@ connect_create_predefined_attribute <- function(InstanceId, Name, Values = NULL,
     http_path = "/predefined-attributes/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_predefined_attribute_input(InstanceId = InstanceId, Name = Name, Values = Values, Purposes = Purposes, AttributeConfiguration = AttributeConfiguration)
   output <- .connect$create_predefined_attribute_output()
@@ -1912,7 +2121,8 @@ connect_create_prompt <- function(InstanceId, Name, Description = NULL, S3Uri, T
     http_path = "/prompts/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_prompt_input(InstanceId = InstanceId, Name = Name, Description = Description, S3Uri = S3Uri, Tags = Tags)
   output <- .connect$create_prompt_output()
@@ -1949,7 +2159,8 @@ connect_create_push_notification_registration <- function(InstanceId, ClientToke
     http_path = "/push-notification/{InstanceId}/registrations",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_push_notification_registration_input(InstanceId = InstanceId, ClientToken = ClientToken, PinpointAppArn = PinpointAppArn, DeviceToken = DeviceToken, DeviceType = DeviceType, ContactConfiguration = ContactConfiguration)
   output <- .connect$create_push_notification_registration_output()
@@ -1989,7 +2200,8 @@ connect_create_queue <- function(InstanceId, Name, Description = NULL, OutboundC
     http_path = "/queues/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_queue_input(InstanceId = InstanceId, Name = Name, Description = Description, OutboundCallerConfig = OutboundCallerConfig, OutboundEmailConfig = OutboundEmailConfig, HoursOfOperationId = HoursOfOperationId, MaxContacts = MaxContacts, QuickConnectIds = QuickConnectIds, EmailAddressesConfig = EmailAddressesConfig, Tags = Tags)
   output <- .connect$create_queue_output()
@@ -2024,7 +2236,8 @@ connect_create_quick_connect <- function(InstanceId, Name, Description = NULL, Q
     http_path = "/quick-connects/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_quick_connect_input(InstanceId = InstanceId, Name = Name, Description = Description, QuickConnectConfig = QuickConnectConfig, Tags = Tags)
   output <- .connect$create_quick_connect_output()
@@ -2052,7 +2265,7 @@ connect_create_quick_connect <- function(InstanceId, Name, Description = NULL, Q
 #' The limit of 10 array members applies to the maximum number of `RoutingProfileQueueConfig` objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in [Connect Customer service quotas](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html).
 #' @param ManualAssignmentQueueConfigs The manual assignment queues associated with the routing profile. If no queue is added, agents and supervisors can't pick or assign any contacts from this routing profile. The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in Connect Customer service quotas.
 #' 
-#' Note: Use this config for chat, email, and task contacts. It does not support voice contacts.
+#' For voice contacts, manual assignment supports only agent-first callback contacts. Chat, email, and task contacts are fully supported.
 #' @param MediaConcurrencies &#91;required&#93; The channels that agents can handle in the Contact Control Panel (CCP) for this routing profile.
 #' @param Tags The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.
 #' @param AgentAvailabilityTimer Whether agents with this routing profile will have their routing order calculated based on *longest idle time* or *time since their last inbound contact*.
@@ -2067,7 +2280,8 @@ connect_create_routing_profile <- function(InstanceId, Name, Description, Defaul
     http_path = "/routing-profiles/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_routing_profile_input(InstanceId = InstanceId, Name = Name, Description = Description, DefaultOutboundQueueId = DefaultOutboundQueueId, QueueConfigs = QueueConfigs, ManualAssignmentQueueConfigs = ManualAssignmentQueueConfigs, MediaConcurrencies = MediaConcurrencies, Tags = Tags, AgentAvailabilityTimer = AgentAvailabilityTimer)
   output <- .connect$create_routing_profile_output()
@@ -2092,21 +2306,24 @@ connect_create_routing_profile <- function(InstanceId, Name, Description, Defaul
 #' @param Function &#91;required&#93; The conditions of the rule.
 #' @param Actions &#91;required&#93; A list of actions to be run when the rule is triggered.
 #' @param PublishStatus &#91;required&#93; The publish status of the rule.
+#' @param PreEvaluationFilters The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.
 #' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param Tags The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.
 #'
 #' @keywords internal
 #'
 #' @rdname connect_create_rule
-connect_create_rule <- function(InstanceId, Name, TriggerEventSource, Function, Actions, PublishStatus, ClientToken = NULL) {
+connect_create_rule <- function(InstanceId, Name, TriggerEventSource, Function, Actions, PublishStatus, PreEvaluationFilters = NULL, ClientToken = NULL, Tags = NULL) {
   op <- new_operation(
     name = "CreateRule",
     http_method = "POST",
     http_path = "/rules/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
-  input <- .connect$create_rule_input(InstanceId = InstanceId, Name = Name, TriggerEventSource = TriggerEventSource, Function = Function, Actions = Actions, PublishStatus = PublishStatus, ClientToken = ClientToken)
+  input <- .connect$create_rule_input(InstanceId = InstanceId, Name = Name, TriggerEventSource = TriggerEventSource, Function = Function, Actions = Actions, PublishStatus = PublishStatus, PreEvaluationFilters = PreEvaluationFilters, ClientToken = ClientToken, Tags = Tags)
   output <- .connect$create_rule_output()
   config <- get_config()
   svc <- .connect$service(config, op)
@@ -2134,21 +2351,23 @@ connect_create_rule <- function(InstanceId, Name, TriggerEventSource, Function, 
 #' @param HierarchyRestrictedResources The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: `User`.
 #' @param AllowedAccessControlHierarchyGroupId The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.
 #' @param AllowedFlowModules A list of Flow Modules an AI Agent can invoke as a tool.
+#' @param AllowedAIAgents A list of AI agents that the security profile will give access to.
 #' @param GranularAccessControlConfiguration The granular access control configuration for the security profile, including data table permissions.
 #'
 #' @keywords internal
 #'
 #' @rdname connect_create_security_profile
-connect_create_security_profile <- function(SecurityProfileName, Description = NULL, Permissions = NULL, InstanceId, Tags = NULL, AllowedAccessControlTags = NULL, TagRestrictedResources = NULL, Applications = NULL, HierarchyRestrictedResources = NULL, AllowedAccessControlHierarchyGroupId = NULL, AllowedFlowModules = NULL, GranularAccessControlConfiguration = NULL) {
+connect_create_security_profile <- function(SecurityProfileName, Description = NULL, Permissions = NULL, InstanceId, Tags = NULL, AllowedAccessControlTags = NULL, TagRestrictedResources = NULL, Applications = NULL, HierarchyRestrictedResources = NULL, AllowedAccessControlHierarchyGroupId = NULL, AllowedFlowModules = NULL, AllowedAIAgents = NULL, GranularAccessControlConfiguration = NULL) {
   op <- new_operation(
     name = "CreateSecurityProfile",
     http_method = "PUT",
     http_path = "/security-profiles/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
-  input <- .connect$create_security_profile_input(SecurityProfileName = SecurityProfileName, Description = Description, Permissions = Permissions, InstanceId = InstanceId, Tags = Tags, AllowedAccessControlTags = AllowedAccessControlTags, TagRestrictedResources = TagRestrictedResources, Applications = Applications, HierarchyRestrictedResources = HierarchyRestrictedResources, AllowedAccessControlHierarchyGroupId = AllowedAccessControlHierarchyGroupId, AllowedFlowModules = AllowedFlowModules, GranularAccessControlConfiguration = GranularAccessControlConfiguration)
+  input <- .connect$create_security_profile_input(SecurityProfileName = SecurityProfileName, Description = Description, Permissions = Permissions, InstanceId = InstanceId, Tags = Tags, AllowedAccessControlTags = AllowedAccessControlTags, TagRestrictedResources = TagRestrictedResources, Applications = Applications, HierarchyRestrictedResources = HierarchyRestrictedResources, AllowedAccessControlHierarchyGroupId = AllowedAccessControlHierarchyGroupId, AllowedFlowModules = AllowedFlowModules, AllowedAIAgents = AllowedAIAgents, GranularAccessControlConfiguration = GranularAccessControlConfiguration)
   output <- .connect$create_security_profile_output()
   config <- get_config()
   svc <- .connect$service(config, op)
@@ -2169,11 +2388,15 @@ connect_create_security_profile <- function(SecurityProfileName, Description = N
 #' @param Name &#91;required&#93; The name of the task template.
 #' @param Description The description of the task template.
 #' @param ContactFlowId The identifier of the flow that runs by default when a task is created by referencing this template.
+#' 
+#' Although this parameter is marked as optional, the request must contain either a `ContactFlowId` or a field of type `QUICK_CONNECT`.
 #' @param SelfAssignFlowId The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.
-#' @param Constraints Constraints that are applicable to the fields listed.
+#' @param Constraints Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling [`create_task_template`][connect_create_task_template] or [`update_task_template`][connect_update_task_template]. The `RequiredFields` array must contain at least one element, and the field of type `NAME` must be included in `RequiredFields`.
 #' @param Defaults The default values for fields when a task is created by referencing this template.
 #' @param Status Marks a template as `ACTIVE` or `INACTIVE` for a task to refer to it. Tasks can only be created from `ACTIVE` templates. If a template is marked as `INACTIVE`, then a task that refers to this template cannot be created.
 #' @param Fields &#91;required&#93; Fields that are part of the template.
+#' 
+#' The request must contain exactly one field of type `NAME`. This field must also be listed in the `RequiredFields` array within the `Constraints` parameter.
 #' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #'
 #' @keywords internal
@@ -2186,7 +2409,8 @@ connect_create_task_template <- function(InstanceId, Name, Description = NULL, C
     http_path = "/instance/{InstanceId}/task/template",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_task_template_input(InstanceId = InstanceId, Name = Name, Description = Description, ContactFlowId = ContactFlowId, SelfAssignFlowId = SelfAssignFlowId, Constraints = Constraints, Defaults = Defaults, Status = Status, Fields = Fields, ClientToken = ClientToken)
   output <- .connect$create_task_template_output()
@@ -2228,7 +2452,8 @@ connect_create_test_case <- function(InstanceId, Name, Description = NULL, Conte
     http_path = "/test-cases/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_test_case_input(InstanceId = InstanceId, Name = Name, Description = Description, Content = Content, EntryPoint = EntryPoint, InitializationData = InitializationData, Status = Status, TestCaseId = TestCaseId, Tags = Tags, LastModifiedTime = LastModifiedTime, LastModifiedRegion = LastModifiedRegion)
   output <- .connect$create_test_case_output()
@@ -2264,7 +2489,8 @@ connect_create_traffic_distribution_group <- function(Name, Description = NULL, 
     http_path = "/traffic-distribution-group",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_traffic_distribution_group_input(Name = Name, Description = Description, InstanceId = InstanceId, ClientToken = ClientToken, Tags = Tags)
   output <- .connect$create_traffic_distribution_group_output()
@@ -2298,7 +2524,8 @@ connect_create_use_case <- function(InstanceId, IntegrationAssociationId, UseCas
     http_path = "/instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_use_case_input(InstanceId = InstanceId, IntegrationAssociationId = IntegrationAssociationId, UseCaseType = UseCaseType, Tags = Tags)
   output <- .connect$create_use_case_output()
@@ -2353,7 +2580,8 @@ connect_create_user <- function(Username, Password = NULL, IdentityInfo = NULL, 
     http_path = "/users/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_user_input(Username = Username, Password = Password, IdentityInfo = IdentityInfo, PhoneConfig = PhoneConfig, DirectoryUserId = DirectoryUserId, SecurityProfileIds = SecurityProfileIds, RoutingProfileId = RoutingProfileId, HierarchyGroupId = HierarchyGroupId, InstanceId = InstanceId, AutoAcceptConfigs = AutoAcceptConfigs, AfterContactWorkConfigs = AfterContactWorkConfigs, PhoneNumberConfigs = PhoneNumberConfigs, PersistentConnectionConfigs = PersistentConnectionConfigs, VoiceEnhancementConfigs = VoiceEnhancementConfigs, Tags = Tags)
   output <- .connect$create_user_output()
@@ -2387,7 +2615,8 @@ connect_create_user_hierarchy_group <- function(Name, ParentGroupId = NULL, Inst
     http_path = "/user-hierarchy-groups/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_user_hierarchy_group_input(Name = Name, ParentGroupId = ParentGroupId, InstanceId = InstanceId, Tags = Tags)
   output <- .connect$create_user_hierarchy_group_output()
@@ -2426,7 +2655,8 @@ connect_create_view <- function(InstanceId, ClientToken = NULL, Status, Content,
     http_path = "/views/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_view_input(InstanceId = InstanceId, ClientToken = ClientToken, Status = Status, Content = Content, Description = Description, Name = Name, Tags = Tags)
   output <- .connect$create_view_output()
@@ -2460,7 +2690,8 @@ connect_create_view_version <- function(InstanceId, ViewId, VersionDescription =
     http_path = "/views/{InstanceId}/{ViewId}/versions",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_view_version_input(InstanceId = InstanceId, ViewId = ViewId, VersionDescription = VersionDescription, ViewContentSha256 = ViewContentSha256)
   output <- .connect$create_view_version_output()
@@ -2497,7 +2728,8 @@ connect_create_vocabulary <- function(ClientToken = NULL, InstanceId, Vocabulary
     http_path = "/vocabulary/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_vocabulary_input(ClientToken = ClientToken, InstanceId = InstanceId, VocabularyName = VocabularyName, LanguageCode = LanguageCode, Content = Content, Tags = Tags)
   output <- .connect$create_vocabulary_output()
@@ -2534,7 +2766,8 @@ connect_create_workspace <- function(InstanceId, Name, Description = NULL, Theme
     http_path = "/workspaces/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_workspace_input(InstanceId = InstanceId, Name = Name, Description = Description, Theme = Theme, Title = Title, Tags = Tags)
   output <- .connect$create_workspace_output()
@@ -2571,7 +2804,8 @@ connect_create_workspace_page <- function(InstanceId, WorkspaceId, ResourceArn, 
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/pages",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$create_workspace_page_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId, ResourceArn = ResourceArn, Page = Page, Slug = Slug, InputData = InputData)
   output <- .connect$create_workspace_page_output()
@@ -2605,7 +2839,8 @@ connect_deactivate_evaluation_form <- function(InstanceId, EvaluationFormId, Eva
     http_path = "/evaluation-forms/{InstanceId}/{EvaluationFormId}/deactivate",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$deactivate_evaluation_form_input(InstanceId = InstanceId, EvaluationFormId = EvaluationFormId, EvaluationFormVersion = EvaluationFormVersion)
   output <- .connect$deactivate_evaluation_form_output()
@@ -2626,7 +2861,7 @@ connect_deactivate_evaluation_form <- function(InstanceId, EvaluationFormId, Eva
 #'
 #' @param InstanceId &#91;required&#93; The unique identifier of the Connect instance.
 #' @param FileId &#91;required&#93; The unique identifier of the attached file resource.
-#' @param AssociatedResourceArn &#91;required&#93; The resource to which the attached file is (being) uploaded to. [Cases](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html) are the only current supported resource.
+#' @param AssociatedResourceArn &#91;required&#93; The resource to which the attached file is (being) uploaded to. The supported resources are [Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html), [Email](https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html), and [Task](https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html).
 #' 
 #' This value must be a valid ARN.
 #'
@@ -2640,7 +2875,8 @@ connect_delete_attached_file <- function(InstanceId, FileId, AssociatedResourceA
     http_path = "/attached-files/{InstanceId}/{FileId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_attached_file_input(InstanceId = InstanceId, FileId = FileId, AssociatedResourceArn = AssociatedResourceArn)
   output <- .connect$delete_attached_file_output()
@@ -2651,6 +2887,48 @@ connect_delete_attached_file <- function(InstanceId, FileId, AssociatedResourceA
   return(response)
 }
 .connect$operations$delete_attached_file <- connect_delete_attached_file
+
+#' Deletes the specified fields containing personally identifiable
+#' information (PII) from a contact in the specified Connect Customer
+#' instance
+#'
+#' @description
+#' Deletes the specified fields containing personally identifiable information (PII) from a contact in the specified Connect Customer instance. We redact PII (such as customer endpoints, additional email recipients, and the email subject) from the contact and its associated contact trace record (CTR). The contact must be in a terminated state.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_delete_contact_data/](https://www.paws-r-sdk.com/docs/connect_delete_contact_data/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param ContactId &#91;required&#93; The identifier of the contact. You can delete PII only from a contact that has been disconnected (is in a terminated state).
+#' @param ContactFields &#91;required&#93; The categories of PII to redact from the contact. Specify one or more of the following values:
+#' 
+#' -   `CUSTOMER_ENDPOINT` – The customer's contact endpoint.
+#' 
+#' -   `ADDITIONAL_EMAIL_RECIPIENTS` – Additional recipients on an email contact (email channel only).
+#' 
+#' -   `EMAIL_SUBJECT` – The subject line of an email contact (email channel only).
+#'
+#' @keywords internal
+#'
+#' @rdname connect_delete_contact_data
+connect_delete_contact_data <- function(InstanceId, ContactId, ContactFields) {
+  op <- new_operation(
+    name = "DeleteContactData",
+    http_method = "POST",
+    http_path = "/contact/delete/{InstanceId}/{ContactId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$delete_contact_data_input(InstanceId = InstanceId, ContactId = ContactId, ContactFields = ContactFields)
+  output <- .connect$delete_contact_data_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$delete_contact_data <- connect_delete_contact_data
 
 #' Deletes a contact evaluation in the specified Connect Customer instance
 #'
@@ -2672,7 +2950,8 @@ connect_delete_contact_evaluation <- function(InstanceId, EvaluationId) {
     http_path = "/contact-evaluations/{InstanceId}/{EvaluationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_contact_evaluation_input(InstanceId = InstanceId, EvaluationId = EvaluationId)
   output <- .connect$delete_contact_evaluation_output()
@@ -2704,7 +2983,8 @@ connect_delete_contact_flow <- function(InstanceId, ContactFlowId) {
     http_path = "/contact-flows/{InstanceId}/{ContactFlowId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_contact_flow_input(InstanceId = InstanceId, ContactFlowId = ContactFlowId)
   output <- .connect$delete_contact_flow_output()
@@ -2736,7 +3016,8 @@ connect_delete_contact_flow_module <- function(InstanceId, ContactFlowModuleId) 
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_contact_flow_module_input(InstanceId = InstanceId, ContactFlowModuleId = ContactFlowModuleId)
   output <- .connect$delete_contact_flow_module_output()
@@ -2770,7 +3051,8 @@ connect_delete_contact_flow_module_alias <- function(InstanceId, ContactFlowModu
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/alias/{AliasId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_contact_flow_module_alias_input(InstanceId = InstanceId, ContactFlowModuleId = ContactFlowModuleId, AliasId = AliasId)
   output <- .connect$delete_contact_flow_module_alias_output()
@@ -2803,7 +3085,8 @@ connect_delete_contact_flow_module_version <- function(InstanceId, ContactFlowMo
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/version/{ContactFlowModuleVersion}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_contact_flow_module_version_input(InstanceId = InstanceId, ContactFlowModuleId = ContactFlowModuleId, ContactFlowModuleVersion = ContactFlowModuleVersion)
   output <- .connect$delete_contact_flow_module_version_output()
@@ -2836,7 +3119,8 @@ connect_delete_contact_flow_version <- function(InstanceId, ContactFlowId, Conta
     http_path = "/contact-flows/{InstanceId}/{ContactFlowId}/version/{ContactFlowVersion}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_contact_flow_version_input(InstanceId = InstanceId, ContactFlowId = ContactFlowId, ContactFlowVersion = ContactFlowVersion)
   output <- .connect$delete_contact_flow_version_output()
@@ -2869,7 +3153,8 @@ connect_delete_data_table <- function(InstanceId, DataTableId) {
     http_path = "/data-tables/{InstanceId}/{DataTableId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_data_table_input(InstanceId = InstanceId, DataTableId = DataTableId)
   output <- .connect$delete_data_table_output()
@@ -2902,7 +3187,8 @@ connect_delete_data_table_attribute <- function(InstanceId, DataTableId, Attribu
     http_path = "/data-tables/{InstanceId}/{DataTableId}/attributes/{AttributeName}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_data_table_attribute_input(InstanceId = InstanceId, DataTableId = DataTableId, AttributeName = AttributeName)
   output <- .connect$delete_data_table_attribute_output()
@@ -2934,7 +3220,8 @@ connect_delete_email_address <- function(InstanceId, EmailAddressId) {
     http_path = "/email-addresses/{InstanceId}/{EmailAddressId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_email_address_input(InstanceId = InstanceId, EmailAddressId = EmailAddressId)
   output <- .connect$delete_email_address_output()
@@ -2967,7 +3254,8 @@ connect_delete_evaluation_form <- function(InstanceId, EvaluationFormId, Evaluat
     http_path = "/evaluation-forms/{InstanceId}/{EvaluationFormId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_evaluation_form_input(InstanceId = InstanceId, EvaluationFormId = EvaluationFormId, EvaluationFormVersion = EvaluationFormVersion)
   output <- .connect$delete_evaluation_form_output()
@@ -2978,6 +3266,40 @@ connect_delete_evaluation_form <- function(InstanceId, EvaluationFormId, Evaluat
   return(response)
 }
 .connect$operations$delete_evaluation_form <- connect_delete_evaluation_form
+
+#' Deletes an extraction definition from the specified Connect Customer
+#' instance
+#'
+#' @description
+#' Deletes an extraction definition from the specified Connect Customer instance.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_delete_extraction_definition/](https://www.paws-r-sdk.com/docs/connect_delete_extraction_definition/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param ExtractionDefinitionId &#91;required&#93; The identifier of the extraction definition to delete.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_delete_extraction_definition
+connect_delete_extraction_definition <- function(InstanceId, ExtractionDefinitionId) {
+  op <- new_operation(
+    name = "DeleteExtractionDefinition",
+    http_method = "DELETE",
+    http_path = "/extraction-definitions/{InstanceId}/{ExtractionDefinitionId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$delete_extraction_definition_input(InstanceId = InstanceId, ExtractionDefinitionId = ExtractionDefinitionId)
+  output <- .connect$delete_extraction_definition_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$delete_extraction_definition <- connect_delete_extraction_definition
 
 #' Deletes an hours of operation
 #'
@@ -2999,7 +3321,8 @@ connect_delete_hours_of_operation <- function(InstanceId, HoursOfOperationId) {
     http_path = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_hours_of_operation_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId)
   output <- .connect$delete_hours_of_operation_output()
@@ -3033,7 +3356,8 @@ connect_delete_hours_of_operation_override <- function(InstanceId, HoursOfOperat
     http_path = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}/overrides/{HoursOfOperationOverrideId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_hours_of_operation_override_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId, HoursOfOperationOverrideId = HoursOfOperationOverrideId)
   output <- .connect$delete_hours_of_operation_override_output()
@@ -3066,7 +3390,8 @@ connect_delete_instance <- function(InstanceId, ClientToken = NULL) {
     http_path = "/instance/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_instance_input(InstanceId = InstanceId, ClientToken = ClientToken)
   output <- .connect$delete_instance_output()
@@ -3099,7 +3424,8 @@ connect_delete_integration_association <- function(InstanceId, IntegrationAssoci
     http_path = "/instance/{InstanceId}/integration-associations/{IntegrationAssociationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_integration_association_input(InstanceId = InstanceId, IntegrationAssociationId = IntegrationAssociationId)
   output <- .connect$delete_integration_association_output()
@@ -3110,6 +3436,39 @@ connect_delete_integration_association <- function(InstanceId, IntegrationAssoci
   return(response)
 }
 .connect$operations$delete_integration_association <- connect_delete_integration_association
+
+#' Deletes an existing metric from the specified Connect Customer instance
+#'
+#' @description
+#' Deletes an existing metric from the specified Connect Customer instance. This operation fails with `ResourceConflictException` if the metric is currently in use in a dashboard.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_delete_metric/](https://www.paws-r-sdk.com/docs/connect_delete_metric/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param MetricId &#91;required&#93; The identifier of the metric to delete.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_delete_metric
+connect_delete_metric <- function(InstanceId, MetricId) {
+  op <- new_operation(
+    name = "DeleteMetric",
+    http_method = "DELETE",
+    http_path = "/metrics/definitions/{InstanceId}/{MetricId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$delete_metric_input(InstanceId = InstanceId, MetricId = MetricId)
+  output <- .connect$delete_metric_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$delete_metric <- connect_delete_metric
 
 #' Deletes a notification
 #'
@@ -3131,7 +3490,8 @@ connect_delete_notification <- function(InstanceId, NotificationId) {
     http_path = "/notifications/{InstanceId}/{NotificationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_notification_input(InstanceId = InstanceId, NotificationId = NotificationId)
   output <- .connect$delete_notification_output()
@@ -3164,7 +3524,8 @@ connect_delete_predefined_attribute <- function(InstanceId, Name) {
     http_path = "/predefined-attributes/{InstanceId}/{Name}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_predefined_attribute_input(InstanceId = InstanceId, Name = Name)
   output <- .connect$delete_predefined_attribute_output()
@@ -3196,7 +3557,8 @@ connect_delete_prompt <- function(InstanceId, PromptId) {
     http_path = "/prompts/{InstanceId}/{PromptId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_prompt_input(InstanceId = InstanceId, PromptId = PromptId)
   output <- .connect$delete_prompt_output()
@@ -3229,7 +3591,8 @@ connect_delete_push_notification_registration <- function(InstanceId, Registrati
     http_path = "/push-notification/{InstanceId}/registrations/{RegistrationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_push_notification_registration_input(InstanceId = InstanceId, RegistrationId = RegistrationId, ContactId = ContactId)
   output <- .connect$delete_push_notification_registration_output()
@@ -3261,7 +3624,8 @@ connect_delete_queue <- function(InstanceId, QueueId) {
     http_path = "/queues/{InstanceId}/{QueueId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_queue_input(InstanceId = InstanceId, QueueId = QueueId)
   output <- .connect$delete_queue_output()
@@ -3293,7 +3657,8 @@ connect_delete_quick_connect <- function(InstanceId, QuickConnectId) {
     http_path = "/quick-connects/{InstanceId}/{QuickConnectId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_quick_connect_input(InstanceId = InstanceId, QuickConnectId = QuickConnectId)
   output <- .connect$delete_quick_connect_output()
@@ -3325,7 +3690,8 @@ connect_delete_routing_profile <- function(InstanceId, RoutingProfileId) {
     http_path = "/routing-profiles/{InstanceId}/{RoutingProfileId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_routing_profile_input(InstanceId = InstanceId, RoutingProfileId = RoutingProfileId)
   output <- .connect$delete_routing_profile_output()
@@ -3357,7 +3723,8 @@ connect_delete_rule <- function(InstanceId, RuleId) {
     http_path = "/rules/{InstanceId}/{RuleId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_rule_input(InstanceId = InstanceId, RuleId = RuleId)
   output <- .connect$delete_rule_output()
@@ -3389,7 +3756,8 @@ connect_delete_security_profile <- function(InstanceId, SecurityProfileId) {
     http_path = "/security-profiles/{InstanceId}/{SecurityProfileId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_security_profile_input(InstanceId = InstanceId, SecurityProfileId = SecurityProfileId)
   output <- .connect$delete_security_profile_output()
@@ -3400,6 +3768,39 @@ connect_delete_security_profile <- function(InstanceId, SecurityProfileId) {
   return(response)
 }
 .connect$operations$delete_security_profile <- connect_delete_security_profile
+
+#' Deletes a session for the specified Connect Customer instance
+#'
+#' @description
+#' Deletes a session for the specified Connect Customer instance.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_delete_session/](https://www.paws-r-sdk.com/docs/connect_delete_session/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param SessionId &#91;required&#93; The identifier of the session to delete.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_delete_session
+connect_delete_session <- function(InstanceId, SessionId) {
+  op <- new_operation(
+    name = "DeleteSession",
+    http_method = "DELETE",
+    http_path = "/auth/sessions/{InstanceId}/{SessionId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$delete_session_input(InstanceId = InstanceId, SessionId = SessionId)
+  output <- .connect$delete_session_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$delete_session <- connect_delete_session
 
 #' Deletes the task template
 #'
@@ -3421,7 +3822,8 @@ connect_delete_task_template <- function(InstanceId, TaskTemplateId) {
     http_path = "/instance/{InstanceId}/task/template/{TaskTemplateId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_task_template_input(InstanceId = InstanceId, TaskTemplateId = TaskTemplateId)
   output <- .connect$delete_task_template_output()
@@ -3454,7 +3856,8 @@ connect_delete_test_case <- function(InstanceId, TestCaseId) {
     http_path = "/test-cases/{InstanceId}/{TestCaseId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_test_case_input(InstanceId = InstanceId, TestCaseId = TestCaseId)
   output <- .connect$delete_test_case_output()
@@ -3485,7 +3888,8 @@ connect_delete_traffic_distribution_group <- function(TrafficDistributionGroupId
     http_path = "/traffic-distribution-group/{TrafficDistributionGroupId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_traffic_distribution_group_input(TrafficDistributionGroupId = TrafficDistributionGroupId)
   output <- .connect$delete_traffic_distribution_group_output()
@@ -3518,7 +3922,8 @@ connect_delete_use_case <- function(InstanceId, IntegrationAssociationId, UseCas
     http_path = "/instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases/{UseCaseId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_use_case_input(InstanceId = InstanceId, IntegrationAssociationId = IntegrationAssociationId, UseCaseId = UseCaseId)
   output <- .connect$delete_use_case_output()
@@ -3550,7 +3955,8 @@ connect_delete_user <- function(InstanceId, UserId) {
     http_path = "/users/{InstanceId}/{UserId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_user_input(InstanceId = InstanceId, UserId = UserId)
   output <- .connect$delete_user_output()
@@ -3582,7 +3988,8 @@ connect_delete_user_hierarchy_group <- function(HierarchyGroupId, InstanceId) {
     http_path = "/user-hierarchy-groups/{InstanceId}/{HierarchyGroupId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_user_hierarchy_group_input(HierarchyGroupId = HierarchyGroupId, InstanceId = InstanceId)
   output <- .connect$delete_user_hierarchy_group_output()
@@ -3614,7 +4021,8 @@ connect_delete_view <- function(InstanceId, ViewId) {
     http_path = "/views/{InstanceId}/{ViewId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_view_input(InstanceId = InstanceId, ViewId = ViewId)
   output <- .connect$delete_view_output()
@@ -3647,7 +4055,8 @@ connect_delete_view_version <- function(InstanceId, ViewId, ViewVersion) {
     http_path = "/views/{InstanceId}/{ViewId}/versions/{ViewVersion}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_view_version_input(InstanceId = InstanceId, ViewId = ViewId, ViewVersion = ViewVersion)
   output <- .connect$delete_view_version_output()
@@ -3679,7 +4088,8 @@ connect_delete_vocabulary <- function(InstanceId, VocabularyId) {
     http_path = "/vocabulary-remove/{InstanceId}/{VocabularyId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_vocabulary_input(InstanceId = InstanceId, VocabularyId = VocabularyId)
   output <- .connect$delete_vocabulary_output()
@@ -3712,7 +4122,8 @@ connect_delete_workspace <- function(InstanceId, WorkspaceId) {
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_workspace_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId)
   output <- .connect$delete_workspace_output()
@@ -3745,7 +4156,8 @@ connect_delete_workspace_media <- function(InstanceId, WorkspaceId, MediaType) {
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/media",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_workspace_media_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId, MediaType = MediaType)
   output <- .connect$delete_workspace_media_output()
@@ -3778,7 +4190,8 @@ connect_delete_workspace_page <- function(InstanceId, WorkspaceId, Page) {
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/pages/{Page}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$delete_workspace_page_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId, Page = Page)
   output <- .connect$delete_workspace_page_output()
@@ -3810,7 +4223,8 @@ connect_describe_agent_status <- function(InstanceId, AgentStatusId) {
     http_path = "/agent-status/{InstanceId}/{AgentStatusId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_agent_status_input(InstanceId = InstanceId, AgentStatusId = AgentStatusId)
   output <- .connect$describe_agent_status_output()
@@ -3843,7 +4257,8 @@ connect_describe_attached_files_configuration <- function(InstanceId, Attachment
     http_path = "/attached-files-configurations/{InstanceId}/{AttachmentScope}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_attached_files_configuration_input(InstanceId = InstanceId, AttachmentScope = AttachmentScope)
   output <- .connect$describe_attached_files_configuration_output()
@@ -3876,7 +4291,8 @@ connect_describe_authentication_profile <- function(AuthenticationProfileId, Ins
     http_path = "/authentication-profiles/{InstanceId}/{AuthenticationProfileId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_authentication_profile_input(AuthenticationProfileId = AuthenticationProfileId, InstanceId = InstanceId)
   output <- .connect$describe_authentication_profile_output()
@@ -3909,7 +4325,8 @@ connect_describe_contact <- function(InstanceId, ContactId) {
     http_path = "/contacts/{InstanceId}/{ContactId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_contact_input(InstanceId = InstanceId, ContactId = ContactId)
   output <- .connect$describe_contact_output()
@@ -3942,7 +4359,8 @@ connect_describe_contact_evaluation <- function(InstanceId, EvaluationId) {
     http_path = "/contact-evaluations/{InstanceId}/{EvaluationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_contact_evaluation_input(InstanceId = InstanceId, EvaluationId = EvaluationId)
   output <- .connect$describe_contact_evaluation_output()
@@ -3974,7 +4392,8 @@ connect_describe_contact_flow <- function(InstanceId, ContactFlowId) {
     http_path = "/contact-flows/{InstanceId}/{ContactFlowId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_contact_flow_input(InstanceId = InstanceId, ContactFlowId = ContactFlowId)
   output <- .connect$describe_contact_flow_output()
@@ -4006,7 +4425,8 @@ connect_describe_contact_flow_module <- function(InstanceId, ContactFlowModuleId
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_contact_flow_module_input(InstanceId = InstanceId, ContactFlowModuleId = ContactFlowModuleId)
   output <- .connect$describe_contact_flow_module_output()
@@ -4040,7 +4460,8 @@ connect_describe_contact_flow_module_alias <- function(InstanceId, ContactFlowMo
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/alias/{AliasId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_contact_flow_module_alias_input(InstanceId = InstanceId, ContactFlowModuleId = ContactFlowModuleId, AliasId = AliasId)
   output <- .connect$describe_contact_flow_module_alias_output()
@@ -4072,7 +4493,8 @@ connect_describe_data_table <- function(InstanceId, DataTableId) {
     http_path = "/data-tables/{InstanceId}/{DataTableId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_data_table_input(InstanceId = InstanceId, DataTableId = DataTableId)
   output <- .connect$describe_data_table_output()
@@ -4106,7 +4528,8 @@ connect_describe_data_table_attribute <- function(InstanceId, DataTableId, Attri
     http_path = "/data-tables/{InstanceId}/{DataTableId}/attributes/{AttributeName}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_data_table_attribute_input(InstanceId = InstanceId, DataTableId = DataTableId, AttributeName = AttributeName)
   output <- .connect$describe_data_table_attribute_output()
@@ -4138,7 +4561,8 @@ connect_describe_email_address <- function(InstanceId, EmailAddressId) {
     http_path = "/email-addresses/{InstanceId}/{EmailAddressId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_email_address_input(InstanceId = InstanceId, EmailAddressId = EmailAddressId)
   output <- .connect$describe_email_address_output()
@@ -4171,7 +4595,8 @@ connect_describe_evaluation_form <- function(InstanceId, EvaluationFormId, Evalu
     http_path = "/evaluation-forms/{InstanceId}/{EvaluationFormId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_evaluation_form_input(InstanceId = InstanceId, EvaluationFormId = EvaluationFormId, EvaluationFormVersion = EvaluationFormVersion)
   output <- .connect$describe_evaluation_form_output()
@@ -4182,6 +4607,40 @@ connect_describe_evaluation_form <- function(InstanceId, EvaluationFormId, Evalu
   return(response)
 }
 .connect$operations$describe_evaluation_form <- connect_describe_evaluation_form
+
+#' Describes an extraction definition in the specified Connect Customer
+#' instance
+#'
+#' @description
+#' Describes an extraction definition in the specified Connect Customer instance.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_describe_extraction_definition/](https://www.paws-r-sdk.com/docs/connect_describe_extraction_definition/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param ExtractionDefinitionId &#91;required&#93; The identifier of the extraction definition to describe.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_describe_extraction_definition
+connect_describe_extraction_definition <- function(InstanceId, ExtractionDefinitionId) {
+  op <- new_operation(
+    name = "DescribeExtractionDefinition",
+    http_method = "GET",
+    http_path = "/extraction-definitions/{InstanceId}/{ExtractionDefinitionId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$describe_extraction_definition_input(InstanceId = InstanceId, ExtractionDefinitionId = ExtractionDefinitionId)
+  output <- .connect$describe_extraction_definition_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$describe_extraction_definition <- connect_describe_extraction_definition
 
 #' Describes the hours of operation
 #'
@@ -4203,7 +4662,8 @@ connect_describe_hours_of_operation <- function(InstanceId, HoursOfOperationId) 
     http_path = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_hours_of_operation_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId)
   output <- .connect$describe_hours_of_operation_output()
@@ -4236,7 +4696,8 @@ connect_describe_hours_of_operation_override <- function(InstanceId, HoursOfOper
     http_path = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}/overrides/{HoursOfOperationOverrideId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_hours_of_operation_override_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId, HoursOfOperationOverrideId = HoursOfOperationOverrideId)
   output <- .connect$describe_hours_of_operation_override_output()
@@ -4268,7 +4729,8 @@ connect_describe_instance <- function(InstanceId) {
     http_path = "/instance/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_instance_input(InstanceId = InstanceId)
   output <- .connect$describe_instance_output()
@@ -4301,7 +4763,8 @@ connect_describe_instance_attribute <- function(InstanceId, AttributeType) {
     http_path = "/instance/{InstanceId}/attribute/{AttributeType}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_instance_attribute_input(InstanceId = InstanceId, AttributeType = AttributeType)
   output <- .connect$describe_instance_attribute_output()
@@ -4335,7 +4798,8 @@ connect_describe_instance_storage_config <- function(InstanceId, AssociationId, 
     http_path = "/instance/{InstanceId}/storage-config/{AssociationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_instance_storage_config_input(InstanceId = InstanceId, AssociationId = AssociationId, ResourceType = ResourceType)
   output <- .connect$describe_instance_storage_config_output()
@@ -4346,6 +4810,40 @@ connect_describe_instance_storage_config <- function(InstanceId, AssociationId, 
   return(response)
 }
 .connect$operations$describe_instance_storage_config <- connect_describe_instance_storage_config
+
+#' Retrieves the full definition of an existing metric from the specified
+#' Connect Customer instance
+#'
+#' @description
+#' Retrieves the full definition of an existing metric from the specified Connect Customer instance.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_describe_metric/](https://www.paws-r-sdk.com/docs/connect_describe_metric/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param MetricId &#91;required&#93; The identifier of the metric to describe. Adding the `$SAVED` qualifier will describe the saved version of the metric. Adding `$LATEST` or omitting a qualifier will describe the published version.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_describe_metric
+connect_describe_metric <- function(InstanceId, MetricId) {
+  op <- new_operation(
+    name = "DescribeMetric",
+    http_method = "GET",
+    http_path = "/metrics/definitions/{InstanceId}/{MetricId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$describe_metric_input(InstanceId = InstanceId, MetricId = MetricId)
+  output <- .connect$describe_metric_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$describe_metric <- connect_describe_metric
 
 #' Retrieves detailed information about a specific notification, including
 #' its content, priority, recipients, and metadata
@@ -4368,7 +4866,8 @@ connect_describe_notification <- function(InstanceId, NotificationId) {
     http_path = "/notifications/{InstanceId}/{NotificationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_notification_input(InstanceId = InstanceId, NotificationId = NotificationId)
   output <- .connect$describe_notification_output()
@@ -4400,7 +4899,8 @@ connect_describe_phone_number <- function(PhoneNumberId) {
     http_path = "/phone-number/{PhoneNumberId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_phone_number_input(PhoneNumberId = PhoneNumberId)
   output <- .connect$describe_phone_number_output()
@@ -4433,7 +4933,8 @@ connect_describe_predefined_attribute <- function(InstanceId, Name) {
     http_path = "/predefined-attributes/{InstanceId}/{Name}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_predefined_attribute_input(InstanceId = InstanceId, Name = Name)
   output <- .connect$describe_predefined_attribute_output()
@@ -4465,7 +4966,8 @@ connect_describe_prompt <- function(InstanceId, PromptId) {
     http_path = "/prompts/{InstanceId}/{PromptId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_prompt_input(InstanceId = InstanceId, PromptId = PromptId)
   output <- .connect$describe_prompt_output()
@@ -4497,7 +4999,8 @@ connect_describe_queue <- function(InstanceId, QueueId) {
     http_path = "/queues/{InstanceId}/{QueueId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_queue_input(InstanceId = InstanceId, QueueId = QueueId)
   output <- .connect$describe_queue_output()
@@ -4529,7 +5032,8 @@ connect_describe_quick_connect <- function(InstanceId, QuickConnectId) {
     http_path = "/quick-connects/{InstanceId}/{QuickConnectId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_quick_connect_input(InstanceId = InstanceId, QuickConnectId = QuickConnectId)
   output <- .connect$describe_quick_connect_output()
@@ -4561,7 +5065,8 @@ connect_describe_routing_profile <- function(InstanceId, RoutingProfileId) {
     http_path = "/routing-profiles/{InstanceId}/{RoutingProfileId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_routing_profile_input(InstanceId = InstanceId, RoutingProfileId = RoutingProfileId)
   output <- .connect$describe_routing_profile_output()
@@ -4593,7 +5098,8 @@ connect_describe_rule <- function(InstanceId, RuleId) {
     http_path = "/rules/{InstanceId}/{RuleId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_rule_input(InstanceId = InstanceId, RuleId = RuleId)
   output <- .connect$describe_rule_output()
@@ -4625,7 +5131,8 @@ connect_describe_security_profile <- function(SecurityProfileId, InstanceId) {
     http_path = "/security-profiles/{InstanceId}/{SecurityProfileId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_security_profile_input(SecurityProfileId = SecurityProfileId, InstanceId = InstanceId)
   output <- .connect$describe_security_profile_output()
@@ -4659,7 +5166,8 @@ connect_describe_test_case <- function(InstanceId, TestCaseId, Status = NULL) {
     http_path = "/test-cases/{InstanceId}/{TestCaseId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_test_case_input(InstanceId = InstanceId, TestCaseId = TestCaseId, Status = Status)
   output <- .connect$describe_test_case_output()
@@ -4690,7 +5198,8 @@ connect_describe_traffic_distribution_group <- function(TrafficDistributionGroup
     http_path = "/traffic-distribution-group/{TrafficDistributionGroupId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_traffic_distribution_group_input(TrafficDistributionGroupId = TrafficDistributionGroupId)
   output <- .connect$describe_traffic_distribution_group_output()
@@ -4722,7 +5231,8 @@ connect_describe_user <- function(UserId, InstanceId) {
     http_path = "/users/{InstanceId}/{UserId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_user_input(UserId = UserId, InstanceId = InstanceId)
   output <- .connect$describe_user_output()
@@ -4754,7 +5264,8 @@ connect_describe_user_hierarchy_group <- function(HierarchyGroupId, InstanceId) 
     http_path = "/user-hierarchy-groups/{InstanceId}/{HierarchyGroupId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_user_hierarchy_group_input(HierarchyGroupId = HierarchyGroupId, InstanceId = InstanceId)
   output <- .connect$describe_user_hierarchy_group_output()
@@ -4786,7 +5297,8 @@ connect_describe_user_hierarchy_structure <- function(InstanceId) {
     http_path = "/user-hierarchy-structure/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_user_hierarchy_structure_input(InstanceId = InstanceId)
   output <- .connect$describe_user_hierarchy_structure_output()
@@ -4819,7 +5331,8 @@ connect_describe_view <- function(InstanceId, ViewId) {
     http_path = "/views/{InstanceId}/{ViewId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_view_input(InstanceId = InstanceId, ViewId = ViewId)
   output <- .connect$describe_view_output()
@@ -4851,7 +5364,8 @@ connect_describe_vocabulary <- function(InstanceId, VocabularyId) {
     http_path = "/vocabulary/{InstanceId}/{VocabularyId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_vocabulary_input(InstanceId = InstanceId, VocabularyId = VocabularyId)
   output <- .connect$describe_vocabulary_output()
@@ -4884,7 +5398,8 @@ connect_describe_workspace <- function(InstanceId, WorkspaceId) {
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$describe_workspace_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId)
   output <- .connect$describe_workspace_output()
@@ -4917,7 +5432,8 @@ connect_disassociate_analytics_data_set <- function(InstanceId, DataSetId, Targe
     http_path = "/analytics-data/instance/{InstanceId}/association",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_analytics_data_set_input(InstanceId = InstanceId, DataSetId = DataSetId, TargetAccountId = TargetAccountId)
   output <- .connect$disassociate_analytics_data_set_output()
@@ -4951,7 +5467,8 @@ connect_disassociate_approved_origin <- function(InstanceId, Origin, ClientToken
     http_path = "/instance/{InstanceId}/approved-origin",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_approved_origin_input(InstanceId = InstanceId, Origin = Origin, ClientToken = ClientToken)
   output <- .connect$disassociate_approved_origin_output()
@@ -4986,7 +5503,8 @@ connect_disassociate_bot <- function(InstanceId, LexBot = NULL, LexV2Bot = NULL,
     http_path = "/instance/{InstanceId}/bot",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_bot_input(InstanceId = InstanceId, LexBot = LexBot, LexV2Bot = LexV2Bot, ClientToken = ClientToken)
   output <- .connect$disassociate_bot_output()
@@ -5021,7 +5539,8 @@ connect_disassociate_email_address_alias <- function(EmailAddressId, InstanceId,
     http_path = "/email-addresses/{InstanceId}/{EmailAddressId}/disassociate-alias",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_email_address_alias_input(EmailAddressId = EmailAddressId, InstanceId = InstanceId, AliasConfiguration = AliasConfiguration, ClientToken = ClientToken)
   output <- .connect$disassociate_email_address_alias_output()
@@ -5058,7 +5577,8 @@ connect_disassociate_flow <- function(InstanceId, ResourceId, ResourceType) {
     http_path = "/flow-associations/{InstanceId}/{ResourceId}/{ResourceType}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_flow_input(InstanceId = InstanceId, ResourceId = ResourceId, ResourceType = ResourceType)
   output <- .connect$disassociate_flow_output()
@@ -5074,7 +5594,7 @@ connect_disassociate_flow <- function(InstanceId, ResourceId, ResourceType) {
 #' operation
 #'
 #' @description
-#' Disassociates a set of hours of operations with another hours of operation. Refer to Administrator Guide [here](https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html) for more information on inheriting overrides from parent hours of operation(s).
+#' Disassociates a set of hours of operations with another hours of operation. For more information about inheriting overrides from parent hours of operation, see [Hours of operation overrides](https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html) in the Administrator Guide.
 #'
 #' See [https://www.paws-r-sdk.com/docs/connect_disassociate_hours_of_operations/](https://www.paws-r-sdk.com/docs/connect_disassociate_hours_of_operations/) for full documentation.
 #'
@@ -5092,7 +5612,8 @@ connect_disassociate_hours_of_operations <- function(InstanceId, HoursOfOperatio
     http_path = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}/disassociate-hours",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_hours_of_operations_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId, ParentHoursOfOperationIds = ParentHoursOfOperationIds)
   output <- .connect$disassociate_hours_of_operations_output()
@@ -5127,7 +5648,8 @@ connect_disassociate_instance_storage_config <- function(InstanceId, Association
     http_path = "/instance/{InstanceId}/storage-config/{AssociationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_instance_storage_config_input(InstanceId = InstanceId, AssociationId = AssociationId, ResourceType = ResourceType, ClientToken = ClientToken)
   output <- .connect$disassociate_instance_storage_config_output()
@@ -5161,7 +5683,8 @@ connect_disassociate_lambda_function <- function(InstanceId, FunctionArn, Client
     http_path = "/instance/{InstanceId}/lambda-function",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_lambda_function_input(InstanceId = InstanceId, FunctionArn = FunctionArn, ClientToken = ClientToken)
   output <- .connect$disassociate_lambda_function_output()
@@ -5196,7 +5719,8 @@ connect_disassociate_lex_bot <- function(InstanceId, BotName, LexRegion, ClientT
     http_path = "/instance/{InstanceId}/lex-bot",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_lex_bot_input(InstanceId = InstanceId, BotName = BotName, LexRegion = LexRegion, ClientToken = ClientToken)
   output <- .connect$disassociate_lex_bot_output()
@@ -5229,7 +5753,8 @@ connect_disassociate_phone_number_contact_flow <- function(PhoneNumberId, Instan
     http_path = "/phone-number/{PhoneNumberId}/contact-flow",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_phone_number_contact_flow_input(PhoneNumberId = PhoneNumberId, InstanceId = InstanceId)
   output <- .connect$disassociate_phone_number_contact_flow_output()
@@ -5263,7 +5788,8 @@ connect_disassociate_queue_email_addresses <- function(InstanceId, QueueId, Emai
     http_path = "/queues/{InstanceId}/{QueueId}/disassociate-email-addresses",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_queue_email_addresses_input(InstanceId = InstanceId, QueueId = QueueId, EmailAddressesId = EmailAddressesId, ClientToken = ClientToken)
   output <- .connect$disassociate_queue_email_addresses_output()
@@ -5296,7 +5822,8 @@ connect_disassociate_queue_quick_connects <- function(InstanceId, QueueId, Quick
     http_path = "/queues/{InstanceId}/{QueueId}/disassociate-quick-connects",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_queue_quick_connects_input(InstanceId = InstanceId, QueueId = QueueId, QuickConnectIds = QuickConnectIds)
   output <- .connect$disassociate_queue_quick_connects_output()
@@ -5330,7 +5857,8 @@ connect_disassociate_routing_profile_queues <- function(InstanceId, RoutingProfi
     http_path = "/routing-profiles/{InstanceId}/{RoutingProfileId}/disassociate-queues",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_routing_profile_queues_input(InstanceId = InstanceId, RoutingProfileId = RoutingProfileId, QueueReferences = QueueReferences, ManualAssignmentQueueReferences = ManualAssignmentQueueReferences)
   output <- .connect$disassociate_routing_profile_queues_output()
@@ -5364,7 +5892,8 @@ connect_disassociate_security_key <- function(InstanceId, AssociationId, ClientT
     http_path = "/instance/{InstanceId}/security-key/{AssociationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_security_key_input(InstanceId = InstanceId, AssociationId = AssociationId, ClientToken = ClientToken)
   output <- .connect$disassociate_security_key_output()
@@ -5399,7 +5928,8 @@ connect_disassociate_security_profiles <- function(InstanceId, SecurityProfiles,
     http_path = "/disassociate-security-profiles/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_security_profiles_input(InstanceId = InstanceId, SecurityProfiles = SecurityProfiles, EntityType = EntityType, EntityArn = EntityArn)
   output <- .connect$disassociate_security_profiles_output()
@@ -5432,7 +5962,8 @@ connect_disassociate_traffic_distribution_group_user <- function(TrafficDistribu
     http_path = "/traffic-distribution-group/{TrafficDistributionGroupId}/user",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_traffic_distribution_group_user_input(TrafficDistributionGroupId = TrafficDistributionGroupId, UserId = UserId, InstanceId = InstanceId)
   output <- .connect$disassociate_traffic_distribution_group_user_output()
@@ -5465,7 +5996,8 @@ connect_disassociate_user_proficiencies <- function(InstanceId, UserId, UserProf
     http_path = "/users/{InstanceId}/{UserId}/disassociate-proficiencies",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_user_proficiencies_input(InstanceId = InstanceId, UserId = UserId, UserProficiencies = UserProficiencies)
   output <- .connect$disassociate_user_proficiencies_output()
@@ -5499,7 +6031,8 @@ connect_disassociate_workspace <- function(InstanceId, WorkspaceId, ResourceArns
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/disassociate",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$disassociate_workspace_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId, ResourceArns = ResourceArns)
   output <- .connect$disassociate_workspace_output()
@@ -5533,7 +6066,8 @@ connect_dismiss_user_contact <- function(UserId, InstanceId, ContactId) {
     http_path = "/users/{InstanceId}/{UserId}/contact",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$dismiss_user_contact_input(UserId = UserId, InstanceId = InstanceId, ContactId = ContactId)
   output <- .connect$dismiss_user_contact_output()
@@ -5569,7 +6103,8 @@ connect_evaluate_data_table_values <- function(InstanceId, DataTableId, Values, 
     http_path = "/data-tables/{InstanceId}/{DataTableId}/values/evaluate",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$evaluate_data_table_values_input(InstanceId = InstanceId, DataTableId = DataTableId, Values = Values, TimeZone = TimeZone, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$evaluate_data_table_values_output()
@@ -5591,7 +6126,7 @@ connect_evaluate_data_table_values <- function(InstanceId, DataTableId, Values, 
 #' @param InstanceId &#91;required&#93; The unique identifier of the Connect Customer instance.
 #' @param FileId &#91;required&#93; The unique identifier of the attached file resource.
 #' @param UrlExpiryInSeconds Optional override for the expiry of the pre-signed S3 URL in seconds. The default value is 300.
-#' @param AssociatedResourceArn &#91;required&#93; The resource to which the attached file is (being) uploaded to. The supported resources are [Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html) and [Email](https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html).
+#' @param AssociatedResourceArn &#91;required&#93; The resource to which the attached file is (being) uploaded to. The supported resources are [Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html), [Email](https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html), and [Task](https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html).
 #' 
 #' This value must be a valid ARN.
 #'
@@ -5605,7 +6140,8 @@ connect_get_attached_file <- function(InstanceId, FileId, UrlExpiryInSeconds = N
     http_path = "/attached-files/{InstanceId}/{FileId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_attached_file_input(InstanceId = InstanceId, FileId = FileId, UrlExpiryInSeconds = UrlExpiryInSeconds, AssociatedResourceArn = AssociatedResourceArn)
   output <- .connect$get_attached_file_output()
@@ -5637,7 +6173,8 @@ connect_get_contact_attributes <- function(InstanceId, InitialContactId) {
     http_path = "/contact/attributes/{InstanceId}/{InitialContactId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_contact_attributes_input(InstanceId = InstanceId, InitialContactId = InitialContactId)
   output <- .connect$get_contact_attributes_output()
@@ -5670,7 +6207,8 @@ connect_get_contact_metrics <- function(InstanceId, ContactId, Metrics) {
     http_path = "/metrics/contact",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_contact_metrics_input(InstanceId = InstanceId, ContactId = ContactId, Metrics = Metrics)
   output <- .connect$get_contact_metrics_output()
@@ -5681,6 +6219,39 @@ connect_get_contact_metrics <- function(InstanceId, ContactId, Metrics) {
   return(response)
 }
 .connect$operations$get_contact_metrics <- connect_get_contact_metrics
+
+#' Retrieves the current cross-region routing configuration for an Amazon
+#' Connect Global Resiliency instance enabled for global routing
+#'
+#' @description
+#' Retrieves the current cross-region routing configuration for an Amazon Connect Global Resiliency instance enabled for global routing. This operation returns whether cross-region routing is currently enabled or disabled (isolated) for the instance.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_get_cross_region_routing/](https://www.paws-r-sdk.com/docs/connect_get_cross_region_routing/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_get_cross_region_routing
+connect_get_cross_region_routing <- function(InstanceId) {
+  op <- new_operation(
+    name = "GetCrossRegionRouting",
+    http_method = "GET",
+    http_path = "/cross-region-routing/{InstanceId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$get_cross_region_routing_input(InstanceId = InstanceId)
+  output <- .connect$get_cross_region_routing_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$get_cross_region_routing <- connect_get_cross_region_routing
 
 #' Gets the real-time metric data from the specified Connect Customer
 #' instance
@@ -5852,7 +6423,8 @@ connect_get_current_metric_data <- function(InstanceId, Filters, Groupings = NUL
     http_path = "/metrics/current/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_current_metric_data_input(InstanceId = InstanceId, Filters = Filters, Groupings = Groupings, CurrentMetrics = CurrentMetrics, NextToken = NextToken, MaxResults = MaxResults, SortCriteria = SortCriteria)
   output <- .connect$get_current_metric_data_output()
@@ -5901,7 +6473,8 @@ connect_get_current_user_data <- function(InstanceId, Filters, NextToken = NULL,
     http_path = "/metrics/userdata/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_current_user_data_input(InstanceId = InstanceId, Filters = Filters, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$get_current_user_data_output()
@@ -5935,7 +6508,8 @@ connect_get_effective_hours_of_operations <- function(InstanceId, HoursOfOperati
     http_path = "/effective-hours-of-operations/{InstanceId}/{HoursOfOperationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_effective_hours_of_operations_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId, FromDate = FromDate, ToDate = ToDate)
   output <- .connect$get_effective_hours_of_operations_output()
@@ -5946,6 +6520,41 @@ connect_get_effective_hours_of_operations <- function(InstanceId, HoursOfOperati
   return(response)
 }
 .connect$operations$get_effective_hours_of_operations <- connect_get_effective_hours_of_operations
+
+#' Retrieves the status and results of a validation process started by
+#' StartEvaluationFormValidation
+#'
+#' @description
+#' Retrieves the status and results of a validation process started by [`start_evaluation_form_validation`][connect_start_evaluation_form_validation]. Returns the current execution status (`IN_PROGRESS`, `COMPLETED`, or `FAILED`), the validated form version, and when completed, a list of findings that identify structural issues and quality improvements for the evaluation form, and may include suggested fixes. If the validation failed, a reason is provided indicating the cause of the failure.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_get_evaluation_form_validation/](https://www.paws-r-sdk.com/docs/connect_get_evaluation_form_validation/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param EvaluationFormId &#91;required&#93; The unique identifier for the evaluation form.
+#' @param EvaluationFormVersion The version of the evaluation form to retrieve validation results for.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_get_evaluation_form_validation
+connect_get_evaluation_form_validation <- function(InstanceId, EvaluationFormId, EvaluationFormVersion = NULL) {
+  op <- new_operation(
+    name = "GetEvaluationFormValidation",
+    http_method = "GET",
+    http_path = "/evaluation-forms/{InstanceId}/{EvaluationFormId}/validation-results",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$get_evaluation_form_validation_input(InstanceId = InstanceId, EvaluationFormId = EvaluationFormId, EvaluationFormVersion = EvaluationFormVersion)
+  output <- .connect$get_evaluation_form_validation_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$get_evaluation_form_validation <- connect_get_evaluation_form_validation
 
 #' Supports SAML sign-in for Connect Customer
 #'
@@ -5966,7 +6575,8 @@ connect_get_federation_token <- function(InstanceId) {
     http_path = "/user/federate/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_federation_token_input(InstanceId = InstanceId)
   output <- .connect$get_federation_token_output()
@@ -6003,7 +6613,8 @@ connect_get_flow_association <- function(InstanceId, ResourceId, ResourceType) {
     http_path = "/flow-associations/{InstanceId}/{ResourceId}/{ResourceType}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_flow_association_input(InstanceId = InstanceId, ResourceId = ResourceId, ResourceType = ResourceType)
   output <- .connect$get_flow_association_output()
@@ -6259,7 +6870,8 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
     http_path = "/metrics/historical/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "MetricResults"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_metric_data_input(InstanceId = InstanceId, StartTime = StartTime, EndTime = EndTime, Filters = Filters, Groupings = Groupings, HistoricalMetrics = HistoricalMetrics, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$get_metric_data_output()
@@ -6308,7 +6920,7 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' The following are valid filter keys for a [`get_metric_data_v2`][connect_get_metric_data_v2] request:
 #' 
-#' `AGENT` | `AGENT_HIERARCHY_LEVEL_ONE` | `AGENT_HIERARCHY_LEVEL_TWO` | `AGENT_HIERARCHY_LEVEL_THREE` | `AGENT_HIERARCHY_LEVEL_FOUR` | `AGENT_HIERARCHY_LEVEL_FIVE` | `ANSWERING_MACHINE_DETECTION_STATUS` | `BOT_ALIAS` | `BOT_ID` | `BOT_INTENT_NAME` | `BOT_LOCALE` | `BOT_VERSION` | `CAMPAIGN` | `CAMPAIGN_DELIVERY_EVENT_TYPE` | `CAMPAIGN_EXCLUDED_EVENT_TYPE` | `CASE_STATUS` | `CASE_TEMPLATE_ARN` | `CHANNEL` | `contact/segmentAttributes/connect:Subtype` | `contact/segmentAttributes/connect:ValidationTestType` | `DISCONNECT_REASON` | `EVALUATION_FORM` | `EVALUATION_QUESTION` | `EVALUATION_SECTION` | `EVALUATION_SOURCE` | `EVALUATOR_ID` | `FEATURE` | `FLOW_ACTION_ID` | `FLOW_TYPE` | `FLOWS_MODULE_RESOURCE_ID` | `FLOWS_NEXT_RESOURCE_ID` | `FLOWS_NEXT_RESOURCE_QUEUE_ID` | `FLOWS_OUTCOME_TYPE` | `FLOWS_RESOURCE_ID` | `FORM_VERSION` | `INITIATING_FLOW` | `INITIATION_METHOD` | `INVOKING_RESOURCE_PUBLISHED_TIMESTAMP` | `INVOKING_RESOURCE_TYPE` | `PARENT_FLOWS_RESOURCE_ID` | `Q_CONNECT_ENABLED` | `QUEUE` | `RESOURCE_PUBLISHED_TIMESTAMP` | `ROUTING_PROFILE` | `ROUTING_STEP_EXPRESSION` | `TEST_CASE` | `TEST_CASE_EXECUTION_FAILURE_REASON` | `TEST_CASE_EXECUTION_RESULT` | `TEST_CASE_EXECUTION_STATE`
+#' `AGENT` | `AI_AGENT` | `AI_AGENT_ID` | `AI_AGENT_NAME` | `AI_AGENT_NAME_VERSION` | `AI_AGENT_TYPE` | `AI_PROMPT` | `AI_PROMPT_ID` | `AI_PROMPT_NAME` | `AI_PROMPT_TYPE` | `AI_TOOL_ID` | `AI_TOOL_NAME` | `AI_TOOL_TYPE` | `AI_USE_CASE` | `AGENT_HIERARCHY_LEVEL_ONE` | `AGENT_HIERARCHY_LEVEL_TWO` | `AGENT_HIERARCHY_LEVEL_THREE` | `AGENT_HIERARCHY_LEVEL_FOUR` | `AGENT_HIERARCHY_LEVEL_FIVE` | `ANSWERING_MACHINE_DETECTION_STATUS` | `BOT_ALIAS` | `BOT_ID` | `BOT_INTENT_NAME` | `BOT_LOCALE` | `BOT_VERSION` | `BROWSER_NAME` | `CAMPAIGN` | `CAMPAIGN_DELIVERY_EVENT_TYPE` | `CAMPAIGN_EXCLUDED_EVENT_TYPE` | `CASE_STATUS` | `CASE_TEMPLATE_ARN` | `CHANNEL` | `contact/segmentAttributes/connect:Subtype` | `contact/segmentAttributes/connect:ValidationTestType` | `DEVICE_MODEL` | `DEVICE_TYPE` | `DISCONNECT_REASON` | `EVALUATION_FORM` | `EVALUATION_QUESTION` | `EVALUATION_SECTION` | `EVALUATION_SOURCE` | `EVALUATOR_ID` | `FEATURE` | `FLOW_ACTION_ID` | `FLOW_TYPE` | `FLOWS_MODULE_RESOURCE_ID` | `FLOWS_NEXT_RESOURCE_ID` | `FLOWS_NEXT_RESOURCE_QUEUE_ID` | `FLOWS_OUTCOME_TYPE` | `FLOWS_RESOURCE_ID` | `FORM_VERSION` | `INITIATING_FLOW` | `INITIATION_METHOD` | `INVOKING_RESOURCE_PUBLISHED_TIMESTAMP` | `INVOKING_RESOURCE_TYPE` | `KNOWLEDGE_BASE_NAME` | `PARENT_FLOWS_RESOURCE_ID` | `Q_CONNECT_ENABLED` | `QUEUE` | `RESOURCE_PUBLISHED_TIMESTAMP` | `ROUTING_PROFILE` | `ROUTING_STEP_EXPRESSION` | `SESSION_ID` | `TEST_CASE` | `TEST_CASE_EXECUTION_FAILURE_REASON` | `TEST_CASE_EXECUTION_RESULT` | `TEST_CASE_EXECUTION_STATE` | `WEB_NOTIFICATION_TYPE`
 #' 
 #' The following filter keys correspond to Connect Customer resources and are used for authorizing requests. A [`get_metric_data_v2`][connect_get_metric_data_v2] request requires at least one of these filters:
 #' 
@@ -6324,7 +6936,7 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' -   `connect:Chat`, `connect:SMS`, `connect:Telephony`, and `connect:WebRTC` are valid filter value examples (not exhaustive) for the `contact/segmentAttributes/connect:Subtype` filter key.
 #' 
-#' -   `ROUTING_STEP_EXPRESSION` accepts a filter value up to 3,000 characters in length. This filter is case-sensitive and order-sensitive. JSON string fields must be sorted in ascending order, and JSON array order must be preserved.
+#' -   `ROUTING_STEP_EXPRESSION` accepts a filter value up to 3,000 characters in length. Filter values are case-sensitive. JSON object key order and whitespace may be arbitrary; array order and tree structure must be preserved.
 #' 
 #' -   TRUE and FALSE are the only valid filter values for the `Q_CONNECT_ENABLED` filter key.
 #' 
@@ -6341,7 +6953,9 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' If no grouping is specified, a summary of all metrics is returned.
 #' 
-#' Valid grouping keys: `AGENT` | `AGENT_HIERARCHY_LEVEL_ONE` | `AGENT_HIERARCHY_LEVEL_TWO` | `AGENT_HIERARCHY_LEVEL_THREE` | `AGENT_HIERARCHY_LEVEL_FOUR` | `AGENT_HIERARCHY_LEVEL_FIVE` | `ANSWERING_MACHINE_DETECTION_STATUS` | `BOT_ID` | `BOT_ALIAS` | `BOT_VERSION` | `BOT_LOCALE` | `BOT_INTENT_NAME` | `CAMPAIGN` | `CAMPAIGN_DELIVERY_EVENT_TYPE` | `CAMPAIGN_EXCLUDED_EVENT_TYPE` | `CAMPAIGN_EXECUTION_TIMESTAMP` | `CASE_TEMPLATE_ARN` | `CASE_STATUS` | `CHANNEL` | `contact/segmentAttributes/connect:Subtype` | `DISCONNECT_REASON` | `EVALUATION_FORM` | `EVALUATION_SECTION` | `EVALUATION_QUESTION` | `EVALUATION_SOURCE` | `EVALUATOR_ID` | `FLOWS_RESOURCE_ID` | `FLOWS_MODULE_RESOURCE_ID` | `FLOW_ACTION_ID` | `FLOW_TYPE` | `FLOWS_OUTCOME_TYPE` | `FORM_VERSION` | `INITIATION_METHOD` | `INVOKING_RESOURCE_PUBLISHED_TIMESTAMP` | `INVOKING_RESOURCE_TYPE` | `PARENT_FLOWS_RESOURCE_ID` | `Q_CONNECT_ENABLED` | `QUEUE` | `RESOURCE_PUBLISHED_TIMESTAMP` | `ROUTING_PROFILE` | `ROUTING_STEP_EXPRESSION` | `TEST_CASE` | `TEST_CASE_EXECUTION_FAILURE_REASON` | `TEST_CASE_INVOCATION_METHOD`
+#' Valid grouping keys: `AGENT` | `AI_AGENT` | `AI_AGENT_ID` | `AI_AGENT_NAME` | `AI_AGENT_NAME_VERSION` | `AI_AGENT_TYPE` | `AI_PROMPT` | `AI_PROMPT_ID` | `AI_PROMPT_NAME` | `AI_PROMPT_NAME_VERSION` | `AI_PROMPT_TYPE` | `AI_TOOL_ID` | `AI_TOOL_NAME` | `AI_TOOL_TYPE` | `AI_USE_CASE` | `AGENT_HIERARCHY_LEVEL_ONE` | `AGENT_HIERARCHY_LEVEL_TWO` | `AGENT_HIERARCHY_LEVEL_THREE` | `AGENT_HIERARCHY_LEVEL_FOUR` | `AGENT_HIERARCHY_LEVEL_FIVE` | `ANSWERING_MACHINE_DETECTION_STATUS` | `BOT_ID` | `BOT_ALIAS` | `BOT_VERSION` | `BOT_LOCALE` | `BOT_INTENT_NAME` | `BROWSER_NAME` | `CAMPAIGN` | `CAMPAIGN_DELIVERY_EVENT_TYPE` | `CAMPAIGN_EXCLUDED_EVENT_TYPE` | `CAMPAIGN_EXECUTION_TIMESTAMP` | `CASE_TEMPLATE_ARN` | `CASE_STATUS` | `CHANNEL` | `contact/segmentAttributes/connect:Subtype` | `DEVICE_MODEL` | `DEVICE_TYPE` | `DISCONNECT_REASON` | `EVALUATION_FORM` | `EVALUATION_SECTION` | `EVALUATION_QUESTION` | `EVALUATION_SOURCE` | `EVALUATOR_ID` | `FLOWS_RESOURCE_ID` | `FLOWS_MODULE_RESOURCE_ID` | `FLOW_ACTION_ID` | `FLOW_TYPE` | `FLOWS_OUTCOME_TYPE` | `FORM_VERSION` | `INITIATION_METHOD` | `INVOKING_RESOURCE_PUBLISHED_TIMESTAMP` | `INVOKING_RESOURCE_TYPE` | `KNOWLEDGE_ARTICLE_NAME` | `KNOWLEDGE_BASE_NAME` | `PARENT_FLOWS_RESOURCE_ID` | `Q_CONNECT_ENABLED` | `QUEUE` | `RESOURCE_PUBLISHED_TIMESTAMP` | `ROUTING_PROFILE` | `ROUTING_STEP_EXPRESSION` | `SESSION_ID` | `TEST_CASE` | `TEST_CASE_EXECUTION_FAILURE_REASON` | `TEST_CASE_INVOCATION_METHOD` | `WEB_NOTIFICATION_TYPE`
+#' 
+#' `AI_PROMPT_NAME_VERSION` and `KNOWLEDGE_ARTICLE_NAME` are valid groupings but not valid filters.
 #' 
 #' API, SCHEDULE, and EVENT are the only valid filterValues for TEST_CASE_INVOCATION_METHOD.
 #' 
@@ -6612,7 +7226,7 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Seconds
 #' 
-#' Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression
+#' Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, AI Use Case, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression
 #' 
 #' UI name: [Average handle time](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-handle-time)
 #' 
@@ -6622,7 +7236,7 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [Active AI Agents](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#active-ai-agents)
 #' 
@@ -6630,7 +7244,7 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Percent
 #' 
-#' Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [AI Handoff Rate](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoff-rate)
 #' 
@@ -6638,45 +7252,55 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
-#' UI name: [AI Handoffs](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoffs)
+#' UI name: [AI Handoff Count](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoffs)
 #' 
 #' **AI_AGENT_INVOCATION_SUCCESS**
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [AI Agent Invocation Success](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success)
-#' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
 #' 
 #' **AI_AGENT_INVOCATION_SUCCESS_RATE**
 #' 
 #' Unit: Percent
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [AI Agent Invocation Success Rate](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success-rate)
-#' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
 #' 
 #' **AI_AGENT_INVOCATIONS**
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Agent Name Version, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
-#' UI name: [AI Agent Invocations](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocations)
+#' UI name: [AI Agent Invocation Count](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocations)
 #' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
+#' **AI_AGENT_RESPONSE_HELPFUL**
+#' 
+#' Unit: Count
+#' 
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [AI Agent Response Helpful](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-response-helpful)
+#' 
+#' **AI_AGENT_RESPONSE_NOT_HELPFUL**
+#' 
+#' Unit: Count
+#' 
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [AI Agent Response Not Helpful](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-response-not-helpful)
 #' 
 #' **AI_RESPONSE_COMPLETION_RATE**
 #' 
 #' Unit: Percent
 #' 
-#' Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [AI Response Completion Rate](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-response-completion-rate)
 #' 
@@ -6684,7 +7308,7 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [AI Involved Contacts](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-involved-contacts)
 #' 
@@ -6692,77 +7316,63 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [AI Prompt Invocation Success](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success)
-#' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
 #' 
 #' **AI_PROMPT_INVOCATION_SUCCESS_RATE**
 #' 
 #' Unit: Percent
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [AI Prompt Invocation Success Rate](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success-rate)
-#' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
 #' 
 #' **AI_PROMPT_INVOCATIONS**
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [AI Prompt Invocations](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocations)
-#' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
 #' 
 #' **AI_TOOL_INVOCATION_SUCCESS**
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [AI Tool Invocation Success](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success)
-#' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
 #' 
 #' **AI_TOOL_INVOCATION_SUCCESS_RATE**
 #' 
 #' Unit: Percent
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [AI Tool Invocation Success Rate](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success-rate)
-#' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
 #' 
 #' **AI_TOOL_INVOCATIONS**
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [AI Tool Invocations](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocations)
-#' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
 #' 
 #' **AVG_AI_AGENT_CONVERSATION_TURNS**
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [Average AI Agent Conversation Turns](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-agent-conversation-turns)
-#' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
 #' 
 #' **AVG_AI_CONVERSATION_TURNS**
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [Average AI Conversation Turns](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-conversation-turns)
 #' 
@@ -6770,27 +7380,71 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Milliseconds
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [Average AI Prompt Invocation Latency](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-prompt-invocation-latency)
-#' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
 #' 
 #' **AVG_AI_TOOL_INVOCATION_LATENCY**
 #' 
 #' Unit: Milliseconds
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [Average AI Tool Invocation Latency](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-tool-invocation-latency)
 #' 
-#' AI Agent Name Version is not a valid filter but a valid grouping.
+#' **AI_TOOL_PARAMETER_ACCURACY**
+#' 
+#' Unit: Double
+#' 
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [AI Tool Parameter Accuracy](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-parameter-accuracy)
+#' 
+#' **AI_TOOL_SELECTION_ACCURACY**
+#' 
+#' Unit: Double
+#' 
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [AI Tool Selection Accuracy](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-selection-accuracy)
+#' 
+#' **AI_TOOL_UTILIZATION_ACCURACY**
+#' 
+#' Unit: Double
+#' 
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [AI Tool Utilization Accuracy](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-utilization-accuracy)
+#' 
+#' **COMPLETENESS_SCORE**
+#' 
+#' Unit: Double
+#' 
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [Completeness Score](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#completeness-score)
+#' 
+#' **FAITHFULNESS_SCORE**
+#' 
+#' Unit: Double
+#' 
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [Faithfulness Score](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#faithfulness-score)
+#' 
+#' **GOAL_SUCCESS_RATE**
+#' 
+#' Unit: Double
+#' 
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [Goal Success Rate](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#goal-success-rate)
 #' 
 #' **KNOWLEDGE_CONTENT_REFERENCES**
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case, Channel, Knowledge Base Name, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Knowledge Base Name, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [Knowledge Content References](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#knowledge-content-references)
 #' 
@@ -6798,7 +7452,7 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Percent
 #' 
-#' Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [Proactive Intent Engagement Rate](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engagement-rate)
 #' 
@@ -6806,7 +7460,7 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Percent
 #' 
-#' Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [Proactive Intent Response Rate](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-response-rate)
 #' 
@@ -6814,7 +7468,7 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [Proactive Intents Answered](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-answered)
 #' 
@@ -6822,7 +7476,7 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [Proactive Intents Detected](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-detected)
 #' 
@@ -6830,7 +7484,7 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Unit: Count
 #' 
-#' Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
 #' 
 #' UI name: [Proactive Intents Engaged](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engaged)
 #' 
@@ -7102,13 +7756,13 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' **CAMPAIGN_INTERACTIONS**
 #' 
-#' This metric is available only for outbound campaigns using the email delivery mode.
+#' This metric is available only for outbound campaigns using the email, WhatsApp, and web notification delivery modes.
 #' 
 #' Unit: Count
 #' 
 #' Valid metric filter key: CAMPAIGN_INTERACTION_EVENT_TYPE
 #' 
-#' Valid groupings and filters: Campaign
+#' Valid groupings and filters: Browser Name, Campaign, Channel, contact/segmentAttributes/connect:Subtype, Device Model, Device Type, Web Notification Type
 #' 
 #' UI name: [Campaign interactions](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-interactions)
 #' 
@@ -7324,11 +7978,11 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Valid metric filter key: `ANSWERING_MACHINE_DETECTION_STATUS`, `CAMPAIGN_DELIVERY_EVENT_TYPE`, `DISCONNECT_REASON`
 #' 
-#' Valid groupings and filters: Agent, Answering Machine Detection Status, Campaign, Campaign Delivery EventType, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Queue, Routing Profile
+#' Valid groupings and filters: Agent, Answering Machine Detection Status, Browser Name, Campaign, Campaign Delivery EventType, Channel, contact/segmentAttributes/connect:Subtype, Device Model, Device Type, Disconnect Reason, Queue, Routing Profile, Web Notification Type
 #' 
 #' UI name: [Delivery attempts](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#delivery-attempts)
 #' 
-#' Campaign Delivery EventType filter and grouping are only available for SMS and Email campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection Status and Disconnect Reason are only available for agent assisted voice and automated voice delivery modes.
+#' Campaign Delivery EventType filter and grouping are only available for SMS, Email, WhatsApp, and web notification campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection Status and Disconnect Reason are only available for agent assisted voice and automated voice delivery modes.
 #' 
 #' **DELIVERY_ATTEMPT_DISPOSITION_RATE**
 #' 
@@ -7338,11 +7992,11 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' 
 #' Valid metric filter key: `ANSWERING_MACHINE_DETECTION_STATUS`, `CAMPAIGN_DELIVERY_EVENT_TYPE`, `DISCONNECT_REASON`
 #' 
-#' Valid groupings and filters: Agent, Answering Machine Detection Status, Campaign, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Queue, Routing Profile
+#' Valid groupings and filters: Agent, Answering Machine Detection Status, Browser Name, Campaign, Channel, contact/segmentAttributes/connect:Subtype, Device Model, Device Type, Disconnect Reason, Queue, Routing Profile, Web Notification Type
 #' 
 #' UI name: [Delivery attempt disposition rate](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#delivery-attempt-disposition-rate)
 #' 
-#' Campaign Delivery Event Type filter and grouping are only available for SMS and Email campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection Status and Disconnect Reason are only available for agent assisted voice and automated voice delivery modes.
+#' Campaign Delivery Event Type filter and grouping are only available for SMS, Email, WhatsApp, and web notification campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection Status and Disconnect Reason are only available for agent assisted voice and automated voice delivery modes.
 #' 
 #' **EVALUATIONS_PERFORMED**
 #' 
@@ -7525,6 +8179,50 @@ connect_get_metric_data <- function(InstanceId, StartTime, EndTime, Filters, Gro
 #' Valid groupings and filters: Campaign, Channel, contact/segmentAttributes/connect:Subtype, Campaign Execution Timestamp
 #' 
 #' UI name: [Recipients interacted](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#recipients-interacted)
+#' 
+#' **AI_AGENT_COLLABORATORS**
+#' 
+#' Unit: Count
+#' 
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [AI Agent Collaborators](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-collaborators)
+#' 
+#' **AI_AGENT_COLLABORATION_INVOCATIONS**
+#' 
+#' Unit: Count
+#' 
+#' Valid groupings and filters: AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [AI Agent Collaboration Invocations](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-collaboration-invocations)
+#' 
+#' **AI_AGENT_SELECTION_ACCURACY**
+#' 
+#' Unit: Double
+#' 
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [AI Agent Selection Accuracy](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-selection-accuracy)
+#' 
+#' This metric is available as part of Connect Customer AI.
+#' 
+#' **AVG_AI_AGENT_INVOCATION_LATENCY**
+#' 
+#' Unit: Milliseconds
+#' 
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [Average AI Agent Invocation Latency](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-agent-invocation-latency)
+#' 
+#' **CONTEXT_FIDELITY_SCORE**
+#' 
+#' Unit: Double
+#' 
+#' Valid groupings and filters: AI Agent, AI Agent ID, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile, Session ID
+#' 
+#' UI name: [Context Fidelity Score](https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#context-fidelity-score)
+#' 
+#' This metric is available as part of Connect Customer AI.
 #' 
 #' **RECIPIENTS_TARGETED**
 #' 
@@ -7738,7 +8436,8 @@ connect_get_metric_data_v2 <- function(ResourceArn, StartTime, EndTime, Interval
     http_path = "/metrics/data",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_metric_data_v2_input(ResourceArn = ResourceArn, StartTime = StartTime, EndTime = EndTime, Interval = Interval, Filters = Filters, Groupings = Groupings, Metrics = Metrics, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$get_metric_data_v2_output()
@@ -7770,7 +8469,8 @@ connect_get_prompt_file <- function(InstanceId, PromptId) {
     http_path = "/prompts/{InstanceId}/{PromptId}/file",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_prompt_file_input(InstanceId = InstanceId, PromptId = PromptId)
   output <- .connect$get_prompt_file_output()
@@ -7804,7 +8504,8 @@ connect_get_task_template <- function(InstanceId, TaskTemplateId, SnapshotVersio
     http_path = "/instance/{InstanceId}/task/template/{TaskTemplateId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_task_template_input(InstanceId = InstanceId, TaskTemplateId = TaskTemplateId, SnapshotVersion = SnapshotVersion)
   output <- .connect$get_task_template_output()
@@ -7838,7 +8539,8 @@ connect_get_test_case_execution_summary <- function(InstanceId, TestCaseId, Test
     http_path = "/test-cases/{InstanceId}/{TestCaseId}/{TestCaseExecutionId}/summary",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_test_case_execution_summary_input(InstanceId = InstanceId, TestCaseId = TestCaseId, TestCaseExecutionId = TestCaseExecutionId)
   output <- .connect$get_test_case_execution_summary_output()
@@ -7870,7 +8572,8 @@ connect_get_traffic_distribution <- function(Id) {
     http_path = "/traffic-distribution/{Id}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$get_traffic_distribution_input(Id = Id)
   output <- .connect$get_traffic_distribution_output()
@@ -7906,7 +8609,8 @@ connect_import_phone_number <- function(InstanceId, SourcePhoneNumberArn, PhoneN
     http_path = "/phone-number/import",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$import_phone_number_input(InstanceId = InstanceId, SourcePhoneNumberArn = SourcePhoneNumberArn, PhoneNumberDescription = PhoneNumberDescription, Tags = Tags, ClientToken = ClientToken)
   output <- .connect$import_phone_number_output()
@@ -7940,7 +8644,8 @@ connect_import_workspace_media <- function(InstanceId, WorkspaceId, MediaType, M
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/media",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$import_workspace_media_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId, MediaType = MediaType, MediaSource = MediaSource)
   output <- .connect$import_workspace_media_output()
@@ -7974,7 +8679,8 @@ connect_list_agent_statuses <- function(InstanceId, NextToken = NULL, MaxResults
     http_path = "/agent-status/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "AgentStatusSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_agent_statuses_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, AgentStatusTypes = AgentStatusTypes)
   output <- .connect$list_agent_statuses_output()
@@ -8009,7 +8715,8 @@ connect_list_analytics_data_associations <- function(InstanceId, DataSetId = NUL
     http_path = "/analytics-data/instance/{InstanceId}/association",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_analytics_data_associations_input(InstanceId = InstanceId, DataSetId = DataSetId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_analytics_data_associations_output()
@@ -8043,7 +8750,8 @@ connect_list_analytics_data_lake_data_sets <- function(InstanceId, NextToken = N
     http_path = "/analytics-data/instance/{InstanceId}/datasets",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_analytics_data_lake_data_sets_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_analytics_data_lake_data_sets_output()
@@ -8077,7 +8785,8 @@ connect_list_approved_origins <- function(InstanceId, NextToken = NULL, MaxResul
     http_path = "/instance/{InstanceId}/approved-origins",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "Origins"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_approved_origins_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_approved_origins_output()
@@ -8112,7 +8821,8 @@ connect_list_associated_contacts <- function(InstanceId, ContactId, MaxResults =
     http_path = "/contact/associated/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_associated_contacts_input(InstanceId = InstanceId, ContactId = ContactId, MaxResults = MaxResults, NextToken = NextToken)
   output <- .connect$list_associated_contacts_output()
@@ -8146,7 +8856,8 @@ connect_list_attached_files_configurations <- function(InstanceId, MaxResults = 
     http_path = "/attached-files-configurations/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "AttachedFilesConfigurations"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_attached_files_configurations_input(InstanceId = InstanceId, MaxResults = MaxResults, NextToken = NextToken)
   output <- .connect$list_attached_files_configurations_output()
@@ -8180,7 +8891,8 @@ connect_list_authentication_profiles <- function(InstanceId, MaxResults = NULL, 
     http_path = "/authentication-profiles-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "AuthenticationProfileSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_authentication_profiles_input(InstanceId = InstanceId, MaxResults = MaxResults, NextToken = NextToken)
   output <- .connect$list_authentication_profiles_output()
@@ -8215,7 +8927,8 @@ connect_list_bots <- function(InstanceId, NextToken = NULL, MaxResults = NULL, L
     http_path = "/instance/{InstanceId}/bots",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "LexBots"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_bots_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, LexVersion = LexVersion)
   output <- .connect$list_bots_output()
@@ -8250,7 +8963,8 @@ connect_list_child_hours_of_operations <- function(InstanceId, HoursOfOperationI
     http_path = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}/hours",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "LastModifiedRegion", "LastModifiedTime"), output_token = "NextToken", result_key = "ChildHoursOfOperationsSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_child_hours_of_operations_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_child_hours_of_operations_output()
@@ -8285,7 +8999,8 @@ connect_list_contact_evaluations <- function(InstanceId, ContactId, NextToken = 
     http_path = "/contact-evaluations/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", output_token = "NextToken", result_key = "EvaluationSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_contact_evaluations_input(InstanceId = InstanceId, ContactId = ContactId, NextToken = NextToken)
   output <- .connect$list_contact_evaluations_output()
@@ -8320,7 +9035,8 @@ connect_list_contact_flow_module_aliases <- function(InstanceId, ContactFlowModu
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/aliases",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "ContactFlowModuleAliasSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_contact_flow_module_aliases_input(InstanceId = InstanceId, ContactFlowModuleId = ContactFlowModuleId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_contact_flow_module_aliases_output()
@@ -8355,7 +9071,8 @@ connect_list_contact_flow_module_versions <- function(InstanceId, ContactFlowMod
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/versions",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "ContactFlowModuleVersionSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_contact_flow_module_versions_input(InstanceId = InstanceId, ContactFlowModuleId = ContactFlowModuleId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_contact_flow_module_versions_output()
@@ -8390,7 +9107,8 @@ connect_list_contact_flow_modules <- function(InstanceId, NextToken = NULL, MaxR
     http_path = "/contact-flow-modules-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "ContactFlowModulesSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_contact_flow_modules_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, ContactFlowModuleState = ContactFlowModuleState)
   output <- .connect$list_contact_flow_modules_output()
@@ -8425,7 +9143,8 @@ connect_list_contact_flow_versions <- function(InstanceId, ContactFlowId, NextTo
     http_path = "/contact-flows/{InstanceId}/{ContactFlowId}/versions",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "ContactFlowVersionSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_contact_flow_versions_input(InstanceId = InstanceId, ContactFlowId = ContactFlowId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_contact_flow_versions_output()
@@ -8460,7 +9179,8 @@ connect_list_contact_flows <- function(InstanceId, ContactFlowTypes = NULL, Next
     http_path = "/contact-flows-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "ContactFlowSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_contact_flows_input(InstanceId = InstanceId, ContactFlowTypes = ContactFlowTypes, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_contact_flows_output()
@@ -8497,7 +9217,8 @@ connect_list_contact_references <- function(InstanceId, ContactId, ReferenceType
     http_path = "/contact/references/{InstanceId}/{ContactId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", output_token = "NextToken", result_key = "ReferenceSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_contact_references_input(InstanceId = InstanceId, ContactId = ContactId, ReferenceTypes = ReferenceTypes, NextToken = NextToken)
   output <- .connect$list_contact_references_output()
@@ -8532,7 +9253,8 @@ connect_list_data_table_attributes <- function(InstanceId, DataTableId, Attribut
     http_path = "/data-tables/{InstanceId}/{DataTableId}/attributes",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "Attributes"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_data_table_attributes_input(InstanceId = InstanceId, DataTableId = DataTableId, AttributeIds = AttributeIds, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_data_table_attributes_output()
@@ -8568,7 +9290,8 @@ connect_list_data_table_primary_values <- function(InstanceId, DataTableId, Reco
     http_path = "/data-tables/{InstanceId}/{DataTableId}/values/list-primary",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "PrimaryValuesList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_data_table_primary_values_input(InstanceId = InstanceId, DataTableId = DataTableId, RecordIds = RecordIds, PrimaryAttributeValues = PrimaryAttributeValues, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_data_table_primary_values_output()
@@ -8605,7 +9328,8 @@ connect_list_data_table_values <- function(InstanceId, DataTableId, RecordIds = 
     http_path = "/data-tables/{InstanceId}/{DataTableId}/values/list",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "Values"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_data_table_values_input(InstanceId = InstanceId, DataTableId = DataTableId, RecordIds = RecordIds, PrimaryAttributeValues = PrimaryAttributeValues, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_data_table_values_output()
@@ -8638,7 +9362,8 @@ connect_list_data_tables <- function(InstanceId, NextToken = NULL, MaxResults = 
     http_path = "/data-tables/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "DataTableSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_data_tables_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_data_tables_output()
@@ -8673,7 +9398,8 @@ connect_list_default_vocabularies <- function(InstanceId, LanguageCode = NULL, M
     http_path = "/default-vocabulary-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "DefaultVocabularyList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_default_vocabularies_input(InstanceId = InstanceId, LanguageCode = LanguageCode, MaxResults = MaxResults, NextToken = NextToken)
   output <- .connect$list_default_vocabularies_output()
@@ -8709,7 +9435,8 @@ connect_list_entity_security_profiles <- function(InstanceId, EntityType, Entity
     http_path = "/entity-security-profiles-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "SecurityProfiles"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_entity_security_profiles_input(InstanceId = InstanceId, EntityType = EntityType, EntityArn = EntityArn, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_entity_security_profiles_output()
@@ -8720,6 +9447,42 @@ connect_list_entity_security_profiles <- function(InstanceId, EntityType, Entity
   return(response)
 }
 .connect$operations$list_entity_security_profiles <- connect_list_entity_security_profiles
+
+#' Lists the available AI versions for evaluation forms in the specified
+#' Connect Customer instance
+#'
+#' @description
+#' Lists the available AI versions for evaluation forms in the specified Connect Customer instance.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_list_evaluation_form_ai_versions/](https://www.paws-r-sdk.com/docs/connect_list_evaluation_form_ai_versions/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param ContactInteractionType &#91;required&#93; The contact interaction type for the evaluation form.
+#' @param MaxResults The maximum number of results to return per page.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_list_evaluation_form_ai_versions
+connect_list_evaluation_form_ai_versions <- function(InstanceId, ContactInteractionType, MaxResults = NULL, NextToken = NULL) {
+  op <- new_operation(
+    name = "ListEvaluationFormAIVersions",
+    http_method = "GET",
+    http_path = "/instances/{InstanceId}/evaluation-form-ai-versions",
+    host_prefix = "",
+    paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "AIVersionSummaries"),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$list_evaluation_form_ai_versions_input(InstanceId = InstanceId, ContactInteractionType = ContactInteractionType, MaxResults = MaxResults, NextToken = NextToken)
+  output <- .connect$list_evaluation_form_ai_versions_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$list_evaluation_form_ai_versions <- connect_list_evaluation_form_ai_versions
 
 #' Lists versions of an evaluation form in the specified Connect Customer
 #' instance
@@ -8744,7 +9507,8 @@ connect_list_evaluation_form_versions <- function(InstanceId, EvaluationFormId, 
     http_path = "/evaluation-forms/{InstanceId}/{EvaluationFormId}/versions",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "EvaluationFormVersionSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_evaluation_form_versions_input(InstanceId = InstanceId, EvaluationFormId = EvaluationFormId, MaxResults = MaxResults, NextToken = NextToken)
   output <- .connect$list_evaluation_form_versions_output()
@@ -8777,7 +9541,8 @@ connect_list_evaluation_forms <- function(InstanceId, MaxResults = NULL, NextTok
     http_path = "/evaluation-forms/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "EvaluationFormSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_evaluation_forms_input(InstanceId = InstanceId, MaxResults = MaxResults, NextToken = NextToken)
   output <- .connect$list_evaluation_forms_output()
@@ -8788,6 +9553,40 @@ connect_list_evaluation_forms <- function(InstanceId, MaxResults = NULL, NextTok
   return(response)
 }
 .connect$operations$list_evaluation_forms <- connect_list_evaluation_forms
+
+#' Lists extraction definitions in the specified Connect Customer instance
+#'
+#' @description
+#' Lists extraction definitions in the specified Connect Customer instance.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_list_extraction_definitions/](https://www.paws-r-sdk.com/docs/connect_list_extraction_definitions/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param MaxResults The maximum number of results to return per page. The default MaxResult size is 100.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_list_extraction_definitions
+connect_list_extraction_definitions <- function(InstanceId, MaxResults = NULL, NextToken = NULL) {
+  op <- new_operation(
+    name = "ListExtractionDefinitions",
+    http_method = "GET",
+    http_path = "/extraction-definitions/{InstanceId}",
+    host_prefix = "",
+    paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "ExtractionDefinitionSummaryList"),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$list_extraction_definitions_input(InstanceId = InstanceId, MaxResults = MaxResults, NextToken = NextToken)
+  output <- .connect$list_extraction_definitions_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$list_extraction_definitions <- connect_list_extraction_definitions
 
 #' List the flow association based on the filters
 #'
@@ -8811,7 +9610,8 @@ connect_list_flow_associations <- function(InstanceId, ResourceType = NULL, Next
     http_path = "/flow-associations-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "FlowAssociationSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_flow_associations_input(InstanceId = InstanceId, ResourceType = ResourceType, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_flow_associations_output()
@@ -8845,7 +9645,8 @@ connect_list_hours_of_operation_overrides <- function(InstanceId, HoursOfOperati
     http_path = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}/overrides",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "LastModifiedRegion", "LastModifiedTime"), output_token = "NextToken", result_key = "HoursOfOperationOverrideList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_hours_of_operation_overrides_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_hours_of_operation_overrides_output()
@@ -8879,7 +9680,8 @@ connect_list_hours_of_operations <- function(InstanceId, NextToken = NULL, MaxRe
     http_path = "/hours-of-operations-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "HoursOfOperationSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_hours_of_operations_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_hours_of_operations_output()
@@ -8913,7 +9715,8 @@ connect_list_instance_attributes <- function(InstanceId, NextToken = NULL, MaxRe
     http_path = "/instance/{InstanceId}/attributes",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "Attributes"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_instance_attributes_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_instance_attributes_output()
@@ -8948,7 +9751,8 @@ connect_list_instance_storage_configs <- function(InstanceId, ResourceType, Next
     http_path = "/instance/{InstanceId}/storage-configs",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "StorageConfigs"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_instance_storage_configs_input(InstanceId = InstanceId, ResourceType = ResourceType, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_instance_storage_configs_output()
@@ -8981,7 +9785,8 @@ connect_list_instances <- function(NextToken = NULL, MaxResults = NULL) {
     http_path = "/instance",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "InstanceSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_instances_input(NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_instances_output()
@@ -9017,7 +9822,8 @@ connect_list_integration_associations <- function(InstanceId, IntegrationType = 
     http_path = "/instance/{InstanceId}/integration-associations",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "IntegrationAssociationSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_integration_associations_input(InstanceId = InstanceId, IntegrationType = IntegrationType, NextToken = NextToken, MaxResults = MaxResults, IntegrationArn = IntegrationArn)
   output <- .connect$list_integration_associations_output()
@@ -9051,7 +9857,8 @@ connect_list_lambda_functions <- function(InstanceId, NextToken = NULL, MaxResul
     http_path = "/instance/{InstanceId}/lambda-functions",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "LambdaFunctions"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_lambda_functions_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_lambda_functions_output()
@@ -9085,7 +9892,8 @@ connect_list_lex_bots <- function(InstanceId, NextToken = NULL, MaxResults = NUL
     http_path = "/instance/{InstanceId}/lex-bots",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "LexBots"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_lex_bots_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_lex_bots_output()
@@ -9096,6 +9904,42 @@ connect_list_lex_bots <- function(InstanceId, NextToken = NULL, MaxResults = NUL
   return(response)
 }
 .connect$operations$list_lex_bots <- connect_list_lex_bots
+
+#' Retrieves a paginated list of metric summaries for the specified Connect
+#' Customer instance
+#'
+#' @description
+#' Retrieves a paginated list of metric summaries for the specified Connect Customer instance. Use pagination to ensure that the operation returns quickly and successfully.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_list_metrics/](https://www.paws-r-sdk.com/docs/connect_list_metrics/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param Type The type of metrics to list. Valid values: `AWS_MANAGED` | `CUSTOMER_MANAGED`.
+#' @param MaxResults The maximum number of results to return per page.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_list_metrics
+connect_list_metrics <- function(InstanceId, Type = NULL, MaxResults = NULL, NextToken = NULL) {
+  op <- new_operation(
+    name = "ListMetrics",
+    http_method = "GET",
+    http_path = "/metrics/definitions/{InstanceId}",
+    host_prefix = "",
+    paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "MetricSummaryList"),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$list_metrics_input(InstanceId = InstanceId, Type = Type, MaxResults = MaxResults, NextToken = NextToken)
+  output <- .connect$list_metrics_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$list_metrics <- connect_list_metrics
 
 #' Retrieves a paginated list of all notifications in the Amazon Connect
 #' instance
@@ -9119,7 +9963,8 @@ connect_list_notifications <- function(InstanceId, NextToken = NULL, MaxResults 
     http_path = "/notifications/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_notifications_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_notifications_output()
@@ -9157,7 +10002,8 @@ connect_list_phone_numbers <- function(InstanceId, PhoneNumberTypes = NULL, Phon
     http_path = "/phone-numbers-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "PhoneNumberSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_phone_numbers_input(InstanceId = InstanceId, PhoneNumberTypes = PhoneNumberTypes, PhoneNumberCountryCodes = PhoneNumberCountryCodes, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_phone_numbers_output()
@@ -9195,7 +10041,8 @@ connect_list_phone_numbers_v2 <- function(TargetArn = NULL, InstanceId = NULL, M
     http_path = "/phone-number/list",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "ListPhoneNumbersSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_phone_numbers_v2_input(TargetArn = TargetArn, InstanceId = InstanceId, MaxResults = MaxResults, NextToken = NextToken, PhoneNumberCountryCodes = PhoneNumberCountryCodes, PhoneNumberTypes = PhoneNumberTypes, PhoneNumberPrefix = PhoneNumberPrefix)
   output <- .connect$list_phone_numbers_v2_output()
@@ -9228,7 +10075,8 @@ connect_list_predefined_attributes <- function(InstanceId, NextToken = NULL, Max
     http_path = "/predefined-attributes/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "PredefinedAttributeSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_predefined_attributes_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_predefined_attributes_output()
@@ -9262,7 +10110,8 @@ connect_list_prompts <- function(InstanceId, NextToken = NULL, MaxResults = NULL
     http_path = "/prompts-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "PromptSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_prompts_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_prompts_output()
@@ -9298,7 +10147,8 @@ connect_list_queue_email_addresses <- function(InstanceId, QueueId, NextToken = 
     http_path = "/queues/{InstanceId}/{QueueId}/email-addresses",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_queue_email_addresses_input(InstanceId = InstanceId, QueueId = QueueId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_queue_email_addresses_output()
@@ -9332,7 +10182,8 @@ connect_list_queue_quick_connects <- function(InstanceId, QueueId, NextToken = N
     http_path = "/queues/{InstanceId}/{QueueId}/quick-connects",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "QuickConnectSummaryList", non_aggregate_keys = list( "LastModifiedRegion", "LastModifiedTime")),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_queue_quick_connects_input(InstanceId = InstanceId, QueueId = QueueId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_queue_quick_connects_output()
@@ -9367,7 +10218,8 @@ connect_list_queues <- function(InstanceId, QueueTypes = NULL, NextToken = NULL,
     http_path = "/queues-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "QueueSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_queues_input(InstanceId = InstanceId, QueueTypes = QueueTypes, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_queues_output()
@@ -9402,7 +10254,8 @@ connect_list_quick_connects <- function(InstanceId, NextToken = NULL, MaxResults
     http_path = "/quick-connects/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "QuickConnectSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_quick_connects_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, QuickConnectTypes = QuickConnectTypes)
   output <- .connect$list_quick_connects_output()
@@ -9439,7 +10292,8 @@ connect_list_realtime_contact_analysis_segments_v2 <- function(InstanceId, Conta
     http_path = "/contact/list-real-time-analysis-segments-v2/{InstanceId}/{ContactId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_realtime_contact_analysis_segments_v2_input(InstanceId = InstanceId, ContactId = ContactId, MaxResults = MaxResults, NextToken = NextToken, OutputType = OutputType, SegmentTypes = SegmentTypes)
   output <- .connect$list_realtime_contact_analysis_segments_v2_output()
@@ -9473,7 +10327,8 @@ connect_list_routing_profile_manual_assignment_queues <- function(InstanceId, Ro
     http_path = "/routing-profiles/{InstanceId}/{RoutingProfileId}/manual-assignment-queues",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "LastModifiedRegion", "LastModifiedTime"), output_token = "NextToken", result_key = "RoutingProfileManualAssignmentQueueConfigSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_routing_profile_manual_assignment_queues_input(InstanceId = InstanceId, RoutingProfileId = RoutingProfileId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_routing_profile_manual_assignment_queues_output()
@@ -9507,7 +10362,8 @@ connect_list_routing_profile_queues <- function(InstanceId, RoutingProfileId, Ne
     http_path = "/routing-profiles/{InstanceId}/{RoutingProfileId}/queues",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "RoutingProfileQueueConfigSummaryList", non_aggregate_keys = list( "LastModifiedRegion", "LastModifiedTime")),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_routing_profile_queues_input(InstanceId = InstanceId, RoutingProfileId = RoutingProfileId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_routing_profile_queues_output()
@@ -9541,7 +10397,8 @@ connect_list_routing_profiles <- function(InstanceId, NextToken = NULL, MaxResul
     http_path = "/routing-profiles-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "RoutingProfileSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_routing_profiles_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_routing_profiles_output()
@@ -9576,7 +10433,8 @@ connect_list_rules <- function(InstanceId, PublishStatus = NULL, EventSourceName
     http_path = "/rules/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "RuleSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_rules_input(InstanceId = InstanceId, PublishStatus = PublishStatus, EventSourceName = EventSourceName, MaxResults = MaxResults, NextToken = NextToken)
   output <- .connect$list_rules_output()
@@ -9610,7 +10468,8 @@ connect_list_security_keys <- function(InstanceId, NextToken = NULL, MaxResults 
     http_path = "/instance/{InstanceId}/security-keys",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "SecurityKeys"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_security_keys_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_security_keys_output()
@@ -9621,6 +10480,41 @@ connect_list_security_keys <- function(InstanceId, NextToken = NULL, MaxResults 
   return(response)
 }
 .connect$operations$list_security_keys <- connect_list_security_keys
+
+#' Returns a list of the allowed AI agents in a specific security profile
+#'
+#' @description
+#' Returns a list of the allowed AI agents in a specific security profile.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_list_security_profile_ai_agents/](https://www.paws-r-sdk.com/docs/connect_list_security_profile_ai_agents/) for full documentation.
+#'
+#' @param SecurityProfileId &#91;required&#93; The identifier for the security profle.
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return per page.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_list_security_profile_ai_agents
+connect_list_security_profile_ai_agents <- function(SecurityProfileId, InstanceId, NextToken = NULL, MaxResults = NULL) {
+  op <- new_operation(
+    name = "ListSecurityProfileAIAgents",
+    http_method = "GET",
+    http_path = "/security-profiles-ai-agents/{InstanceId}/{SecurityProfileId}",
+    host_prefix = "",
+    paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "LastModifiedRegion", "LastModifiedTime"), output_token = "NextToken", result_key = "AllowedAIAgents"),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$list_security_profile_ai_agents_input(SecurityProfileId = SecurityProfileId, InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
+  output <- .connect$list_security_profile_ai_agents_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$list_security_profile_ai_agents <- connect_list_security_profile_ai_agents
 
 #' Returns a list of third-party applications or MCP Servers in a specific
 #' security profile
@@ -9645,7 +10539,8 @@ connect_list_security_profile_applications <- function(SecurityProfileId, Instan
     http_path = "/security-profiles-applications/{InstanceId}/{SecurityProfileId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "Applications", non_aggregate_keys = list("LastModifiedRegion", "LastModifiedTime")),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_security_profile_applications_input(SecurityProfileId = SecurityProfileId, InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_security_profile_applications_output()
@@ -9679,7 +10574,8 @@ connect_list_security_profile_flow_modules <- function(SecurityProfileId, Instan
     http_path = "/security-profiles-flow-modules/{InstanceId}/{SecurityProfileId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "LastModifiedRegion", "LastModifiedTime"), output_token = "NextToken", result_key = "AllowedFlowModules"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_security_profile_flow_modules_input(SecurityProfileId = SecurityProfileId, InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_security_profile_flow_modules_output()
@@ -9713,7 +10609,8 @@ connect_list_security_profile_permissions <- function(SecurityProfileId, Instanc
     http_path = "/security-profiles-permissions/{InstanceId}/{SecurityProfileId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "Permissions", non_aggregate_keys = list("LastModifiedRegion", "LastModifiedTime")),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_security_profile_permissions_input(SecurityProfileId = SecurityProfileId, InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_security_profile_permissions_output()
@@ -9747,7 +10644,8 @@ connect_list_security_profiles <- function(InstanceId, NextToken = NULL, MaxResu
     http_path = "/security-profiles-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "SecurityProfileSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_security_profiles_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_security_profiles_output()
@@ -9778,7 +10676,8 @@ connect_list_tags_for_resource <- function(resourceArn) {
     http_path = "/tags/{resourceArn}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_tags_for_resource_input(resourceArn = resourceArn)
   output <- .connect$list_tags_for_resource_output()
@@ -9817,7 +10716,8 @@ connect_list_task_templates <- function(InstanceId, NextToken = NULL, MaxResults
     http_path = "/instance/{InstanceId}/task/template",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "TaskTemplates"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_task_templates_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, Status = Status, Name = Name)
   output <- .connect$list_task_templates_output()
@@ -9855,7 +10755,8 @@ connect_list_test_case_execution_records <- function(InstanceId, TestCaseId, Tes
     http_path = "/test-cases/{InstanceId}/{TestCaseId}/{TestCaseExecutionId}/records",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_test_case_execution_records_input(InstanceId = InstanceId, TestCaseId = TestCaseId, TestCaseExecutionId = TestCaseExecutionId, Status = Status, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_test_case_execution_records_output()
@@ -9895,7 +10796,8 @@ connect_list_test_case_executions <- function(InstanceId, TestCaseId = NULL, Tes
     http_path = "/test-case-executions/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_test_case_executions_input(InstanceId = InstanceId, TestCaseId = TestCaseId, TestCaseName = TestCaseName, StartTime = StartTime, EndTime = EndTime, Status = Status, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_test_case_executions_output()
@@ -9928,7 +10830,8 @@ connect_list_test_cases <- function(InstanceId, NextToken = NULL, MaxResults = N
     http_path = "/test-cases-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "TestCaseSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_test_cases_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_test_cases_output()
@@ -9961,7 +10864,8 @@ connect_list_traffic_distribution_group_users <- function(TrafficDistributionGro
     http_path = "/traffic-distribution-group/{TrafficDistributionGroupId}/user",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "TrafficDistributionGroupUserSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_traffic_distribution_group_users_input(TrafficDistributionGroupId = TrafficDistributionGroupId, MaxResults = MaxResults, NextToken = NextToken)
   output <- .connect$list_traffic_distribution_group_users_output()
@@ -9994,7 +10898,8 @@ connect_list_traffic_distribution_groups <- function(MaxResults = NULL, NextToke
     http_path = "/traffic-distribution-groups",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "TrafficDistributionGroupSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_traffic_distribution_groups_input(MaxResults = MaxResults, NextToken = NextToken, InstanceId = InstanceId)
   output <- .connect$list_traffic_distribution_groups_output()
@@ -10028,7 +10933,8 @@ connect_list_use_cases <- function(InstanceId, IntegrationAssociationId, NextTok
     http_path = "/instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "UseCaseSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_use_cases_input(InstanceId = InstanceId, IntegrationAssociationId = IntegrationAssociationId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_use_cases_output()
@@ -10062,7 +10968,8 @@ connect_list_user_hierarchy_groups <- function(InstanceId, NextToken = NULL, Max
     http_path = "/user-hierarchy-groups-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "UserHierarchyGroupSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_user_hierarchy_groups_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_user_hierarchy_groups_output()
@@ -10097,7 +11004,8 @@ connect_list_user_notifications <- function(InstanceId, NextToken = NULL, MaxRes
     http_path = "/users/{InstanceId}/{UserId}/notifications",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_user_notifications_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, UserId = UserId)
   output <- .connect$list_user_notifications_output()
@@ -10131,7 +11039,8 @@ connect_list_user_proficiencies <- function(InstanceId, UserId, NextToken = NULL
     http_path = "/users/{InstanceId}/{UserId}/proficiencies",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "LastModifiedTime", "LastModifiedRegion"), output_token = "NextToken", result_key = "UserProficiencyList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_user_proficiencies_input(InstanceId = InstanceId, UserId = UserId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_user_proficiencies_output()
@@ -10165,7 +11074,8 @@ connect_list_users <- function(InstanceId, NextToken = NULL, MaxResults = NULL) 
     http_path = "/users-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "UserSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_users_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_users_output()
@@ -10200,7 +11110,8 @@ connect_list_view_versions <- function(InstanceId, ViewId, NextToken = NULL, Max
     http_path = "/views/{InstanceId}/{ViewId}/versions",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "ViewVersionSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_view_versions_input(InstanceId = InstanceId, ViewId = ViewId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_view_versions_output()
@@ -10234,7 +11145,8 @@ connect_list_views <- function(InstanceId, Type = NULL, NextToken = NULL, MaxRes
     http_path = "/views/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "ViewsSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_views_input(InstanceId = InstanceId, Type = Type, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_views_output()
@@ -10266,7 +11178,8 @@ connect_list_workspace_media <- function(InstanceId, WorkspaceId) {
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/media",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_workspace_media_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId)
   output <- .connect$list_workspace_media_output()
@@ -10301,7 +11214,8 @@ connect_list_workspace_pages <- function(InstanceId, WorkspaceId, NextToken = NU
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/pages",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "WorkspacePageList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_workspace_pages_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_workspace_pages_output()
@@ -10334,7 +11248,8 @@ connect_list_workspaces <- function(InstanceId, NextToken = NULL, MaxResults = N
     http_path = "/workspaces/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "WorkspaceSummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$list_workspaces_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults)
   output <- .connect$list_workspaces_output()
@@ -10369,7 +11284,8 @@ connect_monitor_contact <- function(InstanceId, ContactId, UserId, AllowedMonito
     http_path = "/contact/monitor",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$monitor_contact_input(InstanceId = InstanceId, ContactId = ContactId, UserId = UserId, AllowedMonitorCapabilities = AllowedMonitorCapabilities, ClientToken = ClientToken)
   output <- .connect$monitor_contact_output()
@@ -10402,7 +11318,8 @@ connect_pause_contact <- function(ContactId, InstanceId, ContactFlowId = NULL) {
     http_path = "/contact/pause",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$pause_contact_input(ContactId = ContactId, InstanceId = InstanceId, ContactFlowId = ContactFlowId)
   output <- .connect$pause_contact_output()
@@ -10435,7 +11352,8 @@ connect_put_user_status <- function(UserId, InstanceId, AgentStatusId) {
     http_path = "/users/{InstanceId}/{UserId}/status",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$put_user_status_input(UserId = UserId, InstanceId = InstanceId, AgentStatusId = AgentStatusId)
   output <- .connect$put_user_status_output()
@@ -10468,7 +11386,8 @@ connect_release_phone_number <- function(PhoneNumberId, ClientToken = NULL) {
     http_path = "/phone-number/{PhoneNumberId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$release_phone_number_input(PhoneNumberId = PhoneNumberId, ClientToken = ClientToken)
   output <- .connect$release_phone_number_output()
@@ -10492,19 +11411,20 @@ connect_release_phone_number <- function(PhoneNumberId, ClientToken = NULL) {
 #' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance. You can provide the `InstanceId`, or the entire ARN.
 #' @param ReplicaRegion &#91;required&#93; The Amazon Web Services Region where to replicate the Connect Customer instance.
 #' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
-#' @param ReplicaAlias &#91;required&#93; The alias for the replicated instance. The `ReplicaAlias` must be unique.
+#' @param ReplicaAlias The alias for the replicated instance. The `ReplicaAlias` must be unique.
 #'
 #' @keywords internal
 #'
 #' @rdname connect_replicate_instance
-connect_replicate_instance <- function(InstanceId, ReplicaRegion, ClientToken = NULL, ReplicaAlias) {
+connect_replicate_instance <- function(InstanceId, ReplicaRegion, ClientToken = NULL, ReplicaAlias = NULL) {
   op <- new_operation(
     name = "ReplicateInstance",
     http_method = "POST",
     http_path = "/instance/{InstanceId}/replicate",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$replicate_instance_input(InstanceId = InstanceId, ReplicaRegion = ReplicaRegion, ClientToken = ClientToken, ReplicaAlias = ReplicaAlias)
   output <- .connect$replicate_instance_output()
@@ -10537,7 +11457,8 @@ connect_resume_contact <- function(ContactId, InstanceId, ContactFlowId = NULL) 
     http_path = "/contact/resume",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$resume_contact_input(ContactId = ContactId, InstanceId = InstanceId, ContactFlowId = ContactFlowId)
   output <- .connect$resume_contact_output()
@@ -10573,7 +11494,8 @@ connect_resume_contact_recording <- function(InstanceId, ContactId, InitialConta
     http_path = "/contact/resume-recording",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$resume_contact_recording_input(InstanceId = InstanceId, ContactId = ContactId, InitialContactId = InitialContactId, ContactRecordingType = ContactRecordingType)
   output <- .connect$resume_contact_recording_output()
@@ -10609,7 +11531,8 @@ connect_search_agent_statuses <- function(InstanceId, NextToken = NULL, MaxResul
     http_path = "/search-agent-statuses",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "AgentStatuses"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_agent_statuses_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_agent_statuses_output()
@@ -10647,7 +11570,8 @@ connect_search_available_phone_numbers <- function(TargetArn = NULL, InstanceId 
     http_path = "/phone-number/search-available",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "AvailableNumbersList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_available_phone_numbers_input(TargetArn = TargetArn, InstanceId = InstanceId, PhoneNumberCountryCode = PhoneNumberCountryCode, PhoneNumberType = PhoneNumberType, PhoneNumberPrefix = PhoneNumberPrefix, MaxResults = MaxResults, NextToken = NextToken)
   output <- .connect$search_available_phone_numbers_output()
@@ -10683,7 +11607,8 @@ connect_search_contact_evaluations <- function(InstanceId, NextToken = NULL, Max
     http_path = "/search-contact-evaluations",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_contact_evaluations_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchCriteria = SearchCriteria, SearchFilter = SearchFilter)
   output <- .connect$search_contact_evaluations_output()
@@ -10721,7 +11646,8 @@ connect_search_contact_flow_modules <- function(InstanceId, NextToken = NULL, Ma
     http_path = "/search-contact-flow-modules",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "ContactFlowModules"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_contact_flow_modules_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_contact_flow_modules_output()
@@ -10759,7 +11685,8 @@ connect_search_contact_flows <- function(InstanceId, NextToken = NULL, MaxResult
     http_path = "/search-contact-flows",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "ContactFlows"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_contact_flows_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_contact_flows_output()
@@ -10795,7 +11722,8 @@ connect_search_contacts <- function(InstanceId, TimeRange, SearchCriteria = NULL
     http_path = "/search-contacts",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "TotalCount"), output_token = "NextToken", result_key = "Contacts"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_contacts_input(InstanceId = InstanceId, TimeRange = TimeRange, SearchCriteria = SearchCriteria, MaxResults = MaxResults, NextToken = NextToken, Sort = Sort)
   output <- .connect$search_contacts_output()
@@ -10830,7 +11758,8 @@ connect_search_data_tables <- function(InstanceId, NextToken = NULL, MaxResults 
     http_path = "/search-data-tables",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "DataTables"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_data_tables_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_data_tables_output()
@@ -10865,7 +11794,8 @@ connect_search_email_addresses <- function(InstanceId, MaxResults = NULL, NextTo
     http_path = "/search-email-addresses",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_email_addresses_input(InstanceId = InstanceId, MaxResults = MaxResults, NextToken = NextToken, SearchCriteria = SearchCriteria, SearchFilter = SearchFilter)
   output <- .connect$search_email_addresses_output()
@@ -10901,7 +11831,8 @@ connect_search_evaluation_forms <- function(InstanceId, NextToken = NULL, MaxRes
     http_path = "/search-evaluation-forms",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_evaluation_forms_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchCriteria = SearchCriteria, SearchFilter = SearchFilter)
   output <- .connect$search_evaluation_forms_output()
@@ -10936,7 +11867,8 @@ connect_search_hours_of_operation_overrides <- function(InstanceId, NextToken = 
     http_path = "/search-hours-of-operation-overrides",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "HoursOfOperationOverrides"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_hours_of_operation_overrides_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_hours_of_operation_overrides_output()
@@ -10972,7 +11904,8 @@ connect_search_hours_of_operations <- function(InstanceId, NextToken = NULL, Max
     http_path = "/search-hours-of-operations",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "HoursOfOperations"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_hours_of_operations_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_hours_of_operations_output()
@@ -10983,6 +11916,43 @@ connect_search_hours_of_operations <- function(InstanceId, NextToken = NULL, Max
   return(response)
 }
 .connect$operations$search_hours_of_operations <- connect_search_hours_of_operations
+
+#' Searches for metrics in the specified Connect Customer instance using
+#' search criteria and optional tag-based filters
+#'
+#' @description
+#' Searches for metrics in the specified Connect Customer instance using search criteria and optional tag-based filters. Use pagination to ensure that the operation returns quickly and successfully.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_search_metrics/](https://www.paws-r-sdk.com/docs/connect_search_metrics/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return per page.
+#' @param SearchFilter Filters to be applied to search results.
+#' @param SearchCriteria The search criteria to filter the metrics.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_search_metrics
+connect_search_metrics <- function(InstanceId, NextToken = NULL, MaxResults = NULL, SearchFilter = NULL, SearchCriteria = NULL) {
+  op <- new_operation(
+    name = "SearchMetrics",
+    http_method = "POST",
+    http_path = "/search-metrics",
+    host_prefix = "",
+    paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "Metrics"),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$search_metrics_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
+  output <- .connect$search_metrics_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$search_metrics <- connect_search_metrics
 
 #' Searches for notifications based on specified criteria and filters
 #'
@@ -11007,7 +11977,8 @@ connect_search_notifications <- function(InstanceId, NextToken = NULL, MaxResult
     http_path = "/search-notifications",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_notifications_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_notifications_output()
@@ -11041,7 +12012,8 @@ connect_search_predefined_attributes <- function(InstanceId, NextToken = NULL, M
     http_path = "/search-predefined-attributes",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "PredefinedAttributes"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_predefined_attributes_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchCriteria = SearchCriteria)
   output <- .connect$search_predefined_attributes_output()
@@ -11077,7 +12049,8 @@ connect_search_prompts <- function(InstanceId, NextToken = NULL, MaxResults = NU
     http_path = "/search-prompts",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "Prompts"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_prompts_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_prompts_output()
@@ -11114,7 +12087,8 @@ connect_search_queues <- function(InstanceId, NextToken = NULL, MaxResults = NUL
     http_path = "/search-queues",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "Queues"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_queues_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_queues_output()
@@ -11150,7 +12124,8 @@ connect_search_quick_connects <- function(InstanceId, NextToken = NULL, MaxResul
     http_path = "/search-quick-connects",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "QuickConnects"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_quick_connects_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_quick_connects_output()
@@ -11194,6 +12169,8 @@ connect_search_quick_connects <- function(InstanceId, NextToken = NULL, MaxResul
 #' -   flow- module
 #' 
 #' -   transfer-destination (also known as quick connect)
+#' 
+#' -   metric
 #' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return per page.
 #' @param SearchCriteria The search criteria to be used to return tags.
@@ -11208,7 +12185,8 @@ connect_search_resource_tags <- function(InstanceId, ResourceTypes = NULL, NextT
     http_path = "/search-resource-tags",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "Tags"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_resource_tags_input(InstanceId = InstanceId, ResourceTypes = ResourceTypes, NextToken = NextToken, MaxResults = MaxResults, SearchCriteria = SearchCriteria)
   output <- .connect$search_resource_tags_output()
@@ -11246,7 +12224,8 @@ connect_search_routing_profiles <- function(InstanceId, NextToken = NULL, MaxRes
     http_path = "/search-routing-profiles",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "RoutingProfiles"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_routing_profiles_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_routing_profiles_output()
@@ -11257,6 +12236,42 @@ connect_search_routing_profiles <- function(InstanceId, NextToken = NULL, MaxRes
   return(response)
 }
 .connect$operations$search_routing_profiles <- connect_search_routing_profiles
+
+#' Searches rules in an Connect Customer instance, with optional filtering
+#'
+#' @description
+#' Searches rules in an Connect Customer instance, with optional filtering.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_search_rules/](https://www.paws-r-sdk.com/docs/connect_search_rules/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param MaxResults The maximum number of results to return per page.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param SearchCriteria The search criteria to be used to return rules.
+#' @param SearchFilter Filters to be applied to search results, such as tag-based filters.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_search_rules
+connect_search_rules <- function(InstanceId, MaxResults = NULL, NextToken = NULL, SearchCriteria = NULL, SearchFilter = NULL) {
+  op <- new_operation(
+    name = "SearchRules",
+    http_method = "POST",
+    http_path = "/search-rules",
+    host_prefix = "",
+    paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "Rules"),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$search_rules_input(InstanceId = InstanceId, MaxResults = MaxResults, NextToken = NextToken, SearchCriteria = SearchCriteria, SearchFilter = SearchFilter)
+  output <- .connect$search_rules_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$search_rules <- connect_search_rules
 
 #' Searches security profiles in an Connect Customer instance, with
 #' optional filtering
@@ -11286,7 +12301,8 @@ connect_search_security_profiles <- function(InstanceId, NextToken = NULL, MaxRe
     http_path = "/search-security-profiles",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "SecurityProfiles"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_security_profiles_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchCriteria = SearchCriteria, SearchFilter = SearchFilter)
   output <- .connect$search_security_profiles_output()
@@ -11322,7 +12338,8 @@ connect_search_test_cases <- function(InstanceId, NextToken = NULL, MaxResults =
     http_path = "/search-test-cases",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "TestCases"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_test_cases_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_test_cases_output()
@@ -11358,7 +12375,8 @@ connect_search_user_hierarchy_groups <- function(InstanceId, NextToken = NULL, M
     http_path = "/search-user-hierarchy-groups",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "UserHierarchyGroups"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_user_hierarchy_groups_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_user_hierarchy_groups_output()
@@ -11393,7 +12411,8 @@ connect_search_users <- function(InstanceId, NextToken = NULL, MaxResults = NULL
     http_path = "/search-users",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "Users"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_users_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_users_output()
@@ -11428,7 +12447,8 @@ connect_search_views <- function(InstanceId, NextToken = NULL, MaxResults = NULL
     http_path = "/search-views",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "Views"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_views_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_views_output()
@@ -11465,7 +12485,8 @@ connect_search_vocabularies <- function(InstanceId, MaxResults = NULL, NextToken
     http_path = "/vocabulary-summary/{InstanceId}",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", output_token = "NextToken", result_key = "VocabularySummaryList"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_vocabularies_input(InstanceId = InstanceId, MaxResults = MaxResults, NextToken = NextToken, State = State, NameStartsWith = NameStartsWith, LanguageCode = LanguageCode)
   output <- .connect$search_vocabularies_output()
@@ -11501,7 +12522,8 @@ connect_search_workspace_associations <- function(InstanceId, NextToken = NULL, 
     http_path = "/search-workspace-associations",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "WorkspaceAssociations"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_workspace_associations_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_workspace_associations_output()
@@ -11536,7 +12558,8 @@ connect_search_workspaces <- function(InstanceId, NextToken = NULL, MaxResults =
     http_path = "/search-workspaces",
     host_prefix = "",
     paginator = list(input_token = "NextToken", limit_key = "MaxResults", non_aggregate_keys = list( "ApproximateTotalCount"), output_token = "NextToken", result_key = "Workspaces"),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$search_workspaces_input(InstanceId = InstanceId, NextToken = NextToken, MaxResults = MaxResults, SearchFilter = SearchFilter, SearchCriteria = SearchCriteria)
   output <- .connect$search_workspaces_output()
@@ -11574,7 +12597,8 @@ connect_send_chat_integration_event <- function(SourceId, DestinationId, Subtype
     http_path = "/chat-integration-event",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$send_chat_integration_event_input(SourceId = SourceId, DestinationId = DestinationId, Subtype = Subtype, Event = Event, NewSessionDetails = NewSessionDetails)
   output <- .connect$send_chat_integration_event_output()
@@ -11614,7 +12638,8 @@ connect_send_outbound_email <- function(InstanceId, FromEmailAddress, Destinatio
     http_path = "/instance/{InstanceId}/outbound-email",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$send_outbound_email_input(InstanceId = InstanceId, FromEmailAddress = FromEmailAddress, DestinationEmailAddress = DestinationEmailAddress, AdditionalRecipients = AdditionalRecipients, EmailMessage = EmailMessage, TrafficType = TrafficType, SourceCampaign = SourceCampaign, ClientToken = ClientToken)
   output <- .connect$send_outbound_email_output()
@@ -11625,6 +12650,89 @@ connect_send_outbound_email <- function(InstanceId, FromEmailAddress, Destinatio
   return(response)
 }
 .connect$operations$send_outbound_email <- connect_send_outbound_email
+
+#' Sends an outbound web notification to a customer's web browser for
+#' outbound campaigns
+#'
+#' @description
+#' Sends an outbound web notification to a customer's web browser for outbound campaigns. For more information about outbound campaigns, see [Set up Connect Customer outbound campaigns](https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html).
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_send_outbound_web_notification/](https://www.paws-r-sdk.com/docs/connect_send_outbound_web_notification/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param BrowserId &#91;required&#93; A unique identifier for the customer's web browser instance to which the notification is being sent.
+#' @param SessionId &#91;required&#93; A unique identifier for the customer's web session to which the notification is being sent.
+#' @param ExpiresAt &#91;required&#93; The timestamp, in Unix epoch time format, at which the web notification expires. After this time, the notification is no longer delivered to the customer's browser.
+#' @param Source &#91;required&#93; The source of the web notification. A `SourceCampaign` object identifies the campaign and outbound request that triggered this notification.
+#' @param Destination &#91;required&#93; The destination for the web notification, specifying the communication widget that delivers the notification and the customer profile of the recipient.
+#' @param Content &#91;required&#93; The content of the web notification, including the notification type, the view to render, and any optional attributes used to populate it.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_send_outbound_web_notification
+connect_send_outbound_web_notification <- function(InstanceId, ClientToken = NULL, BrowserId, SessionId, ExpiresAt, Source, Destination, Content) {
+  op <- new_operation(
+    name = "SendOutboundWebNotification",
+    http_method = "POST",
+    http_path = "/instance/{InstanceId}/outbound-web-notification",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$send_outbound_web_notification_input(InstanceId = InstanceId, ClientToken = ClientToken, BrowserId = BrowserId, SessionId = SessionId, ExpiresAt = ExpiresAt, Source = Source, Destination = Destination, Content = Content)
+  output <- .connect$send_outbound_web_notification_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$send_outbound_web_notification <- connect_send_outbound_web_notification
+
+#' Starts a chat contact with an AI agent
+#'
+#' @description
+#' Starts a chat contact with an AI agent.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_start_assistant_contact/](https://www.paws-r-sdk.com/docs/connect_start_assistant_contact/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param AiAgent &#91;required&#93; The AI agent configuration for this contact.
+#' @param ParticipantDetails &#91;required&#93; The display name and other details that identify the chat participant.
+#' @param InitialMessage The initial message to send to the newly created chat.
+#' @param Attributes A map of key-value pairs to associate with the contact. We make these attributes available to flows as standard contact attributes.
+#' 
+#' You can provide up to 32,768 UTF-8 bytes across all key-value pairs for each contact.
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#' @param PersistentChat The configuration that enables persistent chat. For more information about persistent chat and its use cases, see [Enable persistent chat](https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html).
+#' @param RelatedContactId The identifier of an Connect Customer contact related to the new assistant contact.
+#' 
+#' You cannot provide both `RelatedContactId` and `PersistentChat`.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_start_assistant_contact
+connect_start_assistant_contact <- function(InstanceId, AiAgent, ParticipantDetails, InitialMessage = NULL, Attributes = NULL, ClientToken = NULL, PersistentChat = NULL, RelatedContactId = NULL) {
+  op <- new_operation(
+    name = "StartAssistantContact",
+    http_method = "PUT",
+    http_path = "/contact/assistant",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$start_assistant_contact_input(InstanceId = InstanceId, AiAgent = AiAgent, ParticipantDetails = ParticipantDetails, InitialMessage = InitialMessage, Attributes = Attributes, ClientToken = ClientToken, PersistentChat = PersistentChat, RelatedContactId = RelatedContactId)
+  output <- .connect$start_assistant_contact_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$start_assistant_contact <- connect_start_assistant_contact
 
 #' Provides a pre-signed Amazon S3 URL in response for uploading your
 #' content
@@ -11642,7 +12750,7 @@ connect_send_outbound_email <- function(InstanceId, FromEmailAddress, Destinatio
 #' @param FileUseCaseType &#91;required&#93; The use case for the file.
 #' 
 #' Only `ATTACHMENTS` are supported.
-#' @param AssociatedResourceArn &#91;required&#93; The resource to which the attached file is (being) uploaded to. The supported resources are [Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html) and [Email](https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html).
+#' @param AssociatedResourceArn &#91;required&#93; The resource to which the attached file is (being) uploaded to. The supported resources are [Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html), [Email](https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html), and [Task](https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html).
 #' 
 #' This value must be a valid ARN.
 #' @param CreatedBy Represents the identity that created the file.
@@ -11658,7 +12766,8 @@ connect_start_attached_file_upload <- function(ClientToken = NULL, InstanceId, F
     http_path = "/attached-files/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_attached_file_upload_input(ClientToken = ClientToken, InstanceId = InstanceId, FileName = FileName, FileSizeInBytes = FileSizeInBytes, UrlExpiryInSeconds = UrlExpiryInSeconds, FileUseCaseType = FileUseCaseType, AssociatedResourceArn = AssociatedResourceArn, CreatedBy = CreatedBy, Tags = Tags)
   output <- .connect$start_attached_file_upload_output()
@@ -11707,20 +12816,41 @@ connect_start_attached_file_upload <- function(ClientToken = NULL, InstanceId, F
 #' The types `application/vnd.amazonaws.connect.message.interactive` and `application/vnd.amazonaws.connect.message.interactive.response` must be present in the SupportedMessagingContentTypes field of this API in order to set `SegmentAttributes` as \{` "connect:Subtype": \{"valueString" : "connect:Guide" \}\}`.
 #' @param CustomerId The customer's identification number. For example, the `CustomerId` may be a customer number from your CRM.
 #' @param DisconnectOnCustomerExit A list of participant types to automatically disconnect when the end customer ends the chat session, allowing them to continue through disconnect flows such as surveys or feedback forms.
+#' @param ConnectionTypes The types of connection information to return in the response. This parameter is optional.
+#' 
+#' To receive connection information, specify one or both of the following values:
+#' 
+#' -   `CONNECTION_CREDENTIALS`: Returns a connection token.
+#' 
+#' -   `WEBSOCKET`: Returns a websocket URL.
+#' 
+#' `WEBSOCKET` and `CONNECTION_CREDENTIALS` are the values this operation acts on. No other value returns connection information.
+#' 
+#' Request `WEBSOCKET` to get a URL the participant connects to directly. You do not need to call [CreateParticipantConnection](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-participant_CreateParticipantConnection.html) for it. Request `CONNECTION_CREDENTIALS` on its own and the response returns a connection token but no websocket URL.
+#' 
+#' If you omit this parameter, the response has no connection information.
+#' 
+#' When you start a new chat contact and the information you request cannot be returned, StartChatContact returns an error rather than a response that omits it. When you retry a request with the same `ClientToken`, the response repeats the original contact and can omit a websocket URL if the chat has already ended.
+#' @param ChatStreamingConfiguration The streaming configuration, such as the Amazon SNS streaming endpoint. Use it to initiate real-time message streaming when the chat is created. This parameter is optional.
+#' 
+#' Setting this parameter returns a `StreamingId` in the response, and you do not need to call [`start_contact_streaming`][connect_start_contact_streaming].
+#' 
+#' This parameter starts message streaming only. The response does not include connection information, and setting this parameter does not remove the need to call [CreateParticipantConnection](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-participant_CreateParticipantConnection.html).
 #'
 #' @keywords internal
 #'
 #' @rdname connect_start_chat_contact
-connect_start_chat_contact <- function(InstanceId, ContactFlowId, Attributes = NULL, ParticipantDetails, ParticipantConfiguration = NULL, InitialMessage = NULL, ClientToken = NULL, ChatDurationInMinutes = NULL, SupportedMessagingContentTypes = NULL, PersistentChat = NULL, RelatedContactId = NULL, SegmentAttributes = NULL, CustomerId = NULL, DisconnectOnCustomerExit = NULL) {
+connect_start_chat_contact <- function(InstanceId, ContactFlowId, Attributes = NULL, ParticipantDetails, ParticipantConfiguration = NULL, InitialMessage = NULL, ClientToken = NULL, ChatDurationInMinutes = NULL, SupportedMessagingContentTypes = NULL, PersistentChat = NULL, RelatedContactId = NULL, SegmentAttributes = NULL, CustomerId = NULL, DisconnectOnCustomerExit = NULL, ConnectionTypes = NULL, ChatStreamingConfiguration = NULL) {
   op <- new_operation(
     name = "StartChatContact",
     http_method = "PUT",
     http_path = "/contact/chat",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
-  input <- .connect$start_chat_contact_input(InstanceId = InstanceId, ContactFlowId = ContactFlowId, Attributes = Attributes, ParticipantDetails = ParticipantDetails, ParticipantConfiguration = ParticipantConfiguration, InitialMessage = InitialMessage, ClientToken = ClientToken, ChatDurationInMinutes = ChatDurationInMinutes, SupportedMessagingContentTypes = SupportedMessagingContentTypes, PersistentChat = PersistentChat, RelatedContactId = RelatedContactId, SegmentAttributes = SegmentAttributes, CustomerId = CustomerId, DisconnectOnCustomerExit = DisconnectOnCustomerExit)
+  input <- .connect$start_chat_contact_input(InstanceId = InstanceId, ContactFlowId = ContactFlowId, Attributes = Attributes, ParticipantDetails = ParticipantDetails, ParticipantConfiguration = ParticipantConfiguration, InitialMessage = InitialMessage, ClientToken = ClientToken, ChatDurationInMinutes = ChatDurationInMinutes, SupportedMessagingContentTypes = SupportedMessagingContentTypes, PersistentChat = PersistentChat, RelatedContactId = RelatedContactId, SegmentAttributes = SegmentAttributes, CustomerId = CustomerId, DisconnectOnCustomerExit = DisconnectOnCustomerExit, ConnectionTypes = ConnectionTypes, ChatStreamingConfiguration = ChatStreamingConfiguration)
   output <- .connect$start_chat_contact_output()
   config <- get_config()
   svc <- .connect$service(config, op)
@@ -11729,6 +12859,42 @@ connect_start_chat_contact <- function(InstanceId, ContactFlowId, Attributes = N
   return(response)
 }
 .connect$operations$start_chat_contact <- connect_start_chat_contact
+
+#' Starts a Contact Lens post-call analytics job for the specified contact
+#'
+#' @description
+#' Starts a Contact Lens post-call analytics job for the specified contact. This API runs Conversational Analytics post-contact analysis on a voice recording that is already attached to the contact, generating transcription, sentiment analysis, redaction, and summarization results based on the provided configuration.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_start_contact_conversational_analytics_job/](https://www.paws-r-sdk.com/docs/connect_start_contact_conversational_analytics_job/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param ContactId &#91;required&#93; The identifier of the contact in this instance of Connect Customer.
+#' @param AnalyticsModes &#91;required&#93; The analytics modes to run for the contact. Valid values: `PostContact`.
+#' @param AnalyticsConfiguration &#91;required&#93; The configuration for the conversational analytics job.
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
+#'
+#' @keywords internal
+#'
+#' @rdname connect_start_contact_conversational_analytics_job
+connect_start_contact_conversational_analytics_job <- function(InstanceId, ContactId, AnalyticsModes, AnalyticsConfiguration, ClientToken = NULL) {
+  op <- new_operation(
+    name = "StartContactConversationalAnalyticsJob",
+    http_method = "POST",
+    http_path = "/contact/start-conversational-analytics-job/{InstanceId}/{ContactId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$start_contact_conversational_analytics_job_input(InstanceId = InstanceId, ContactId = ContactId, AnalyticsModes = AnalyticsModes, AnalyticsConfiguration = AnalyticsConfiguration, ClientToken = ClientToken)
+  output <- .connect$start_contact_conversational_analytics_job_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$start_contact_conversational_analytics_job <- connect_start_contact_conversational_analytics_job
 
 #' Starts an empty evaluation in the specified Connect Customer instance,
 #' using the given evaluation form for the particular contact
@@ -11755,7 +12921,8 @@ connect_start_contact_evaluation <- function(InstanceId, ContactId, EvaluationFo
     http_path = "/contact-evaluations/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_contact_evaluation_input(InstanceId = InstanceId, ContactId = ContactId, EvaluationFormId = EvaluationFormId, AutoEvaluationConfiguration = AutoEvaluationConfiguration, ClientToken = ClientToken, Tags = Tags)
   output <- .connect$start_contact_evaluation_output()
@@ -11789,7 +12956,8 @@ connect_start_contact_media_processing <- function(InstanceId = NULL, ContactId 
     http_path = "/contact/start-contact-media-processing",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_contact_media_processing_input(InstanceId = InstanceId, ContactId = ContactId, ProcessorArn = ProcessorArn, FailureMode = FailureMode)
   output <- .connect$start_contact_media_processing_output()
@@ -11823,7 +12991,8 @@ connect_start_contact_recording <- function(InstanceId, ContactId, InitialContac
     http_path = "/contact/start-recording",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_contact_recording_input(InstanceId = InstanceId, ContactId = ContactId, InitialContactId = InitialContactId, VoiceRecordingConfiguration = VoiceRecordingConfiguration)
   output <- .connect$start_contact_recording_output()
@@ -11857,7 +13026,8 @@ connect_start_contact_streaming <- function(InstanceId, ContactId, ChatStreaming
     http_path = "/contact/start-streaming",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_contact_streaming_input(InstanceId = InstanceId, ContactId = ContactId, ChatStreamingConfiguration = ChatStreamingConfiguration, ClientToken = ClientToken)
   output <- .connect$start_contact_streaming_output()
@@ -11912,7 +13082,8 @@ connect_start_email_contact <- function(InstanceId, FromEmailAddress, Destinatio
     http_path = "/contact/email",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_email_contact_input(InstanceId = InstanceId, FromEmailAddress = FromEmailAddress, DestinationEmailAddress = DestinationEmailAddress, Description = Description, References = References, Name = Name, EmailMessage = EmailMessage, AdditionalRecipients = AdditionalRecipients, Attachments = Attachments, ContactFlowId = ContactFlowId, RelatedContactId = RelatedContactId, Attributes = Attributes, SegmentAttributes = SegmentAttributes, ClientToken = ClientToken)
   output <- .connect$start_email_contact_output()
@@ -11923,6 +13094,41 @@ connect_start_email_contact <- function(InstanceId, FromEmailAddress, Destinatio
   return(response)
 }
 .connect$operations$start_email_contact <- connect_start_email_contact
+
+#' Starts an asynchronous validation process for an evaluation form version
+#' in the specified Connect Customer instance
+#'
+#' @description
+#' Starts an asynchronous validation process for an evaluation form version in the specified Connect Customer instance. The validation first performs structural checks on the form content (such as verifying required fields, valid scoring configuration, and correct conditional logic), then asynchronously analyzes questions configured for generative AI evaluation against a set of best practices. Use [`get_evaluation_form_validation`][connect_get_evaluation_form_validation] to retrieve the status and results once the validation completes.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_start_evaluation_form_validation/](https://www.paws-r-sdk.com/docs/connect_start_evaluation_form_validation/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param EvaluationFormId &#91;required&#93; The unique identifier for the evaluation form.
+#' @param EvaluationFormVersion &#91;required&#93; The version of the evaluation form to validate.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_start_evaluation_form_validation
+connect_start_evaluation_form_validation <- function(InstanceId, EvaluationFormId, EvaluationFormVersion) {
+  op <- new_operation(
+    name = "StartEvaluationFormValidation",
+    http_method = "POST",
+    http_path = "/evaluation-forms/{InstanceId}/{EvaluationFormId}/validate",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$start_evaluation_form_validation_input(InstanceId = InstanceId, EvaluationFormId = EvaluationFormId, EvaluationFormVersion = EvaluationFormVersion)
+  output <- .connect$start_evaluation_form_validation_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$start_evaluation_form_validation <- connect_start_evaluation_form_validation
 
 #' Initiates a new outbound SMS or WhatsApp contact to a customer
 #'
@@ -11944,7 +13150,7 @@ connect_start_email_contact <- function(InstanceId, FromEmailAddress, Destinatio
 #' 
 #' -   arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/**123ec456-a007-89c0-1234-xxxxxxxxxxxx**
 #' @param ChatDurationInMinutes The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
-#' @param ParticipantDetails The customer's details.
+#' @param ParticipantDetails The details of the participant, including their display name.
 #' @param InitialSystemMessage A chat message.
 #' @param InitialTemplatedSystemMessage Information about template message configuration.
 #' @param RelatedContactId The unique identifier for an Connect Customer contact. This identifier is related to the contact starting.
@@ -11977,7 +13183,8 @@ connect_start_outbound_chat_contact <- function(SourceEndpoint, DestinationEndpo
     http_path = "/contact/outbound-chat",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_outbound_chat_contact_input(SourceEndpoint = SourceEndpoint, DestinationEndpoint = DestinationEndpoint, InstanceId = InstanceId, SegmentAttributes = SegmentAttributes, Attributes = Attributes, ContactFlowId = ContactFlowId, ChatDurationInMinutes = ChatDurationInMinutes, ParticipantDetails = ParticipantDetails, InitialSystemMessage = InitialSystemMessage, InitialTemplatedSystemMessage = InitialTemplatedSystemMessage, RelatedContactId = RelatedContactId, SupportedMessagingContentTypes = SupportedMessagingContentTypes, ClientToken = ClientToken)
   output <- .connect$start_outbound_chat_contact_output()
@@ -12015,7 +13222,8 @@ connect_start_outbound_email_contact <- function(InstanceId, ContactId, FromEmai
     http_path = "/contact/outbound-email",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_outbound_email_contact_input(InstanceId = InstanceId, ContactId = ContactId, FromEmailAddress = FromEmailAddress, DestinationEmailAddress = DestinationEmailAddress, AdditionalRecipients = AdditionalRecipients, EmailMessage = EmailMessage, ClientToken = ClientToken)
   output <- .connect$start_outbound_email_contact_output()
@@ -12065,7 +13273,8 @@ connect_start_outbound_voice_contact <- function(Name = NULL, Description = NULL
     http_path = "/contact/outbound-voice",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_outbound_voice_contact_input(Name = Name, Description = Description, References = References, RelatedContactId = RelatedContactId, DestinationPhoneNumber = DestinationPhoneNumber, ContactFlowId = ContactFlowId, InstanceId = InstanceId, ClientToken = ClientToken, SourcePhoneNumber = SourcePhoneNumber, QueueId = QueueId, Attributes = Attributes, AnswerMachineDetectionConfig = AnswerMachineDetectionConfig, CampaignId = CampaignId, TrafficType = TrafficType, OutboundStrategy = OutboundStrategy, RingTimeoutInSeconds = RingTimeoutInSeconds)
   output <- .connect$start_outbound_voice_contact_output()
@@ -12098,7 +13307,8 @@ connect_start_screen_sharing <- function(ClientToken = NULL, InstanceId, Contact
     http_path = "/contact/screen-sharing",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_screen_sharing_input(ClientToken = ClientToken, InstanceId = InstanceId, ContactId = ContactId)
   output <- .connect$start_screen_sharing_output()
@@ -12154,7 +13364,8 @@ connect_start_task_contact <- function(InstanceId, PreviousContactId = NULL, Con
     http_path = "/contact/task",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_task_contact_input(InstanceId = InstanceId, PreviousContactId = PreviousContactId, ContactFlowId = ContactFlowId, Attributes = Attributes, Name = Name, References = References, Description = Description, ClientToken = ClientToken, ScheduledTime = ScheduledTime, TaskTemplateId = TaskTemplateId, QuickConnectId = QuickConnectId, RelatedContactId = RelatedContactId, SegmentAttributes = SegmentAttributes, Attachments = Attachments)
   output <- .connect$start_task_contact_output()
@@ -12187,7 +13398,8 @@ connect_start_test_case_execution <- function(InstanceId, TestCaseId, ClientToke
     http_path = "/test-cases/{InstanceId}/{TestCaseId}/start-execution",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$start_test_case_execution_input(InstanceId = InstanceId, TestCaseId = TestCaseId, ClientToken = ClientToken)
   output <- .connect$start_test_case_execution_output()
@@ -12218,24 +13430,26 @@ connect_start_test_case_execution <- function(InstanceId, TestCaseId, ClientToke
 #' arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/**846ec553-a005-41c0-8341-xxxxxxxxxxxx**
 #' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
 #' @param AllowedCapabilities Information about the video sharing capabilities of the participants (customer, agent).
-#' @param ParticipantDetails &#91;required&#93; The customer's details.
+#' @param ParticipantDetails &#91;required&#93; The details of the participant, including their display name.
 #' @param RelatedContactId The unique identifier for an Connect Customer contact. This identifier is related to the contact starting.
 #' @param References A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks can have the following reference types at the time of creation: `URL` | `NUMBER` | `STRING` | `DATE` | `EMAIL`. `ATTACHMENT` is not a supported reference type during task creation.
 #' @param Description A description of the task that is shown to an agent in the Contact Control Panel (CCP).
+#' @param SegmentAttributes A map of system-defined attributes for the WebRTC contact segment. Use the `connect:Subtype` attribute to specify the channel subtype, such as `connect:WebRTC`.
 #'
 #' @keywords internal
 #'
 #' @rdname connect_start_web_rtc_contact
-connect_start_web_rtc_contact <- function(Attributes = NULL, ClientToken = NULL, ContactFlowId, InstanceId, AllowedCapabilities = NULL, ParticipantDetails, RelatedContactId = NULL, References = NULL, Description = NULL) {
+connect_start_web_rtc_contact <- function(Attributes = NULL, ClientToken = NULL, ContactFlowId, InstanceId, AllowedCapabilities = NULL, ParticipantDetails, RelatedContactId = NULL, References = NULL, Description = NULL, SegmentAttributes = NULL) {
   op <- new_operation(
     name = "StartWebRTCContact",
     http_method = "PUT",
     http_path = "/contact/webrtc",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
-  input <- .connect$start_web_rtc_contact_input(Attributes = Attributes, ClientToken = ClientToken, ContactFlowId = ContactFlowId, InstanceId = InstanceId, AllowedCapabilities = AllowedCapabilities, ParticipantDetails = ParticipantDetails, RelatedContactId = RelatedContactId, References = References, Description = Description)
+  input <- .connect$start_web_rtc_contact_input(Attributes = Attributes, ClientToken = ClientToken, ContactFlowId = ContactFlowId, InstanceId = InstanceId, AllowedCapabilities = AllowedCapabilities, ParticipantDetails = ParticipantDetails, RelatedContactId = RelatedContactId, References = References, Description = Description, SegmentAttributes = SegmentAttributes)
   output <- .connect$start_web_rtc_contact_output()
   config <- get_config()
   svc <- .connect$service(config, op)
@@ -12266,7 +13480,8 @@ connect_stop_contact <- function(ContactId, InstanceId, DisconnectReason = NULL)
     http_path = "/contact/stop",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$stop_contact_input(ContactId = ContactId, InstanceId = InstanceId, DisconnectReason = DisconnectReason)
   output <- .connect$stop_contact_output()
@@ -12298,7 +13513,8 @@ connect_stop_contact_media_processing <- function(InstanceId = NULL, ContactId =
     http_path = "/contact/stop-contact-media-processing",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$stop_contact_media_processing_input(InstanceId = InstanceId, ContactId = ContactId)
   output <- .connect$stop_contact_media_processing_output()
@@ -12332,7 +13548,8 @@ connect_stop_contact_recording <- function(InstanceId, ContactId, InitialContact
     http_path = "/contact/stop-recording",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$stop_contact_recording_input(InstanceId = InstanceId, ContactId = ContactId, InitialContactId = InitialContactId, ContactRecordingType = ContactRecordingType)
   output <- .connect$stop_contact_recording_output()
@@ -12365,7 +13582,8 @@ connect_stop_contact_streaming <- function(InstanceId, ContactId, StreamingId) {
     http_path = "/contact/stop-streaming",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$stop_contact_streaming_input(InstanceId = InstanceId, ContactId = ContactId, StreamingId = StreamingId)
   output <- .connect$stop_contact_streaming_output()
@@ -12399,7 +13617,8 @@ connect_stop_test_case_execution <- function(InstanceId, TestCaseExecutionId, Te
     http_path = "/test-cases/{InstanceId}/{TestCaseId}/{TestCaseExecutionId}/stop-execution",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$stop_test_case_execution_input(InstanceId = InstanceId, TestCaseExecutionId = TestCaseExecutionId, TestCaseId = TestCaseId, ClientToken = ClientToken)
   output <- .connect$stop_test_case_execution_output()
@@ -12434,7 +13653,8 @@ connect_submit_contact_evaluation <- function(InstanceId, EvaluationId, Answers 
     http_path = "/contact-evaluations/{InstanceId}/{EvaluationId}/submit",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$submit_contact_evaluation_input(InstanceId = InstanceId, EvaluationId = EvaluationId, Answers = Answers, Notes = Notes, SubmittedBy = SubmittedBy)
   output <- .connect$submit_contact_evaluation_output()
@@ -12470,7 +13690,8 @@ connect_suspend_contact_recording <- function(InstanceId, ContactId, InitialCont
     http_path = "/contact/suspend-recording",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$suspend_contact_recording_input(InstanceId = InstanceId, ContactId = ContactId, InitialContactId = InitialContactId, ContactRecordingType = ContactRecordingType)
   output <- .connect$suspend_contact_recording_output()
@@ -12505,7 +13726,8 @@ connect_tag_contact <- function(ContactId, InstanceId, Tags) {
     http_path = "/contact/tags",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$tag_contact_input(ContactId = ContactId, InstanceId = InstanceId, Tags = Tags)
   output <- .connect$tag_contact_output()
@@ -12537,7 +13759,8 @@ connect_tag_resource <- function(resourceArn, tags) {
     http_path = "/tags/{resourceArn}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$tag_resource_input(resourceArn = resourceArn, tags = tags)
   output <- .connect$tag_resource_output()
@@ -12574,7 +13797,8 @@ connect_transfer_contact <- function(InstanceId, ContactId, QueueId = NULL, User
     http_path = "/contact/transfer",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$transfer_contact_input(InstanceId = InstanceId, ContactId = ContactId, QueueId = QueueId, UserId = UserId, ContactFlowId = ContactFlowId, ClientToken = ClientToken)
   output <- .connect$transfer_contact_output()
@@ -12607,7 +13831,8 @@ connect_untag_contact <- function(ContactId, InstanceId, TagKeys) {
     http_path = "/contact/tags/{InstanceId}/{ContactId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$untag_contact_input(ContactId = ContactId, InstanceId = InstanceId, TagKeys = TagKeys)
   output <- .connect$untag_contact_output()
@@ -12639,7 +13864,8 @@ connect_untag_resource <- function(resourceArn, tagKeys) {
     http_path = "/tags/{resourceArn}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$untag_resource_input(resourceArn = resourceArn, tagKeys = tagKeys)
   output <- .connect$untag_resource_output()
@@ -12676,7 +13902,8 @@ connect_update_agent_status <- function(InstanceId, AgentStatusId, Name = NULL, 
     http_path = "/agent-status/{InstanceId}/{AgentStatusId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_agent_status_input(InstanceId = InstanceId, AgentStatusId = AgentStatusId, Name = Name, Description = Description, State = State, DisplayOrder = DisplayOrder, ResetOrderNumber = ResetOrderNumber)
   output <- .connect$update_agent_status_output()
@@ -12711,7 +13938,8 @@ connect_update_attached_files_configuration <- function(InstanceId, AttachmentSc
     http_path = "/attached-files-configurations/{InstanceId}/{AttachmentScope}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_attached_files_configuration_input(InstanceId = InstanceId, AttachmentScope = AttachmentScope, MaximumSizeLimitInBytes = MaximumSizeLimitInBytes, ExtensionConfiguration = ExtensionConfiguration)
   output <- .connect$update_attached_files_configuration_output()
@@ -12751,7 +13979,8 @@ connect_update_authentication_profile <- function(AuthenticationProfileId, Insta
     http_path = "/authentication-profiles/{InstanceId}/{AuthenticationProfileId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_authentication_profile_input(AuthenticationProfileId = AuthenticationProfileId, InstanceId = InstanceId, Name = Name, Description = Description, AllowedIps = AllowedIps, BlockedIps = BlockedIps, PeriodicSessionDuration = PeriodicSessionDuration, SessionInactivityDuration = SessionInactivityDuration, SessionInactivityHandlingEnabled = SessionInactivityHandlingEnabled)
   output <- .connect$update_authentication_profile_output()
@@ -12798,7 +14027,8 @@ connect_update_contact <- function(InstanceId, ContactId, Name = NULL, Descripti
     http_path = "/contacts/{InstanceId}/{ContactId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_contact_input(InstanceId = InstanceId, ContactId = ContactId, Name = Name, Description = Description, References = References, SegmentAttributes = SegmentAttributes, QueueInfo = QueueInfo, UserInfo = UserInfo, CustomerEndpoint = CustomerEndpoint, SystemEndpoint = SystemEndpoint)
   output <- .connect$update_contact_output()
@@ -12840,7 +14070,8 @@ connect_update_contact_attributes <- function(InitialContactId, InstanceId, Attr
     http_path = "/contact/attributes",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_contact_attributes_input(InitialContactId = InitialContactId, InstanceId = InstanceId, Attributes = Attributes)
   output <- .connect$update_contact_attributes_output()
@@ -12876,7 +14107,8 @@ connect_update_contact_evaluation <- function(InstanceId, EvaluationId, Answers 
     http_path = "/contact-evaluations/{InstanceId}/{EvaluationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_contact_evaluation_input(InstanceId = InstanceId, EvaluationId = EvaluationId, Answers = Answers, Notes = Notes, UpdatedBy = UpdatedBy)
   output <- .connect$update_contact_evaluation_output()
@@ -12911,7 +14143,8 @@ connect_update_contact_flow_content <- function(InstanceId, ContactFlowId, Conte
     http_path = "/contact-flows/{InstanceId}/{ContactFlowId}/content",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_contact_flow_content_input(InstanceId = InstanceId, ContactFlowId = ContactFlowId, Content = Content)
   output <- .connect$update_contact_flow_content_output()
@@ -12946,7 +14179,8 @@ connect_update_contact_flow_metadata <- function(InstanceId, ContactFlowId, Name
     http_path = "/contact-flows/{InstanceId}/{ContactFlowId}/metadata",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_contact_flow_metadata_input(InstanceId = InstanceId, ContactFlowId = ContactFlowId, Name = Name, Description = Description, ContactFlowState = ContactFlowState)
   output <- .connect$update_contact_flow_metadata_output()
@@ -12983,7 +14217,8 @@ connect_update_contact_flow_module_alias <- function(InstanceId, ContactFlowModu
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/alias/{AliasId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_contact_flow_module_alias_input(InstanceId = InstanceId, ContactFlowModuleId = ContactFlowModuleId, AliasId = AliasId, Name = Name, Description = Description, ContactFlowModuleVersion = ContactFlowModuleVersion)
   output <- .connect$update_contact_flow_module_alias_output()
@@ -13018,7 +14253,8 @@ connect_update_contact_flow_module_content <- function(InstanceId, ContactFlowMo
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/content",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_contact_flow_module_content_input(InstanceId = InstanceId, ContactFlowModuleId = ContactFlowModuleId, Content = Content, Settings = Settings)
   output <- .connect$update_contact_flow_module_content_output()
@@ -13053,7 +14289,8 @@ connect_update_contact_flow_module_metadata <- function(InstanceId, ContactFlowM
     http_path = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/metadata",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_contact_flow_module_metadata_input(InstanceId = InstanceId, ContactFlowModuleId = ContactFlowModuleId, Name = Name, Description = Description, State = State)
   output <- .connect$update_contact_flow_module_metadata_output()
@@ -13087,7 +14324,8 @@ connect_update_contact_flow_name <- function(InstanceId, ContactFlowId, Name = N
     http_path = "/contact-flows/{InstanceId}/{ContactFlowId}/name",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_contact_flow_name_input(InstanceId = InstanceId, ContactFlowId = ContactFlowId, Name = Name, Description = Description)
   output <- .connect$update_contact_flow_name_output()
@@ -13123,7 +14361,8 @@ connect_update_contact_routing_data <- function(InstanceId, ContactId, QueueTime
     http_path = "/contacts/{InstanceId}/{ContactId}/routing-data",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_contact_routing_data_input(InstanceId = InstanceId, ContactId = ContactId, QueueTimeAdjustmentSeconds = QueueTimeAdjustmentSeconds, QueuePriority = QueuePriority, RoutingCriteria = RoutingCriteria)
   output <- .connect$update_contact_routing_data_output()
@@ -13156,7 +14395,8 @@ connect_update_contact_schedule <- function(InstanceId, ContactId, ScheduledTime
     http_path = "/contact/schedule",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_contact_schedule_input(InstanceId = InstanceId, ContactId = ContactId, ScheduledTime = ScheduledTime)
   output <- .connect$update_contact_schedule_output()
@@ -13167,6 +14407,74 @@ connect_update_contact_schedule <- function(InstanceId, ContactId, ScheduledTime
   return(response)
 }
 .connect$operations$update_contact_schedule <- connect_update_contact_schedule
+
+#' Updates the task template association on an existing task contact
+#'
+#' @description
+#' Updates the task template association on an existing task contact. You can update the task template on a contact before assignment to support tasks that are created without a template (for example [Rules](https://docs.aws.amazon.com/connect/latest/adminguide/connect-rules.html) or [disconnect flows](https://docs.aws.amazon.com/connect/latest/adminguide/set-disconnect-flow.html)) or change the agent interaction form to represent the latest task data (for example an initial request that was submitted as a refund gets updated to an account cancellation and requires a new template).
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_update_contact_task_template/](https://www.paws-r-sdk.com/docs/connect_update_contact_task_template/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param TaskTemplateId &#91;required&#93; A unique identifier for the task template. For more information about task templates, see [Task templates](https://docs.aws.amazon.com/connect/latest/adminguide/task-templates.html) in the *Connect Customer Administrator Guide*.
+#' @param ContactId &#91;required&#93; The identifier of the contact in this instance of Connect Customer.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_update_contact_task_template
+connect_update_contact_task_template <- function(InstanceId, TaskTemplateId, ContactId) {
+  op <- new_operation(
+    name = "UpdateContactTaskTemplate",
+    http_method = "POST",
+    http_path = "/contact/task-template",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$update_contact_task_template_input(InstanceId = InstanceId, TaskTemplateId = TaskTemplateId, ContactId = ContactId)
+  output <- .connect$update_contact_task_template_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$update_contact_task_template <- connect_update_contact_task_template
+
+#' Updates the cross-region routing configuration for an Amazon Connect
+#' Global Resiliency instance enabled for global routing
+#'
+#' @description
+#' Updates the cross-region routing configuration for an Amazon Connect Global Resiliency instance enabled for global routing. When invoked with `IsolatedAll` set to `true`, this operation disables cross-region routing, meaning contacts originating in one Region will no longer be routed to agents in another Region.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_update_cross_region_routing/](https://www.paws-r-sdk.com/docs/connect_update_cross_region_routing/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param IsolatedAll &#91;required&#93; Set to `true` to disable cross-region routing for all Regions associated with this instance. Set to `false` to re-enable cross-region routing.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_update_cross_region_routing
+connect_update_cross_region_routing <- function(InstanceId, IsolatedAll) {
+  op <- new_operation(
+    name = "UpdateCrossRegionRouting",
+    http_method = "PUT",
+    http_path = "/cross-region-routing/{InstanceId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$update_cross_region_routing_input(InstanceId = InstanceId, IsolatedAll = IsolatedAll)
+  output <- .connect$update_cross_region_routing_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$update_cross_region_routing <- connect_update_cross_region_routing
 
 #' Updates all properties for an attribute using all properties from
 #' CreateDataTableAttribute
@@ -13195,7 +14503,8 @@ connect_update_data_table_attribute <- function(InstanceId, DataTableId, Attribu
     http_path = "/data-tables/{InstanceId}/{DataTableId}/attributes/{AttributeName}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_data_table_attribute_input(InstanceId = InstanceId, DataTableId = DataTableId, AttributeName = AttributeName, Name = Name, ValueType = ValueType, Description = Description, Primary = Primary, Validation = Validation)
   output <- .connect$update_data_table_attribute_output()
@@ -13231,7 +14540,8 @@ connect_update_data_table_metadata <- function(InstanceId, DataTableId, Name, De
     http_path = "/data-tables/{InstanceId}/{DataTableId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_data_table_metadata_input(InstanceId = InstanceId, DataTableId = DataTableId, Name = Name, Description = Description, ValueLockLevel = ValueLockLevel, TimeZone = TimeZone)
   output <- .connect$update_data_table_metadata_output()
@@ -13266,7 +14576,8 @@ connect_update_data_table_primary_values <- function(InstanceId, DataTableId, Pr
     http_path = "/data-tables/{InstanceId}/{DataTableId}/values/update-primary",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_data_table_primary_values_input(InstanceId = InstanceId, DataTableId = DataTableId, PrimaryValues = PrimaryValues, NewPrimaryValues = NewPrimaryValues, LockVersion = LockVersion)
   output <- .connect$update_data_table_primary_values_output()
@@ -13301,7 +14612,8 @@ connect_update_email_address_metadata <- function(InstanceId, EmailAddressId, De
     http_path = "/email-addresses/{InstanceId}/{EmailAddressId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_email_address_metadata_input(InstanceId = InstanceId, EmailAddressId = EmailAddressId, Description = Description, DisplayName = DisplayName, ClientToken = ClientToken)
   output <- .connect$update_email_address_metadata_output()
@@ -13335,20 +14647,22 @@ connect_update_email_address_metadata <- function(InstanceId, EmailAddressId, De
 #' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #' @param TargetConfiguration Configuration that specifies the target for the evaluation form.
 #' @param LanguageConfiguration Configuration for language settings of the evaluation form.
+#' @param AIVersion The AI version to use for the evaluation form. This specifies which AI model version is used for automated evaluations.
 #'
 #' @keywords internal
 #'
 #' @rdname connect_update_evaluation_form
-connect_update_evaluation_form <- function(InstanceId, EvaluationFormId, EvaluationFormVersion, CreateNewVersion = NULL, Title, Description = NULL, Items, ScoringStrategy = NULL, AutoEvaluationConfiguration = NULL, ReviewConfiguration = NULL, AsDraft = NULL, ClientToken = NULL, TargetConfiguration = NULL, LanguageConfiguration = NULL) {
+connect_update_evaluation_form <- function(InstanceId, EvaluationFormId, EvaluationFormVersion, CreateNewVersion = NULL, Title, Description = NULL, Items, ScoringStrategy = NULL, AutoEvaluationConfiguration = NULL, ReviewConfiguration = NULL, AsDraft = NULL, ClientToken = NULL, TargetConfiguration = NULL, LanguageConfiguration = NULL, AIVersion = NULL) {
   op <- new_operation(
     name = "UpdateEvaluationForm",
     http_method = "PUT",
     http_path = "/evaluation-forms/{InstanceId}/{EvaluationFormId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
-  input <- .connect$update_evaluation_form_input(InstanceId = InstanceId, EvaluationFormId = EvaluationFormId, EvaluationFormVersion = EvaluationFormVersion, CreateNewVersion = CreateNewVersion, Title = Title, Description = Description, Items = Items, ScoringStrategy = ScoringStrategy, AutoEvaluationConfiguration = AutoEvaluationConfiguration, ReviewConfiguration = ReviewConfiguration, AsDraft = AsDraft, ClientToken = ClientToken, TargetConfiguration = TargetConfiguration, LanguageConfiguration = LanguageConfiguration)
+  input <- .connect$update_evaluation_form_input(InstanceId = InstanceId, EvaluationFormId = EvaluationFormId, EvaluationFormVersion = EvaluationFormVersion, CreateNewVersion = CreateNewVersion, Title = Title, Description = Description, Items = Items, ScoringStrategy = ScoringStrategy, AutoEvaluationConfiguration = AutoEvaluationConfiguration, ReviewConfiguration = ReviewConfiguration, AsDraft = AsDraft, ClientToken = ClientToken, TargetConfiguration = TargetConfiguration, LanguageConfiguration = LanguageConfiguration, AIVersion = AIVersion)
   output <- .connect$update_evaluation_form_output()
   config <- get_config()
   svc <- .connect$service(config, op)
@@ -13357,6 +14671,44 @@ connect_update_evaluation_form <- function(InstanceId, EvaluationFormId, Evaluat
   return(response)
 }
 .connect$operations$update_evaluation_form <- connect_update_evaluation_form
+
+#' Updates an extraction definition in the specified Connect Customer
+#' instance
+#'
+#' @description
+#' Updates an extraction definition in the specified Connect Customer instance.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_update_extraction_definition/](https://www.paws-r-sdk.com/docs/connect_update_extraction_definition/) for full documentation.
+#'
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field.
+#' @param ExtractionDefinitionId &#91;required&#93; The identifier of the extraction definition to update.
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param Name &#91;required&#93; The name of the extraction definition.
+#' @param ExtractionConfiguration &#91;required&#93; The configuration that defines how data is extracted, including the prompt hint and not-found behavior.
+#' @param Display The display settings for the extraction definition.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_update_extraction_definition
+connect_update_extraction_definition <- function(ClientToken = NULL, ExtractionDefinitionId, InstanceId, Name, ExtractionConfiguration, Display = NULL) {
+  op <- new_operation(
+    name = "UpdateExtractionDefinition",
+    http_method = "PUT",
+    http_path = "/extraction-definitions/{InstanceId}/{ExtractionDefinitionId}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$update_extraction_definition_input(ClientToken = ClientToken, ExtractionDefinitionId = ExtractionDefinitionId, InstanceId = InstanceId, Name = Name, ExtractionConfiguration = ExtractionConfiguration, Display = Display)
+  output <- .connect$update_extraction_definition_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$update_extraction_definition <- connect_update_extraction_definition
 
 #' Updates the hours of operation
 #'
@@ -13382,7 +14734,8 @@ connect_update_hours_of_operation <- function(InstanceId, HoursOfOperationId, Na
     http_path = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_hours_of_operation_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId, Name = Name, Description = Description, TimeZone = TimeZone, Config = Config)
   output <- .connect$update_hours_of_operation_output()
@@ -13412,7 +14765,7 @@ connect_update_hours_of_operation <- function(InstanceId, HoursOfOperationId, Na
 #' @param RecurrenceConfig Configuration for a recurring event.
 #' @param OverrideType Whether the override will be defined as a *standard* or as a *recurring event*.
 #' 
-#' For more information about how override types are applied, see Build your list of overrides in the *Administrator Guide*.
+#' For more information about how override types are applied, see [Build your list of overrides](https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html) in the *Administrator Guide*.
 #'
 #' @keywords internal
 #'
@@ -13424,7 +14777,8 @@ connect_update_hours_of_operation_override <- function(InstanceId, HoursOfOperat
     http_path = "/hours-of-operations/{InstanceId}/{HoursOfOperationId}/overrides/{HoursOfOperationOverrideId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_hours_of_operation_override_input(InstanceId = InstanceId, HoursOfOperationId = HoursOfOperationId, HoursOfOperationOverrideId = HoursOfOperationOverrideId, Name = Name, Description = Description, Config = Config, EffectiveFrom = EffectiveFrom, EffectiveTill = EffectiveTill, RecurrenceConfig = RecurrenceConfig, OverrideType = OverrideType)
   output <- .connect$update_hours_of_operation_override_output()
@@ -13450,6 +14804,8 @@ connect_update_hours_of_operation_override <- function(InstanceId, HoursOfOperat
 #' Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.
 #' 
 #' If you set the attribute type as `MESSAGE_STREAMING`, you need to update the Lex bot alias resource based policy to include the `lex:RecognizeMessageAsync` action for the connect instance ARN resource.
+#' 
+#' If you set the attribute type `AUTO_MUTE_AGENT_ON_HOLD` to `true`, the system automatically mutes agents while they're on hold and unmutes them when they resume the contact. Agents can't change their mute state while on hold.
 #' @param Value &#91;required&#93; The value for the attribute. Maximum character limit is 100.
 #' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see [Making retries safe with idempotent APIs](https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/).
 #'
@@ -13463,7 +14819,8 @@ connect_update_instance_attribute <- function(InstanceId, AttributeType, Value, 
     http_path = "/instance/{InstanceId}/attribute/{AttributeType}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_instance_attribute_input(InstanceId = InstanceId, AttributeType = AttributeType, Value = Value, ClientToken = ClientToken)
   output <- .connect$update_instance_attribute_output()
@@ -13499,7 +14856,8 @@ connect_update_instance_storage_config <- function(InstanceId, AssociationId, Re
     http_path = "/instance/{InstanceId}/storage-config/{AssociationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_instance_storage_config_input(InstanceId = InstanceId, AssociationId = AssociationId, ResourceType = ResourceType, StorageConfig = StorageConfig, ClientToken = ClientToken)
   output <- .connect$update_instance_storage_config_output()
@@ -13511,6 +14869,79 @@ connect_update_instance_storage_config <- function(InstanceId, AssociationId, Re
 }
 .connect$operations$update_instance_storage_config <- connect_update_instance_storage_config
 
+#' Updates the calculation, unit, and/or trend indicator of an existing
+#' metric in the specified Connect Customer instance
+#'
+#' @description
+#' Updates the calculation, unit, and/or trend indicator of an existing metric in the specified Connect Customer instance.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_update_metric_content/](https://www.paws-r-sdk.com/docs/connect_update_metric_content/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param MetricId &#91;required&#93; The identifier of the metric to update. Adding the `$SAVED` qualifier will update the saved version of the metric. Adding `$LATEST` or omitting a qualifier will update the published version.
+#' @param MetricCalculation The updated calculation definition for the metric.
+#' @param Unit The updated display unit for the metric.
+#' @param PositiveTrendIndicator How an increase in the metric value should be interpreted. Valid values: `POSITIVE`, `NEUTRAL`, `NEGATIVE`.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_update_metric_content
+connect_update_metric_content <- function(InstanceId, MetricId, MetricCalculation = NULL, Unit = NULL, PositiveTrendIndicator = NULL) {
+  op <- new_operation(
+    name = "UpdateMetricContent",
+    http_method = "POST",
+    http_path = "/metrics/definitions/{InstanceId}/{MetricId}/content",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$update_metric_content_input(InstanceId = InstanceId, MetricId = MetricId, MetricCalculation = MetricCalculation, Unit = Unit, PositiveTrendIndicator = PositiveTrendIndicator)
+  output <- .connect$update_metric_content_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$update_metric_content <- connect_update_metric_content
+
+#' Updates the name and/or description of an existing metric in the
+#' specified Connect Customer instance
+#'
+#' @description
+#' Updates the name and/or description of an existing metric in the specified Connect Customer instance.
+#'
+#' See [https://www.paws-r-sdk.com/docs/connect_update_metric_metadata/](https://www.paws-r-sdk.com/docs/connect_update_metric_metadata/) for full documentation.
+#'
+#' @param InstanceId &#91;required&#93; The identifier of the Connect Customer instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
+#' @param MetricId &#91;required&#93; The identifier of the metric to update. Adding the `$SAVED` qualifier will update the saved version of the metric. Adding `$LATEST` or omitting a qualifier will update the published version.
+#' @param Name The updated name of the metric.
+#' @param Description The updated description of the metric.
+#'
+#' @keywords internal
+#'
+#' @rdname connect_update_metric_metadata
+connect_update_metric_metadata <- function(InstanceId, MetricId, Name = NULL, Description = NULL) {
+  op <- new_operation(
+    name = "UpdateMetricMetadata",
+    http_method = "POST",
+    http_path = "/metrics/definitions/{InstanceId}/{MetricId}/metadata",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE,
+    http_checksum = NULL
+  )
+  input <- .connect$update_metric_metadata_input(InstanceId = InstanceId, MetricId = MetricId, Name = Name, Description = Description)
+  output <- .connect$update_metric_metadata_output()
+  config <- get_config()
+  svc <- .connect$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.connect$operations$update_metric_metadata <- connect_update_metric_metadata
+
 #' Updates the localized content of an existing notification
 #'
 #' @description
@@ -13520,7 +14951,7 @@ connect_update_instance_storage_config <- function(InstanceId, AssociationId, Re
 #'
 #' @param InstanceId &#91;required&#93; The identifier of the Amazon Connect instance. You can [find the instance ID](https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html) in the Amazon Resource Name (ARN) of the instance.
 #' @param NotificationId &#91;required&#93; The unique identifier for the notification to update.
-#' @param Content &#91;required&#93; The updated localized content of the notification. A map of locale codes and values. Maximum 500 characters per locale.
+#' @param Content &#91;required&#93; The updated localized content of the notification. A map of locale codes and values. Maximum 500 visible characters per locale.
 #'
 #' @keywords internal
 #'
@@ -13532,7 +14963,8 @@ connect_update_notification_content <- function(InstanceId, NotificationId, Cont
     http_path = "/notifications/{InstanceId}/{NotificationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_notification_content_input(InstanceId = InstanceId, NotificationId = NotificationId, Content = Content)
   output <- .connect$update_notification_content_output()
@@ -13567,7 +14999,8 @@ connect_update_participant_authentication <- function(State, InstanceId, Code = 
     http_path = "/contact/update-participant-authentication",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_participant_authentication_input(State = State, InstanceId = InstanceId, Code = Code, Error = Error, ErrorDescription = ErrorDescription)
   output <- .connect$update_participant_authentication_output()
@@ -13602,7 +15035,8 @@ connect_update_participant_role_config <- function(InstanceId, ContactId, Channe
     http_path = "/contact/participant-role-config/{InstanceId}/{ContactId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_participant_role_config_input(InstanceId = InstanceId, ContactId = ContactId, ChannelConfiguration = ChannelConfiguration)
   output <- .connect$update_participant_role_config_output()
@@ -13639,7 +15073,8 @@ connect_update_phone_number <- function(PhoneNumberId, TargetArn = NULL, Instanc
     http_path = "/phone-number/{PhoneNumberId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_phone_number_input(PhoneNumberId = PhoneNumberId, TargetArn = TargetArn, InstanceId = InstanceId, ClientToken = ClientToken)
   output <- .connect$update_phone_number_output()
@@ -13672,7 +15107,8 @@ connect_update_phone_number_metadata <- function(PhoneNumberId, PhoneNumberDescr
     http_path = "/phone-number/{PhoneNumberId}/metadata",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_phone_number_metadata_input(PhoneNumberId = PhoneNumberId, PhoneNumberDescription = PhoneNumberDescription, ClientToken = ClientToken)
   output <- .connect$update_phone_number_metadata_output()
@@ -13708,7 +15144,8 @@ connect_update_predefined_attribute <- function(InstanceId, Name, Values = NULL,
     http_path = "/predefined-attributes/{InstanceId}/{Name}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_predefined_attribute_input(InstanceId = InstanceId, Name = Name, Values = Values, Purposes = Purposes, AttributeConfiguration = AttributeConfiguration)
   output <- .connect$update_predefined_attribute_output()
@@ -13743,7 +15180,8 @@ connect_update_prompt <- function(InstanceId, PromptId, Name = NULL, Description
     http_path = "/prompts/{InstanceId}/{PromptId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_prompt_input(InstanceId = InstanceId, PromptId = PromptId, Name = Name, Description = Description, S3Uri = S3Uri)
   output <- .connect$update_prompt_output()
@@ -13776,7 +15214,8 @@ connect_update_queue_hours_of_operation <- function(InstanceId, QueueId, HoursOf
     http_path = "/queues/{InstanceId}/{QueueId}/hours-of-operation",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_queue_hours_of_operation_input(InstanceId = InstanceId, QueueId = QueueId, HoursOfOperationId = HoursOfOperationId)
   output <- .connect$update_queue_hours_of_operation_output()
@@ -13810,7 +15249,8 @@ connect_update_queue_max_contacts <- function(InstanceId, QueueId, MaxContacts =
     http_path = "/queues/{InstanceId}/{QueueId}/max-contacts",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_queue_max_contacts_input(InstanceId = InstanceId, QueueId = QueueId, MaxContacts = MaxContacts)
   output <- .connect$update_queue_max_contacts_output()
@@ -13844,7 +15284,8 @@ connect_update_queue_name <- function(InstanceId, QueueId, Name = NULL, Descript
     http_path = "/queues/{InstanceId}/{QueueId}/name",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_queue_name_input(InstanceId = InstanceId, QueueId = QueueId, Name = Name, Description = Description)
   output <- .connect$update_queue_name_output()
@@ -13878,7 +15319,8 @@ connect_update_queue_outbound_caller_config <- function(InstanceId, QueueId, Out
     http_path = "/queues/{InstanceId}/{QueueId}/outbound-caller-config",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_queue_outbound_caller_config_input(InstanceId = InstanceId, QueueId = QueueId, OutboundCallerConfig = OutboundCallerConfig)
   output <- .connect$update_queue_outbound_caller_config_output()
@@ -13911,7 +15353,8 @@ connect_update_queue_outbound_email_config <- function(InstanceId, QueueId, Outb
     http_path = "/queues/{InstanceId}/{QueueId}/outbound-email-config",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_queue_outbound_email_config_input(InstanceId = InstanceId, QueueId = QueueId, OutboundEmailConfig = OutboundEmailConfig)
   output <- .connect$update_queue_outbound_email_config_output()
@@ -13944,7 +15387,8 @@ connect_update_queue_status <- function(InstanceId, QueueId, Status) {
     http_path = "/queues/{InstanceId}/{QueueId}/status",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_queue_status_input(InstanceId = InstanceId, QueueId = QueueId, Status = Status)
   output <- .connect$update_queue_status_output()
@@ -13977,7 +15421,8 @@ connect_update_quick_connect_config <- function(InstanceId, QuickConnectId, Quic
     http_path = "/quick-connects/{InstanceId}/{QuickConnectId}/config",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_quick_connect_config_input(InstanceId = InstanceId, QuickConnectId = QuickConnectId, QuickConnectConfig = QuickConnectConfig)
   output <- .connect$update_quick_connect_config_output()
@@ -14011,7 +15456,8 @@ connect_update_quick_connect_name <- function(InstanceId, QuickConnectId, Name =
     http_path = "/quick-connects/{InstanceId}/{QuickConnectId}/name",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_quick_connect_name_input(InstanceId = InstanceId, QuickConnectId = QuickConnectId, Name = Name, Description = Description)
   output <- .connect$update_quick_connect_name_output()
@@ -14046,7 +15492,8 @@ connect_update_routing_profile_agent_availability_timer <- function(InstanceId, 
     http_path = "/routing-profiles/{InstanceId}/{RoutingProfileId}/agent-availability-timer",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_routing_profile_agent_availability_timer_input(InstanceId = InstanceId, RoutingProfileId = RoutingProfileId, AgentAvailabilityTimer = AgentAvailabilityTimer)
   output <- .connect$update_routing_profile_agent_availability_timer_output()
@@ -14080,7 +15527,8 @@ connect_update_routing_profile_concurrency <- function(InstanceId, RoutingProfil
     http_path = "/routing-profiles/{InstanceId}/{RoutingProfileId}/concurrency",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_routing_profile_concurrency_input(InstanceId = InstanceId, RoutingProfileId = RoutingProfileId, MediaConcurrencies = MediaConcurrencies)
   output <- .connect$update_routing_profile_concurrency_output()
@@ -14113,7 +15561,8 @@ connect_update_routing_profile_default_outbound_queue <- function(InstanceId, Ro
     http_path = "/routing-profiles/{InstanceId}/{RoutingProfileId}/default-outbound-queue",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_routing_profile_default_outbound_queue_input(InstanceId = InstanceId, RoutingProfileId = RoutingProfileId, DefaultOutboundQueueId = DefaultOutboundQueueId)
   output <- .connect$update_routing_profile_default_outbound_queue_output()
@@ -14147,7 +15596,8 @@ connect_update_routing_profile_name <- function(InstanceId, RoutingProfileId, Na
     http_path = "/routing-profiles/{InstanceId}/{RoutingProfileId}/name",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_routing_profile_name_input(InstanceId = InstanceId, RoutingProfileId = RoutingProfileId, Name = Name, Description = Description)
   output <- .connect$update_routing_profile_name_output()
@@ -14181,7 +15631,8 @@ connect_update_routing_profile_queues <- function(InstanceId, RoutingProfileId, 
     http_path = "/routing-profiles/{InstanceId}/{RoutingProfileId}/queues",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_routing_profile_queues_input(InstanceId = InstanceId, RoutingProfileId = RoutingProfileId, QueueConfigs = QueueConfigs)
   output <- .connect$update_routing_profile_queues_output()
@@ -14206,20 +15657,22 @@ connect_update_routing_profile_queues <- function(InstanceId, RoutingProfileId, 
 #' @param Function &#91;required&#93; The conditions of the rule.
 #' @param Actions &#91;required&#93; A list of actions to be run when the rule is triggered.
 #' @param PublishStatus &#91;required&#93; The publish status of the rule.
+#' @param PreEvaluationFilters The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.
 #'
 #' @keywords internal
 #'
 #' @rdname connect_update_rule
-connect_update_rule <- function(RuleId, InstanceId, Name, Function, Actions, PublishStatus) {
+connect_update_rule <- function(RuleId, InstanceId, Name, Function, Actions, PublishStatus, PreEvaluationFilters = NULL) {
   op <- new_operation(
     name = "UpdateRule",
     http_method = "PUT",
     http_path = "/rules/{InstanceId}/{RuleId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
-  input <- .connect$update_rule_input(RuleId = RuleId, InstanceId = InstanceId, Name = Name, Function = Function, Actions = Actions, PublishStatus = PublishStatus)
+  input <- .connect$update_rule_input(RuleId = RuleId, InstanceId = InstanceId, Name = Name, Function = Function, Actions = Actions, PublishStatus = PublishStatus, PreEvaluationFilters = PreEvaluationFilters)
   output <- .connect$update_rule_output()
   config <- get_config()
   svc <- .connect$service(config, op)
@@ -14246,21 +15699,23 @@ connect_update_rule <- function(RuleId, InstanceId, Name, Function, Actions, Pub
 #' @param HierarchyRestrictedResources The list of resources that a security profile applies hierarchy restrictions to in Connect Customer. Following are acceptable ResourceNames: `User`.
 #' @param AllowedAccessControlHierarchyGroupId The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.
 #' @param AllowedFlowModules A list of Flow Modules an AI Agent can invoke as a tool
+#' @param AllowedAIAgents A list of AI agents that the security profile will give access to.
 #' @param GranularAccessControlConfiguration The granular access control configuration for the security profile, including data table permissions.
 #'
 #' @keywords internal
 #'
 #' @rdname connect_update_security_profile
-connect_update_security_profile <- function(Description = NULL, Permissions = NULL, SecurityProfileId, InstanceId, AllowedAccessControlTags = NULL, TagRestrictedResources = NULL, Applications = NULL, HierarchyRestrictedResources = NULL, AllowedAccessControlHierarchyGroupId = NULL, AllowedFlowModules = NULL, GranularAccessControlConfiguration = NULL) {
+connect_update_security_profile <- function(Description = NULL, Permissions = NULL, SecurityProfileId, InstanceId, AllowedAccessControlTags = NULL, TagRestrictedResources = NULL, Applications = NULL, HierarchyRestrictedResources = NULL, AllowedAccessControlHierarchyGroupId = NULL, AllowedFlowModules = NULL, AllowedAIAgents = NULL, GranularAccessControlConfiguration = NULL) {
   op <- new_operation(
     name = "UpdateSecurityProfile",
     http_method = "POST",
     http_path = "/security-profiles/{InstanceId}/{SecurityProfileId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
-  input <- .connect$update_security_profile_input(Description = Description, Permissions = Permissions, SecurityProfileId = SecurityProfileId, InstanceId = InstanceId, AllowedAccessControlTags = AllowedAccessControlTags, TagRestrictedResources = TagRestrictedResources, Applications = Applications, HierarchyRestrictedResources = HierarchyRestrictedResources, AllowedAccessControlHierarchyGroupId = AllowedAccessControlHierarchyGroupId, AllowedFlowModules = AllowedFlowModules, GranularAccessControlConfiguration = GranularAccessControlConfiguration)
+  input <- .connect$update_security_profile_input(Description = Description, Permissions = Permissions, SecurityProfileId = SecurityProfileId, InstanceId = InstanceId, AllowedAccessControlTags = AllowedAccessControlTags, TagRestrictedResources = TagRestrictedResources, Applications = Applications, HierarchyRestrictedResources = HierarchyRestrictedResources, AllowedAccessControlHierarchyGroupId = AllowedAccessControlHierarchyGroupId, AllowedFlowModules = AllowedFlowModules, AllowedAIAgents = AllowedAIAgents, GranularAccessControlConfiguration = GranularAccessControlConfiguration)
   output <- .connect$update_security_profile_output()
   config <- get_config()
   svc <- .connect$service(config, op)
@@ -14283,11 +15738,17 @@ connect_update_security_profile <- function(Description = NULL, Permissions = NU
 #' @param Name The name of the task template.
 #' @param Description The description of the task template.
 #' @param ContactFlowId The identifier of the flow that runs by default when a task is created by referencing this template.
+#' 
+#' Although this parameter is marked as optional, the request must contain either a `ContactFlowId` or a field of type `QUICK_CONNECT`.
 #' @param SelfAssignFlowId The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.
-#' @param Constraints Constraints that are applicable to the fields listed.
+#' @param Constraints Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling [`create_task_template`][connect_create_task_template] or [`update_task_template`][connect_update_task_template]. The `RequiredFields` array must contain at least one element, and the field of type `NAME` must be included in `RequiredFields`.
 #' @param Defaults The default values for fields when a task is created by referencing this template.
 #' @param Status Marks a template as `ACTIVE` or `INACTIVE` for a task to refer to it. Tasks can only be created from `ACTIVE` templates. If a template is marked as `INACTIVE`, then a task that refers to this template cannot be created.
+#' 
+#' Although this parameter is marked as optional, the service requires it when calling [`update_task_template`][connect_update_task_template].
 #' @param Fields Fields that are part of the template.
+#' 
+#' The request must contain exactly one field of type `NAME`. This field must also be listed in the `RequiredFields` array within the `Constraints` parameter.
 #'
 #' @keywords internal
 #'
@@ -14299,7 +15760,8 @@ connect_update_task_template <- function(TaskTemplateId, InstanceId, Name = NULL
     http_path = "/instance/{InstanceId}/task/template/{TaskTemplateId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_task_template_input(TaskTemplateId = TaskTemplateId, InstanceId = InstanceId, Name = Name, Description = Description, ContactFlowId = ContactFlowId, SelfAssignFlowId = SelfAssignFlowId, Constraints = Constraints, Defaults = Defaults, Status = Status, Fields = Fields)
   output <- .connect$update_task_template_output()
@@ -14340,7 +15802,8 @@ connect_update_test_case <- function(InstanceId, TestCaseId, Content = NULL, Ent
     http_path = "/test-cases/{InstanceId}/{TestCaseId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_test_case_input(InstanceId = InstanceId, TestCaseId = TestCaseId, Content = Content, EntryPoint = EntryPoint, InitializationData = InitializationData, Name = Name, Description = Description, Status = Status, LastModifiedTime = LastModifiedTime, LastModifiedRegion = LastModifiedRegion)
   output <- .connect$update_test_case_output()
@@ -14374,7 +15837,8 @@ connect_update_traffic_distribution <- function(Id, TelephonyConfig = NULL, Sign
     http_path = "/traffic-distribution/{Id}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_traffic_distribution_input(Id = Id, TelephonyConfig = TelephonyConfig, SignInConfig = SignInConfig, AgentConfig = AgentConfig)
   output <- .connect$update_traffic_distribution_output()
@@ -14412,7 +15876,8 @@ connect_update_user_config <- function(AutoAcceptConfigs = NULL, AfterContactWor
     http_path = "/users/{InstanceId}/{UserId}/config",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_user_config_input(AutoAcceptConfigs = AutoAcceptConfigs, AfterContactWorkConfigs = AfterContactWorkConfigs, PhoneNumberConfigs = PhoneNumberConfigs, PersistentConnectionConfigs = PersistentConnectionConfigs, VoiceEnhancementConfigs = VoiceEnhancementConfigs, UserId = UserId, InstanceId = InstanceId)
   output <- .connect$update_user_config_output()
@@ -14445,7 +15910,8 @@ connect_update_user_hierarchy <- function(HierarchyGroupId = NULL, UserId, Insta
     http_path = "/users/{InstanceId}/{UserId}/hierarchy",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_user_hierarchy_input(HierarchyGroupId = HierarchyGroupId, UserId = UserId, InstanceId = InstanceId)
   output <- .connect$update_user_hierarchy_output()
@@ -14478,7 +15944,8 @@ connect_update_user_hierarchy_group_name <- function(Name, HierarchyGroupId, Ins
     http_path = "/user-hierarchy-groups/{InstanceId}/{HierarchyGroupId}/name",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_user_hierarchy_group_name_input(Name = Name, HierarchyGroupId = HierarchyGroupId, InstanceId = InstanceId)
   output <- .connect$update_user_hierarchy_group_name_output()
@@ -14511,7 +15978,8 @@ connect_update_user_hierarchy_structure <- function(HierarchyStructure, Instance
     http_path = "/user-hierarchy-structure/{InstanceId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_user_hierarchy_structure_input(HierarchyStructure = HierarchyStructure, InstanceId = InstanceId)
   output <- .connect$update_user_hierarchy_structure_output()
@@ -14544,7 +16012,8 @@ connect_update_user_identity_info <- function(IdentityInfo, UserId, InstanceId) 
     http_path = "/users/{InstanceId}/{UserId}/identity-info",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_user_identity_info_input(IdentityInfo = IdentityInfo, UserId = UserId, InstanceId = InstanceId)
   output <- .connect$update_user_identity_info_output()
@@ -14581,7 +16050,8 @@ connect_update_user_notification_status <- function(InstanceId, NotificationId, 
     http_path = "/users/{InstanceId}/{UserId}/notifications/{NotificationId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_user_notification_status_input(InstanceId = InstanceId, NotificationId = NotificationId, UserId = UserId, Status = Status, LastModifiedTime = LastModifiedTime, LastModifiedRegion = LastModifiedRegion)
   output <- .connect$update_user_notification_status_output()
@@ -14614,7 +16084,8 @@ connect_update_user_phone_config <- function(PhoneConfig, UserId, InstanceId) {
     http_path = "/users/{InstanceId}/{UserId}/phone-config",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_user_phone_config_input(PhoneConfig = PhoneConfig, UserId = UserId, InstanceId = InstanceId)
   output <- .connect$update_user_phone_config_output()
@@ -14647,7 +16118,8 @@ connect_update_user_proficiencies <- function(InstanceId, UserId, UserProficienc
     http_path = "/users/{InstanceId}/{UserId}/proficiencies",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_user_proficiencies_input(InstanceId = InstanceId, UserId = UserId, UserProficiencies = UserProficiencies)
   output <- .connect$update_user_proficiencies_output()
@@ -14680,7 +16152,8 @@ connect_update_user_routing_profile <- function(RoutingProfileId, UserId, Instan
     http_path = "/users/{InstanceId}/{UserId}/routing-profile",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_user_routing_profile_input(RoutingProfileId = RoutingProfileId, UserId = UserId, InstanceId = InstanceId)
   output <- .connect$update_user_routing_profile_output()
@@ -14713,7 +16186,8 @@ connect_update_user_security_profiles <- function(SecurityProfileIds, UserId, In
     http_path = "/users/{InstanceId}/{UserId}/security-profiles",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_user_security_profiles_input(SecurityProfileIds = SecurityProfileIds, UserId = UserId, InstanceId = InstanceId)
   output <- .connect$update_user_security_profiles_output()
@@ -14750,7 +16224,8 @@ connect_update_view_content <- function(InstanceId, ViewId, Status, Content) {
     http_path = "/views/{InstanceId}/{ViewId}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_view_content_input(InstanceId = InstanceId, ViewId = ViewId, Status = Status, Content = Content)
   output <- .connect$update_view_content_output()
@@ -14784,7 +16259,8 @@ connect_update_view_metadata <- function(InstanceId, ViewId, Name = NULL, Descri
     http_path = "/views/{InstanceId}/{ViewId}/metadata",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_view_metadata_input(InstanceId = InstanceId, ViewId = ViewId, Name = Name, Description = Description)
   output <- .connect$update_view_metadata_output()
@@ -14819,7 +16295,8 @@ connect_update_workspace_metadata <- function(InstanceId, WorkspaceId, Name = NU
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/metadata",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_workspace_metadata_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId, Name = Name, Description = Description, Title = Title)
   output <- .connect$update_workspace_metadata_output()
@@ -14857,7 +16334,8 @@ connect_update_workspace_page <- function(InstanceId, WorkspaceId, Page, NewPage
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/pages/{Page}",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_workspace_page_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId, Page = Page, NewPage = NewPage, ResourceArn = ResourceArn, Slug = Slug, InputData = InputData)
   output <- .connect$update_workspace_page_output()
@@ -14891,7 +16369,8 @@ connect_update_workspace_theme <- function(InstanceId, WorkspaceId, Theme = NULL
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/theme",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_workspace_theme_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId, Theme = Theme)
   output <- .connect$update_workspace_theme_output()
@@ -14925,7 +16404,8 @@ connect_update_workspace_visibility <- function(InstanceId, WorkspaceId, Visibil
     http_path = "/workspaces/{InstanceId}/{WorkspaceId}/visibility",
     host_prefix = "",
     paginator = list(),
-    stream_api = FALSE
+    stream_api = FALSE,
+    http_checksum = NULL
   )
   input <- .connect$update_workspace_visibility_input(InstanceId = InstanceId, WorkspaceId = WorkspaceId, Visibility = Visibility)
   output <- .connect$update_workspace_visibility_output()

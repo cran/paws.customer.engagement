@@ -1,37 +1,46 @@
-svc <- paws::ses()
+svc <- paws.customer.engagement::ses()
 
 test_that("describe_active_receipt_rule_set", {
+  skip_on_cran()
   expect_error(svc$describe_active_receipt_rule_set(), NA)
 })
 
 test_that("list_configuration_sets", {
+  skip_on_cran()
   expect_error(svc$list_configuration_sets(), NA)
 })
 
 test_that("list_custom_verification_email_templates", {
+  skip_on_cran()
   expect_error(svc$list_custom_verification_email_templates(), NA)
 })
 
 test_that("list_custom_verification_email_templates", {
+  skip_on_cran()
   expect_error(svc$list_custom_verification_email_templates(MaxResults = 20), NA)
 })
 
 test_that("list_identities", {
+  skip_on_cran()
   expect_error(svc$list_identities(), NA)
 })
 
 test_that("list_receipt_filters", {
+  skip_on_cran()
   expect_error(svc$list_receipt_filters(), NA)
 })
 
 test_that("list_receipt_rule_sets", {
+  skip_on_cran()
   expect_error(svc$list_receipt_rule_sets(), NA)
 })
 
 test_that("list_templates", {
+  skip_on_cran()
   expect_error(svc$list_templates(), NA)
 })
 
 test_that("list_verified_email_addresses", {
+  skip_on_cran()
   expect_error(svc$list_verified_email_addresses(), NA)
 })

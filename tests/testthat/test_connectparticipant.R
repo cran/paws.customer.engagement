@@ -1,3 +1,3 @@
-svc <- paws::connectparticipant()
+svc <- paws.customer.engagement::connectparticipant()
 
 

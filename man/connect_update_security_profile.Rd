@@ -15,6 +15,7 @@ connect_update_security_profile(
   HierarchyRestrictedResources = NULL,
   AllowedAccessControlHierarchyGroupId = NULL,
   AllowedFlowModules = NULL,
+  AllowedAIAgents = NULL,
   GranularAccessControlConfiguration = NULL
 )
 }
@@ -38,6 +39,8 @@ connect_update_security_profile(
 \item{AllowedAccessControlHierarchyGroupId}{The identifier of the hierarchy group that a security profile uses to restrict access to resources in Connect Customer.}
 
 \item{AllowedFlowModules}{A list of Flow Modules an AI Agent can invoke as a tool}
+
+\item{AllowedAIAgents}{A list of AI agents that the security profile will give access to.}
 
 \item{GranularAccessControlConfiguration}{The granular access control configuration for the security profile, including data table permissions.}
 }
